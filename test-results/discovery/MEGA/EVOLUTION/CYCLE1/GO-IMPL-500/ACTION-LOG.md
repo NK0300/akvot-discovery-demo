@@ -953,3 +953,285 @@
 **Concurrent bands:** Arch SoT **77–80** · Server **81–87** · UX **90–94** · בודק **100–102** · Server softfail **103–110** · Acc **200–206** · FF glance **210–214** · Arch-depth **220–226** · C+E glance **230–236** · **this 240–246**  
 **Checkpoints:** D Arch glance **CONSISTENT** · F Arch glance **PARTIAL** (aligned) · runtime edits **0** · F11 **HOLD** · Preview SSRF **Server-owned HOLD**  
 **NO PROMOTE** · flags default OFF · locks in force
+
+
+---
+
+## Arch board · A–F consolidate + GO-MEASURE dual-run design (ארכיטקט)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 250 | 22:56 | Arch: RO re-read A–F glances + B residual + dualRunHarness + DUAL-RUN-SMOKE |
+| 251 | 22:56 | Arch: consolidate verdicts / bands / HOLD residuals into ARCH-GLANCE-BOARD |
+| 252 | 22:56 | Arch: note G=UX (ממשק) — not Arch glance reopen |
+| 253 | 22:56 | Arch: draft GO-MEASURE CONTROL/TREATMENT design (flag matrix · golden seeds · gates) |
+| 254 | 22:56 | Arch: document what NOT to invent (KPI UNKNOWN · no dpl · no Preview PASS · no promote) |
+| 255 | 22:56 | Arch: LOCAL-WAVE-ARCH-BOARD.md short report |
+| 256 | 22:56 | Arch: ACTION-LOG append **250–256** · checksum verify · NO promote · zero runtime edits |
+
+### Action 250 — RO cite pass for board + dual-run design
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Re-read `CHECKPOINT-{A-STATUS,B,C,D,E,F}-ARCH-GLANCE*` / A FOUNDATION / B-ENGINE Residual / F Preview SSRF pack / `dualRunHarness.js` (RO) / `DUAL-RUN-SMOKE.json` / Acc Smith·כהן·Assaf·T-C6 class cites. Next free Arch band after **240–246** is **250–256** (skipped 247–249 gap · no collision with Acc 200+ / FF 210–214 / Server 81–87 / 103–110).
+- **Files:** (read-only) Arch glances · Server checkpoints · `dualRunHarness.js` · flags · Acc sacred seed scripts/docs
+
+### Action 251 — ARCH-GLANCE-BOARD consolidate A–F
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote consolidation board: A RUNTIME GREEN · B–E CONSISTENT · F PARTIAL aligned · ACTION-LOG band map · epistemic floors · HOLD residuals (Preview SSRF · dual-run measure · F11).
+- **Files:** `ARCH-GLANCE-BOARD-ארכיטקט.md`
+
+### Action 252 — G=UX note
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Explicit board row: Checkpoint **G = UX Product** owned by ממשק (bands 28–38 / 90–94); Arch cites D UX PASS only and does not reopen UX.
+- **Files:** `ARCH-GLANCE-BOARD-ארכיטקט.md` (G row)
+
+### Action 253 — GO-MEASURE dual-run design (CONTROL/TREATMENT)
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Design-only doc from B residual: arms via `controlOpts`/`treatmentOpts`, flag matrix (defaults OFF), golden seeds Assaf/Smith/כהן/T-C6 class, pretty-wrong=0 + Acc scrub + budget hard-stop gates, metric keys from `DUAL_RUN_METRIC_KEYS`, local vs Preview, compose probe cite. **No** harness.js edit.
+- **Files:** `GO-MEASURE-DUAL-RUN-DESIGN-ארכיטקט.md`
+
+### Action 254 — What NOT to invent
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Binding non-invent list: KPI bands UNKNOWN until measured · no `dpl_*` invent · no Preview SSRF PASS while Vercel 403 · no promote from stub green · no F11 HTTP · Discovery ≠ Core dossier success.
+- **Files:** `GO-MEASURE-DUAL-RUN-DESIGN-ארכיטקט.md` (§ What NOT to invent)
+
+### Action 255 — LOCAL-WAVE-ARCH-BOARD report
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Short wave report · deliverable table · checksum prefixes · concurrent band map · Hebrew room one-liner · honest next notes. Docs only.
+- **Files:** `LOCAL-WAVE-ARCH-BOARD.md`
+
+### Action 256 — ACTION-LOG honesty + runtime integrity
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Appended actions **250–256** only (honest · not padded to 500). Skipped 247–249 gap. Verified Arch wrote **0** bytes to locked runtime / SSRF-security / `dualRunHarness.js` (checksums recorded in LOCAL-WAVE). **NO promote**.
+- **Files:** `ACTION-LOG.md` (docs only)
+
+---
+
+**Arch board + dual-run design wave action ids:** **250–256** (7 meaningful · honest · not padded to 500)  
+**Concurrent bands:** Arch SoT **77–80** · Server **81–87** · UX **90–94** · בודק **100–102** · Server softfail **103–110** · Acc **200–206** · FF glance **210–214** · Arch-depth **220–226** · C+E glance **230–236** · D+F glance **240–246** · **this 250–256**  
+**Checkpoints:** A–F board **CLOSED** · G=UX noted · dual-run **DESIGN ONLY** · runtime edits **0** · F11 **HOLD** · Preview SSRF **Server-owned HOLD** · KPI **UNKNOWN**  
+**NO PROMOTE** · flags default OFF · locks in force
+
+
+---
+
+## Server Wave 3 · Dual-run compose + Emit Acc scrub + FailureInject soft-fail (שרת)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 111 | 22:56 | Backend: Dual-run TREATMENT compose probe — soft-fail + SSRF gate + budget hard-stop under flag-ON (`…dualrun-compose1`) |
+| 112 | 22:56 | Backend: Emit Acc scrub depth — `scrubErrorChunk` / `scrubSseError` SoT QID + credential + directive allowlist |
+| 113 | 22:56 | Backend: Graph edge + softEr scrub — `scrubGraphEdge`/`scrubEdgeTextField`; `scrubSoftErForEmit` classifies poison URLs |
+| 114 | 22:56 | Backend: FailureInject soft-fail consistency — cancel≠timeout≠http_N≠budget_exhausted map + assert helpers |
+| 115 | 22:56 | Backend: Suites green — harden **202/0** · failureInject **70/0** · security **194/0** · sse 24 · adversarial 67 · phase2 63 · adapter 63 · budget 46 · phase1 79 · prCloseout 107 |
+| 116 | 22:56 | Backend: Preview live measure — Vercel MCP `list_deployments(prj_Xm61…)` → **404** · LIVE Preview SSRF **OPEN** · NO invent PASS |
+| 117 | 22:56 | Docs: LOCAL-WAVE-DUALRUN-EMIT-FAULT-שרת.md |
+| 118 | 22:56 | Docs: ACTION-LOG append **111–118** · NO promote · honest · not padded to 500 |
+
+### Action 111 — Dual-run TREATMENT compose
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** `runTreatmentComposeProbe()`: flag-ON session with poison URLs + tight budget + soft-failing providers. Asserts soft-fail present, SSRF gate blocks/zero-fetchable, budget hard-stop, Acc leak 0, no raw poison/credential on emit. Metrics +`softFailCodes`/`urlTargetsBlocked`/`budgetHardStop`/`ssrfGatePoison`. Version `2026-09-23.dualrun-compose1`.
+- **Files:** `dualRunHarness.js`, `goImpl.harden.test.mjs`
+
+### Action 112 — Emit error / SSE Acc scrub depth
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** `scrubErrorChunk` SoT `redactForbiddenQidsInText` + credential scrub + directive block + allowlist (no stack/detail/seed). `scrubSseError` aligned to SoT QID redact.
+- **Files:** `emit.js`, `sse.js`, `goImpl.harden.test.mjs`, `sse.contract.test.mjs`
+
+### Action 113 — Graph edge + softEr poison scrub
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** `scrubGraphEdge`/`scrubEdgeTextField` Acc+credential+directive on why/reason/note (no raw spread). **Leak found:** `softEr.hints.urls` emitted raw poison; `scrubSoftErForEmit` classifies via `assertSafePublicHttpsUrl` → `[blocked]`/`[unsafe]`/`allowed`; wired in `sanitizeDiscoveryPayload`.
+- **Files:** `emit.js`, `goImpl.harden.test.mjs`
+
+### Action 114 — FailureInject soft-fail consistency
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** Added `provider_cancelled`/`provider_budget_exhausted` kinds; `softFailCodeForFailureKind`/`injectErrorForKind`/`assertInjectedSoftFailCode`/`failureKindsCoverSoftFailFamilies` — cancel ≠ timeout ≠ http_N ≠ budget_exhausted.
+- **Files:** `failureInject.js`, `failureInject.test.mjs`, `goImpl.harden.test.mjs`
+
+### Action 115 — Test green wave
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** harden **202/0** · failureInject **70/0** · security **194/0** · sse.contract **24/0** · adversarial.acc **67/0** · phase2 **63/0** · adapterContract **63/0** · budget **46/0** · phase1 **79/0** · prCloseout.acc **107/0**.
+- **Files:** (tests)
+
+### Action 116 — Preview live measure (honest OPEN)
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** Vercel MCP without promote: `list_deployments(projectId=prj_Xm61SjyuvgYXDf7Vs0IxBXbDI5V5)` → **404 not_found**. Live Preview SSRF pack remains **OPEN**. No redeploy · **NO promote**.
+- **Files:** (MCP read-only)
+
+### Action 117 — LOCAL-WAVE evidence
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** Wrote `LOCAL-WAVE-DUALRUN-EMIT-FAULT-שרת.md` (compose · emit Acc · softEr · fault · Preview OPEN · remaining).
+- **Files:** `LOCAL-WAVE-DUALRUN-EMIT-FAULT-שרת.md`
+
+### Action 118 — ACTION-LOG honesty
+- **When:** 2026-09-23 22:56 IDT
+- **Who:** Backend / שרת
+- **What:** Appended **111–118**. Honest wave count **8** · not padded to 500. Band free after softfail 103–110; avoids reserved concurrent bands.
+- **Files:** `ACTION-LOG.md`
+
+---
+
+**Server Wave 3 action ids:** **111–118** (8 meaningful · honest · not padded to 500)  
+**Concurrent bands:** Server 69–76 · Arch 77–80 · Server 81–87 · UX 90–94 · בודק 100–102 · Server softfail 103–110 · **this 111–118** · Acc 200–206 · FF 210–214 · Arch 220–246  
+**Checkpoints:** Dual-run compose **PASS (unit)** · Emit Acc/softEr scrub **PASS (unit)** · FailureInject soft-fail map **PASS** · Live Preview SSRF **OPEN**  
+**NO PROMOTE** · flags default OFF · locks in force · F11 HOLD · distributed RL OPEN
+
+
+---
+
+## בודק · CHECKPOINT-QA-P0-FIXTURES (unit/fixture · handoff ממשק · flags OFF)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 120 | 23:00 | בודק: Read UX-QA-HANDOFF-P0-FIXTURES · locks restated · no flag enable · no promote |
+| 121 | 23:00 | בודק: `npm run test:ux-smoke` J+K+L+M — **92 pass / 0 fail** (15+30+16+31) |
+| 122 | 23:00 | בודק: `npm run test:checkpoint-d` **16/0** · `npm run test:web-origin` **96/0** (C1 green · flags OFF) |
+| 123 | 23:00 | בודק: Fixture structure read-only PASS — index chips + 3 P0 seeds · sourceFamily · soft facets · wikibase facet-not-identity · WD officialWebsite UNKNOWN-soft · no identity CTA |
+| 124 | 23:00 | בודק: Client flags OFF verified — `discovery-ui.js`/`index.html` zero hits for three Arch flag names · never set ON |
+| 125 | 23:00 | בודק: Static `http.server:8765` curl — HTML + 3 fixtures + 3 querystrings all **200** · browser paint **SKIPPED/DEFERRED** · Preview **WAIT** |
+| 126 | 23:00 | בודק: CHECKPOINT-QA-P0-FIXTURES md+json · ACTION-LOG **120–126** · KEEP · **אין promote** · honest · not padded to 500 |
+
+### Action 120 — Handoff + locks
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** Consumed `UX-QA-HANDOFF-P0-FIXTURES-ממשק-2026-09-23.md`. Mode unit/fixture only. Flags document-OFF. Preview WAIT. No invent Preview URL. No Core/B0/A2/C1/F11 mutation.
+- **Files:** (read-only handoff)
+
+### Action 121 — ux-smoke J+K+L+M
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** `npm run test:ux-smoke` exit 0. J **15/0** · K **30/0** · L **16/0** · M **31/0** · total **92/0**. L/M assert family HE · soft facets · no Arch flag ON · P0 fixture ids.
+- **Files:** `scripts/ux-checkpoint-{j,k,l,m}-smoke.mjs` (run only)
+
+### Action 122 — checkpoint-d + web-origin
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** `test:checkpoint-d` **16/0**. `test:web-origin` **96/0** confirms C1 URL-alone→UNKNOWN still green under flags OFF.
+- **Files:** (tests run only)
+
+### Action 123 — Fixture structure PASS
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** Validated `discovery-fixtures/index.json` P0 chips + `seed-p0-wd-claims` / `seed-p0-ol-works` / `seed-p0-wp-pageprops`: sourceFamily present, soft facets, empty entityRefs, flagsDocumentedOff×3, wikibase as facet not identity, WD officialWebsite soft/UNKNOWN-friendly. No affirmative identity/dossier CTA.
+- **Files:** `discovery-fixtures/*` (read-only)
+
+### Action 124 — Client flags OFF
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** Grep `discovery-ui.js` + `index.html`: zero occurrences of `DISCOVERY_WD_CLAIM_PACK` / `DISCOVERY_OL_WORKS_SEARCH` / `DISCOVERY_WP_PAGEPROPS`. Client never enables them.
+- **Files:** `discovery-ui.js`, `index.html` (read-only)
+
+### Action 125 — Static curl · browser DEFERRED
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** Brief `python3 -m http.server 8765`. Curl HTML + fixture JSON + three discovery querystrings → all HTTP 200. No headed browser — visual paint **SKIPPED/DEFERRED**. Preview **WAIT** · no invent URL.
+- **Files:** (local server ephemeral)
+
+### Action 126 — Reports + ACTION-LOG honesty
+- **When:** 2026-09-23 23:00 IDT
+- **Who:** בודק (QA executor)
+- **What:** Wrote `CHECKPOINT-QA-P0-FIXTURES-בודק-2026-09-23.md` + `.json` twin. Appended **120–126**. Wave count **7** meaningful · not padded to 500. OVERALL **PASS/KEEP** · **NO promote**.
+- **Files:** `CHECKPOINT-QA-P0-FIXTURES-בודק-2026-09-23.md` · `.json` · `ACTION-LOG.md`
+
+---
+
+**בודק P0-FIXTURES wave action ids:** **120–126** (7 meaningful · honest · not padded to 500)  
+**Prior בודק:** **100–102** (QA-UNIT) · this continues free band after Server **111–118**  
+**Concurrent bands:** Server 69–118 · Arch 77–256 · UX 90–94 · Acc 200–206 · FF 210–214 · **בודק 100–102 + 120–126**  
+**Checkpoints:** ux-smoke **92/0** · fixture structure **PASS** · flags OFF **verified** · browser paint **DEFERRED** · Preview **WAIT**  
+**NO PROMOTE** · flags default OFF · locks in force · F11 HOLD
+
+
+---
+
+## Server Wave 4 · Arch P0 adapter depth behind flags OFF (שרת)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 127 | 23:01 | Backend: Extend `flags.js` — `DISCOVERY_WD_CLAIM_PACK` / `OL_WORKS_SEARCH` / `WP_PAGEPROPS` + snapshot (default OFF) |
+| 128 | 23:01 | Backend: P0-1 WD `claimPackFromWikidataEntity` + wire under flag (0 extra HTTP · P214 keep · facet caps · P856 safety) |
+| 129 | 23:01 | Backend: P0-2 OL `/search.json` works path for document seed + `buildTypedSoftRefs` OL…[AMW] (no isbn soft-ref) |
+| 130 | 23:01 | Backend: P0-3 WP pageprops→qid + extract batch top-3 (+1 HTTP · soft-fail keeps OpenSearch) |
+| 131 | 23:01 | Backend: Unit suite `providers.p0.adapter.test.mjs` — Arch §5 names · **60/0** |
+| 132 | 23:01 | Backend: Regression green — viaf 52 · adapter 63 · harden 202 · security 194 · phase1 79 · phase2 63 · failureInject 70 · adversarial 67 · prCloseout 107 · sse 24 · budget 46 |
+| 133 | 23:01 | Docs: LOCAL-WAVE-P0-FLAGS-שרת.md · flags OFF confirmed · Preview SSRF OPEN · NO measure · NO promote |
+| 134 | 23:01 | Docs: ACTION-LOG append **127–134** · after בודק 120–126 · honest · not padded to 500 |
+
+### Action 127 — Flag matrix + snapshot
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** Added `isWdClaimPackEnabled` / `isOlWorksSearchEnabled` / `isWpPagepropsEnabled` (`envOn`, default OFF) and extended `discoveryFlagSnapshot()` with the three canonical Arch/UX flag names. No client enable.
+- **Files:** `api/lib/discovery/flags.js`
+
+### Action 128 — P0-1 WD claim pack
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** `claimPackFromWikidataEntity` parses allowlisted claims from existing `wbgetentities` response. P214→`viaf:`; P31/P569/P570/P27/P106 facets with caps; P856 only after `assertSafePublicHttpsUrl` — never soft-ref from URL. Flag OFF keeps P214-only verbatim.
+- **Files:** `api/lib/discovery/providers.js`
+
+### Action 129 — P0-2 OL works search
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** Flag ON + document/`preferWorks` → `openlibrary.org/search.json` (same host); work→`ol:` soft-ref; isbn/edition facets only; no detail fanout. Person/org/ambiguous stay on authors.json. Soft-ref builder accepts `/works/` `/books/` and `OL…[AMW]` only.
+- **Files:** `api/lib/discovery/providers.js`
+
+### Action 130 — P0-3 WP pageprops
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** Flag ON → one `action=query` for top min(3,n) titles on same `en|he.wikipedia.org`; merge `qid:` via `buildTypedSoftRefs`; keep `wp:`; extract ≤400; soft-fail returns OpenSearch rows.
+- **Files:** `api/lib/discovery/providers.js`
+
+### Action 131 — P0 unit suite
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** New `providers.p0.adapter.test.mjs` covering Arch acceptance names (flag OFF stable · flag ON facets/refs · no illegal soft-refs · caps · malformed omit · P856 unsafe drop · Acc scrub). Result **60/0**.
+- **Files:** `api/lib/discovery/providers.p0.adapter.test.mjs`
+
+### Action 132 — Regression suites
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** viaf **52/0** · adapterContract **63/0** · harden **202/0** · security **194/0** · phase1 **79/0** · phase2 **63/0** · failureInject **70/0** · adversarial.acc **67/0** · prCloseout **107/0** · sse.contract **24/0** · budget **46/0**.
+- **Files:** (tests)
+
+### Action 133 — LOCAL-WAVE evidence
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** Wrote `LOCAL-WAVE-P0-FLAGS-שרת.md` — verdict PASS unit · flags OFF confirmed · Preview SSRF OPEN · NO live measure · NO promote · F11 HOLD · residuals listed.
+- **Files:** `LOCAL-WAVE-P0-FLAGS-שרת.md`
+
+### Action 134 — ACTION-LOG honesty
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** Backend / שרת
+- **What:** Appended **127–134**. Skipped 119 (gap) and בודק **120–126** collision. Honest wave count **8** · not padded to 500.
+- **Files:** `ACTION-LOG.md`
+
+---
+
+**Server Wave 4 action ids:** **127–134** (8 meaningful · honest · not padded to 500)  
+**Concurrent bands:** Server 69–76 · 81–87 · 103–110 · 111–118 · בודק 100–102 · **בודק 120–126** · **this 127–134** · Acc 200–206 · FF 210–214 · Arch 220–256  
+**Checkpoints:** P0 adapter flags **PASS (unit)** · flags default **OFF** · Live Preview SSRF **OPEN** · F11 **HOLD**  
+**NO PROMOTE** · NO live measure · locks in force
+
+### בודק amend · 2026-09-23 23:02 IDT
+- headed P0 fixture paint **FAIL** ×3 (findings 0) · home chips PASS
+- root: `discovery-ui.js` TDZ `focus` ~L1789 before const L1793
+- amended CHECKPOINT-QA-P0-FIXTURES OVERALL→FAIL · screenshots under GO-IMPL-500/screenshots/
+- **אין promote** · flags OFF
+
+### בודק re-run · 2026-09-23 23:09 IDT
+- headed P0×3 after TDZ hoist: **PASS** (findings 2 · graph 3n·2e each)
+- served discovery-ui.js hoist verified · console residual caveat non-blocking
+- CHECKPOINT-QA-P0-FIXTURES OVERALL→PASS · **אין promote** · flags OFF

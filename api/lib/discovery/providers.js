@@ -15,6 +15,11 @@ import {
   assertSafePublicHttpsUrl,
 } from './security.js';
 import {
+  isWdClaimPackEnabled,
+  isOlWorksSearchEnabled,
+  isWpPagepropsEnabled,
+} from './flags.js';
+import {
   safeFetchJson,
   adapterBudgetSignal,
   adapterSoftFailCode,
@@ -216,10 +221,18 @@ export function buildTypedSoftRefs(ids = {}) {
 
   let olKey = ids.olKey != null ? String(ids.olKey).trim() : '';
   if (olKey) {
-    olKey = olKey.replace(/^\/authors\//i, '').replace(/^authors\//i, '');
-    if (olKey) {
-      refs.add(`ol:${olKey}`);
-      refs.add(`ol-${olKey}`);
+    olKey = olKey
+      .replace(/^\/authors\//i, '')
+      .replace(/^authors\//i, '')
+      .replace(/^\/works\//i, '')
+      .replace(/^works\//i, '')
+      .replace(/^\/books\//i, '')
+      .replace(/^books\//i, '');
+    // Authors (A), editions/books (M), works (W) — never isbn/doi as soft-ref keys
+    if (/^OL\d+[AMW]$/i.test(olKey)) {
+      const canon = olKey.toUpperCase();
+      refs.add(`ol:${canon}`);
+      refs.add(`ol-${canon}`);
     }
   }
   return [...refs];
@@ -266,6 +279,123 @@ export function viafIdsFromWikidataEntity(entity) {
     if (/^\d+$/.test(s)) out.push(s);
   }
   return out;
+}
+
+/**
+ * Normalize Wikidata time datavalue to YYYY or YYYY-MM-DD (prefer year when month/day are 00).
+ * @param {unknown} value
+ * @returns {string|null}
+ */
+function normalizeWikidataTime(value) {
+  if (value == null) return null;
+  const raw = typeof value === 'object' && value !== null && 'time' in value
+    ? String(value.time || '')
+    : String(value);
+  // +1879-03-14T00:00:00Z or +1879-00-00T00:00:00Z
+  const m = raw.match(/^([+-]?)(\d{1,16})-(\d{2})-(\d{2})/);
+  if (!m) return null;
+  const yearNum = Number(m[2]);
+  if (!Number.isFinite(yearNum) || yearNum === 0) return null;
+  const year = String(yearNum);
+  const month = m[3];
+  const day = m[4];
+  if (month === '00' || day === '00') return year;
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Read entity-id QIDs from a claim array (mainsnak.datavalue.value.id).
+ * @param {unknown} claims
+ * @param {number} cap
+ * @returns {string[]}
+ */
+function entityIdsFromClaims(claims, cap) {
+  const out = [];
+  const seen = new Set();
+  if (!Array.isArray(claims)) return out;
+  for (const c of claims) {
+    if (out.length >= cap) break;
+    const v = c?.mainsnak?.datavalue?.value;
+    if (!v || typeof v !== 'object') continue;
+    const id = String(v.id || '').trim().toUpperCase();
+    if (!/^Q\d+$/.test(id) || seen.has(id)) continue;
+    seen.add(id);
+    out.push(id);
+  }
+  return out;
+}
+
+/**
+ * Bounded Wikidata claim pack from already-fetched wbgetentities claims.
+ * Soft-refs: viaf: from P214 only. Facets for P31/P569/P570/P27/P106/P856 — never soft-ref from URL/P31.
+ * @param {object} entity
+ * @returns {{ facetHints: string[], summaryBits: string[], viafIds: string[], officialWebsiteUrls: string[] }}
+ */
+export function claimPackFromWikidataEntity(entity) {
+  /** @type {string[]} */
+  const facetHints = [];
+  /** @type {string[]} */
+  const summaryBits = [];
+  /** @type {string[]} */
+  const officialWebsiteUrls = [];
+  const viafIds = viafIdsFromWikidataEntity(entity);
+  const claims = entity?.claims && typeof entity.claims === 'object' ? entity.claims : {};
+
+  for (const qid of entityIdsFromClaims(claims.P31, 3)) {
+    facetHints.push(`instance:${qid}`);
+    summaryBits.push(`instance:${qid}`);
+  }
+
+  const birthClaims = Array.isArray(claims.P569) ? claims.P569 : [];
+  for (const c of birthClaims.slice(0, 1)) {
+    const t = normalizeWikidataTime(c?.mainsnak?.datavalue?.value);
+    if (t) {
+      facetHints.push(`birth:${t}`);
+      summaryBits.push(`birth:${t}`);
+    }
+  }
+
+  const deathClaims = Array.isArray(claims.P570) ? claims.P570 : [];
+  for (const c of deathClaims.slice(0, 1)) {
+    const t = normalizeWikidataTime(c?.mainsnak?.datavalue?.value);
+    if (t) {
+      facetHints.push(`death:${t}`);
+      summaryBits.push(`death:${t}`);
+    }
+  }
+
+  for (const qid of entityIdsFromClaims(claims.P27, 2)) {
+    facetHints.push(`citizenship:${qid}`);
+  }
+
+  for (const qid of entityIdsFromClaims(claims.P106, 3)) {
+    facetHints.push(`occupation:${qid}`);
+    summaryBits.push(`occupation:${qid}`);
+  }
+
+  const webClaims = Array.isArray(claims.P856) ? claims.P856 : [];
+  for (const c of webClaims) {
+    const v = c?.mainsnak?.datavalue?.value;
+    if (v == null) continue;
+    const rawUrl = String(v).trim();
+    if (!rawUrl) continue;
+    const check = assertSafePublicHttpsUrl(rawUrl);
+    if (!check.ok) continue;
+    const canon = check.canonical || rawUrl;
+    if (officialWebsiteUrls.includes(canon)) continue;
+    officialWebsiteUrls.push(canon);
+    facetHints.push(`officialWebsite:${canon}`);
+    // one safe official website facet is enough for v1
+    break;
+  }
+
+  // Hard cap 12 total new claim facets (exclude viaf soft-ref path)
+  return {
+    facetHints: facetHints.slice(0, 12),
+    summaryBits: summaryBits.slice(0, 8),
+    viafIds,
+    officialWebsiteUrls,
+  };
 }
 
 /** Wikidata wbsearchentities — public */
@@ -319,7 +449,8 @@ export const wikidataProvider = {
         }, this.id);
         if (stamped) findings.push(stamped);
       }
-      // Optional cheap P214 (VIAF) enrichment — one wbgetentities for all QIDs
+      // Optional cheap claims enrichment — one wbgetentities for all QIDs (0 extra HTTP vs search)
+      // Flag OFF: P214 → viaf: only (B0 verbatim). Flag ON: bounded claim pack facets + P214.
       if (findings.length && !budget.signal.aborted) {
         try {
           const ids = findings.map((f) => String(f.id).replace(/^wd-/i, '')).filter((id) => /^Q\d+$/i.test(id));
@@ -329,29 +460,62 @@ export const wikidataProvider = {
               `&ids=${ids.map(encodeURIComponent).join('|')}` +
               `&props=claims&format=json&origin=*`;
             const claimData = await fetchJson(claimUrl, budget.signal, {}, this.id);
+            const packOn = isWdClaimPackEnabled();
             for (const f of findings) {
               const qid = String(f.id).replace(/^wd-/i, '');
               const entity = claimData?.entities?.[qid];
               if (!entity || entity.missing != null) continue;
-              const viafIds = viafIdsFromWikidataEntity(entity);
-              if (!viafIds.length) continue;
-              const extra = new Set(f.entityRefs || []);
-              for (const vid of viafIds) {
-                for (const r of buildTypedSoftRefs({ viafId: vid, qid })) extra.add(r);
+              if (packOn) {
+                const pack = claimPackFromWikidataEntity(entity);
+                const viafIds = pack.viafIds || [];
+                const extra = new Set(f.entityRefs || []);
+                for (const vid of viafIds) {
+                  for (const r of buildTypedSoftRefs({ viafId: vid, qid })) extra.add(r);
+                }
+                f.entityRefs = [...extra];
+                const claimFacets = Array.isArray(pack.facetHints) ? pack.facetHints : [];
+                if (claimFacets.length) {
+                  const merged = new Set(f.facetHints || []);
+                  for (const h of claimFacets) merged.add(h);
+                  f.facetHints = [...merged].slice(0, 24);
+                }
+                const bits = (pack.summaryBits || []).filter(Boolean);
+                if (bits.length) {
+                  const append = normalizeAdapterText(bits.join(' · '), 160);
+                  if (append) {
+                    const base = f.summary ? String(f.summary) : '';
+                    const joined = base ? `${base} · ${append}` : append;
+                    f.summary = normalizeAdapterText(joined, 500) || f.summary;
+                    if (f.quote == null) f.quote = f.summary;
+                  }
+                }
+                const usedPack = claimFacets.length > 0;
+                f.provenance = {
+                  ...(f.provenance || {}),
+                  extractionMethod: usedPack ? 'api_search+claims_pack' : (viafIds.length ? 'api_search+claims' : (f.provenance?.extractionMethod || 'api_search')),
+                  signalSummary: normalizeAdapterText(f.summary || f.title, 160),
+                };
+              } else {
+                const viafIds = viafIdsFromWikidataEntity(entity);
+                if (!viafIds.length) continue;
+                const extra = new Set(f.entityRefs || []);
+                for (const vid of viafIds) {
+                  for (const r of buildTypedSoftRefs({ viafId: vid, qid })) extra.add(r);
+                }
+                f.entityRefs = [...extra];
+                f.provenance = {
+                  ...(f.provenance || {}),
+                  extractionMethod: 'api_search+claims',
+                  signalSummary: normalizeAdapterText(f.summary || f.title, 160),
+                };
               }
-              f.entityRefs = [...extra];
-              f.provenance = {
-                ...(f.provenance || {}),
-                extractionMethod: 'api_search+claims',
-                signalSummary: normalizeAdapterText(f.summary || f.title, 160),
-              };
             }
           }
         } catch (e) {
           // soft-fail enrichment — search hits still returned
           errors.push({
             ...adapterErrorRecord(e, ctx?.signal, this.id, 'claims_enrichment'),
-            message: `P214 enrich: ${normalizeAdapterText(e?.message || e, 180)}`,
+            message: `claims enrich: ${normalizeAdapterText(e?.message || e, 180)}`,
           });
         }
       }
@@ -370,7 +534,7 @@ export const wikidataProvider = {
   },
 };
 
-/** Open Library author search — public */
+/** Open Library author search — public; works /search.json behind DISCOVERY_OL_WORKS_SEARCH */
 export const openLibraryProvider = {
   id: 'openlibrary',
   capabilities: /** @type {const} */ (['person_name', 'org', 'doc']),
@@ -392,6 +556,104 @@ export const openLibraryProvider = {
       if (!q) {
         return { providerId: this.id, findings: [], partial: false };
       }
+      const hints = req.hints && typeof req.hints === 'object' ? req.hints : {};
+      const seedClass = String(hints.seedClass || '').toLowerCase();
+      const preferWorks = hints.preferWorks === true;
+      const worksOn = isOlWorksSearchEnabled();
+      // Dual-path v1: document → works only; person/org → authors only; ambiguous → authors (no silent dual HTTP)
+      const useWorks =
+        worksOn && (seedClass === 'document' || preferWorks);
+
+      if (useWorks) {
+        const url = `https://openlibrary.org/search.json?q=${q}&limit=8`;
+        const data = await fetchJson(url, budget.signal, {}, this.id);
+        const retrievedAt = new Date().toISOString();
+        const seenKeys = new Set();
+        for (const hit of data?.docs || []) {
+          const rawKey = hit?.key ? normalizeAdapterText(hit.key, 120) : null; // /works/OL…W
+          if (!rawKey) continue;
+          let workKey = rawKey
+            .replace(/^\/works\//i, '')
+            .replace(/^works\//i, '')
+            .replace(/^\/books\//i, '')
+            .replace(/^books\//i, '')
+            .toUpperCase();
+          if (!/^OL\d+W$/i.test(workKey)) {
+            // editions may appear as OL…M — still soft-refable as ol:; prefer works
+            if (!/^OL\d+[MW]$/i.test(workKey)) continue;
+            workKey = workKey.toUpperCase();
+          }
+          if (seenKeys.has(workKey)) continue;
+          seenKeys.add(workKey);
+          const path = workKey.endsWith('M')
+            ? `/books/${workKey}`
+            : `/works/${workKey}`;
+          const provenanceUrl = `https://openlibrary.org${path}`;
+          const title = normalizeAdapterText(hit.title || workKey, 240);
+          /** @type {string[]} */
+          const facetHints = ['provider:openlibrary', 'kind:work'];
+          const authorNames = Array.isArray(hit.author_name) ? hit.author_name : [];
+          const authorKeys = Array.isArray(hit.author_key) ? hit.author_key : [];
+          const nameBits = [];
+          for (const n of authorNames.slice(0, 3)) {
+            const nn = normalizeAdapterText(n, 80);
+            if (!nn) continue;
+            facetHints.push(`authorName:${nn}`);
+            nameBits.push(nn);
+          }
+          for (const ak of authorKeys.slice(0, 3)) {
+            const kk = normalizeAdapterText(String(ak).replace(/^\/authors\//i, ''), 40).toUpperCase();
+            if (kk && /^OL\d+A$/i.test(kk)) facetHints.push(`authorKey:${kk}`);
+          }
+          if (hit.first_publish_year != null && /^\d{1,4}$/.test(String(hit.first_publish_year))) {
+            facetHints.push(`firstPublishYear:${hit.first_publish_year}`);
+          }
+          const isbns = Array.isArray(hit.isbn) ? hit.isbn : [];
+          for (const isbn of isbns.slice(0, 3)) {
+            const ii = normalizeAdapterText(isbn, 32);
+            if (ii) facetHints.push(`isbn:${ii}`);
+          }
+          const editions = [];
+          if (hit.cover_edition_key) editions.push(String(hit.cover_edition_key));
+          if (Array.isArray(hit.edition_key)) {
+            for (const ek of hit.edition_key) {
+              if (editions.length >= 2) break;
+              if (ek && !editions.includes(String(ek))) editions.push(String(ek));
+            }
+          }
+          for (const ek of editions.slice(0, 2)) {
+            const ee = normalizeAdapterText(ek, 40).toUpperCase();
+            if (ee && /^OL\d+M$/i.test(ee)) facetHints.push(`edition:${ee}`);
+          }
+          const summaryPrefix = nameBits.length
+            ? `Authors: ${nameBits.join('; ')}`
+            : undefined;
+          const stamped = stampRegistryFinding({
+            id: `ol-work-${workKey.replace(/\W+/g, '_')}`,
+            title,
+            summary: summaryPrefix || undefined,
+            kind: 'document',
+            provenanceUrl,
+            quote: summaryPrefix || title,
+            sourceRecordId: workKey,
+            extractionMethod: 'api_search',
+            facetHints,
+            entityRefs: buildTypedSoftRefs({ olKey: workKey }),
+            evidenceType: 'document',
+            _retrievedAt: retrievedAt,
+          }, this.id);
+          if (stamped) findings.push(stamped);
+        }
+        // v1: no per-work detail fanout (avoid ×6 blowup)
+        return finalizeAdapterBatch({
+          providerId: this.id,
+          findings,
+          partial: findings.length >= 8 || errors.length > 0,
+          errors: errors.length ? errors : undefined,
+        });
+      }
+
+      // Authors path (flag OFF, or person/org/ambiguous seed)
       const url = `https://openlibrary.org/search/authors.json?q=${q}&limit=8`;
       const data = await fetchJson(url, budget.signal, {}, this.id);
       const retrievedAt = new Date().toISOString();
@@ -470,7 +732,7 @@ export const openLibraryProvider = {
 };
 
 
-/** Wikipedia OpenSearch — public, no auth (robotsPolicy: respect) */
+/** Wikipedia OpenSearch — public, no auth (robotsPolicy: respect); pageprops behind DISCOVERY_WP_PAGEPROPS */
 export const wikipediaOpenSearchProvider = {
   id: 'wikipedia',
   capabilities: /** @type {const} */ (['person_name', 'org', 'doc']),
@@ -524,13 +786,101 @@ export const wikipediaOpenSearchProvider = {
           entityRefs: [`wp:${lang}:${title}`],
           evidenceType: 'page',
           _retrievedAt: retrievedAt,
+          _wpTitle: title,
         }, this.id);
         if (stamped) findings.push(stamped);
       }
+
+      // P0-3: pageprops→qid + short extract (+1 HTTP) when flag ON
+      if (isWpPagepropsEnabled() && findings.length && !budget.signal.aborted) {
+        try {
+          const top = findings.slice(0, Math.min(3, findings.length));
+          const titleParams = top
+            .map((f) => encodeURIComponent(f._wpTitle || f.title || ''))
+            .filter(Boolean)
+            .join('|');
+          if (titleParams) {
+            const queryUrl =
+              `https://${host}/w/api.php?action=query` +
+              `&prop=extracts|pageprops|info` +
+              `&ppprop=wikibase_item` +
+              `&exintro=1&explaintext=1&exchars=400` +
+              `&inprop=url` +
+              `&titles=${titleParams}` +
+              `&format=json&origin=*`;
+            const qData = await fetchJson(queryUrl, budget.signal, {}, this.id);
+            const pages = qData?.query?.pages && typeof qData.query.pages === 'object'
+              ? Object.values(qData.query.pages)
+              : [];
+            const byTitle = new Map();
+            for (const page of pages) {
+              if (!page || page.missing != null || page.invalid != null) continue;
+              const t = normalizeAdapterText(page.title, 240);
+              if (t) byTitle.set(t.toLowerCase(), page);
+            }
+            for (const f of findings) {
+              const key = String(f._wpTitle || f.title || '').toLowerCase();
+              const page = byTitle.get(key);
+              if (!page) continue;
+              let patched = false;
+              const qidRaw = page.pageprops?.wikibase_item
+                ? normalizeAdapterText(page.pageprops.wikibase_item, 32).toUpperCase()
+                : '';
+              if (/^Q\d+$/.test(qidRaw)) {
+                const extra = new Set(f.entityRefs || []);
+                for (const r of buildTypedSoftRefs({ qid: qidRaw })) extra.add(r);
+                // keep wp:lang:title; additive qid:
+                f.entityRefs = [...extra];
+                const facets = new Set(f.facetHints || []);
+                facets.add(`wikibase:${qidRaw}`);
+                f.facetHints = [...facets].slice(0, 24);
+                patched = true;
+              }
+              const extract = page.extract ? normalizeAdapterText(page.extract, 400) : '';
+              if (extract && extract.length >= String(f.summary || '').length) {
+                f.summary = extract;
+                f.quote = normalizeAdapterText(extract, 400);
+                patched = true;
+              }
+              const canon = page.canonicalurl || page.fullurl;
+              if (canon) {
+                const check = assertSafePublicHttpsUrl(String(canon));
+                if (check.ok) {
+                  // same-host refresh only
+                  try {
+                    const h = new URL(check.canonical).hostname.toLowerCase();
+                    if (h === host || h.endsWith('.wikipedia.org')) {
+                      f.provenanceUrl = check.canonical;
+                      patched = true;
+                    }
+                  } catch {
+                    /* omit */
+                  }
+                }
+              }
+              if (patched) {
+                f.provenance = {
+                  ...(f.provenance || {}),
+                  extractionMethod: 'api_search+pageprops',
+                  signalSummary: normalizeAdapterText(f.summary || f.title, 160),
+                };
+              }
+            }
+          }
+        } catch (e) {
+          // soft-fail — keep OpenSearch rows
+          errors.push({
+            ...adapterErrorRecord(e, ctx?.signal, this.id, 'pageprops_enrichment'),
+            message: `WP pageprops: ${normalizeAdapterText(e?.message || e, 180)}`,
+          });
+        }
+      }
+      for (const f of findings) delete f._wpTitle;
+
       return finalizeAdapterBatch({
         providerId: this.id,
         findings,
-        partial: findings.length >= 6,
+        partial: findings.length >= 6 || errors.length > 0,
         errors: errors.length ? errors : undefined,
       });
     } catch (e) {
@@ -779,6 +1129,7 @@ export default {
   buildTypedSoftRefs,
   extractViafWikidataQid,
   viafIdsFromWikidataEntity,
+  claimPackFromWikidataEntity,
   stampRegistryFinding,
   normalizeAdapterText,
   classifyAdapterError,

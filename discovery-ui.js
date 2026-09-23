@@ -1779,6 +1779,8 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     const H = 360;
     const laid = layoutGraphNodes(nodes, W, H);
     const byId = new Map(laid.map((n) => [String(n.id), n]));
+    // Hoist before edgeLines map — avoids TDZ ReferenceError (focus used in .map callback).
+    const focus = discState.focusedNodeId;
     const edgeLines = edges
       .map((e) => {
         const from = byId.get(String(e.from ?? e.source));
@@ -1790,7 +1792,6 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
         return `<line class="disc-graph-edge${soft}${onEdge ? ' on' : ''}" data-edge="${esc(e.id)}" x1="${from._x.toFixed(1)}" y1="${from._y.toFixed(1)}" x2="${to._x.toFixed(1)}" y2="${to._y.toFixed(1)}" aria-hidden="true"><title>${esc(REL_HE[rel] || rel)}</title></line>`;
       })
       .join('');
-    const focus = discState.focusedNodeId;
     const nodeBtns = laid
       .map((n) => {
         const on = focus && String(n.id) === String(focus);

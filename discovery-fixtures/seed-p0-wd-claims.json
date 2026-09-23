@@ -1,0 +1,301 @@
+{
+  "fixtureId": "seed-p0-wd-claims",
+  "seedKind": "person_name",
+  "q": "Fixture Claim Pack Alpha",
+  "matchHints": [
+    "Fixture Claim Pack Alpha",
+    "seed-p0-wd-claims",
+    "p0-wd"
+  ],
+  "locale": "en",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "note": "UX surface fixture for Arch P0-1 WD claim-pack shape. Flags OFF — fixture paint only. INFORMATION ≠ IDENTITY.",
+  "flagsDocumentedOff": [
+    "DISCOVERY_WD_CLAIM_PACK",
+    "DISCOVERY_OL_WORKS_SEARCH",
+    "DISCOVERY_WP_PAGEPROPS"
+  ],
+  "evidence": [
+    {
+      "id": "ev-wd-1",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q0.json",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-23T00:00:00.000Z",
+      "quote": "Public claims JSON illustration — P31/P106 facets as search hints only",
+      "contentType": "application/json",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-wd-2",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Special:Search?search=Fixture+Claim+Pack+Alpha",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-23T00:00:01.000Z",
+      "quote": "Search hit surface — not an identity commitment",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-wd-1",
+      "kind": "registry",
+      "title": "Wikidata registry hit (claim-pack shaped)",
+      "summary": "instance/occupation facets are search hints. Does not confirm identity. Flags OFF — fixture only.",
+      "evidenceIds": [
+        "ev-wd-1",
+        "ev-wd-2"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "sourceFamily": "wikidata",
+      "familyId": "knowledge_graph",
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry",
+        "family:wikidata",
+        "sourceFamily:knowledge_graph",
+        "instance:Q5",
+        "occupation:Q36180",
+        "citizenship:Q30",
+        "birth:1970",
+        "relationship:name_match",
+        "confidence_band:medium"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.88
+    },
+    {
+      "id": "f-wd-2",
+      "kind": "registry",
+      "title": "Official website candidate (URL alone soft UNKNOWN)",
+      "summary": "P856-style URL facet — C1 Bound · URL alone stays UNKNOWN · not same-entity.",
+      "evidenceIds": [
+        "ev-wd-1"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "sourceFamily": "wikidata",
+      "familyId": "knowledge_graph",
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry",
+        "family:wikidata",
+        "officialWebsite:https://example.org/fixture-claim-pack-alpha",
+        "confidence_band:low",
+        "relationship:unknown"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.42
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": {
+        "done": 0,
+        "totalHint": 2,
+        "findingsN": 0
+      },
+      "providers": {
+        "wikidata": "pending"
+      },
+      "findingIds": [],
+      "facets": [],
+      "lifeStage": "START"
+    },
+    {
+      "afterMs": 400,
+      "status": "partial",
+      "progress": {
+        "done": 1,
+        "totalHint": 2,
+        "findingsN": 1
+      },
+      "providers": {
+        "wikidata": "ok"
+      },
+      "findingIds": [
+        "f-wd-1"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "family",
+          "label": "Family",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "instance",
+          "label": "Instance",
+          "buckets": [
+            {
+              "value": "Q5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "occupation",
+          "label": "Occupation",
+          "buckets": [
+            {
+              "value": "Q36180",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "lifeStage": "FINDINGS"
+    },
+    {
+      "afterMs": 900,
+      "status": "complete",
+      "progress": {
+        "done": 2,
+        "totalHint": 2,
+        "findingsN": 2
+      },
+      "providers": {
+        "wikidata": "ok"
+      },
+      "findingIds": [
+        "f-wd-1",
+        "f-wd-2"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "family",
+          "label": "Family",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "instance",
+          "label": "Instance",
+          "buckets": [
+            {
+              "value": "Q5",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "occupation",
+          "label": "Occupation",
+          "buckets": [
+            {
+              "value": "Q36180",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "officialWebsite",
+          "label": "Official website",
+          "buckets": [
+            {
+              "value": "https://example.org/fixture-claim-pack-alpha",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "confidence_band",
+          "label": "Confidence band",
+          "buckets": [
+            {
+              "value": "medium",
+              "count": 1
+            },
+            {
+              "value": "low",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "lifeStage": "COMPLETE"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed",
+        "kind": "seed",
+        "label": "Fixture Claim Pack Alpha"
+      },
+      {
+        "id": "f-wd-1",
+        "kind": "finding",
+        "label": "Wikidata registry hit (claim-pack shaped)"
+      },
+      {
+        "id": "f-wd-2",
+        "kind": "finding",
+        "label": "Official website candidate (URL alone soft UNKNOWN)"
+      }
+    ],
+    "edges": [
+      {
+        "id": "sup-wd-0",
+        "kind": "supports",
+        "from": "f-wd-1",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "sup-wd-1",
+        "kind": "supports",
+        "from": "f-wd-2",
+        "to": "seed",
+        "relationship": "supports"
+      }
+    ]
+  },
+  "softEr": {
+    "status": "candidate",
+    "note": "soft resolve only — not identity"
+  },
+  "gaps": [
+    {
+      "kind": "soft_er",
+      "label": "softEntityResolve = candidate — לא עובדה"
+    },
+    {
+      "kind": "identity_ceiling",
+      "label": "Claim facets ≠ identity truth · flags OFF"
+    }
+  ],
+  "contradictions": []
+}

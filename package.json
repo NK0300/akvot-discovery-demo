@@ -21,6 +21,11 @@
     "test:phase2": "node api/lib/discovery/adapterContract.test.mjs && node api/lib/discovery/phase2.engine.test.mjs",
     "test:checkpoint-b": "node api/lib/discovery/checkpointB.e2e.test.mjs",
     "test:security": "node api/lib/discovery/security.checkpoint.test.mjs",
-    "test:checkpoint-d": "node api/lib/discovery/checkpointD.sse.test.mjs"
+    "test:checkpoint-d": "node api/lib/discovery/checkpointD.sse.test.mjs",
+    "test:ux-smoke-j": "node scripts/ux-checkpoint-j-smoke.mjs",
+    "test:ux-smoke-k": "node scripts/ux-checkpoint-k-smoke.mjs",
+    "test:ux-smoke-l": "node scripts/ux-checkpoint-l-smoke.mjs",
+    "test:ux-smoke-m": "node scripts/ux-checkpoint-m-smoke.mjs",
+    "test:ux-smoke": "npm run test:ux-smoke-j && npm run test:ux-smoke-k && npm run test:ux-smoke-l && npm run test:ux-smoke-m"
   }
 }

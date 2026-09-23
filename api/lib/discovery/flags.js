@@ -2,6 +2,9 @@
  * Discovery Preview feature flags — default OFF.
  * Flag OFF MUST preserve B0 verbatim path (no QueryPlan / family orchestration / plan SSE).
  * Does NOT change Core Acc P0, B0 promote, A2-safe, or C1 Bound.
+ *
+ * Arch P0 adapter-depth flags (DISCOVERY_WD_CLAIM_PACK / OL_WORKS_SEARCH / WP_PAGEPROPS)
+ * deepen existing hosts only; OFF ⇒ current emit surface unchanged.
  */
 
 /** @param {string} name */
@@ -26,17 +29,44 @@ export function isPlanSseEnabled(opts = {}) {
   return isQueryPlanEnabled(opts);
 }
 
+/** P0-1 Wikidata bounded claim pack beyond P214. Default OFF. */
+export function isWdClaimPackEnabled(opts = {}) {
+  if (opts.enableWdClaimPack === true) return true;
+  if (opts.enableWdClaimPack === false) return false;
+  return envOn('DISCOVERY_WD_CLAIM_PACK');
+}
+
+/** P0-2 Open Library /search.json works path (document seed). Default OFF. */
+export function isOlWorksSearchEnabled(opts = {}) {
+  if (opts.enableOlWorksSearch === true) return true;
+  if (opts.enableOlWorksSearch === false) return false;
+  return envOn('DISCOVERY_OL_WORKS_SEARCH');
+}
+
+/** P0-3 Wikipedia pageprops→qid + short extract. Default OFF. */
+export function isWpPagepropsEnabled(opts = {}) {
+  if (opts.enableWpPageprops === true) return true;
+  if (opts.enableWpPageprops === false) return false;
+  return envOn('DISCOVERY_WP_PAGEPROPS');
+}
+
 export function discoveryFlagSnapshot(opts = {}) {
   return {
     DISCOVERY_ENABLE_QUERYPLAN: isQueryPlanEnabled(opts),
     DISCOVERY_ENABLE_PLAN_SSE: isPlanSseEnabled(opts),
     DISCOVERY_ENABLE_VIAF: envOn('DISCOVERY_ENABLE_VIAF'),
     DISCOVERY_ENABLE_WEB_ORIGIN: envOn('DISCOVERY_ENABLE_WEB_ORIGIN'),
+    DISCOVERY_WD_CLAIM_PACK: isWdClaimPackEnabled(opts),
+    DISCOVERY_OL_WORKS_SEARCH: isOlWorksSearchEnabled(opts),
+    DISCOVERY_WP_PAGEPROPS: isWpPagepropsEnabled(opts),
   };
 }
 
 export default {
   isQueryPlanEnabled,
   isPlanSseEnabled,
+  isWdClaimPackEnabled,
+  isOlWorksSearchEnabled,
+  isWpPagepropsEnabled,
   discoveryFlagSnapshot,
 };

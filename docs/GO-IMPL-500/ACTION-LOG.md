@@ -175,8 +175,32 @@
 - **What:** Wrote FINAL report: checkpoints A–G honest status; action count 45 (not 500); shipped modules; F residuals; locks; STOP for Chief Review. No promote. No Core/B0/A2/C1 semantic changes.
 - **Files:** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/FINAL-500-EXECUTION-REPORT.md`, `ACTION-LOG.md`
 
+
+
+| 46 | 23:01 | Acc(דיוק): DEEP_SKIP providers scrub verify — scrubProvidersState + emit wire; live probe leak=0 for Q1701775/wd-Q1701775 |
+| 47 | 23:02 | Acc(דיוק): Journal allowlist verify — scrubFamilyJournal deny seed/secrets/qid/entityRef; harden+probe PASS |
+| 48 | 23:03 | Acc(דיוק): P0 flags Acc note (WD/OL/WP all default OFF) + CHECKPOINT-ACC-DEEPSKIP-JOURNAL written; NO promote · Preview WAIT |
+
+### Action 46 — Acc DEEP_SKIP providers scrub verify
+- **When:** 2026-09-23 23:01 IDT
+- **Who:** דיוק (Accuracy) · GO-IMPL-500
+- **What:** Verified `providers` on `EMIT_DEEP_SKIP_KEYS`; `sanitizeDiscoveryPayload` pre-scrubs via `scrubProvidersState` (qid/entityRef/forbidden keys + credentials). Live poison probe: no `Q1701775` / `wd-Q1701775` / Bearer bait on DEEP_SKIP surfaces; map remains.
+- **Files:** `api/lib/discovery/emit.js`, `api/lib/discovery/security.js`, `api/lib/discovery/security.checkpoint.test.mjs`
+
+### Action 47 — Acc journal allowlist verify
+- **When:** 2026-09-23 23:02 IDT
+- **Who:** דיוק (Accuracy) · GO-IMPL-500
+- **What:** Confirmed `scrubFamilyJournal` allowlist-only emit (no raw spread); deny PII/secrets (`seed`/`rawSecret`/`token`/`qid`/`entityRef`). Harden suite + live journal probe PASS.
+- **Files:** `api/lib/discovery/adapterContract.js`, `api/lib/discovery/goImpl.harden.test.mjs`, `api/lib/discovery/obs.js`
+
+### Action 48 — Acc P0-OFF note + checkpoint deliverable
+- **When:** 2026-09-23 23:03 IDT
+- **Who:** דיוק (Accuracy) · GO-IMPL-500
+- **What:** Documented Acc constraints for `DISCOVERY_WD_CLAIM_PACK` · `DISCOVERY_OL_WORKS_SEARCH` · `DISCOVERY_WP_PAGEPROPS` (all default OFF; Acc must not assume emit until ON; when ON: no identity collapse + scrub after merge). Wrote CHECKPOINT-ACC-DEEPSKIP-JOURNAL (+ json). Ran Acc/security/providers suites **793/0**. NO promote · NO F11 · Preview WAIT.
+- **Files:** `docs/GO-IMPL-500/CHECKPOINT-ACC-DEEPSKIP-JOURNAL-דיוק-2026-09-23.md`, `.json`, `ACTION-LOG.md`, `flags.js`, `providers.p0.adapter.test.mjs`
+
 ---
 
-**Action count logged:** **45** (honest · not padded to 500)  
-**Checkpoints:** A **PASS** · B **PASS** · C **SOLID** · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL** · G **FINAL report written**  
-**NO PROMOTE** · flags default OFF · locks in force · AWAITING CHIEF GO
+**Action count logged:** **48** (honest · not padded to 500)  
+**Checkpoints:** A **PASS** · B **PASS** · C **SOLID** · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL** · Acc-DEEPSKIP-JOURNAL **PASS (unit)** · G **FINAL report written**  
+**NO PROMOTE** · flags default OFF · locks in force · Preview WAIT · AWAITING CHIEF GO

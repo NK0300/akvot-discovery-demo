@@ -1,82 +1,67 @@
 {
   "track": "GO-IMPL-UX",
   "agent": "ממשק",
-  "stamp": "2026-09-23T22:55:17+03:00",
+  "stamp": "2026-09-23T23:10:42+03:00",
   "zone": "Asia/Jerusalem",
-  "checkpoint": "L",
-  "status": "PASS",
+  "checkpoint": "FIX-TDZ-FOCUS",
+  "status": "PASS_PENDING_QA",
   "promote": false,
   "deploy": false,
+  "qaRerunNeeded": true,
+  "qaRerunSeeds": [
+    "seed-p0-wd-claims",
+    "seed-p0-ol-works",
+    "seed-p0-wp-pageprops"
+  ],
   "flagsNoted": [
     "DISCOVERY_WD_CLAIM_PACK=OFF",
     "DISCOVERY_OL_WORKS_SEARCH=OFF",
     "DISCOVERY_WP_PAGEPROPS=OFF"
   ],
   "flagsEnabledInClient": false,
-  "wave": "G-H-I-J",
-  "postWave": "K-L",
+  "rootCause": "TDZ: focus used in edgeLines map before const focus in renderGraphCanvas",
+  "fix": "Hoisted const focus above edgeLines map (~L1783)",
   "files": [
-    "discovery-ui.js",
-    "index.html",
-    "scripts/ux-checkpoint-l-smoke.mjs"
+    "discovery-ui.js"
   ],
-  "docs": [
-    "UX-P0-ADAPTER-SURFACE-READY-ממשק-2026-09-23.md",
-    "UX-CHECKPOINT-L-POLISH-ממשק-2026-09-23.md",
-    "ACTION-LOG-ממשק.md"
-  ],
-  "archSpec": "../GO-IMPL-500/ARCH-DEPTH-P0-ADAPTER-SPECS-ארכיטקט.md",
-  "locks": {
-    "coreLookupUntouched": true,
-    "a2c1Frozen": true,
-    "informationNeIdentity": true,
-    "urlAloneNoIdentity": true,
-    "unknownSoft": true,
-    "entityAgnostic": true,
-    "fSecurityUntouched": true,
-    "f11Hold": true,
-    "flagsDefaultOff": true,
-    "noNewHttp": true
-  },
-  "lCriteria": {
-    "surfaceContractDoc": "PASS",
-    "softLabelsFallback": "PASS",
-    "noFlagEnable": "PASS",
-    "smokeL": "PASS"
-  },
+  "evidence": "UX-FIX-TDZ-FOCUS-ממשק-2026-09-23.md",
+  "qaFailEvidence": "../GO-IMPL-500/CHECKPOINT-QA-P0-FIXTURES-בודק-2026-09-23.md",
   "checks": [
     {
       "name": "node --check discovery-ui.js",
-      "passed": 1,
-      "failed": 0
+      "passed": true
     },
     {
-      "name": "ux-checkpoint-j-smoke",
-      "passed": true,
-      "failed": 0
-    },
-    {
-      "name": "ux-checkpoint-k-smoke",
-      "passed": 30,
-      "failed": 0
-    },
-    {
-      "name": "ux-checkpoint-l-smoke",
-      "passed": 16,
-      "failed": 0
+      "name": "npm run test:ux-smoke",
+      "passed": true
     },
     {
       "name": "npm run test:checkpoint-d",
       "passed": 16,
-      "failed": 0,
-      "note": "cancel+graph+plan+ids+sse"
+      "failed": 0
+    },
+    {
+      "name": "static fixture final findings",
+      "passed": true,
+      "note": "2/2/2"
     }
   ],
-  "evidence": "UX-CHECKPOINT-L-POLISH-ממשק-2026-09-23.md",
-  "surfaceReadyDoc": "UX-P0-ADAPTER-SURFACE-READY-ממשק-2026-09-23.md",
+  "locks": {
+    "coreLookupUntouched": true,
+    "fSecurityUntouched": true,
+    "f11Hold": true,
+    "flagsDefaultOff": true,
+    "noNewHttp": true,
+    "informationNeIdentity": true,
+    "entityAgnostic": true
+  },
+  "readyForBodekRerun": true,
   "remainingGaps": [
-    "Server must implement Arch P0 behind flags before denser WD/OL/WP paint",
-    "Live Preview still OPEN",
+    "Headed @בודק re-run ×3 P0 fixtures pending",
+    "Live Server P0 still flag-gated OFF",
+    "Preview may 403",
     "promote held false"
-  ]
+  ],
+  "consoleClean": "PASS",
+  "cacheBust": "discovery-ui.js?v=tdz1"
 }

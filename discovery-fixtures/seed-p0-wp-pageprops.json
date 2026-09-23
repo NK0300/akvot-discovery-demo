@@ -1,0 +1,229 @@
+{
+  "fixtureId": "seed-p0-wp-pageprops",
+  "seedKind": "person_name",
+  "q": "Fixture Pageprops Gamma",
+  "matchHints": [
+    "Fixture Pageprops Gamma",
+    "seed-p0-wp-pageprops",
+    "p0-wp"
+  ],
+  "locale": "en",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "note": "UX surface fixture for Arch P0-3 WP pageprops→qid shape. Flags OFF — fixture paint only. qid soft-ref is information, not identity.",
+  "flagsDocumentedOff": [
+    "DISCOVERY_WD_CLAIM_PACK",
+    "DISCOVERY_OL_WORKS_SEARCH",
+    "DISCOVERY_WP_PAGEPROPS"
+  ],
+  "evidence": [
+    {
+      "id": "ev-wp-1",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Fixture_Pageprops_Gamma",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-23T00:00:00.000Z",
+      "quote": "Short extract illustration — encyclopedia page, not identity dossier",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-wp-2",
+      "provenanceUrl": "https://en.wikipedia.org/w/api.php?action=query&prop=pageprops|extracts&titles=Fixture_Pageprops_Gamma",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-23T00:00:01.000Z",
+      "quote": "pageprops wikibase_item illustration (fixture Q0) — information not identity",
+      "contentType": "application/json",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-wp-1",
+      "kind": "page",
+      "title": "Encyclopedia stub (pageprops shaped)",
+      "summary": "Wikipedia extract + optional wikibase facet. Soft qid-style ref is information — not identity CTA.",
+      "evidenceIds": [
+        "ev-wp-1",
+        "ev-wp-2"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "sourceFamily": "wikipedia",
+      "familyId": "encyclopedia",
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page",
+        "family:wikipedia",
+        "sourceFamily:encyclopedia",
+        "wikibase:Q0",
+        "confidence_band:medium",
+        "relationship:name_match"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.74
+    },
+    {
+      "id": "f-wp-2",
+      "kind": "page",
+      "title": "Search-only page (no pageprops)",
+      "summary": "OpenSearch-shaped hit without wikibase — UNKNOWN soft stays soft.",
+      "evidenceIds": [
+        "ev-wp-1"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "sourceFamily": "wikipedia",
+      "familyId": "encyclopedia",
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page",
+        "family:wikipedia",
+        "confidence_band:low",
+        "relationship:unknown"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.48
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": {
+        "done": 0,
+        "totalHint": 2,
+        "findingsN": 0
+      },
+      "providers": {
+        "wikipedia": "pending"
+      },
+      "findingIds": [],
+      "facets": [],
+      "lifeStage": "START"
+    },
+    {
+      "afterMs": 450,
+      "status": "complete",
+      "progress": {
+        "done": 2,
+        "totalHint": 2,
+        "findingsN": 2
+      },
+      "providers": {
+        "wikipedia": "ok"
+      },
+      "findingIds": [
+        "f-wp-1",
+        "f-wp-2"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikipedia",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "page",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "family",
+          "label": "Family",
+          "buckets": [
+            {
+              "value": "wikipedia",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "wikibase",
+          "label": "Wikibase QID",
+          "buckets": [
+            {
+              "value": "Q0",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "confidence_band",
+          "label": "Confidence band",
+          "buckets": [
+            {
+              "value": "medium",
+              "count": 1
+            },
+            {
+              "value": "low",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "lifeStage": "COMPLETE"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed",
+        "kind": "seed",
+        "label": "Fixture Pageprops Gamma"
+      },
+      {
+        "id": "f-wp-1",
+        "kind": "finding",
+        "label": "Encyclopedia stub (pageprops shaped)"
+      },
+      {
+        "id": "f-wp-2",
+        "kind": "finding",
+        "label": "Search-only page (no pageprops)"
+      }
+    ],
+    "edges": [
+      {
+        "id": "sup-wp-0",
+        "kind": "supports",
+        "from": "f-wp-1",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "sup-wp-1",
+        "kind": "supports",
+        "from": "f-wp-2",
+        "to": "seed",
+        "relationship": "supports"
+      }
+    ]
+  },
+  "softEr": {
+    "status": "candidate",
+    "note": "soft resolve only — not identity"
+  },
+  "gaps": [
+    {
+      "kind": "soft_er",
+      "label": "softEntityResolve = candidate — לא עובדה"
+    },
+    {
+      "kind": "identity_ceiling",
+      "label": "wikibase:Q… ≠ identity · DISCOVERY_WP_PAGEPROPS OFF"
+    }
+  ],
+  "contradictions": []
+}

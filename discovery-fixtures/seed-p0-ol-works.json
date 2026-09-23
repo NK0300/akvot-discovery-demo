@@ -1,0 +1,246 @@
+{
+  "fixtureId": "seed-p0-ol-works",
+  "seedKind": "document",
+  "q": "Fixture Works Search Beta",
+  "matchHints": [
+    "Fixture Works Search Beta",
+    "seed-p0-ol-works",
+    "p0-ol"
+  ],
+  "locale": "en",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "note": "UX surface fixture for Arch P0-2 OL works-search shape. Flags OFF — fixture paint only.",
+  "flagsDocumentedOff": [
+    "DISCOVERY_WD_CLAIM_PACK",
+    "DISCOVERY_OL_WORKS_SEARCH",
+    "DISCOVERY_WP_PAGEPROPS"
+  ],
+  "evidence": [
+    {
+      "id": "ev-ol-1",
+      "provenanceUrl": "https://openlibrary.org/works/OL0W",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-23T00:00:00.000Z",
+      "quote": "Works search illustration — bibliographic finding, not author identity",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-ol-2",
+      "provenanceUrl": "https://openlibrary.org/search.json?q=Fixture+Works+Search+Beta",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-23T00:00:01.000Z",
+      "quote": "Public /search.json works path sample (fixture)",
+      "contentType": "application/json",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-ol-1",
+      "kind": "work",
+      "title": "Sample Catalog Work (fixture)",
+      "summary": "Open Library works-shaped finding. ISBN is facet-only. Not an identity key.",
+      "evidenceIds": [
+        "ev-ol-1",
+        "ev-ol-2"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "sourceFamily": "openlibrary",
+      "familyId": "bibliographic",
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:work",
+        "family:openlibrary",
+        "sourceFamily:bibliographic",
+        "authorName:Fixture Author Label",
+        "authorKey:OL0A",
+        "firstPublishYear:1999",
+        "isbn:0000000000",
+        "edition:OL0M",
+        "confidence_band:medium"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.81
+    },
+    {
+      "id": "f-ol-2",
+      "kind": "document",
+      "title": "Second work stub (low band)",
+      "summary": "Additional works hit — bibliographic signal only.",
+      "evidenceIds": [
+        "ev-ol-2"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "sourceFamily": "openlibrary",
+      "familyId": "bibliographic",
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:document",
+        "family:openlibrary",
+        "firstPublishYear:2001",
+        "confidence_band:low"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.55
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": {
+        "done": 0,
+        "totalHint": 2,
+        "findingsN": 0
+      },
+      "providers": {
+        "openlibrary": "pending"
+      },
+      "findingIds": [],
+      "facets": [],
+      "lifeStage": "START"
+    },
+    {
+      "afterMs": 500,
+      "status": "complete",
+      "progress": {
+        "done": 2,
+        "totalHint": 2,
+        "findingsN": 2
+      },
+      "providers": {
+        "openlibrary": "ok"
+      },
+      "findingIds": [
+        "f-ol-1",
+        "f-ol-2"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "openlibrary",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "work",
+              "count": 1
+            },
+            {
+              "value": "document",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "family",
+          "label": "Family",
+          "buckets": [
+            {
+              "value": "openlibrary",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "authorName",
+          "label": "Author name",
+          "buckets": [
+            {
+              "value": "Fixture Author Label",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "isbn",
+          "label": "ISBN",
+          "buckets": [
+            {
+              "value": "0000000000",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "firstPublishYear",
+          "label": "First publish year",
+          "buckets": [
+            {
+              "value": "1999",
+              "count": 1
+            },
+            {
+              "value": "2001",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "lifeStage": "COMPLETE"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed",
+        "kind": "seed",
+        "label": "Fixture Works Search Beta"
+      },
+      {
+        "id": "f-ol-1",
+        "kind": "finding",
+        "label": "Sample Catalog Work (fixture)"
+      },
+      {
+        "id": "f-ol-2",
+        "kind": "finding",
+        "label": "Second work stub (low band)"
+      }
+    ],
+    "edges": [
+      {
+        "id": "sup-ol-0",
+        "kind": "supports",
+        "from": "f-ol-1",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "sup-ol-1",
+        "kind": "supports",
+        "from": "f-ol-2",
+        "to": "seed",
+        "relationship": "supports"
+      }
+    ]
+  },
+  "softEr": {
+    "status": "candidate",
+    "note": "soft resolve only — not identity"
+  },
+  "gaps": [
+    {
+      "kind": "soft_er",
+      "label": "softEntityResolve = candidate — לא עובדה"
+    },
+    {
+      "kind": "bibliographic",
+      "label": "Works path ≠ person identity · DISCOVERY_OL_WORKS_SEARCH OFF"
+    }
+  ],
+  "contradictions": []
+}

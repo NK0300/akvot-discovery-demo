@@ -1,0 +1,75 @@
+{
+  "checkpoint": "CHECKPOINT-ACC-DEEPSKIP-JOURNAL",
+  "owner": "דיוק",
+  "project": "GO-IMPL-500",
+  "stampIdt": "2026-09-23T23:02:44+03:00",
+  "repo": "/workspace/akvot-quick-demo",
+  "verdict": "PASS",
+  "promote": false,
+  "f11": false,
+  "coreB0A2C1Unlock": false,
+  "preview": "WAIT",
+  "previewUrl": null,
+  "checks": {
+    "deepSkipProvidersAccScrub": "PASS",
+    "providersMapMayRemain": true,
+    "leakQ1701775": false,
+    "leakWdQ1701775": false,
+    "journalAllowlist": "PASS",
+    "journalDenyPiiSecrets": "PASS",
+    "p0FlagsDefaultOff": {
+      "DISCOVERY_WD_CLAIM_PACK": false,
+      "DISCOVERY_OL_WORKS_SEARCH": false,
+      "DISCOVERY_WP_PAGEPROPS": false
+    },
+    "p0AccNote": "Acc must not assume P0 emit until flag ON; when ON: no identity collapse + scrub after merge"
+  },
+  "tests": {
+    "forbiddenIdentities": {
+      "passed": 43,
+      "failed": 0
+    },
+    "security.checkpoint": {
+      "passed": 194,
+      "failed": 0
+    },
+    "goImpl.harden": {
+      "passed": 202,
+      "failed": 0
+    },
+    "adversarial.acc": {
+      "passed": 67,
+      "failed": 0
+    },
+    "adversarial.matrix.acc": {
+      "passed": 120,
+      "failed": 0,
+      "matrixRows": 30
+    },
+    "providers.p0.adapter": {
+      "passed": 60,
+      "failed": 0
+    },
+    "prCloseout.acc": {
+      "passed": 107,
+      "failed": 0
+    },
+    "batchTotal": {
+      "passed": 793,
+      "failed": 0
+    }
+  },
+  "cites": [
+    "docs/GO-IMPL-500/CHECKPOINT-F-SECURITY.md",
+    "docs/GO-IMPL-500/ACC-ADVERSARIAL-MATRIX.md",
+    "api/lib/discovery/emit.js",
+    "api/lib/discovery/security.js",
+    "api/lib/discovery/adapterContract.js",
+    "api/lib/discovery/flags.js",
+    "api/lib/forbiddenIdentities.js"
+  ],
+  "deliverables": [
+    "/workspace/akvot-quick-demo/docs/GO-IMPL-500/CHECKPOINT-ACC-DEEPSKIP-JOURNAL-דיוק-2026-09-23.md",
+    "/workspace/akvot-quick-demo/docs/GO-IMPL-500/CHECKPOINT-ACC-DEEPSKIP-JOURNAL-דיוק-2026-09-23.json"
+  ]
+}

@@ -1,9 +1,42 @@
 {
   "version": "phase-b-ux-2026-09-20",
-  "note": "Fixtures only — Seed illustration values, not allowlist / not special-cased in UI logic.",
+  "note": "Fixtures only — Seed illustration values, not allowlist / not special-cased in UI logic. P0 WD/OL/WP seeds exercise L soft labels with flags OFF.",
   "fixtures": [
-    { "id": "seed-person-he", "file": "seed-person-he.json", "seedKind": "person_name", "labelHe": "שם אדם (עברית)" },
-    { "id": "seed-person-latin", "file": "seed-person-latin.json", "seedKind": "person_name", "labelHe": "שם אדם (Latin)" },
-    { "id": "seed-domain-org", "file": "seed-domain-org.json", "seedKind": "domain_org", "labelHe": "דומיין / ארגון" }
+    {
+      "id": "seed-person-he",
+      "file": "seed-person-he.json",
+      "seedKind": "person_name",
+      "labelHe": "שם אדם (עברית)"
+    },
+    {
+      "id": "seed-person-latin",
+      "file": "seed-person-latin.json",
+      "seedKind": "person_name",
+      "labelHe": "שם אדם (Latin)"
+    },
+    {
+      "id": "seed-domain-org",
+      "file": "seed-domain-org.json",
+      "seedKind": "domain_org",
+      "labelHe": "דומיין / ארגון"
+    },
+    {
+      "id": "seed-p0-wd-claims",
+      "file": "seed-p0-wd-claims.json",
+      "seedKind": "person_name",
+      "labelHe": "P0 · ויקינתונים (claims)"
+    },
+    {
+      "id": "seed-p0-ol-works",
+      "file": "seed-p0-ol-works.json",
+      "seedKind": "document",
+      "labelHe": "P0 · Open Library (works)"
+    },
+    {
+      "id": "seed-p0-wp-pageprops",
+      "file": "seed-p0-wp-pageprops.json",
+      "seedKind": "person_name",
+      "labelHe": "P0 · ויקיפדיה (pageprops)"
+    }
   ]
 }

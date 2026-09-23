@@ -12,6 +12,13 @@
 | 4 | 2026-09-23 22:51 | **J** | Provenance sticky + copy-link · facet/narrow live announce · Discovery skip landmarks · print-safe CSS · ux-checkpoint-j-smoke · wave G–J closeout |
 | 5 | 2026-09-23 22:53 | **K** | Denser UX smoke · a11y checklist evidence · clipboard insecure fallback · facet-announce debounce · graph focus contrast |
 | 6 | 2026-09-23 22:54 | **L** | P0 WD/OL/WP surface-ready doc · soft family/provider labels · unknown fallback · L smoke (flags OFF) |
+| 7 | 2026-09-23 22:57 | **M** | P0 WD/OL/WP fixtures (fixture-only) · index chips · M smoke · flags OFF |
+| 8 | 2026-09-23 22:58 | **N** | QA handoff P0 fixtures · wave G–M rollup · npm ux-smoke aliases · closeout |
+| 10 | 2026-09-23 23:10 | **CLEAN** | Cache-bust `discovery-ui.js?v=tdz1` · confirm TDZ hoist · console clean note |
+| 9 | 2026-09-23 23:05 | **FIX** | TDZ hoist `const focus` before edge map in `renderGraphCanvas` · unblock P0 fixture paint · pending @בודק re-run |
+
+
+
 
 
 ### Detail — Checkpoint G
@@ -55,4 +62,33 @@
 - **Who:** ממשק
 - **What:** Documented UX contract for Arch P0 adapters (`DISCOVERY_WD_CLAIM_PACK` / `DISCOVERY_OL_WORKS_SEARCH` / `DISCOVERY_WP_PAGEPROPS` default OFF). Soft HE/EN family+provider labels + graceful unknown fallback + finding family chip. No flag ON · no new HTTP · no promote.
 - **Evidence:** `UX-CHECKPOINT-L-POLISH-ממשק-2026-09-23.md` · `UX-P0-ADAPTER-SURFACE-READY-ממשק-2026-09-23.md`
+- **Promote:** false
+
+### Detail — Checkpoint M
+- **When:** 2026-09-23 22:57 IDT
+- **Who:** ממשק
+- **What:** Added entity-agnostic fixtures `seed-p0-wd-claims` / `seed-p0-ol-works` / `seed-p0-wp-pageprops` exercising L soft family chips + P0 facet keys. Updated `index.json`. Smoke M asserts parse + label keys + flags OFF. No flag enable · no new HTTP · no promote.
+- **Demo:** `?mode=discovery&discoverySource=fixture&seed=seed-p0-wd-claims|seed-p0-ol-works|seed-p0-wp-pageprops&autorun=1`
+- **Evidence:** `UX-CHECKPOINT-M-FIXTURES-ממשק-2026-09-23.md`
+- **Promote:** false
+
+### Detail — Checkpoint N
+- **When:** 2026-09-23 22:58 IDT
+- **Who:** ממשק
+- **What:** Docs closeout — QA handoff for @בודק on P0 fixtures; wave rollup G→M; optional `npm run test:ux-smoke-{j,k,l,m}` aliases. No flag ON · no Core · no promote.
+- **Evidence:** `UX-QA-HANDOFF-P0-FIXTURES-ממשק-2026-09-23.md` · `UX-WAVE-G-M-ממשק-2026-09-23.md`
+- **Promote:** false
+
+### Detail — FIX TDZ focus
+- **When:** 2026-09-23 23:05 IDT
+- **Who:** ממשק
+- **What:** Hoisted `const focus = discState.focusedNodeId` above `edgeLines` map in `renderGraphCanvas` (TDZ ReferenceError aborted full `renderDiscovery` once graph nodes existed → headed Findings 0).
+- **Evidence:** `UX-FIX-TDZ-FOCUS-ממשק-2026-09-23.md`
+- **QA:** pending headed re-run ×3 P0 seeds
+- **Promote:** false
+
+### Detail — Console clean / cache-bust
+- **When:** 2026-09-23 23:10 IDT
+- **What:** Confirmed `focus` hoist in `renderGraphCanvas`; added `?v=tdz1` on script tag; no TDZ console.debug to remove.
+- **Evidence:** `UX-CONSOLE-CLEAN-ממשק-2026-09-23.md`
 - **Promote:** false
