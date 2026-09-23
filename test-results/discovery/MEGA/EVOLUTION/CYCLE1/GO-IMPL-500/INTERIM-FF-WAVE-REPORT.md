@@ -1,12 +1,12 @@
 # INTERIM-FF-WAVE-REPORT · GO-IMPL-500 · CYCLE1
 
-**Stamp:** 2026-09-23 22:50:46 IDT (Asia/Jerusalem, UTC+3)  
+**Stamp:** 2026-09-23 22:53:30 IDT (Asia/Jerusalem, UTC+3)  
 **Scope:** local evidence only · sync preparation · **NO promote**
 
 ## ACTION-LOG
 
-- Latest documented high-water ID: **214** (adapter-deepen append).
-- Bands are intentionally non-contiguous: Server 69–76 and 81–87; Arch 77–80; UX 90–94; QA 100–102; Acc 200–206; adapter deepen 210–214.
+- Latest documented high-water ID: **236** (Arch C+E glance append).
+- Bands are intentionally non-contiguous: Server 69–76, 81–87, 103–110; Arch 77–80, 220–226, 230–236; UX 90–94; QA 100–102; Acc 200–206; adapter deepen 210–214.
 - This is an honest peak/high-water record, **not 500 padded actions**.
 
 ## What shipped locally
@@ -14,7 +14,8 @@
 - **FF-SERVER:** local Preview `urlTargets` SSRF adversarial/simulation pack, redirect re-gating, existing WD/OL/WP/VIAF adapter hardening, honest memory rate-limit fields/overflow behavior, and soft-fail/observability scrub coverage.
 - **FF-UX:** executive QUICK READ, content-first/mobile hierarchy, display-only graph filters, evidence-aware edge detail, source/provider rollups, and trust-copy preservation.
 - **FF-ACC:** denylist SoT redaction, useful scrubbed `finding.why`, corroboration/gaps/relationship emit clamps, and adversarial matrix expansion through ACC-M-030.
-- **Arch glance + adapter deepen:** SoT drift check and F11-safe proposals for deepening existing adapters only; no new HTTP families.
+- **Arch glance + adapter deepen:** SoT drift check, C/E consistency glances, and F11-safe P0 specs for deepening existing adapters only; no new HTTP families.
+- **UX K:** clipboard fallback, debounced facet announcements, graph focus contrast, and denser static smoke coverage.
 - **Wave docs and ACTION-LOG:** local wave reports, checkpoint updates, and shared log are present under this directory.
 
 ## Residuals / locks

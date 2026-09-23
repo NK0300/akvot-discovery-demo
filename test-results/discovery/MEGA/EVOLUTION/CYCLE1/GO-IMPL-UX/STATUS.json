@@ -1,15 +1,19 @@
 {
   "track": "GO-IMPL-UX",
   "agent": "ממשק",
-  "stamp": "2026-09-23T22:49:29+03:00",
+  "stamp": "2026-09-23T22:53:21+03:00",
   "zone": "Asia/Jerusalem",
-  "checkpoint": "I",
+  "checkpoint": "K",
   "status": "PASS",
   "promote": false,
   "deploy": false,
+  "wave": "G-H-I-J",
+  "waveStatus": "PASS",
+  "postWave": "K",
   "files": [
     "discovery-ui.js",
-    "index.html"
+    "index.html",
+    "scripts/ux-checkpoint-k-smoke.mjs"
   ],
   "locks": {
     "coreLookupUntouched": true,
@@ -21,54 +25,50 @@
     "fSecurityUntouched": true,
     "f11Hold": true,
     "gNotRegressed": true,
-    "hNotRegressed": true
+    "hNotRegressed": true,
+    "iNotRegressed": true,
+    "jNotRegressed": true
   },
-  "iCriteria": {
-    "keyboardA11y": "PASS",
-    "loadingProgressive": "PASS",
-    "emptyRecovery": "PASS",
-    "graphPolish": "PASS",
-    "mobilePolish": "PASS"
+  "kCriteria": {
+    "expandSmoke": "PASS",
+    "a11yChecklist": "PASS",
+    "codePolish": "PASS",
+    "actionLogStatus": "PASS"
   },
   "increments": [
-    "a11y-findings-roving-tabindex",
-    "a11y-escape-closes-provenance",
-    "a11y-focus-visible-graph-aria",
-    "a11y-prefers-reduced-motion",
-    "progressive-connection-chip",
-    "progressive-searching-banner-skeletons",
-    "empty-offline-stale-kinds",
-    "empty-action-priority-per-kind",
-    "graph-selected-edge-node-seed",
-    "mobile-landscape-safe-area-touch-action"
-  ],
-  "demo": [
-    "?mode=discovery&discoverySource=fixture&seed=seed-person-he&autorun=1",
-    "?mode=discovery&discoverySource=fixture&seed=seed-person-latin&autorun=1",
-    "?mode=discovery&discoverySource=fixture&seed=seed-domain-org&autorun=1"
+    "ux-checkpoint-k-smoke-dense",
+    "a11y-checklist-evidence",
+    "clipboard-insecure-context-fallback",
+    "facet-announce-debounce",
+    "graph-focus-visible-contrast"
   ],
   "checks": [
     {
       "name": "node --check discovery-ui.js",
+      "result": "PASS"
+    },
+    {
+      "name": "node scripts/ux-checkpoint-j-smoke.mjs",
+      "result": "PASS"
+    },
+    {
+      "name": "node scripts/ux-checkpoint-k-smoke.mjs",
       "result": "PASS",
-      "detail": "SYNTAX_OK"
+      "detail": "passed=30 failed=0"
     },
     {
       "name": "npm run test:checkpoint-d",
       "result": "PASS",
-      "detail": "16 passed / 0 failed"
+      "detail": "passed=16 failed=0"
     }
   ],
-  "waitingOn": [
-    "Foundation SSE plan events density",
-    "Foundation SSE graph density"
-  ],
+  "evidence": "UX-CHECKPOINT-K-POLISH-ממשק-2026-09-23.md",
+  "a11yChecklist": "UX-A11Y-CHECKLIST-ממשק-2026-09-23.md",
+  "actionLog": "ACTION-LOG-ממשק.md",
+  "priorEvidence": "UX-CHECKPOINT-J-POLISH-ממשק-2026-09-23.md",
   "remainingGaps": [
-    "Live plan/graph density still Server/Foundation flag-gated",
-    "Full axe re-run optional",
-    "Screenshot pack optional"
-  ],
-  "evidence": "UX-CHECKPOINT-I-POLISH-ממשק-2026-09-23.md",
-  "priorEvidence": "UX-CHECKPOINT-H-POLISH-ממשק-2026-09-23.md",
-  "lanesPass": 5
+    "Live plan/graph SSE density Foundation-gated",
+    "Live axe / Preview still OPEN (Vercel 403)",
+    "Clipboard prompt fallback is last-resort"
+  ]
 }

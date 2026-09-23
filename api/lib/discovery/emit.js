@@ -10,6 +10,7 @@ import {
   extractQid,
   normalizeQid,
   sanitizeCandidatesPayload,
+  redactForbiddenQidsInText,
 } from '../forbiddenIdentities.js';
 import { scrubGraphForEmit, clampGraphRelationship, urlAloneCeiling } from './evidenceGraph.js';
 import {
@@ -19,6 +20,7 @@ import {
 import { sanitizeRelationshipGraph } from './relationship.js';
 import { scrubProvidersState } from './security.js';
 import { scrubGapsForEmit } from './gaps.js';
+import { assertSafePublicHttpsUrl } from './urlSafety.js';
 
 function valueHasForbidden(val) {
   if (val == null) return false;
@@ -332,6 +334,53 @@ function deepStripForbidden(node, strippedIds, { isRoot = false } = {}) {
  * @param {object} snapshot
  * @returns {object}
  */
+
+/**
+ * Acc + SSRF scrub for softEr emit surface.
+ * softEntityResolve embeds raw hints (incl. poison urls) — never wire them.
+ * @param {object} softEr
+ */
+export function scrubSoftErForEmit(softEr) {
+  if (!softEr || typeof softEr !== 'object') return softEr;
+  const scrubText = (t) => {
+    if (t == null) return t;
+    let s = String(t);
+    if (/(api[_-]?key|secret|password|token|bearer\s+[a-z0-9._-]+)/i.test(s)) return '[REDACTED]';
+    s = redactForbiddenQidsInText(s);
+    return s.slice(0, 120);
+  };
+  const classifyUrl = (raw) => {
+    const candidate = String(raw || '').trim();
+    if (!candidate) return null;
+    let url = candidate;
+    if (!/^https?:\/\//i.test(url) && /\./.test(url)) url = `https://${url.replace(/\/$/, '')}/`;
+    const safety = assertSafePublicHttpsUrl(url);
+    if (safety.ok) return { url: (safety.canonical || url).slice(0, 200), safety: 'allowed' };
+    if (safety.reason === 'blocked_host') return { url: '[blocked]', safety: 'blocked' };
+    return { url: '[unsafe]', safety: 'unsafe' };
+  };
+  const hintsIn = softEr.hints && typeof softEr.hints === 'object' ? softEr.hints : {};
+  const urlKeys = ['urls', 'webOriginUrls', 'oneHopUrls'];
+  const hintsOut = {};
+  if (hintsIn.seedClass != null) hintsOut.seedClass = String(hintsIn.seedClass).slice(0, 40);
+  for (const k of urlKeys) {
+    if (!Array.isArray(hintsIn[k])) continue;
+    hintsOut[k] = hintsIn[k].map(classifyUrl).filter(Boolean);
+  }
+  // Drop any other hint keys that could carry seed/token/url bait
+  return {
+    softRefs: Array.isArray(softEr.softRefs)
+      ? softEr.softRefs
+          .map((r) => scrubText(r))
+          .filter((r) => r && !valueHasForbidden(r) && !isForbiddenQid(r))
+      : [],
+    status: softEr.status === 'candidate' || softEr.status === 'unknown' ? softEr.status : 'unknown',
+    displayHint: scrubText(softEr.displayHint) || undefined,
+    ...(Object.keys(hintsOut).length ? { hints: hintsOut } : {}),
+    forbiddenIdentitiesVersion: FORBIDDEN_IDENTITIES_VERSION,
+  };
+}
+
 export function sanitizeDiscoveryPayload(snapshot) {
   if (!snapshot || typeof snapshot !== 'object') return snapshot;
   const strippedIds = [];
@@ -432,6 +481,7 @@ export function sanitizeDiscoveryPayload(snapshot) {
   if (Array.isArray(gaps)) out.gaps = gaps;
   if (graph) out.graph = graph;
   if (out.providers != null) out.providers = scrubProvidersState(out.providers);
+  if (out.softEr != null) out.softEr = scrubSoftErForEmit(out.softEr);
   if (plan) out.plan = plan;
   if (snapshot.queryPlan && typeof snapshot.queryPlan === 'object') {
     out.queryPlan = scrubQueryPlanForEmit(snapshot.queryPlan);
@@ -534,6 +584,30 @@ function edgeHasTypedSoftRef(e) {
  * @param {object} e
  * @param {string[]} strippedIds
  */
+function scrubEdgeTextField(t, strippedIds) {
+  if (t == null) return t;
+  let s = String(t);
+  if (/(api[_-]?key|secret|password|token|bearer\s+[a-z0-9._-]+)/i.test(s)) {
+    return '[REDACTED]';
+  }
+  for (const tok of ['SAME-ENTITY', 'SAME_ENTITY', 'IDENTITY_COMMIT', 'TITLE_BRIDGE']) {
+    if (s.includes(tok)) s = s.split(tok).join('[BLOCKED]');
+  }
+  const before = s;
+  s = redactForbiddenQidsInText(s);
+  if (s !== before) {
+    const matches = before.match(/\bQ\d+\b/gi) || [];
+    for (const m of matches) {
+      if (isForbiddenQid(m)) noteStripped(strippedIds, m);
+    }
+  }
+  if (valueHasForbidden(s) || isForbiddenQid(s)) {
+    noteStripped(strippedIds, s);
+    return null;
+  }
+  return s.slice(0, 500);
+}
+
 function scrubGraphEdge(e, strippedIds) {
   if (!e || typeof e !== 'object') return null;
   const from = e.from ?? e.source;
@@ -555,13 +629,39 @@ function scrubGraphEdge(e, strippedIds) {
     }
   }
   let signalSummary = e.signalSummary;
-  if (typeof signalSummary === 'string' && (valueHasForbidden(signalSummary) || isForbiddenQid(signalSummary))) {
-    noteStripped(strippedIds, signalSummary);
-    signalSummary = undefined;
+  if (typeof signalSummary === 'string') {
+    const scrubbedSum = scrubEdgeTextField(signalSummary, strippedIds);
+    signalSummary = scrubbedSum == null ? undefined : scrubbedSum;
   }
-  const next = { ...e };
-  if (signalSummary === undefined) delete next.signalSummary;
-  else next.signalSummary = signalSummary;
+  // Allowlist — never spread raw edge (credential / Acc residual surfaces)
+  const next = {
+    from,
+    to,
+    ...(e.source != null && e.from == null ? { source: e.source } : {}),
+    ...(e.target != null && e.to == null ? { target: e.target } : {}),
+    ...(e.relationship != null ? { relationship: e.relationship } : {}),
+    ...(e.label != null ? { label: e.label } : {}),
+    ...(e.type != null ? { type: e.type } : {}),
+    ...(e.planId != null ? { planId: e.planId } : {}),
+    ...(e.urlAlone != null ? { urlAlone: !!e.urlAlone } : {}),
+    ...(e.titleBridge != null ? { titleBridge: !!e.titleBridge } : {}),
+    ...(e.confidence != null ? { confidence: e.confidence } : {}),
+    ...(e.weight != null ? { weight: e.weight } : {}),
+    ...(e.typedSoftRef != null ? { typedSoftRef: e.typedSoftRef } : {}),
+    ...(e.softRef != null ? { softRef: e.softRef } : {}),
+    ...(e.sharedTypedKey != null ? { sharedTypedKey: e.sharedTypedKey } : {}),
+    ...(e.sharedKey != null ? { sharedKey: e.sharedKey } : {}),
+    ...(e.ref != null ? { ref: e.ref } : {}),
+    ...(Array.isArray(e.sharedTypedKeys) ? { sharedTypedKeys: e.sharedTypedKeys } : {}),
+    ...(Array.isArray(e.typedRefs) ? { typedRefs: e.typedRefs } : {}),
+    ...(Array.isArray(e.evidenceIds) ? { evidenceIds: e.evidenceIds } : {}),
+  };
+  if (signalSummary !== undefined) next.signalSummary = signalSummary;
+  for (const k of ['why', 'reason', 'note']) {
+    if (e[k] == null) continue;
+    const scrubbed = scrubEdgeTextField(e[k], strippedIds);
+    if (scrubbed != null && scrubbed !== '') next[k] = scrubbed;
+  }
   return next;
 }
 
@@ -681,18 +781,17 @@ export function scrubErrorChunk(err) {
     if (/(api[_-]?key|secret|password|token|bearer\s+[a-z0-9._-]+)/i.test(s)) {
       return '[REDACTED]';
     }
-    const matches = s.match(/\bQ\d+\b/gi) || [];
-    for (const tok of matches) {
-      if (isForbiddenQid(tok)) {
-        s = s.replace(new RegExp(`\\b${tok}\\b`, 'gi'), '[REDACTED_QID]');
-      }
+    for (const tok of ['SAME-ENTITY', 'SAME_ENTITY', 'IDENTITY_COMMIT', 'TITLE_BRIDGE']) {
+      if (s.includes(tok)) s = s.split(tok).join('[BLOCKED]');
     }
+    s = redactForbiddenQidsInText(s);
     return s.slice(0, 500);
   };
   return {
     failureClass: err.failureClass || err.code || 'error',
     message: scrubMsg(err.message || err.error || err.msg),
     ...(err.retryable != null ? { retryable: !!err.retryable } : {}),
+    ...(err.status != null ? { status: err.status } : {}),
     forbiddenIdentitiesVersion: FORBIDDEN_IDENTITIES_VERSION,
   };
 }
@@ -706,5 +805,6 @@ export default {
   scrubPlanChunk,
   scrubGraphChunk,
   scrubErrorChunk,
+  scrubSoftErForEmit,
   EMIT_DEEP_SKIP_KEYS,
 };

@@ -16,6 +16,8 @@
  * · empty offline/stale · mobile landscape/safe-area/touch-action.
  * Checkpoint J polish: provenance sticky+copy-link · facet narrow live announce · landmarks
  * · print-safe Discovery · UX smoke strings · wave G–J closeout.
+ * Checkpoint K polish: clipboard insecure-context fallback · facet-announce debounce ·
+ * denser UX smoke · a11y checklist evidence · graph focus contrast.
  * Wires to POST/GET /api/discovery/sessions · prefers SSE …/events · POST …/narrow
  * (server recompute); falls back to poll + discovery-fixtures/* progressive stages.
  * Entity-agnostic · INFORMATION ≠ IDENTITY · no Core /api/lookup changes.
@@ -1568,7 +1570,43 @@
     if (el) el.textContent = t;
   }
 
+  /** Copy URL with secure-context clipboard + textarea/prompt fallback · never identity. */
+  async function copyDiscoveryUrl(url) {
+    const text = String(url || '').trim();
+    if (!text) return { ok: false, method: 'empty' };
+    const secure = typeof window !== 'undefined' && window.isSecureContext === true;
+    if (secure && navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try {
+        await navigator.clipboard.writeText(text);
+        return { ok: true, method: 'clipboard' };
+      } catch (_) { /* fall through */ }
+    }
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.setAttribute('aria-hidden', 'true');
+      ta.style.cssText = 'position:fixed;inset-inline-start:0;top:0;width:1px;height:1px;padding:0;border:0;opacity:0;';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand && document.execCommand('copy');
+      ta.remove();
+      if (ok) return { ok: true, method: 'textarea' };
+    } catch (_) { /* fall through */ }
+    try {
+      if (typeof window.prompt === 'function') {
+        window.prompt('העתיקו את קישור המקור (לא זהות):', text);
+        return { ok: true, method: 'prompt' };
+      }
+    } catch (_) {}
+    return { ok: false, method: 'failed' };
+  }
+
+
   /** Facet/narrow count announce — soft UX only · never identity. */
+  let facetAnnounceTimer = null;
   function announceFacetNarrow(opts = {}) {
     const findingsN = opts.findingsN != null ? opts.findingsN : (filteredFindings().length);
     const activeFacets = Object.keys(selectedFacets).length;
@@ -1579,7 +1617,13 @@
       src !== 'none' ? `narrow:${src}` : null,
       'סינון ≠ זהות',
     ].filter(Boolean);
-    announceSseLive(bits.join(' · '));
+    const text = bits.join(' · ');
+    // Debounce rapid facet clicks · keep latest announce only
+    if (facetAnnounceTimer) clearTimeout(facetAnnounceTimer);
+    facetAnnounceTimer = setTimeout(() => {
+      facetAnnounceTimer = null;
+      announceSseLive(text);
+    }, 120);
   }
 
 
@@ -2239,22 +2283,21 @@
       btn.onclick = async () => {
         const url = btn.getAttribute('data-copy-url') || '';
         if (!url) return;
-        try {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            await navigator.clipboard.writeText(url);
-          } else {
-            const ta = document.createElement('textarea');
-            ta.value = url; document.body.appendChild(ta); ta.select();
-            document.execCommand('copy'); ta.remove();
-          }
-          const prev = btn.textContent;
-          btn.textContent = 'הועתק';
-          btn.disabled = true;
-          announceSseLive('קישור מקור הועתק · לא זהות');
-          setTimeout(() => { btn.textContent = prev || 'העתק קישור'; btn.disabled = false; }, 1400);
-        } catch (_) {
-          announceSseLive('העתקה נכשלה · נסו ידנית מהקישור');
+        const prev = btn.textContent;
+        btn.disabled = true;
+        const result = await copyDiscoveryUrl(url);
+        if (result.ok) {
+          btn.textContent = result.method === 'prompt' ? 'הוצג להעתקה' : 'הועתק';
+          announceSseLive(
+            result.method === 'prompt'
+              ? 'קישור הוצג להעתקה ידנית · לא זהות'
+              : 'קישור מקור הועתק · לא זהות',
+          );
+        } else {
+          btn.textContent = prev || 'העתק קישור';
+          announceSseLive('העתקה נכשלה · סמנו את הקישור ידנית');
         }
+        setTimeout(() => { btn.textContent = prev || 'העתק קישור'; btn.disabled = false; }, 1600);
       };
     });
     out.querySelectorAll('[data-node]').forEach((btn) => {

@@ -14,7 +14,7 @@ import { scrubGraphForEmit } from './evidenceGraph.js';
 import { planSummaryForSse, scrubQueryPlanForEmit } from './queryPlan.js';
 import { isPlanSseEnabled } from './flags.js';
 import { recordSseLifecycle } from './obs.js';
-import { isForbiddenQid } from '../forbiddenIdentities.js';
+import { isForbiddenQid, redactForbiddenQidsInText } from '../forbiddenIdentities.js';
 
 export const SSE_SCHEMA_VERSION = 1;
 
@@ -104,15 +104,16 @@ export function formatSseEvent(event, data, id) {
  */
 export function scrubSseError(err = {}) {
   const msg = String(err.message || err.error || 'error').slice(0, 200);
-  // Strip credential-shaped / Acc-forbidden QIDs / identity directives
+  // Strip credential-shaped / Acc-forbidden QIDs / identity directives (SoT depth)
   let safe = msg.replace(/(api[_-]?key|secret|password|token|bearer\s+\S+)/gi, '[REDACTED]');
-  safe = safe.replace(/\bQ\d+\b/gi, (tok) => (isForbiddenQid(tok) ? '[REDACTED_QID]' : tok));
   for (const tok of ['SAME-ENTITY', 'SAME_ENTITY', 'IDENTITY_COMMIT', 'TITLE_BRIDGE']) {
     if (safe.includes(tok)) safe = safe.split(tok).join('[BLOCKED]');
   }
+  safe = redactForbiddenQidsInText(safe);
+  safe = safe.replace(/\bQ\d+\b/gi, (tok) => (isForbiddenQid(tok) ? '[REDACTED_QID]' : tok));
   return {
     failureClass: err.failureClass || err.code || 'error',
-    message: safe,
+    message: safe.slice(0, 200),
     status: err.status || 'failed_soft',
     ...(err.forbiddenIdentitiesVersion
       ? { forbiddenIdentitiesVersion: err.forbiddenIdentitiesVersion }

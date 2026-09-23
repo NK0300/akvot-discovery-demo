@@ -825,3 +825,67 @@
 **Concurrent bands:** Arch SoT **77–80** · Server **81–87** · UX **90–94** · בודק **100–102** · Acc **200–206** · FF glance **210–214** · **Arch-depth 220–226**  
 **Checkpoints:** ARCH-DEPTH P0 specs **PASS (docs)** · SoT prior **CONSISTENT** · runtime edits **0** · F11 **HOLD** · Preview SSRF **Server-owned**  
 **NO PROMOTE** · flags default OFF · locks in force
+
+
+---
+
+## Arch glance · Checkpoint C + E (ארכיטקט)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 230 | 22:51 | Arch: RO read C/E checkpoint docs + B glance / GATE-A-RUNTIME-GREEN format |
+| 231 | 22:51 | Arch: RO spot-check evidence.js · orch enrich wire · emit DEEP_SKIP · evidence.test asserts |
+| 232 | 22:51 | Arch: wrote CHECKPOINT-C-ARCH-GLANCE · verdict **CONSISTENT** |
+| 233 | 22:51 | Arch: RO spot-check relationship.js · evidenceGraph · orch sanitize · emit scrubGraphPayload · sse scrubGraphChunk |
+| 234 | 22:51 | Arch: wrote CHECKPOINT-E-ARCH-GLANCE · verdict **CONSISTENT** |
+| 235 | 22:51 | Arch: LOCAL-WAVE-ARCH-GLANCE-CE.md combined wave report |
+| 236 | 22:51 | Arch: ACTION-LOG append **230–236** · checksum verify · NO promote · zero runtime edits |
+
+### Action 230 — RO cite pass for C+E glances
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Read `CHECKPOINT-C-EVIDENCE.md`, `CHECKPOINT-E-GRAPH.md`, mirrored format from `CHECKPOINT-B-ARCH-GLANCE-ארכיטקט.md` + `GATE-A-RUNTIME-GREEN-ארכיטקט.md`. Confirmed next free Arch band after depth **220–226** is **230–236** (no collision with Acc 200+ / FF 210–214 / Server 103–110).
+- **Files:** (read-only) checkpoint docs + prior Arch glances
+
+### Action 231 — Checkpoint C RO module/orch/test cite
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Spot-checked `evidence.js` (`explainWhy`, `enrichSessionEvidence`, `epistemicStateFor` fact→candidate, metadata_only C1), orch L778–780 enrich after contradictions, emit `evidenceEngineVersion` in `DEEP_SKIP_KEYS`, `evidence.test.mjs` **55** `assert(` sites (Server claimed 51/0 — OK residual doc age).
+- **Files:** (read-only) `evidence.js`, `orchestrator.js`, `emit.js`, `evidence.test.mjs`
+
+### Action 232 — CHECKPOINT-C-ARCH-GLANCE
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote C glance vs Server SOLID claims. Overall **CONSISTENT**. Residuals: Preview `why` / SSE snippet deferred; early S6 double-build owned under E; assert-count Δ OK.
+- **Files:** `CHECKPOINT-C-ARCH-GLANCE-ארכיטקט.md`
+
+### Action 233 — Checkpoint E RO graph/emit/sse cite
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Spot-checked `relationship.js` (sanitize / explainEdge / no-laundering / Acc), `evidenceGraph.js` urlAloneCeiling + scrubGraphForEmit, orch L799–813 always-on sanitize wire, emit `scrubGraphPayload` Acc→Foundation→rel, sse `scrubGraphChunk`. `relationship.test.mjs` **44** asserts (Server 43/0 — OK residual). Did **not** edit emit/sse/security/providers/familyOrchestrator.
+- **Files:** (read-only) `relationship.js`, `evidenceGraph.js`, `orchestrator.js`, `emit.js`, `sse.js`, `relationship.test.mjs`
+
+### Action 234 — CHECKPOINT-E-ARCH-GLANCE
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote E glance vs Server DEMONSTRABLE PASS. Overall **CONSISTENT**. Residuals: Preview graph SSE / edge UX deferred; early S6 double-build OK; F security out of scope.
+- **Files:** `CHECKPOINT-E-ARCH-GLANCE-ארכיטקט.md`
+
+### Action 235 — LOCAL-WAVE-ARCH-GLANCE-CE
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Short combined wave report · C+E verdicts · checksum prefixes · concurrent band map · Hebrew room one-liner · honest next notes. Docs only.
+- **Files:** `LOCAL-WAVE-ARCH-GLANCE-CE.md`
+
+### Action 236 — ACTION-LOG honesty + runtime integrity
+- **When:** 2026-09-23 22:51 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Appended actions **230–236** only (honest · not padded to 500). Skipped colliding bands. Verified locked runtime / SSRF-security files unchanged this wave (checksums recorded in glances). **NO promote**.
+- **Files:** `ACTION-LOG.md` (docs only)
+
+---
+
+**Arch C+E glance wave action ids:** **230–236** (7 meaningful · honest · not padded to 500)  
+**Concurrent bands:** Arch SoT **77–80** · Server **81–87** · UX **90–94** · בודק **100–102** · Server softfail **103–110** · Acc **200–206** · FF glance **210–214** · Arch-depth **220–226** · **this 230–236**  
+**Checkpoints:** C Arch glance **CONSISTENT** · E Arch glance **CONSISTENT** · runtime edits **0** · F11 **HOLD** · Preview SSRF **Server-owned**  
+**NO PROMOTE** · flags default OFF · locks in force
