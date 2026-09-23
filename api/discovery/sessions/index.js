@@ -36,6 +36,13 @@ export default async function handler(req, res) {
         error: rl.error,
         failureClass: 'rate_limited',
         retryAfterSec: rl.retryAfterSec,
+        extras: {
+          rateLimit: {
+            backend: rl.backend || 'memory',
+            distributed: false,
+            upstashWiredForRateLimit: false,
+          },
+        },
       });
       return res.status(err.status).json(err.body);
     }

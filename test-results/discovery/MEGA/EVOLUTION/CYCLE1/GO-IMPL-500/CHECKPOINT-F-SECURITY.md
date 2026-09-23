@@ -1,6 +1,7 @@
 # CHECKPOINT-F-SECURITY · GO-IMPL-500 · Security close (honest)
 
-**Stamp:** 2026-09-23T21:39:34+03:00 IDT (Asia/Jerusalem, UTC+3)  
+**Stamp:** 2026-09-23T22:42:14+03:00 IDT (Asia/Jerusalem, UTC+3) · prior 21:39 residual-close retained
+**Follow-on:** PREVIEW-URLTARGETS-SSRF-PACK.md + MEMORY-RL-NOTE.md (שרת wave · unit+wire PASS · live Preview OPEN)  
 **Owner:** Backend / שרת (runtime wire) + Accuracy / QA (helpers · emit · obs)  
 **Wave:** LOCAL-WAVE-F-SEC residuals close — **urlTargets fetch-gate RUNTIME WIRE** + Acc providers scrub strengthen  
 **Verdict:** **PARTIAL PASS (unit+runtime-wire)** · **NO PROMOTE**  
@@ -18,14 +19,14 @@
 | QueryPlan urlTargets gate (helpers) | **PASS** | `assertPlanUrlTargetsSafe` · `selectFetchablePlanUrlTargets` · `runPlanUrlTargetsFetchGate` — poison → failClosed + zero fetch |
 | QueryPlan urlTargets **runtime wire** | **PASS** (unit+wire) | Wired into `providers.js` web_origin search · `familyOrchestrator.js` web_origin hints · `orchestrator.js` one-hop filter — **fail-closed** |
 | Payload limits | **PASS** | MAX_SEED · MAX_BODY · MAX_HINTS · `assertPayloadSize` |
-| Rate / isolation | **PASS** (unit · **memory**) | per-key trip · key isolation · `RATE_LIMIT_BACKEND=memory` · no Upstash RL |
+| Rate / isolation | **PASS** (unit · **memory**) | per-key trip · key isolation · **overflow fail-closed** · `RATE_LIMIT_BACKEND=memory` · no Upstash RL · see MEMORY-RL-NOTE.md |
 | Secret protection | **PASS** (emit path) | credential redact on plan/SSE/error/source content |
 | Log + SSE + graph + error redaction | **PASS** | F suite + hardened scrub |
 | Source-content sanitization | **PASS** | `sanitizeSourceContent` Acc+secret strip |
 | providers DEEP_SKIP Acc | **PASS** (closed) | explicit DEEP_SKIP · `scrubProvidersState` pre-scrub · Acc QID values **and keys** · no identity laundering · providers key retained |
 | Observability lite | **PASS** (unit) | structured log — no seed/Acc/credentials |
 | Perf lite (timeout/cancel) | **PASS** (unit) | `withSourceTimeout` — fails closed; **never** bypasses SSRF |
-| Live Preview QueryPlan urlTargets SSRF pack | **OPEN / optional** | **no live Vercel Preview redeploy this wave** — unit+runtime-wire PASS only; **do not invent Preview PASS** |
+| Live Preview QueryPlan urlTargets SSRF pack | **OPEN** | unit+wire PASS · adversarial fixtures **43** · Vercel list_deployments **403 scope** → no Preview redeploy; **do not invent Preview PASS** |
 | Distributed / multi-instance rate | **OPEN** | memory Map only; Upstash wired for **sessionStore**, **not** Discovery RL |
 | Production / promote | **HOLD** | no Chief promote order |
 
@@ -66,7 +67,7 @@
 
 | Suite | Result |
 |-------|--------|
-| `security.checkpoint.test.mjs` | **117 / 0** |
+| `security.checkpoint.test.mjs` | **186 / 0** (SSRF pack2 + RL overflow) |
 | `webOrigin.test.mjs` | **96 / 0** (sanity after providers wire) |
 
 Live Preview pack: **not run** · **OPEN**.
@@ -108,3 +109,31 @@ Live Preview pack: **not run** · **OPEN**.
 ## STOP
 
 **PARTIAL PASS (unit+runtime-wire)** · **NO PROMOTE** · HOLD · live Preview SSRF pack still OPEN/optional · distributed RL still OPEN
+
+
+---
+
+## Append · GO-IMPL harden note (Backend · 2026-09-23 21:44 IDT)
+
+Non-colliding harden on shared emit/obs/adapter paths (not a Checkpoint F re-open):
+
+- Journal Acc scrub allowlisted (no raw spread)
+- Obs deny-list for seed/secrets
+- AbortSignal cancel≠timeout consistency on adapters + familyOrchestrator
+- Budget exhaust reason latch (honest attribution)
+
+**Checkpoint F verdict unchanged:** **PARTIAL PASS (improved)**. Live Preview SSRF + distributed RL still OPEN. **NO promote.** See `LOCAL-WAVE-HARDEN.md`.
+
+
+---
+
+## Append · GO-IMPL FF-SERVER (Backend · 2026-09-23 22:40 IDT)
+
+- DNS-rebinding host traps + `simulatePreviewUrlTargetsSsrfPack` (local closed)
+- Adapter `safeFetchJson` redirect re-gate; registry `stampRegistryFinding`
+- Rate-limit 429 honesty (`distributed:false`)
+- security.checkpoint **143/0**
+
+**Checkpoint F verdict:** **PARTIAL PASS (improved · local SSRF pack closed)**.  
+**LIVE Preview SSRF pack still OPEN.** Distributed RL still OPEN. **NO promote.**  
+See `LOCAL-WAVE-FF-SERVER.md`.

@@ -18,6 +18,7 @@ import {
 } from './queryPlan.js';
 import { sanitizeRelationshipGraph } from './relationship.js';
 import { scrubProvidersState } from './security.js';
+import { scrubGapsForEmit } from './gaps.js';
 
 function valueHasForbidden(val) {
   if (val == null) return false;
@@ -205,6 +206,57 @@ function scrubContradiction(c, survivingFindingIds, strippedIds) {
   return out;
 }
 
+/**
+ * Acc-scrub corroboration edge for snapshot emit.
+ * Prefer UNKNOWN over same-entity laundering; drop baited rows.
+ * @param {object} e
+ * @param {Set<string>} survivingFindingIds
+ * @param {string[]} strippedIds
+ * @returns {object|null}
+ */
+function scrubCorroborationEdge(e, survivingFindingIds, strippedIds) {
+  if (!e || typeof e !== 'object') return null;
+  for (const key of ['note', 'relationship', 'mode', 'summary', 'title']) {
+    if (e[key] != null && (valueHasForbidden(e[key]) || isForbiddenQid(e[key]))) {
+      noteStripped(strippedIds, e[key]);
+      return null;
+    }
+  }
+  const findingIds = [];
+  for (const id of e.findingIds || []) {
+    const sid = String(id);
+    if (valueHasForbidden(sid) || isForbiddenQid(sid)) {
+      noteStripped(strippedIds, sid);
+      continue;
+    }
+    if (survivingFindingIds.size && !survivingFindingIds.has(sid)) continue;
+    findingIds.push(sid);
+  }
+  if (!findingIds.length) return null;
+  const coalesceKeys = (Array.isArray(e.coalesceKeys) ? e.coalesceKeys : []).filter((k) => {
+    if (valueHasForbidden(k) || isForbiddenQid(k)) {
+      noteStripped(strippedIds, k);
+      return false;
+    }
+    return true;
+  });
+  let relationship = e.relationship || 'unknown';
+  const rel = String(relationship).toLowerCase().replace(/_/g, '-');
+  if (rel === 'same-entity' || rel === 'same_entity' || rel === 'same-identity') {
+    relationship = 'unknown'; // INFORMATION≠IDENTITY — prefer UNKNOWN
+  }
+  return {
+    relationship,
+    findingIds,
+    coalesceKeys,
+    ...(Array.isArray(e.families)
+      ? { families: e.families.filter((f) => !valueHasForbidden(f) && !isForbiddenQid(f)).slice(0, 8) }
+      : {}),
+    ...(e.mode != null ? { mode: e.mode } : {}),
+    note: e.note && !valueHasForbidden(e.note) ? String(e.note).slice(0, 160) : 'INFORMATION≠IDENTITY',
+  };
+}
+
 
 /**
  * Root keys skipped by deepStripForbidden.
@@ -332,6 +384,20 @@ export function sanitizeDiscoveryPayload(snapshot) {
     .map((c) => scrubContradiction(c, survivingFindingIds, strippedIds))
     .filter(Boolean);
 
+  const corroborationIn = Array.isArray(snapshot.corroborationEdges)
+    ? snapshot.corroborationEdges
+    : Array.isArray(snapshot.corroborations)
+      ? snapshot.corroborations
+      : [];
+  const corroborationEdges = corroborationIn
+    .map((e) => scrubCorroborationEdge(e, survivingFindingIds, strippedIds))
+    .filter(Boolean);
+
+  let gaps = snapshot.gaps;
+  if (Array.isArray(gaps)) {
+    gaps = scrubGapsForEmit(gaps);
+  }
+
   let graph = snapshot.graph;
   if (graph && typeof graph === 'object') {
     graph = scrubGraphPayload(graph, strippedIds);
@@ -360,8 +426,10 @@ export function sanitizeDiscoveryPayload(snapshot) {
     evidence: finalEvidence,
     facets,
     contradictions,
+    corroborationEdges,
     forbiddenIdentitiesVersion: FORBIDDEN_IDENTITIES_VERSION,
   };
+  if (Array.isArray(gaps)) out.gaps = gaps;
   if (graph) out.graph = graph;
   if (out.providers != null) out.providers = scrubProvidersState(out.providers);
   if (plan) out.plan = plan;

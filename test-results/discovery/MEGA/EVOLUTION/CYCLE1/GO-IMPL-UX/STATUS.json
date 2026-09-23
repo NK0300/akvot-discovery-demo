@@ -1,37 +1,74 @@
 {
   "track": "GO-IMPL-UX",
   "agent": "ממשק",
-  "stamp": "2026-09-22T00:07:38+03:00",
+  "stamp": "2026-09-23T22:49:29+03:00",
   "zone": "Asia/Jerusalem",
-  "status": "SHIPPED_IN_TREE",
+  "checkpoint": "I",
+  "status": "PASS",
   "promote": false,
   "deploy": false,
-  "files": ["discovery-ui.js", "index.html"],
+  "files": [
+    "discovery-ui.js",
+    "index.html"
+  ],
   "locks": {
     "coreLookupUntouched": true,
     "a2c1Frozen": true,
     "informationNeIdentity": true,
     "urlAloneNoIdentity": true,
     "unknownSoft": true,
-    "entityAgnostic": true
+    "entityAgnostic": true,
+    "fSecurityUntouched": true,
+    "f11Hold": true,
+    "gNotRegressed": true,
+    "hNotRegressed": true
+  },
+  "iCriteria": {
+    "keyboardA11y": "PASS",
+    "loadingProgressive": "PASS",
+    "emptyRecovery": "PASS",
+    "graphPolish": "PASS",
+    "mobilePolish": "PASS"
   },
   "increments": [
-    "premium-chrome",
-    "mobile-nav-44px",
-    "facet-drawer",
-    "vocab-soft-badges",
-    "provenance-hostname-density",
-    "sse-state-polish",
-    "narrow-banner",
-    "a11y-focus-reduced-motion",
-    "soft-queryPlan-tag"
+    "a11y-findings-roving-tabindex",
+    "a11y-escape-closes-provenance",
+    "a11y-focus-visible-graph-aria",
+    "a11y-prefers-reduced-motion",
+    "progressive-connection-chip",
+    "progressive-searching-banner-skeletons",
+    "empty-offline-stale-kinds",
+    "empty-action-priority-per-kind",
+    "graph-selected-edge-node-seed",
+    "mobile-landscape-safe-area-touch-action"
   ],
   "demo": [
-    "?mode=discovery",
     "?mode=discovery&discoverySource=fixture&seed=seed-person-he&autorun=1",
-    "?mode=discovery&fixture=1&seed=seed-domain-org&autorun=1",
-    "?mode=discovery&discoverySource=fixture&seed=seed-person-latin&autorun=1"
+    "?mode=discovery&discoverySource=fixture&seed=seed-person-latin&autorun=1",
+    "?mode=discovery&discoverySource=fixture&seed=seed-domain-org&autorun=1"
   ],
-  "waitingOn": ["Foundation SSE plan events", "Foundation SSE graph density"],
-  "evidence": "UX-PREMIUM-MOBILE-ממשק-2026-09-22.md"
+  "checks": [
+    {
+      "name": "node --check discovery-ui.js",
+      "result": "PASS",
+      "detail": "SYNTAX_OK"
+    },
+    {
+      "name": "npm run test:checkpoint-d",
+      "result": "PASS",
+      "detail": "16 passed / 0 failed"
+    }
+  ],
+  "waitingOn": [
+    "Foundation SSE plan events density",
+    "Foundation SSE graph density"
+  ],
+  "remainingGaps": [
+    "Live plan/graph density still Server/Foundation flag-gated",
+    "Full axe re-run optional",
+    "Screenshot pack optional"
+  ],
+  "evidence": "UX-CHECKPOINT-I-POLISH-ממשק-2026-09-23.md",
+  "priorEvidence": "UX-CHECKPOINT-H-POLISH-ממשק-2026-09-23.md",
+  "lanesPass": 5
 }

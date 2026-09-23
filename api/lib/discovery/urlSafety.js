@@ -33,6 +33,12 @@ export function isBlockedDiscoveryHost(hostname) {
     h === 'metadata.azure.com' ||
     h.endsWith('.metadata.azure.com') ||
     h === 'metadata.packet' ||
+    // Preview SSRF: DNS-rebinding / local-dev wildcards that map to arbitrary IPs
+    h.endsWith('.nip.io') ||
+    h.endsWith('.sslip.io') ||
+    h.endsWith('.xip.io') ||
+    h.endsWith('.localtest.me') ||
+    h === 'localtest.me' ||
     // Opaque single-label that Node may resolve oddly
     h === '0' ||
     h === 'broadcasthost'

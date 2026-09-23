@@ -16,7 +16,7 @@ import {
   explainRanking,
 } from './store.js';
 import { familyIdForProvider, independenceTag, areFamiliesIndependent } from './sourceFamily.js';
-import { isForbiddenQid, valueHasForbidden } from '../forbiddenIdentities.js';
+import { isForbiddenQid, valueHasForbidden, redactForbiddenQidsInText } from '../forbiddenIdentities.js';
 
 /** @type {readonly string[]} */
 export const EVIDENCE_STRENGTHS = Object.freeze([
@@ -32,7 +32,7 @@ export const EPISTEMIC_STATES = Object.freeze(['candidate', 'corroborated_candid
 /** Aging bands (observation freshness — not identity confidence). */
 export const AGING_BANDS = Object.freeze(['fresh', 'recent', 'stale', 'unknown']);
 
-export const EVIDENCE_ENGINE_VERSION = '2026-09-23.evidence-acc1';
+export const EVIDENCE_ENGINE_VERSION = '2026-09-23.evidence-ff-acc1';
 
 /**
  * Acc bait probe — SoT denylist (never hardcode a single QID here).
@@ -60,11 +60,12 @@ function scrubContradictionForWhy(c) {
     .map((id) => String(id))
     .filter((id) => !hasForbiddenBait(id));
   if (!findingIds.length) return null;
+  const note = c.note == null ? undefined : String(c.note).slice(0, 160);
   return {
     type: c.type,
     domains,
     findingIds,
-    note: c.note,
+    ...(note && !hasForbiddenBait(note) ? { note } : {}),
   };
 }
 
@@ -88,12 +89,17 @@ function scrubCorroborationForWhy(e) {
   if (rel === 'same-entity' || rel === 'same_entity') {
     relationship = 'unknown'; // prefer UNKNOWN over wrong identity
   }
+  const noteRaw = e.note || 'INFORMATION≠IDENTITY';
+  const note = hasForbiddenBait(noteRaw) ? 'INFORMATION≠IDENTITY' : String(noteRaw).slice(0, 160);
   return {
     relationship,
+    findingIds,
     coalesceKeys,
-    families: e.families,
+    families: Array.isArray(e.families)
+      ? e.families.filter((f) => !hasForbiddenBait(f)).slice(0, 8)
+      : e.families,
     mode: e.mode,
-    note: e.note || 'INFORMATION≠IDENTITY',
+    note,
   };
 }
 
@@ -198,7 +204,9 @@ export function buildEvidenceProvenance(evidence, ctx = {}) {
       '',
   ).slice(0, 240);
   if (hasForbiddenBait(signal)) {
-    signal = signal.replace(/\bQ1701775\b/gi, '[REDACTED_QID]');
+    // SoT denylist redact (never hardcode a single QID — future denylist growth must not leak)
+    signal = redactForbiddenQidsInText(signal);
+    if (hasForbiddenBait(signal)) signal = ''; // prefer empty over residual bait
   }
   const extractionMethod =
     evidence?.extractionMethod ||
@@ -515,10 +523,29 @@ export function enrichSessionEvidence(session) {
       evidenceStrengthBest: best,
       evidenceHostFamilies: [...hostFamilies],
       why: {
+        question: 'why_this_finding',
         discoveryScore: explanation.discoveryScore,
-        identityScore: null,
+        identityScore: null, // NEVER — INFORMATION≠IDENTITY
+        identityClaim: false,
+        inferenceClaim: false,
+        epistemicCeiling: explanation.epistemicCeiling || 'candidate',
         rationale: explanation.rationale,
+        // Useful scrubbed explainability (providers/families/aging only — no identity)
         provenanceCount: explanation.provenanceChain.length,
+        provenanceProviders: [...new Set(
+          (explanation.provenanceChain || []).map((p) => p.providerId).filter(Boolean),
+        )].slice(0, 8),
+        provenanceFamilies: [...new Set(
+          (explanation.provenanceChain || []).map((p) => p.familyId || p.hostFamily).filter(Boolean),
+        )].slice(0, 8),
+        agingBands: [...new Set(
+          (explanation.provenanceChain || []).map((p) => p.agingBand).filter(Boolean),
+        )],
+        evidenceStrengths: [...new Set(
+          (explanation.provenanceChain || []).map((p) => p.evidenceStrength).filter(Boolean),
+        )],
+        contradictionCount: (explanation.contradictions || []).length,
+        corroborationCount: (explanation.corroboration || []).length,
         engineVersion: EVIDENCE_ENGINE_VERSION,
       },
     };

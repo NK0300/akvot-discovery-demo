@@ -8,6 +8,8 @@ import {
   normalizeQid,
   extractQid,
   isForbiddenQid,
+  valueHasForbidden,
+  redactForbiddenQidsInText,
   payloadContainsForbidden,
   stripForbiddenFromPayload,
   sanitizeCandidatesPayload,
@@ -197,6 +199,17 @@ assert('P0 decideStage FAKE seed NOT dossier', smithStage.uiState !== 'dossier')
 // --- fail-safe: sanitize never throws raw ---
 const safeEmpty = sanitizeCandidatesPayload(null);
 assert('sanitize null passthrough', safeEmpty == null);
+
+
+// --- SoT redactForbiddenQidsInText (LOCAL-WAVE-FF-ACC) ---
+{
+  const q = FORBIDDEN_IDENTITY_QIDS[0];
+  const red = redactForbiddenQidsInText(`see ${q} and https://www.wikidata.org/wiki/${q}`);
+  assert('redact removes denylist QID token', !valueHasForbidden(red) && !red.includes(q));
+  assert('redact keeps marker', /REDACTED_QID/i.test(red));
+  assert('redact leaves safe Q42', redactForbiddenQidsInText('Q42 ok').includes('Q42'));
+  assert('redact null-safe', redactForbiddenQidsInText(null) === '');
+}
 
 console.log('\n' + passed + ' passed, ' + failed + ' failed');
 process.exit(failed ? 1 : 0);

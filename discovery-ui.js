@@ -7,6 +7,15 @@
  * · provenance density · narrowSource tag · Foundation plan/graph soft surface.
  * GO-IMPL-UX plan/graph wire: defensive SSE plan+graph parsers · QueryPlan/Family/Budget
  * paint · soft graph panel · empty/UNKNOWN polish · facet Escape close · safe-area.
+ * Checkpoint G polish: graph canvas zoom/pan (+pinch) · facet focus-trap · aria-expanded
+ * · SSE live region · lifecycle prefers serverStage · hardened plan/graph parse.
+ * Checkpoint H polish: hierarchy (findings/facets/provenance/plan) · mobile sheet/safe-area
+ * · graph empty/loading/filter affordances · honest empty/error recovery (he).
+ * Checkpoint I polish: keyboard/a11y (roving findings · Escape provenance · focus-visible
+ * · graph aria · reduced-motion) · progressive loading chip/skeletons · graph select/seed
+ * · empty offline/stale · mobile landscape/safe-area/touch-action.
+ * Checkpoint J polish: provenance sticky+copy-link · facet narrow live announce · landmarks
+ * · print-safe Discovery · UX smoke strings · wave G–J closeout.
  * Wires to POST/GET /api/discovery/sessions · prefers SSE …/events · POST …/narrow
  * (server recompute); falls back to poll + discovery-fixtures/* progressive stages.
  * Entity-agnostic · INFORMATION ≠ IDENTITY · no Core /api/lookup changes.
@@ -97,6 +106,13 @@
   const SSE_MAX_RECONNECT = 5;
   const SSE_BOOT_MS = 2800;
   const SSE_BACKOFF_BASE_MS = 400;
+  /** Graph canvas view transform — module-level so re-renders keep zoom/pan. */
+  const GRAPH_SCALE_MIN = 0.45;
+  const GRAPH_SCALE_MAX = 2.75;
+  let graphView = { scale: 1, tx: 0, ty: 0 };
+  let graphFilter = 'all';
+  /** Last SSE status announcement for polite live region (avoid spam). */
+  let lastSseLiveText = '';
 
   function esc(s) {
     return String(s ?? '').replace(/[&<>"']/g, (c) =>
@@ -139,6 +155,8 @@
 
   /** @type {{ findings: object[], evidence: object[], facets: object[], status: string, progress: object, providers: object, sessionId?: string, source?: string, q?: string }} */
   let discState = emptyState();
+  resetGraphView();
+  lastSseLiveText = '';
   let selectedFacets = {}; // key -> Set(value)
   let discAbort = null;
   let discTimers = [];
@@ -180,6 +198,7 @@
       gaps: [],
       focusedNodeId: null,
       selectedEdgeId: null,
+      graphFilter: 'all',
       seedKind: (typeof document !== 'undefined' && document.querySelector) ? readSeedKindFromDom() : 'name',
       errorMessage: null,
       /** Soft Foundation surface — scrubbed plan summary when Server emits (flag-gated). */
@@ -194,6 +213,8 @@
       graphFromServer: false,
       /** True once an SSE `plan` event (or snapshot queryPlan) was ingested. */
       planSseSeen: false,
+      /** 'server' | 'sse-*' | 'client' — provenance of lifecycle rail stage. */
+      stageSource: null,
     };
   }
 
@@ -447,9 +468,31 @@
   function noteServerStage(raw, meta = {}) {
     const mapped = mapServerStage(raw);
     if (!mapped) return false;
+    const src = meta.source || 'server';
+    const strong =
+      src === 'server' ||
+      src === 'sse-lifecycle' ||
+      src === 'sse-phase' ||
+      src === 'sse-plan' ||
+      src === 'sse-graph' ||
+      meta.allowRegress === true;
+    const prev = discState.lifeStage;
+    const prevIdx = LIFE_ORDER.indexOf(prev);
+    const nextIdx = LIFE_ORDER.indexOf(mapped);
+    // Soft event-type hints (sse-finding / sse-evidence / sse-rel / sse-event) must not
+    // regress an already-advanced rail. Explicit server/lifecycle stages always win.
+    if (
+      !strong &&
+      prevIdx >= 0 &&
+      nextIdx >= 0 &&
+      nextIdx < prevIdx &&
+      mapped !== 'COMPLETE'
+    ) {
+      return false;
+    }
     discState.serverStage = raw;
     discState.lifeStage = mapped;
-    discState.stageSource = meta.source || 'server';
+    discState.stageSource = src;
     return true;
   }
 
@@ -464,7 +507,13 @@
     let raw = null;
     if (data.queryPlan && typeof data.queryPlan === 'object') raw = data.queryPlan;
     else if (data.plan && typeof data.plan === 'object') raw = data.plan;
-    else if (data.planId || data.seedClass || data.intents || data.orderedIntents || data.families || data.sourceFamilies) {
+    else if (data.session && typeof data.session === 'object' && data.session.queryPlan && typeof data.session.queryPlan === 'object') {
+      raw = data.session.queryPlan;
+    } else if (data.session && typeof data.session === 'object' && data.session.plan && typeof data.session.plan === 'object') {
+      raw = data.session.plan;
+    } else if (data.payload && typeof data.payload === 'object' && (data.payload.queryPlan || data.payload.plan || data.payload.planId)) {
+      return parsePlanFromSse(data.payload);
+    } else if (data.planId || data.seedClass || data.intents || data.orderedIntents || data.families || data.sourceFamilies) {
       raw = data;
     }
     if (!raw || typeof raw !== 'object') return null;
@@ -550,23 +599,53 @@
    */
   function parseGraphFromSse(data) {
     if (!data || typeof data !== 'object') return null;
-    const g = data.graph && typeof data.graph === 'object' ? data.graph : null;
-    const nodes = Array.isArray(g && g.nodes)
+    if (data.payload && typeof data.payload === 'object' && (data.payload.graph || data.payload.nodes || data.payload.edges)) {
+      return parseGraphFromSse(data.payload);
+    }
+    const g =
+      data.graph && typeof data.graph === 'object'
+        ? data.graph
+        : data.evidenceGraph && typeof data.evidenceGraph === 'object'
+          ? data.evidenceGraph
+          : null;
+    const nodesIn = Array.isArray(g && g.nodes)
       ? g.nodes
-      : Array.isArray(data.nodes)
-        ? data.nodes
-        : null;
-    const edges = Array.isArray(g && g.edges)
+      : Array.isArray(g && g.vertices)
+        ? g.vertices
+        : Array.isArray(data.nodes)
+          ? data.nodes
+          : Array.isArray(data.vertices)
+            ? data.vertices
+            : null;
+    const edgesIn = Array.isArray(g && g.edges)
       ? g.edges
-      : Array.isArray(data.edges)
-        ? data.edges
-        : null;
-    if (nodes == null && edges == null) return null;
+      : Array.isArray(g && g.links)
+        ? g.links
+        : Array.isArray(data.edges)
+          ? data.edges
+          : Array.isArray(data.links)
+            ? data.links
+            : null;
+    if (nodesIn == null && edgesIn == null) return null;
+    const nodes = (nodesIn || [])
+      .filter((n) => n && (n.id != null || n.nodeId != null))
+      .map((n) => ({
+        ...n,
+        id: n.id != null ? n.id : n.nodeId,
+      }))
+      .slice(0, 200);
+    const edges = (edgesIn || [])
+      .filter((e) => e && (e.id != null || e.from != null || e.source != null || e.to != null || e.target != null))
+      .map((e, i) => ({
+        ...e,
+        id: e.id != null ? e.id : `e-${e.from || e.source || i}-${e.to || e.target || i}`,
+        from: e.from != null ? e.from : e.source,
+        to: e.to != null ? e.to : e.target,
+      }))
+      .slice(0, 400);
     return {
-      nodes: (nodes || []).filter((n) => n && n.id != null).slice(0, 200),
-      edges: (edges || [])
-        .filter((e) => e && (e.id != null || e.from != null || e.source != null))
-        .slice(0, 400),
+      nodes,
+      edges,
       meta: (g && g.meta) || data.meta || {},
     };
   }
@@ -635,13 +714,16 @@
 
   function deriveLifeStage(state) {
     const st = state.status;
-    // Prefer Foundation/B0 stage when present (flag ON emits PLAN/DISCOVER; B0 emits S1…S10)
-    const mapped = mapServerStage(state.serverStage || state.progress?.stage);
+    // Prefer Foundation/B0 / SSE stage when present — local heuristic is fallback only.
+    // Never invent identity; stage labels are process UX only.
+    const mapped = mapServerStage(state.serverStage || state.progress?.stage || state.progress?.lifecyclePhase);
     if (mapped) {
-      state.stageSource = state.stageSource || 'server';
+      if (!state.stageSource || state.stageSource === 'client') {
+        state.stageSource = state.serverStage ? 'server' : 'server';
+      }
       // Terminal status still wins for COMPLETE badge
       if ((st === 'complete' || st === 'failed_soft') && mapped !== 'COMPLETE') {
-        state.stageSource = 'server+terminal';
+        state.stageSource = (state.stageSource || 'server') + '+terminal';
         return 'COMPLETE';
       }
       return mapped;
@@ -874,13 +956,17 @@
   async function applyFacetChange() {
     if (shouldAttemptServerNarrow()) {
       const ok = await postNarrow();
-      if (ok) return;
+      if (ok) {
+        announceFacetNarrow({ source: 'server' });
+        return;
+      }
       // graceful degrade: client-side filter only
       discState.narrowSource = 'client';
     } else {
       discState.narrowSource = Object.keys(selectedFacets).length ? 'client' : 'none';
     }
     renderDiscovery();
+    announceFacetNarrow({ source: discState.narrowSource || 'client' });
   }
 
   /**
@@ -938,10 +1024,12 @@
     const body = opts.body || '';
     const soft = opts.soft !== false;
     const hint = opts.hint || '';
+    const actions = opts.actions || '';
     return `<div class="disc-empty-premium${soft ? ' soft' : ''}" data-empty="${esc(kind)}" role="status">
       <div class="disc-empty-kicker">${esc(title)}</div>
       ${body ? `<p class="disc-empty-body">${body}</p>` : ''}
       ${hint ? `<div class="disc-empty-hint">${esc(hint)}</div>` : ''}
+      ${actions ? `<div class="disc-empty-actions">${actions}</div>` : ''}
     </div>`;
   }
 
@@ -1029,7 +1117,7 @@
         ? `<span class="disc-source-tag disc-plan-tag">plan:ready</span>`
         : '';
 
-    return `<div class="disc-plan-panel" aria-label="תוכנית גילוי · QueryPlan soft">
+    return `<div class="disc-plan-panel disc-plan-hierarchy" aria-label="תוכנית גילוי · QueryPlan soft">
       <div class="disc-plan-head">
         <span class="k">QUERY PLAN · FAMILY · BUDGET</span>
         <span class="s">search-intent only · לא זהות</span>
@@ -1041,6 +1129,23 @@
       ${intentBits ? `<ol class="disc-intent-list">${intentBits}</ol>` : ''}
       <p class="disc-plan-blurb">תוכנית / משפחה / תקציב הם איתותי חיפוש בלבד. <strong>plan ≠ identity</strong> · INFORMATION ≠ IDENTITY.</p>
     </div>`;
+  }
+
+
+  /** Connection / stream chip — process UX only · never identity. */
+  function connectionChip() {
+    const st = discState.status;
+    const tx = discState.transport || '';
+    let kind = 'idle';
+    let label = 'מוכן';
+    if (st === 'reconnecting') { kind = 'reconnecting'; label = 'מתחבר מחדש'; }
+    else if (st === 'running' || st === 'partial') {
+      kind = tx === 'sse' || tx === 'sse→get' ? 'live' : 'searching';
+      label = kind === 'live' ? 'חי · SSE' : 'מחפש…';
+    } else if (st === 'complete') { kind = 'complete'; label = 'הושלם'; }
+    else if (st === 'failed_soft') { kind = 'failed'; label = 'חלקי / שגיאה'; }
+    else if (st === 'idle') { kind = 'idle'; label = 'מוכן'; }
+    return `<span class="disc-conn-chip disc-conn-${kind}" data-conn="${esc(kind)}" title="מצב חיבור · לא זהות">${esc(label)}</span>`;
   }
 
   function renderProgressStrip() {
@@ -1103,10 +1208,19 @@
     const graphTag = discState.graphFromServer
       ? `<span class="disc-source-tag disc-graph-tag" title="גרף משרת · soft">graph:sse</span>`
       : '';
+    // Concise SSE live announcement (separate polite region · avoids re-reading whole strip)
+    const liveBits = [label, `שלב ${life}`];
+    if (findingsN) liveBits.push(`${findingsN} ממצאים`);
+    if (st === 'reconnecting' && discState.reconnectAttempt) {
+      liveBits.push(`reconnect ${discState.reconnectAttempt}/${SSE_MAX_RECONNECT}`);
+    }
+    announceSseLive(liveBits.join(' · '));
     return `
-      <div id="disc-progress" class="disc-life" role="status" aria-live="polite" aria-atomic="false" data-disc-status="${esc(st)}" data-life="${esc(life)}" aria-label="התקדמות גילוי: ${esc(label)}, שלב ${esc(life)}">
+      <div id="disc-sse-live" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true">${esc(lastSseLiveText)}</div>
+      <div id="disc-progress" class="disc-life" role="status" aria-live="polite" aria-atomic="false" data-disc-status="${esc(st)}" data-life="${esc(life)}" data-stage-source="${esc(discState.stageSource || '')}" aria-label="התקדמות גילוי: ${esc(label)}, שלב ${esc(life)}">
         <div class="disc-life-top">
           <span class="disc-status${stClass}">${esc(label)}</span>${reconnectHint}
+          ${connectionChip()}
           <span class="disc-counts">${findingsN} ממצאים · ${done}/${total || '—'} מקורות · שלב ${esc(life)}</span>
           ${discState.source ? `<span class="disc-source-tag">${esc(discState.source)}</span>` : ''}
           ${discState.transport ? `<span class="disc-source-tag">tx:${esc(discState.transport)}</span>` : ''}
@@ -1130,8 +1244,14 @@
     if (!facets.length) {
       return `<aside class="disc-facets" id="disc-facets">
         <details class="disc-facets-drawer" open>
-          <summary>מסננים <span class="chev">facets · אין עדיין</span></summary>
-          <div class="disc-facets-body"><div class="disc-facet-empty">מעדכן מסננים…</div></div>
+          <summary aria-expanded="true" aria-controls="disc-facets-body">מסננים <span class="chev">facets · אין עדיין</span></summary>
+          <div class="disc-facets-body" id="disc-facets-body">
+            <div class="disc-facet-sheet-head"><span class="k">FACETS</span><span class="s">סינון תצוגה · לא זהות</span></div>
+            ${(discState.status === 'running' || discState.status === 'partial' || discState.status === 'reconnecting')
+              ? `<div class="disc-facet-empty disc-facet-searching" role="status"><span class="disc-searching-dot" aria-hidden="true"></span>מחפש מסננים… · עדיין אין ערכים · לא זהות</div>
+                 <div class="disc-skel-block disc-skel-facet"><div class="skel-line short"></div><div class="skel-line mid"></div></div>`
+              : `<div class="disc-facet-empty">אין עדיין ערכים לסינון · UNKNOWN soft</div>`}
+          </div>
         </details>
       </aside>`;
     }
@@ -1144,17 +1264,20 @@
             return `<button type="button" class="disc-facet-chip${on ? ' on' : ''}" data-fkey="${esc(f.key)}" data-fval="${esc(b.value)}" aria-pressed="${on ? 'true' : 'false'}">${esc(b.value)} <span class="n">${esc(b.count)}</span></button>`;
           })
           .join('');
-        return `<div class="disc-facet-group" role="group" aria-label="${esc(label)}"><div class="disc-facet-label">${esc(label)}</div><div class="disc-facet-chips">${chips}</div></div>`;
+        const bucketN = (f.buckets || []).length;
+        return `<div class="disc-facet-group" role="group" aria-label="${esc(label)}"><div class="disc-facet-label"><span class="fl">${esc(label)}</span><span class="fn">${bucketN}</span></div><div class="disc-facet-chips">${chips}</div></div>`;
       })
       .join('');
     const clearBtn = activeN
       ? `<button type="button" class="disc-facet-clear" id="disc-facet-clear">נקה מסננים</button>`
       : '';
     const summaryN = activeN ? `${activeN} פעילים` : 'facets';
+    const drawerOpen = !!activeN;
     return `<aside class="disc-facets" id="disc-facets" aria-label="מסנני ממצאים">
-      <details class="disc-facets-drawer"${activeN ? ' open' : ''}>
-        <summary>מסננים <span class="chev">${esc(summaryN)}</span></summary>
-        <div class="disc-facets-body">
+      <details class="disc-facets-drawer"${drawerOpen ? ' open' : ''}>
+        <summary aria-expanded="${drawerOpen ? 'true' : 'false'}" aria-controls="disc-facets-body">מסננים <span class="chev">${esc(summaryN)}</span></summary>
+        <div class="disc-facets-body" id="disc-facets-body">
+          <div class="disc-facet-sheet-head"><span class="k">FACETS</span><span class="s">${esc(summaryN)} · סינון ≠ זהות</span></div>
           <div class="stamp"><span>מסננים</span><span class="n">facets</span></div>
           ${groups}${clearBtn}
         </div>
@@ -1179,15 +1302,18 @@
       ? `<div class="disc-prov-providers" aria-label="ספקי ראיות">${providerSet.map((p) => `<span class="disc-prov ok">${esc(p)}</span>`).join('')}</div>`
       : '';
     const provenance = evList
-      .map((e) => {
+      .map((e, ei) => {
         const url = e.provenanceUrl || e.url || '';
         const href = safeHref(url);
         const host = hostnameOf(url);
-        return `<div class="disc-ev">
+        const copyBtn = href !== '#'
+          ? `<button type="button" class="disc-copy-link" data-copy-url="${esc(url)}" aria-label="העתק קישור מקור ${ei + 1}">העתק קישור</button>`
+          : '';
+        return `<div class="disc-ev" role="listitem">
           <div class="disc-prov-meta">
             <span class="disc-ev-k">ספק</span><span class="disc-ev-v">${esc(e.providerId || e.provider || '—')}</span>
             ${host ? `<span class="disc-ev-k">מארח</span><span class="disc-ev-v disc-ev-host">${esc(host)}</span>` : ''}
-            <span class="disc-ev-k">URL</span><span class="disc-ev-v">${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(url)}</a>` : esc(url || '—')}</span>
+            <span class="disc-ev-k">URL</span><span class="disc-ev-v disc-ev-urlrow">${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(url)}</a>` : esc(url || '—')}${copyBtn}</span>
             ${e.quote ? `<span class="disc-ev-k">ציטוט</span><span class="disc-ev-v"><q>${esc(e.quote)}</q></span>` : ''}
             <span class="disc-ev-k">נשלף</span><span class="disc-ev-v mono">${esc(e.retrievedAt || '—')}</span>
           </div>
@@ -1197,45 +1323,66 @@
     const firstUrl = evList[0] ? safeHref(evList[0].provenanceUrl || evList[0].url) : '#';
     const open = opts.forceOpenEvidence || opts.hi ? '' : ' hidden';
     const badge = rel || urlAlone ? relBadge(rel || 'unknown', { urlAlone }) : '';
-    return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}">
+    const rank = opts.rank
+      ? `<span class="disc-finding-rank" title="דירוג גילוי · לא זהות">#${esc(opts.rank)}</span>`
+      : '';
+    const evN = evList.length;
+    const tab = opts.rovingIndex === 0 ? '0' : '-1';
+    return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}" role="option" tabindex="${tab}" aria-selected="false">
       <div class="disc-finding-head">
+        ${rank}
         <span class="disc-kind">${esc(kind)}</span>
         ${score}
         ${badge}
+        ${evN ? `<span class="disc-finding-evn" title="מספר ראיות מצוטטות">${evN} ראיות</span>` : ''}
       </div>
-      <h3 class="disc-finding-title">${esc(f.title)}</h3>
+      <h3 class="disc-finding-title" id="finding-title-${esc(f.id)}">${esc(f.title)}</h3>
       ${f.summary ? `<p class="disc-finding-sum">${esc(f.summary)}</p>` : ''}
       <div class="disc-finding-actions">
         <button type="button" class="disc-prov-toggle" aria-expanded="${open ? 'false' : 'true'}">למה הממצא? · ראיות</button>
         ${firstUrl !== '#' ? `<a class="go" href="${firstUrl}" target="_blank" rel="noopener noreferrer">פתח מקור</a>` : ''}
         <button type="button" class="disc-prov-toggle disc-focus-node" data-node="${esc(f.id)}">הצג בגרף</button>
       </div>
-      <div class="disc-provenance"${open}>
-        <div class="disc-provenance-label">ראיות · provenance · ניתן לבדיקה · לא commit זהות</div>
+      <div class="disc-provenance"${open} id="prov-${esc(f.id)}" role="region" aria-label="ראיות provenance לממצא · לא זהות">
+        <div class="disc-provenance-label disc-provenance-sticky"><span class="k">PROVENANCE</span> <span class="s">${evList.length} מקורות · ניתן לבדיקה · לא commit זהות</span>
+          <button type="button" class="disc-prov-close secondary" data-prov-close aria-label="סגור ראיות">סגור</button>
+        </div>
         ${providerRow}
-        ${provenance || '<div class="disc-muted">אין provenance (cite-or-drop)</div>'}
+        <div class="disc-prov-list" role="list">${provenance || '<div class="disc-muted">אין provenance (cite-or-drop)</div>'}</div>
       </div>
     </article>`;
   }
   function renderExecutiveSummary(list, gaps) {
     const providers = discState.providers || {};
     const okN = Object.values(providers).filter((s) => s === 'ok' || s === 'partial').length;
-    const evN = (discState.evidence || []).length;
+    const visibleEvidence = new Set(
+      (list || []).flatMap((f) => Array.isArray(f.evidenceIds) ? f.evidenceIds : []),
+    );
+    const evN = visibleEvidence.size || (discState.evidence || []).length;
     const edgeN = ((discState.graph && discState.graph.edges) || []).length;
     const life = discState.lifeStage || deriveLifeStage(discState);
-    return `<section class="disc-sec" id="disc-sec-exec" aria-labelledby="disc-h-exec">
+    const lead = list && list[0];
+    const leadEvidence = lead && Array.isArray(lead.evidenceIds) ? lead.evidenceIds.length : 0;
+    const readout = (list || []).slice(0, 3).map((f, i) => `
+      <li><span class="disc-readout-index">0${i + 1}</span><span><strong>${esc(f.title)}</strong><small>${lead && f.id === lead.id ? 'האות הבולט ביותר לפי דירוג גילוי' : 'ממצא שדורש אימות במקור'}</small></span></li>`).join('');
+    return `<section class="disc-sec disc-sec-exec" id="disc-sec-exec" aria-labelledby="disc-h-exec">
       <div class="disc-sec-head">
         <h2 id="disc-h-exec"><span class="code">01</span> סיכום גילוי · Executive</h2>
         <span class="n">${esc(life)}</span>
       </div>
       <div class="disc-sec-body">
         <div class="disc-exec-grid">
-          <div class="disc-metric"><div class="k">SEED</div><div class="v" style="font-size:14px;word-break:break-word">${esc(discState.q || '—')}</div><div class="s">סוג רמז: ${esc(discState.seedKind || '—')}</div></div>
-          <div class="disc-metric"><div class="k">FINDINGS</div><div class="v">${list.length}</div><div class="s">ממצאים מוצגים${Object.keys(selectedFacets).length ? ' (מסונן)' : ''}</div></div>
-          <div class="disc-metric"><div class="k">EVIDENCE</div><div class="v">${evN}</div><div class="s">${okN} מקורות פעילים</div></div>
-          <div class="disc-metric"><div class="k">GAPS</div><div class="v">${gaps.length}</div><div class="s">${edgeN} קשרי גרף</div></div>
+          <div class="disc-metric"><div class="k">SEED</div><div class="v" style="font-size:14px;word-break:break-word">${esc(discState.q || '—')}</div><div class="s">סוג קלט: ${esc(discState.seedKind || '—')}</div></div>
+          <div class="disc-metric"><div class="k">FINDINGS</div><div class="v">${list.length}</div><div class="s">ממצאים מוצגים${Object.keys(selectedFacets).length ? ' · מסונן' : ''}</div></div>
+          <div class="disc-metric"><div class="k">EVIDENCE</div><div class="v">${evN}</div><div class="s">${okN} מקורות פעילים · ניתן לבדיקה</div></div>
+          <div class="disc-metric"><div class="k">GAPS</div><div class="v">${gaps.length}</div><div class="s">${edgeN} קשרים במשטח</div></div>
         </div>
-        <p class="disc-exec-blurb">אוסף מידע ציבורי סביב ה-seed. דירוג = רלוונטיות גילוי בלבד. <strong>אין טענת זהות</strong>. UNKNOWN נשאר UNKNOWN. קשרים הם מועמדים עד שנבדקו בראיות.</p>
+        <div class="disc-exec-readout" aria-label="קריאת מצב">
+          <div class="disc-exec-readout-head"><span>QUICK READ</span><span>${lead ? `ראיה ראשית · ${leadEvidence}` : 'ממתין לראיות'}</span></div>
+          ${lead ? `<p class="disc-exec-lead"><strong>${esc(lead.title)}</strong>${lead.summary ? ` <span>${esc(lead.summary)}</span>` : ''}</p>` : renderPremiumEmpty({ kind: 'summary', title: 'אין איתות ראשי עדיין', body: 'הממצאים יופיעו כאן כשהמערכת תקבל נתונים ציבוריים מצוטטים.', hint: 'אין איתות ≠ no-match' })}
+          ${readout ? `<ol class="disc-readout-list">${readout}</ol>` : ''}
+        </div>
+        <p class="disc-exec-blurb">אוסף מידע ציבורי סביב ה-seed. דירוג = רלוונטיות גילוי בלבד. <strong>אין טענת זהות</strong>. UNKNOWN נשאר UNKNOWN; קשרים הם מועמדים עד שנבדקו בראיות.</p>
       </div>
     </section>`;
   }
@@ -1252,12 +1399,13 @@
       ? items
           .slice(0, 40)
           .map(({ finding, evidence: e }) => {
-            const href = safeHref(e.provenanceUrl);
+            const evidenceUrl = e.provenanceUrl || e.url || '';
+            const href = safeHref(evidenceUrl);
             return `<div class="disc-rel-row" tabindex="0" data-fid="${esc(finding.id)}">
               <div>
                 <p class="t">${esc(finding.title)}</p>
-                <div class="m"><span class="disc-ev-k">${esc(e.providerId || '')}</span>
-                  ${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(e.provenanceUrl)}</a>` : esc(e.provenanceUrl || '')}
+                <div class="m"><span class="disc-ev-k">${esc(e.providerId || e.provider || '')}</span>
+                  ${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(evidenceUrl)}</a>` : esc(evidenceUrl || '')}
                   ${e.quote ? `<div><q>${esc(e.quote)}</q></div>` : ''}
                 </div>
               </div>
@@ -1326,27 +1474,53 @@
   function renderSourcesSection() {
     const providers = discState.providers || {};
     const entries = Object.entries(providers);
-    const body = entries.length
-      ? entries
-          .map(([id, s]) => {
-            const n = (discState.findings || []).filter((f) => (f.providers || []).includes(id)).length;
-            return `<div class="disc-src-row">
-              <div><p class="t" style="margin:0 0 4px;font-size:13px;font-weight:600">${esc(id)}</p>
-              <div class="m" style="font-size:12px;color:var(--disc-soft)">${n} ממצאים מקושרים</div></div>
-              <span class="disc-prov ${esc(s)}">${esc(s)}</span>
-            </div>`;
-          })
-          .join('')
+    const findings = discState.findings || [];
+    const evidence = discState.evidence || [];
+    const sourceMap = new Map();
+    evidence.forEach((e) => {
+      const url = e && (e.provenanceUrl || e.url);
+      const host = hostnameOf(url) || 'מקור ללא מארח';
+      const provider = e && (e.providerId || e.provider) || 'provider לא ידוע';
+      const key = `${provider}|${host}`;
+      const row = sourceMap.get(key) || { provider, host, url, evidence: 0, findings: new Set() };
+      row.evidence += 1;
+      findings.forEach((f) => {
+        if ((f.evidenceIds || []).includes(e.id)) row.findings.add(f.id);
+      });
+      if (!row.url && url) row.url = url;
+      sourceMap.set(key, row);
+    });
+    const sourceRows = [...sourceMap.values()].slice(0, 40).map((row) => {
+      const href = safeHref(row.url);
+      const link = href !== '#'
+        ? `<a class="disc-source-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(row.host)}</a>`
+        : `<span class="disc-source-link muted">${esc(row.host)}</span>`;
+      return `<div class="disc-src-row disc-src-evidence">
+        <div><p class="t" style="margin:0 0 4px;font-size:13px;font-weight:600">${link}</p>
+        <div class="m" style="font-size:12px;color:var(--disc-soft)">${esc(row.provider)} · ${row.evidence} ראיות · ${row.findings.size} ממצאים</div></div>
+        <span class="disc-badge fact">CITED</span>
+      </div>`;
+    }).join('');
+    const providerRows = entries.map(([id, status]) => {
+      const n = findings.filter((f) => (f.providers || []).includes(id)).length;
+      return `<div class="disc-src-row disc-src-provider">
+        <div><p class="t" style="margin:0 0 4px;font-size:13px;font-weight:600">${esc(id)}</p>
+        <div class="m" style="font-size:12px;color:var(--disc-soft)">${n} ממצאים מקושרים · סטטוס provider</div></div>
+        <span class="disc-prov ${esc(status)}">${esc(status)}</span>
+      </div>`;
+    }).join('');
+    const body = sourceRows || providerRows
+      ? `${sourceRows ? `<div class="disc-source-subhead">מקורות מצוטטים</div>${sourceRows}` : ''}${providerRows ? `<div class="disc-source-subhead">כיסוי providers</div>${providerRows}` : ''}`
       : renderPremiumEmpty({
           kind: 'sources',
           title: 'ממתינים למקורות',
-          body: 'סטטוס providers יופיע עם התקדמות הגילוי או אירוע plan/family.',
+          body: 'סטטוס providers יופיע עם התקדמות הגילוי. מקור שלא הוחזר אינו no-match.',
           hint: 'error/partial ≠ no-match',
         });
     return `<section class="disc-sec" id="disc-sec-src" aria-labelledby="disc-h-src">
-      <div class="disc-sec-head"><h2 id="disc-h-src"><span class="code">05</span> מקורות · Sources</h2><span class="n">${entries.length}</span></div>
+      <div class="disc-sec-head"><h2 id="disc-h-src"><span class="code">05</span> מקורות · Sources</h2><span class="n">${sourceMap.size || entries.length}</span></div>
       <div class="disc-sec-body">
-        <p class="disc-src-intro">שקיפות מקורות: סטטוס לכל provider. מספר ממצאים ≠ משפחות בלתי-תלויות. error/partial אינם no-match.</p>
+        <p class="disc-src-intro">מקור מצוטט = כתובת ציבורית שניתן לפתוח ולבדוק. מספר ממצאים ≠ מספר משפחות בלתי־תלויות. error/partial אינם no-match.</p>
         <div class="disc-src-list">${body}</div>
       </div>
     </section>`;
@@ -1378,10 +1552,325 @@
     </section>`;
   }
 
+  function clampGraphScale(s) {
+    return Math.min(GRAPH_SCALE_MAX, Math.max(GRAPH_SCALE_MIN, s));
+  }
+
+  function resetGraphView() {
+    graphView = { scale: 1, tx: 0, ty: 0 };
+  }
+
+  function announceSseLive(text) {
+    const t = String(text || '').trim();
+    if (!t || t === lastSseLiveText) return;
+    lastSseLiveText = t;
+    const el = document.getElementById('disc-sse-live');
+    if (el) el.textContent = t;
+  }
+
+  /** Facet/narrow count announce — soft UX only · never identity. */
+  function announceFacetNarrow(opts = {}) {
+    const findingsN = opts.findingsN != null ? opts.findingsN : (filteredFindings().length);
+    const activeFacets = Object.keys(selectedFacets).length;
+    const src = opts.source || discState.narrowSource || 'none';
+    const bits = [
+      activeFacets ? `${activeFacets} מסננים פעילים` : 'ללא מסננים',
+      `${findingsN} ממצאים מוצגים`,
+      src !== 'none' ? `narrow:${src}` : null,
+      'סינון ≠ זהות',
+    ].filter(Boolean);
+    announceSseLive(bits.join(' · '));
+  }
+
+
+  /** Layout nodes in a soft ring — display only · not identity geometry. */
+  function layoutGraphNodes(nodes, w, h) {
+    const cx = w / 2;
+    const cy = h / 2;
+    const n = Math.max(nodes.length, 1);
+    const r = Math.min(w, h) * 0.34;
+    return nodes.map((node, i) => {
+      if (node.kind === 'seed' || node.id === 'seed') {
+        return { ...node, _x: cx, _y: cy };
+      }
+      const angle = (Math.PI * 2 * i) / n - Math.PI / 2;
+      return { ...node, _x: cx + Math.cos(angle) * r, _y: cy + Math.sin(angle) * r };
+    });
+  }
+
+  function edgeHasEvidence(edge) {
+    return Array.isArray(edge && edge.evidenceIds) && edge.evidenceIds.length > 0 ||
+      Array.isArray(edge && edge.evidence) && edge.evidence.length > 0;
+  }
+
+  function filterGraphForDisplay(graph) {
+    const rawNodes = Array.isArray(graph && graph.nodes) ? graph.nodes : [];
+    const rawEdges = Array.isArray(graph && graph.edges) ? graph.edges : [];
+    if (graphFilter === 'all') return { ...graph, nodes: rawNodes, edges: rawEdges };
+    const findingById = new Map((discState.findings || []).map((f) => [String(f.id), f]));
+    const evidenceIds = new Set(
+      (discState.evidence || []).map((e) => String(e.id)),
+    );
+    const edgeIsEvidenceBacked = (e) => edgeHasEvidence(e) ||
+      (Array.isArray(e && e.evidenceIds) && e.evidenceIds.some((id) => evidenceIds.has(String(id))) ||
+        [e && (e.from ?? e.source), e && (e.to ?? e.target)].some((id) => {
+          const f = findingById.get(String(id));
+          return f && Array.isArray(f.evidenceIds) && f.evidenceIds.length > 0;
+        }));
+    const wantedEdges = rawEdges.filter((e) => {
+      const rel = String(e.relationship || e.kind || 'unknown');
+      return graphFilter === 'evidence' ? edgeIsEvidenceBacked(e) : /unknown/i.test(rel);
+    });
+    const wantedIds = new Set(['seed']);
+    wantedEdges.forEach((e) => {
+      if (e.from ?? e.source) wantedIds.add(String(e.from ?? e.source));
+      if (e.to ?? e.target) wantedIds.add(String(e.to ?? e.target));
+    });
+    if (graphFilter === 'evidence') {
+      rawNodes.forEach((n) => {
+        const f = findingById.get(String(n.id));
+        if (f && Array.isArray(f.evidenceIds) && f.evidenceIds.length) wantedIds.add(String(n.id));
+      });
+    }
+    return {
+      ...graph,
+      nodes: rawNodes.filter((n) => wantedIds.has(String(n.id))),
+      edges: wantedEdges,
+    };
+  }
+
+  function renderGraphCanvas(graph, nodeLabelFn) {
+    const viewGraph = filterGraphForDisplay(graph);
+    const nodes = (viewGraph.nodes || []).slice(0, 48);
+    const edges = (viewGraph.edges || []).slice(0, 120);
+    if (!nodes.length) return '';
+    const W = 640;
+    const H = 360;
+    const laid = layoutGraphNodes(nodes, W, H);
+    const byId = new Map(laid.map((n) => [String(n.id), n]));
+    const edgeLines = edges
+      .map((e) => {
+        const from = byId.get(String(e.from ?? e.source));
+        const to = byId.get(String(e.to ?? e.target));
+        if (!from || !to) return '';
+        const rel = e.relationship || e.kind || 'unknown';
+        const soft = e.derived ? ' derived' : '';
+        const onEdge = focus && (String(e.from ?? e.source) === String(focus) || String(e.to ?? e.target) === String(focus));
+        return `<line class="disc-graph-edge${soft}${onEdge ? ' on' : ''}" data-edge="${esc(e.id)}" x1="${from._x.toFixed(1)}" y1="${from._y.toFixed(1)}" x2="${to._x.toFixed(1)}" y2="${to._y.toFixed(1)}" aria-hidden="true"><title>${esc(REL_HE[rel] || rel)}</title></line>`;
+      })
+      .join('');
+    const focus = discState.focusedNodeId;
+    const nodeBtns = laid
+      .map((n) => {
+        const on = focus && String(n.id) === String(focus);
+        const label = nodeLabelFn(n);
+        const isSeed = n.kind === 'seed' || n.id === 'seed';
+        return `<button type="button" class="disc-graph-canvas-node${on ? ' on' : ''}${isSeed ? ' seed' : ''}" data-node="${esc(n.id)}" style="left:${n._x.toFixed(1)}px;top:${n._y.toFixed(1)}px" title="${esc(label)}" aria-pressed="${on ? 'true' : 'false'}" aria-current="${on ? 'true' : 'false'}" aria-label="${esc((isSeed ? 'seed · ' : '') + label)} · צומת גרף · לא זהות"><span class="nk">${esc(isSeed ? 'seed' : (n.kind || n.type || 'node'))}</span><span class="nl">${esc(String(label).slice(0, 36))}</span></button>`;
+      })
+      .join('');
+    const pct = Math.round(graphView.scale * 100);
+    return `<div class="disc-graph-canvas-wrap">
+      <div class="disc-graph-canvas-toolbar" role="toolbar" aria-label="בקרות זום וסינון גרף · לא זהות">
+        <button type="button" class="disc-graph-tool" id="disc-graph-zoom-out" aria-label="הקטן זום" title="הקטן (−)">−</button>
+        <button type="button" class="disc-graph-tool" id="disc-graph-zoom-in" aria-label="הגדל זום" title="הגדל (+)">+</button>
+        <button type="button" class="disc-graph-tool" id="disc-graph-zoom-reset" aria-label="איפוס זום ופאן" title="איפוס (0)">איפוס</button>
+        <span class="disc-graph-filter-label">תצוגה</span>
+        ${[['all','הכול'],['evidence','עם ראיות'],['unknown','UNKNOWN']].map(([key,label]) => `<button type="button" class="disc-graph-tool disc-graph-filter${graphFilter === key ? ' on' : ''}" data-graph-filter="${key}" aria-pressed="${graphFilter === key ? 'true' : 'false'}">${label}</button>`).join('')}
+        <span class="disc-graph-zoom-label" id="disc-graph-zoom-label" aria-live="polite">${pct}%</span>
+        <span class="disc-muted disc-graph-hint">גלגלת · גרירה · צביטה</span>
+      </div>
+      <div class="disc-graph-canvas" id="disc-graph-canvas" tabindex="0" role="application" aria-label="קנבס גרף ראיות · זום ופאן · לא זהות">
+        <div class="disc-graph-canvas-inner" id="disc-graph-canvas-inner" style="width:${W}px;height:${H}px;transform:translate(${graphView.tx}px,${graphView.ty}px) scale(${graphView.scale})">
+          <svg class="disc-graph-svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true">${edgeLines}</svg>
+          ${nodeBtns}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function applyGraphViewTransform() {
+    const inner = document.getElementById('disc-graph-canvas-inner');
+    const label = document.getElementById('disc-graph-zoom-label');
+    if (inner) {
+      inner.style.transform = `translate(${graphView.tx}px, ${graphView.ty}px) scale(${graphView.scale})`;
+    }
+    if (label) label.textContent = `${Math.round(graphView.scale * 100)}%`;
+  }
+
+  function bindGraphCanvasControls(out) {
+    const canvas = out.querySelector('#disc-graph-canvas');
+    if (!canvas) return;
+    const zoomIn = out.querySelector('#disc-graph-zoom-in');
+    const zoomOut = out.querySelector('#disc-graph-zoom-out');
+    const zoomReset = out.querySelector('#disc-graph-zoom-reset');
+    const zoomBy = (factor, cx, cy) => {
+      const prev = graphView.scale;
+      const next = clampGraphScale(prev * factor);
+      if (next === prev) return;
+      // Zoom toward pointer (cx,cy) in canvas client space when provided
+      if (typeof cx === 'number' && typeof cy === 'number') {
+        const rect = canvas.getBoundingClientRect();
+        const px = cx - rect.left;
+        const py = cy - rect.top;
+        graphView.tx = px - (px - graphView.tx) * (next / prev);
+        graphView.ty = py - (py - graphView.ty) * (next / prev);
+      }
+      graphView.scale = next;
+      applyGraphViewTransform();
+    };
+    if (zoomIn) zoomIn.onclick = (ev) => { ev.preventDefault(); zoomBy(1.15); };
+    if (zoomOut) zoomOut.onclick = (ev) => { ev.preventDefault(); zoomBy(1 / 1.15); };
+    if (zoomReset) {
+      zoomReset.onclick = (ev) => {
+        ev.preventDefault();
+        resetGraphView();
+        applyGraphViewTransform();
+      };
+    }
+    // Wheel zoom (prevent page scroll while over canvas)
+    canvas.onwheel = (ev) => {
+      ev.preventDefault();
+      const dir = ev.deltaY > 0 ? 1 / 1.08 : 1.08;
+      zoomBy(dir, ev.clientX, ev.clientY);
+    };
+    // Pointer pan
+    let panning = false;
+    let lastX = 0;
+    let lastY = 0;
+    let pointerId = null;
+    canvas.onpointerdown = (ev) => {
+      if (ev.button !== 0 && ev.pointerType === 'mouse') return;
+      // Don't start pan when clicking a node button
+      if (ev.target && ev.target.closest && ev.target.closest('.disc-graph-canvas-node')) return;
+      panning = true;
+      pointerId = ev.pointerId;
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      try { canvas.setPointerCapture(ev.pointerId); } catch (_) {}
+      canvas.classList.add('panning');
+    };
+    canvas.onpointermove = (ev) => {
+      if (!panning || (pointerId != null && ev.pointerId !== pointerId)) return;
+      const dx = ev.clientX - lastX;
+      const dy = ev.clientY - lastY;
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      graphView.tx += dx;
+      graphView.ty += dy;
+      applyGraphViewTransform();
+    };
+    const endPan = (ev) => {
+      if (pointerId != null && ev && ev.pointerId !== pointerId) return;
+      panning = false;
+      pointerId = null;
+      canvas.classList.remove('panning');
+    };
+    canvas.onpointerup = endPan;
+    canvas.onpointercancel = endPan;
+    // Touch pinch
+    let pinchDist = null;
+    let pinchScale = 1;
+    canvas.ontouchstart = (ev) => {
+      if (ev.touches.length === 2) {
+        const [a, b] = ev.touches;
+        pinchDist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+        pinchScale = graphView.scale;
+        panning = false;
+      }
+    };
+    canvas.ontouchmove = (ev) => {
+      if (ev.touches.length === 2 && pinchDist) {
+        ev.preventDefault();
+        const [a, b] = ev.touches;
+        const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+        const midX = (a.clientX + b.clientX) / 2;
+        const midY = (a.clientY + b.clientY) / 2;
+        const next = clampGraphScale(pinchScale * (d / pinchDist));
+        const prev = graphView.scale;
+        if (next !== prev) {
+          const rect = canvas.getBoundingClientRect();
+          const px = midX - rect.left;
+          const py = midY - rect.top;
+          graphView.tx = px - (px - graphView.tx) * (next / prev);
+          graphView.ty = py - (py - graphView.ty) * (next / prev);
+          graphView.scale = next;
+          applyGraphViewTransform();
+        }
+      }
+    };
+    canvas.ontouchend = () => { pinchDist = null; };
+    // Keyboard: +/- / 0 when canvas focused
+    canvas.onkeydown = (ev) => {
+      if (ev.key === '+' || ev.key === '=') { ev.preventDefault(); zoomBy(1.15); }
+      else if (ev.key === '-' || ev.key === '_') { ev.preventDefault(); zoomBy(1 / 1.15); }
+      else if (ev.key === '0') { ev.preventDefault(); resetGraphView(); applyGraphViewTransform(); }
+      else if (ev.key === 'ArrowLeft') { ev.preventDefault(); graphView.tx += 24; applyGraphViewTransform(); }
+      else if (ev.key === 'ArrowRight') { ev.preventDefault(); graphView.tx -= 24; applyGraphViewTransform(); }
+      else if (ev.key === 'ArrowUp') { ev.preventDefault(); graphView.ty += 24; applyGraphViewTransform(); }
+      else if (ev.key === 'ArrowDown') { ev.preventDefault(); graphView.ty -= 24; applyGraphViewTransform(); }
+    };
+  }
+
+  function isMobileFacetsViewport() {
+    try {
+      return window.matchMedia && window.matchMedia('(max-width:860px)').matches;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function getFocusableIn(root) {
+    if (!root) return [];
+    const sel = 'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"]),summary';
+    return [...root.querySelectorAll(sel)].filter((el) => {
+      if (el.hasAttribute('disabled') || el.getAttribute('aria-hidden') === 'true') return false;
+      const style = window.getComputedStyle(el);
+      return style.display !== 'none' && style.visibility !== 'hidden';
+    });
+  }
+
+  function bindFacetDrawerA11y(out) {
+    const drawer = out.querySelector('.disc-facets-drawer');
+    if (!drawer) return;
+    const summary = drawer.querySelector('summary');
+    const syncExpanded = () => {
+      if (summary) summary.setAttribute('aria-expanded', drawer.open ? 'true' : 'false');
+      drawer.setAttribute('data-trap', drawer.open && isMobileFacetsViewport() ? '1' : '0');
+    };
+    syncExpanded();
+    drawer.addEventListener('toggle', syncExpanded);
+    // Escape closes (mobile drawer) + returns focus to summary
+    drawer.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && drawer.open && isMobileFacetsViewport()) {
+        ev.preventDefault();
+        drawer.open = false;
+        syncExpanded();
+        if (summary) summary.focus();
+        return;
+      }
+      // Focus trap while mobile drawer open
+      if (ev.key !== 'Tab' || !drawer.open || !isMobileFacetsViewport()) return;
+      const focusables = getFocusableIn(drawer);
+      if (focusables.length < 2) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (ev.shiftKey && document.activeElement === first) {
+        ev.preventDefault();
+        last.focus();
+      } else if (!ev.shiftKey && document.activeElement === last) {
+        ev.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
   function renderGraphPanel(graph) {
-    const nodes = graph.nodes || [];
-    const edges = graph.edges || [];
-    const focus = discState.focusedNodeId || (nodes[0] && nodes[0].id) || null;
+    const viewGraph = filterGraphForDisplay(graph);
+    const nodes = viewGraph.nodes || [];
+    const edges = viewGraph.edges || [];
+    const focus = nodes.some((n) => String(n.id) === String(discState.focusedNodeId))
+      ? discState.focusedNodeId
+      : (nodes[0] && nodes[0].id) || null;
     const nodeLabel = (n) => {
       if (!n) return '—';
       if (n.label || n.title || n.name) return n.label || n.title || n.name;
@@ -1406,16 +1895,25 @@
             hint: 'graph ≠ dossier',
           })
         : discState.lifeStage === 'GRAPH' || discState.lifeStage === 'RELATIONSHIPS'
-          ? renderPremiumEmpty({
+          ? `<div class="disc-graph-loading" role="status" aria-live="polite">${renderPremiumEmpty({
               kind: 'graph-wait',
-              title: 'ממתין לגרף ראיות',
-              body: 'שלב GRAPH/RELATIONSHIPS פעיל · צמתים יופיעו כש-Foundation ינפיק chunk.',
-              hint: 'soft wait · plan/graph flag-gated',
-            })
-          : renderPremiumEmpty({
+              title: 'טוען גרף ראיות…',
+              body: 'שלב GRAPH/RELATIONSHIPS פעיל · צמתים יופיעו כש-Foundation ינפיק chunk. טעינה ≠ זהות.',
+              hint: 'soft wait · plan/graph flag-gated · ring layout',
+            })}</div>`
+          : graphFilter !== 'all'
+            ? renderPremiumEmpty({
+                kind: 'graph-filtered',
+                title: 'אין צמתים בתצוגת המסנן',
+                body: 'מסנן הגרף הסתיר את כל הצמתים. אפשר להציג הכול או לאפס זום/פאן. סינון תצוגה ≠ זהות.',
+                hint: 'UNKNOWN soft · ring layout',
+                actions: `<button type="button" class="secondary" id="disc-graph-filter-all">הצג הכול</button>
+                  <button type="button" class="secondary" id="disc-graph-zoom-reset-empty">איפוס זום</button>`,
+              })
+            : renderPremiumEmpty({
               kind: 'graph',
               title: 'גרף יופיע עם ממצאים',
-              body: 'פאנל list+detail · לחיצה על צומת מרחיבה קשרים. אין commit זהות.',
+              body: 'פאנל canvas + list+detail · זום/פאן · לחיצה על צומת מרחיבה קשרים. אין commit זהות.',
               hint: 'derived edges מסומנים view-derived',
             });
     const related = edges.filter((e) => {
@@ -1449,10 +1947,13 @@
         });
     const softGraph = discState.graphFromServer;
     const derivedSoft = !softGraph && (discState.graph && discState.graph.meta && discState.graph.meta.soft);
+    const canvasHtml = nodes.length ? renderGraphCanvas(viewGraph, nodeLabel) : '';
+    const filterNote = graphFilter !== 'all' ? ` · תצוגת ${graphFilter === 'evidence' ? 'ראיות' : 'UNKNOWN'}` : '';
     return `<section class="disc-sec${softGraph ? ' disc-graph-soft' : ''}" id="disc-sec-graph" aria-labelledby="disc-h-graph" data-graph-source="${softGraph ? 'server' : derivedSoft ? 'client-derived' : 'none'}">
-      <div class="disc-sec-head"><h2 id="disc-h-graph"><span class="code">G</span> גרף ראיות · Evidence graph</h2><span class="n">${nodes.length}n · ${edges.length}e${softGraph ? ' · sse' : derivedSoft ? ' · soft' : ''}</span></div>
+      <div class="disc-sec-head"><h2 id="disc-h-graph"><span class="code">G</span> גרף ראיות · Evidence graph</h2><span class="n">${nodes.length}n · ${edges.length}e${filterNote}${softGraph ? ' · sse' : derivedSoft ? ' · soft' : ''}</span></div>
       <div class="disc-sec-body">
-        <p class="disc-exec-blurb" style="margin-bottom:10px">פאנל היררכי list+detail · לחיצה על צומת מרחיבה קשרים · לחיצה על קשת מציגה ראיות. ${softGraph ? '<strong>גרף משרת (SSE)</strong> · soft · לא dossier.' : 'אין זום/פאן כבד בגרסה זו.'} גרף ≠ זהות.</p>
+        <p class="disc-exec-blurb" style="margin-bottom:10px">קנבס זום/פאן + list+detail · לחיצה על צומת מרחיבה קשרים · לחיצה על קשת מציגה ראיות. ${softGraph ? '<strong>גרף משרת (SSE)</strong> · soft · לא dossier.' : 'גרף נגזר לתצוגה מסומן soft.'} גרף ≠ זהות · INFORMATION ≠ IDENTITY.</p>
+        ${canvasHtml}
         <div class="disc-graph-panel${softGraph ? ' from-server' : ''}">
           <div class="disc-graph-nodes" role="group" aria-label="צמתי גרף">${nodesHtml}</div>
           <div class="disc-graph-detail">
@@ -1473,42 +1974,126 @@
     let body;
     if (!ranked.length) {
       const filtered = Object.keys(selectedFacets).length > 0;
-      body =
-        discState.status === 'running' || discState.status === 'partial' || discState.status === 'reconnecting'
-          ? `<div class="disc-skel-block"><div class="skel-line mid"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
-             <div class="disc-skel-block"><div class="skel-line mid"></div><div class="skel-line short"></div></div>`
-          : renderPremiumEmpty({
-              kind: filtered ? 'findings-filtered' : 'findings',
-              title: filtered ? 'אין ממצאים תחת המסננים' : 'אין ממצאים להצגה',
-              body: filtered
-                ? 'נסו לנקות מסננים · הסינון אינו יוצר זהות.'
-                : discState.status === 'complete' || discState.status === 'partial' || discState.status === 'failed_soft'
-                  ? 'כיסוי דל / thin · ייתכן seed חלש או מקורות חלקיים. thin ≠ no-match · לא זהות.'
-                  : 'ממצאים יופיעו עם התקדמות הגילוי.',
-              hint: 'INFORMATION ≠ IDENTITY · UNKNOWN soft',
-            });
+      if (discState.status === 'running' || discState.status === 'partial' || discState.status === 'reconnecting') {
+        body = `<div class="disc-searching-banner" role="status" aria-live="polite"><span class="disc-searching-dot" aria-hidden="true"></span><strong>מחפש ממצאים…</strong> <span>זרם חלקי · עדיין אין פריטים · מחפש ≠ no-match · לא זהות</span></div>
+             <div class="disc-skel-block" aria-hidden="true"><div class="skel-line mid"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+             <div class="disc-skel-block" aria-hidden="true"><div class="skel-line mid"></div><div class="skel-line short"></div></div>`;
+      } else {
+        const actions = filtered
+          ? `<button type="button" class="secondary" id="disc-empty-clear-facets">נקה מסננים</button>`
+          : `<button type="button" class="secondary" id="disc-empty-back">חזרה לטופס</button>`;
+        body = renderPremiumEmpty({
+          kind: filtered ? 'findings-filtered' : 'findings',
+          title: filtered ? 'אין ממצאים תחת המסננים' : 'אין ממצאים להצגה',
+          body: filtered
+            ? 'המסננים צמצמו את הרשימה לריק · הסינון אינו יוצר זהות ואינו קובע «זה האדם».'
+            : discState.status === 'complete' || discState.status === 'partial' || discState.status === 'failed_soft'
+              ? 'כיסוי דל / thin · ייתכן seed חלש או מקורות חלקיים. thin ≠ no-match · לא זהות.'
+              : 'ממצאים יופיעו עם התקדמות הגילוי.',
+          hint: 'INFORMATION ≠ IDENTITY · UNKNOWN soft',
+          actions,
+        });
+      }
     } else {
       body =
-        hi.map((f) => renderFindingCard(f, evMap, { hi: true })).join('') +
+        `<div class="disc-findings-hi" role="listbox" aria-label="ממצאים מובילים · ניווט חצים" data-roving="findings">` +
+        hi.map((f, i) => renderFindingCard(f, evMap, { hi: true, rank: i + 1, rovingIndex: i })).join('') +
+        `</div>` +
         (rest.length
-          ? `<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12px;color:var(--muted)">עוד ${rest.length} ממצאים</summary>${rest.map((f) => renderFindingCard(f, evMap)).join('')}</details>`
+          ? `<details class="disc-findings-more"><summary>עוד ${rest.length} ממצאים · דירוג נמוך יותר</summary><div class="disc-findings-rest" role="listbox" aria-label="ממצאים נוספים" data-roving="findings-rest">${rest.map((f, i) => renderFindingCard(f, evMap, { rovingIndex: i })).join('')}</div></details>`
           : '');
     }
-    return `<section class="disc-sec" id="disc-sec-findings" aria-labelledby="disc-h-find">
+    return `<section class="disc-sec disc-sec-findings" id="disc-sec-findings" aria-labelledby="disc-h-find">
       <div class="disc-sec-head"><h2 id="disc-h-find"><span class="code">02</span> ממצאים בעלי ערך · High-value</h2><span class="n">${ranked.length}</span></div>
-      <div class="disc-sec-body">${body}</div>
+      <div class="disc-sec-body">
+        <p class="disc-sec-lead">סריקה מלמעלה למטה: כותרת ← רלוונטיות ← ראיות. דירוג = ערך גילוי בלבד · לא זהות.</p>
+        ${body}
+      </div>
     </section>`;
+  }
+
+  function classifyDiscoveryError(msg) {
+    const m = String(msg || '').toLowerCase();
+    if (/offline|navigator\.onLine\s*===\s*false|no internet|ש offline/.test(m) || (typeof navigator !== 'undefined' && navigator.onLine === false && /network|fetch|failed/.test(m))) return 'offline';
+    if (/stale session|session expired|session.?stale|gone|410/.test(m)) return 'stale-session';
+    if (/session not found|session.?missing|404/.test(m)) return 'session-not-found';
+    if (/no matching fixture|fixture (index )?missing|fixture load failed|fixture-miss/.test(m)) return 'fixture-miss';
+    if (/sse reconnect exhausted|reconnect exhausted|eventsource|sse/.test(m) && /exhaust|fail|error|disconnect|unsupported/.test(m)) return 'sse-disconnect';
+    if (/network|failed to fetch|load failed|api \d+/.test(m)) return 'network';
+    return 'generic';
   }
 
   function renderErrorRecovery() {
     if (!discState.errorMessage) return '';
-    return `<div class="err" role="alert" style="margin-bottom:12px;border-radius:8px">
-      <strong>לא הצלחנו להשלים את הגילוי</strong>
-      <p style="margin:8px 0 0;color:inherit">${esc(discState.errorMessage)}</p>
-      <p style="margin:8px 0 0;font-size:12px;opacity:.85">אפשר לנסות שוב או להדגמת פיקסצ׳ר. שגיאה ≠ no-match.</p>
+    const kind = classifyDiscoveryError(discState.errorMessage);
+    const copy = {
+      offline: {
+        title: 'אין חיבור לרשת',
+        body: 'הדפדפן מדווח offline. בדקו את החיבור ונסו שוב, או הריצו הדגמת פיקסצ׳ר מקומית. Offline ≠ no-match · לא זהות.',
+        primary: 'retry',
+        secondary: 'fixture',
+      },
+      'stale-session': {
+        title: 'ה-session פג / לא בתוקף',
+        body: 'המזהה ישן או שפג תוקף בשרת. התחילו גילוי חדש מהטופס, או השתמשו בהדגמה. Session ישן ≠ זהות.',
+        primary: 'back',
+        secondary: 'fixture',
+      },
+      'session-not-found': {
+        title: 'ה-session לא נמצא',
+        body: 'ייתכן שפג תוקף או שהמזהה שגוי. אפשר להתחיל גילוי חדש או להריץ הדגמת פיקסצ׳ר. שגיאה ≠ no-match · לא זהות.',
+        primary: 'back',
+        secondary: 'fixture',
+      },
+      'fixture-miss': {
+        title: 'פיקסצ׳ר לא נמצא',
+        body: 'אין התאמה בקטלוג ההדגמה ל-seed הזה. נסו seed=seed-person-he / seed-person-latin / seed-domain-org, או חזרו לחיפוש רגיל. שגיאה ≠ זהות.',
+        primary: 'back',
+        secondary: 'retry',
+      },
+      'sse-disconnect': {
+        title: 'ניתוק מהזרם החי (SSE)',
+        body: 'החיבור לזרם נותק אחרי ניסיונות חזרה. אפשר לנסות שוב, לעבור להדגמה, או לחזור לטופס. ניתוק ≠ no-match · לא זהות.',
+        primary: 'retry',
+        secondary: 'fixture',
+      },
+      network: {
+        title: 'תקלת רשת / שרת',
+        body: 'לא הצלחנו להשלים את הבקשה. אפשר לנסות שוב או להדגמת פיקסצ׳ר מקומית. שגיאה ≠ no-match.',
+        primary: 'retry',
+        secondary: 'fixture',
+      },
+      generic: {
+        title: 'לא הצלחנו להשלים את הגילוי',
+        body: 'אפשר לנסות שוב, להריץ הדגמה, או לחזור לטופס. שגיאה ≠ no-match · INFORMATION ≠ IDENTITY.',
+        primary: 'retry',
+        secondary: 'fixture',
+      },
+    }[kind] || {
+      title: 'לא הצלחנו להשלים את הגילוי',
+      body: 'אפשר לנסות שוב או להדגמה. שגיאה ≠ no-match.',
+      primary: 'retry',
+      secondary: 'fixture',
+    };
+    const btn = {
+      retry: `<button type="button" id="disc-retry" class="disc-btn-primary">נסה שוב</button>`,
+      fixture: `<button type="button" class="secondary" id="disc-retry-fixture">הדגמה (פיקסצ׳ר)</button>`,
+      back: `<button type="button" class="secondary" id="disc-error-back">חזרה לטופס</button>`,
+    };
+    const primary = btn[copy.primary] || btn.retry;
+    const secondary = btn[copy.secondary] || btn.fixture;
+    const tertiary = copy.primary === 'back' || copy.secondary === 'back'
+      ? (copy.primary !== 'retry' && copy.secondary !== 'retry' ? btn.retry : '')
+      : btn.back;
+    return `<div class="disc-error-card" role="alert" data-error-kind="${esc(kind)}">
+      <div class="disc-error-kicker">${esc(kind)}</div>
+      <strong class="disc-error-title">${esc(copy.title)}</strong>
+      <p class="disc-error-detail">${esc(discState.errorMessage)}</p>
+      <p class="disc-error-body">${esc(copy.body)}</p>
       <div class="disc-retry-row">
-        <button type="button" id="disc-retry">נסה שוב</button>
-        <button type="button" class="secondary" id="disc-retry-fixture">הדגמה (פיקסצ׳ר)</button>
+        ${primary}
+        ${secondary}
+        ${tertiary}
       </div>
     </div>`;
   }
@@ -1530,17 +2115,24 @@
         ? `<div class="disc-narrow-banner" role="status">תצוגה מסוננת · narrow:${esc(discState.narrowSource)} · הסינון אינו יוצר זהות ואינו מצמצם את מרחב האפשרויות ל־«זה האדם».</div>`
         : '';
     const mobileNav = `<nav class="disc-mobile-nav" aria-label="ניווט תוצאות">
-      <a href="#disc-progress">התקדמות</a>
-      <a href="#disc-facets">מסננים</a>
-      <a href="#disc-sec-findings">ממצאים</a>
+      <a href="#disc-progress" aria-current="true">התקדמות</a>
       <a href="#disc-sec-exec">סיכום</a>
+      <a href="#disc-sec-findings">ממצאים</a>
       <a href="#disc-sec-evidence">ראיות</a>
       <a href="#disc-sec-rel">קשרים</a>
       <a href="#disc-sec-graph">גרף</a>
+      <a href="#disc-sec-src">מקורות</a>
       <a href="#disc-sec-gaps">פערים</a>
+      <a href="#disc-facets">מסננים</a>
     </nav>`;
     out.innerHTML = `
       <p class="disc-workspace-label">INVESTIGATION WORKSPACE · DISCOVERY</p>
+      <nav class="disc-skip-row" aria-label="דילוג בתוך תוצאות גילוי">
+        <a href="#disc-progress">להתקדמות</a>
+        <a href="#disc-sec-findings">לממצאים</a>
+        <a href="#disc-sec-graph">לגרף</a>
+        <a href="#disc-facets">למסננים</a>
+      </nav>
       <div class="mode"><span>מצב: גילוי (Discovery)</span><span class="chip">INFORMATION ≠ IDENTITY</span><span class="chip">UNKNOWN ≠ FALSE</span><span class="chip">CANDIDATE ≠ FACT</span>${discState.q ? `<span class="chip">Seed: ${esc(discState.q)}</span>` : ''}</div>
       ${renderErrorRecovery()}
       ${renderProgressStrip()}
@@ -1548,7 +2140,7 @@
       ${narrowBanner}
       <div class="disc-layout">
         ${renderFacets()}
-        <div class="disc-main-col" aria-label="תוצאות גילוי">
+        <div class="disc-main-col" id="disc-results" role="region" aria-label="תוצאות גילוי · INFORMATION ≠ IDENTITY">
           <div class="disc-hier">
             ${renderExecutiveSummary(list, gaps)}
             ${renderFindingsSection(list, evMap)}
@@ -1593,18 +2185,19 @@
     discState.selectedEdgeId = edgeId;
     const rel = e.relationship || e.kind || 'unknown';
     const evMap = evidenceMap(discState.evidence);
+    const directItems = Array.isArray(e.evidence) ? e.evidence : [];
+    const directIds = Array.isArray(e.evidenceIds) ? e.evidenceIds : [];
     const findingIds = e.findingIds || [e.from || e.source, e.to || e.target].filter(Boolean);
-    const evBits = [];
-    findingIds.forEach((fid) => {
+    const evidenceIds = directIds.length ? directIds : findingIds.flatMap((fid) => {
       const f = (discState.findings || []).find((x) => x.id === fid);
-      if (!f) return;
-      (f.evidenceIds || []).forEach((eid) => {
-        const ev = evMap.get(eid);
-        if (ev) {
-          const href = safeHref(ev.provenanceUrl);
-          evBits.push(`<div><strong>${esc(f.title)}</strong> · <a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(ev.provenanceUrl || '')}</a>${ev.quote ? ` — <q>${esc(ev.quote)}</q>` : ''}</div>`);
-        }
-      });
+      return f && Array.isArray(f.evidenceIds) ? f.evidenceIds : [];
+    });
+    const evBits = [];
+    const edgeEvidence = directItems.length ? directItems : [...new Set(evidenceIds)].map((eid) => evMap.get(eid) || evMap.get(String(eid))).filter(Boolean);
+    edgeEvidence.forEach((ev) => {
+      const href = safeHref(ev.provenanceUrl || ev.url);
+      const link = href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(ev.provenanceUrl || ev.url || '')}</a>` : esc(ev.provenanceUrl || ev.url || '');
+      evBits.push(`<div><strong>${esc(ev.providerId || ev.provider || 'מקור')}</strong> · ${link}${ev.quote ? ` — <q>${esc(ev.quote)}</q>` : ''}</div>`);
     });
     host.innerHTML = `
       <div><strong>קשת נבחרה</strong> · ${relBadge(rel)} · id <span class="mono">${esc(e.id)}</span></div>
@@ -1631,6 +2224,37 @@
         if (open) panel.removeAttribute('hidden');
         else panel.setAttribute('hidden', '');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+    });
+    out.querySelectorAll('[data-prov-close]').forEach((btn) => {
+      btn.onclick = () => {
+        const panel = btn.closest('.disc-provenance');
+        const card = btn.closest('.disc-finding');
+        const toggle = card && card.querySelector('.disc-prov-toggle:not(.disc-focus-node)');
+        if (panel) panel.setAttribute('hidden', '');
+        if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); }
+      };
+    });
+    out.querySelectorAll('.disc-copy-link').forEach((btn) => {
+      btn.onclick = async () => {
+        const url = btn.getAttribute('data-copy-url') || '';
+        if (!url) return;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(url);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = url; document.body.appendChild(ta); ta.select();
+            document.execCommand('copy'); ta.remove();
+          }
+          const prev = btn.textContent;
+          btn.textContent = 'הועתק';
+          btn.disabled = true;
+          announceSseLive('קישור מקור הועתק · לא זהות');
+          setTimeout(() => { btn.textContent = prev || 'העתק קישור'; btn.disabled = false; }, 1400);
+        } catch (_) {
+          announceSseLive('העתקה נכשלה · נסו ידנית מהקישור');
+        }
       };
     });
     out.querySelectorAll('[data-node]').forEach((btn) => {
@@ -1678,16 +2302,77 @@
         }
       };
     }
-    // Keyboard: Enter on finding opens evidence
-    out.querySelectorAll('.disc-finding').forEach((card) => {
-      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
-      card.onkeydown = (ev) => {
-        if (ev.key === 'Enter') {
-          const btn = card.querySelector('.disc-prov-toggle:not(.disc-focus-node)');
-          if (btn) btn.click();
-        }
-      };
-    });
+    // Keyboard: roving tabindex + Enter opens evidence + Escape closes provenance
+    const bindRoving = (root) => {
+      if (!root) return;
+      const cards = [...root.querySelectorAll('.disc-finding')];
+      if (!cards.length) return;
+      cards.forEach((card, idx) => {
+        card.setAttribute('tabindex', idx === 0 ? '0' : '-1');
+        card.setAttribute('aria-selected', 'false');
+        card.onkeydown = (ev) => {
+          const list = [...root.querySelectorAll('.disc-finding')];
+          const i = list.indexOf(card);
+          if (ev.key === 'ArrowDown' || ev.key === 'ArrowLeft') {
+            ev.preventDefault();
+            const next = list[Math.min(list.length - 1, i + 1)] || list[0];
+            list.forEach((c) => { c.tabIndex = -1; c.setAttribute('aria-selected', 'false'); });
+            next.tabIndex = 0;
+            next.setAttribute('aria-selected', 'true');
+            next.focus();
+          } else if (ev.key === 'ArrowUp' || ev.key === 'ArrowRight') {
+            ev.preventDefault();
+            const prev = list[Math.max(0, i - 1)] || list[list.length - 1];
+            list.forEach((c) => { c.tabIndex = -1; c.setAttribute('aria-selected', 'false'); });
+            prev.tabIndex = 0;
+            prev.setAttribute('aria-selected', 'true');
+            prev.focus();
+          } else if (ev.key === 'Home') {
+            ev.preventDefault();
+            list.forEach((c) => { c.tabIndex = -1; c.setAttribute('aria-selected', 'false'); });
+            list[0].tabIndex = 0;
+            list[0].setAttribute('aria-selected', 'true');
+            list[0].focus();
+          } else if (ev.key === 'End') {
+            ev.preventDefault();
+            list.forEach((c) => { c.tabIndex = -1; c.setAttribute('aria-selected', 'false'); });
+            const last = list[list.length - 1];
+            last.tabIndex = 0;
+            last.setAttribute('aria-selected', 'true');
+            last.focus();
+          } else if (ev.key === 'Enter' || ev.key === ' ') {
+            if (ev.target && ev.target.closest && ev.target.closest('button,a')) return;
+            ev.preventDefault();
+            const btn = card.querySelector('.disc-prov-toggle:not(.disc-focus-node)');
+            if (btn) btn.click();
+          } else if (ev.key === 'Escape') {
+            const panel = card.querySelector('.disc-provenance');
+            const btn = card.querySelector('.disc-prov-toggle:not(.disc-focus-node)');
+            if (panel && !panel.hasAttribute('hidden')) {
+              ev.preventDefault();
+              panel.setAttribute('hidden', '');
+              if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+            }
+          }
+        };
+      });
+    };
+    bindRoving(out.querySelector('.disc-findings-hi'));
+    bindRoving(out.querySelector('.disc-findings-rest'));
+    // Document-level Escape closes any open provenance when focus inside discovery out
+    if (!out.dataset.escProvenanceBound) {
+      out.dataset.escProvenanceBound = '1';
+      out.addEventListener('keydown', (ev) => {
+        if (ev.key !== 'Escape') return;
+        const openPanel = out.querySelector('.disc-provenance:not([hidden])');
+        if (!openPanel) return;
+        const card = openPanel.closest('.disc-finding');
+        const btn = card && card.querySelector('.disc-prov-toggle:not(.disc-focus-node)');
+        openPanel.setAttribute('hidden', '');
+        if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+        ev.preventDefault();
+      });
+    }
     // Mobile section jump: mark aria-current (CSS already styles it)
     out.querySelectorAll('.disc-mobile-nav a').forEach((a) => {
       a.addEventListener('click', () => {
@@ -1695,18 +2380,66 @@
         a.setAttribute('aria-current', 'true');
       });
     });
-    // Facet drawer: Escape closes (residual a11y polish)
-    const drawer = out.querySelector('.disc-facets-drawer');
-    if (drawer) {
-      drawer.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Escape' && drawer.open) {
-          ev.preventDefault();
-          drawer.open = false;
-          const sum = drawer.querySelector('summary');
-          if (sum) sum.focus();
+    out.querySelectorAll('[data-graph-filter]').forEach((btn) => {
+      btn.onclick = () => {
+        graphFilter = btn.getAttribute('data-graph-filter') || 'all';
+        discState.graphFilter = graphFilter;
+        renderDiscovery();
+        const graph = document.getElementById('disc-sec-graph');
+        if (graph) graph.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      };
+    });
+    // Facet drawer: Escape + focus trap (mobile) + aria-expanded sync
+    
+    // Checkpoint H · empty/error recovery actions
+    const clearEmptyFacets = document.getElementById('disc-empty-clear-facets');
+    if (clearEmptyFacets) {
+      clearEmptyFacets.onclick = () => {
+        if (typeof clearFacets === 'function') clearFacets();
+        else {
+          selectedFacets = {};
+          discState.narrowSource = 'none';
+          renderDiscovery();
         }
-      });
+      };
     }
+    const emptyBack = document.getElementById('disc-empty-back');
+    if (emptyBack) {
+      emptyBack.onclick = () => {
+        const q = document.getElementById('disc-q');
+        if (q) q.focus();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+    }
+    const errBack = document.getElementById('disc-error-back');
+    if (errBack) {
+      errBack.onclick = () => {
+        discState.errorMessage = null;
+        const q = document.getElementById('disc-q');
+        if (q) q.focus();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        renderDiscovery();
+      };
+    }
+    const graphFilterAll = document.getElementById('disc-graph-filter-all');
+    if (graphFilterAll) {
+      graphFilterAll.onclick = () => {
+        graphFilter = 'all';
+        discState.graphFilter = 'all';
+        renderDiscovery();
+      };
+    }
+    const graphResetEmpty = document.getElementById('disc-graph-zoom-reset-empty');
+    if (graphResetEmpty) {
+      graphResetEmpty.onclick = () => {
+        if (typeof resetGraphView === 'function') resetGraphView();
+        renderDiscovery();
+      };
+    }
+    
+    bindFacetDrawerA11y(out);
+    // Graph canvas zoom/pan/pinch + toolbar
+    bindGraphCanvasControls(out);
   }
 
   function applySnapshot(snap, meta = {}) {
@@ -1758,13 +2491,47 @@
       nextStatus = prevStatus;
     }
 
-    const nextGraph =
-      snap.graph && typeof snap.graph === 'object'
-        ? {
-            nodes: Array.isArray(snap.graph.nodes) ? snap.graph.nodes : (discState.graph && discState.graph.nodes) || [],
-            edges: Array.isArray(snap.graph.edges) ? snap.graph.edges : (discState.graph && discState.graph.edges) || [],
-          }
-        : discState.graph || { nodes: [], edges: [] };
+    const parsedSnapGraph = parseGraphFromSse(snap);
+    let nextGraph = discState.graph || { nodes: [], edges: [] };
+    let nextGraphFromServer = !!discState.graphFromServer;
+    if (parsedSnapGraph) {
+      nextGraph = {
+        nodes: merge
+          ? mergeById((discState.graph && discState.graph.nodes) || [], parsedSnapGraph.nodes || [])
+          : parsedSnapGraph.nodes || [],
+        edges: merge
+          ? mergeById((discState.graph && discState.graph.edges) || [], parsedSnapGraph.edges || [])
+          : parsedSnapGraph.edges || [],
+        meta: { ...((discState.graph && discState.graph.meta) || {}), ...(parsedSnapGraph.meta || {}), source: 'server' },
+      };
+      nextGraphFromServer = true;
+    } else if (snap.graph && typeof snap.graph === 'object') {
+      nextGraph = {
+        nodes: Array.isArray(snap.graph.nodes) ? snap.graph.nodes : (discState.graph && discState.graph.nodes) || [],
+        edges: Array.isArray(snap.graph.edges) ? snap.graph.edges : (discState.graph && discState.graph.edges) || [],
+        meta: { ...((snap.graph && snap.graph.meta) || {}), source: 'server' },
+      };
+      nextGraphFromServer = true;
+    }
+
+    const parsedSnapPlan = parsePlanFromSse(snap);
+    const nextPlan = parsedSnapPlan || discState.queryPlan || null;
+    const nextServerStage =
+      snap.stage ||
+      snap.lifeStage ||
+      snap.lifecyclePhase ||
+      (snap.progress && (snap.progress.stage || snap.progress.lifecyclePhase)) ||
+      discState.serverStage ||
+      null;
+
+    const prevSoft = {
+      budgetTelemetry: discState.budgetTelemetry,
+      budgetExhaustedReason: discState.budgetExhaustedReason,
+      familyJournal: discState.familyJournal,
+      planSseSeen: discState.planSseSeen,
+      stageSource: discState.stageSource,
+      _focusResultsOnce: discState._focusResultsOnce,
+    };
 
     discState = {
       findings,
@@ -1798,12 +2565,26 @@
       gaps: Array.isArray(snap.gaps) ? snap.gaps : discState.gaps || [],
       focusedNodeId: discState.focusedNodeId,
       selectedEdgeId: discState.selectedEdgeId,
+      graphFilter: discState.graphFilter || 'all',
       seedKind: discState.seedKind || 'name',
       errorMessage: meta.errorMessage !== undefined ? meta.errorMessage : discState.errorMessage,
-      serverStage: snap.stage || snap.lifeStage || discState.serverStage || null,
-      queryPlan: snap.queryPlan || snap.plan || discState.queryPlan || null,
+      serverStage: nextServerStage,
+      queryPlan: nextPlan,
       lifeStage: 'START',
+      budgetTelemetry: snap.budgetTelemetry || prevSoft.budgetTelemetry || null,
+      budgetExhaustedReason:
+        snap.budgetExhaustedReason || prevSoft.budgetExhaustedReason || null,
+      familyJournal: Array.isArray(snap.familyJournal)
+        ? snap.familyJournal
+        : prevSoft.familyJournal || null,
+      graphFromServer: nextGraphFromServer,
+      planSseSeen: !!parsedSnapPlan || !!prevSoft.planSseSeen || !!nextPlan,
+      stageSource: prevSoft.stageSource || null,
+      _focusResultsOnce: prevSoft._focusResultsOnce,
     };
+    if (parsedSnapPlan) applyParsedPlan(parsedSnapPlan, {});  // plan soft · do not overwrite stageSource
+    ingestBudgetFamilyFromPayload(snap);
+    if (nextServerStage) noteServerStage(nextServerStage, { source: 'server', allowRegress: true });
     discState.lifeStage = deriveLifeStage(discState);
     stripIdentityChrome(discState);
     renderDiscovery();
@@ -2667,6 +3448,9 @@
       discAbort = typeof AbortController !== 'undefined' ? new AbortController() : null;
       selectedFacets = {};
       discState = emptyState();
+      graphFilter = 'all';
+      resetGraphView();
+    lastSseLiveText = '';
       applySeedKindHint();
       discState.status = 'running';
       discState.lifeStage = 'START';
@@ -2724,6 +3508,9 @@
     discAbort = typeof AbortController !== 'undefined' ? new AbortController() : null;
     selectedFacets = {};
     discState = emptyState();
+    graphFilter = 'all';
+    resetGraphView();
+    lastSseLiveText = '';
     applySeedKindHint();
     discState.status = 'running';
     discState.lifeStage = 'START';

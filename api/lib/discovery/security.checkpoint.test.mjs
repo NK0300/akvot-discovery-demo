@@ -14,10 +14,13 @@ import {
   assertPlanUrlTargetsSafe,
   selectFetchablePlanUrlTargets,
   runPlanUrlTargetsFetchGate,
+  simulatePreviewUrlTargetsSsrfPack,
   scrubProvidersState,
   assertSafePublicHttpsUrl,
   isBlockedDiscoveryHost,
 } from './security.js';
+import { webOriginProvider, stampRegistryFinding } from './providers.js';
+import { resolveAdapterRedirectUrl, assertAdapterFetchUrl } from './adapterContract.js';
 import { buildQueryPlan, scrubQueryPlanForEmit } from './queryPlan.js';
 import { discoveryApiError, discoveryEmptyOk, API_FAILURE_CLASSES } from './apiErrors.js';
 import {
@@ -25,6 +28,7 @@ import {
   MAX_BODY_JSON_CHARS,
   MAX_HINTS_JSON_CHARS,
   RATE_LIMIT_MAX,
+  RATE_LIMIT_MAX_KEYS,
   RATE_LIMIT_BACKEND,
   validateDiscoveryCreateBody,
   checkDiscoveryRateLimit,
@@ -79,16 +83,33 @@ const ssrfBlock = [
   'https://metadata.google.internal/',
   'https://instance-data/',
   'https://metadata.azure.com/',
+  'https://metadata/',
+  'https://kubernetes.default.svc/',
   'https://192.168.1.1/',
   'https://10.0.0.1/',
   'https://172.16.5.1/',
+  'https://100.64.0.1/',
+  'https://224.0.0.1/',
   'https://[::1]/',
+  'https://[::ffff:127.0.0.1]/',
   'https://8.8.8.8/',
+  'https://2130706433/',
+  'https://0x7f000001/',
+  'https://127.1/',
   'javascript:alert(1)',
   'data:text/html,hi',
   'file:///etc/passwd',
+  'ftp://example.com/',
+  'blob:https://example.com/uuid',
   'https://user:pass@example.com/',
+  'https://user@example.com/',
   'https://0/',
+  'https://broadcasthost/',
+  'https://127.0.0.1.nip.io/',
+  'https://10.0.0.1.sslip.io/x',
+  'https://1.2.3.4.xip.io/',
+  'https://localtest.me/',
+  'https://foo.localtest.me/',
 ];
 for (const u of ssrfBlock) {
   const r = assertFetchUrlSafe(u);
@@ -134,6 +155,57 @@ assert('429 carries backend=memory', checkDiscoveryRateLimit('sec-f-client', { m
 resetDiscoveryRateLimit();
 assert('rate key A ok', checkDiscoveryRateLimit('iso-A', { max: 2 }).ok === true);
 assert('rate key B ok independent', checkDiscoveryRateLimit('iso-B', { max: 2 }).ok === true);
+// Isolation harden: A trip must not charge / trip B
+resetDiscoveryRateLimit();
+{
+  let aTrip = false;
+  for (let i = 0; i < 5; i++) {
+    const r = checkDiscoveryRateLimit('iso-trip-A', { max: 2, windowMs: 60_000 });
+    if (!r.ok) aTrip = true;
+  }
+  assert('iso A trips at max', aTrip === true);
+  const b = checkDiscoveryRateLimit('iso-trip-B', { max: 2, windowMs: 60_000 });
+  assert('iso B unaffected by A trip', b.ok === true && b.remaining === 1);
+}
+// Overflow fail-closed: at maxKeys, NEW key rejected without evicting active
+resetDiscoveryRateLimit();
+{
+  const cap = 8;
+  for (let i = 0; i < cap; i++) {
+    const r = checkDiscoveryRateLimit(`ov-fill-${i}`, { max: 100, windowMs: 60_000, maxKeys: cap });
+    assert(`ov fill ${i} ok`, r.ok === true);
+  }
+  const overflow = checkDiscoveryRateLimit('ov-new-key', { max: 100, windowMs: 60_000, maxKeys: cap });
+  assert('overflow new key fail-closed', overflow.ok === false && overflow.overflow === true);
+  assert('overflow status 429', overflow.status === 429);
+  assert('overflow does not invent distributed', overflow.distributed === false);
+  // Existing key still serviced (not evicted)
+  const existing = checkDiscoveryRateLimit('ov-fill-0', { max: 100, windowMs: 60_000, maxKeys: cap });
+  assert('overflow keeps existing key', existing.ok === true && existing.overflow === false);
+  assert('rate info overflowPolicy', getDiscoveryRateLimitInfo().overflowPolicy === 'fail_closed_new_key');
+  assert('rate info maxKeys documented', getDiscoveryRateLimitInfo().maxKeys === RATE_LIMIT_MAX_KEYS);
+}
+// Prune expired frees capacity (opts.now clock) — isolation preserved
+resetDiscoveryRateLimit();
+{
+  const cap = 4;
+  const t0 = 5_000_000;
+  for (let i = 0; i < cap; i++) {
+    assert(`prune-fill ${i}`, checkDiscoveryRateLimit(`pf-${i}`, { max: 50, windowMs: 1_000, maxKeys: cap, now: t0 }).ok === true);
+  }
+  assert(
+    'prune-overflow before expiry',
+    checkDiscoveryRateLimit('pf-new', { max: 50, windowMs: 1_000, maxKeys: cap, now: t0 }).overflow === true,
+  );
+  const after = checkDiscoveryRateLimit('pf-new', { max: 50, windowMs: 1_000, maxKeys: cap, now: t0 + 2_000 });
+  assert('prune frees capacity after window', after.ok === true && after.overflow === false);
+  // Existing renewed key still isolated
+  const a = checkDiscoveryRateLimit('pf-iso-A', { max: 2, windowMs: 60_000, now: t0 + 2_000 });
+  const b = checkDiscoveryRateLimit('pf-iso-B', { max: 2, windowMs: 60_000, now: t0 + 2_000 });
+  assert('prune-iso A ok', a.ok === true);
+  assert('prune-iso B independent', b.ok === true && b.remaining === 1);
+}
+
 // clientKey prefers platform headers over spoofable leftmost XFF
 assert(
   'clientKey prefers x-real-ip',
@@ -511,6 +583,139 @@ assert('metrics counters present', !!metrics.counters);
   const empty = discoveryEmptyOk({ sessionId: 's1' });
   assert('empty ok note EMPTY≠FALSE', empty.empty === true && empty.note === 'EMPTY≠FALSE' && empty.ok === true);
 }
+
+
+// ---------- Preview SSRF pack: DNS-rebinding + cloud metadata host traps ----------
+{
+  const traps = [
+    'https://127.0.0.1.nip.io/',
+    'https://10.0.0.1.sslip.io/x',
+    'https://1.2.3.4.xip.io/',
+    'https://localtest.me/',
+    'https://foo.localtest.me/',
+    'https://evil.nip.io/',
+    'https://metadata.azure.com/',
+    'https://instance-data/',
+    'https://kubernetes.default.svc/',
+    'https://0/',
+    'https://2130706433/',
+    'https://user@example.com/',
+    'file:///etc/passwd',
+    'ftp://example.com/',
+    'https://100.64.0.1/',
+  ];
+  for (const u of traps) {
+    assert(`block Preview trap ${u.slice(0, 40)}`, assertSafePublicHttpsUrl(u).ok === false);
+  }
+  assert('allow plain public https', assertSafePublicHttpsUrl('https://example.com/ok').ok === true);
+}
+
+// ---------- simulatePreviewUrlTargetsSsrfPack (local; LIVE Preview still OPEN) ----------
+{
+  const pack = await simulatePreviewUrlTargetsSsrfPack();
+  assert('local Preview SSRF pack ok', pack.ok === true && pack.failed === 0);
+  assert('local pack marks LIVE Preview OPEN', pack.livePreviewStatus === 'OPEN' && pack.livePreviewRequired === true);
+  assert('local pack case count', pack.cases.length >= 8);
+  assert('local pack adversarial fixtures >= 30', pack.fixtureCount >= 30);
+  const poisonCase = pack.cases.find((c) => c.name === 'poison_failClosed');
+  assert('pack poison_failClosed present', poisonCase && poisonCase.ok === true);
+  const trapsCase = pack.cases.find((c) => c.name === 'preview_host_traps_blocked');
+  assert('pack traps all blocked', trapsCase && trapsCase.ok === true);
+}
+
+// ---------- Runtime wire: web_origin poison plan → zero plan fetch (no network to private) ----------
+{
+  const prev = process.env.DISCOVERY_ENABLE_WEB_ORIGIN;
+  process.env.DISCOVERY_ENABLE_WEB_ORIGIN = '1';
+  try {
+    const batch = await webOriginProvider.search(
+      {
+        q: 'Douglas Adams', // non-URL seed → only plan urls could fetch
+        sessionId: 'ssrf-wire-poison',
+        budgetMs: 800,
+        hints: {
+          queryPlan: {
+            urlTargets: [
+              { url: 'https://example.com/safe', safety: 'allowed' },
+              { url: 'http://127.0.0.1/admin', safety: 'allowed' }, // poison
+              { url: 'https://169.254.169.254/latest/meta-data', safety: 'allowed' },
+            ],
+          },
+        },
+      },
+      { signal: AbortSignal.timeout(800) },
+    );
+    assert('web_origin poison → empty findings (fail-closed)', (batch.findings || []).length === 0);
+    assert('web_origin poison providerId', batch.providerId === 'web_origin');
+  } finally {
+    if (prev === undefined) delete process.env.DISCOVERY_ENABLE_WEB_ORIGIN;
+    else process.env.DISCOVERY_ENABLE_WEB_ORIGIN = prev;
+  }
+}
+
+// ---------- Rate-limit honesty fields on trip ----------
+{
+  resetDiscoveryRateLimit();
+  let last = null;
+  for (let i = 0; i < RATE_LIMIT_MAX + 2; i++) {
+    last = checkDiscoveryRateLimit('honesty-key-ff');
+  }
+  assert('429 honesty distributed=false', last.ok === false && last.distributed === false);
+  assert('429 honesty no Upstash RL', last.upstashWiredForRateLimit === false);
+  assert('429 honesty backend memory', last.backend === 'memory');
+  const api = discoveryApiError({
+    status: 429,
+    error: last.error,
+    failureClass: 'rate_limited',
+    retryAfterSec: last.retryAfterSec,
+    extras: {
+      rateLimit: {
+        backend: last.backend,
+        distributed: false,
+        upstashWiredForRateLimit: false,
+      },
+    },
+  });
+  assert('api 429 body carries rateLimit honesty', api.body.rateLimit?.distributed === false);
+  assert('api 429 body backend memory', api.body.rateLimit?.backend === 'memory');
+}
+
+// ---------- Adapter deepen: stampRegistryFinding cite-or-drop + UNKNOWN ----------
+{
+  const okHit = stampRegistryFinding(
+    {
+      id: 'wd-Q42',
+      title: 'Douglas Adams',
+      kind: 'registry',
+      provenanceUrl: 'https://www.wikidata.org/wiki/Q42',
+      facetHints: ['provider:wikidata'],
+      relationship: 'SAME-ENTITY', // must clamp
+    },
+    'wikidata',
+  );
+  assert('stamp keeps public provenance', !!okHit && /wikidata\.org/.test(okHit.provenanceUrl));
+  assert('stamp clamps SAME-ENTITY → UNKNOWN', okHit.relationshipState === 'UNKNOWN');
+  assert('stamp candidate≠fact', okHit.confirmationState === 'candidate' && okHit.identityClaim === false);
+  assert('stamp evidenceType', okHit.evidenceType === 'registry');
+  const bad = stampRegistryFinding(
+    { id: 'x', title: 'x', provenanceUrl: 'http://127.0.0.1/', kind: 'registry' },
+    'wikidata',
+  );
+  assert('stamp drops private provenance', bad == null);
+  const redir = resolveAdapterRedirectUrl(
+    'https://www.wikidata.org/w/api.php',
+    'https://169.254.169.254/latest/meta-data',
+    'wikidata',
+  );
+  assert('adapter redirect to metadata blocked', redir.ok === false);
+  const redirOk = resolveAdapterRedirectUrl(
+    'https://www.wikidata.org/w/api.php',
+    '/w/api.php?action=wbsearchentities',
+    'wikidata',
+  );
+  assert('adapter redirect same-host relative ok', redirOk.ok === true && /wikidata\.org/.test(redirOk.canonical));
+}
+
 
 console.log(`\n--- Checkpoint F security ---\npassed=${passed} failed=${failed}`);
 process.exit(failed ? 1 : 0);

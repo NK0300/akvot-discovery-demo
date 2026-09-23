@@ -105,4 +105,46 @@ ok('T-UNK-04 timeout ≠ CONTRADICTORY', outcomeClassForStatus('timeout') === 'S
   ok('T-BUD-01b reason maxFamilyCalls', g2.reason === 'maxFamilyCalls');
 }
 
+
+// T-BUD-HARD-STOP: isExhausted latches dimension (no silent re-open)
+{
+  const ledger = createBudgetLedger({ maxFamilyCalls: 1, maxRequests: 100, maxWallMs: 60_000 });
+  ok('hard-stop reserve1', ledger.reserve({ requests: 1 }).ok === true);
+  ok('hard-stop isExhausted after 1 call', ledger.isExhausted() === true);
+  ok('hard-stop latches maxFamilyCalls', ledger.exhaustedReason === 'maxFamilyCalls');
+  ok('hard-stop canLaunch denied', ledger.canLaunch().ok === false);
+  ok('hard-stop canLaunch code', ledger.canLaunch().code === BUDGET_EXHAUSTED);
+  const snap = ledger.snapshot();
+  ok('hard-stop snap availability', snap.availability === BUDGET_EXHAUSTED);
+  ok('hard-stop snap reason', snap.budgetExhaustedReason === 'maxFamilyCalls');
+}
+
+// T-BUD-EMPTY≠FALSE: empty outcome class honesty
+ok('empty ≠ CONTRADICTORY', outcomeClassForStatus('empty') !== 'CONTRADICTORY');
+ok('cancelled class CANCELLED', outcomeClassForStatus('cancelled') === 'CANCELLED');
+ok('timeout class SOURCE_TIMEOUT', outcomeClassForStatus('timeout') === 'SOURCE_TIMEOUT');
+
+
+// T-BUD-HARD-STOP-REQ: maxRequests latch distinct from maxFamilyCalls
+{
+  const ledger = createBudgetLedger({ maxFamilyCalls: 50, maxRequests: 1, maxWallMs: 60_000 });
+  ok('req-stop reserve1', ledger.reserve({ requests: 1 }).ok === true);
+  ok('req-stop exhausted', ledger.isExhausted() === true);
+  ok('req-stop reason', ledger.exhaustedReason === 'maxRequests');
+  ok('req-stop ≠ maxFamilyCalls', ledger.exhaustedReason !== 'maxFamilyCalls');
+}
+
+// T-BUD-TAXONOMY: cancel≠timeout≠budget_exhausted≠empty outcome classes pairwise
+{
+  const classes = [
+    outcomeClassForStatus('cancelled'),
+    outcomeClassForStatus('timeout'),
+    outcomeClassForStatus('budget_exhausted'),
+    outcomeClassForStatus('empty'),
+  ];
+  ok('taxonomy 4 distinct classes', new Set(classes).size === 4);
+  ok('empty never FALSE', outcomeClassForStatus('empty') !== 'FALSE');
+  ok('empty never CONTRADICTORY', outcomeClassForStatus('empty') !== 'CONTRADICTORY');
+}
+
 console.log(`budget.test.mjs: ${passed} passed`);

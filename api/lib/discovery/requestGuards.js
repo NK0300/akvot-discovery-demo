@@ -2,11 +2,16 @@
  * Discovery request guards — size caps + light in-memory rate limit.
  * Additive; Preview/demo scoped. No secrets. Does not touch Core /api/lookup.
  *
- * RATE LIMIT (Checkpoint F residual close):
+ * RATE LIMIT (Checkpoint F residual close + GO-IMPL-500 harden):
  * - Backend: **in-memory only** (`RATE_LIMIT_BACKEND = 'memory'`).
  * - Upstash / Vercel KV is wired for **sessionStore**, NOT for Discovery rate limit.
- *   Do not invent a distributed RL path here unless a dedicated safe wire exists.
+ *   Do not invent a distributed RL path / distributed RL PASS here.
  * - Multi-instance Preview: counters do not share across isolates (honest residual).
+ * - Key isolation: counters are per-key; key A trip does not charge key B.
+ * - Overflow: when map is at RATE_LIMIT_MAX_KEYS with all windows active, NEW keys
+ *   fail-closed (429 overflow) instead of evicting live counters (bypass defense).
+ * - Caps: RATE_LIMIT_MAX=40 / window 60s · RATE_LIMIT_MAX_KEYS=2000 (demo/Preview).
+* - opts.now: optional clock for prune/window edge unit tests (production omits).
  * - Suitable for demo / single-instance Preview; not a production distributed gate.
  */
 
@@ -71,7 +76,9 @@ export function validateDiscoveryCreateBody(body = {}) {
 }
 
 /**
- * Prune expired entries; if still over maxKeys, drop oldest by start time.
+ * Prune ONLY expired entries. Never evict active counters (that weakens isolation
+ * and can create a unique-key flood bypass). Capacity for NEW keys is enforced
+ * fail-closed in checkDiscoveryRateLimit when size >= maxKeys after this prune.
  * @param {number} now
  * @param {number} windowMs
  */
@@ -79,10 +86,6 @@ function pruneRateMap(now, windowMs) {
   for (const [rk, v] of rateMap) {
     if (now - v.start >= windowMs) rateMap.delete(rk);
   }
-  if (rateMap.size <= RATE_LIMIT_MAX_KEYS) return;
-  const ranked = [...rateMap.entries()].sort((a, b) => a[1].start - b[1].start);
-  const drop = rateMap.size - RATE_LIMIT_MAX_KEYS;
-  for (let i = 0; i < drop; i++) rateMap.delete(ranked[i][0]);
 }
 
 /**
@@ -93,18 +96,40 @@ function pruneRateMap(now, windowMs) {
 export function checkDiscoveryRateLimit(key, opts = {}) {
   const max = typeof opts.max === 'number' ? opts.max : RATE_LIMIT_MAX;
   const windowMs = typeof opts.windowMs === 'number' ? opts.windowMs : RATE_LIMIT_WINDOW_MS;
-  const now = Date.now();
+  const maxKeys = typeof opts.maxKeys === 'number' ? opts.maxKeys : RATE_LIMIT_MAX_KEYS;
+  // opts.now — testability for prune/window edges only; production omits (Date.now)
+  const now = typeof opts.now === 'number' && Number.isFinite(opts.now) ? opts.now : Date.now();
   const k = String(key || 'anon').slice(0, 128) || 'anon';
+
+  // Prune expired first so capacity decisions are honest
+  if (rateMap.size > 500 || rateMap.size >= maxKeys) {
+    pruneRateMap(now, windowMs);
+  }
+
   let entry = rateMap.get(k);
-  if (!entry || now - entry.start >= windowMs) {
+  const windowExpired = entry && now - entry.start >= windowMs;
+  if (!entry || windowExpired) {
+    // Fail-closed overflow: at capacity with no slot for a new/renewed key —
+    // do NOT evict active counters (that would weaken isolation / allow bypass).
+    if (!rateMap.has(k) && rateMap.size >= maxKeys) {
+      return {
+        ok: false,
+        status: 429,
+        error: 'rate limit map overflow',
+        retryAfterSec: Math.max(1, Math.ceil(windowMs / 1000)),
+        backend: RATE_LIMIT_BACKEND,
+        distributed: false,
+        upstashWiredForRateLimit: false,
+        overflow: true,
+        failureClass: 'rate_limit_overflow',
+      };
+    }
+    // Drop expired entry before renewing so size accounting stays tight
+    if (windowExpired && rateMap.has(k)) rateMap.delete(k);
     entry = { start: now, count: 0 };
     rateMap.set(k, entry);
   }
   entry.count += 1;
-  // Prune opportunistically: every trip over soft size, or when map grows large
-  if (rateMap.size > 500 || rateMap.size > RATE_LIMIT_MAX_KEYS) {
-    pruneRateMap(now, windowMs);
-  }
   if (entry.count > max) {
     const retryAfterSec = Math.max(1, Math.ceil((windowMs - (now - entry.start)) / 1000));
     return {
@@ -113,12 +138,19 @@ export function checkDiscoveryRateLimit(key, opts = {}) {
       error: 'rate limit exceeded',
       retryAfterSec,
       backend: RATE_LIMIT_BACKEND,
+      // Honest: memory Map only — not multi-instance / not Upstash RL
+      distributed: false,
+      upstashWiredForRateLimit: false,
+      overflow: false,
     };
   }
   return {
     ok: true,
     backend: RATE_LIMIT_BACKEND,
     remaining: Math.max(0, max - entry.count),
+    distributed: false,
+    upstashWiredForRateLimit: false,
+    overflow: false,
   };
 }
 
@@ -141,6 +173,9 @@ export function getDiscoveryRateLimitInfo() {
     distributed: false,
     /** sessionStore may use Upstash; Discovery RL does not. */
     upstashWiredForRateLimit: false,
+    /** Overflow policy: fail-closed for new keys at maxKeys (no active eviction). */
+    overflowPolicy: 'fail_closed_new_key',
+    note: 'memory RL only — not multi-instance; not Upstash RL; not distributed PASS',
   };
 }
 

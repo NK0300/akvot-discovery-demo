@@ -1,0 +1,181 @@
+{
+  "checkpoint": "CHECKPOINT-QA-UNIT",
+  "lane": "בודק",
+  "date": "2026-09-23",
+  "timestamp": "2026-09-23T22:44:09+03:00",
+  "timezone": "Asia/Jerusalem",
+  "workspace": "/workspace/akvot-quick-demo",
+  "command": "npm test",
+  "exitCode": 0,
+  "overall": "PASS",
+  "keepImprove": "KEEP",
+  "promote": false,
+  "flagsDefault": "OFF",
+  "newHttpAdapters": false,
+  "locks": {
+    "core": {
+      "status": "LOCKED",
+      "deployment": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "host": "akvot-simple-demo.vercel.app"
+    },
+    "b0": {
+      "status": "FROZEN",
+      "deployment": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "host": "akvot-discovery.vercel.app"
+    },
+    "a2": "FROZEN_EXPERIMENTAL",
+    "c1": "FROZEN_EXPERIMENTAL",
+    "f11": "HOLD",
+    "accInvariants": [
+      "leak=0 forbidden Q1701775",
+      "URL-alone→UNKNOWN",
+      "SAME-REFERENCE=typed QID/VIAF/OL only"
+    ]
+  },
+  "previewLiveMatrix": {
+    "status": "WAIT",
+    "blocker": "Preview urlTargets SSRF pack from שרת not available — do not invent Preview URL",
+    "localUnitSsrfPack": "PASS inside security.checkpoint"
+  },
+  "suites": [
+    {
+      "name": "api/lib/orchestrator.test.mjs",
+      "pass": 128,
+      "fail": 0,
+      "notes": "Core orchestrator Acc/P0"
+    },
+    {
+      "name": "api/lib/forbiddenIdentities.test.mjs",
+      "pass": 43,
+      "fail": 0,
+      "notes": "Q1701775 denylist"
+    },
+    {
+      "name": "api/lib/discovery/sessionStore.test.mjs",
+      "pass": 125,
+      "fail": 0,
+      "notes": "fs-regen B17/B18"
+    },
+    {
+      "name": "api/lib/discovery/orchestrator.test.mjs",
+      "pass": 113,
+      "fail": 0,
+      "notes": "discovery orchestrator + harden"
+    },
+    {
+      "name": "api/lib/discovery/phase1.foundation.test.mjs",
+      "pass": 79,
+      "fail": 0,
+      "notes": "Gate-A foundation"
+    },
+    {
+      "name": "api/lib/discovery/adapterContract.test.mjs",
+      "pass": 57,
+      "fail": 0,
+      "notes": "HTTPS + redirect re-gate"
+    },
+    {
+      "name": "api/lib/discovery/phase2.engine.test.mjs",
+      "pass": 57,
+      "fail": 0,
+      "notes": "Engine F11-safe"
+    },
+    {
+      "name": "api/lib/discovery/goImpl.harden.test.mjs",
+      "pass": 86,
+      "fail": 0,
+      "notes": "Budget/cancel/obs"
+    },
+    {
+      "name": "api/lib/discovery/checkpointB.e2e.test.mjs",
+      "pass": 36,
+      "fail": 0,
+      "notes": "Checkpoint B e2e"
+    },
+    {
+      "name": "api/lib/discovery/adversarial.acc.test.mjs",
+      "pass": 67,
+      "fail": 0,
+      "notes": "MEGA adversarial Acc"
+    },
+    {
+      "name": "api/lib/discovery/adversarial.matrix.acc.test.mjs",
+      "pass": 120,
+      "fail": 0,
+      "notes": "matrixRows=30 fixture"
+    },
+    {
+      "name": "api/lib/discovery/evidence.test.mjs",
+      "pass": 55,
+      "fail": 0,
+      "notes": "Checkpoint C"
+    },
+    {
+      "name": "api/lib/discovery/relationship.test.mjs",
+      "pass": 43,
+      "fail": 0,
+      "notes": "Checkpoint E"
+    },
+    {
+      "name": "api/lib/discovery/security.checkpoint.test.mjs",
+      "pass": 186,
+      "fail": 0,
+      "notes": "Checkpoint F unit+wire local SSRF pack"
+    },
+    {
+      "name": "api/lib/discovery/prCloseout.acc.test.mjs",
+      "pass": 107,
+      "fail": 0,
+      "notes": "PR-closeout Acc/Sec/EA"
+    },
+    {
+      "name": "api/lib/discovery/failureInject.test.mjs",
+      "pass": 54,
+      "fail": 0,
+      "notes": "Failure inject / obs"
+    },
+    {
+      "name": "api/lib/discovery/providers.viaf.test.mjs",
+      "pass": 44,
+      "fail": 0,
+      "notes": "VIAF provider units"
+    },
+    {
+      "name": "api/lib/discovery/corroboration.viaf.test.mjs",
+      "pass": 50,
+      "fail": 0,
+      "notes": "EXP-A2 typed softref frozen"
+    },
+    {
+      "name": "api/lib/discovery/webOrigin.test.mjs",
+      "pass": 96,
+      "fail": 0,
+      "notes": "C1 URL-alone UNKNOWN"
+    },
+    {
+      "name": "test-results/contract-identity-p0.mjs",
+      "pass": 5,
+      "fail": 0,
+      "notes": "Core KEEP/P0 live contract 5/5"
+    },
+    {
+      "name": "api/lib/discovery/checkpointD.sse.test.mjs",
+      "pass": 16,
+      "fail": 0,
+      "notes": "Checkpoint D SSE"
+    }
+  ],
+  "totals": {
+    "suites": 21,
+    "pass": 1567,
+    "fail": 0
+  },
+  "fixtureFixes": [],
+  "productionCodeEdits": [],
+  "reportMd": "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/CHECKPOINT-QA-UNIT-בודק-2026-09-23.md",
+  "actionLogBand": [
+    100,
+    101,
+    102
+  ]
+}

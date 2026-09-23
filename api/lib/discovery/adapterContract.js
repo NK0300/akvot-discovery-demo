@@ -7,7 +7,7 @@ import { assertSafePublicHttpsUrl } from './urlSafety.js';
 import { isForbiddenQid, extractQid, FORBIDDEN_IDENTITIES_VERSION } from '../forbiddenIdentities.js';
 import { normalizeRawHit } from './store.js';
 
-export const ADAPTER_CONTRACT_VERSION = '2026-09-22.adapter-b1';
+export const ADAPTER_CONTRACT_VERSION = '2026-09-23.adapter-softfail3';
 
 /** Per-response body cap for JSON adapter fetches (bytes). */
 export const MAX_ADAPTER_RESPONSE_BYTES = 512_000;
@@ -88,6 +88,8 @@ export function assertAdapterFetchUrl(url, providerId) {
 
 /**
  * Compose AbortSignal from budgetMs + optional parent.
+ * Abort reason is 'timeout' (budget) or 'cancelled' (parent) so callers can
+ * distinguish EMPTY/soft-fail honesty: cancelled ≠ timeout ≠ error.
  * @param {number} budgetMs
  * @param {AbortSignal} [parent]
  */
@@ -97,20 +99,153 @@ export function adapterBudgetSignal(budgetMs, parent) {
     Math.max(MIN_ADAPTER_BUDGET_MS, Number(budgetMs) || DEFAULT_ADAPTER_BUDGET_MS),
   );
   const c = new AbortController();
-  const t = setTimeout(() => c.abort(), ms);
-  const onParent = () => c.abort();
+  /** @type {'timeout'|'cancelled'|null} */
+  let abortKind = null;
+  const t = setTimeout(() => {
+    if (abortKind) return;
+    abortKind = 'timeout';
+    try {
+      c.abort('timeout');
+    } catch {
+      c.abort();
+    }
+  }, ms);
+  const onParent = () => {
+    if (abortKind === 'cancelled') return;
+    abortKind = 'cancelled';
+    try {
+      c.abort('cancelled');
+    } catch {
+      c.abort();
+    }
+  };
   if (parent) {
-    if (parent.aborted) c.abort();
+    if (parent.aborted) onParent();
     else parent.addEventListener('abort', onParent, { once: true });
   }
   return {
     signal: c.signal,
     budgetMs: ms,
+    get abortKind() {
+      if (abortKind) return abortKind;
+      if (!c.signal.aborted) return null;
+      if (parent?.aborted) return 'cancelled';
+      const r = c.signal.reason;
+      if (r === 'cancelled' || r === 'timeout') return r;
+      return 'timeout';
+    },
     dispose() {
       clearTimeout(t);
       if (parent) parent.removeEventListener('abort', onParent);
     },
   };
+}
+
+/**
+ * Classify adapter abort / thrown error → closed status.
+ * Parent abort ⇒ cancelled; budget AbortSignal.reason timeout ⇒ timeout.
+ * Never maps empty/cancel/timeout → CONTRADICTORY / FALSE.
+ * @param {unknown} err
+ * @param {AbortSignal} [parentSignal]
+ * @returns {'cancelled'|'timeout'|'error'}
+ */
+export function classifyAdapterAbort(err, parentSignal) {
+  if (parentSignal?.aborted) return 'cancelled';
+  const reason =
+    err && typeof err === 'object' && 'reason' in /** @type {object} */ (err)
+      ? /** @type {{ reason?: unknown }} */ (err).reason
+      : undefined;
+  const signalReason =
+    err && typeof err === 'object' && 'signal' in /** @type {object} */ (err)
+      ? /** @type {{ signal?: AbortSignal }} */ (err).signal?.reason
+      : undefined;
+  const msg = String(
+    (err && typeof err === 'object' && 'message' in /** @type {object} */ (err)
+      ? /** @type {{ message?: unknown }} */ (err).message
+      : err) || '',
+  );
+  const name =
+    err && typeof err === 'object' && 'name' in /** @type {object} */ (err)
+      ? String(/** @type {{ name?: unknown }} */ (err).name || '')
+      : '';
+  const r = reason ?? signalReason;
+  if (r === 'cancelled' || /\bcancel(led)?\b/i.test(msg)) return 'cancelled';
+  if (r === 'timeout' || name === 'TimeoutError') return 'timeout';
+  if (name === 'AbortError' || /abort|timeout/i.test(msg)) {
+    // Ambiguous AbortError without parent ⇒ budget timeout (adapters compose budget first)
+    return 'timeout';
+  }
+  return 'error';
+}
+
+/**
+ * Map classifyAdapterAbort → provider soft-fail error code (never identity).
+ * @param {unknown} err
+ * @param {AbortSignal} [parentSignal]
+ */
+/**
+ * Closed soft-fail code families — must stay pairwise distinct.
+ * cancel ≠ timeout ≠ http_N ≠ budget_exhausted ≠ generic error.
+ * http_N is patterned (`http_429`); others are exact tokens.
+ */
+export const ADAPTER_SOFT_FAIL_CODE_FAMILIES = Object.freeze([
+  'cancelled',
+  'timeout',
+  'http_N',
+  'budget_exhausted',
+  'error',
+]);
+
+/**
+ * True when code is an http_N soft-fail (never cancel/timeout/budget).
+ * @param {string} code
+ */
+export function isHttpSoftFailCode(code) {
+  return /^http_\d{3}$/.test(String(code || ''));
+}
+
+/**
+ * Pairwise distinctness probe for soft-fail taxonomy (unit/acc).
+ * @param {string[]} codes
+ */
+export function softFailCodesArePairwiseDistinct(codes) {
+  const list = (Array.isArray(codes) ? codes : []).map((c) => String(c || ''));
+  if (list.length < 2) return false;
+  const set = new Set(list);
+  if (set.size !== list.length) return false;
+  // Explicit contract: these four must never collide when present together
+  const need = ['cancelled', 'timeout', 'budget_exhausted'];
+  for (const n of need) {
+    if (list.includes(n) && list.filter((c) => c === n).length !== 1) return false;
+  }
+  const https = list.filter(isHttpSoftFailCode);
+  if (https.some((h) => need.includes(h) || h === 'error')) return false;
+  return true;
+}
+
+export function adapterSoftFailCode(err, parentSignal) {
+  // Preserve explicit budget_exhausted before abort classification (ledger path)
+  const earlyCode =
+    err && typeof err === 'object' && 'code' in /** @type {object} */ (err)
+      ? /** @type {{ code?: unknown }} */ (err).code
+      : undefined;
+  if (earlyCode === 'budget_exhausted' || earlyCode === 'BUDGET_EXHAUSTED') {
+    return 'budget_exhausted';
+  }
+  const kind = classifyAdapterAbort(err, parentSignal);
+  if (kind === 'cancelled') return 'cancelled';
+  if (kind === 'timeout') return 'timeout';
+  const status =
+    err && typeof err === 'object' && 'status' in /** @type {object} */ (err)
+      ? /** @type {{ status?: number }} */ (err).status
+      : undefined;
+  if (typeof status === 'number' && status > 0) return `http_${status}`;
+  if (earlyCode) {
+    const c = String(earlyCode).slice(0, 40);
+    if (c === 'budget_exhausted') return 'budget_exhausted';
+    return c;
+  }
+  return 'error';
 }
 
 /**
@@ -159,47 +294,104 @@ async function readBodyCapped(res, maxBytes = MAX_ADAPTER_RESPONSE_BYTES) {
  * @param {{ providerId?: string, headers?: object, maxBytes?: number }} [opts]
  * @returns {Promise<object>}
  */
+/** Max manual redirect hops for adapter JSON fetch (SSRF re-check each hop). */
+export const MAX_ADAPTER_REDIRECTS = 3;
+
+/**
+ * Resolve redirect Location against current URL; re-gate every hop (SSRF).
+ * @param {string} current
+ * @param {string} location
+ * @param {string} [providerId]
+ */
+export function resolveAdapterRedirectUrl(current, location, providerId) {
+  const loc = String(location || '').trim();
+  if (!loc) return { ok: false, reason: 'redirect_missing_location' };
+  let next;
+  try {
+    next = new URL(loc, current).toString();
+  } catch {
+    return { ok: false, reason: 'redirect_invalid_location' };
+  }
+  return assertAdapterFetchUrl(next, providerId || undefined);
+}
+
 export async function safeFetchJson(url, signal, opts = {}) {
   const providerId = opts.providerId || '';
-  const gate = assertAdapterFetchUrl(url, providerId || undefined);
-  if (!gate.ok) {
-    const err = new Error(`unsafe_adapter_url:${gate.reason}`);
-    err.code = gate.reason || 'unsafe_url';
-    err.status = 0;
-    throw err;
-  }
-  if (signal?.aborted) {
-    const err = new Error('aborted');
-    err.name = 'AbortError';
-    throw err;
-  }
-  const res = await fetch(gate.canonical, {
-    signal,
-    headers: {
-      Accept: 'application/json',
-      'User-Agent': 'akvot-discovery/0.1 (public research; adapter-contract)',
-      ...(opts.headers || {}),
-    },
-    redirect: 'follow',
-  });
-  if (!res.ok) {
-    const err = new Error(`HTTP ${res.status}`);
-    err.status = res.status;
-    throw err;
-  }
-  const body = await readBodyCapped(res, opts.maxBytes ?? MAX_ADAPTER_RESPONSE_BYTES);
-  if (!body.ok) {
-    const err = new Error(`body_too_large:${body.bytes || '?'}`);
-    err.code = 'body_too_large';
-    err.status = 413;
-    throw err;
-  }
-  try {
-    return JSON.parse(body.text);
-  } catch (e) {
-    const err = new Error(`json_parse:${String(e?.message || e)}`);
-    err.code = 'json_parse';
-    throw err;
+  const maxRedirects =
+    typeof opts.maxRedirects === 'number' ? opts.maxRedirects : MAX_ADAPTER_REDIRECTS;
+  let currentUrl = url;
+  let hops = 0;
+  while (true) {
+    const gate = assertAdapterFetchUrl(currentUrl, providerId || undefined);
+    if (!gate.ok) {
+      const err = new Error(`unsafe_adapter_url:${gate.reason}`);
+      err.code = gate.reason || 'unsafe_url';
+      err.status = 0;
+      throw err;
+    }
+    if (signal?.aborted) {
+      const err = new Error('aborted');
+      err.name = 'AbortError';
+      throw err;
+    }
+    const res = await fetch(gate.canonical, {
+      signal,
+      headers: {
+        Accept: 'application/json',
+        'User-Agent': 'akvot-discovery/0.1 (public research; adapter-contract)',
+        ...(opts.headers || {}),
+      },
+      redirect: 'manual',
+    });
+    // Manual redirect: re-validate Location host/allowlist before following
+    if (res.status >= 300 && res.status < 400) {
+      if (hops >= maxRedirects) {
+        const err = new Error('too_many_redirects');
+        err.code = 'too_many_redirects';
+        err.status = res.status;
+        throw err;
+      }
+      const loc = res.headers?.get?.('location') || res.headers?.get?.('Location');
+      const next = resolveAdapterRedirectUrl(gate.canonical, loc, providerId);
+      if (!next.ok) {
+        const err = new Error(`unsafe_adapter_redirect:${next.reason}`);
+        err.code = next.reason || 'unsafe_redirect';
+        err.status = 0;
+        throw err;
+      }
+      currentUrl = next.canonical;
+      hops += 1;
+      continue;
+    }
+    // Defense: if runtime exposed final URL, re-gate (follow mocks may set res.url)
+    if (res.url && typeof res.url === 'string' && res.url !== gate.canonical) {
+      const finalGate = assertAdapterFetchUrl(res.url, providerId || undefined);
+      if (!finalGate.ok) {
+        const err = new Error(`unsafe_adapter_final_url:${finalGate.reason}`);
+        err.code = finalGate.reason || 'unsafe_final_url';
+        err.status = 0;
+        throw err;
+      }
+    }
+    if (!res.ok) {
+      const err = new Error(`HTTP ${res.status}`);
+      err.status = res.status;
+      throw err;
+    }
+    const body = await readBodyCapped(res, opts.maxBytes ?? MAX_ADAPTER_RESPONSE_BYTES);
+    if (!body.ok) {
+      const err = new Error(`body_too_large:${body.bytes || '?'}`);
+      err.code = 'body_too_large';
+      err.status = 413;
+      throw err;
+    }
+    try {
+      return JSON.parse(body.text);
+    } catch (e) {
+      const err = new Error(`json_parse:${String(e?.message || e)}`);
+      err.code = 'json_parse';
+      throw err;
+    }
   }
 }
 
@@ -401,6 +593,14 @@ export function normalizeAdapterToEvidence(raw, providerId) {
     urlIsNotIdentity: true,
     candidateIsNotFact: true,
   };
+  // Existing adapter path only: retain normalized registry provenance without changing B0 store semantics.
+  if (raw.sourceRecordId) evidence.sourceRecordId = String(raw.sourceRecordId).slice(0, 160);
+  if (Array.isArray(raw.entityRefs)) {
+    evidence.typedRefs = raw.entityRefs
+      .map(String)
+      .filter((r) => /^(viaf|qid|ol|wd):/i.test(r) || /^Q\d+$/i.test(r))
+      .slice(0, 32);
+  }
   return { finding, evidence };
 }
 
@@ -430,36 +630,81 @@ export function normalizeAdapterBatchToEvidence(batch) {
  * Scrub family journal entries (Acc on every journal path).
  * @param {object[]} journal
  */
+function scrubReasonToken(r, strippedIds = []) {
+  const s = String(r ?? '');
+  if (!valueHasForbidden(s)) return s.slice(0, 160);
+  return s
+    .replace(/\bQ\d+\b/gi, (tok) => {
+      if (isForbiddenQid(tok)) {
+        const q = extractQid(tok);
+        if (q && !strippedIds.includes(q)) strippedIds.push(q);
+        return '[REDACTED]';
+      }
+      return tok;
+    })
+    .slice(0, 160);
+}
+
+/**
+ * Acc-scrub family journal entries on every journal / emit path.
+ * Allowlisted fields only — no raw spread (seed / skipReason bait / Acc QIDs).
+ * @param {object[]} journal
+ */
 export function scrubFamilyJournal(journal) {
   if (!Array.isArray(journal)) return [];
   return journal.map((entry) => {
     if (!entry || typeof entry !== 'object') return entry;
     const strippedIds = [];
+    const providerId = entry.providerId != null ? String(entry.providerId).slice(0, 40) : undefined;
     const findings = (entry.findings || [])
-      .map((f) => scrubAdapterRawFinding(f, entry.providerId, strippedIds))
+      .map((f) => scrubAdapterRawFinding(f, providerId || '', strippedIds))
       .filter(Boolean);
     const evidence = (entry.evidence || []).filter((e) => {
       if (!e) return false;
-      if (valueHasForbidden(e.id) || valueHasForbidden(e.provenanceUrl) || valueHasForbidden(e.quote)) {
-        const q = extractQid(e.id) || extractQid(e.provenanceUrl) || extractQid(e.quote);
+      if (
+        valueHasForbidden(e.id) ||
+        valueHasForbidden(e.provenanceUrl) ||
+        valueHasForbidden(e.quote) ||
+        valueHasForbidden(e.signalSummary)
+      ) {
+        const q =
+          extractQid(e.id) ||
+          extractQid(e.provenanceUrl) ||
+          extractQid(e.quote) ||
+          extractQid(e.signalSummary);
         if (q && isForbiddenQid(q) && !strippedIds.includes(q)) strippedIds.push(q);
         return false;
       }
       return true;
     });
-    const reasons = (entry.reasons || []).map((r) => {
-      const s = String(r);
-      if (!valueHasForbidden(s)) return s.slice(0, 160);
-      return s.replace(/\bQ\d+\b/gi, (tok) => (isForbiddenQid(tok) ? '[REDACTED]' : tok)).slice(0, 160);
-    });
-    return {
-      ...entry,
+    const reasons = (entry.reasons || []).map((r) => scrubReasonToken(r, strippedIds));
+    /** @type {Record<string, unknown>} */
+    const out = {
+      familyId: entry.familyId != null ? String(entry.familyId).slice(0, 40) : undefined,
+      providerId,
+      intentId: entry.intentId != null ? String(entry.intentId).slice(0, 40) : undefined,
+      planId: entry.planId != null ? String(entry.planId).slice(0, 40) : undefined,
+      status: entry.status != null ? String(entry.status).slice(0, 40) : undefined,
+      outcomeClass: entry.outcomeClass != null ? String(entry.outcomeClass).slice(0, 64) : undefined,
       findings,
       evidence,
+      executionTimeMs:
+        typeof entry.executionTimeMs === 'number' ? Math.max(0, entry.executionTimeMs) : 0,
+      requestsUsed: typeof entry.requestsUsed === 'number' ? Math.max(0, entry.requestsUsed) : 0,
       reasons,
-      ...(strippedIds.length ? { forbiddenStripped: strippedIds.length } : {}),
       forbiddenIdentitiesVersion: FORBIDDEN_IDENTITIES_VERSION,
     };
+    if (entry.skipReason != null) {
+      out.skipReason = scrubReasonToken(entry.skipReason, strippedIds);
+    }
+    if (entry.budgetExhaustedReason != null) {
+      out.budgetExhaustedReason = scrubReasonToken(entry.budgetExhaustedReason, strippedIds);
+    }
+    if (strippedIds.length) out.forbiddenStripped = strippedIds.length;
+    for (const k of Object.keys(out)) {
+      if (out[k] === undefined) delete out[k];
+    }
+    return out;
   });
 }
 
@@ -472,7 +717,14 @@ export default {
   WIRED_PUBLIC_PROVIDER_IDS,
   isAdapterHostAllowed,
   assertAdapterFetchUrl,
+  resolveAdapterRedirectUrl,
+  MAX_ADAPTER_REDIRECTS,
   adapterBudgetSignal,
+  classifyAdapterAbort,
+  adapterSoftFailCode,
+  ADAPTER_SOFT_FAIL_CODE_FAMILIES,
+  isHttpSoftFailCode,
+  softFailCodesArePairwiseDistinct,
   safeFetchJson,
   scrubAdapterRawFinding,
   scrubAdapterBatch,

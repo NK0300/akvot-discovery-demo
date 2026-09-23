@@ -15,7 +15,7 @@ import {
   FORBIDDEN_GRAPH_RELATIONSHIPS,
   GRAPH_RELATIONSHIPS,
 } from './evidenceGraph.js';
-import { isForbiddenQid, extractQid } from '../forbiddenIdentities.js';
+import { isForbiddenQid, extractQid, redactForbiddenQidsInText, valueHasForbidden } from '../forbiddenIdentities.js';
 
 export const RELATIONSHIP_MODULE_VERSION = '2026-09-22.relationship-e1';
 
@@ -210,9 +210,7 @@ export function buildProvenancedEdge(input = {}) {
     softRefKeys: [...(input.sharedTypedKeys || input.coalesceKeys || input.provenance?.softRefKeys || [])]
       .filter((k) => /^(viaf|qid|ol):/i.test(String(k)))
       .slice(0, 16),
-    signalSummary: String(input.signalSummary || input.provenance?.signalSummary || '')
-      .replace(/\bQ1701775\b/gi, '[REDACTED_QID]')
-      .slice(0, 120),
+    signalSummary: redactForbiddenQidsInText(String(input.signalSummary || input.provenance?.signalSummary || '')).slice(0, 120),
     createdAt: input.createdAt || input.provenance?.createdAt || new Date().toISOString(),
   };
 

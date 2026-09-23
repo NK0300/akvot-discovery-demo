@@ -4,6 +4,8 @@
  * Cite: UNKNOWN-NORMATIVE · BUDGET-FANOUT · SoT 10
  */
 
+import { redactForbiddenQidsInText, valueHasForbidden } from '../forbiddenIdentities.js';
+
 /** @typedef {{ code: string, severity: 'info'|'warn', familyId?: string, providerId?: string, message: string, relatedIntentId?: string }} DiscoveryGap */
 
 export const GAP_CODES = Object.freeze([
@@ -177,10 +179,14 @@ export function scrubGapsForEmit(gaps) {
     ...(g.familyId ? { familyId: String(g.familyId).slice(0, 64) } : {}),
     ...(g.providerId ? { providerId: String(g.providerId).slice(0, 64) } : {}),
     ...(g.relatedIntentId ? { relatedIntentId: String(g.relatedIntentId).slice(0, 80) } : {}),
-    message: String(g.message || '')
-      .replace(/(api[_-]?key|secret|password|token|bearer\s+\S+)/gi, '[REDACTED]')
-      .replace(/\bQ1701775\b/gi, '[REDACTED_QID]')
-      .slice(0, 120),
+    message: (() => {
+      let msg = String(g.message || '')
+        .replace(/(api[_-]?key|secret|password|token|bearer\s+\S+)/gi, '[REDACTED]');
+      msg = redactForbiddenQidsInText(msg);
+      // Prefer drop residual bait over emit (UNKNOWN > wrong identity)
+      if (valueHasForbidden(msg)) msg = 'gap_message_redacted';
+      return msg.slice(0, 120);
+    })(),
   }));
 }
 

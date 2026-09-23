@@ -8,7 +8,7 @@
 import { assertSafePublicHttpsUrl, isBlockedDiscoveryHost } from './urlSafety.js';
 import { isForbiddenQid, extractQid, FORBIDDEN_IDENTITIES_VERSION } from '../forbiddenIdentities.js';
 
-export const SECURITY_MODULE_VERSION = '2026-09-23.security-f-wave';
+export const SECURITY_MODULE_VERSION = '2026-09-23.security-ssrf-pack2';
 
 /** Credential / secret shaped patterns (emit + logs). */
 const CREDENTIAL_RE =
@@ -342,6 +342,261 @@ export async function runPlanUrlTargetsFetchGate(plan, opts = {}) {
   };
 }
 
+
+/**
+ * Local Preview-oriented urlTargets SSRF pack (no live Vercel Preview required).
+ * Exercises poison / metadata / DNS-rebinding / userinfo / scheme traps via the
+ * same fail-closed gate wired into providers + familyOrchestrator + orch.
+ * LIVE Preview flag-ON e2e remains OPEN if box cannot reach a real Preview deploy.
+ * @param {{ fetchFn?: (url: string) => Promise<unknown> }} [opts]
+ * @returns {Promise<{
+ *   ok: boolean,
+ *   cases: object[],
+ *   passed: number,
+ *   failed: number,
+ *   livePreviewRequired: true,
+ *   livePreviewStatus: 'OPEN',
+ * }>}
+ */
+/**
+ * Local Preview-oriented urlTargets SSRF pack (no live Vercel Preview required).
+ * Exercises poison / metadata / DNS-rebinding / userinfo / scheme / decimal-IP /
+ * CGNAT / k8s traps via the same fail-closed gate wired into providers +
+ * familyOrchestrator + orch. LIVE Preview flag-ON e2e remains OPEN if box cannot
+ * reach a real Preview deploy (or Vercel scope re-auth is required).
+ * @param {{ fetchFn?: (url: string) => Promise<unknown> }} [opts]
+ * @returns {Promise<{
+ *   ok: boolean,
+ *   cases: object[],
+ *   passed: number,
+ *   failed: number,
+ *   fixtureCount: number,
+ *   livePreviewRequired: true,
+ *   livePreviewStatus: 'OPEN',
+ * }>}
+ */
+export async function simulatePreviewUrlTargetsSsrfPack(opts = {}) {
+  const cases = [];
+  const record = (name, cond, detail = {}) => {
+    cases.push({ name, ok: !!cond, ...detail });
+  };
+
+  /** Adversarial urlTargets fixtures — unit-safe (no network). */
+  const ADVERSARIAL_URLS = [
+    // localhost / loopback
+    'https://localhost/',
+    'https://app.localhost/x',
+    'http://127.0.0.1/admin',
+    'https://127.0.0.1/',
+    'https://[::1]/',
+    'https://[::ffff:127.0.0.1]/',
+    // decimal / hex / short IP forms (URL API normalizes → blocked)
+    'https://2130706433/',
+    'https://0x7f000001/',
+    'https://0177.0.0.1/',
+    'https://127.1/',
+    // metadata / cloud
+    'https://169.254.169.254/latest/meta-data',
+    'http://169.254.169.254/',
+    'https://metadata.google.internal/',
+    'https://metadata.azure.com/',
+    'https://metadata/',
+    'https://instance-data/latest/meta-data',
+    'https://kubernetes.default/',
+    'https://kubernetes.default.svc/',
+    // private / CGNAT / multicast / raw public IP
+    'https://10.0.0.1/',
+    'https://192.168.1.1/',
+    'https://172.16.5.1/',
+    'https://100.64.0.1/',
+    'https://224.0.0.1/',
+    'https://8.8.8.8/',
+    'https://0/',
+    'https://broadcasthost/',
+    // DNS rebinding / local-dev wildcards (unit-safe host suffix traps)
+    'https://127.0.0.1.nip.io/',
+    'https://10.0.0.1.sslip.io/x',
+    'https://1.2.3.4.xip.io/',
+    'https://localtest.me/',
+    'https://foo.localtest.me/',
+    'https://evil.nip.io/',
+    // schemes
+    'file:///etc/passwd',
+    'ftp://example.com/',
+    'blob:https://example.com/uuid',
+    'javascript:alert(1)',
+    'data:text/html,hi',
+    'http://example.com/',
+    // userinfo
+    'https://user:pass@example.com/',
+    'https://user@example.com/',
+    // suffix traps
+    'https://host.local/',
+    'https://svc.internal/',
+    'https://foo.internal/x',
+  ];
+
+  // 1) Poison mixed plan → failClosed + zero fetch
+  const poisonPlan = {
+    urlTargets: [
+      { url: 'https://example.com/page', safety: 'allowed' },
+      { url: 'http://127.0.0.1/admin', safety: 'allowed' },
+      { url: 'https://169.254.169.254/latest/meta-data', safety: 'blocked' },
+      { url: 'https://metadata.google.internal/', safety: 'allowed' },
+      { url: 'https://metadata.azure.com/', safety: 'allowed' },
+      { url: 'https://instance-data/latest/meta-data', safety: 'allowed' },
+      { url: 'https://127.0.0.1.nip.io/', safety: 'allowed' },
+      { url: 'https://user:pass@example.com/', safety: 'allowed' },
+      { url: 'file:///etc/passwd', safety: 'allowed' },
+      { url: 'https://2130706433/', safety: 'allowed' },
+    ],
+  };
+  const poisonGate = selectFetchablePlanUrlTargets(poisonPlan);
+  record('poison_failClosed', poisonGate.ok === false && poisonGate.failClosed === true && poisonGate.urls.length === 0, {
+    urls: poisonGate.urls.length,
+    poison: poisonGate.poison,
+  });
+
+  const fetchedPoison = [];
+  const poisonRun = await runPlanUrlTargetsFetchGate(poisonPlan, {
+    fetchFn: async (url) => {
+      fetchedPoison.push(url);
+      return { ok: true };
+    },
+  });
+  record('poison_never_fetches', poisonRun.ok === false && fetchedPoison.length === 0 && poisonRun.poison === true, {
+    fetched: fetchedPoison.length,
+  });
+
+  // 2) Clean public plan → only allowlisted https fetched
+  const cleanPlan = {
+    urlTargets: [
+      { url: 'https://example.com/a', safety: 'allowed' },
+      { url: 'https://www.wikidata.org/wiki/Q42', safety: 'allowed' },
+      { url: 'https://localhost/', safety: 'blocked' },
+      { url: 'http://10.0.0.1/', safety: 'unsafe' },
+      { url: 'https://10.0.0.1.sslip.io/x', safety: 'blocked' },
+      { url: 'file:///etc/passwd', safety: 'blocked' },
+    ],
+  };
+  const cleanGate = selectFetchablePlanUrlTargets(cleanPlan);
+  const cleanOk =
+    cleanGate.ok === true &&
+    cleanGate.poison === false &&
+    cleanGate.urls.every((u) => assertSafePublicHttpsUrl(u).ok) &&
+    !cleanGate.urls.some((u) => /localhost|10\.0\.0|sslip\.io|file:/i.test(u)) &&
+    cleanGate.urls.some((u) => /example\.com/.test(u)) &&
+    cleanGate.urls.some((u) => /wikidata\.org/.test(u));
+  record('clean_public_only', cleanOk, { urls: cleanGate.urls });
+
+  const fetchedClean = [];
+  const cleanRun = await runPlanUrlTargetsFetchGate(cleanPlan, {
+    fetchFn:
+      typeof opts.fetchFn === 'function'
+        ? async (url) => {
+            fetchedClean.push(url);
+            return opts.fetchFn(url);
+          }
+        : async (url) => {
+            fetchedClean.push(url);
+            return { ok: true };
+          },
+  });
+  record(
+    'clean_fetch_allowlist',
+    cleanRun.ok === true &&
+      fetchedClean.length === cleanGate.urls.length &&
+      fetchedClean.every((u) => assertSafePublicHttpsUrl(u).ok),
+    { fetched: fetchedClean },
+  );
+
+  // Declaring a DNS-rebinding host as allowed is poison → failClosed
+  const rebindPoison = selectFetchablePlanUrlTargets({
+    urlTargets: [
+      { url: 'https://example.org/ok', safety: 'allowed' },
+      { url: 'https://127.0.0.1.nip.io/', safety: 'allowed' },
+    ],
+  });
+  record(
+    'dns_rebind_marked_allowed_is_poison',
+    rebindPoison.failClosed === true && rebindPoison.urls.length === 0,
+    { poison: rebindPoison.poison },
+  );
+
+  // file:// marked allowed is poison
+  const filePoison = selectFetchablePlanUrlTargets({
+    urlTargets: [
+      { url: 'https://example.org/ok', safety: 'allowed' },
+      { url: 'file:///etc/passwd', safety: 'allowed' },
+    ],
+  });
+  record(
+    'file_scheme_marked_allowed_is_poison',
+    filePoison.failClosed === true && filePoison.urls.length === 0,
+  );
+
+  // userinfo-only (user, no password) marked allowed is poison
+  const userinfoPoison = selectFetchablePlanUrlTargets({
+    urlTargets: [{ url: 'https://user@example.com/', safety: 'allowed' }],
+  });
+  record(
+    'userinfo_marked_allowed_is_poison',
+    userinfoPoison.failClosed === true && userinfoPoison.urls.length === 0,
+  );
+
+  // decimal loopback marked allowed is poison
+  const decimalPoison = selectFetchablePlanUrlTargets({
+    urlTargets: [{ url: 'https://2130706433/', safety: 'allowed' }],
+  });
+  record(
+    'decimal_ip_marked_allowed_is_poison',
+    decimalPoison.failClosed === true && decimalPoison.urls.length === 0,
+  );
+
+  // http scheme marked allowed is poison
+  const httpPoison = selectFetchablePlanUrlTargets({
+    urlTargets: [{ url: 'http://example.com/', safety: 'allowed' }],
+  });
+  record(
+    'http_marked_allowed_is_poison',
+    httpPoison.failClosed === true && httpPoison.urls.length === 0,
+  );
+
+  // 3) Host trap battery (Preview aliases + DNS rebinding + schemes)
+  let trapsBlocked = 0;
+  const trapDetails = [];
+  for (const u of ADVERSARIAL_URLS) {
+    const check = assertSafePublicHttpsUrl(u);
+    if (!check.ok) trapsBlocked += 1;
+    else trapDetails.push(u);
+  }
+  record('preview_host_traps_blocked', trapsBlocked === ADVERSARIAL_URLS.length, {
+    trapsBlocked,
+    trapsTotal: ADVERSARIAL_URLS.length,
+    leaked: trapDetails,
+  });
+
+  // 4) Safe public still allowed
+  record(
+    'safe_public_https_allowed',
+    assertSafePublicHttpsUrl('https://example.com/ok').ok === true &&
+      assertSafePublicHttpsUrl('https://www.wikidata.org/wiki/Q42').ok === true,
+  );
+
+  const passed = cases.filter((c) => c.ok).length;
+  const failed = cases.length - passed;
+  return {
+    ok: failed === 0,
+    cases,
+    passed,
+    failed,
+    fixtureCount: ADVERSARIAL_URLS.length,
+    livePreviewRequired: true,
+    livePreviewStatus: 'OPEN',
+    note: 'Unit+local simulate PASS does not claim live Vercel Preview flag-ON SSRF pack',
+  };
+}
+
 export default {
   SECURITY_MODULE_VERSION,
   redactSensitiveText,
@@ -353,6 +608,7 @@ export default {
   assertPlanUrlTargetsSafe,
   selectFetchablePlanUrlTargets,
   runPlanUrlTargetsFetchGate,
+  simulatePreviewUrlTargetsSsrfPack,
   scrubProvidersState,
   assertSafePublicHttpsUrl,
   isBlockedDiscoveryHost,

@@ -11,9 +11,12 @@ import {
   buildTypedSoftRefs,
   extractViafWikidataQid,
   viafIdsFromWikidataEntity,
+  normalizeAdapterText,
+  classifyAdapterError,
 } from './providers.js';
 import { sanitizeDiscoveryPayload } from './emit.js';
 import { normalizeRawHit } from './store.js';
+import { normalizeAdapterToEvidence } from './adapterContract.js';
 import { FORBIDDEN_IDENTITY_QIDS } from '../forbiddenIdentities.js';
 
 let passed = 0;
@@ -96,6 +99,14 @@ assert('no throw / partial false or ok', batch.partial === false || batch.findin
 const norm = normalizeRawHit(hit, 'viaf');
 assert('normalize keeps viaf evidence', !!norm?.evidence?.provenanceUrl?.includes('viaf.org'));
 assert('normalize providerId viaf', norm?.evidence?.providerId === 'viaf');
+const adapterPair = normalizeAdapterToEvidence(hit, 'viaf');
+assert('adapter evidence sourceRecordId', adapterPair?.evidence?.sourceRecordId === '75121530');
+assert('adapter evidence typedRefs', adapterPair?.evidence?.typedRefs?.includes('viaf:75121530'));
+assert('evidence retrievedAt', !!adapterPair?.evidence?.retrievedAt);
+assert('finding provenance extraction method', hit?.provenance?.extractionMethod === 'registry_lookup');
+assert('text normalization is bounded and whitespace-safe', normalizeAdapterText('  A\n\t B  ', 20) === 'A B');
+assert('429 taxonomy is retryable rate limit', classifyAdapterError({ status: 429 }).category === 'rate_limited' && classifyAdapterError({ status: 429 }).retryable === true);
+assert('timeout taxonomy is retryable timeout', classifyAdapterError({ name: 'AbortError', reason: 'timeout' }).category === 'timeout');
 
 // --- soft-fail: HTTP error ---
 globalThis.fetch = async () => {
@@ -107,6 +118,7 @@ const soft = await viafProvider.search({ q: 'Tolstoy', sessionId: 't', budgetMs:
 assert('soft-fail returns batch', soft.providerId === 'viaf' && Array.isArray(soft.findings));
 assert('soft-fail partial true', soft.partial === true);
 assert('soft-fail has errors', Array.isArray(soft.errors) && soft.errors.length >= 1);
+assert('soft-fail taxonomy + phase', soft.errors?.[0]?.category === 'upstream_5xx' && soft.errors?.[0]?.phase === 'search');
 assert('soft-fail empty findings', soft.findings.length === 0);
 
 // --- soft-fail: timeout / AbortError ---

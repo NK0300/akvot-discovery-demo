@@ -19,7 +19,10 @@ import {
   scrubFamilyJournal,
   typedEvidenceDefaults,
   normalizeAdapterToEvidence,
+  classifyAdapterAbort,
+  adapterBudgetSignal,
 } from './adapterContract.js';
+import { structuredLog } from './obs.js';
 
 /**
  * @param {object[]} providers
@@ -218,35 +221,37 @@ export async function executeFamilyCall({
   }
 
   const t0 = Date.now();
+  // Compose call-level AbortSignal: parent cancel ≠ provider budget timeout
+  const callBudget = adapterBudgetSignal(budgetMs, signal);
   try {
     // Checkpoint F: for web_origin, inject fail-closed plan urlTargets into provider hints
     let hints = session.hints && typeof session.hints === 'object' ? { ...session.hints } : {};
     if (familyId === 'web_origin' && plan && typeof plan === 'object') {
-      const gate = selectFetchablePlanUrlTargets(plan);
+      const urlGate = selectFetchablePlanUrlTargets(plan);
       hints = {
         ...hints,
         queryPlan: plan,
         planUrlTargets: Array.isArray(plan.urlTargets) ? plan.urlTargets : hints.planUrlTargets,
         urlTargets: Array.isArray(plan.urlTargets) ? plan.urlTargets : hints.urlTargets,
       };
-      if (gate.poison || gate.failClosed) {
+      if (urlGate.poison || urlGate.failClosed) {
         // Fail-closed: zero plan urls; provider may still resolve a safe seed alone
         hints.webOriginUrls = [];
         hints.oneHopUrls = [];
         hints.urls = [];
       } else {
-        hints.webOriginUrls = [...(gate.urls || [])];
+        hints.webOriginUrls = [...(urlGate.urls || [])];
       }
     }
     const batch = await provider.search(
       {
         q: query || session.seed,
         sessionId: session.sessionId,
-        budgetMs,
+        budgetMs: callBudget.budgetMs,
         locale: session.locale,
         hints,
       },
-      { signal },
+      { signal: callBudget.signal },
     );
     const result = normalizeFamilyBatch({
       batch,
@@ -260,18 +265,15 @@ export async function executeFamilyCall({
       findings: result.findings.length,
       evidence: result.evidence.length,
     });
-    // U7: empty must NOT invite fanout
+    // U7: empty must NOT invite fanout · EMPTY≠FALSE
     if (result.status === 'empty' && typeof ledger.denyUnplannedFanout === 'function') {
       ledger.denyUnplannedFanout('empty_no_fanout');
     }
     return result;
   } catch (e) {
     const msg = String(e?.message || e);
-    const isTimeout =
-      e?.name === 'AbortError' ||
-      e?.name === 'TimeoutError' ||
-      /timeout|aborted/i.test(msg);
-    const status = isTimeout ? 'timeout' : 'error';
+    const kind = classifyAdapterAbort(e, signal);
+    const status = kind === 'cancelled' ? 'cancelled' : kind === 'timeout' ? 'timeout' : 'error';
     return {
       familyId,
       providerId,
@@ -283,8 +285,12 @@ export async function executeFamilyCall({
       evidence: [],
       executionTimeMs: Date.now() - t0,
       requestsUsed: 1,
-      reasons: [isTimeout ? 'timeout' : `error:${msg.slice(0, 120)}`],
+      reasons: [
+        status === 'error' ? `error:${msg.slice(0, 120)}` : status,
+      ],
     };
+  } finally {
+    callBudget.dispose();
   }
 }
 
@@ -353,6 +359,26 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   let cursor = 0;
   while (cursor < plannedCalls.length) {
     if (ledger.isExhausted() || Date.now() > wallDeadline || opts.signal?.aborted) {
+      // Hard-stop: NO MORE FANOUT. Latch wall exhaust if wall hit and not yet exhausted.
+      if (!opts.signal?.aborted && Date.now() > wallDeadline && !ledger.isExhausted()) {
+        if (typeof ledger.markExhausted === 'function') ledger.markExhausted('maxWallMs');
+      }
+      // isExhausted() now latches dimension (maxFamilyCalls/maxRequests/maxWallMs)
+      const stopReason = opts.signal?.aborted
+        ? 'cancelled'
+        : ledger.exhaustedReason || (Date.now() > wallDeadline ? 'maxWallMs' : 'budget_exhausted');
+      if (stopReason !== 'cancelled') {
+        try {
+          structuredLog('info', 'family.fanout_hard_stop', {
+            correlationId: opts.correlationId,
+            planId: plan.planId,
+            budgetExhaustedReason: stopReason,
+            budgetRemaining: typeof ledger.remaining === 'function' ? ledger.remaining() : undefined,
+          });
+        } catch {
+          /* obs must never break orchestration */
+        }
+      }
       while (cursor < plannedCalls.length) {
         const call = plannedCalls[cursor++];
         const status = opts.signal?.aborted
@@ -454,6 +480,13 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     allFindings.push(...(result.findings || []));
     allEvidence.push(...(result.evidence || []));
     if (typeof opts.onFamilyResult === 'function') opts.onFamilyResult(result);
+    // BUDGET_EXHAUSTED from reserve ⇒ stop remaining fanout immediately (no silent expansion)
+    if (result.status === 'budget_exhausted') {
+      if (typeof ledger.markExhausted === 'function' && !ledger.isExhausted()) {
+        ledger.markExhausted(result.budgetExhaustedReason || 'reserve_denied');
+      }
+      continue; // loop head will drain remaining as budget_exhausted
+    }
   }
 
   const maxFindings = plan.budgets?.maxFindings || plan.budgets?.maxFindings || 50;

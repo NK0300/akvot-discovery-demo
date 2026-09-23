@@ -224,7 +224,19 @@ export function createBudgetLedger(caps = {}, meta = {}) {
   function isExhausted() {
     if (exhaustedReason) return true;
     const rem = remaining();
-    return rem.wallMs <= 0 || rem.familyCalls <= 0 || rem.requests <= 0;
+    if (rem.wallMs <= 0) {
+      markExhausted('maxWallMs');
+      return true;
+    }
+    if (rem.familyCalls <= 0) {
+      markExhausted('maxFamilyCalls');
+      return true;
+    }
+    if (rem.requests <= 0) {
+      markExhausted('maxRequests');
+      return true;
+    }
+    return false;
   }
 
   return {

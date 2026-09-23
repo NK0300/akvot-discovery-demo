@@ -107,7 +107,7 @@ npm test   # includes matrix
 |-------|--------|
 | `forbiddenIdentities.test.mjs` | **39 passed, 0 failed** |
 | `adversarial.acc.test.mjs` | **65 passed, 0 failed** |
-| `adversarial.matrix.acc.test.mjs` | **75 passed, 0 failed** · matrixRows=22 |
+| `adversarial.matrix.acc.test.mjs` | **120 passed, 0 failed** · matrixRows=30 (FF-ACC) |
 | `webOrigin.test.mjs` | **96 passed, 0 failed** |
 | `prCloseout.acc.test.mjs` | **107 passed, 0 failed** |
 
@@ -131,3 +131,26 @@ Do **not** weaken `forbiddenIdentities` scrub. Do **not** emit `same-entity` on 
 ## STOP
 
 NO PROMOTE · HOLD default · expand live RUNNOW only under new Chief order.
+
+
+---
+
+## FF-ACC expansion (LOCAL-WAVE-FF-ACC · 2026-09-23 IDT)
+
+| ID | Family | Case | Expected | Test |
+|----|--------|------|----------|------|
+| ACC-M-023 | homonym | Common-name cluster (Cohen/Smith/David) | Distinct findings; no SAME-ENTITY on wire; denylist leak=0 | `adversarial.matrix.acc.test.mjs` |
+| ACC-M-024 | homonym | Org homonyms (Apple Inc vs Apple Records) | Both kept; title-bridge blocked; URL-alone clamped | matrix |
+| ACC-M-025 | evidence | Stale + contradictory sources | Soft UNKNOWN; no pick-winner identity; contradictions honest | matrix |
+| ACC-M-026 | resilience | Budget exhaustion | `BUDGET_EXHAUSTED`; empty findings = UNKNOWN≠FALSE; leak=0 | matrix + `budget.js` |
+| ACC-M-027 | resilience | Provider timeout inject | Soft AbortError; no fabricated findings; leak=0 | matrix + `failureInject.js` |
+| ACC-M-028 | explain | «why this finding» | Scrubbed + useful (providers/families/aging); identityScore=null | matrix + `evidence.js` |
+| ACC-M-029 | emit | corroborationEdges bait / same-entity | same-entity → unknown; bait dropped; safe may remain | matrix + `emit.js` |
+| ACC-M-030 | emit | gaps SoT redact | Denylist QID redacted via SoT helper (not hardcoded-only) | matrix + `gaps.js` |
+
+**Registry size:** 30 rows (was 22).  
+**Run (this wave):** matrix **120 / 0** · evidence **55 / 0** · evidenceGraph **24 / 0** · adversarial.acc **67 / 0** · forbiddenIdentities **43 / 0** · relationship **43 / 0**.
+
+### Real gap fixed this wave
+Hardcoded `/\bQ1701775\b/` redaction in `evidence.js` / `gaps.js` / `relationship.js` would **leak future denylist QIDs** after `valueHasForbidden` triggered. Replaced with SoT `redactForbiddenQidsInText`. Also: corroborationEdges same-entity laundering on snapshot emit; thin `finding.why` (now useful + scrubbed).
+

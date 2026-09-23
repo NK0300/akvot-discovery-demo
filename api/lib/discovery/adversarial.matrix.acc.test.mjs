@@ -89,9 +89,17 @@ const MATRIX = [
   { id: 'ACC-M-020', family: 'emit', title: 'snapshot.plan nested scrub' },
   { id: 'ACC-M-021', family: 'a2', title: 'typed soft-ref edge may survive clamp (not same-entity on wire)' },
   { id: 'ACC-M-022', family: 'a2', title: 'title-bridge SAME-* edge blocked' },
+  { id: 'ACC-M-023', family: 'homonym', title: 'common names cluster — Cohen/Smith/David no forced identity' },
+  { id: 'ACC-M-024', family: 'homonym', title: 'org homonyms — Apple Inc vs Apple Records stay distinct' },
+  { id: 'ACC-M-025', family: 'evidence', title: 'stale+contradictory sources → soft UNKNOWN, not pick-winner' },
+  { id: 'ACC-M-026', family: 'resilience', title: 'budget exhaustion → soft partial/UNKNOWN, no identity fill' },
+  { id: 'ACC-M-027', family: 'resilience', title: 'provider timeout → soft fail, no laundering' },
+  { id: 'ACC-M-028', family: 'explain', title: 'why-this-finding scrubbed + useful (no identityScore)' },
+  { id: 'ACC-M-029', family: 'emit', title: 'corroborationEdges same-entity → unknown; bait dropped' },
+  { id: 'ACC-M-030', family: 'emit', title: 'gaps SoT redact (no hardcoded-only QID scrub)' },
 ];
 
-assert('matrix registry size >= 20', MATRIX.length >= 20);
+assert('matrix registry size >= 28', MATRIX.length >= 28);
 assert('denylist still Q1701775', FORBIDDEN_IDENTITY_QIDS.includes('Q1701775'));
 assert('fiv pinned', FORBIDDEN_IDENTITIES_VERSION === '2026-09-19.1');
 
@@ -806,6 +814,383 @@ assert('fiv pinned', FORBIDDEN_IDENTITIES_VERSION === '2026-09-19.1');
     (facets || []).some((f) => (f.buckets || []).some((b) => b.value === 'Q42')),
   );
 }
+
+
+// ---------- ACC-M-023 common-name cluster (soft UNKNOWN, no forced merge) ----------
+{
+  const names = [
+    { id: 'f-cohen-il', title: 'David Cohen', entityRefs: ['viaf:111'], evidenceIds: ['e-c1'] },
+    { id: 'f-cohen-us', title: 'David Cohen', entityRefs: ['viaf:222'], evidenceIds: ['e-c2'] },
+    { id: 'f-smith-a', title: 'John Smith', entityRefs: ['ol:OL1A'], evidenceIds: ['e-s1'] },
+    { id: 'f-smith-b', title: 'John Smith', entityRefs: ['ol:OL2A'], evidenceIds: ['e-s2'] },
+    { id: `wd-${FORBIDDEN}`, title: 'John Smith', entityRefs: [FORBIDDEN], evidenceIds: ['e-bait'] },
+  ];
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm023',
+    seed: 'David Cohen',
+    status: 'partial',
+    findings: names,
+    evidence: [
+      { id: 'e-c1', provenanceUrl: 'https://viaf.org/viaf/111', providerId: 'viaf' },
+      { id: 'e-c2', provenanceUrl: 'https://viaf.org/viaf/222', providerId: 'viaf' },
+      { id: 'e-s1', provenanceUrl: 'https://openlibrary.org/authors/OL1A', providerId: 'openlibrary' },
+      { id: 'e-s2', provenanceUrl: 'https://openlibrary.org/authors/OL2A', providerId: 'openlibrary' },
+      { id: 'e-bait', provenanceUrl: `https://www.wikidata.org/wiki/${FORBIDDEN}`, providerId: 'wikidata' },
+    ],
+    graph: {
+      nodes: names.map((n) => ({ id: n.id, label: n.title })),
+      edges: [
+        { from: 'f-cohen-il', to: 'f-cohen-us', relationship: 'SAME-ENTITY', titleBridge: true },
+        { from: 'f-smith-a', to: 'f-smith-b', relationship: 'same-entity' },
+      ],
+    },
+  });
+  assert('ACC-M-023 keeps distinct same-display findings', (snap.findings || []).length >= 4, { matrix: 'ACC-M-023' });
+  assert(
+    'ACC-M-023 no SAME-ENTITY on wire',
+    !(snap.graph?.edges || []).some((e) => /same-entity/i.test(String(e.relationship || ''))),
+    { matrix: 'ACC-M-023' },
+  );
+  assertNoLeak('ACC-M-023', snap);
+}
+
+// ---------- ACC-M-024 org homonyms ----------
+{
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm024',
+    seed: 'Apple',
+    status: 'partial',
+    findings: [
+      { id: 'f-apple-inc', title: 'Apple Inc.', evidenceIds: ['e-inc'], entityRefs: ['viaf:org-apple-inc'], hostFamily: 'viaf' },
+      { id: 'f-apple-records', title: 'Apple Records', evidenceIds: ['e-rec'], entityRefs: ['viaf:org-apple-records'], hostFamily: 'viaf' },
+      { id: 'f-apple-url', title: 'apple.com', evidenceIds: ['e-url'], entityRefs: [], hostFamily: 'web_origin', providerId: 'web_origin', relationship: 'SAME-ENTITY' },
+    ],
+    evidence: [
+      { id: 'e-inc', provenanceUrl: 'https://viaf.org/viaf/org-apple-inc', providerId: 'viaf' },
+      { id: 'e-rec', provenanceUrl: 'https://viaf.org/viaf/org-apple-records', providerId: 'viaf' },
+      { id: 'e-url', provenanceUrl: 'https://www.apple.com/', providerId: 'web_origin', hostFamily: 'web_origin' },
+    ],
+    graph: {
+      nodes: [{ id: 'f-apple-inc' }, { id: 'f-apple-records' }, { id: 'f-apple-url' }],
+      edges: [
+        { from: 'f-apple-inc', to: 'f-apple-records', relationship: 'SAME-ENTITY', titleBridge: true },
+        { from: 'f-apple-url', to: 'f-apple-inc', relationship: 'SAME-REFERENCE' },
+      ],
+    },
+  });
+  assert('ACC-M-024 both org findings kept', (snap.findings || []).filter((f) => /apple/i.test(f.title || '')).length >= 2, { matrix: 'ACC-M-024' });
+  const urlFinding = (snap.findings || []).find((f) => f.id === 'f-apple-url');
+  if (urlFinding) {
+    assert(
+      'ACC-M-024 URL-alone org clamped off SAME-*',
+      !/same-/i.test(String(urlFinding.relationship || 'unknown')),
+      { matrix: 'ACC-M-024' },
+    );
+  }
+  assert(
+    'ACC-M-024 title-bridge org merge blocked',
+    !(snap.graph?.edges || []).some((e) => /same-entity/i.test(String(e.relationship || ''))),
+    { matrix: 'ACC-M-024' },
+  );
+  assertNoLeak('ACC-M-024', snap);
+}
+
+// ---------- ACC-M-025 stale + contradictory → soft, not pick-winner identity ----------
+{
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm025',
+    seed: 'Moshe Levy',
+    status: 'partial',
+    findings: [
+      {
+        id: 'f-levy-a',
+        title: 'Moshe Levy',
+        evidenceIds: ['e-fresh', 'e-stale'],
+        entityRefs: ['viaf:levy-a'],
+        relationship: 'unknown',
+      },
+      {
+        id: 'f-levy-b',
+        title: 'Moshe Levy',
+        evidenceIds: ['e-alt'],
+        entityRefs: ['viaf:levy-b'],
+        relationship: 'unknown',
+      },
+    ],
+    evidence: [
+      { id: 'e-fresh', provenanceUrl: 'https://viaf.org/viaf/levy-a', providerId: 'viaf', retrievedAt: '2026-09-01', quote: 'engineer' },
+      { id: 'e-stale', provenanceUrl: 'https://example.org/levy-old', providerId: 'web_origin', hostFamily: 'web_origin', retrievedAt: '2001-01-01', stale: true, quote: 'poet' },
+      { id: 'e-alt', provenanceUrl: 'https://viaf.org/viaf/levy-b', providerId: 'viaf', retrievedAt: '2024-01-01', quote: 'rabbi' },
+    ],
+    contradictions: [
+      {
+        type: 'stale_vs_fresh_role',
+        findingIds: ['f-levy-a'],
+        note: 'INFORMATION≠IDENTITY — roles disagree; do not pick winner',
+        domains: ['viaf.org', 'example.org'],
+      },
+      {
+        type: 'homonym_risk',
+        findingIds: ['f-levy-a', 'f-levy-b'],
+        note: 'common name — keep both candidates',
+        domains: ['viaf.org'],
+      },
+    ],
+  });
+  assert('ACC-M-025 both homonym findings survive', (snap.findings || []).length === 2, { matrix: 'ACC-M-025' });
+  assert(
+    'ACC-M-025 no finding promoted to identity',
+    (snap.findings || []).every((f) => f.identityClaim !== true && f.identityScore == null),
+    { matrix: 'ACC-M-025' },
+  );
+  assert(
+    'ACC-M-025 contradictions retained (honest disagreement)',
+    (snap.contradictions || []).length >= 1,
+    { matrix: 'ACC-M-025' },
+  );
+  assert(
+    'ACC-M-025 relationships stay unknown/soft',
+    (snap.findings || []).every((f) => !/same-entity/i.test(String(f.relationship || 'unknown'))),
+    { matrix: 'ACC-M-025' },
+  );
+  assertNoLeak('ACC-M-025', snap);
+}
+
+// ---------- ACC-M-026 budget exhaustion soft path ----------
+{
+  const ledger = createBudgetLedger(createBudgetCaps({ maxFamilyCalls: 1, maxRequests: 1 }));
+  const first = ledger.reserve({ providerId: 'viaf', requests: 1, isNewProvider: true });
+  const second = ledger.reserve({ providerId: 'wikidata', requests: 1, isNewProvider: true });
+  assert('ACC-M-026 first reserve ok', first?.ok === true, { matrix: 'ACC-M-026' });
+  assert(
+    'ACC-M-026 second reserve BUDGET_EXHAUSTED',
+    second?.ok === false && second?.code === BUDGET_EXHAUSTED,
+    { matrix: 'ACC-M-026' },
+  );
+  // Emit surface: exhausted session must not invent identity fill
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm026',
+    seed: 'Rare Name',
+    status: 'partial',
+    budgetStatus: BUDGET_EXHAUSTED,
+    budgetExhaustedReason: second?.reason || BUDGET_EXHAUSTED,
+    findings: [],
+    evidence: [],
+    gaps: [{ code: 'budget_exhausted', severity: 'warn', message: `budget stop ${FORBIDDEN}` }],
+  });
+  assert('ACC-M-026 empty findings under budget = UNKNOWN not FALSE', (snap.findings || []).length === 0, {
+    matrix: 'ACC-M-026',
+  });
+  assert('ACC-M-026 status stays partial/soft', snap.status === 'partial' || snap.status == null, {
+    matrix: 'ACC-M-026',
+  });
+  assertNoLeak('ACC-M-026', snap);
+}
+
+// ---------- ACC-M-027 timeout inject soft path ----------
+{
+  assert('ACC-M-027 FAILURE_KINDS has provider_timeout', FAILURE_KINDS.includes('provider_timeout'), {
+    matrix: 'ACC-M-027',
+  });
+  assert(
+    'ACC-M-027 shouldInject timeout when flagged',
+    shouldInject('provider_timeout', { injectFailure: 'provider_timeout' }) === true,
+    { matrix: 'ACC-M-027' },
+  );
+  const wrapped = wrapProviderWithInjection(
+    {
+      async search() {
+        return { findings: [{ id: 'should-not-emit', title: 'X', entityRefs: [FORBIDDEN] }] };
+      },
+    },
+    'provider_timeout',
+  );
+  let soft = null;
+  try {
+    await wrapped.search({ injectFailure: 'provider_timeout' });
+    soft = 'resolved';
+  } catch (err) {
+    soft = err;
+  }
+  assert('ACC-M-027 timeout inject throws soft AbortError', soft && soft !== 'resolved', { matrix: 'ACC-M-027' });
+  if (soft && soft !== 'resolved') {
+    assertNoLeak('ACC-M-027 timeout error', soft);
+    assert(
+      'ACC-M-027 timeout is soft (not identity verdict)',
+      /timeout|abort|inject/i.test(String(soft.message || soft.name || soft.code || soft)),
+      { matrix: 'ACC-M-027' },
+    );
+  }
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm027',
+    seed: 'Timeout Seed',
+    status: 'partial',
+    findings: [],
+    evidence: [],
+    errors: [{ code: 'provider_timeout', message: `viaf timeout near ${FORBIDDEN}` }],
+    gaps: [{ code: 'family_timeout', severity: 'warn', message: 'provider_timeout' }],
+  });
+  assert('ACC-M-027 no fabricated findings after timeout', (snap.findings || []).length === 0, {
+    matrix: 'ACC-M-027',
+  });
+  assertNoLeak('ACC-M-027 snapshot', snap);
+}
+
+// ---------- ACC-M-028 explainWhy scrubbed + useful ----------
+{
+  const { explainWhy, enrichSessionEvidence, EVIDENCE_ENGINE_VERSION } = await import('./evidence.js');
+  const session = {
+    sessionId: 'm028',
+    findings: [
+      {
+        id: 'f-ada',
+        title: 'Ada Lovelace',
+        evidenceIds: ['e1', 'e2'],
+        entityRefs: ['Q7259'],
+      },
+    ],
+    evidence: [
+      {
+        id: 'e1',
+        providerId: 'wikidata',
+        provenanceUrl: 'https://www.wikidata.org/wiki/Q7259',
+        quote: 'mathematician and writer',
+        retrievedAt: new Date().toISOString(),
+      },
+      {
+        id: 'e2',
+        providerId: 'viaf',
+        provenanceUrl: 'https://viaf.org/viaf/6962680',
+        quote: 'Lovelace, Ada King, Countess of',
+        retrievedAt: '2020-01-01T00:00:00.000Z',
+      },
+    ],
+    contradictions: [
+      {
+        type: 'aging',
+        findingIds: ['f-ada', `wd-${FORBIDDEN}`],
+        note: `stale vs fresh — ignore ${FORBIDDEN}`,
+        domains: ['wikidata.org', 'viaf.org'],
+      },
+    ],
+    corroborationEdges: [
+      {
+        relationship: 'same-entity',
+        findingIds: ['f-ada'],
+        note: 'must coerce',
+        coalesceKeys: ['viaf:6962680'],
+      },
+    ],
+  };
+  enrichSessionEvidence(session);
+  const why = explainWhy({ findingId: 'f-ada' }, session);
+  assert('ACC-M-028 explainWhy identityClaim=false', why.identityClaim === false, { matrix: 'ACC-M-028' });
+  assert('ACC-M-028 explainWhy identityScore=null', why.identityScore == null, { matrix: 'ACC-M-028' });
+  assert('ACC-M-028 explainWhy epistemicCeiling candidate', why.epistemicCeiling === 'candidate', {
+    matrix: 'ACC-M-028',
+  });
+  assert('ACC-M-028 provenanceChain useful', (why.provenanceChain || []).length >= 1, { matrix: 'ACC-M-028' });
+  assert(
+    'ACC-M-028 provenance has provider/family',
+    (why.provenanceChain || []).some((p) => p.providerId || p.familyId),
+    { matrix: 'ACC-M-028' },
+  );
+  assertNoLeak('ACC-M-028 explainWhy', why);
+  const f = session.findings.find((x) => x.id === 'f-ada');
+  assert('ACC-M-028 finding.why present', !!f?.why, { matrix: 'ACC-M-028' });
+  assert('ACC-M-028 finding.why identityScore null', f.why.identityScore == null, { matrix: 'ACC-M-028' });
+  assert('ACC-M-028 finding.why has provenanceCount', (f.why.provenanceCount || 0) >= 1, { matrix: 'ACC-M-028' });
+  assert(
+    'ACC-M-028 finding.why useful providers/families',
+    (f.why.provenanceProviders || []).length >= 1 || (f.why.provenanceFamilies || []).length >= 1,
+    { matrix: 'ACC-M-028' },
+  );
+  assert(
+    'ACC-M-028 engine version ff-acc',
+    String(f.why.engineVersion || EVIDENCE_ENGINE_VERSION).includes('ff-acc') ||
+      String(EVIDENCE_ENGINE_VERSION).includes('ff-acc'),
+    { matrix: 'ACC-M-028' },
+  );
+  const snap = sanitizeDiscoveryPayload(session);
+  assertNoLeak('ACC-M-028 sanitized', snap);
+  const whyOut = snap.findings?.[0]?.why;
+  if (whyOut) {
+    assert(
+      'ACC-M-028 emit why identityClaim false',
+      whyOut.identityClaim === false || whyOut.identityScore == null,
+      { matrix: 'ACC-M-028' },
+    );
+  }
+}
+
+// ---------- ACC-M-029 corroborationEdges emit clamp ----------
+{
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm029',
+    seed: 'Pair',
+    status: 'partial',
+    findings: [
+      { id: 'f-a', title: 'A', evidenceIds: ['e-a'], entityRefs: ['viaf:a'] },
+      { id: 'f-b', title: 'B', evidenceIds: ['e-b'], entityRefs: ['viaf:b'] },
+    ],
+    evidence: [
+      { id: 'e-a', provenanceUrl: 'https://viaf.org/viaf/a', providerId: 'viaf' },
+      { id: 'e-b', provenanceUrl: 'https://viaf.org/viaf/b', providerId: 'viaf' },
+    ],
+    corroborationEdges: [
+      { relationship: 'same-entity', findingIds: ['f-a', 'f-b'], note: 'title match', coalesceKeys: ['title:X'] },
+      { relationship: 'supports', findingIds: ['f-a', `wd-${FORBIDDEN}`], note: `bait ${FORBIDDEN}` },
+      { relationship: 'supports', findingIds: ['f-a', 'f-b'], note: 'typed soft ok', coalesceKeys: ['viaf:a'] },
+    ],
+  });
+  assert(
+    'ACC-M-029 same-entity coerced off wire',
+    !(snap.corroborationEdges || []).some((e) => /same-entity/i.test(String(e.relationship || ''))),
+    { matrix: 'ACC-M-029' },
+  );
+  assert(
+    'ACC-M-029 baited corroboration dropped',
+    !(snap.corroborationEdges || []).some((e) =>
+      (e.findingIds || []).some((id) => FORBIDDEN_RE.test(String(id))),
+    ),
+    { matrix: 'ACC-M-029' },
+  );
+  assert('ACC-M-029 safe corroboration may remain', (snap.corroborationEdges || []).length >= 1, {
+    matrix: 'ACC-M-029',
+  });
+  assertNoLeak('ACC-M-029', snap);
+}
+
+// ---------- ACC-M-030 gaps SoT redact ----------
+{
+  const { scrubGapsForEmit } = await import('./gaps.js');
+  const gaps = scrubGapsForEmit([
+    { code: 'budget_exhausted', severity: 'warn', message: `exhausted while resolving ${FORBIDDEN}` },
+    { code: 'family_timeout', severity: 'warn', message: 'provider_timeout' },
+    { code: 'homonym_risk', severity: 'info', message: `distinct_typed_refs mention ${FORBIDDEN}` },
+  ]);
+  assertNoLeak('ACC-M-030 scrubGapsForEmit', gaps);
+  assert(
+    'ACC-M-030 redaction marker or drop',
+    gaps.every((g) => !FORBIDDEN_RE.test(String(g.message || ''))),
+    { matrix: 'ACC-M-030' },
+  );
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'm030',
+    seed: 'Gap Seed',
+    status: 'partial',
+    findings: [],
+    evidence: [],
+    gaps: [{ code: 'budget_exhausted', severity: 'warn', message: `secret token=abc and ${FORBIDDEN}` }],
+  });
+  assertNoLeak('ACC-M-030 gaps on snapshot', snap);
+  assert(
+    'ACC-M-030 credential scrubbed in gaps',
+    !(snap.gaps || []).some((g) => /token=abc/i.test(String(g.message || ''))),
+    { matrix: 'ACC-M-030' },
+  );
+}
+
 
 console.log(`\n--- Acc adversarial matrix ---\npassed=${passed} failed=${failed} matrixRows=${MATRIX.length}`);
 if (failed) process.exit(1);

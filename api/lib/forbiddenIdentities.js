@@ -65,6 +65,26 @@ export function valueHasForbidden(val) {
 }
 
 /**
+ * Redact every denylist QID token in free text using SoT (never hardcode a single QID).
+ * Prefer this over literal /Q1701775/ replaces so future denylist growth cannot leak.
+ * @param {unknown} text
+ * @param {string} [replacement='[REDACTED_QID]']
+ * @returns {string}
+ */
+export function redactForbiddenQidsInText(text, replacement = '[REDACTED_QID]') {
+  if (text == null) return '';
+  let s = String(text);
+  const matches = s.match(/\bQ\d+\b/gi) || [];
+  for (const tok of matches) {
+    const n = normalizeQid(tok);
+    if (n && FORBIDDEN_SET.has(n)) {
+      s = s.replace(new RegExp(`\\b${tok}\\b`, 'gi'), replacement);
+    }
+  }
+  return s;
+}
+
+/**
  * Collect all QIDs visible to Acc from a payload (top qid, candidates id/qid, WD URLs in sources).
  * @param {object} payload
  * @returns {string[]}
@@ -254,6 +274,7 @@ export default {
   extractQid,
   isForbiddenQid,
   valueHasForbidden,
+  redactForbiddenQidsInText,
   extractPayloadQids,
   payloadContainsForbidden,
   stripForbiddenFromPayload,

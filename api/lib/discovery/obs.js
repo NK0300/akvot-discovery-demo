@@ -3,12 +3,70 @@
  * Additive SSE lifecycle counters for reconnect / terminal / disconnect.
  */
 import { randomBytes } from 'crypto';
+import { redactForbiddenQidsInText } from '../forbiddenIdentities.js';
 
 /** @type {Map<string, number>} */
 const counters = new Map();
 /** @type {{ name: string, ms: number, ok: boolean, at: string }[]} */
 const recent = [];
 const RECENT_MAX = 50;
+
+/** Keys that must never appear in discovery obs (seed / Acc / secrets). */
+const OBS_DENIED_FIELD_KEYS = Object.freeze([
+  'seed',
+  'seedText',
+  'q',
+  'query',
+  'url',
+  'urls',
+  'authorization',
+  'cookie',
+  'password',
+  'token',
+  'apiKey',
+  'api_key',
+  'secret',
+  'bearer',
+  'raw',
+  'body',
+  'headers',
+  // GO-IMPL-500 soft-fail/obs harden — never log these accidentally
+  'hints',
+  'provenanceUrl',
+  'content',
+  'html',
+  'snippet',
+  'entityRef',
+  'entityRefs',
+  // Acc / identity bait — never structured-log QIDs as fields
+  'qid',
+  'qids',
+  'forbiddenQid',
+  'identityClaim',
+]);
+
+/**
+ * Drop denied keys from a flat fields object (defense-in-depth vs accidental seed log).
+ * @param {object} fields
+ */
+export { OBS_DENIED_FIELD_KEYS };
+/** @private exported for tests via scrubObsFields */
+export function scrubObsFields(fields) {
+  return stripDeniedObsFields(fields);
+}
+
+function stripDeniedObsFields(fields) {
+  if (!fields || typeof fields !== 'object') return {};
+  const out = {};
+  for (const [k, v] of Object.entries(fields)) {
+    const key = String(k);
+    if (OBS_DENIED_FIELD_KEYS.includes(key)) continue;
+    if (/seed|secret|password|token|authorization|cookie|api[_-]?key/i.test(key)) continue;
+    out[key] = v;
+  }
+  return out;
+}
+
 
 export function mintCorrelationId(prefix = 'disc') {
   return `${prefix}-${Date.now().toString(36)}-${randomBytes(3).toString('hex')}`;
@@ -100,29 +158,33 @@ export default {
  * @param {object} [fields]
  */
 export function structuredLog(level, event, fields = {}) {
+  const f = stripDeniedObsFields(fields);
   const safe = {
     ts: new Date().toISOString(),
     level: String(level || 'info').slice(0, 16),
     event: String(event || 'discovery').slice(0, 80),
   };
-  if (fields.correlationId) safe.correlationId = String(fields.correlationId).slice(0, 64);
-  if (fields.sessionIdPrefix) safe.sessionIdPrefix = String(fields.sessionIdPrefix).slice(0, 12);
-  if (fields.planId) safe.planId = String(fields.planId).slice(0, 40);
-  if (fields.familyId) safe.familyId = String(fields.familyId).slice(0, 40);
-  if (fields.providerId) safe.providerId = String(fields.providerId).slice(0, 40);
-  if (fields.status) safe.status = String(fields.status).slice(0, 40);
-  if (fields.budgetExhaustedReason) {
-    safe.budgetExhaustedReason = String(fields.budgetExhaustedReason).slice(0, 64);
+  if (f.correlationId) safe.correlationId = String(f.correlationId).slice(0, 64);
+  if (f.sessionIdPrefix) safe.sessionIdPrefix = String(f.sessionIdPrefix).slice(0, 12);
+  if (f.planId) safe.planId = String(f.planId).slice(0, 40);
+  if (f.familyId) safe.familyId = String(f.familyId).slice(0, 40);
+  if (f.providerId) safe.providerId = String(f.providerId).slice(0, 40);
+  if (f.status) safe.status = String(f.status).slice(0, 40);
+  if (f.budgetExhaustedReason) {
+    // Acc-scrub via SoT (no hardcoded QID — residual denylist grow-safe)
+    safe.budgetExhaustedReason = redactForbiddenQidsInText(
+      String(f.budgetExhaustedReason),
+    ).slice(0, 64);
   }
-  if (fields.budgetRemaining && typeof fields.budgetRemaining === 'object') {
+  if (f.budgetRemaining && typeof f.budgetRemaining === 'object') {
     safe.budgetRemaining = {
-      familyCalls: fields.budgetRemaining.familyCalls,
-      requests: fields.budgetRemaining.requests,
-      wallMs: fields.budgetRemaining.wallMs,
+      familyCalls: f.budgetRemaining.familyCalls,
+      requests: f.budgetRemaining.requests,
+      wallMs: f.budgetRemaining.wallMs,
     };
   }
-  if (typeof fields.ms === 'number') safe.ms = Math.max(0, fields.ms);
-  // Never log seed / URLs / credentials / Acc QIDs
+  if (typeof f.ms === 'number') safe.ms = Math.max(0, f.ms);
+  // Never log seed / URLs / credentials / Acc QIDs — allowlist only above
   try {
     console.info('[discovery]', JSON.stringify(safe));
   } catch {
@@ -158,11 +220,12 @@ export function recordBudgetUsage(snap, meta = {}) {
  * @param {object} input
  */
 export function buildStructuredLog(input = {}) {
+  input = stripDeniedObsFields(input);
   const redact = (v) => {
     if (v == null) return undefined;
     let s = String(v).slice(0, 240);
     s = s.replace(/(api[_-]?key|secret|password|token|bearer\s+\S+)/gi, '[REDACTED]');
-    s = s.replace(/\bQ1701775\b/gi, '[REDACTED_QID]');
+    s = redactForbiddenQidsInText(s);
     for (const tok of ['SAME-ENTITY', 'SAME_ENTITY', 'IDENTITY_COMMIT']) {
       if (s.includes(tok)) s = s.split(tok).join('[BLOCKED]');
     }

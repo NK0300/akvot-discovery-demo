@@ -17,6 +17,7 @@ import {
 import {
   safeFetchJson,
   adapterBudgetSignal,
+  adapterSoftFailCode,
   scrubAdapterBatch,
   MAX_ADAPTER_FINDINGS,
   DEFAULT_ADAPTER_BUDGET_MS,
@@ -58,6 +59,140 @@ function finalizeAdapterBatch(batch) {
   }
   return scrubbed;
 }
+
+/** Normalize upstream labels/signals without changing their meaning. */
+export function normalizeAdapterText(value, max = 500) {
+  if (value == null) return '';
+  return String(value)
+    .normalize('NFKC')
+    .replace(/[\u0000-\u001f\u007f]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, max);
+}
+
+/** Stable adapter error taxonomy, retaining the existing code for compatibility. */
+export function classifyAdapterError(err, parentSignal) {
+  const code = adapterSoftFailCode(err, parentSignal);
+  let category = 'upstream_error';
+  let retryable = false;
+  // Soft-fail taxonomy completeness: cancel ≠ timeout ≠ http_N ≠ budget_exhausted
+  if (code === 'cancelled') category = 'cancelled';
+  else if (code === 'timeout') {
+    category = 'timeout';
+    retryable = true;
+  } else if (code === 'budget_exhausted') {
+    category = 'budget_exhausted';
+    retryable = false;
+  } else if (code === 'http_429') {
+    category = 'rate_limited';
+    retryable = true;
+  } else if (/^http_5\d\d$/.test(code)) {
+    category = 'upstream_5xx';
+    retryable = true;
+  } else if (/^http_4\d\d$/.test(code)) category = 'upstream_4xx';
+  else if (code === 'json_parse' || code === 'body_too_large') category = 'invalid_response';
+  else if (/unsafe|blocked|allowlist/i.test(code)) category = 'policy_blocked';
+  return { code, category, retryable };
+}
+
+function adapterErrorRecord(err, parentSignal, providerId, phase) {
+  const taxonomy = classifyAdapterError(err, parentSignal);
+  return {
+    ...taxonomy,
+    providerId,
+    phase,
+    message: normalizeAdapterText(err?.message || err, 240),
+  };
+}
+
+function provenanceForAdapter(providerId, sourceRecordId, extractionMethod, signalSummary, retrievedAt) {
+  return {
+    providerId,
+    sourceRecordId: normalizeAdapterText(sourceRecordId, 160),
+    extractionMethod,
+    signalSummary: normalizeAdapterText(signalSummary, 160),
+    createdAt: retrievedAt,
+  };
+}
+
+
+/**
+ * Deepen public-registry findings: cite-or-drop provenance + epistemic stamps.
+ * URL≠identity · CANDIDATE≠FACT · prefer UNKNOWN relationship.
+ * No new HTTP families (F11). Returns null if provenance fails SSRF gate.
+ * @param {RawFinding & Record<string, unknown>} raw
+ * @param {string} providerId
+ * @returns {RawFinding | null}
+ */
+export function stampRegistryFinding(raw, providerId) {
+  if (!raw || typeof raw !== 'object') return null;
+  const url = String(raw.provenanceUrl || raw.url || '').trim();
+  if (!url) return null;
+  const check = assertSafePublicHttpsUrl(url);
+  if (!check.ok) return null;
+  const kind = ['page', 'registry', 'document', 'contact_public', 'media', 'other'].includes(raw.kind)
+    ? raw.kind
+    : 'registry';
+  const title = normalizeAdapterText(raw.title || url, 240);
+  const summary = normalizeAdapterText(raw.summary, 500) || undefined;
+  const quote = normalizeAdapterText(raw.quote || summary, 500) || undefined;
+  const sourceRecordId = normalizeAdapterText(raw.sourceRecordId || raw.id, 160);
+  const facetHints = Array.from(new Set(
+    (Array.isArray(raw.facetHints) ? raw.facetHints : []).map((h) => normalizeAdapterText(h, 80)).filter(Boolean),
+  ));
+  const entityRefs = Array.from(new Set(
+    (Array.isArray(raw.entityRefs) ? raw.entityRefs : []).map((r) => normalizeAdapterText(r, 160)).filter(Boolean),
+  ));
+  if (providerId && !facetHints.some((h) => h === `provider:${providerId}`)) {
+    facetHints.unshift(`provider:${providerId}`);
+  }
+  if (!facetHints.some((h) => /^kind:/i.test(h))) {
+    facetHints.push(`kind:${kind}`);
+  }
+  // Never emit SAME-* from registry adapters at stamp time
+  let relationship = raw.relationship || raw.relationshipState || 'UNKNOWN';
+  const up = String(relationship).toUpperCase().replace(/_/g, '-');
+  if (up === 'SAME-ENTITY' || up === 'SAME-REFERENCE' || up === 'SAME-SOURCE') {
+    relationship = 'UNKNOWN';
+  }
+  if (!facetHints.some((h) => /^relationship:/i.test(h))) {
+    facetHints.push('relationship:UNKNOWN');
+  }
+  const retrievedAt = raw._retrievedAt || new Date().toISOString();
+  const provenance = {
+    ...(raw.provenance && typeof raw.provenance === 'object' ? raw.provenance : {}),
+    ...provenanceForAdapter(
+      providerId,
+      sourceRecordId,
+      raw.extractionMethod || (providerId === 'viaf' ? 'registry_lookup' : 'api_search'),
+      quote || summary || title,
+      retrievedAt,
+    ),
+  };
+  return {
+    ...raw,
+    title,
+    summary,
+    quote,
+    kind,
+    provenanceUrl: check.canonical || url,
+    sourceRecordId,
+    provenance,
+    evidenceType: raw.evidenceType || kind,
+    confirmationState: 'candidate',
+    epistemicState: 'candidate',
+    relationshipState: relationship,
+    relationship,
+    identityClaim: false,
+    identityScore: null,
+    urlIsNotIdentity: true,
+    candidateIsNotFact: true,
+    facetHints: facetHints.slice(0, 24),
+    entityRefs: entityRefs.slice(0, 32),
+  };
+}
+
 
 
 /**
@@ -151,7 +286,8 @@ export const wikidataProvider = {
     const findings = [];
     try {
       const lang = (req.locale || 'en').slice(0, 2);
-      const q = encodeURIComponent(String(req.q || '').trim());
+      const query = normalizeAdapterText(req.q, 200);
+      const q = encodeURIComponent(query);
       if (!q) {
         return { providerId: this.id, findings: [], partial: false };
       }
@@ -161,22 +297,27 @@ export const wikidataProvider = {
         `&limit=8&format=json&origin=*`;
       const data = await fetchJson(url, budget.signal, {}, this.id);
       const retrievedAt = new Date().toISOString();
+      const seenQids = new Set();
       for (const hit of data?.search || []) {
-        const qid = hit?.id ? String(hit.id) : null;
-        if (!qid || !/^Q\d+$/i.test(qid)) continue;
+        const qid = hit?.id ? normalizeAdapterText(hit.id, 32).toUpperCase() : null;
+        if (!qid || !/^Q\d+$/.test(qid) || seenQids.has(qid)) continue;
+        seenQids.add(qid);
         const provenanceUrl = `https://www.wikidata.org/wiki/${qid}`;
-        findings.push({
+        const stamped = stampRegistryFinding({
           id: `wd-${qid}`,
-          title: String(hit.label || qid),
-          summary: hit.description ? String(hit.description) : undefined,
+          title: normalizeAdapterText(hit.label || qid, 240),
+          summary: normalizeAdapterText(hit.description, 500) || undefined,
           kind: 'registry',
           provenanceUrl,
-          quote: hit.description ? String(hit.description) : undefined,
+          quote: normalizeAdapterText(hit.description, 500) || undefined,
+          sourceRecordId: qid,
+          extractionMethod: 'api_search',
           facetHints: ['provider:wikidata', 'kind:registry'],
           // typed soft-refs: qid always; viaf: filled below from cheap P214 batch
           entityRefs: buildTypedSoftRefs({ qid }),
           _retrievedAt: retrievedAt,
-        });
+        }, this.id);
+        if (stamped) findings.push(stamped);
       }
       // Optional cheap P214 (VIAF) enrichment — one wbgetentities for all QIDs
       if (findings.length && !budget.signal.aborted) {
@@ -199,13 +340,18 @@ export const wikidataProvider = {
                 for (const r of buildTypedSoftRefs({ viafId: vid, qid })) extra.add(r);
               }
               f.entityRefs = [...extra];
+              f.provenance = {
+                ...(f.provenance || {}),
+                extractionMethod: 'api_search+claims',
+                signalSummary: normalizeAdapterText(f.summary || f.title, 160),
+              };
             }
           }
         } catch (e) {
           // soft-fail enrichment — search hits still returned
           errors.push({
-            code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-            message: `P214 enrich: ${String(e?.message || e)}`,
+            ...adapterErrorRecord(e, ctx?.signal, this.id, 'claims_enrichment'),
+            message: `P214 enrich: ${normalizeAdapterText(e?.message || e, 180)}`,
           });
         }
       }
@@ -216,10 +362,7 @@ export const wikidataProvider = {
         errors: errors.length ? errors : undefined,
       });
     } catch (e) {
-      errors.push({
-        code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-        message: String(e?.message || e),
-      });
+      errors.push(adapterErrorRecord(e, ctx?.signal, this.id, 'search'));
       return finalizeAdapterBatch({ providerId: this.id, findings, partial: true, errors });
     } finally {
       budget.dispose();
@@ -244,33 +387,40 @@ export const openLibraryProvider = {
     /** @type {RawFinding[]} */
     const findings = [];
     try {
-      const q = encodeURIComponent(String(req.q || '').trim());
+      const query = normalizeAdapterText(req.q, 200);
+      const q = encodeURIComponent(query);
       if (!q) {
         return { providerId: this.id, findings: [], partial: false };
       }
       const url = `https://openlibrary.org/search/authors.json?q=${q}&limit=8`;
       const data = await fetchJson(url, budget.signal, {}, this.id);
       const retrievedAt = new Date().toISOString();
+      const seenKeys = new Set();
       for (const hit of data?.docs || []) {
-        const key = hit?.key ? String(hit.key) : null; // e.g. OL123A
+        const key = hit?.key ? normalizeAdapterText(hit.key, 120) : null; // e.g. OL123A
         if (!key) continue;
-        const olKey = key.replace(/^\/authors\//i, '');
+        const olKey = key.replace(/^\/authors\//i, '').toUpperCase();
+        if (!olKey || seenKeys.has(olKey)) continue;
+        seenKeys.add(olKey);
         const path = key.startsWith('/authors/') ? key : `/authors/${key}`;
         const provenanceUrl = `https://openlibrary.org${path}`;
-        const title = String(hit.name || key);
-        findings.push({
+        const title = normalizeAdapterText(hit.name || key, 240);
+        const stamped = stampRegistryFinding({
           id: `ol-${olKey.replace(/\W+/g, '_')}`,
           title,
-          summary: hit.top_work ? `Top work: ${hit.top_work}` : undefined,
+          summary: hit.top_work ? `Top work: ${normalizeAdapterText(hit.top_work, 300)}` : undefined,
           kind: 'registry',
           provenanceUrl,
-          quote: hit.top_work ? String(hit.top_work) : undefined,
+          quote: hit.top_work ? normalizeAdapterText(hit.top_work, 500) : undefined,
+          sourceRecordId: olKey,
+          extractionMethod: 'api_search',
           facetHints: ['provider:openlibrary', 'kind:registry'],
           // typed soft-refs: ol: always; viaf:/qid: from remote_ids enrich below
           entityRefs: buildTypedSoftRefs({ olKey }),
           _olKey: olKey,
           _retrievedAt: retrievedAt,
-        });
+        }, this.id);
+        if (stamped) findings.push(stamped);
       }
       // Enrich top hits with author remote_ids (viaf / wikidata) — public OL JSON
       const enrichN = Math.min(findings.length, 6);
@@ -282,16 +432,22 @@ export const openLibraryProvider = {
             const detailUrl = `https://openlibrary.org/authors/${encodeURIComponent(olKey)}.json`;
             const detail = await fetchJson(detailUrl, budget.signal, {}, this.id);
             const remote = detail?.remote_ids || {};
-            const viafId = remote.viaf ? String(remote.viaf).trim() : null;
-            const qid = remote.wikidata ? String(remote.wikidata).trim() : null;
+            const viafId = remote.viaf ? normalizeAdapterText(remote.viaf, 32) : null;
+            const qidRaw = remote.wikidata ? normalizeAdapterText(remote.wikidata, 32).toUpperCase() : null;
+            const qid = qidRaw && /^Q\d+$/.test(qidRaw) ? qidRaw : null;
             if (!viafId && !qid) return;
             const extra = new Set(f.entityRefs || []);
             for (const r of buildTypedSoftRefs({ viafId, qid, olKey })) extra.add(r);
             f.entityRefs = [...extra];
+            f.provenance = {
+              ...(f.provenance || {}),
+              extractionMethod: 'api_search+remote_ids',
+              signalSummary: normalizeAdapterText(f.summary || f.title, 160),
+            };
           } catch (e) {
             errors.push({
-              code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-              message: `OL remote_ids enrich ${olKey}: ${String(e?.message || e)}`,
+              ...adapterErrorRecord(e, ctx?.signal, this.id, 'remote_ids_enrichment'),
+              message: `OL remote_ids enrich ${olKey}: ${normalizeAdapterText(e?.message || e, 160)}`,
             });
           }
         });
@@ -305,10 +461,7 @@ export const openLibraryProvider = {
         errors: errors.length ? errors : undefined,
       });
     } catch (e) {
-      errors.push({
-        code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-        message: String(e?.message || e),
-      });
+      errors.push(adapterErrorRecord(e, ctx?.signal, this.id, 'search'));
       return finalizeAdapterBatch({ providerId: this.id, findings, partial: true, errors });
     } finally {
       budget.dispose();
@@ -335,7 +488,8 @@ export const wikipediaOpenSearchProvider = {
     const findings = [];
     try {
       const lang = (req.locale || 'en').slice(0, 2);
-      const q = encodeURIComponent(String(req.q || '').trim());
+      const query = normalizeAdapterText(req.q, 200);
+      const q = encodeURIComponent(query);
       if (!q) {
         return { providerId: this.id, findings: [], partial: false };
       }
@@ -350,23 +504,28 @@ export const wikipediaOpenSearchProvider = {
       const titles = Array.isArray(data?.[1]) ? data[1] : [];
       const descs = Array.isArray(data?.[2]) ? data[2] : [];
       const urls = Array.isArray(data?.[3]) ? data[3] : [];
+      const seenUrls = new Set();
       for (let i = 0; i < titles.length; i++) {
-        const title = String(titles[i] || '').trim();
-        const provenanceUrl = String(urls[i] || '').trim();
-        if (!title || !/^https:\/\//i.test(provenanceUrl)) continue;
+        const title = normalizeAdapterText(titles[i], 240);
+        const provenanceUrl = normalizeAdapterText(urls[i], 500);
+        if (!title || !provenanceUrl || seenUrls.has(provenanceUrl)) continue;
+        seenUrls.add(provenanceUrl);
         const slug = title.replace(/\W+/g, '_').slice(0, 80);
-        findings.push({
+        const stamped = stampRegistryFinding({
           id: `wp-${lang}-${slug}`,
           title,
-          summary: descs[i] ? String(descs[i]).slice(0, 400) : undefined,
+          summary: descs[i] ? normalizeAdapterText(descs[i], 400) : undefined,
           kind: 'page',
           provenanceUrl,
-          quote: descs[i] ? String(descs[i]).slice(0, 240) : undefined,
+          quote: descs[i] ? normalizeAdapterText(descs[i], 240) : undefined,
+          sourceRecordId: `${lang}:${title}`,
+          extractionMethod: 'api_search',
           facetHints: ['provider:wikipedia', 'kind:page'],
           entityRefs: [`wp:${lang}:${title}`],
           evidenceType: 'page',
           _retrievedAt: retrievedAt,
-        });
+        }, this.id);
+        if (stamped) findings.push(stamped);
       }
       return finalizeAdapterBatch({
         providerId: this.id,
@@ -375,10 +534,7 @@ export const wikipediaOpenSearchProvider = {
         errors: errors.length ? errors : undefined,
       });
     } catch (e) {
-      errors.push({
-        code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-        message: String(e?.message || e),
-      });
+      errors.push(adapterErrorRecord(e, ctx?.signal, this.id, 'search'));
       return finalizeAdapterBatch({ providerId: this.id, findings, partial: true, errors });
     } finally {
       budget.dispose();
@@ -403,7 +559,7 @@ export const viafProvider = {
     /** @type {RawFinding[]} */
     const findings = [];
     try {
-      const qRaw = String(req.q || '').trim();
+      const qRaw = normalizeAdapterText(req.q, 200);
       if (!qRaw) {
         return { providerId: this.id, findings: [], partial: false };
       }
@@ -413,14 +569,17 @@ export const viafProvider = {
       const data = await fetchJson(url, budget.signal, {}, this.id);
       const retrievedAt = new Date().toISOString();
       const rows = Array.isArray(data?.result) ? data.result : [];
+      const seenViafIds = new Set();
       let n = 0;
       for (const hit of rows) {
         if (n >= 8) break;
-        const viafId = String(hit?.viafid || hit?.recordID || '').trim();
+        const viafId = normalizeAdapterText(hit?.viafid || hit?.recordID, 32);
+        if (seenViafIds.has(viafId)) continue;
+        seenViafIds.add(viafId);
         if (!viafId || !/^\d+$/.test(viafId)) continue;
-        const term = String(hit?.displayForm || hit?.term || viafId).trim();
+        const term = normalizeAdapterText(hit?.displayForm || hit?.term || viafId, 240);
         if (!term) continue;
-        const nametype = String(hit?.nametype || '').toLowerCase();
+        const nametype = normalizeAdapterText(hit?.nametype, 40).toLowerCase();
         // Prefer personal/corporate authority clusters; skip bare works when possible
         if (nametype && !['personal', 'corporate', 'geographic'].includes(nametype)) {
           // still allow if no better filter — keep personal/corporate first pass only
@@ -429,12 +588,12 @@ export const viafProvider = {
         const provenanceUrl = `https://viaf.org/viaf/${viafId}/`;
         const summaryBits = [];
         if (nametype) summaryBits.push(`type:${nametype}`);
-        if (hit?.lc) summaryBits.push(`lc:${hit.lc}`);
-        if (hit?.dnb) summaryBits.push(`dnb:${hit.dnb}`);
+        if (hit?.lc) summaryBits.push(`lc:${normalizeAdapterText(hit.lc, 80)}`);
+        if (hit?.dnb) summaryBits.push(`dnb:${normalizeAdapterText(hit.dnb, 80)}`);
         // Prefer public VIAF AutoSuggest fields for cross-family soft-refs (WKP→qid when present)
         const wkpQid = extractViafWikidataQid(hit);
         if (wkpQid) summaryBits.push(`wkp:${wkpQid}`);
-        findings.push({
+        const stamped = stampRegistryFinding({
           id: `viaf-${viafId}`,
           title: term.slice(0, 240),
           summary: summaryBits.length ? summaryBits.join(' · ') : undefined,
@@ -443,8 +602,12 @@ export const viafProvider = {
           quote: term.slice(0, 240),
           facetHints: ['provider:viaf', 'kind:registry'],
           entityRefs: buildTypedSoftRefs({ viafId, qid: wkpQid }),
+          evidenceType: 'registry',
+          sourceRecordId: viafId,
+          extractionMethod: 'registry_lookup',
           _retrievedAt: retrievedAt,
-        });
+        }, this.id);
+        if (stamped) findings.push(stamped);
         n += 1;
       }
       return finalizeAdapterBatch({
@@ -454,10 +617,7 @@ export const viafProvider = {
         errors: errors.length ? errors : undefined,
       });
     } catch (e) {
-      errors.push({
-        code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-        message: String(e?.message || e),
-      });
+      errors.push(adapterErrorRecord(e, ctx?.signal, this.id, 'search'));
       return finalizeAdapterBatch({ providerId: this.id, findings, partial: true, errors });
     } finally {
       budget.dispose();
@@ -563,10 +723,8 @@ export const webOriginProvider = {
       };
       return finalizeAdapterBatch(batch);
     } catch (e) {
-      errors.push({
-        code: e?.name === 'AbortError' ? 'timeout' : `http_${e?.status || 'err'}`,
-        message: String(e?.message || e),
-      });
+      // Same soft-fail taxonomy as WD/OL/WP/VIAF — cancel≠timeout≠http_N≠budget_exhausted
+      errors.push(adapterErrorRecord(e, ctx?.signal, this.id, 'search'));
       return finalizeAdapterBatch({ providerId: this.id, findings, partial: true, errors });
     }
   },
@@ -621,4 +779,7 @@ export default {
   buildTypedSoftRefs,
   extractViafWikidataQid,
   viafIdsFromWikidataEntity,
+  stampRegistryFinding,
+  normalizeAdapterText,
+  classifyAdapterError,
 };
