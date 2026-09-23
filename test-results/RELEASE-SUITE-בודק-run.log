@@ -1,0 +1,128 @@
+
+========== RELEASE SUITE · בודק ==========
+BASE=https://akvot-simple-demo.vercel.app
+when=9.9.2026, 13:06:02 Asia/Jerusalem
+headers: Origin=https://akvot-simple-demo.vercel.app, x-akvot-battery:1
+
+── 1) Domain units: node api/lib/orchestrator.test.mjs ──
+PASS C identifier phone
+PASS C identifier email
+PASS A known wikiCommitted
+PASS D foreign Latin
+PASS D foreign country
+PASS B stranger HE common
+PASS no evidence empty
+PASS no evidence generic why
+PASS evidence https
+PASS evidence specific why
+PASS reject http (not https)
+PASS filter keeps 1 of 2
+PASS B bare → need_context (not celebrity list)
+PASS A celeb → dossier
+PASS D + ctx evidenced → candidates
+PASS D bare softAmb → need_context
+PASS C weak phone → thin
+PASS B + ctx but no evidence → thin
+PASS evidenceScore strong ≥0.75
+PASS commit without focus when strong
+PASS no commit weak evidence
+PASS commit with focus always
+PASS isCommonHeBareName דני כהן
+PASS נתניהו not common-surname heuristic
+PASS John Smith not HE common
+PASS דני כהן wikiExact still need_context
+PASS need_context strips photo
+PASS attach clears candidates on need_context
+PASS attach sets messageKey
+PASS google recovery not known-without-qid
+PASS google recovery without commitOk is not hollow wiki-known
+PASS rich without qid is not known
+PASS canCommitIdentity aliases mayCommitDossier
+PASS Smith+org/city+wikiQID softAmb/latin → NOT dossier
+PASS Smith+org softAmb → candidates|need_context|thin
+PASS Smith+email+wikiQID → NOT dossier
+PASS Smith+email stays identifier scenario
+PASS נתניהו seeded → dossier
+PASS אורלי לוי seeded → dossier
+PASS mayCommit email alone false
+PASS mayCommit phone alone false
+PASS mayCommit seeded true
+PASS mayCommit HE wiki exact true
+PASS canCommitWithoutFocus email alone false
+PASS canCommitWithoutFocus seeded true
+PASS mayCommit Latin wikiExact !softAmb → ok
+PASS mayCommit Latin softAmb → false
+PASS mayCommit Latin wikiExact email alone false
+PASS mayCommit Latin seeded true
+PASS Latin wikiExact Merkel → dossier
+PASS Latin Smith softAmb + QID → NOT dossier
+PASS Smith+ctx still NOT dossier without evidence
+PASS resolve unique surname נתניהו
+PASS resolve nickname ביבי נתניהו
+PASS resolve nickname ביבי
+PASS resolve Latin Zehava Galon
+PASS resolve Latin fold Zahava Gal-On
+PASS resolve Angela Merkel
+PASS resolve Barack Obama
+PASS resolve HE full בנימין נתניהו
+PASS resolve זהבה גלאון
+PASS resolve NEVER כהן alone
+PASS resolve NEVER דני כהן
+PASS resolve NEVER לוי alone
+PASS resolve NEVER John Smith
+PASS resolve אורלי לוי full still seeded
+PASS resolve parenthetical strip
+
+67 passed, 0 failed
+units exit=0 ms=136 pass=true
+
+── 2) Contract: node test-results/contract-identity-p0.mjs ──
+CONTRACT identity-p0 → https://akvot-simple-demo.vercel.app
+cases=5  headers: Origin=https://akvot-simple-demo.vercel.app, x-akvot-battery:1
+
+→ a-netanyahu-keep (KEEP) ... PASS 1835ms http=200 ui=dossier qid=Q43723 faces=true
+→ b-cohen-keep (KEEP) ... PASS 212ms http=200 ui=need_context qid=- faces=false
+→ c-smith-bare-keep (KEEP) ... PASS 5719ms http=200 ui=need_context qid=- faces=false
+→ d-smith-ctx-p0 (P0) ... PASS 13389ms http=200 ui=thin qid=- faces=false
+→ e-smith-email-g11-p0 (P0) ... PASS 9633ms http=200 ui=candidates qid=- faces=false
+
+========== SUMMARY ==========
+כל חוזי הזהות עברו (5/5)
+pass=5/5  improve=0  exit=0
+  ✓ [KEEP] a-netanyahu-keep  ui=dossier faces=true
+  ✓ [KEEP] b-cohen-keep  ui=need_context faces=false
+  ✓ [KEEP] c-smith-bare-keep  ui=need_context faces=false
+  ✓ [P0] d-smith-ctx-p0  ui=thin faces=false
+  ✓ [P0] e-smith-email-g11-p0  ui=candidates faces=false
+report: /workspace/akvot-quick-demo/test-results/CONTRACT-identity-p0-בודק-2026-09-09.json
+=============================
+
+contract exit=0 ms=38448 pass=true
+
+── 3) SAFETY / runtime smoke ──
+→ s1-netanyahu ... PASS 6680ms ui=dossier mode=wiki+google qid=Q43723 faces=true
+→ s2-dani-cohen ... PASS 196ms ui=need_context mode=ambiguous qid=- faces=false
+→ s3-smith-bare ... PASS 5704ms ui=need_context mode=ambiguous qid=- faces=false
+→ s4-smith-ibm ... PASS 14354ms ui=candidates mode=candidates qid=- faces=false
+→ s5-smith-email ... PASS 9672ms ui=candidates mode=candidates qid=- faces=false
+→ s6-orly-levy ... PASS 6314ms ui=dossier mode=wiki+google qid=Q466537 faces=true | dossier preferred — OK
+
+── 4) Red-team uncertainty ──
+→ r1-junk-he ... PASS 39978ms ui=need_context mode=google qid=- faces=false
+→ r2-smith-bare-covered ... SKIP John Smith bare (covered by SAFETY)
+→ r3-conflict-skip ... SKIP conflict-ish optional SKIP
+
+── 5) ALIAS_RECALL (record only; soft) ──
+→ a1-netanyahu-alone ... FAIL/SOFT 25365ms ui=need_context mode=google qid=- faces=false | uiState=need_context expected dossier (soft recall); qid=null expected Q43723 (soft recall) | soft: uiState=need_context preferred dossier; soft: qid=null preferred Q43723
+→ a2-bibi-netanyahu ... PASS 24028ms ui=dossier mode=wiki qid=Q43723 faces=true
+→ a3-angela-merkel ... FAIL/SOFT 5699ms ui=need_context mode=ambiguous qid=- faces=false | uiState=need_context expected dossier (soft recall); qid=null expected Q567 (soft recall) | soft: uiState=need_context preferred dossier; soft: qid=null preferred Q567
+→ a4-zehava-galon ... FAIL/SOFT 5703ms ui=need_context mode=ambiguous qid=- faces=false | uiState=need_context expected dossier (soft recall); qid=null expected Q2630062 (soft recall) | soft: uiState=need_context preferred dossier; soft: qid=null preferred Q2630062
+
+========== SUMMARY ==========
+ריליס עבר — units+contract+SAFETY ירוקים · ALIAS_RECALL רך: 3 כשלים (לא מפילים יציאה)
+exit=0
+units=true contract=true SAFETY=true RED=true ALIAS=1/4 (prettyWrong=false)
+JSON: /workspace/akvot-quick-demo/test-results/RELEASE-SUITE-latest.json
+MD:   /workspace/akvot-quick-demo/test-results/RELEASE-SUITE-בודק-latest.md
+=============================
+

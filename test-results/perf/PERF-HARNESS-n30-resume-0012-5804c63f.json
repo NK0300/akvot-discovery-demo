@@ -1,0 +1,7948 @@
+{
+  "runId": "5804c63f",
+  "tag": "n30-resume-0012",
+  "started": "2026-09-16T21:22:59.923Z",
+  "finished": "2026-09-16T21:54:28.212Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 30,
+  "baselineHint": "dpl_CrsqeSQX1GAhi1VFExVsGwdsSYHt",
+  "constraint": "MEASURE ONLY — no Core optimize — no dpl",
+  "results": [
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 694,
+        "max": 2743,
+        "mean": 1289,
+        "p50": 1276,
+        "p90": 1478,
+        "p95": 1781,
+        "p99": 2743
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 319,
+        "max": 2379,
+        "mean": 901,
+        "p50": 904,
+        "p90": 1034,
+        "p95": 1377,
+        "p99": 2379
+      },
+      "wiki": {
+        "n": 30,
+        "min": 100,
+        "max": 412,
+        "mean": 150,
+        "p50": 112,
+        "p90": 330,
+        "p95": 385,
+        "p99": 412
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 233,
+        "max": 1456,
+        "mean": 300,
+        "p50": 256,
+        "p90": 285,
+        "p95": 316,
+        "p99": 1456
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 1078,
+        "max": 1078,
+        "mean": 1078,
+        "p50": 1078,
+        "p90": 1078,
+        "p95": 1078,
+        "p99": 1078
+      },
+      "wiki": {
+        "n": 30,
+        "min": 111,
+        "max": 111,
+        "mean": 111,
+        "p50": 111,
+        "p90": 111,
+        "p95": 111,
+        "p99": 111
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 3996,
+        "max": 6008,
+        "mean": 5819,
+        "p50": 5872,
+        "p90": 5915,
+        "p95": 5922,
+        "p99": 6008
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 3636,
+        "max": 5502,
+        "mean": 5437,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5502
+      },
+      "wiki": {
+        "n": 30,
+        "min": 3635,
+        "max": 5501,
+        "mean": 5436,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 236,
+        "max": 4796,
+        "mean": 407,
+        "p50": 254,
+        "p90": 269,
+        "p95": 287,
+        "p99": 4796
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 4434,
+        "max": 4434,
+        "mean": 4434,
+        "p50": 4434,
+        "p90": 4434,
+        "p95": 4434,
+        "p99": 4434
+      },
+      "wiki": {
+        "n": 30,
+        "min": 4434,
+        "max": 4434,
+        "mean": 4434,
+        "p50": 4434,
+        "p90": 4434,
+        "p95": 4434,
+        "p99": 4434
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 4969,
+        "max": 7063,
+        "mean": 6427,
+        "p50": 6446,
+        "p90": 6753,
+        "p95": 6954,
+        "p99": 7063
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 4593,
+        "max": 6672,
+        "mean": 6042,
+        "p50": 6064,
+        "p90": 6371,
+        "p95": 6589,
+        "p99": 6672
+      },
+      "wiki": {
+        "n": 30,
+        "min": 4082,
+        "max": 5501,
+        "mean": 5397,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 498,
+        "max": 1168,
+        "mean": 641,
+        "p50": 571,
+        "p90": 866,
+        "p95": 1085,
+        "p99": 1168
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "candidates": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 357,
+        "max": 7897,
+        "mean": 4875,
+        "p50": 6387,
+        "p90": 6670,
+        "p95": 6984,
+        "p99": 7897
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 5216,
+        "max": 7532,
+        "mean": 6501,
+        "p50": 6054,
+        "p90": 7532,
+        "p95": 7532,
+        "p99": 7532
+      },
+      "wiki": {
+        "n": 30,
+        "min": 4174,
+        "max": 5501,
+        "mean": 5425,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 472,
+        "max": 1100,
+        "mean": 589,
+        "p50": 560,
+        "p90": 732,
+        "p95": 877,
+        "p99": 1100
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 148,
+        "mean": 44,
+        "p50": 0,
+        "p90": 148,
+        "p95": 148,
+        "p99": 148
+      },
+      "uiCounts": {
+        "candidates": 21,
+        "dossier": 9
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 1061,
+        "max": 39114,
+        "mean": 19961,
+        "p50": 23720,
+        "p90": 26882,
+        "p95": 27227,
+        "p99": 39114
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 663,
+        "max": 38760,
+        "mean": 19575,
+        "p50": 23361,
+        "p90": 26487,
+        "p95": 26802,
+        "p99": 38760
+      },
+      "wiki": {
+        "n": 30,
+        "min": 663,
+        "max": 37903,
+        "mean": 18650,
+        "p50": 21554,
+        "p90": 25299,
+        "p95": 25390,
+        "p99": 37903
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 974,
+        "mean": 521,
+        "p50": 582,
+        "p90": 800,
+        "p95": 855,
+        "p99": 974
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 242,
+        "max": 27774,
+        "mean": 13898,
+        "p50": 17692,
+        "p90": 26972,
+        "p95": 27254,
+        "p99": 27774
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 1496,
+        "max": 27408,
+        "mean": 14152,
+        "p50": 17193,
+        "p90": 26576,
+        "p95": 26880,
+        "p99": 27408
+      },
+      "wiki": {
+        "n": 30,
+        "min": 1495,
+        "max": 25280,
+        "mean": 13489,
+        "p50": 15996,
+        "p90": 25257,
+        "p95": 25272,
+        "p99": 25280
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 1335,
+        "mean": 362,
+        "p50": 488,
+        "p90": 649,
+        "p95": 1245,
+        "p99": 1335
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 3153,
+        "max": 5939,
+        "mean": 5798,
+        "p50": 5882,
+        "p90": 5927,
+        "p95": 5933,
+        "p99": 5939
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 2806,
+        "max": 5501,
+        "mean": 5411,
+        "p50": 5501,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "wiki": {
+        "n": 30,
+        "min": 1044,
+        "max": 5501,
+        "mean": 5352,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 747,
+        "mean": 25,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 747
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 232,
+        "max": 5883,
+        "mean": 453,
+        "p50": 254,
+        "p90": 304,
+        "p95": 403,
+        "p99": 5883
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "wiki": {
+        "n": 30,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 812,
+        "max": 2918,
+        "mean": 1583,
+        "p50": 1364,
+        "p90": 2349,
+        "p95": 2485,
+        "p99": 2918
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 433,
+        "max": 2500,
+        "mean": 1211,
+        "p50": 1000,
+        "p90": 1932,
+        "p95": 2127,
+        "p99": 2500
+      },
+      "wiki": {
+        "n": 30,
+        "min": 99,
+        "max": 2500,
+        "mean": 301,
+        "p50": 111,
+        "p90": 699,
+        "p95": 1931,
+        "p99": 2500
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 235,
+        "max": 1191,
+        "mean": 296,
+        "p50": 256,
+        "p90": 329,
+        "p95": 339,
+        "p99": 1191
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 819,
+        "max": 819,
+        "mean": 819,
+        "p50": 819,
+        "p90": 819,
+        "p95": 819,
+        "p99": 819
+      },
+      "wiki": {
+        "n": 30,
+        "min": 100,
+        "max": 100,
+        "mean": 100,
+        "p50": 100,
+        "p90": 100,
+        "p95": 100,
+        "p99": 100
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "sampleCount": 30
+    }
+  ],
+  "raw": [
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 694,
+        "max": 2743,
+        "mean": 1289,
+        "p50": 1276,
+        "p90": 1478,
+        "p95": 1781,
+        "p99": 2743
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 319,
+        "max": 2379,
+        "mean": 901,
+        "p50": 904,
+        "p90": 1034,
+        "p95": 1377,
+        "p99": 2379
+      },
+      "wiki": {
+        "n": 30,
+        "min": 100,
+        "max": 412,
+        "mean": 150,
+        "p50": 112,
+        "p90": 330,
+        "p95": 385,
+        "p99": 412
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 839,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "d0c50d55-d2c2-47a5-a529-a2048473a4d6",
+          "cached": false,
+          "timings": {
+            "wiki": 412,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 413
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 781,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "e1253b0a-c077-4b1c-bb1e-3041cb205b4b",
+          "cached": false,
+          "timings": {
+            "wiki": 360,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 361
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 694,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "cd2f614c-1d79-48b1-8e5e-a7237cf1d3dc",
+          "cached": false,
+          "timings": {
+            "wiki": 319,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 319
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 736,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "52486e89-2b98-4912-9a90-1295a75d48e9",
+          "cached": false,
+          "timings": {
+            "wiki": 330,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 331
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 802,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "95dc1887-858b-4643-b713-556fbaca5448",
+          "cached": false,
+          "timings": {
+            "wiki": 385,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 386
+          }
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "wallMs": 2743,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "6248b371-c7a7-4453-a70a-2368927d5ab9",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1723,
+            "stageB": 0,
+            "total": 2379
+          }
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "wallMs": 1306,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "8b8eef79-b725-4dab-be0d-caf012c317c5",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 906
+          }
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "wallMs": 1297,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "9b3cee25-65b5-42ed-9c5d-8a6fa026e73e",
+          "cached": false,
+          "timings": {
+            "wiki": 116,
+            "gemini": 0,
+            "enrich": 566,
+            "stageB": 0,
+            "total": 927
+          }
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "wallMs": 1260,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "d5c1b851-ca31-45ea-bbb2-d64b3e7ed100",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 563,
+            "stageB": 0,
+            "total": 853
+          }
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "wallMs": 1267,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "926fc8ab-64b5-43e1-9d7a-7bdbf1fe096f",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 565,
+            "stageB": 0,
+            "total": 850
+          }
+        },
+        {
+          "i": 10,
+          "mode": "COLD",
+          "wallMs": 1305,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "8f18f25d-257b-4547-8eeb-9e0996431f6f",
+          "cached": false,
+          "timings": {
+            "wiki": 103,
+            "gemini": 0,
+            "enrich": 564,
+            "stageB": 0,
+            "total": 959
+          }
+        },
+        {
+          "i": 11,
+          "mode": "COLD",
+          "wallMs": 1301,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "c928b5d6-623a-4f3c-86d2-d09d7da364a4",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 930
+          }
+        },
+        {
+          "i": 12,
+          "mode": "COLD",
+          "wallMs": 1260,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "bbfa0280-affc-4573-b488-fda570559679",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 564,
+            "stageB": 0,
+            "total": 904
+          }
+        },
+        {
+          "i": 13,
+          "mode": "COLD",
+          "wallMs": 1242,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "d33e951f-788b-4832-b529-62d4a249c5d6",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 564,
+            "stageB": 0,
+            "total": 891
+          }
+        },
+        {
+          "i": 14,
+          "mode": "COLD",
+          "wallMs": 1290,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "ca08c32b-c6ae-4340-9144-7ec4cea64bb8",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 564,
+            "stageB": 0,
+            "total": 860
+          }
+        },
+        {
+          "i": 15,
+          "mode": "COLD",
+          "wallMs": 1238,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "bd230078-0d41-417b-8962-a974b2995299",
+          "cached": false,
+          "timings": {
+            "wiki": 113,
+            "gemini": 0,
+            "enrich": 564,
+            "stageB": 0,
+            "total": 873
+          }
+        },
+        {
+          "i": 16,
+          "mode": "COLD",
+          "wallMs": 1259,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "34fb5075-538c-4501-9f02-46201e28845c",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 565,
+            "stageB": 0,
+            "total": 904
+          }
+        },
+        {
+          "i": 17,
+          "mode": "COLD",
+          "wallMs": 1337,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "275bb0c5-5327-4eb7-8f91-e16b526c13d6",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 561,
+            "stageB": 0,
+            "total": 976
+          }
+        },
+        {
+          "i": 18,
+          "mode": "COLD",
+          "wallMs": 1393,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "e9fa33d3-01b3-428f-97b5-9c347ffce951",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 563,
+            "stageB": 0,
+            "total": 988
+          }
+        },
+        {
+          "i": 19,
+          "mode": "COLD",
+          "wallMs": 1303,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "36051e55-9f16-4ca8-999e-313a5702ca72",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 565,
+            "stageB": 0,
+            "total": 949
+          }
+        },
+        {
+          "i": 20,
+          "mode": "COLD",
+          "wallMs": 1234,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "1cb1b88f-1a82-4bf2-be69-ad4d0328ead2",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 851
+          }
+        },
+        {
+          "i": 21,
+          "mode": "COLD",
+          "wallMs": 1330,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "22ba2d60-c4a1-4256-96a1-d8022f6b6ec2",
+          "cached": false,
+          "timings": {
+            "wiki": 113,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 953
+          }
+        },
+        {
+          "i": 22,
+          "mode": "COLD",
+          "wallMs": 1478,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "a5677e7b-094c-4be6-864d-58ec52feae15",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 899
+          }
+        },
+        {
+          "i": 23,
+          "mode": "COLD",
+          "wallMs": 1781,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "770817fe-fffc-408e-8b3c-48facf75e4c2",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 564,
+            "stageB": 0,
+            "total": 1362
+          }
+        },
+        {
+          "i": 24,
+          "mode": "COLD",
+          "wallMs": 1297,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "3d28cd16-dfe6-4aee-aa6a-f30ea9c58003",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 926
+          }
+        },
+        {
+          "i": 25,
+          "mode": "COLD",
+          "wallMs": 1276,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "980cf3e2-0d97-43c5-a5a2-c7af244b0fe4",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 563,
+            "stageB": 0,
+            "total": 885
+          }
+        },
+        {
+          "i": 26,
+          "mode": "COLD",
+          "wallMs": 1276,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "1c1e617f-2429-4127-a072-7032f8c6d499",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 572,
+            "stageB": 0,
+            "total": 914
+          }
+        },
+        {
+          "i": 27,
+          "mode": "COLD",
+          "wallMs": 1210,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "0aebe45f-8070-4e2f-9607-7c94100b392e",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 563,
+            "stageB": 0,
+            "total": 859
+          }
+        },
+        {
+          "i": 28,
+          "mode": "COLD",
+          "wallMs": 1400,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "b0118361-7ca3-4004-80df-8115c46b1dab",
+          "cached": false,
+          "timings": {
+            "wiki": 113,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 1034
+          }
+        },
+        {
+          "i": 29,
+          "mode": "COLD",
+          "wallMs": 1739,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "017b10f6-35e9-481c-ac97-a47b1a4a47b7",
+          "cached": false,
+          "timings": {
+            "wiki": 118,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 1377
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 233,
+        "max": 1456,
+        "mean": 300,
+        "p50": 256,
+        "p90": 285,
+        "p95": 316,
+        "p99": 1456
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 1078,
+        "max": 1078,
+        "mean": 1078,
+        "p50": 1078,
+        "p90": 1078,
+        "p95": 1078,
+        "p99": 1078
+      },
+      "wiki": {
+        "n": 30,
+        "min": 111,
+        "max": 111,
+        "mean": 111,
+        "p50": 111,
+        "p90": 111,
+        "p95": 111,
+        "p99": 111
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 1456,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 274,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 248,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "wallMs": 263,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "wallMs": 264,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "wallMs": 266,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "wallMs": 299,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 10,
+          "mode": "WARM",
+          "wallMs": 260,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 11,
+          "mode": "WARM",
+          "wallMs": 285,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 12,
+          "mode": "WARM",
+          "wallMs": 264,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 13,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 14,
+          "mode": "WARM",
+          "wallMs": 268,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 15,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 16,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 17,
+          "mode": "WARM",
+          "wallMs": 233,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 18,
+          "mode": "WARM",
+          "wallMs": 251,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 19,
+          "mode": "WARM",
+          "wallMs": 316,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 20,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 21,
+          "mode": "WARM",
+          "wallMs": 249,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 22,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 23,
+          "mode": "WARM",
+          "wallMs": 243,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 24,
+          "mode": "WARM",
+          "wallMs": 242,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 25,
+          "mode": "WARM",
+          "wallMs": 239,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 26,
+          "mode": "WARM",
+          "wallMs": 269,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 27,
+          "mode": "WARM",
+          "wallMs": 260,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 28,
+          "mode": "WARM",
+          "wallMs": 257,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        },
+        {
+          "i": 29,
+          "mode": "WARM",
+          "wallMs": 265,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "eba036e6-328a-49a4-985c-909a0609bf29",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 1078
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 3996,
+        "max": 6008,
+        "mean": 5819,
+        "p50": 5872,
+        "p90": 5915,
+        "p95": 5922,
+        "p99": 6008
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 3636,
+        "max": 5502,
+        "mean": 5437,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5502
+      },
+      "wiki": {
+        "n": 30,
+        "min": 3635,
+        "max": 5501,
+        "mean": 5436,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 3996,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "cfbfb8c5-8363-496a-8ac3-c724a4e41cd2",
+          "cached": false,
+          "timings": {
+            "wiki": 3635,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 3636
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 5909,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d9cc9cd8-6f35-4a79-b45e-024ca2575a02",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 5868,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "523eaeb1-8b15-4a32-8422-a5e0d35a8de2",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5502
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 5867,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d8ec39e9-582c-4e6e-9bad-65d27479fcb0",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 6008,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d69d3844-648e-4642-9243-e8847d696b66",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "wallMs": 5882,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "1c1aa1d8-d53f-42e9-980f-869eca50896a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "wallMs": 5919,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "361c6853-dbd8-4a09-bc91-60a6c7f009a2",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "wallMs": 5853,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "dba6ef6f-c435-48f1-9c92-0d79096857d1",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "wallMs": 5873,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "f9cec084-8535-4bb6-9cb8-7d0fbaaf3bd8",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "wallMs": 5906,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "83c4827f-6597-4ec3-a948-81f4eb61b302",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 10,
+          "mode": "COLD",
+          "wallMs": 5821,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "415b9d51-259f-41f9-bc55-41e8cd51c11b",
+          "cached": false,
+          "timings": {
+            "wiki": 5454,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5454
+          }
+        },
+        {
+          "i": 11,
+          "mode": "COLD",
+          "wallMs": 5878,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "f5fb2000-2d4c-4c31-8b54-2b45bdfe2a67",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 12,
+          "mode": "COLD",
+          "wallMs": 5866,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "50aa588e-e02b-4d61-99e9-aa8bdcb3daff",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 13,
+          "mode": "COLD",
+          "wallMs": 5875,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "784cd771-6317-44d4-946f-45b1d19d6820",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 14,
+          "mode": "COLD",
+          "wallMs": 5872,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "9a781189-8c9b-4120-988a-edb8007f483c",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 15,
+          "mode": "COLD",
+          "wallMs": 5856,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "0e95a594-332b-41df-ae4d-cb55f71f5fe6",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 16,
+          "mode": "COLD",
+          "wallMs": 5892,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "31660908-1b61-4eb9-88cf-0b24b6692e54",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 17,
+          "mode": "COLD",
+          "wallMs": 5883,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "567e4fdf-9238-4a4d-ae53-cb704ac34385",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 18,
+          "mode": "COLD",
+          "wallMs": 5915,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "6ac37a5a-4938-4910-b18e-76652a3f6399",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 19,
+          "mode": "COLD",
+          "wallMs": 5922,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "7cf0bf12-e907-42a0-b0ae-0924f37b9ffd",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 20,
+          "mode": "COLD",
+          "wallMs": 5870,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "1800c75d-077f-407b-b9cf-014b3bf528eb",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 21,
+          "mode": "COLD",
+          "wallMs": 5875,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "46467988-8c53-4aa6-8afc-bf6cfbfa6bd2",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 22,
+          "mode": "COLD",
+          "wallMs": 5883,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c33046b7-9180-44b7-b9ef-d2014f6084e7",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 23,
+          "mode": "COLD",
+          "wallMs": 5867,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d08c7969-c2c1-4540-84dd-7709b1572a00",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 24,
+          "mode": "COLD",
+          "wallMs": 5864,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "fb59d038-8796-4748-80f0-0733f215fca5",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 25,
+          "mode": "COLD",
+          "wallMs": 5909,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "b72a5787-d17f-4496-ab2a-a8707315d80c",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 26,
+          "mode": "COLD",
+          "wallMs": 5860,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c9b94b8d-09c8-48b1-83c4-83238226162a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 27,
+          "mode": "COLD",
+          "wallMs": 5857,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "6347da7f-90b2-4f21-b5f8-9eba2f1bcc64",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 28,
+          "mode": "COLD",
+          "wallMs": 5853,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ae74da42-8897-4475-8ba2-3394a7f6942c",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 29,
+          "mode": "COLD",
+          "wallMs": 5862,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "811b1762-44b5-4b10-ba98-d66170cd3b77",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5499
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 236,
+        "max": 4796,
+        "mean": 407,
+        "p50": 254,
+        "p90": 269,
+        "p95": 287,
+        "p99": 4796
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 4434,
+        "max": 4434,
+        "mean": 4434,
+        "p50": 4434,
+        "p90": 4434,
+        "p95": 4434,
+        "p99": 4434
+      },
+      "wiki": {
+        "n": 30,
+        "min": 4434,
+        "max": 4434,
+        "mean": 4434,
+        "p50": 4434,
+        "p90": 4434,
+        "p95": 4434,
+        "p99": 4434
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 4796,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 271,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 244,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 263,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "wallMs": 261,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "wallMs": 258,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "wallMs": 268,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "wallMs": 236,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "wallMs": 258,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 10,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 11,
+          "mode": "WARM",
+          "wallMs": 239,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 12,
+          "mode": "WARM",
+          "wallMs": 251,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 13,
+          "mode": "WARM",
+          "wallMs": 266,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 14,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 15,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 16,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 17,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 18,
+          "mode": "WARM",
+          "wallMs": 257,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 19,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 20,
+          "mode": "WARM",
+          "wallMs": 287,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 21,
+          "mode": "WARM",
+          "wallMs": 260,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 22,
+          "mode": "WARM",
+          "wallMs": 243,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 23,
+          "mode": "WARM",
+          "wallMs": 269,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 24,
+          "mode": "WARM",
+          "wallMs": 246,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 25,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 26,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 27,
+          "mode": "WARM",
+          "wallMs": 269,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 28,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        },
+        {
+          "i": 29,
+          "mode": "WARM",
+          "wallMs": 238,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "613be5d7-1df1-4c64-bc41-8d98af110fba",
+          "cached": false,
+          "timings": {
+            "wiki": 4434,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 4434
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 4969,
+        "max": 7063,
+        "mean": 6427,
+        "p50": 6446,
+        "p90": 6753,
+        "p95": 6954,
+        "p99": 7063
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 4593,
+        "max": 6672,
+        "mean": 6042,
+        "p50": 6064,
+        "p90": 6371,
+        "p95": 6589,
+        "p99": 6672
+      },
+      "wiki": {
+        "n": 30,
+        "min": 4082,
+        "max": 5501,
+        "mean": 5397,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 498,
+        "max": 1168,
+        "mean": 641,
+        "p50": 571,
+        "p90": 866,
+        "p95": 1085,
+        "p99": 1168
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "candidates": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 6500,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "d9daa14b-fb22-4901-803d-18e398893be6",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 584,
+            "total": 6091
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 6753,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "dc756a00-4d36-40d3-aabe-3184a26f9906",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 866,
+            "total": 6371
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 6606,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "03e137fe-7715-4e1c-8738-848a0605c689",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 679,
+            "total": 6183
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 6389,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "d9cb0497-d3c4-4196-87ed-5709b0bddb2b",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 498,
+            "total": 6002
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 6533,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "a5b37acd-6380-4847-a202-c96ed8b380aa",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 658,
+            "total": 6164
+          }
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "wallMs": 6954,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "a4d712fb-3af1-4b7d-b824-0d7814834de7",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1085,
+            "total": 6589
+          }
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "wallMs": 6456,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "d58564de-80da-43a4-ab2f-7e9b3b020f20",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 516,
+            "total": 6020
+          }
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "wallMs": 6226,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "1d18ec17-3275-4206-9632-625de9769f34",
+          "cached": false,
+          "timings": {
+            "wiki": 5146,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 660,
+            "total": 5809
+          }
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "wallMs": 6424,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "00f845bb-bfbc-4f37-9676-0d3e1644e0f1",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 547,
+            "total": 6052
+          }
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "wallMs": 6373,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "51d850f5-5b7b-4d8b-971f-27dada93728f",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 504,
+            "total": 6008
+          }
+        },
+        {
+          "i": 10,
+          "mode": "COLD",
+          "wallMs": 6446,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "1ea23b4d-9502-41be-ad53-5e02d1f768ff",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 575,
+            "total": 6079
+          }
+        },
+        {
+          "i": 11,
+          "mode": "COLD",
+          "wallMs": 6428,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "afc1c8b2-6938-4aa6-9d2c-121642aa1049",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 540,
+            "total": 6043
+          }
+        },
+        {
+          "i": 12,
+          "mode": "COLD",
+          "wallMs": 6480,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "37f60b0d-4525-4ea3-9db3-6380abd0340d",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 601,
+            "total": 6106
+          }
+        },
+        {
+          "i": 13,
+          "mode": "COLD",
+          "wallMs": 6653,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "408f3fbe-7e5a-4ee8-af2e-01e18eb5c5ae",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 733,
+            "total": 6238
+          }
+        },
+        {
+          "i": 14,
+          "mode": "COLD",
+          "wallMs": 6562,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "fe1106a9-a451-48a5-a56d-8fc189ca3bcd",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 701,
+            "total": 6206
+          }
+        },
+        {
+          "i": 15,
+          "mode": "COLD",
+          "wallMs": 6492,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "8bf0787c-909d-4ec2-bb3e-21c01a6ef501",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 566,
+            "total": 6070
+          }
+        },
+        {
+          "i": 16,
+          "mode": "COLD",
+          "wallMs": 5266,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "23b90af4-3749-4909-90c4-b37c39365c45",
+          "cached": false,
+          "timings": {
+            "wiki": 4186,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 729,
+            "total": 4917
+          }
+        },
+        {
+          "i": 17,
+          "mode": "COLD",
+          "wallMs": 6399,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "62db50b5-0eb8-44b0-9eab-be76264549bd",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 536,
+            "total": 6041
+          }
+        },
+        {
+          "i": 18,
+          "mode": "COLD",
+          "wallMs": 6418,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "b53e69f7-72a6-4173-bd4c-2697089ebf09",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 557,
+            "total": 6061
+          }
+        },
+        {
+          "i": 19,
+          "mode": "COLD",
+          "wallMs": 6374,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "3f128670-d5ec-4be2-b500-093286770e00",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 503,
+            "total": 6007
+          }
+        },
+        {
+          "i": 20,
+          "mode": "COLD",
+          "wallMs": 6506,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "92a46a14-f64f-495e-b7a9-19a7fa3a19b4",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 560,
+            "total": 6064
+          }
+        },
+        {
+          "i": 21,
+          "mode": "COLD",
+          "wallMs": 7063,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "ac94395c-2da4-4b8c-a226-da96955fd43c",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1168,
+            "total": 6672
+          }
+        },
+        {
+          "i": 22,
+          "mode": "COLD",
+          "wallMs": 6834,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "c8b31efc-f446-4341-82d6-55a99b011d0c",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 911,
+            "total": 6416
+          }
+        },
+        {
+          "i": 23,
+          "mode": "COLD",
+          "wallMs": 6431,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "539ad848-0bee-4d02-807c-f8a0f1d3794a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 571,
+            "total": 6074
+          }
+        },
+        {
+          "i": 24,
+          "mode": "COLD",
+          "wallMs": 6544,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "f2021bd4-0e53-4351-8838-e578f6900a23",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 667,
+            "total": 6172
+          }
+        },
+        {
+          "i": 25,
+          "mode": "COLD",
+          "wallMs": 4969,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "6c5747b9-580b-41ae-b9dd-04ee460f36b0",
+          "cached": false,
+          "timings": {
+            "wiki": 4082,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 508,
+            "total": 4593
+          }
+        },
+        {
+          "i": 26,
+          "mode": "COLD",
+          "wallMs": 6409,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "50d33af0-0e32-469f-b280-87873aaa3629",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 534,
+            "total": 6038
+          }
+        },
+        {
+          "i": 27,
+          "mode": "COLD",
+          "wallMs": 6405,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "5b2f6e57-4216-4ee0-a6c6-e31c3c95f792",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 539,
+            "total": 6044
+          }
+        },
+        {
+          "i": 28,
+          "mode": "COLD",
+          "wallMs": 6524,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "8db7db73-423d-4485-a853-028a6a57d0df",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 619,
+            "total": 6122
+          }
+        },
+        {
+          "i": 29,
+          "mode": "COLD",
+          "wallMs": 6385,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "f74a7763-6d73-4546-bb56-e0f65c659fc3",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 516,
+            "total": 6020
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 357,
+        "max": 7897,
+        "mean": 4875,
+        "p50": 6387,
+        "p90": 6670,
+        "p95": 6984,
+        "p99": 7897
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 5216,
+        "max": 7532,
+        "mean": 6501,
+        "p50": 6054,
+        "p90": 7532,
+        "p95": 7532,
+        "p99": 7532
+      },
+      "wiki": {
+        "n": 30,
+        "min": 4174,
+        "max": 5501,
+        "mean": 5425,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 472,
+        "max": 1100,
+        "mean": 589,
+        "p50": 560,
+        "p90": 732,
+        "p95": 877,
+        "p99": 1100
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 148,
+        "mean": 44,
+        "p50": 0,
+        "p90": 148,
+        "p95": 148,
+        "p99": 148
+      },
+      "uiCounts": {
+        "candidates": 21,
+        "dossier": 9
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 6402,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "40472144-e274-48db-957d-348c719091ab",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 473,
+            "total": 5979
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 6416,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "ffb5df30-b650-4d04-8c42-922bc3fcce3a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 550,
+            "total": 6054
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 6666,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "88970167-8728-4903-90d7-c13aa9cb5ee0",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 778,
+            "total": 6283
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 6398,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "13645633-327c-4178-9640-9ba21aa3f812",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 477,
+            "total": 5980
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 6361,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "efd40213-6282-4f1d-8413-e1c030d14bcd",
+          "cached": false,
+          "timings": {
+            "wiki": 4578,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 665,
+            "total": 5988
+          }
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "wallMs": 6355,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "8823f9e7-fe02-4f87-abf2-7abd50a51414",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 489,
+            "total": 5993
+          }
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "wallMs": 6394,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "b5f7e08f-c741-4fad-8fd4-425fbe2ebe0b",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 537,
+            "total": 6041
+          }
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "wallMs": 6756,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "61760606-e0df-4fcd-923c-144660b00ccb",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 877,
+            "total": 6381
+          }
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "wallMs": 6471,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "948fecf6-47bf-45ec-88dc-3ff68b624b0f",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 539,
+            "total": 6044
+          }
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "wallMs": 6984,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "02c1067e-abd1-45c9-a58d-a4700b5b333c",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1100,
+            "total": 6604
+          }
+        },
+        {
+          "i": 10,
+          "mode": "WARM",
+          "wallMs": 6387,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "82ec5e26-bf15-45bb-9512-1e3080978b9a",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 513,
+            "total": 6017
+          }
+        },
+        {
+          "i": 11,
+          "mode": "WARM",
+          "wallMs": 6358,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "150b3f7d-0479-4de5-8a87-f843214bfad6",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 482,
+            "total": 5989
+          }
+        },
+        {
+          "i": 12,
+          "mode": "WARM",
+          "wallMs": 6387,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "5a3356e1-82c0-4f64-9498-499ff3752952",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 539,
+            "total": 6042
+          }
+        },
+        {
+          "i": 13,
+          "mode": "WARM",
+          "wallMs": 5576,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "0a9d6659-d2e3-4aa0-ad86-417c5b7d24b5",
+          "cached": false,
+          "timings": {
+            "wiki": 4174,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 500,
+            "total": 5216
+          }
+        },
+        {
+          "i": 14,
+          "mode": "WARM",
+          "wallMs": 6591,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "989604c6-acb0-41e0-9439-6908ac08e7c6",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 658,
+            "total": 6161
+          }
+        },
+        {
+          "i": 15,
+          "mode": "WARM",
+          "wallMs": 6387,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "6b115ce2-148e-4fee-b7c8-f62e06191fa2",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 527,
+            "total": 6030
+          }
+        },
+        {
+          "i": 16,
+          "mode": "WARM",
+          "wallMs": 6570,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "0eab6605-4089-46c2-9e35-5cd2b583f563",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 693,
+            "total": 6197
+          }
+        },
+        {
+          "i": 17,
+          "mode": "WARM",
+          "wallMs": 6670,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "52564dd4-a635-41e3-ad6a-a19c2feee643",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 732,
+            "total": 6236
+          }
+        },
+        {
+          "i": 18,
+          "mode": "WARM",
+          "wallMs": 6409,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "c768a893-8668-4a9b-9c1f-eeda1c74150e",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 497,
+            "total": 6002
+          }
+        },
+        {
+          "i": 19,
+          "mode": "WARM",
+          "wallMs": 6449,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "1d32b789-ccdf-4e6a-a6a3-b262ec244fe2",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 526,
+            "total": 6028
+          }
+        },
+        {
+          "i": 20,
+          "mode": "WARM",
+          "wallMs": 6353,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "bd87bb0f-c213-45eb-9e27-540280d61ae7",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 472,
+            "total": 5975
+          }
+        },
+        {
+          "i": 21,
+          "mode": "WARM",
+          "wallMs": 7897,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "988c5a83-bb02-47eb-b461-d910d884c3c2",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 22,
+          "mode": "WARM",
+          "wallMs": 361,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "776d7163-61f2-4df7-9242-5c58c6bf5fbf",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 23,
+          "mode": "WARM",
+          "wallMs": 357,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "d95f68ee-b3a0-4ce8-9eea-33b289063167",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 24,
+          "mode": "WARM",
+          "wallMs": 411,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "29b27562-b251-4228-8c23-0105229af06e",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 25,
+          "mode": "WARM",
+          "wallMs": 413,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "c6424504-30d2-42cb-94f8-0c53f3e8183d",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 26,
+          "mode": "WARM",
+          "wallMs": 397,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "55ca3dbc-e641-4a13-a875-1acd47428609",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 27,
+          "mode": "WARM",
+          "wallMs": 357,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "17a2ae96-e419-46f3-a628-cc799a87d52e",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 28,
+          "mode": "WARM",
+          "wallMs": 368,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "5d1cb7f9-81da-454d-b7b0-f3fa74e40759",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        },
+        {
+          "i": 29,
+          "mode": "WARM",
+          "wallMs": 359,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q1701775",
+          "requestId": "51ad6ffc-6679-47a5-bbae-7b9c53cfd0bc",
+          "cached": true,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 148,
+            "enrich": 1013,
+            "stageB": 560,
+            "total": 7532
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 1061,
+        "max": 39114,
+        "mean": 19961,
+        "p50": 23720,
+        "p90": 26882,
+        "p95": 27227,
+        "p99": 39114
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 663,
+        "max": 38760,
+        "mean": 19575,
+        "p50": 23361,
+        "p90": 26487,
+        "p95": 26802,
+        "p99": 38760
+      },
+      "wiki": {
+        "n": 30,
+        "min": 663,
+        "max": 37903,
+        "mean": 18650,
+        "p50": 21554,
+        "p90": 25299,
+        "p95": 25390,
+        "p99": 37903
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 974,
+        "mean": 521,
+        "p50": 582,
+        "p90": 800,
+        "p95": 855,
+        "p99": 974
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 1061,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "3486521f-7023-47b1-adf5-3cd03f217e70",
+          "cached": false,
+          "timings": {
+            "wiki": 715,
+            "gemini": 0,
+            "enrich": 1,
+            "stageB": 0,
+            "total": 716
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 1077,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "90695547-f3b4-46e8-8599-d95152f7328b",
+          "cached": false,
+          "timings": {
+            "wiki": 716,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 716
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 1082,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "88dad1b2-1d74-4d9f-992f-271e8b24298d",
+          "cached": false,
+          "timings": {
+            "wiki": 715,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 715
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 39114,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "cad7cbd5-ad3b-4d9a-9b9b-43938776d7e7",
+          "cached": false,
+          "timings": {
+            "wiki": 37903,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 636,
+            "total": 38760
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 20143,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "085c7b9d-0014-416e-b10f-03c89aa59465",
+          "cached": false,
+          "timings": {
+            "wiki": 18687,
+            "gemini": 0,
+            "enrich": 165,
+            "stageB": 676,
+            "total": 19774
+          }
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "wallMs": 26853,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "611d1dd2-d893-4a1d-81f4-e7d7fbf31339",
+          "cached": false,
+          "timings": {
+            "wiki": 25243,
+            "gemini": 0,
+            "enrich": 498,
+            "stageB": 498,
+            "total": 26432
+          }
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "wallMs": 27227,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "cf55141c-debc-424e-aab6-627b1b7400d0",
+          "cached": false,
+          "timings": {
+            "wiki": 25390,
+            "gemini": 0,
+            "enrich": 154,
+            "stageB": 855,
+            "total": 26802
+          }
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "wallMs": 17572,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "dd7e5bc5-b5d4-4284-b20d-703c12f98e70",
+          "cached": false,
+          "timings": {
+            "wiki": 15982,
+            "gemini": 0,
+            "enrich": 143,
+            "stageB": 634,
+            "total": 17212
+          }
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "wallMs": 26882,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "e0644aa7-fc2c-428a-82cb-2c671da42e70",
+          "cached": false,
+          "timings": {
+            "wiki": 25299,
+            "gemini": 0,
+            "enrich": 148,
+            "stageB": 832,
+            "total": 26461
+          }
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "wallMs": 20640,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "3f5ecb49-e5a8-4843-bde9-f973b5d0f3cf",
+          "cached": false,
+          "timings": {
+            "wiki": 19208,
+            "gemini": 0,
+            "enrich": 170,
+            "stageB": 685,
+            "total": 20266
+          }
+        },
+        {
+          "i": 10,
+          "mode": "COLD",
+          "wallMs": 26723,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "82f32fb4-5257-4d5c-86dd-06b979d9baa9",
+          "cached": false,
+          "timings": {
+            "wiki": 25253,
+            "gemini": 0,
+            "enrich": 155,
+            "stageB": 513,
+            "total": 26357
+          }
+        },
+        {
+          "i": 11,
+          "mode": "COLD",
+          "wallMs": 26872,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "fd8856ad-533a-4e97-a5f3-c49f30a11959",
+          "cached": false,
+          "timings": {
+            "wiki": 25237,
+            "gemini": 0,
+            "enrich": 165,
+            "stageB": 582,
+            "total": 26499
+          }
+        },
+        {
+          "i": 12,
+          "mode": "COLD",
+          "wallMs": 18166,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "40eab7e2-0e13-47fc-a79a-f8836e93ef86",
+          "cached": false,
+          "timings": {
+            "wiki": 16795,
+            "gemini": 0,
+            "enrich": 154,
+            "stageB": 604,
+            "total": 17805
+          }
+        },
+        {
+          "i": 13,
+          "mode": "COLD",
+          "wallMs": 26813,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a722b7da-841a-4695-88e4-8b1c35a3c80d",
+          "cached": false,
+          "timings": {
+            "wiki": 25231,
+            "gemini": 0,
+            "enrich": 152,
+            "stageB": 783,
+            "total": 26436
+          }
+        },
+        {
+          "i": 14,
+          "mode": "COLD",
+          "wallMs": 20742,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "3ce3afe5-5e42-4611-8611-b66920b3be9d",
+          "cached": false,
+          "timings": {
+            "wiki": 18952,
+            "gemini": 0,
+            "enrich": 506,
+            "stageB": 631,
+            "total": 20317
+          }
+        },
+        {
+          "i": 15,
+          "mode": "COLD",
+          "wallMs": 26639,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "1a36102b-db38-4c57-9ad8-b77f5d0ffae4",
+          "cached": false,
+          "timings": {
+            "wiki": 25251,
+            "gemini": 0,
+            "enrich": 151,
+            "stageB": 671,
+            "total": 26265
+          }
+        },
+        {
+          "i": 16,
+          "mode": "COLD",
+          "wallMs": 26805,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "3d7bcd71-af84-4c11-9034-ae4ec04e138e",
+          "cached": false,
+          "timings": {
+            "wiki": 25278,
+            "gemini": 0,
+            "enrich": 154,
+            "stageB": 767,
+            "total": 26435
+          }
+        },
+        {
+          "i": 17,
+          "mode": "COLD",
+          "wallMs": 17732,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "3aed738b-794f-4954-8c93-743c93507445",
+          "cached": false,
+          "timings": {
+            "wiki": 15893,
+            "gemini": 0,
+            "enrich": 167,
+            "stageB": 974,
+            "total": 17319
+          }
+        },
+        {
+          "i": 18,
+          "mode": "COLD",
+          "wallMs": 26583,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "7932f63c-ddd1-48fd-aed2-df2792a3a15a",
+          "cached": false,
+          "timings": {
+            "wiki": 25253,
+            "gemini": 0,
+            "enrich": 155,
+            "stageB": 503,
+            "total": 26174
+          }
+        },
+        {
+          "i": 19,
+          "mode": "COLD",
+          "wallMs": 20992,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "efc3ce4f-7c38-47b4-b346-71493eed71b1",
+          "cached": false,
+          "timings": {
+            "wiki": 19496,
+            "gemini": 0,
+            "enrich": 171,
+            "stageB": 488,
+            "total": 20622
+          }
+        },
+        {
+          "i": 20,
+          "mode": "COLD",
+          "wallMs": 26578,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ab984c7e-a4dc-41a2-b6a0-396835116214",
+          "cached": false,
+          "timings": {
+            "wiki": 25269,
+            "gemini": 0,
+            "enrich": 151,
+            "stageB": 545,
+            "total": 26166
+          }
+        },
+        {
+          "i": 21,
+          "mode": "COLD",
+          "wallMs": 26829,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "b7ce3d2d-8e41-436a-a0fb-915074efb3df",
+          "cached": false,
+          "timings": {
+            "wiki": 25233,
+            "gemini": 0,
+            "enrich": 164,
+            "stageB": 795,
+            "total": 26461
+          }
+        },
+        {
+          "i": 22,
+          "mode": "COLD",
+          "wallMs": 17552,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "cb6625a7-6afe-4d90-a7a3-72a90b687f89",
+          "cached": false,
+          "timings": {
+            "wiki": 15808,
+            "gemini": 0,
+            "enrich": 511,
+            "stageB": 517,
+            "total": 17109
+          }
+        },
+        {
+          "i": 23,
+          "mode": "COLD",
+          "wallMs": 26907,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "cc548c65-3f80-4d07-90c2-0a7c941247d3",
+          "cached": false,
+          "timings": {
+            "wiki": 25337,
+            "gemini": 0,
+            "enrich": 147,
+            "stageB": 800,
+            "total": 26487
+          }
+        },
+        {
+          "i": 24,
+          "mode": "COLD",
+          "wallMs": 23720,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "1d478d4a-618c-4f32-9760-8c34c3acd735",
+          "cached": false,
+          "timings": {
+            "wiki": 21554,
+            "gemini": 0,
+            "enrich": 1033,
+            "stageB": 510,
+            "total": 23361
+          }
+        },
+        {
+          "i": 25,
+          "mode": "COLD",
+          "wallMs": 26588,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "fc744543-f516-4448-acf4-0a865a3b7f64",
+          "cached": false,
+          "timings": {
+            "wiki": 25256,
+            "gemini": 0,
+            "enrich": 145,
+            "stageB": 628,
+            "total": 26202
+          }
+        },
+        {
+          "i": 26,
+          "mode": "COLD",
+          "wallMs": 26535,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "96dc0963-cf8f-4088-ab2e-213e69e611e7",
+          "cached": false,
+          "timings": {
+            "wiki": 25266,
+            "gemini": 0,
+            "enrich": 147,
+            "stageB": 493,
+            "total": 26096
+          }
+        },
+        {
+          "i": 27,
+          "mode": "COLD",
+          "wallMs": 1958,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a071a152-b8db-4da4-9427-b4ed4620fd13",
+          "cached": false,
+          "timings": {
+            "wiki": 1597,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1597
+          }
+        },
+        {
+          "i": 28,
+          "mode": "COLD",
+          "wallMs": 1384,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "bd2b92a8-0cca-4048-8503-8135e16726fa",
+          "cached": false,
+          "timings": {
+            "wiki": 1022,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1022
+          }
+        },
+        {
+          "i": 29,
+          "mode": "COLD",
+          "wallMs": 1071,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "626c0c9a-5479-47b6-87fe-7217ba08fc93",
+          "cached": false,
+          "timings": {
+            "wiki": 663,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 663
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 242,
+        "max": 27774,
+        "mean": 13898,
+        "p50": 17692,
+        "p90": 26972,
+        "p95": 27254,
+        "p99": 27774
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 1496,
+        "max": 27408,
+        "mean": 14152,
+        "p50": 17193,
+        "p90": 26576,
+        "p95": 26880,
+        "p99": 27408
+      },
+      "wiki": {
+        "n": 30,
+        "min": 1495,
+        "max": 25280,
+        "mean": 13489,
+        "p50": 15996,
+        "p90": 25257,
+        "p95": 25272,
+        "p99": 25280
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 1335,
+        "mean": 362,
+        "p50": 488,
+        "p90": 649,
+        "p95": 1245,
+        "p99": 1335
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 24067,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "52352e4b-520b-4107-bb05-31f92c1be803",
+          "cached": false,
+          "timings": {
+            "wiki": 22724,
+            "gemini": 0,
+            "enrich": 148,
+            "stageB": 628,
+            "total": 23704
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 27109,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "e6f1e310-1683-4a70-a3ee-0a03542539b3",
+          "cached": false,
+          "timings": {
+            "wiki": 25280,
+            "gemini": 0,
+            "enrich": 492,
+            "stageB": 687,
+            "total": 26691
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 20167,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "999c8b5a-d10f-4675-864a-b3032ecaab93",
+          "cached": false,
+          "timings": {
+            "wiki": 18959,
+            "gemini": 0,
+            "enrich": 167,
+            "stageB": 490,
+            "total": 19794
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 27774,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "91bfc322-12d7-4179-875d-5f3e26f3f854",
+          "cached": false,
+          "timings": {
+            "wiki": 25257,
+            "gemini": 0,
+            "enrich": 490,
+            "stageB": 1335,
+            "total": 27408
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 19641,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5d86c1b6-a1b8-40cf-ad2f-d129bf36eba2",
+          "cached": false,
+          "timings": {
+            "wiki": 18238,
+            "gemini": 0,
+            "enrich": 150,
+            "stageB": 545,
+            "total": 19174
+          }
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "wallMs": 26462,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "96d6e6af-ea62-48fe-bc6e-52aa7955fd5b",
+          "cached": false,
+          "timings": {
+            "wiki": 25272,
+            "gemini": 0,
+            "enrich": 152,
+            "stageB": 488,
+            "total": 26091
+          }
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "wallMs": 26955,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "35738a30-ab9f-47ac-9407-fb2ba4da15b2",
+          "cached": false,
+          "timings": {
+            "wiki": 25247,
+            "gemini": 0,
+            "enrich": 149,
+            "stageB": 489,
+            "total": 26560
+          }
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "wallMs": 17692,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "9fa5cef2-e081-4334-badb-d87ad38eea73",
+          "cached": false,
+          "timings": {
+            "wiki": 15996,
+            "gemini": 0,
+            "enrich": 509,
+            "stageB": 497,
+            "total": 17193
+          }
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "wallMs": 27254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "541ec48a-eb08-43c8-a8c3-84df287c2b6f",
+          "cached": false,
+          "timings": {
+            "wiki": 25260,
+            "gemini": 0,
+            "enrich": 144,
+            "stageB": 1245,
+            "total": 26880
+          }
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "wallMs": 20898,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "8257bf05-d323-4763-9d3d-a8b8fee21127",
+          "cached": false,
+          "timings": {
+            "wiki": 19562,
+            "gemini": 0,
+            "enrich": 156,
+            "stageB": 574,
+            "total": 20481
+          }
+        },
+        {
+          "i": 10,
+          "mode": "WARM",
+          "wallMs": 26848,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "f0a5d3d5-10df-4a99-8eb3-343f779e8626",
+          "cached": false,
+          "timings": {
+            "wiki": 25224,
+            "gemini": 0,
+            "enrich": 541,
+            "stageB": 504,
+            "total": 26474
+          }
+        },
+        {
+          "i": 11,
+          "mode": "WARM",
+          "wallMs": 26538,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "be0b2409-fffc-42da-801d-74abc67261ec",
+          "cached": false,
+          "timings": {
+            "wiki": 25244,
+            "gemini": 0,
+            "enrich": 154,
+            "stageB": 487,
+            "total": 26168
+          }
+        },
+        {
+          "i": 12,
+          "mode": "WARM",
+          "wallMs": 17526,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "457fd492-b589-4dc4-bf1e-fe3abf39983a",
+          "cached": false,
+          "timings": {
+            "wiki": 15936,
+            "gemini": 0,
+            "enrich": 493,
+            "stageB": 509,
+            "total": 17113
+          }
+        },
+        {
+          "i": 13,
+          "mode": "WARM",
+          "wallMs": 26750,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "f93d3c88-4a77-4f0c-8ddf-95f15864f905",
+          "cached": false,
+          "timings": {
+            "wiki": 25243,
+            "gemini": 0,
+            "enrich": 160,
+            "stageB": 624,
+            "total": 26363
+          }
+        },
+        {
+          "i": 14,
+          "mode": "WARM",
+          "wallMs": 22590,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "e043f87c-cd62-4340-8e60-153bc91ad737",
+          "cached": false,
+          "timings": {
+            "wiki": 21297,
+            "gemini": 0,
+            "enrich": 162,
+            "stageB": 498,
+            "total": 22207
+          }
+        },
+        {
+          "i": 15,
+          "mode": "WARM",
+          "wallMs": 26654,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5e8e6423-2caf-4fba-93e3-00629fd587e1",
+          "cached": false,
+          "timings": {
+            "wiki": 25231,
+            "gemini": 0,
+            "enrich": 143,
+            "stageB": 649,
+            "total": 26232
+          }
+        },
+        {
+          "i": 16,
+          "mode": "WARM",
+          "wallMs": 26972,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5e2e546d-68ec-474e-a784-38413a54f9cf",
+          "cached": false,
+          "timings": {
+            "wiki": 25256,
+            "gemini": 0,
+            "enrich": 500,
+            "stageB": 602,
+            "total": 26576
+          }
+        },
+        {
+          "i": 17,
+          "mode": "WARM",
+          "wallMs": 1869,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 18,
+          "mode": "WARM",
+          "wallMs": 262,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 19,
+          "mode": "WARM",
+          "wallMs": 314,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 20,
+          "mode": "WARM",
+          "wallMs": 280,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 21,
+          "mode": "WARM",
+          "wallMs": 246,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 22,
+          "mode": "WARM",
+          "wallMs": 261,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 23,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 24,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 25,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 26,
+          "mode": "WARM",
+          "wallMs": 315,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 27,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 28,
+          "mode": "WARM",
+          "wallMs": 247,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        },
+        {
+          "i": 29,
+          "mode": "WARM",
+          "wallMs": 242,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "d647c4a9-0099-4f37-8eb9-969b97caaf69",
+          "cached": false,
+          "timings": {
+            "wiki": 1495,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1496
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 3153,
+        "max": 5939,
+        "mean": 5798,
+        "p50": 5882,
+        "p90": 5927,
+        "p95": 5933,
+        "p99": 5939
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 2806,
+        "max": 5501,
+        "mean": 5411,
+        "p50": 5501,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "wiki": {
+        "n": 30,
+        "min": 1044,
+        "max": 5501,
+        "mean": 5352,
+        "p50": 5500,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 747,
+        "mean": 25,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 747
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 3153,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "bb7c847b-1506-4d3d-8942-e20db51a35f1",
+          "cached": false,
+          "timings": {
+            "wiki": 1044,
+            "gemini": 0,
+            "enrich": 483,
+            "stageB": 747,
+            "total": 2806
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 5872,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "8bbf6dbf-6b5b-4fbd-85a1-b921311e7a3a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 5903,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "bce1cfbc-8e3a-45bf-b5dc-d1a83e6b97c5",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 5927,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "66df6e11-4b7d-47e4-a9aa-07f1fdfc3334",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 5857,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "4f153664-11c2-454b-9270-c1f0e7a8b041",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "wallMs": 5871,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "025951b5-d959-4205-93a3-1ebf7b992557",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "wallMs": 5859,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "82e015c3-aab8-45aa-9cd0-9445f0946cd9",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "wallMs": 5917,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "caa4c337-edd1-49bd-8a89-266b0df87d1f",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "wallMs": 5906,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "1cf79797-fcde-497e-a012-a9cea7f8d579",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "wallMs": 5913,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "7c3e07c0-8a0e-4a6c-a887-ba0ab7368231",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 10,
+          "mode": "COLD",
+          "wallMs": 5841,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "6b1b7635-44a6-4c8b-a200-1785a39c760f",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 11,
+          "mode": "COLD",
+          "wallMs": 5857,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "9d49221b-3a9f-4c72-9cbf-d5cd07541e08",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 12,
+          "mode": "COLD",
+          "wallMs": 5890,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "04435ae3-bbf6-4642-b4b1-2c2e8615c419",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 13,
+          "mode": "COLD",
+          "wallMs": 5917,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "4ce94f36-5503-4b5a-9288-acb586723db4",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 14,
+          "mode": "COLD",
+          "wallMs": 5902,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c6a910e5-513c-4656-90a7-4d5f2327c4da",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 15,
+          "mode": "COLD",
+          "wallMs": 5917,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "0ac92d79-b1aa-4e63-88b5-177d6f0fe00f",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 16,
+          "mode": "COLD",
+          "wallMs": 5861,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "590bc245-d05e-4cb9-b031-7cb4d508bf11",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 17,
+          "mode": "COLD",
+          "wallMs": 5870,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ebf21b54-bbaf-41ae-8a10-39a4e89220bd",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 18,
+          "mode": "COLD",
+          "wallMs": 5911,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "536cd533-2617-4e59-89d8-e8f70fcee070",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 19,
+          "mode": "COLD",
+          "wallMs": 5925,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "f92b8870-1950-494a-8c3f-133a2e09853e",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 20,
+          "mode": "COLD",
+          "wallMs": 5939,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "bdd070df-18a5-4a18-8aaa-ef005dfcf21d",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 21,
+          "mode": "COLD",
+          "wallMs": 5866,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "9075c104-6ece-41c3-a02e-9666a03d4dc6",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 22,
+          "mode": "COLD",
+          "wallMs": 5928,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "139e44c3-c31c-43f0-ae7b-1ffdc962c811",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 23,
+          "mode": "COLD",
+          "wallMs": 5933,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "aeb1357e-6787-48e7-92b4-213283c55624",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 24,
+          "mode": "COLD",
+          "wallMs": 5869,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "be41a277-4a42-4063-a589-92bb4ea1ccea",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 25,
+          "mode": "COLD",
+          "wallMs": 5882,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "4e83de15-b084-4557-94d2-b4c5d5328300",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5499
+          }
+        },
+        {
+          "i": 26,
+          "mode": "COLD",
+          "wallMs": 5851,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "91a06395-5364-4d2c-89c4-2174063d202d",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 27,
+          "mode": "COLD",
+          "wallMs": 5855,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "bd9748d5-33b3-4781-997d-f4f7f1de4807",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 28,
+          "mode": "COLD",
+          "wallMs": 5869,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "681371a2-0fc3-4c48-b42a-9fba3b3e9b79",
+          "cached": false,
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 29,
+          "mode": "COLD",
+          "wallMs": 5885,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "25d83ac8-7e02-4d5f-8299-789213ae10d5",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 232,
+        "max": 5883,
+        "mean": 453,
+        "p50": 254,
+        "p90": 304,
+        "p95": 403,
+        "p99": 5883
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "wiki": {
+        "n": 30,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 5883,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 300,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 244,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 251,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "wallMs": 249,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "wallMs": 271,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "wallMs": 235,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 10,
+          "mode": "WARM",
+          "wallMs": 263,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 11,
+          "mode": "WARM",
+          "wallMs": 311,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 12,
+          "mode": "WARM",
+          "wallMs": 250,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 13,
+          "mode": "WARM",
+          "wallMs": 296,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 14,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 15,
+          "mode": "WARM",
+          "wallMs": 248,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 16,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 17,
+          "mode": "WARM",
+          "wallMs": 276,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 18,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 19,
+          "mode": "WARM",
+          "wallMs": 242,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 20,
+          "mode": "WARM",
+          "wallMs": 260,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 21,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 22,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 23,
+          "mode": "WARM",
+          "wallMs": 243,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 24,
+          "mode": "WARM",
+          "wallMs": 232,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 25,
+          "mode": "WARM",
+          "wallMs": 304,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 26,
+          "mode": "WARM",
+          "wallMs": 249,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 27,
+          "mode": "WARM",
+          "wallMs": 276,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 28,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 29,
+          "mode": "WARM",
+          "wallMs": 403,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a4e5886a-dc32-4be6-973f-285a6efcb294",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 30,
+        "min": 812,
+        "max": 2918,
+        "mean": 1583,
+        "p50": 1364,
+        "p90": 2349,
+        "p95": 2485,
+        "p99": 2918
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 433,
+        "max": 2500,
+        "mean": 1211,
+        "p50": 1000,
+        "p90": 1932,
+        "p95": 2127,
+        "p99": 2500
+      },
+      "wiki": {
+        "n": 30,
+        "min": 99,
+        "max": 2500,
+        "mean": 301,
+        "p50": 111,
+        "p90": 699,
+        "p95": 1931,
+        "p99": 2500
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 2485,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "b7989bc5-b89b-41ff-90e9-646424dd8b24",
+          "cached": false,
+          "timings": {
+            "wiki": 131,
+            "gemini": 0,
+            "enrich": 1508,
+            "stageB": 0,
+            "total": 2127
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 1374,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "b2a74d82-c9ca-4915-adc6-cd7e9da21f5f",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 725,
+            "stageB": 0,
+            "total": 1019
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 2038,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "dfbfbf3b-09f2-4745-8245-f3c43bd83265",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 1280,
+            "stageB": 0,
+            "total": 1681
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 2059,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "163ff53f-dcb9-485c-8b51-7290720ebd98",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 1287,
+            "stageB": 0,
+            "total": 1682
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 1350,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "e3433c4c-0d14-4bde-9de8-fa9ec4c47f63",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 694,
+            "stageB": 0,
+            "total": 980
+          }
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "wallMs": 2465,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "3cb6a7d5-9622-4e4d-af36-6180aec52a2f",
+          "cached": false,
+          "timings": {
+            "wiki": 136,
+            "gemini": 0,
+            "enrich": 1693,
+            "stageB": 0,
+            "total": 2097
+          }
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "wallMs": 1357,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "960d681c-2302-46a8-b858-88cf923573c3",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 647,
+            "stageB": 0,
+            "total": 991
+          }
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "wallMs": 2069,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "df5fec74-a8be-4fc1-be78-a75f721ae557",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1410,
+            "stageB": 0,
+            "total": 1704
+          }
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "wallMs": 1933,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "d58302d9-1a9a-4b5e-a694-541d89954ce0",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 1285,
+            "stageB": 0,
+            "total": 1573
+          }
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "wallMs": 1360,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "7f57b849-5fb7-4e24-b70d-dc16c217d9e5",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 684,
+            "stageB": 0,
+            "total": 1000
+          }
+        },
+        {
+          "i": 10,
+          "mode": "COLD",
+          "wallMs": 1232,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "5b1badda-0397-4ce1-9ebe-037fb9555694",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 561,
+            "stageB": 0,
+            "total": 871
+          }
+        },
+        {
+          "i": 11,
+          "mode": "COLD",
+          "wallMs": 1296,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "bd5d1f05-0176-4b61-bf0f-753072b56aa1",
+          "cached": false,
+          "timings": {
+            "wiki": 103,
+            "gemini": 0,
+            "enrich": 555,
+            "stageB": 0,
+            "total": 926
+          }
+        },
+        {
+          "i": 12,
+          "mode": "COLD",
+          "wallMs": 1219,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "ba266ea3-b68f-4843-8c9e-e13914b39e5e",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 848
+          }
+        },
+        {
+          "i": 13,
+          "mode": "COLD",
+          "wallMs": 1452,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "90dc49a4-bc5c-4cd9-a28d-039901983796",
+          "cached": false,
+          "timings": {
+            "wiki": 116,
+            "gemini": 0,
+            "enrich": 572,
+            "stageB": 0,
+            "total": 1086
+          }
+        },
+        {
+          "i": 14,
+          "mode": "COLD",
+          "wallMs": 1364,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "9b31bdf3-6569-4968-8b1c-db9367de682f",
+          "cached": false,
+          "timings": {
+            "wiki": 117,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 996
+          }
+        },
+        {
+          "i": 15,
+          "mode": "COLD",
+          "wallMs": 1299,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "1cc0d1e5-ad62-4627-9ef2-12bc2d4c01be",
+          "cached": false,
+          "timings": {
+            "wiki": 119,
+            "gemini": 0,
+            "enrich": 565,
+            "stageB": 0,
+            "total": 901
+          }
+        },
+        {
+          "i": 16,
+          "mode": "COLD",
+          "wallMs": 1312,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "8a377499-9933-41e4-a2f9-c1d249e3bef1",
+          "cached": false,
+          "timings": {
+            "wiki": 115,
+            "gemini": 0,
+            "enrich": 552,
+            "stageB": 0,
+            "total": 911
+          }
+        },
+        {
+          "i": 17,
+          "mode": "COLD",
+          "wallMs": 1399,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "3314de44-aa3e-465c-b6a9-0c3d8a414ff3",
+          "cached": false,
+          "timings": {
+            "wiki": 99,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 1038
+          }
+        },
+        {
+          "i": 18,
+          "mode": "COLD",
+          "wallMs": 1175,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "35f30806-ad34-407f-bcad-b40381d35ad4",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 552,
+            "stageB": 0,
+            "total": 832
+          }
+        },
+        {
+          "i": 19,
+          "mode": "COLD",
+          "wallMs": 1258,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "8404edc1-4800-44a0-abb3-8ed52ed51217",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 568,
+            "stageB": 0,
+            "total": 890
+          }
+        },
+        {
+          "i": 20,
+          "mode": "COLD",
+          "wallMs": 1857,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "fb92b5ee-7564-4b99-b5f0-90972b296574",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 563,
+            "stageB": 0,
+            "total": 1492
+          }
+        },
+        {
+          "i": 21,
+          "mode": "COLD",
+          "wallMs": 1258,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "03338f85-58bb-485e-9944-3d7d6a714fd5",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 567,
+            "stageB": 0,
+            "total": 909
+          }
+        },
+        {
+          "i": 22,
+          "mode": "COLD",
+          "wallMs": 2349,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "92d10a2c-012b-4b0d-9bbb-53dacbd13791",
+          "cached": false,
+          "timings": {
+            "wiki": 1931,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1932
+          }
+        },
+        {
+          "i": 23,
+          "mode": "COLD",
+          "wallMs": 812,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "ab910e7b-85a5-4780-a40f-1f50054667c9",
+          "cached": false,
+          "timings": {
+            "wiki": 432,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 433
+          }
+        },
+        {
+          "i": 24,
+          "mode": "COLD",
+          "wallMs": 1120,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "37c7661e-1851-4297-b7ef-372d1810fd0c",
+          "cached": false,
+          "timings": {
+            "wiki": 699,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 700
+          }
+        },
+        {
+          "i": 25,
+          "mode": "COLD",
+          "wallMs": 1109,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "be7ee776-1f59-48a1-9d81-605af70229d5",
+          "cached": false,
+          "timings": {
+            "wiki": 712,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 713
+          }
+        },
+        {
+          "i": 26,
+          "mode": "COLD",
+          "wallMs": 2918,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "a007cea3-af0b-4723-9cde-5f1d6a0dc6ba",
+          "cached": false,
+          "timings": {
+            "wiki": 2500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 2500
+          }
+        },
+        {
+          "i": 27,
+          "mode": "COLD",
+          "wallMs": 1757,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "31db57a4-5c36-4ced-8408-d4ad0c7c7fa0",
+          "cached": false,
+          "timings": {
+            "wiki": 113,
+            "gemini": 0,
+            "enrich": 573,
+            "stageB": 0,
+            "total": 1404
+          }
+        },
+        {
+          "i": 28,
+          "mode": "COLD",
+          "wallMs": 1420,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "a23bfbd7-c15b-4107-8f9b-ccd59f38f282",
+          "cached": false,
+          "timings": {
+            "wiki": 101,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 1050
+          }
+        },
+        {
+          "i": 29,
+          "mode": "COLD",
+          "wallMs": 1407,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "39e173a8-f724-4c35-b4bc-782e66f0103c",
+          "cached": false,
+          "timings": {
+            "wiki": 111,
+            "gemini": 0,
+            "enrich": 562,
+            "stageB": 0,
+            "total": 1045
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 30,
+        "min": 235,
+        "max": 1191,
+        "mean": 296,
+        "p50": 256,
+        "p90": 329,
+        "p95": 339,
+        "p99": 1191
+      },
+      "serverTotal": {
+        "n": 30,
+        "min": 819,
+        "max": 819,
+        "mean": 819,
+        "p50": 819,
+        "p90": 819,
+        "p95": 819,
+        "p99": 819
+      },
+      "wiki": {
+        "n": 30,
+        "min": 100,
+        "max": 100,
+        "mean": 100,
+        "p50": 100,
+        "p90": 100,
+        "p95": 100,
+        "p99": 100
+      },
+      "stageB": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 30,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 30
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 1191,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 339,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 254,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "wallMs": 257,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "wallMs": 272,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "wallMs": 270,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "wallMs": 259,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "wallMs": 261,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 10,
+          "mode": "WARM",
+          "wallMs": 334,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 11,
+          "mode": "WARM",
+          "wallMs": 250,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 12,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 13,
+          "mode": "WARM",
+          "wallMs": 248,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 14,
+          "mode": "WARM",
+          "wallMs": 251,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 15,
+          "mode": "WARM",
+          "wallMs": 329,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 16,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 17,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 18,
+          "mode": "WARM",
+          "wallMs": 259,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 19,
+          "mode": "WARM",
+          "wallMs": 257,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 20,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 21,
+          "mode": "WARM",
+          "wallMs": 255,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 22,
+          "mode": "WARM",
+          "wallMs": 277,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 23,
+          "mode": "WARM",
+          "wallMs": 238,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 24,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 25,
+          "mode": "WARM",
+          "wallMs": 235,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 26,
+          "mode": "WARM",
+          "wallMs": 258,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 27,
+          "mode": "WARM",
+          "wallMs": 261,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 28,
+          "mode": "WARM",
+          "wallMs": 290,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        },
+        {
+          "i": 29,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "c5615250-bde2-480f-bea4-0d59db0e3d1b",
+          "cached": false,
+          "timings": {
+            "wiki": 100,
+            "gemini": 0,
+            "enrich": 551,
+            "stageB": 0,
+            "total": 819
+          }
+        }
+      ]
+    }
+  ]
+}

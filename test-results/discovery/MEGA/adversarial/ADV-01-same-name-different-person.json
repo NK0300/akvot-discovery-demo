@@ -1,0 +1,68 @@
+{
+  "fixtureId": "ADV-01-same-name-different-person",
+  "qSection": "Q13",
+  "invariant": [
+    "ACC-DISC-03",
+    "ACC-DISC-04",
+    "ACC-DISC-05",
+    "P6"
+  ],
+  "intent": "Same display name must NOT merge into one identity without Evidence links.",
+  "seed": "דוד כהן",
+  "locale": "he",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "findings": [
+    {
+      "id": "f-cohen-journalist",
+      "title": "דוד כהן",
+      "summary": "Public byline — journalist track (fixture)",
+      "kind": "person_mention",
+      "entityRefs": [
+        "soft:cohen-journalist"
+      ],
+      "evidenceIds": [
+        "ev-cohen-a"
+      ],
+      "rankHint": "finding_relevance"
+    },
+    {
+      "id": "f-cohen-engineer",
+      "title": "דוד כהן",
+      "summary": "Public profile — engineer track (fixture)",
+      "kind": "person_mention",
+      "entityRefs": [
+        "soft:cohen-engineer"
+      ],
+      "evidenceIds": [
+        "ev-cohen-b"
+      ],
+      "rankHint": "finding_relevance"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-cohen-a",
+      "provenanceUrl": "https://www.wikidata.org/w/index.php?search=%D7%93%D7%95%D7%93+%D7%9B%D7%94%D7%9F",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T04:00:00.000Z",
+      "quote": "Multiple public hits — keep both Findings",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-cohen-b",
+      "provenanceUrl": "https://openlibrary.org/search/authors?q=%D7%93%D7%95%D7%93+%D7%9B%D7%94%D7%9F",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:00:01.000Z",
+      "quote": "Distinct provenance — INFORMATION≠IDENTITY",
+      "robotsOk": true
+    }
+  ],
+  "expect": {
+    "findingCountMin": 2,
+    "forcedMerge": false,
+    "dossier": false,
+    "faces": false,
+    "leakage": 0,
+    "notes": "FI-01 class: two Findings same name different Evidence"
+  }
+}

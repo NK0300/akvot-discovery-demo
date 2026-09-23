@@ -1,0 +1,17 @@
+{
+  "sessionIdPrefix": "ds1.eyJ2IjoxLCJzIjoiQWxl",
+  "g1": {
+    "httpStatus": 200,
+    "findings": 15,
+    "regenerated": true,
+    "ms": 4571
+  },
+  "g2": {
+    "httpStatus": 200,
+    "findings": 15,
+    "regenerated": true,
+    "ms": 2389
+  },
+  "entityLeak": 0,
+  "store": "fs-regen"
+}

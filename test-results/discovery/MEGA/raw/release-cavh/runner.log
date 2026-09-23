@@ -1,0 +1,44 @@
+[release-cavh] start 2026-09-20T07:50:52+03:00
+[release-cavh] Preview dpl_CAVh2rDSNDFfjrGzw8EJWJNmPN4e · Core dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · HOLD promote
+
+=== Health ===
+[health] api.build=dpl_CAVh2rDSNDFfjrGzw8EJWJNmPN4e store=upstash disc.ok=true steps=["WRITE:true","READ:true","UPDATE:true","DELETE:true"]
+
+=== Seeds Acc ≥3 ===
+
+--- S1 דוד כהן ---
+[POST] 201 sid=kv1.155b39ac3798a971c2e5a390b174c3b6 findings=19 store=upstash ms=2968 contraLeaks=0
+[GET] 200 regenerated=null findings=19 ms=2325 contraLeaks=0
+[GET2] 200 regenerated=null findings=19
+[SSE] ct=text/event-stream; charset=utf-8 ev=27 types=meta,progress,provider,finding,facets,status,done ms=2802
+[SSE2] ev=27 types=meta,progress,provider,finding,facets,status,done ms=2664
+[NARROW] 200 19→19 ms=2336
+[S1] PASS ok
+
+--- S2 Alex Morgan ---
+[POST] 201 sid=kv1.80e6fd1eb1dad06a7f68c0e381b1a60d findings=21 store=upstash ms=2829 contraLeaks=0
+[GET] 200 regenerated=null findings=21 ms=2294 contraLeaks=0
+[GET2] 200 regenerated=null findings=21
+[SSE] ct=text/event-stream; charset=utf-8 ev=29 types=meta,progress,provider,finding,facets,status,done ms=2641
+[SSE2] ev=29 types=meta,progress,provider,finding,facets,status,done ms=2754
+[NARROW] 200 21→21 ms=3356
+[S2] PASS ok
+
+--- S3 example.org ---
+[POST] 201 sid=kv1.e21963fe45f327f6056a8f052fa04f16 findings=3 store=upstash ms=2711 contraLeaks=0
+[GET] 200 regenerated=null findings=3 ms=2354 contraLeaks=0
+[GET2] 200 regenerated=null findings=3
+[SSE] ct=text/event-stream; charset=utf-8 ev=11 types=meta,progress,provider,finding,facets,status,done ms=2351
+[SSE2] ev=11 types=meta,progress,provider,finding,facets,status,done ms=2293
+[NARROW] 200 3→3 ms=2358
+[S3] PASS ok
+
+=== Smith+ctx B23 scrub ===
+[Smith+ctx] POST=201 GET=200 findings=21 regen=null contraClean=true leak=0 bans= PASS=true
+
+=== RB-11 rehydrate scrub ===
+[RB11] GET 200 regen=null forbiddenAbsent=true el=0 fl=0 contra=0 bans=
+[RB11 narrow-poison] 200 entityLeak=0? true
+
+=== ADV L1-L4 smoke ===
+[ADV-L1] PASS http=201 findings=19 el=0 fl=0 contra=0

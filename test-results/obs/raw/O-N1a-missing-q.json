@@ -1,0 +1,14 @@
+{
+  "label": "O-N1a-missing-q",
+  "http": 400,
+  "wallMs": 2541,
+  "curlTime": 0.357334,
+  "path": "/api/lookup",
+  "body": {
+    "error": "missing q|phone|email"
+  },
+  "cliExit": 0,
+  "stderrTail": [
+    "Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback"
+  ]
+}

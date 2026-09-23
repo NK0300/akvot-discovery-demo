@@ -1,0 +1,24 @@
+HTTP/2 200 
+access-control-allow-headers: Content-Type, Accept, x-akvot-token, x-akvot-battery
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-origin: https://akvot-simple-demo.vercel.app
+access-control-max-age: 86400
+age: 0
+cache-control: no-store
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: application/json; charset=utf-8
+date: Sat, 19 Sep 2026 19:46:04 GMT
+etag: W/"411-hUhuXklMP+eMw6qs/2MIEPV/wis"
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+vary: Origin
+x-akvot-cache: MISS
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-request-id: 1cdbbebf-3a77-4f6e-8388-db0f531ce63f
+x-vercel-cache: MISS
+x-vercel-id: cle1::fra1::k9rql-1789847162352-2b03f70ec097
+content-length: 1041
+

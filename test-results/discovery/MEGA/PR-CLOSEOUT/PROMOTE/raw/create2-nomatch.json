@@ -1,0 +1,12 @@
+{
+  "protection": {
+    "auto_vercel_auth_redirect": true,
+    "password_enabled": false,
+    "vercel_auth_enabled": true,
+    "vercel_auth_callback": "https://vercel.com/sso-api?url=https%3A%2F%2Fakvot-discovery.vercel.app%2Fapi%2Fdiscovery%2Fsessions&nonce=69d8e39aee29984c5c92d38102620062e5e7cb4e1b8b75b4c2ea2d1898e96c1f"
+  },
+  "error": {
+    "code": "401",
+    "message": "Protected deployment"
+  }
+}

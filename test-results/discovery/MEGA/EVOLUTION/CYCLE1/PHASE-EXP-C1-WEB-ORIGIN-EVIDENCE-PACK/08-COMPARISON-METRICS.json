@@ -1,0 +1,786 @@
+{
+  "stamp": "2026-09-20T09:00:42.482Z",
+  "stampLabel": "20/09/2026, 12:00:42 IDT",
+  "note": "Live recheck on C1-PATCHED Ho6jg — supersedes PREPATCH metrics for gates. Historical PREPATCH retained under treat_prepatch_scrap.",
+  "promote": "HOLD",
+  "c2": false,
+  "arms": {
+    "CONTROL": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "url": "https://akvot-discovery.vercel.app",
+      "status": "LOCKED"
+    },
+    "TREATMENT": {
+      "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+      "url": "https://akvot-simple-demo-c5if0fxif-k-akvot.vercel.app",
+      "flag": "DISCOVERY_ENABLE_WEB_ORIGIN=1",
+      "status": "C1-PATCHED"
+    },
+    "CORE": {
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "status": "LOCKED",
+      "note": "smoke only if needed; not mutated"
+    },
+    "PREPATCH_SCRAP": {
+      "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+      "note": "do not use for metrics"
+    }
+  },
+  "live_recheck": {
+    "doc": "08-DISCOVERY-RECHECK-בודק-2026-09-20",
+    "overall": "PASS",
+    "gates": {
+      "URL_alone_UNKNOWN": {
+        "pass": true,
+        "detail": "S16+W5 no SAME-* on web_origin"
+      },
+      "BAD_URL_ALONE_SAME": {
+        "value": 0,
+        "pass": true
+      },
+      "units_ge_96": {
+        "value": 96,
+        "pass": true
+      },
+      "meaningful_discovery": {
+        "pass": true,
+        "note": "URL/host seeds emit web_origin; person/company/org (S01/S04/S05) wo=0 (no URL spam)"
+      },
+      "Acc_leak_treat": {
+        "value": 0,
+        "pass": true
+      },
+      "B0_untouched": {
+        "pass": true,
+        "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+      },
+      "Core_untouched": {
+        "pass": true,
+        "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+      }
+    },
+    "per_seed": [
+      {
+        "id": "S16",
+        "seed": "https://www.who.int",
+        "role": "URL",
+        "CONTROL": {
+          "findings_n": 0,
+          "web_origin_n": 0,
+          "sessionId": "kv1.4b53f77c8db6aa18e59454fe9770fce9"
+        },
+        "TREATMENT": {
+          "findings_n": 1,
+          "web_origin_n": 1,
+          "UNKNOWN_n": 2,
+          "SAME_REFERENCE_n": 0,
+          "SAME_ENTITY_n": 0,
+          "BAD_URL_ALONE_SAME": 0,
+          "sessionId": "kv1.f7c00541518627f1bb4ec05abf47dc6c",
+          "wo_sample": [
+            {
+              "id": "wo-7fd08b15039288ff",
+              "title": "World Health Organization (WHO)",
+              "relationship": "UNKNOWN",
+              "facetHints": [
+                "provider:web_origin",
+                "kind:page",
+                "hostFamily:web_origin",
+                "relationship:UNKNOWN"
+              ],
+              "hostFamily": "web_origin"
+            }
+          ]
+        },
+        "delta": {
+          "findings_n": 1,
+          "web_origin_n": 1
+        }
+      },
+      {
+        "id": "W5",
+        "seed": "who.int",
+        "role": "bare-host",
+        "CONTROL": {
+          "findings_n": 7,
+          "web_origin_n": 0,
+          "sessionId": "kv1.c0c9dc0c66ae7f76704d45757e53a488"
+        },
+        "TREATMENT": {
+          "findings_n": 16,
+          "web_origin_n": 1,
+          "UNKNOWN_n": 2,
+          "SAME_REFERENCE_n": 0,
+          "SAME_ENTITY_n": 0,
+          "BAD_URL_ALONE_SAME": 0,
+          "sessionId": "kv1.7387690dd06c19a7f02afb97c7f36210",
+          "wo_sample": [
+            {
+              "id": "wo-7fd08b15039288ff",
+              "title": "World Health Organization (WHO)",
+              "relationship": "UNKNOWN",
+              "facetHints": [
+                "provider:web_origin",
+                "kind:page",
+                "hostFamily:web_origin",
+                "relationship:UNKNOWN"
+              ],
+              "hostFamily": "web_origin"
+            }
+          ]
+        },
+        "delta": {
+          "findings_n": 9,
+          "web_origin_n": 1
+        }
+      },
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "role": "person",
+        "CONTROL": {
+          "findings_n": 10,
+          "web_origin_n": 0,
+          "sessionId": "kv1.b4ba4cda7fe996381be14d5e5eb0ec65"
+        },
+        "TREATMENT": {
+          "findings_n": 18,
+          "web_origin_n": 0,
+          "UNKNOWN_n": 0,
+          "SAME_REFERENCE_n": 0,
+          "SAME_ENTITY_n": 0,
+          "BAD_URL_ALONE_SAME": 0,
+          "sessionId": "kv1.4fafd4c6a9264b51d75a6925fdc6a978",
+          "wo_sample": []
+        },
+        "delta": {
+          "findings_n": 8,
+          "web_origin_n": 0
+        }
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "role": "company",
+        "CONTROL": {
+          "findings_n": 22,
+          "web_origin_n": 0,
+          "sessionId": "kv1.e7a1f5a07b4e2d414845c0b5cb0831e9"
+        },
+        "TREATMENT": {
+          "findings_n": 30,
+          "web_origin_n": 0,
+          "UNKNOWN_n": 0,
+          "SAME_REFERENCE_n": 0,
+          "SAME_ENTITY_n": 0,
+          "BAD_URL_ALONE_SAME": 0,
+          "sessionId": "kv1.1382d8fb086b3b27dc76bd8302802dd0",
+          "wo_sample": []
+        },
+        "delta": {
+          "findings_n": 8,
+          "web_origin_n": 0
+        }
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "role": "org",
+        "CONTROL": {
+          "findings_n": 22,
+          "web_origin_n": 0,
+          "sessionId": "kv1.a9c77f739eec032791d9e5689bb3644f"
+        },
+        "TREATMENT": {
+          "findings_n": 30,
+          "web_origin_n": 0,
+          "UNKNOWN_n": 0,
+          "SAME_REFERENCE_n": 0,
+          "SAME_ENTITY_n": 0,
+          "BAD_URL_ALONE_SAME": 0,
+          "sessionId": "kv1.1fd7678295af5dd5703a2b8e5128d51f",
+          "wo_sample": []
+        },
+        "delta": {
+          "findings_n": 8,
+          "web_origin_n": 0
+        }
+      }
+    ],
+    "units": {
+      "cited": "UNITS-SUMMARY.json / UNITS-webOrigin-patched.log",
+      "passed": 96,
+      "failed": 0,
+      "gate": "PASS"
+    },
+    "BAD_URL_ALONE_SAME": 0,
+    "Acc_leak": 0
+  },
+  "treat": {
+    "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+    "class": "C1-PATCHED",
+    "rows": [
+      {
+        "id": "S16",
+        "seed": "https://www.who.int",
+        "role": "URL",
+        "url_alone": true,
+        "status": "complete",
+        "findings_n": 1,
+        "evidence_n": 1,
+        "web_origin_n": 1,
+        "wo_evidence_n": 1,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "ok"
+        },
+        "has_web_origin_provider": true,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 1,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 1,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 2,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": true,
+        "acc_leak": 0,
+        "wo_sample": [
+          {
+            "id": "wo-7fd08b15039288ff",
+            "title": "World Health Organization (WHO)",
+            "relationship": "UNKNOWN",
+            "facetHints": [
+              "provider:web_origin",
+              "kind:page",
+              "hostFamily:web_origin",
+              "relationship:UNKNOWN"
+            ],
+            "hostFamily": "web_origin"
+          }
+        ],
+        "wo_ev_sample": [
+          {
+            "id": "ev-b568e650d6f4a41767d75ac8",
+            "relationship": "UNKNOWN",
+            "provenanceUrl": "https://www.who.int/",
+            "hostFamily": "web_origin"
+          }
+        ],
+        "latencyMs": 3979,
+        "sessionId": "kv1.f7c00541518627f1bb4ec05abf47dc6c",
+        "create_ok": true
+      },
+      {
+        "id": "W5",
+        "seed": "who.int",
+        "role": "bare-host",
+        "url_alone": true,
+        "status": "partial",
+        "findings_n": 16,
+        "evidence_n": 16,
+        "web_origin_n": 1,
+        "wo_evidence_n": 1,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "partial",
+          "viaf": "partial",
+          "web_origin": "ok"
+        },
+        "has_web_origin_provider": true,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 1,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 1,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 2,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": true,
+        "acc_leak": 0,
+        "wo_sample": [
+          {
+            "id": "wo-7fd08b15039288ff",
+            "title": "World Health Organization (WHO)",
+            "relationship": "UNKNOWN",
+            "facetHints": [
+              "provider:web_origin",
+              "kind:page",
+              "hostFamily:web_origin",
+              "relationship:UNKNOWN"
+            ],
+            "hostFamily": "web_origin"
+          }
+        ],
+        "wo_ev_sample": [
+          {
+            "id": "ev-b568e650d6f4a41767d75ac8",
+            "relationship": "UNKNOWN",
+            "provenanceUrl": "https://www.who.int/",
+            "hostFamily": "web_origin"
+          }
+        ],
+        "latencyMs": 3446,
+        "sessionId": "kv1.7387690dd06c19a7f02afb97c7f36210",
+        "create_ok": true
+      },
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "role": "person",
+        "url_alone": false,
+        "status": "partial",
+        "findings_n": 18,
+        "evidence_n": 18,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "ok",
+          "viaf": "partial",
+          "web_origin": "ok"
+        },
+        "has_web_origin_provider": true,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": null,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 5834,
+        "sessionId": "kv1.4fafd4c6a9264b51d75a6925fdc6a978",
+        "create_ok": true
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "role": "company",
+        "url_alone": false,
+        "status": "partial",
+        "findings_n": 30,
+        "evidence_n": 30,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial",
+          "web_origin": "ok"
+        },
+        "has_web_origin_provider": true,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": null,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 5793,
+        "sessionId": "kv1.1382d8fb086b3b27dc76bd8302802dd0",
+        "create_ok": true
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "role": "org",
+        "url_alone": false,
+        "status": "partial",
+        "findings_n": 30,
+        "evidence_n": 30,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial",
+          "web_origin": "ok"
+        },
+        "has_web_origin_provider": true,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": null,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 5905,
+        "sessionId": "kv1.1fd7678295af5dd5703a2b8e5128d51f",
+        "create_ok": true
+      }
+    ]
+  },
+  "control": {
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "rows": [
+      {
+        "id": "S16",
+        "seed": "https://www.who.int",
+        "role": "URL",
+        "url_alone": true,
+        "status": "complete",
+        "findings_n": 0,
+        "evidence_n": 0,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok"
+        },
+        "has_web_origin_provider": false,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": true,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 4959,
+        "sessionId": "kv1.4b53f77c8db6aa18e59454fe9770fce9",
+        "create_ok": true
+      },
+      {
+        "id": "W5",
+        "seed": "who.int",
+        "role": "bare-host",
+        "url_alone": true,
+        "status": "partial",
+        "findings_n": 7,
+        "evidence_n": 7,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "partial"
+        },
+        "has_web_origin_provider": false,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": true,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 2757,
+        "sessionId": "kv1.c0c9dc0c66ae7f76704d45757e53a488",
+        "create_ok": true
+      },
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "role": "person",
+        "url_alone": false,
+        "status": "partial",
+        "findings_n": 10,
+        "evidence_n": 10,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok"
+        },
+        "has_web_origin_provider": false,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": null,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 2848,
+        "sessionId": "kv1.b4ba4cda7fe996381be14d5e5eb0ec65",
+        "create_ok": true
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "role": "company",
+        "url_alone": false,
+        "status": "partial",
+        "findings_n": 22,
+        "evidence_n": 22,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "has_web_origin_provider": false,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": null,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 2800,
+        "sessionId": "kv1.e7a1f5a07b4e2d414845c0b5cb0831e9",
+        "create_ok": true
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "role": "org",
+        "url_alone": false,
+        "status": "partial",
+        "findings_n": 22,
+        "evidence_n": 22,
+        "web_origin_n": 0,
+        "wo_evidence_n": 0,
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "has_web_origin_provider": false,
+        "relationship_labels": {
+          "findings": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "evidence": {
+            "UNKNOWN": 0,
+            "SAME-REFERENCE": 0,
+            "SAME-ENTITY": 0,
+            "RELATED-ENTITY": 0,
+            "other": 0,
+            "unset": 0
+          },
+          "facet_SAME_hits": []
+        },
+        "UNKNOWN_n": 0,
+        "SAME_REFERENCE_n": 0,
+        "SAME_ENTITY_n": 0,
+        "BAD_URL_ALONE_SAME": 0,
+        "url_alone_UNKNOWN_ok": null,
+        "acc_leak": 0,
+        "wo_sample": [],
+        "wo_ev_sample": [],
+        "latencyMs": 2831,
+        "sessionId": "kv1.a9c77f739eec032791d9e5689bb3644f",
+        "create_ok": true
+      }
+    ]
+  },
+  "treat_prepatch_scrap": {
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "note": "historical only — do not use for metrics",
+    "prior_stamp": "2026-09-20T08:39:26.908Z"
+  },
+  "gates": {
+    "URL_alone_UNKNOWN": {
+      "pass": true,
+      "detail": "S16+W5 no SAME-* on web_origin"
+    },
+    "BAD_URL_ALONE_SAME": {
+      "value": 0,
+      "pass": true
+    },
+    "units_ge_96": {
+      "value": 96,
+      "pass": true
+    },
+    "meaningful_discovery": {
+      "pass": true,
+      "note": "URL/host seeds emit web_origin; person/company/org (S01/S04/S05) wo=0 (no URL spam)"
+    },
+    "Acc_leak_treat": {
+      "value": 0,
+      "pass": true
+    },
+    "B0_untouched": {
+      "pass": true,
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+    },
+    "Core_untouched": {
+      "pass": true,
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+    }
+  },
+  "gate_pass": true
+}

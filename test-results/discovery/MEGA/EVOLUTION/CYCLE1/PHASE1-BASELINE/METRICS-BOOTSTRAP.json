@@ -1,0 +1,78 @@
+{
+  "label": "B0",
+  "phase": "PHASE1-BASELINE",
+  "cycle": "CYCLE1",
+  "stamp": "2026-09-20T09:47:15+03:00",
+  "zone": "Asia/Jerusalem",
+  "discovery_deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "core_deploymentId": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "health_latency_ms": {
+    "disc_api_health_ms": 349,
+    "disc_discovery_health_ms": 897,
+    "core_api_health_ms": 298
+  },
+  "kv_ping_latency_ms": 29,
+  "discovery_health_wrud_latency_ms": 207,
+  "sessions": [
+    {
+      "kind": "person",
+      "seed": "John Smith",
+      "post_ms": 920,
+      "get_ms": 335,
+      "finding_count": 21,
+      "post_code": 201,
+      "get_code": 200
+    },
+    {
+      "kind": "company",
+      "seed": "Acme Corporation",
+      "post_ms": 613,
+      "get_ms": 298,
+      "finding_count": 9,
+      "post_code": 201,
+      "get_code": 200
+    },
+    {
+      "kind": "domain",
+      "seed": "example.org",
+      "post_ms": 543,
+      "get_ms": 319,
+      "finding_count": 3,
+      "post_code": 201,
+      "get_code": 200
+    },
+    {
+      "kind": "person",
+      "seed": "Assaf",
+      "post_ms": 722,
+      "get_ms": 308,
+      "finding_count": 22,
+      "post_code": 201,
+      "get_code": 200
+    }
+  ],
+  "finding_counts": {
+    "Acme Corporation": 9,
+    "Assaf": 22,
+    "John Smith": 21,
+    "example.org": 3
+  },
+  "finding_count_total": 55,
+  "finding_count_mean": 13.75,
+  "sse_sample_bytes": 4692,
+  "sse_event_types": [
+    "meta",
+    "progress",
+    "provider",
+    "provider",
+    "provider",
+    "finding",
+    "finding",
+    "finding",
+    "facets",
+    "status",
+    "done"
+  ],
+  "core_lookup_notes": "smith-ctx ~6.3s \u00b7 smith ~5.8s \u00b7 assaf ~5.8s (from smoke run; wall times)",
+  "baseline_tag": "B0"
+}

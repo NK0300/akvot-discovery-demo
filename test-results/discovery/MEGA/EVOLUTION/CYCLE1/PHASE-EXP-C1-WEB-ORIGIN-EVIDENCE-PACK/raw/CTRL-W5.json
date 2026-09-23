@@ -1,0 +1,465 @@
+{
+  "ok": true,
+  "sessionId": "kv1.53a9e06d3b1291653f9f350417ded099",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "c1-CTRL-W5",
+  "snapshot": {
+    "sessionId": "kv1.53a9e06d3b1291653f9f350417ded099",
+    "seed": "who.int",
+    "q": "who.int",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q7817",
+        "kind": "registry",
+        "title": "World Health Organization",
+        "summary": "United Nations agency concerned with international public health",
+        "evidenceIds": [
+          "ev-55c95168642f71f9d631fbfb"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q7817"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Who_int",
+        "kind": "page",
+        "title": "Who.int",
+        "evidenceIds": [
+          "ev-b55ba17b0d23b4ce98f49005"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Who.int"
+        ],
+        "scoreFinding": 0.6383333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Whitney_Houston",
+        "kind": "page",
+        "title": "Whitney Houston",
+        "evidenceIds": [
+          "ev-f01eef7b257ca8303ef5deed"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Whitney Houston"
+        ],
+        "scoreFinding": 0.6283333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Whodini",
+        "kind": "page",
+        "title": "Whodini",
+        "evidenceIds": [
+          "ev-ba7d72f453f8f020ee6963dd"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Whodini"
+        ],
+        "scoreFinding": 0.6183333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-WHOI_TV_",
+        "kind": "page",
+        "title": "WHOI (TV)",
+        "evidenceIds": [
+          "ev-962372a1a35576682d5913a4"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:WHOI (TV)"
+        ],
+        "scoreFinding": 0.6083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Whodini_discography",
+        "kind": "page",
+        "title": "Whodini discography",
+        "evidenceIds": [
+          "ev-15148210db2c9263b16288fe"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Whodini discography"
+        ],
+        "scoreFinding": 0.5983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Who_Invited_Them",
+        "kind": "page",
+        "title": "Who Invited Them",
+        "evidenceIds": [
+          "ev-a8357728795e3d1047bf67b8"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Who Invited Them"
+        ],
+        "scoreFinding": 0.5883333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-55c95168642f71f9d631fbfb",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q7817",
+        "url": "https://www.wikidata.org/wiki/Q7817",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:39:03.675Z",
+        "evidenceType": "registry",
+        "quote": "United Nations agency concerned with international public health",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b55ba17b0d23b4ce98f49005",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Who.int",
+        "url": "https://en.wikipedia.org/wiki/Who.int",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:39:03.689Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f01eef7b257ca8303ef5deed",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Whitney_Houston",
+        "url": "https://en.wikipedia.org/wiki/Whitney_Houston",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:39:03.689Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba7d72f453f8f020ee6963dd",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Whodini",
+        "url": "https://en.wikipedia.org/wiki/Whodini",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:39:03.689Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-962372a1a35576682d5913a4",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/WHOI_(TV)",
+        "url": "https://en.wikipedia.org/wiki/WHOI_(TV)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:39:03.689Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-15148210db2c9263b16288fe",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Whodini_discography",
+        "url": "https://en.wikipedia.org/wiki/Whodini_discography",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:39:03.689Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a8357728795e3d1047bf67b8",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Who_Invited_Them",
+        "url": "https://en.wikipedia.org/wiki/Who_Invited_Them",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:39:03.689Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikipedia",
+            "count": 6
+          },
+          {
+            "value": "wikidata",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 6
+          },
+          {
+            "value": "registry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:d1bb97578027"
+      ],
+      "status": "candidate",
+      "displayHint": "who.int",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:39:03.448Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:d1bb97578027",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q7817",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Who_int",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Whitney_Houston",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Whodini",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-WHOI_TV_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Whodini_discography",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Who_Invited_Them",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

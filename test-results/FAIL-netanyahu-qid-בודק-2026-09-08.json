@@ -1,0 +1,36 @@
+{
+  "when": "2026-09-08T05:42:03.786Z",
+  "samples": [
+    {
+      "i": 0,
+      "fail": true,
+      "err": "Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "i": 1,
+      "fail": true,
+      "ms": 56557,
+      "phase": "orchestrator-v0-b",
+      "ui": "need_context",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "google",
+      "src": 0,
+      "imgs": 0,
+      "label": "בנימין נתניהו"
+    },
+    {
+      "i": 2,
+      "fail": false,
+      "ms": 25223,
+      "phase": "orchestrator-v0-b",
+      "ui": "dossier",
+      "scn": "known",
+      "qid": "Q43723",
+      "mode": "wiki",
+      "src": 19,
+      "imgs": 2,
+      "label": "בנימין נתניהו"
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "checked_at": "2026-09-20T02:54:28+03:00",
+    "timezone": "Asia/Jerusalem (UTC+3)",
+    "phase": "B",
+    "role": "דיוק",
+    "promote": false,
+    "discovery_preview": "https://akvot-simple-demo-p5zxut9y5-k-akvot.vercel.app",
+    "discovery_dpl": "dpl_BvWg9yUsibVqdrCAexSTMpwoabZ6",
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "alias_dpl_expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "alias_build_observed": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "forbidden": "Q1701775",
+    "forbiddenIdentitiesVersion_expected": "2026-09-19.1",
+    "endpoints": {
+      "discovery": [
+        "POST /api/discovery/sessions",
+        "GET /api/discovery/sessions/:id"
+      ],
+      "core": [
+        "GET|POST /api/lookup"
+      ]
+    }
+  },
+  "health": {
+    "discovery": {
+      "build": "dpl_BvWg9yUsibVqdrCAexSTMpwoabZ6",
+      "match": true,
+      "ms": 2633
+    },
+    "alias": {
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "match": true,
+      "ms": 2353
+    }
+  },
+  "acc_disc": {
+    "verdict": "GO",
+    "pass": true,
+    "leakage_count": 0,
+    "seeds_n": 3,
+    "cases": [
+      {
+        "label": "disc-seed-he-soft",
+        "seed": "דוד כהן",
+        "hints": {
+          "locale": "he"
+        },
+        "surface": "discovery",
+        "method": "POST",
+        "ms": 2987,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "cfbe3d69-9a3a-4461-94ab-2d21373454e6",
+        "status": "partial",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "findings_n": 13,
+        "evidence_n": 13,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 14,
+        "entityRefs_n": 13,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-he-soft.json",
+        "note": "HE person soft — entity-agnostic"
+      },
+      {
+        "label": "disc-seed-he-soft-get",
+        "seed": "דוד כהן",
+        "surface": "discovery-get",
+        "note": "GET skipped/404 (serverless Map not sticky) — POST snapshot is SoT",
+        "skip": true,
+        "pass": true,
+        "http_status_hint": "session not found",
+        "raw_file": "disc-seed-he-soft-get.json"
+      },
+      {
+        "label": "disc-seed-smith-ctx",
+        "seed": "John Smith",
+        "hints": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "surface": "discovery",
+        "method": "POST",
+        "ms": 3215,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "4294f842-d41d-4852-b443-31547344833d",
+        "status": "partial",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "findings_n": 15,
+        "evidence_n": 15,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 16,
+        "entityRefs_n": 15,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-smith-ctx.json",
+        "note": "Smith+IBM/NY/US — NEVER Q1701775"
+      },
+      {
+        "label": "disc-seed-smith-ctx-get",
+        "seed": "John Smith",
+        "surface": "discovery-get",
+        "note": "GET skipped/404 (serverless Map not sticky) — POST snapshot is SoT",
+        "skip": true,
+        "pass": true,
+        "http_status_hint": "session not found",
+        "raw_file": "disc-seed-smith-ctx-get.json"
+      },
+      {
+        "label": "disc-seed-org-domain",
+        "seed": "example.org",
+        "hints": {
+          "kind": "domain"
+        },
+        "surface": "discovery",
+        "method": "POST",
+        "ms": 2814,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "60ea1021-b58d-4154-a4c4-036fc3a0f976",
+        "status": "complete",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "findings_n": 2,
+        "evidence_n": 2,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 3,
+        "entityRefs_n": 2,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-org-domain.json",
+        "note": "Org/domain fixture"
+      },
+      {
+        "label": "disc-seed-org-domain-get",
+        "seed": "example.org",
+        "surface": "discovery-get",
+        "note": "GET skipped/404 (serverless Map not sticky) — POST snapshot is SoT",
+        "skip": true,
+        "pass": true,
+        "http_status_hint": "session not found",
+        "raw_file": "disc-seed-org-domain-get.json"
+      },
+      {
+        "label": "preview-lookup-smith-ctx",
+        "surface": "lookup",
+        "method": "POST",
+        "ms": 6343,
+        "exit": 0,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "candidates",
+            "thin",
+            "need_context"
+          ],
+          "neverQid": "Q1701775",
+          "faces": 0
+        },
+        "raw_file": "preview-lookup-smith-ctx.json",
+        "note": "Smith+ctx on preview lookup — Acc scrub"
+      }
+    ]
+  },
+  "core_alias": {
+    "verdict": "GO",
+    "pass": true,
+    "leakage_count": 0,
+    "pw": 0,
+    "cases": [
+      {
+        "label": "alias-assaf",
+        "surface": "lookup",
+        "method": "GET",
+        "ms": 4213,
+        "exit": 0,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": 8,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "qid": true,
+          "never_qid": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiExact": "dossier",
+          "qidExact": "Q47507930",
+          "neverQid": "Q1701775"
+        },
+        "raw_file": "alias-assaf.json"
+      },
+      {
+        "label": "alias-cohen",
+        "surface": "lookup",
+        "method": "GET",
+        "ms": 3164,
+        "exit": 0,
+        "ui": "need_context",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "need_context",
+            "thin",
+            "candidates"
+          ],
+          "faces": 0,
+          "neverQid": "Q1701775"
+        },
+        "raw_file": "alias-cohen.json"
+      },
+      {
+        "label": "alias-smith-post-ctx-nocache",
+        "surface": "lookup",
+        "method": "POST",
+        "ms": 9094,
+        "exit": 0,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "candidates",
+            "thin",
+            "need_context"
+          ],
+          "neverQid": "Q1701775",
+          "faces": 0
+        },
+        "raw_file": "alias-smith-post-ctx-nocache.json"
+      },
+      {
+        "label": "alias-smith-post-ctx-warm",
+        "surface": "lookup",
+        "method": "POST",
+        "ms": 9195,
+        "exit": 0,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "candidates",
+            "thin",
+            "need_context"
+          ],
+          "neverQid": "Q1701775",
+          "faces": 0
+        },
+        "raw_file": "alias-smith-post-ctx-warm.json"
+      }
+    ]
+  },
+  "summary": {
+    "Acc-DISC": "GO",
+    "Core-alias": "GO",
+    "leakage_total": 0,
+    "pw_total": 0,
+    "promote": "NOT DONE"
+  }
+}

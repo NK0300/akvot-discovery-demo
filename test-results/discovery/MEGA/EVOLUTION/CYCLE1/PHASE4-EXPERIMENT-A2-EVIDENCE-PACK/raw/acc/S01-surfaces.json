@@ -1,0 +1,20 @@
+{
+  "sid": "kv1.6ebffa2c3f6f5f4d7497627fe9b2109b",
+  "surfaces": {
+    "GET": {
+      "leak": 0,
+      "findings": 18,
+      "edges": 45
+    },
+    "NARROW": {
+      "leak": 0
+    },
+    "SSE": {
+      "leak": 0,
+      "bytes": 55687
+    },
+    "NESTED": {
+      "leak": 0
+    }
+  }
+}

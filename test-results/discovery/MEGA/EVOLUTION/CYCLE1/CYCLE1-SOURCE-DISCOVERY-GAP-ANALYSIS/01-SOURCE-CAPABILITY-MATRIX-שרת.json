@@ -1,0 +1,91 @@
+{
+  "doc": "01-SOURCE-CAPABILITY-MATRIX-שרת",
+  "stamp": "2026-09-20 IL",
+  "agent": "שרת",
+  "mode": "docs-only",
+  "locks": {
+    "b0_discovery": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "core": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "a2": "CLOSED / EXPERIMENTAL-BASELINE"
+  },
+  "runtime": {
+    "b0_default_providers": ["wikidata", "openlibrary", "wikipedia"],
+    "preview_flag": "DISCOVERY_ENABLE_VIAF=1",
+    "preview_adds": ["viaf"],
+    "absent": ["viaf_on_b0", "web_public"]
+  },
+  "orchestrator": {
+    "providerMs": 3500,
+    "adapter_budgetMs_default": 3000
+  },
+  "adapters": [
+    {
+      "id": "wikidata",
+      "endpoint": "https://www.wikidata.org/w/api.php?action=wbsearchentities (+ wbgetentities P214)",
+      "entity_types": ["person_name", "org", "doc"],
+      "auth": "none",
+      "rate_budget": "budgetMs 3000 / providerMs 3500; limit=8",
+      "soft_fail": true,
+      "cost_class": "public_free",
+      "he_support": "locale lang slice (he ok on API)",
+      "typed_refs_emitted": ["qid", "viaf(from_P214)"],
+      "known_failure_modes": ["WD_error_on_S04", "P214_empty_companies", "related_qid_flood"]
+    },
+    {
+      "id": "openlibrary",
+      "endpoint": "https://openlibrary.org/search/authors.json (+ /authors/{id}.json remote_ids)",
+      "entity_types": ["person_name", "org", "doc"],
+      "auth": "none",
+      "rate_budget": "budgetMs 3000 / providerMs 3500; limit=8; enrich top 6",
+      "soft_fail": true,
+      "cost_class": "public_free",
+      "he_support": "query passthrough (no dedicated HE host)",
+      "typed_refs_emitted": ["ol", "viaf(from_remote_ids)", "qid(from_remote_ids)"],
+      "known_failure_modes": ["OL_remote_ids_miss_S04", "authors_only_search", "string_match_noise"]
+    },
+    {
+      "id": "wikipedia",
+      "endpoint": "https://{en|he}.wikipedia.org/w/api.php?action=opensearch",
+      "entity_types": ["person_name", "org", "doc"],
+      "auth": "none",
+      "rate_budget": "budgetMs 3000 / providerMs 3500; limit=6",
+      "soft_fail": true,
+      "cost_class": "public_free",
+      "he_support": "locale=he → he.wikipedia.org",
+      "typed_refs_emitted": ["wp:lang:title_only"],
+      "known_failure_modes": ["wp_only_no_qid_viaf_ol", "Bound1_title_coalesce_banned"]
+    },
+    {
+      "id": "viaf",
+      "endpoint": "https://viaf.org/viaf/AutoSuggest",
+      "entity_types": ["person_name", "org", "doc"],
+      "auth": "none",
+      "rate_budget": "budgetMs 3000 / providerMs 3500; n≤8 AutoSuggest",
+      "soft_fail": true,
+      "cost_class": "public_free",
+      "he_support": "query passthrough (Latin-heavy)",
+      "typed_refs_emitted": ["viaf", "qid(when_WKP_on_AutoSuggest)"],
+      "known_failure_modes": ["absent_on_B0", "family_local_no_wkp_S04", "autosuggest_peer_miss_S05", "homonym_lexical"],
+      "runtime": "Preview flag only (DISCOVERY_ENABLE_VIAF=1)"
+    },
+    {
+      "id": "web_public",
+      "endpoint": null,
+      "entity_types": [],
+      "auth": null,
+      "rate_budget": null,
+      "soft_fail": null,
+      "cost_class": null,
+      "he_support": null,
+      "typed_refs_emitted": [],
+      "known_failure_modes": ["absent_interface_only_no_crawler"],
+      "runtime": "ABSENT"
+    }
+  ],
+  "forensics_anchors": {
+    "source": "PHASE4-EXPERIMENT-A2-HARDENING-EVIDENCE-PACK/01-FORENSICS-S01-S04-S05-שרת.md",
+    "S04": "WD_error + OL_remote_ids_miss + WP_wp_only → multi=0",
+    "S05": "sparse_cross_family + Q7178_P214_no_peer",
+    "S01": "qid∩viaf∩ol coalesce success path"
+  }
+}

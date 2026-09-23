@@ -1,0 +1,82 @@
+{
+  "$schemaNote": "WP3 L2 measure-only metrics schema · שרת · 2026-09-19",
+  "schema": "wp3-l2-metrics/v1",
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "version": "wp3-l2-1.1.0",
+    "alsoRef": "scripts/perf-harness.mjs (L1 COLD/WARM N samples; unchanged)"
+  },
+  "fingerprintRef": "test-results/wp3/L2-FINGERPRINT-FROZEN-שרת-2026-09-19.json",
+  "streams": {
+    "L2-A": {
+      "name": "Load steps",
+      "steps": { "low": 2, "med": 5, "high": 10, "peak": 20 },
+      "cases": ["A-assaf-get", "C-smith-ctx-post", "D-cohen-get"],
+      "mix": ["COLD", "WARM"],
+      "requiredMetrics": [
+        "throughputRps",
+        "wall.p50", "wall.p95", "wall.p99",
+        "errorPct", "timeoutPct",
+        "statusDist",
+        "wiki.p50", "wiki.p95",
+        "wikiMetaAgg",
+        "cache.hit", "cache.miss", "cache.hitRatio",
+        "prettyWrongN"
+      ]
+    },
+    "L2-B": {
+      "name": "Soak",
+      "defaultConcurrency": 5,
+      "defaultSoakMinutes": 10,
+      "bucketMinutes": "1–2",
+      "timelineMetrics": [
+        "latencyDrift (compare bucket wall.p50/p95)",
+        "errorPct",
+        "wikiMetaAgg",
+        "cache.hitRatio"
+      ]
+    },
+    "L2-C": {
+      "name": "Failure probes",
+      "kind": "CLIENT_STRESS",
+      "note": "Client-observable only — no prod sabotage / no dep disable / no injected server faults",
+      "probes": [
+        { "id": "burst", "desc": "Peak concurrency for ~60s" },
+        { "id": "miss-storm", "desc": "Rapid-fire same Smith POST key with COLD/nocache" },
+        { "id": "cohen-load", "desc": "Cohen GET under High concurrency (wiki tail)" },
+        { "id": "recovery", "desc": "After burst + pause, Med Assaf WARM baseline recovers?" }
+      ]
+    }
+  },
+  "sampleFields": [
+    "wallMs", "status", "err", "timedOut", "uiState", "qid", "cached",
+    "timings.wiki|gemini|enrich|stageB|total",
+    "wikiMeta.wiki429|wikiTimeout|wikiRetries",
+    "prettyWrong", "requestId", "at"
+  ],
+  "aggregates": {
+    "wall": { "n": "number", "min": "ms", "max": "ms", "mean": "ms", "p50": "ms", "p90": "ms", "p95": "ms", "p99": "ms" },
+    "wiki": "same shape as wall (from timings.wiki)",
+    "errorPct": "0–100",
+    "timeoutPct": "0–100",
+    "statusDist": "map status→count",
+    "cache": { "hit": "count cached:true", "miss": "count not cached", "hitRatio": "0–1" },
+    "wikiMetaAgg": {
+      "wiki429_sum": "sum",
+      "wikiTimeout_sum": "sum",
+      "wikiRetries_sum": "sum",
+      "samplesWith429": "count",
+      "samplesWithWikiTimeout": "count"
+    },
+    "throughputRps": "n / wallClockSec",
+    "prettyWrongN": "count · abort if >0 when --abort-on-pw 1"
+  },
+  "stopRules": {
+    "pw>0": "ABORT immediately → Chief",
+    "identity/dossier contamination": "ABORT",
+    "face leak": "ABORT",
+    "SoT / contract change": "out of scope — report only",
+    "uncontrolled prod impact": "ABORT"
+  },
+  "artifactPattern": "test-results/wp3/L2-{SMOKE|LOAD|SOAK|FAILURE}-{tag}-{runId}.{json,md}"
+}

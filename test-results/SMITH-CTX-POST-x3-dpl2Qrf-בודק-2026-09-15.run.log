@@ -1,0 +1,21 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Retrieving project…
+Downloading `development` environment variables
+Loaded env from /workspace/akvot-quick-demo/.env.local
+SMITH-CTX POST×3 + GET×3 · בודק → https://akvot-simple-demo-8t702yisg-k-akvot.vercel.app
+dpl=dpl_2QrfuXhQg1Jt9q2NBdedkKJHwTqT when=15.9.2026, 17:28:48 Asia/Jerusalem
+
+→ POST nested run 1 ... PASS http=200 ui=candidates qid=- faces=false photo=false ms=4897 rid=63524bfc-71a2-4b28-ae32-856eaaed97b5
+→ POST nested run 2 ... PASS http=200 ui=candidates qid=- faces=false photo=false ms=7784 rid=5c6f7f1c-405f-49f5-b3c1-dc6c49096a1e
+→ POST nested run 3 ... PASS http=200 ui=candidates qid=- faces=false photo=false ms=6437 rid=112f2fa8-ac91-4915-969b-28971d4cd1e4
+→ GET flat run 1 ... PASS http=200 ui=candidates qid=- faces=false photo=false ms=6278 rid=c9490cb2-e246-4989-8b34-5723fd0f9c31
+→ GET flat run 2 ... PASS http=200 ui=candidates qid=- faces=false photo=false ms=6563 rid=bd0ffe44-4225-4a7b-9010-dcec0501853d
+→ GET flat run 3 ... PASS http=200 ui=candidates qid=- faces=false photo=false ms=6684 rid=e3a82345-20a7-4280-9338-5a91821a7744
+
+========== SMITH-CTX SUMMARY ==========
+POST×3 allPass=true pw=0
+GET×3  allPass=true pw=0
+POST JSON: /workspace/akvot-quick-demo/test-results/SMITH-CTX-POST-x3-dpl2Qrf-בודק-2026-09-15.json
+GET  JSON: /workspace/akvot-quick-demo/test-results/SMITH-CTX-GET-x3-dpl2Qrf-בודק-2026-09-15.json
+=======================================
+

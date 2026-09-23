@@ -1,0 +1,17 @@
+{
+  "$id": "akvot/discovery/evidence",
+  "title": "Evidence",
+  "type": "object",
+  "required": ["id", "provenanceUrl", "providerId", "retrievedAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "provenanceUrl": { "type": "string", "format": "uri" },
+    "providerId": { "type": "string" },
+    "retrievedAt": { "type": "string", "format": "date-time" },
+    "quote": { "type": "string" },
+    "contentType": { "type": "string" },
+    "licenseHint": { "type": "string" },
+    "robotsOk": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

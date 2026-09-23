@@ -1,0 +1,33 @@
+id: 1
+event: meta
+data: {"sessionId":"kv1.db1d1bd974fb584544b0b10d9b6c1c27","seed":"http://127.0.0.1/","q":"http://127.0.0.1/","version":2,"forbiddenIdentitiesVersion":"2026-09-19.1","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true,"note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true},"cursor":1}
+
+id: 2
+event: progress
+data: {"progress":{"done":6,"totalHint":6},"stage":"S10","cursor":2}
+
+id: 3
+event: provider
+data: {"providerId":"wikidata","state":"ok","cursor":3}
+
+id: 4
+event: provider
+data: {"providerId":"openlibrary","state":"ok","cursor":4}
+
+id: 5
+event: provider
+data: {"providerId":"wikipedia","state":"ok","cursor":5}
+
+id: 6
+event: facets
+data: {"facets":[{"key":"provider","label":"Provider","buckets":[],"emptyReason":"no_evidence"},{"key":"kind","label":"Kind","buckets":[],"emptyReason":"no_evidence"},{"key":"hint","label":"Hint","buckets":[],"emptyReason":"no_evidence"}],"cursor":6}
+
+id: 7
+event: status
+data: {"status":"complete","findingCount":0,"forbiddenStripped":0,"forbiddenIdentitiesVersion":"2026-09-19.1","version":2,"cursor":7}
+
+id: 8
+event: done
+data: {"status":"complete","sessionId":"kv1.db1d1bd974fb584544b0b10d9b6c1c27","findingCount":0,"forbiddenIdentitiesVersion":"2026-09-19.1","version":2,"cursor":8}
+
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback

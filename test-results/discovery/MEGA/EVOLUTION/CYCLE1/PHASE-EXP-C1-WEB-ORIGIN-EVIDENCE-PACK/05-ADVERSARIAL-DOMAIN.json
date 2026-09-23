@@ -1,0 +1,533 @@
+{
+  "stamp": "20/09/2026, 11:40:51 IDT",
+  "rows": [
+    {
+      "id": "ADV-sub",
+      "seed": "https://en.wikipedia.org",
+      "role": "same-reg different subdomain family still web_origin",
+      "status": "partial",
+      "findings_n": 5,
+      "evidence_n": 5,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [
+        "www.wikidata.org",
+        "en.wikipedia.org",
+        "viaf.org"
+      ],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2775,
+      "sessionId": "kv1.e3e6934d9fefa47f80252ecac791da15",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-park",
+      "seed": "https://example.com",
+      "role": "parked/example",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2535,
+      "sessionId": "kv1.4f3d5b0d7f6c0a5bc68ef6e48b23b2e8",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-query",
+      "seed": "https://www.who.int/path?utm_source=x&q=1",
+      "role": "query/fragment strip",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2587,
+      "sessionId": "kv1.2cd15e4dfc4c01a0225dbce42bd42f29",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-www",
+      "seed": "https://www.who.int",
+      "role": "www",
+      "status": "partial",
+      "findings_n": 1,
+      "evidence_n": 1,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [
+        "web_origin"
+      ],
+      "has_web_origin_family": true,
+      "relationships": {
+        "SAME-REFERENCE": 1
+      },
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [
+        {
+          "id": "wo-7fd08b15039288ff",
+          "title": "World Health Organization (WHO)",
+          "relationship": "SAME-REFERENCE",
+          "hostFamily": "web_origin",
+          "hostname": "www.who.int",
+          "registrableDomain": "who.int"
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-b568e650d6f4a41767d75ac8",
+          "provenanceUrl": "https://www.who.int/",
+          "hostFamily": "web_origin",
+          "registrableDomain": "who.int",
+          "relationship": "SAME-REFERENCE",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          }
+        }
+      ],
+      "latencyMs": 2498,
+      "sessionId": "kv1.a86ca57d890e35b63be47998b77b7b07",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-http",
+      "seed": "http://example.com",
+      "role": "http→https",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2578,
+      "sessionId": "kv1.d9b50c049e1a32a060f16929f509acb3",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-private",
+      "seed": "http://127.0.0.1/",
+      "role": "localhost/private",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2578,
+      "sessionId": "kv1.00fd228d461a48fb4abeb392386be155",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-meta",
+      "seed": "http://169.254.169.254/",
+      "role": "metadata",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "error",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2611,
+      "sessionId": "kv1.ae8f71709f3bdcb40694a6c82506efac",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-local",
+      "seed": "https://localhost/",
+      "role": "localhost",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2892,
+      "sessionId": "kv1.197796914e955a3190a896122e1a1a12",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-internal",
+      "seed": "https://metadata.google.internal/",
+      "role": "metadata host",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "error",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 3601,
+      "sessionId": "kv1.7b448859218c96578df08c26d792fe5b",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-poison",
+      "seed": "https://www.example.com/page?qid=Q1701775",
+      "role": "Acc poison in URL",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2586,
+      "sessionId": "kv1.4d06d2b5d2b29d75991a136aa96e1dc6",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-unrelated",
+      "seed": "https://www.w3.org",
+      "role": "unrelated-to-person control",
+      "status": "partial",
+      "findings_n": 1,
+      "evidence_n": 1,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [
+        "web_origin"
+      ],
+      "has_web_origin_family": true,
+      "relationships": {
+        "SAME-REFERENCE": 1
+      },
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "relationship": "SAME-REFERENCE",
+          "hostFamily": "web_origin",
+          "hostname": "www.w3.org",
+          "registrableDomain": "w3.org"
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-2f35fc2bc7d0b3be7d842a85",
+          "provenanceUrl": "https://www.w3.org/",
+          "hostFamily": "web_origin",
+          "registrableDomain": "w3.org",
+          "relationship": "SAME-REFERENCE",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          }
+        }
+      ],
+      "latencyMs": 2599,
+      "sessionId": "kv1.0376f7e93a16e609120c262f35a761b7",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-social",
+      "seed": "https://twitter.com",
+      "role": "social",
+      "status": "partial",
+      "findings_n": 1,
+      "evidence_n": 1,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [
+        "web_origin"
+      ],
+      "has_web_origin_family": true,
+      "relationships": {
+        "SAME-REFERENCE": 1
+      },
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [
+        {
+          "id": "wo-67980aa928b24773",
+          "title": "X (formerly Twitter)",
+          "relationship": "SAME-REFERENCE",
+          "hostFamily": "web_origin",
+          "hostname": "x.com",
+          "registrableDomain": "x.com"
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-4e198f8cc286dba31780e65c",
+          "provenanceUrl": "https://x.com/",
+          "hostFamily": "web_origin",
+          "registrableDomain": "x.com",
+          "relationship": "SAME-REFERENCE",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          }
+        }
+      ],
+      "latencyMs": 2735,
+      "sessionId": "kv1.8e1f59e6417029a0004787bbc8b21bd5",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-doc",
+      "seed": "https://www.rfc-editor.org",
+      "role": "document host",
+      "status": "partial",
+      "findings_n": 1,
+      "evidence_n": 1,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [
+        "web_origin"
+      ],
+      "has_web_origin_family": true,
+      "relationships": {
+        "SAME-REFERENCE": 1
+      },
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [
+        {
+          "id": "wo-9bb0b3c1b884a983",
+          "title": "RFC Editor",
+          "relationship": "SAME-REFERENCE",
+          "hostFamily": "web_origin",
+          "hostname": "www.rfc-editor.org",
+          "registrableDomain": "rfc-editor.org"
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-919d4a21ebfe9a7f6c821c4d",
+          "provenanceUrl": "https://www.rfc-editor.org/",
+          "hostFamily": "web_origin",
+          "registrableDomain": "rfc-editor.org",
+          "relationship": "SAME-REFERENCE",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          }
+        }
+      ],
+      "latencyMs": 2540,
+      "sessionId": "kv1.5ff80cf03816b98befe60185b2f9398f",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-archive",
+      "seed": "https://web.archive.org",
+      "role": "archive",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 3118,
+      "sessionId": "kv1.311753bd2927c3a34cb5fc646d901a58",
+      "create_ok": true
+    },
+    {
+      "id": "ADV-js",
+      "seed": "javascript:alert(1)",
+      "role": "dangerous scheme",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "error",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "hostFamilies": [],
+      "has_web_origin_family": false,
+      "relationships": {},
+      "same_entity_from_url_n": 0,
+      "acc_leak": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "latencyMs": 2608,
+      "sessionId": "kv1.2aa08c477e91b650a70b02bfbbd29755",
+      "create_ok": true
+    }
+  ]
+}

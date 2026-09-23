@@ -1,0 +1,93 @@
+{
+  "dpl": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+  "preview": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app",
+  "alias_frozen": "dpl_7vAA…",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "arch_go": true,
+  "promote": false,
+  "smith_n": 5,
+  "leakage_count": 0,
+  "stripped_observed": 2,
+  "smith": [
+    {
+      "i": 1,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "has_Q1701775": false,
+      "stripped": 1,
+      "ver": "2026-09-19.1",
+      "top": [
+        "wd-Q6258357",
+        "viaf-4952029"
+      ],
+      "rid": "64ac26e7-b0d0-4d43-a943-c7332bf0ecd3"
+    },
+    {
+      "i": 2,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "has_Q1701775": false,
+      "stripped": 1,
+      "ver": "2026-09-19.1",
+      "top": [
+        "wd-Q6258357",
+        "viaf-4952029"
+      ],
+      "rid": "b8111ecf-604a-4e35-be01-b8f3d30ebd45"
+    },
+    {
+      "i": 3,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "has_Q1701775": false,
+      "stripped": null,
+      "ver": "2026-09-19.1",
+      "top": [
+        "ol-OL177707A",
+        "viaf-4952029"
+      ],
+      "rid": "efb16922-ea64-40e8-a49b-fb39cf666dcc"
+    },
+    {
+      "i": 4,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "has_Q1701775": false,
+      "stripped": null,
+      "ver": "2026-09-19.1",
+      "top": [
+        "ol-OL177707A",
+        "viaf-4952029"
+      ],
+      "rid": "14b5b61b-fc20-4b6a-832a-6bc10073f715"
+    },
+    {
+      "i": 5,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "has_Q1701775": false,
+      "stripped": null,
+      "ver": "2026-09-19.1",
+      "top": [
+        "ol-OL177707A",
+        "viaf-4952029"
+      ],
+      "rid": "381ca777-57c1-4e58-bd38-bd4c759df53d"
+    }
+  ],
+  "assaf": {
+    "ui": "dossier",
+    "qid": "Q47507930",
+    "has170": false
+  },
+  "cohen": {
+    "ui": "need_context",
+    "qid": null,
+    "has170": false
+  }
+}

@@ -1,0 +1,1100 @@
+{
+  "meta": {
+    "title": "ACCURACY_EVAL-P1-HTTP-dplDNf",
+    "date": "2026-09-15",
+    "when": "2026-09-14T21:52:16.568Z",
+    "when_bucharest": "15/09/2026, 00:52:16",
+    "base": "https://akvot-simple-demo.vercel.app",
+    "deploy": "dpl_DNfPZ9oMSzqtjErqYeRtpT2t2fSu",
+    "origin": "https://akvot-simple-demo.vercel.app",
+    "phase_expected": "orchestrator-v0-b",
+    "case_set": "handoff/P1-CASES-דיוק-2026-09-14.json",
+    "concurrency": 3,
+    "timeout_ms": 65000,
+    "elapsed_ms": 58062,
+    "probe": {
+      "status": 200,
+      "ms": 5972,
+      "not_403": true
+    }
+  },
+  "summary": {
+    "N": 25,
+    "PASS": 24,
+    "FAIL": 0,
+    "PASS_DOCUMENTED_P2": 1,
+    "pretty_wrong": 0,
+    "safety_lock": "PASS",
+    "safety_detail": "7/7",
+    "recommendation": "GO",
+    "recommendation_evidence": "all strict+documented pass (PASS=24, PASS_DOCUMENTED_P2=1)"
+  },
+  "results": [
+    {
+      "id": "S01",
+      "category": "ambiguous",
+      "input": {
+        "q": "דני כהן"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier",
+          "pretty_wrong"
+        ],
+        "p2": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier,pretty_wrong"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 342
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "S02",
+      "category": "ambiguous",
+      "input": {
+        "q": "משה כהן"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "p2": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 779
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "S03",
+      "category": "duplicate",
+      "input": {
+        "q": "John Smith"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "p2": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 5264
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "S04",
+      "category": "conflict",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "p2": false,
+        "label": "ui∈[candidates|thin|need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 6,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 6261
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Open Library:John Smith@openlibrary.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org",
+      "err": null
+    },
+    {
+      "id": "S05",
+      "category": "conflict",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier",
+          "email_leak"
+        ],
+        "p2": false,
+        "label": "ui∈[candidates|thin] · 0 faces · must_not=dossier,email_leak"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 6,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "identifier",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 6716
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Open Library:John Smith@openlibrary.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org",
+      "err": null
+    },
+    {
+      "id": "S06",
+      "category": "non-match",
+      "input": {
+        "q": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[need_context|thin] · 0 faces"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 5914
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "S07",
+      "category": "unknown",
+      "input": {
+        "q": "פלמוני אלמוניזקש",
+        "ctx": {
+          "org": "מפעל בדיקה פיקטיבי"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[need_context|thin] · 0 faces"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "thin",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "google",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "no_public_sources",
+        "ms": 45234
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "N01",
+      "category": "exact",
+      "input": {
+        "q": "בנימין נתניהו"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2399
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "N02",
+      "category": "alias",
+      "input": {
+        "q": "נתניהו"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2169
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "N03",
+      "category": "alias",
+      "input": {
+        "q": "ביבי נתניהו"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2496
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "N04",
+      "category": "alias",
+      "input": {
+        "q": "ביבי"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 1526
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "N05",
+      "category": "transliteration",
+      "input": {
+        "q": "Benjamin Netanyahu"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 3,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 1523
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org; Open Library:Benjamin Netanyahu@openlibrary.orgol2674898a; Open Library:Benjamin Netanyahu@openlibrary.orgol5414495a",
+      "err": null
+    },
+    {
+      "id": "N06",
+      "category": "transliteration",
+      "input": {
+        "q": "Bibi Netanyahu"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2957
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "N07",
+      "category": "near",
+      "input": {
+        "q": "Netanyahu"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 3,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 1524
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q43723@www.wikidata.org; Open Library:B. Netanyahu@openlibrary.orgol256939a; Open Library:Benjamin Netanyahu@openlibrary.orgol2674898a",
+      "err": null
+    },
+    {
+      "id": "N08",
+      "category": "exact",
+      "input": {
+        "q": "אורלי לוי"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q466537",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q466537"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q466537",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 1972
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q466537@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "G01",
+      "category": "exact",
+      "input": {
+        "q": "זהבה גלאון"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q2630062"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2257
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q2630062@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "G02",
+      "category": "transliteration",
+      "input": {
+        "q": "Zehava Galon"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q2630062"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2529
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q2630062@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "G03",
+      "category": "near",
+      "input": {
+        "q": "Zahava Gal-On"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q2630062"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 2270
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q2630062@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "M01",
+      "category": "transliteration",
+      "input": {
+        "q": "Angela Merkel"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q567",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q567"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q567",
+        "faces": true,
+        "sources": 3,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 6,
+        "photo": false,
+        "messageKey": "dossier_ready",
+        "ms": 1549
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q567@www.wikidata.org; Open Library:Angela Merkel@openlibrary.orgol638151a; Open Library:Angela Merkel@openlibrary.orgol16028602a",
+      "err": null
+    },
+    {
+      "id": "P01",
+      "category": "exact",
+      "input": {
+        "q": "יאיר לפיד"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q1396120",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q1396120"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q1396120",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 6,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 1555
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q1396120@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P02",
+      "category": "alias",
+      "input": {
+        "q": "לפיד"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q1396120",
+        "faces": null,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[dossier] · qid=Q1396120"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q1396120",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 6,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 1390
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q1396120@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P03",
+      "category": "conflict",
+      "input": {
+        "q": "כהן"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "p2": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "google",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 35338
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P04",
+      "category": "partial",
+      "input": {
+        "q": "Emily Chen",
+        "ctx": {
+          "city": "Palo Alto",
+          "role": "student"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "p2": false,
+        "label": "ui∈[candidates|need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 6,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 6233
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "ORCID:Emily Chen@orcid.org; Open Library:Emily K. Chen@openlibrary.org; VIAF:Emily Cheney Neville 1919-1997@viaf.org; VIAF:Emily Cheng, 1953-@viaf.org; VIAF:Emily Chenoweth@viaf.org",
+      "err": null
+    },
+    {
+      "id": "P05",
+      "category": "duplicate",
+      "input": {
+        "q": "Michael Brown"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [],
+        "p2": false,
+        "label": "ui∈[need_context] · 0 faces"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 5706
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P06",
+      "category": "non-match",
+      "input": {
+        "q": "Assaf Rappaport"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin",
+          "dossier"
+        ],
+        "qid": null,
+        "faces": null,
+        "must_not": [],
+        "p2": true,
+        "label": "ui∈[need_context|thin|dossier] · P2"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 6080
+      },
+      "status": "PASS_DOCUMENTED_P2",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [
+        "Assaf P2: need_context|thin acceptable — PASS_DOCUMENTED_P2"
+      ],
+      "evidence": "none",
+      "err": null
+    }
+  ],
+  "hebrew_summary": "בדיקת HTTP חיה ל־25 מקרי P1 על alias dplDNf (probe HTTP 200, לא 403): PASS=24, FAIL=0, PASS_DOCUMENTED_P2=1, pretty-wrong=0, SAFETY=PASS. Assaf (P06) סומן P2 לפי מדיניות — need_context/thin כ־PASS_DOCUMENTED_P2 בלי לכפות dossier. המלצה: **GO** — all strict+documented pass (PASS=24, PASS_DOCUMENTED_P2=1)."
+}

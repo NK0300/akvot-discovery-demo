@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-09-20T07:23:09+03:00",
+  "hardenPass": true,
+  "healthOk": true,
+  "storeBackend": "fs-regen",
+  "promoteBlocked": true,
+  "seeds": [
+    {
+      "id": "S1",
+      "seed": "דוד כהן",
+      "pass": true,
+      "findings": 13,
+      "regenerated": true,
+      "store": "fs-regen",
+      "leakage": 0,
+      "sseEvents": 20,
+      "narrow": "13→13",
+      "fails": [],
+      "forbiddenIdentitiesVersion": "2026-09-19.1"
+    },
+    {
+      "id": "S2",
+      "seed": "Alex Morgan",
+      "pass": true,
+      "findings": 15,
+      "regenerated": true,
+      "store": "fs-regen",
+      "leakage": 0,
+      "sseEvents": 22,
+      "narrow": "15→15",
+      "fails": [],
+      "forbiddenIdentitiesVersion": "2026-09-19.1"
+    },
+    {
+      "id": "S3",
+      "seed": "example.org",
+      "pass": true,
+      "findings": 2,
+      "regenerated": true,
+      "store": "fs-regen",
+      "leakage": 0,
+      "sseEvents": 9,
+      "narrow": "2→2",
+      "fails": [],
+      "forbiddenIdentitiesVersion": "2026-09-19.1"
+    }
+  ],
+  "leakage": 0,
+  "entityAgnostic": true
+}

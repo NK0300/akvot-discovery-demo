@@ -1,0 +1,143 @@
+{
+  "when": "2026-09-17T06:58:02.866679+03:00",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "baseline": "dpl_Crsqe…",
+  "N": 11,
+  "dossier": 0,
+  "Q1701775": 0,
+  "prettyWrong": 0,
+  "runs": [
+    {
+      "i": 1,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 4212,
+      "requestId": "b50b3625-b9c1-4f27-b8b8-6661b1ea52a2",
+      "pw": false
+    },
+    {
+      "i": 2,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 4465,
+      "requestId": "4cae9a57-9830-4853-aa81-f3aa3285e18e",
+      "pw": false
+    },
+    {
+      "i": 3,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6337,
+      "requestId": "9b3badc4-136f-45b9-900b-55a8cf31951e",
+      "pw": false
+    },
+    {
+      "i": 4,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6548,
+      "requestId": "45859e31-c1e5-48c6-8502-6c2bf61d34e3",
+      "pw": false
+    },
+    {
+      "i": 5,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6519,
+      "requestId": "bc15f2ef-e625-461e-ae91-c12a671bcdf0",
+      "pw": false
+    },
+    {
+      "i": 6,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6375,
+      "requestId": "d34e99d9-0c53-4311-ba87-7026e018561a",
+      "pw": false
+    },
+    {
+      "i": 7,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6353,
+      "requestId": "4dbb34fe-28b5-446b-98d3-6d4521be2ff8",
+      "pw": false
+    },
+    {
+      "i": 8,
+      "mode": "no-nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6374,
+      "requestId": "65c277b9-bdb9-4ba0-8d14-625db1c313bf",
+      "pw": false
+    },
+    {
+      "i": 1,
+      "mode": "nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6389,
+      "requestId": "b0bdf460-4b9d-46a6-be82-68629d9ff64a",
+      "pw": false
+    },
+    {
+      "i": 2,
+      "mode": "nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 6334,
+      "requestId": "8b02be15-78d6-46d5-a982-ef12b5310468",
+      "pw": false
+    },
+    {
+      "i": 3,
+      "mode": "nocache",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "ms": 4622,
+      "requestId": "39d1eb7d-fbb5-49f4-aaab-a87019bb40ab",
+      "pw": false
+    }
+  ]
+}

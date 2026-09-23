@@ -1,0 +1,53 @@
+{
+  "stamp": "2026-09-20T10:04:15+03:00",
+  "forbidden": [
+    "Q1701775"
+  ],
+  "definition": "Acc NEVER-QID-in-payload for Discovery emit",
+  "rows": [
+    {
+      "lane": "PREVIEW",
+      "seed": "S01",
+      "file": "PREVIEW-S01-final.json",
+      "leak": [],
+      "leakCount": 0
+    },
+    {
+      "lane": "B0",
+      "seed": "S01",
+      "file": "B0-S01-final.json",
+      "leak": [],
+      "leakCount": 0
+    },
+    {
+      "lane": "PREVIEW",
+      "seed": "S04",
+      "file": "PREVIEW-S04-final.json",
+      "leak": [],
+      "leakCount": 0
+    },
+    {
+      "lane": "B0",
+      "seed": "S04",
+      "file": "B0-S04-final.json",
+      "leak": [],
+      "leakCount": 0
+    },
+    {
+      "lane": "PREVIEW",
+      "seed": "S05",
+      "file": "PREVIEW-S05-final.json",
+      "leak": [],
+      "leakCount": 0
+    },
+    {
+      "lane": "B0",
+      "seed": "S05",
+      "file": "B0-S05-final.json",
+      "leak": [],
+      "leakCount": 0
+    }
+  ],
+  "totalLeak": 0,
+  "pass": true
+}

@@ -1,0 +1,11 @@
+HTTP/2 401 
+cache-control: no-store, max-age=0
+content-type: application/json
+date: Sun, 20 Sep 2026 06:53:48 GMT
+server: Vercel
+set-cookie: _vercel_sso_nonce=19eb754d09bc54da6cba85a1a7e1cd90cf869100abaf9a48; Max-Age=3600; Path=/; Secure; HttpOnly; SameSite=Lax
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-frame-options: DENY
+x-vercel-id: cle1::tcr87-1789887228732-f9160c1b644a
+content-length: 357
+

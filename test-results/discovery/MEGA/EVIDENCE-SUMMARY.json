@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-09-20T07:24:00+03:00",
+  "promoteReady": false,
+  "promoteEligible": false,
+  "kvBlocker": true,
+  "durableFalseConfidenceFixed": true,
+  "preview": {
+    "id": "dpl_CcGehfMHgGXFapeqRnK1L7rmncp8",
+    "url": "https://akvot-simple-demo-3w3p6enyh-k-akvot.vercel.app",
+    "target": null
+  },
+  "tests": {
+    "coreOrch": 128,
+    "forbidden": 39,
+    "sessionStore": 58,
+    "discoveryOrch": 110,
+    "adversarial": 36,
+    "localUnitTotal": 371,
+    "contractProdAlias": "5/5"
+  },
+  "accCandidatesScrubClosed": true,
+  "wikipediaProviderLiveSmoke": {
+    "ok": true,
+    "sample": "Ada Lovelace",
+    "note": "soft-error on first race; retry GREEN"
+  },
+  "npmTestFinal": {
+    "localUnit": 371,
+    "contract": "5/5",
+    "exit": 0
+  },
+  "emitCandidatesScrubPreserved": true
+}

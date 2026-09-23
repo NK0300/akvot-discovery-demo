@@ -1,0 +1,6 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+An error occurred with your deployment
+
+FUNCTION_INVOCATION_TIMEOUT
+
+cle1::fgq4d-1789878905280-0a3e3e133f1c

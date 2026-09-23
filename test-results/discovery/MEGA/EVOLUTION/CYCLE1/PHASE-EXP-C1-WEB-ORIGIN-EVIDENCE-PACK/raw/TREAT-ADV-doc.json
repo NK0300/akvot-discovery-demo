@@ -1,0 +1,193 @@
+{
+  "ok": true,
+  "sessionId": "kv1.5ff80cf03816b98befe60185b2f9398f",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "c1-TREAT-ADV-doc",
+  "snapshot": {
+    "sessionId": "kv1.5ff80cf03816b98befe60185b2f9398f",
+    "seed": "https://www.rfc-editor.org",
+    "q": "https://www.rfc-editor.org",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wo-9bb0b3c1b884a983",
+        "kind": "page",
+        "title": "RFC Editor",
+        "summary": "RFC Editor — The official home of RFCs. RFCs outline computer networking and Internet foundations, including Internet Standards and historical or informative content.",
+        "evidenceIds": [
+          "ev-919d4a21ebfe9a7f6c821c4d"
+        ],
+        "providers": [
+          "web_origin"
+        ],
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:SAME-REFERENCE"
+        ],
+        "entityRefs": [
+          "web_origin:rfc-editor.org"
+        ],
+        "scoreFinding": 0.5958333333333333,
+        "hostFamily": "web_origin",
+        "relationship": "SAME-REFERENCE",
+        "registrableDomain": "rfc-editor.org",
+        "hostname": "www.rfc-editor.org",
+        "ranking": {
+          "discoveryScore": 0.5958333333333333,
+          "factors": {
+            "authority": 0.55,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.rfc-editor.org"
+            ]
+          },
+          "rationale": "authority=0.55 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-919d4a21ebfe9a7f6c821c4d",
+        "provenanceUrl": "https://www.rfc-editor.org/",
+        "url": "https://www.rfc-editor.org/",
+        "domain": "www.rfc-editor.org",
+        "providerId": "web_origin",
+        "retrievedAt": "2026-09-20T08:38:40.249Z",
+        "evidenceType": "page",
+        "quote": "RFC Editor · The official home of RFCs. RFCs outline computer networking and Internet foundations, including Internet Standards and historical or informative content.",
+        "contentType": "text/html",
+        "robotsOk": true,
+        "hostFamily": "web_origin",
+        "originalUrl": "https://www.rfc-editor.org",
+        "normalizedUrl": "https://www.rfc-editor.org/",
+        "origin": "https://www.rfc-editor.org",
+        "hostname": "www.rfc-editor.org",
+        "registrableDomain": "rfc-editor.org",
+        "scheme": "https",
+        "path": "/",
+        "safetyDecision": {
+          "stage": "normalize",
+          "ok": true,
+          "reason": "allow"
+        },
+        "httpStatus": 200,
+        "resultClass": "ok",
+        "relationship": "SAME-REFERENCE",
+        "webOriginMeta": {
+          "title": "RFC Editor",
+          "description": "The official home of RFCs. RFCs outline computer networking and Internet foundations, including Internet Standards and historical or informative content."
+        }
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "web_origin",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "hostFamily:web_origin",
+            "count": 1
+          },
+          {
+            "value": "relationship:SAME-REFERENCE",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "ok",
+      "wikipedia": "error",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:a04a8ac5c25c"
+      ],
+      "status": "candidate",
+      "displayHint": "https://www.rfc-editor.org",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:38:40.189Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:a04a8ac5c25c",
+          "kind": "seed"
+        },
+        {
+          "id": "wo-9bb0b3c1b884a983",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

@@ -1,0 +1,1662 @@
+{
+  "ms": 2413,
+  "status": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.f2ea0be142db9b271c3928db21923282",
+    "seed": "Stripe",
+    "q": "Stripe",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q7624104",
+        "kind": "registry",
+        "title": "Stripe",
+        "summary": "Irish-American payment technology company",
+        "evidenceIds": [
+          "ev-334c73b08ab99c1ee0dc81a4"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q7624104",
+          "wd-Q7624104"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q3421342",
+        "kind": "registry",
+        "title": "stripe",
+        "summary": "long, narrow band of color, often in alternating sets",
+        "evidenceIds": [
+          "ev-3e752877b4573df7af5d98ee"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q3421342",
+          "wd-Q3421342"
+        ],
+        "scoreFinding": 0.7083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q127900502",
+        "kind": "registry",
+        "title": "Stripe",
+        "summary": "fictional character in the Gremlins franchise",
+        "evidenceIds": [
+          "ev-4ed726688c56f19afcfd7a0f"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q127900502",
+          "wd-Q127900502"
+        ],
+        "scoreFinding": 0.6983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q117454382",
+        "kind": "registry",
+        "title": "Stripe",
+        "summary": "South African progamer",
+        "evidenceIds": [
+          "ev-546c719a55dffeef9979e8b4"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q117454382",
+          "wd-Q117454382"
+        ],
+        "scoreFinding": 0.6883333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q297115",
+        "kind": "registry",
+        "title": "Meloidae",
+        "summary": "family of beetles",
+        "evidenceIds": [
+          "ev-efcccbd10accb458ac155f4d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q297115",
+          "wd-Q297115"
+        ],
+        "scoreFinding": 0.6783333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q469754",
+        "kind": "registry",
+        "title": "Perca flavescens",
+        "summary": "species of fish",
+        "evidenceIds": [
+          "ev-e118c5fd64f51337cdb6e30d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q469754",
+          "wd-Q469754"
+        ],
+        "scoreFinding": 0.6683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q842647",
+        "kind": "registry",
+        "title": "striped bass",
+        "summary": "species of fish",
+        "evidenceIds": [
+          "ev-3ae89f9dcb348bcd961d54a0"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q842647",
+          "wd-Q842647"
+        ],
+        "scoreFinding": 0.6583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q368495",
+        "kind": "registry",
+        "title": "striped skunk",
+        "summary": "species of mammal",
+        "evidenceIds": [
+          "ev-09f4a1ea15f73ab4bc4451c9"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q368495",
+          "wd-Q368495"
+        ],
+        "scoreFinding": 0.6483333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-30463651",
+        "kind": "registry",
+        "title": "Stripe, John, 1643-1737",
+        "summary": "type:personal · lc:n50010528 · dnb:124157629",
+        "evidenceIds": [
+          "ev-3dba3cfaf0d94747227a8060"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:30463651"
+        ],
+        "scoreFinding": 0.6208333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-126600779",
+        "kind": "registry",
+        "title": "Stripes",
+        "summary": "type:corporate · lc:no2006053242 · dnb:320011585",
+        "evidenceIds": [
+          "ev-25b75575df997e0428541335"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:126600779"
+        ],
+        "scoreFinding": 0.6108333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-138753783",
+        "kind": "registry",
+        "title": "Striped house museum of art Tokyo",
+        "summary": "type:corporate · lc:no2007108593 · dnb:056342225",
+        "evidenceIds": [
+          "ev-ef2f297d2654239f1ca17f14"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:138753783"
+        ],
+        "scoreFinding": 0.6008333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-57307946",
+        "kind": "registry",
+        "title": "Stripecke, Renata",
+        "summary": "type:personal · dnb:1020246995",
+        "evidenceIds": [
+          "ev-1a07987497b0c143a91105fa"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:57307946"
+        ],
+        "scoreFinding": 0.5908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-156206104",
+        "kind": "registry",
+        "title": "Stripe, Adelle, 1976-",
+        "summary": "type:personal · lc:nb2010023356 · dnb:1175449962",
+        "evidenceIds": [
+          "ev-e07dd871f072477c5319125a"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:156206104"
+        ],
+        "scoreFinding": 0.5808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-124465779",
+        "kind": "registry",
+        "title": "Striped Horse France",
+        "summary": "type:corporate",
+        "evidenceIds": [
+          "ev-ab5afc1bd4b80e6d4d79bd03"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:124465779"
+        ],
+        "scoreFinding": 0.5708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-83910682",
+        "kind": "registry",
+        "title": "Střípek, Jiří, asi 1545-asi 1575",
+        "summary": "type:personal",
+        "evidenceIds": [
+          "ev-58fa1960203e386ac623ca50"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:83910682"
+        ],
+        "scoreFinding": 0.5608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-172149106019768490790",
+        "kind": "registry",
+        "title": "Stripe Eroeg",
+        "summary": "type:personal",
+        "evidenceIds": [
+          "ev-0f7997a6eb36e8b6abdd5eba"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:172149106019768490790"
+        ],
+        "scoreFinding": 0.5508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL8376862A",
+        "kind": "registry",
+        "title": "Five Stripe Books",
+        "summary": "Top work: Sketch Book",
+        "evidenceIds": [
+          "ev-92cdcc43e5252f3238d5b475"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL8376862A",
+          "ol-OL8376862A"
+        ],
+        "scoreFinding": 0.5058333333333332,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL8613090A",
+        "kind": "registry",
+        "title": "Adelle Stripe",
+        "summary": "Top work: Black Teeth and a Brilliant Smile",
+        "evidenceIds": [
+          "ev-f223a57aafa0191f8a88ae9c"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL8613090A",
+          "ol-OL8613090A"
+        ],
+        "scoreFinding": 0.49583333333333324,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL13079935A",
+        "kind": "registry",
+        "title": "Stripe",
+        "summary": "Top work: Increment Box Set",
+        "evidenceIds": [
+          "ev-71690f2975616e8c8ae0c510"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL13079935A",
+          "ol-OL13079935A"
+        ],
+        "scoreFinding": 0.4858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL10372320A",
+        "kind": "registry",
+        "title": "STRIPE",
+        "summary": "Top work: Black Teeth and a Brilliant Smile",
+        "evidenceIds": [
+          "ev-70eafe76a4960f8cee70eb95"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL10372320A",
+          "ol-OL10372320A"
+        ],
+        "scoreFinding": 0.4758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL3492368A",
+        "kind": "registry",
+        "title": "Stephen Stripe",
+        "summary": "Top work: The Journey to Paradise",
+        "evidenceIds": [
+          "ev-e4b27ceee54073b58012ffd2"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL3492368A",
+          "ol-OL3492368A"
+        ],
+        "scoreFinding": 0.46583333333333327,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL14670551A",
+        "kind": "registry",
+        "title": "Stripe Journals",
+        "summary": "Top work: Daily Five Minute Journal",
+        "evidenceIds": [
+          "ev-4e41ef9616742d445c82996c"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL14670551A",
+          "ol-OL14670551A"
+        ],
+        "scoreFinding": 0.4558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL3905682A",
+        "kind": "registry",
+        "title": "Subdued Stripe",
+        "summary": "Top work: Small Scrapbook",
+        "evidenceIds": [
+          "ev-42a0dde0cdb4056815e23e44"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL3905682A",
+          "ol-OL3905682A"
+        ],
+        "scoreFinding": 0.4458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15943217A",
+        "kind": "registry",
+        "title": "Sebastian Friedrich Stripe",
+        "summary": "Top work: De pilagio ...",
+        "evidenceIds": [
+          "ev-3770035cce8ef3eaf83b4ee5"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL15943217A",
+          "ol-OL15943217A"
+        ],
+        "scoreFinding": 0.4358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Stripe",
+        "kind": "page",
+        "title": "Stripe",
+        "evidenceIds": [
+          "ev-1b2261a8659f20af0dafa200"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Stripe"
+        ],
+        "scoreFinding": 0.4083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Striped_hyena",
+        "kind": "page",
+        "title": "Striped hyena",
+        "evidenceIds": [
+          "ev-5cf126c02d884d0d0f0cbf8c"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Striped hyena"
+        ],
+        "scoreFinding": 0.3983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Stripe_Inc_",
+        "kind": "page",
+        "title": "Stripe, Inc.",
+        "evidenceIds": [
+          "ev-3d21c3bbce21b1c0f2191884"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Stripe, Inc."
+        ],
+        "scoreFinding": 0.3883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Striped_polecat",
+        "kind": "page",
+        "title": "Striped polecat",
+        "evidenceIds": [
+          "ev-bf6bbf30d4fe259eaba3bab8"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Striped polecat"
+        ],
+        "scoreFinding": 0.3783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Striped_skunk",
+        "kind": "page",
+        "title": "Striped skunk",
+        "evidenceIds": [
+          "ev-16e4af35d2a9aa3f367fae87"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Striped skunk"
+        ],
+        "scoreFinding": 0.3683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Stripes_film_",
+        "kind": "page",
+        "title": "Stripes (film)",
+        "evidenceIds": [
+          "ev-8e7c74de03edfd4b5052b0b6"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Stripes (film)"
+        ],
+        "scoreFinding": 0.35833333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-334c73b08ab99c1ee0dc81a4",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q7624104",
+        "url": "https://www.wikidata.org/wiki/Q7624104",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "Irish-American payment technology company",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3e752877b4573df7af5d98ee",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q3421342",
+        "url": "https://www.wikidata.org/wiki/Q3421342",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "long, narrow band of color, often in alternating sets",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4ed726688c56f19afcfd7a0f",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q127900502",
+        "url": "https://www.wikidata.org/wiki/Q127900502",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "fictional character in the Gremlins franchise",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-546c719a55dffeef9979e8b4",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q117454382",
+        "url": "https://www.wikidata.org/wiki/Q117454382",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "South African progamer",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-efcccbd10accb458ac155f4d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q297115",
+        "url": "https://www.wikidata.org/wiki/Q297115",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "family of beetles",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e118c5fd64f51337cdb6e30d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q469754",
+        "url": "https://www.wikidata.org/wiki/Q469754",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "species of fish",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3ae89f9dcb348bcd961d54a0",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q842647",
+        "url": "https://www.wikidata.org/wiki/Q842647",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "species of fish",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-09f4a1ea15f73ab4bc4451c9",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q368495",
+        "url": "https://www.wikidata.org/wiki/Q368495",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:40:28.990Z",
+        "evidenceType": "registry",
+        "quote": "species of mammal",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-92cdcc43e5252f3238d5b475",
+        "provenanceUrl": "https://openlibrary.org/authors/OL8376862A",
+        "url": "https://openlibrary.org/authors/OL8376862A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "Sketch Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f223a57aafa0191f8a88ae9c",
+        "provenanceUrl": "https://openlibrary.org/authors/OL8613090A",
+        "url": "https://openlibrary.org/authors/OL8613090A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "Black Teeth and a Brilliant Smile",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-71690f2975616e8c8ae0c510",
+        "provenanceUrl": "https://openlibrary.org/authors/OL13079935A",
+        "url": "https://openlibrary.org/authors/OL13079935A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "Increment Box Set",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-70eafe76a4960f8cee70eb95",
+        "provenanceUrl": "https://openlibrary.org/authors/OL10372320A",
+        "url": "https://openlibrary.org/authors/OL10372320A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "Black Teeth and a Brilliant Smile",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e4b27ceee54073b58012ffd2",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3492368A",
+        "url": "https://openlibrary.org/authors/OL3492368A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "The Journey to Paradise",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4e41ef9616742d445c82996c",
+        "provenanceUrl": "https://openlibrary.org/authors/OL14670551A",
+        "url": "https://openlibrary.org/authors/OL14670551A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "Daily Five Minute Journal",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-42a0dde0cdb4056815e23e44",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3905682A",
+        "url": "https://openlibrary.org/authors/OL3905682A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "Small Scrapbook",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3770035cce8ef3eaf83b4ee5",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15943217A",
+        "url": "https://openlibrary.org/authors/OL15943217A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:29.439Z",
+        "evidenceType": "registry",
+        "quote": "De pilagio ...",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1b2261a8659f20af0dafa200",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Stripe",
+        "url": "https://en.wikipedia.org/wiki/Stripe",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:40:28.773Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-5cf126c02d884d0d0f0cbf8c",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Striped_hyena",
+        "url": "https://en.wikipedia.org/wiki/Striped_hyena",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:40:28.773Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3d21c3bbce21b1c0f2191884",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+        "url": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:40:28.773Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-bf6bbf30d4fe259eaba3bab8",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Striped_polecat",
+        "url": "https://en.wikipedia.org/wiki/Striped_polecat",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:40:28.773Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-16e4af35d2a9aa3f367fae87",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Striped_skunk",
+        "url": "https://en.wikipedia.org/wiki/Striped_skunk",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:40:28.773Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8e7c74de03edfd4b5052b0b6",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Stripes_(film)",
+        "url": "https://en.wikipedia.org/wiki/Stripes_(film)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:40:28.773Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3dba3cfaf0d94747227a8060",
+        "provenanceUrl": "https://viaf.org/viaf/30463651",
+        "url": "https://viaf.org/viaf/30463651",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Stripe, John, 1643-1737",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-25b75575df997e0428541335",
+        "provenanceUrl": "https://viaf.org/viaf/126600779",
+        "url": "https://viaf.org/viaf/126600779",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Stripes",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ef2f297d2654239f1ca17f14",
+        "provenanceUrl": "https://viaf.org/viaf/138753783",
+        "url": "https://viaf.org/viaf/138753783",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Striped house museum of art Tokyo",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1a07987497b0c143a91105fa",
+        "provenanceUrl": "https://viaf.org/viaf/57307946",
+        "url": "https://viaf.org/viaf/57307946",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Stripecke, Renata",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e07dd871f072477c5319125a",
+        "provenanceUrl": "https://viaf.org/viaf/156206104",
+        "url": "https://viaf.org/viaf/156206104",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Stripe, Adelle, 1976-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ab5afc1bd4b80e6d4d79bd03",
+        "provenanceUrl": "https://viaf.org/viaf/124465779",
+        "url": "https://viaf.org/viaf/124465779",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Striped Horse France",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-58fa1960203e386ac623ca50",
+        "provenanceUrl": "https://viaf.org/viaf/83910682",
+        "url": "https://viaf.org/viaf/83910682",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Střípek, Jiří, asi 1545-asi 1575",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0f7997a6eb36e8b6abdd5eba",
+        "provenanceUrl": "https://viaf.org/viaf/172149106019768490790",
+        "url": "https://viaf.org/viaf/172149106019768490790",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:28.894Z",
+        "evidenceType": "registry",
+        "quote": "Stripe Eroeg",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "viaf",
+            "count": 8
+          },
+          {
+            "value": "wikidata",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 24
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial",
+      "viaf": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:2bed2032ed3d"
+      ],
+      "status": "candidate",
+      "displayHint": "Stripe",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:40:28.709Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:2bed2032ed3d",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q7624104",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q3421342",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q127900502",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q117454382",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q297115",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q469754",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q842647",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q368495",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL8376862A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL8613090A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL13079935A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL10372320A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL3492368A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL14670551A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL3905682A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15943217A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Stripe",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Striped_hyena",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Stripe_Inc_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Striped_polecat",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "stripe",
+        "findingIds": [
+          "wd-Q7624104",
+          "wd-Q3421342",
+          "wd-Q127900502",
+          "wd-Q117454382",
+          "ol-OL13079935A",
+          "ol-OL10372320A",
+          "wp-en-Stripe"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "openlibrary.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      },
+      {
+        "type": "same_title_multi_domain",
+        "title": "striped skunk",
+        "findingIds": [
+          "wd-Q368495",
+          "wp-en-Striped_skunk"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

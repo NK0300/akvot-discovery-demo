@@ -1,0 +1,18 @@
+health ok= true backend= upstash
+[smoke] S01 POST Tim Berners-Lee
+[smoke] S01 status=partial findings=18 multi=10/18=0.5556 viaf=10 ge2=10 edges=0 leak=0 fams=["openlibrary","viaf","wikidata","wikipedia"]
+[smoke] S04 POST Stripe
+[smoke] S04 status=partial findings=22 multi=0/22=0 viaf=8 ge2=0 edges=0 leak=0 fams=["openlibrary","viaf","wikipedia"]
+[smoke] S05 POST Red Cross
+[smoke] S05 status=partial findings=30 multi=5/30=0.1667 viaf=11 ge2=5 edges=0 leak=0 fams=["openlibrary","viaf","wikidata","wikipedia"]
+
+=== SUMMARY ===
+{
+  "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+  "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app",
+  "mean_multi_rate": 0.2408,
+  "pooled_multi_rate": 0.2143,
+  "mean_pass": true,
+  "acc_leak": 0,
+  "s01_findings_n": 18
+}

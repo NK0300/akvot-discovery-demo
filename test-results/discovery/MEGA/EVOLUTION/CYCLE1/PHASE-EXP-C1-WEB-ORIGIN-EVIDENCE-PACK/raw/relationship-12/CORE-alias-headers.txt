@@ -1,0 +1,15 @@
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 39828
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: text/html; charset=utf-8
+date: Sun, 20 Sep 2026 09:02:35 GMT
+etag: "7858b8bd10422d8edd57cf1c4af91ecc"
+last-modified: Sat, 19 Sep 2026 21:58:46 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload

@@ -1,0 +1,304 @@
+{
+  "httpStatus": 200,
+  "ms": 2849,
+  "filter": {
+    "provider": [
+      "wikidata"
+    ]
+  },
+  "json": {
+    "ok": true,
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoi15PXldeTINeb15TXnyIsImgiOnt9LCJsIjoiZW4iLCJ0IjoiMjAyNi0wOS0yMFQwMToxMjo1MS4wMDFaIiwibiI6IjZiOTgxM2ViMmFhNyJ9",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q88524142",
+        "kind": "registry",
+        "title": "David Cahen",
+        "summary": "Israeli chemist",
+        "evidenceIds": [
+          "ev-e7bb59465d61376008a001d6"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q88524142"
+        ],
+        "scoreFinding": 0.85
+      },
+      {
+        "id": "wd-Q826524",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Dutch historian (1882–1967)",
+        "evidenceIds": [
+          "ev-3e6bc206fa4f3bc0bc8447f9"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q826524"
+        ],
+        "scoreFinding": 0.8200000000000001
+      },
+      {
+        "id": "wd-Q2910274",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Lithuanian rabbi (1887–1972)",
+        "evidenceIds": [
+          "ev-aa0d88ff65815496b340b64d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q2910274"
+        ],
+        "scoreFinding": 0.79
+      },
+      {
+        "id": "wd-Q360165",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Wikimedia disambiguation page",
+        "evidenceIds": [
+          "ev-e1443df08b24146b7419fcaf"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q360165"
+        ],
+        "scoreFinding": 0.76
+      },
+      {
+        "id": "wd-Q6792473",
+        "kind": "registry",
+        "title": "Dovid Cohen",
+        "summary": "Rosh Yeshiva of Hebron Yeshiva in Givat Mordechai, Jerusalem",
+        "evidenceIds": [
+          "ev-850ce7287a5bc8f490ebc1e6"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q6792473"
+        ],
+        "scoreFinding": 0.73
+      },
+      {
+        "id": "wd-Q26002027",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Israeli composer",
+        "evidenceIds": [
+          "ev-b66eaa012ee246d6de954fca"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q26002027"
+        ],
+        "scoreFinding": 0.7
+      },
+      {
+        "id": "wd-Q140668233",
+        "kind": "registry",
+        "title": "דוד כהן",
+        "evidenceIds": [
+          "ev-c75d9029738c92dcbdca5394"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q140668233"
+        ],
+        "scoreFinding": 0.67
+      },
+      {
+        "id": "wd-Q17522318",
+        "kind": "registry",
+        "title": "דוד כהן",
+        "summary": "Israeli military officer",
+        "evidenceIds": [
+          "ev-e37b9bae254c35310e5073d4"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q17522318"
+        ],
+        "scoreFinding": 0.64
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-e7bb59465d61376008a001d6",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q88524142",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Israeli chemist",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3e6bc206fa4f3bc0bc8447f9",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q826524",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Dutch historian (1882–1967)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-aa0d88ff65815496b340b64d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q2910274",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Lithuanian rabbi (1887–1972)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e1443df08b24146b7419fcaf",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q360165",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Wikimedia disambiguation page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-850ce7287a5bc8f490ebc1e6",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q6792473",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Rosh Yeshiva of Hebron Yeshiva in Givat Mordechai, Jerusalem",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b66eaa012ee246d6de954fca",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q26002027",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Israeli composer",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c75d9029738c92dcbdca5394",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q140668233",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e37b9bae254c35310e5073d4",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q17522318",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T01:13:01.849Z",
+        "quote": "Israeli military officer",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikidata",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "narrow": {
+      "applied": {
+        "provider": [
+          "wikidata"
+        ]
+      },
+      "beforeCount": 13,
+      "afterCount": 8
+    },
+    "version": 3,
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "progress": {
+      "done": 5,
+      "totalHint": 5
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "ok"
+    },
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    }
+  },
+  "text": "{\"ok\":true,\"sessionId\":\"ds1.eyJ2IjoxLCJzIjoi15PXldeTINeb15TXnyIsImgiOnt9LCJsIjoiZW4iLCJ0IjoiMjAyNi0wOS0yMFQwMToxMjo1MS4wMDFaIiwibiI6IjZiOTgxM2ViMmFhNyJ9\",\"status\":\"partial\",\"findings\":[{\"id\":\"wd-Q88524142\",\"kind\":\"registry\",\"title\":\"David Cahen\",\"summary\":\"Israeli chemist\",\"evidenceIds\":[\"ev-e7bb59465d61376008a001d6\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q88524142\"],\"scoreFinding\":0.85},{\"id\":\"wd-Q826524\",\"kind\":\"registry\",\"title\":\"David Cohen\",\"summary\":\"Dutch historian (1882–1967)\",\"evidenceIds\":[\"ev-3e6bc206fa4f3bc0bc8447f9\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q826524\"],\"scoreFinding\":0.8200000000000001},{\"id\":\"wd-Q2910274\",\"kind\":\"registry\",\"title\":\"David Cohen\",\"summary\":\"Lithuanian rabbi (1887–1972)\",\"evidenceIds\":[\"ev-aa0d88ff65815496b340b64d\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q2910274\"],\"scoreFinding\":0.79},{\"id\":\"wd-Q360165\",\"kind\":\"registry\",\"title\":\"David Cohen\",\"summary\":\"Wikimedia disambiguation page\",\"evidenceIds\":[\"ev-e1443df08b24146b7419fcaf\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q360165\"],\"scoreFinding\":0.76},{\"id\":\"wd-Q6792473\",\"kind\":\"registry\",\"title\":\"Dovid Cohen\",\"summary\":\"Rosh Yeshiva of Hebron Yeshiva in Givat Mordechai, Jerusalem\",\"evidenceIds\":[\"ev-850ce7287a5bc8f490ebc1e6\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q6792473\"],\"scoreFinding\":0.73},{\"id\":\"wd-Q26002027\",\"kind\":\"registry\",\"title\":\"David Cohen\",\"summary\":\"Israeli composer\",\"evidenceIds\":[\"ev-b66eaa012ee246d6de954fca\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q26002027\"],\"scoreFinding\":0.7},{\"id\":\"wd-Q140668233\",\"kind\":\"registry\",\"title\":\"דוד כהן\",\"evidenceIds\":[\"ev-c75d9029738c92dcbdca5394\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q140668233\"],\"scoreFinding\":0.67},{\"id\":\"wd-Q17522318\",\"kind\":\"registry\",\"title\":\"דוד כהן\",\"summary\":\"Israeli military officer\",\"evidenceIds\":[\"ev-e37b9bae254c35310e5073d4\"],\"providers\":[\"wikidata\"],\"facetHints\":[\"provider:wikidata\",\"kind:registry\"],\"entityRefs\":[\"wd-Q17522318\"],\"scoreFinding\":0.64}],\"evidence\":[{\"id\":\"ev-e7bb59465d61376008a001d6\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q88524142\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Israeli chemist\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-3e6bc206fa4f3bc0bc8447f9\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q826524\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Dutch historian (1882–1967)\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-aa0d88ff65815496b340b64d\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q2910274\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Lithuanian rabbi (1887–1972)\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-e1443df08b24146b7419fcaf\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q360165\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Wikimedia disambiguation page\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-850ce7287a5bc8f490ebc1e6\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q6792473\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Rosh Yeshiva of Hebron Yeshiva in Givat Mordechai, Jerusalem\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-b66eaa012ee246d6de954fca\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q26002027\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Israeli composer\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-c75d9029738c92dcbdca5394\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q140668233\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-e37b9bae254c35310e5073d4\",\"provenanceUrl\":\"https://www.wikidata.org/wiki/Q17522318\",\"providerId\":\"wikidata\",\"retrievedAt\":\"2026-09-20T01:13:01.849Z\",\"quote\":\"Israeli military officer\",\"contentType\":\"text/html\",\"robotsOk\":true}],\"facets\":[{\"key\":\"provider\",\"label\":\"Provider\",\"buckets\":[{\"value\":\"wikidata\",\"count\":8}]},{\"key\":\"kind\",\"label\":\"Kind\",\"buckets\":[{\"value\":\"registry\",\"count\":8}]},{\"key\":\"hint\",\"label\":\"Hint\",\"buckets\":[],\"emptyReason\":\"no_evidence\"}],\"narrow\":{\"applied\":{\"provider\":[\"wikidata\"]},\"beforeCount\":13,\"afterCount\":8},\"version\":3,\"forbiddenIdentitiesVersion\":\"2026-09-19.1\",\"progress\":{\"done\":5,\"totalHint\":5},\"providers\":{\"wikidata\":\"partial\",\"openlibrary\":\"ok\"},\"store\":{\"backend\":\"fs-regen\",\"durable\":true,\"crossInstance\":\"regenerate-from-seed\",\"note\":\"No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.\",\"fsDir\":\"/tmp/akvot-discovery-sessions\",\"ttlMs\":3600000}}"
+}

@@ -1,0 +1,52 @@
+[acc-smoke-9PkJ] start 2026-09-20T07:54:38+03:00
+[acc-smoke-9PkJ] preview dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 · alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 · HOLD promote · SHORT Acc smoke
+[health] disc dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 true storeBackend upstash alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 true
+[health] discovery/health {"ok":true,"backend":"upstash","storeBackend":"upstash","latencyMs":116,"correlationId":"hc-mu9cdz89-21fe92","fsRegenFallback":false,"explicitFallback":false,"promoteEligible":true,"durable":true,"fal
+[disc] POST session seed=דוד כהן
+  → pass=true status=partial findings=19 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.a962d9b05a22bd415148…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=John Smith
+  → pass=true status=partial findings=21 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.0bbe3a9918aab8eadc81…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=example.org
+  → pass=true status=partial findings=1 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.5e08d3b44cd237fbf437…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[sse] GET …/events session=kv1.0bbe3a9918aab8eadc81f8a8…
+  SSE → pass=true events=29 names=meta,progress,provider,finding,facets,status,done leak=0 ct=text/event-stream; charset=utf-8
+[narrow] POST …/narrow
+  NARROW → pass=true before=21 after=8 ver=3 fiv=2026-09-19.1 leak=0
+[disc] Smith+ctx via preview /api/lookup
+  → pass=true ui=candidates qid=null leak=0
+[core] alias Assaf / כהן / Smith
+  Assaf → pass=true ui=dossier qid=Q47507930
+  כהן → pass=true ui=need_context faces=0
+  Smith cold → pass=true ui=candidates qid=null pw=0
+  Smith warm → pass=true ui=candidates qid=null pw=0
+{
+  "disc": {
+    "Acc-DISC": "GO",
+    "leakage": 0,
+    "seeds": 3,
+    "storeBackend": "upstash",
+    "dossier_bindings": 0,
+    "b23_contradictions_scrub": "PASS",
+    "sse": "PASS",
+    "narrow": "PASS",
+    "promote": "HOLD"
+  },
+  "core": {
+    "Core-P0": "PASS",
+    "leakage": 0,
+    "pw": 0,
+    "promote": "HOLD"
+  },
+  "storeBackend": "upstash",
+  "storeOk": true
+}
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-SMOKE-9PkJ-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-SMOKE-9PkJ-דיוק-2026-09-20.md
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-SMOKE-9PkJ-CORE-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-SMOKE-9PkJ-CORE-דיוק-2026-09-20.md

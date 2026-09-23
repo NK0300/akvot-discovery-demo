@@ -1,0 +1,12 @@
+{
+  "step": 29,
+  "metric": "multi_independent_source_findings",
+  "definition": "finding with evidence/ranking domains spanning ≥2 independent families",
+  "all_sessions_with_findings": {
+    "n_findings": 244,
+    "multi_independent_source": 0,
+    "rate": 0.0
+  },
+  "examples": [],
+  "note": "Cross-provider session facets exist (WD+WP+OL) but per-finding evidence is almost always single-family."
+}

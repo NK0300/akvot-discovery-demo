@@ -1,0 +1,635 @@
+{
+  "step": 32,
+  "title": "PER-SEED-SOURCE-DIVERSITY",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "baselineId": "B0",
+  "definition": "Per-seed domain / independence-family / provider diversity from Phase2 GET r1+r2 raw",
+  "global": {
+    "domains_mean_phase2_aggregates": 1.34375,
+    "unique_domains_corpus": [
+      "openlibrary.org",
+      "www.wikidata.org",
+      "en.wikipedia.org"
+    ],
+    "unique_families_corpus": [
+      "wikimedia",
+      "openlibrary"
+    ],
+    "unique_providers_corpus": [
+      "openlibrary",
+      "wikidata",
+      "wikipedia"
+    ],
+    "single_family_finding_rate": 1.0,
+    "multi_family_finding_rate": 0.0,
+    "multi_provider_finding_rate": 0.0
+  },
+  "perSeed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "findings_r1": 10,
+      "findings_r2": 10,
+      "domains_union": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 3,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "families_n": 2,
+      "providers_union": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "provider_counts": {
+        "wikidata": 16,
+        "openlibrary": 2,
+        "wikipedia": 2
+      },
+      "kinds": {
+        "registry": 18,
+        "page": 2
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 10,
+        "url_union": 10,
+        "id_overlap": 10,
+        "id_union": 10
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.7060833333333333,
+      "mean_quote_len": 20.4,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S02",
+      "seed": "John Smith",
+      "category": "common-name",
+      "findings_r1": 21,
+      "findings_r2": 21,
+      "domains_union": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 3,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "families_n": 2,
+      "providers_union": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "provider_counts": {
+        "wikidata": 14,
+        "openlibrary": 16,
+        "wikipedia": 12
+      },
+      "kinds": {
+        "registry": 30,
+        "page": 12
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 21,
+        "url_union": 21,
+        "id_overlap": 21,
+        "id_union": 21
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6783333333333333,
+      "mean_quote_len": 46.23809523809524,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S03",
+      "seed": "Alex Morgan",
+      "category": "ambiguous-person",
+      "findings_r1": 21,
+      "findings_r2": 21,
+      "domains_union": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 3,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "families_n": 2,
+      "providers_union": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "provider_counts": {
+        "wikidata": 14,
+        "openlibrary": 16,
+        "wikipedia": 12
+      },
+      "kinds": {
+        "registry": 30,
+        "page": 12
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 21,
+        "url_union": 21,
+        "id_overlap": 21,
+        "id_union": 21
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6783333333333333,
+      "mean_quote_len": 20.238095238095237,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "findings_r1": 22,
+      "findings_r2": 14,
+      "domains_union": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 3,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "families_n": 2,
+      "providers_union": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "provider_counts": {
+        "wikidata": 8,
+        "openlibrary": 16,
+        "wikipedia": 12
+      },
+      "kinds": {
+        "registry": 24,
+        "page": 12
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 0.6363636363636364,
+        "id_jaccard_r1_r2": 0.6363636363636364,
+        "title_jaccard_r1_r2": 0.7222222222222222,
+        "url_overlap": 14,
+        "url_union": 22,
+        "id_overlap": 14,
+        "id_union": 22
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6716666666666666,
+      "mean_quote_len": 20.194444444444443,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "findings_r1": 22,
+      "findings_r2": 22,
+      "domains_union": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 3,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "families_n": 2,
+      "providers_union": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "provider_counts": {
+        "wikidata": 16,
+        "openlibrary": 16,
+        "wikipedia": 12
+      },
+      "kinds": {
+        "registry": 32,
+        "page": 12
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 22,
+        "url_union": 22,
+        "id_overlap": 22,
+        "id_union": 22
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6801515151515152,
+      "mean_quote_len": 35.72727272727273,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S06",
+      "seed": "openai.com",
+      "category": "domain",
+      "findings_r1": 7,
+      "findings_r2": 7,
+      "domains_union": [
+        "en.wikipedia.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 2,
+      "families_union": [
+        "wikimedia"
+      ],
+      "families_n": 1,
+      "providers_union": [
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 2,
+      "provider_counts": {
+        "wikidata": 2,
+        "wikipedia": 12
+      },
+      "kinds": {
+        "registry": 2,
+        "page": 12
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 7,
+        "url_union": 7,
+        "id_overlap": 7,
+        "id_union": 7
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6583333333333333,
+      "mean_quote_len": 7.714285714285714,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S07",
+      "seed": "בנימין נתניהו",
+      "category": "multilingual",
+      "findings_r1": 2,
+      "findings_r2": 2,
+      "domains_union": [
+        "en.wikipedia.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 2,
+      "families_union": [
+        "wikimedia"
+      ],
+      "families_n": 1,
+      "providers_union": [
+        "wikidata",
+        "wikipedia"
+      ],
+      "providers_n": 2,
+      "provider_counts": {
+        "wikidata": 2,
+        "wikipedia": 2
+      },
+      "kinds": {
+        "registry": 2,
+        "page": 2
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 2,
+        "url_union": 2,
+        "id_overlap": 2,
+        "id_union": 2
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6833333333333333,
+      "mean_quote_len": 37.0,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S08",
+      "seed": "Tel Aviv University",
+      "category": "multilingual",
+      "findings_r1": 16,
+      "findings_r2": 8,
+      "domains_union": [
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "domains_n": 2,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "families_n": 2,
+      "providers_union": [
+        "openlibrary",
+        "wikidata"
+      ],
+      "providers_n": 2,
+      "provider_counts": {
+        "wikidata": 8,
+        "openlibrary": 16
+      },
+      "kinds": {
+        "registry": 24
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 0.5,
+        "id_jaccard_r1_r2": 0.5,
+        "title_jaccard_r1_r2": 0.5,
+        "url_overlap": 8,
+        "url_union": 16,
+        "id_overlap": 8,
+        "id_union": 16
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6833333333333332,
+      "mean_quote_len": 25.458333333333332,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S09",
+      "seed": "zzzznonexistentxyz999",
+      "category": "no-match",
+      "findings_r1": 0,
+      "findings_r2": 0,
+      "domains_union": [],
+      "domains_n": 0,
+      "families_union": [],
+      "families_n": 0,
+      "providers_union": [],
+      "providers_n": 0,
+      "provider_counts": {},
+      "kinds": {},
+      "recirculation": {
+        "url_jaccard_r1_r2": null,
+        "id_jaccard_r1_r2": null,
+        "title_jaccard_r1_r2": null,
+        "url_overlap": 0,
+        "url_union": 0,
+        "id_overlap": 0,
+        "id_union": 0
+      },
+      "single_family_rate_mean": null,
+      "mean_discoveryScore": null,
+      "mean_quote_len": null,
+      "mean_providerDiversity_factor": null
+    },
+    {
+      "id": "S10",
+      "seed": "Francis Bacon",
+      "category": "conflicting-evidence",
+      "findings_r1": 8,
+      "findings_r2": 8,
+      "domains_union": [
+        "openlibrary.org"
+      ],
+      "domains_n": 1,
+      "families_union": [
+        "openlibrary"
+      ],
+      "families_n": 1,
+      "providers_union": [
+        "openlibrary"
+      ],
+      "providers_n": 1,
+      "provider_counts": {
+        "openlibrary": 16
+      },
+      "kinds": {
+        "registry": 16
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 1.0,
+        "id_jaccard_r1_r2": 1.0,
+        "title_jaccard_r1_r2": 1.0,
+        "url_overlap": 8,
+        "url_union": 8,
+        "id_overlap": 8,
+        "id_union": 8
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6658333333333333,
+      "mean_quote_len": 61.125,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S11",
+      "seed": "Michael Jordan baseball",
+      "category": "wrong-person-trap",
+      "findings_r1": 0,
+      "findings_r2": 2,
+      "domains_union": [
+        "en.wikipedia.org"
+      ],
+      "domains_n": 1,
+      "families_union": [
+        "wikimedia"
+      ],
+      "families_n": 1,
+      "providers_union": [
+        "wikipedia"
+      ],
+      "providers_n": 1,
+      "provider_counts": {
+        "wikipedia": 2
+      },
+      "kinds": {
+        "page": 2
+      },
+      "recirculation": {
+        "url_jaccard_r1_r2": 0.0,
+        "id_jaccard_r1_r2": 0.0,
+        "title_jaccard_r1_r2": 0.0,
+        "url_overlap": 0,
+        "url_union": 2,
+        "id_overlap": 0,
+        "id_union": 2
+      },
+      "single_family_rate_mean": 1.0,
+      "mean_discoveryScore": 0.6483333333333333,
+      "mean_quote_len": 0.0,
+      "mean_providerDiversity_factor": 1.0
+    },
+    {
+      "id": "S12",
+      "seed": "Wikipedia Wikimedia Foundation",
+      "category": "duplicate-source-trap",
+      "findings_r1": 0,
+      "findings_r2": 0,
+      "domains_union": [],
+      "domains_n": 0,
+      "families_union": [],
+      "families_n": 0,
+      "providers_union": [],
+      "providers_n": 0,
+      "provider_counts": {},
+      "kinds": {},
+      "recirculation": {
+        "url_jaccard_r1_r2": null,
+        "id_jaccard_r1_r2": null,
+        "title_jaccard_r1_r2": null,
+        "url_overlap": 0,
+        "url_union": 0,
+        "id_overlap": 0,
+        "id_union": 0
+      },
+      "single_family_rate_mean": null,
+      "mean_discoveryScore": null,
+      "mean_quote_len": null,
+      "mean_providerDiversity_factor": null
+    },
+    {
+      "id": "S13",
+      "seed": "Demis Hassabis DeepMind",
+      "category": "high-value-sparse",
+      "findings_r1": 0,
+      "findings_r2": 0,
+      "domains_union": [],
+      "domains_n": 0,
+      "families_union": [],
+      "families_n": 0,
+      "providers_union": [],
+      "providers_n": 0,
+      "provider_counts": {},
+      "kinds": {},
+      "recirculation": {
+        "url_jaccard_r1_r2": null,
+        "id_jaccard_r1_r2": null,
+        "title_jaccard_r1_r2": null,
+        "url_overlap": 0,
+        "url_union": 0,
+        "id_overlap": 0,
+        "id_union": 0
+      },
+      "single_family_rate_mean": null,
+      "mean_discoveryScore": null,
+      "mean_quote_len": null,
+      "mean_providerDiversity_factor": null
+    },
+    {
+      "id": "S14",
+      "seed": "CEO of Microsoft",
+      "category": "keyword-context",
+      "findings_r1": 0,
+      "findings_r2": 0,
+      "domains_union": [],
+      "domains_n": 0,
+      "families_union": [],
+      "families_n": 0,
+      "providers_union": [],
+      "providers_n": 0,
+      "provider_counts": {},
+      "kinds": {},
+      "recirculation": {
+        "url_jaccard_r1_r2": null,
+        "id_jaccard_r1_r2": null,
+        "title_jaccard_r1_r2": null,
+        "url_overlap": 0,
+        "url_union": 0,
+        "id_overlap": 0,
+        "id_union": 0
+      },
+      "single_family_rate_mean": null,
+      "mean_discoveryScore": null,
+      "mean_quote_len": null,
+      "mean_providerDiversity_factor": null
+    },
+    {
+      "id": "S15",
+      "seed": "Mark Zuckerberg / Meta CEO",
+      "category": "alias-like",
+      "findings_r1": 0,
+      "findings_r2": 0,
+      "domains_union": [],
+      "domains_n": 0,
+      "families_union": [],
+      "families_n": 0,
+      "providers_union": [],
+      "providers_n": 0,
+      "provider_counts": {},
+      "kinds": {},
+      "recirculation": {
+        "url_jaccard_r1_r2": null,
+        "id_jaccard_r1_r2": null,
+        "title_jaccard_r1_r2": null,
+        "url_overlap": 0,
+        "url_union": 0,
+        "id_overlap": 0,
+        "id_union": 0
+      },
+      "single_family_rate_mean": null,
+      "mean_discoveryScore": null,
+      "mean_quote_len": null,
+      "mean_providerDiversity_factor": null
+    },
+    {
+      "id": "S16",
+      "seed": "https://www.who.int",
+      "category": "website",
+      "findings_r1": 0,
+      "findings_r2": 0,
+      "domains_union": [],
+      "domains_n": 0,
+      "families_union": [],
+      "families_n": 0,
+      "providers_union": [],
+      "providers_n": 0,
+      "provider_counts": {},
+      "kinds": {},
+      "recirculation": {
+        "url_jaccard_r1_r2": null,
+        "id_jaccard_r1_r2": null,
+        "title_jaccard_r1_r2": null,
+        "url_overlap": 0,
+        "url_union": 0,
+        "id_overlap": 0,
+        "id_union": 0
+      },
+      "single_family_rate_mean": null,
+      "mean_discoveryScore": null,
+      "mean_quote_len": null,
+      "mean_providerDiversity_factor": null
+    }
+  ],
+  "notes": [
+    "Session can mix WD+WP+OL (provider facets) while every finding remains single-provider/single-family — matches Phase3 multi_independent_source_rate=0",
+    "S07 HE seed: domains=[en.wikipedia.org, www.wikidata.org] only — no he.wikipedia.org",
+    "S10 Francis Bacon: openlibrary-only (wikidata+wikipedia error) — monoculture under provider failure",
+    "S12–S16: zero domains (coverage hole QD-04)"
+  ]
+}

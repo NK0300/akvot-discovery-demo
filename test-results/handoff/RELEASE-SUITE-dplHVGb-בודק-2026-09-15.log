@@ -1,0 +1,168 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Retrieving project…
+Downloading `development` environment variables
+Loaded env from /workspace/akvot-quick-demo/.env.local
+
+> test:release
+> node test-results/RELEASE-SUITE-בודק.mjs
+
+
+========== RELEASE SUITE · בודק ==========
+BASE=https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app
+when=15.9.2026, 17:52:36 Asia/Jerusalem
+headers: Origin=https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app, x-akvot-battery:1
+
+── 1) Domain units: node api/lib/orchestrator.test.mjs ──
+PASS C identifier phone
+PASS C identifier email
+PASS A known wikiCommitted
+PASS D foreign Latin
+PASS D foreign country
+PASS B stranger HE common
+PASS no evidence empty
+PASS no evidence generic why
+PASS evidence https
+PASS evidence specific why
+PASS reject http (not https)
+PASS filter keeps 1 of 2
+PASS B bare → need_context (not celebrity list)
+PASS A celeb → dossier
+PASS D + ctx evidenced → candidates
+PASS D bare softAmb → need_context
+PASS C weak phone → thin
+PASS B + ctx but no evidence → thin
+PASS evidenceScore strong ≥0.75
+PASS commit without focus when strong
+PASS no commit weak evidence
+PASS commit with focus always
+PASS isCommonHeBareName דני כהן
+PASS נתניהו not common-surname heuristic
+PASS John Smith not HE common
+PASS דני כהן wikiExact still need_context
+PASS need_context strips photo
+PASS attach clears candidates on need_context
+PASS attach sets messageKey
+PASS google recovery not known-without-qid
+PASS google recovery without commitOk is not hollow wiki-known
+PASS rich without qid is not known
+PASS canCommitIdentity aliases mayCommitDossier
+PASS Smith+org/city+wikiQID softAmb/latin → NOT dossier
+PASS Smith+org softAmb → candidates|need_context|thin
+PASS Smith+email+wikiQID → NOT dossier
+PASS Smith+email stays identifier scenario
+PASS נתניהו seeded → dossier
+PASS אורלי לוי seeded → dossier
+PASS mayCommit email alone false
+PASS mayCommit phone alone false
+PASS mayCommit seeded true
+PASS mayCommit HE wiki exact true
+PASS canCommitWithoutFocus email alone false
+PASS canCommitWithoutFocus seeded true
+PASS mayCommit Latin wikiExact !softAmb → ok
+PASS mayCommit Latin softAmb → false
+PASS mayCommit Latin wikiExact email alone false
+PASS mayCommit Latin seeded true
+PASS Latin wikiExact Merkel → dossier
+PASS Latin Smith softAmb + QID → NOT dossier
+PASS Smith+ctx still NOT dossier without evidence
+PASS N01 resolve בנימין נתניהו → Q43723
+PASS N02 resolve נתניהו → Q43723
+PASS N03 resolve ביבי נתניהו → Q43723
+PASS N04 resolve ביבי alone → Q43723
+PASS N05 resolve Benjamin Netanyahu → Q43723
+PASS N06 resolve Bibi Netanyahu → Q43723
+PASS N07 resolve Netanyahu alone → Q43723
+PASS G01 resolve זהבה גלאון → Q2630062
+PASS G02 resolve Zehava Galon → Q2630062
+PASS G03 resolve Zahava Gal-On fold → Q2630062
+PASS M01 resolve Angela Merkel → Q567
+PASS M02 resolve Merkel alone → Q567
+PASS P01 resolve יאיר לפיד → Q1396120
+PASS P02 resolve לפיד alone → Q1396120
+PASS S01-class resolve דני כהן → null
+PASS S01-class resolve John Smith → null
+PASS P03 resolve לוי alone → null
+PASS P03 resolve כהן alone → null
+PASS resolve Barack Obama peer
+PASS N08 resolve אורלי לוי → Q466537
+PASS resolve parenthetical strip
+PASS P2-A01 resolve Assaf Rappaport → Q47507930
+PASS P2-A01 resolve Asaf Rappaport → Q47507930
+PASS P2-A02 fold Assaf Rapaport → Q47507930
+PASS P2-A03 resolve אסף רפפורט → Q47507930
+PASS P2-A04 peer Matti Friedman → Q18389499
+PASS P2-A05 Assaf Smith → null (precision)
+PASS P2-A06 Rappaport alone → null (no surname bleed)
+PASS P2-A06 John Rappaport → null
+PASS P2-E01 URL-noise org ib → false
+PASS P2-E01 title token IBM → true
+PASS P2-E01 URL-only long token boston in path → true (len≥4 boundary)
+PASS mayCommit Smith softAmb → false
+PASS mayCommit email alone → false
+PASS mayCommit seeded Netanyahu → true
+PASS mayCommit bare junk → false (threshold intact)
+PASS Smith-class detector
+PASS Assaf not Smith-class
+PASS mayCommit Smith wikiExact alone → false
+PASS mayCommit Smith softAmb + ctx → false
+PASS mayCommit country=us does not unlock latin via https noise
+PASS mayCommit Smith strongEvidence still false
+PASS T-C6 near-miss detector John Rappaport
+PASS Assaf full name not near-miss
+PASS mayCommit John Rappaport wikiExact → false
+PASS mayCommit Assaf seeded still true
+
+98 passed, 0 failed
+units exit=0 ms=122 pass=true
+
+── 2) Contract: node test-results/contract-identity-p0.mjs ──
+CONTRACT identity-p0 → https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app
+cases=5  headers: Origin=https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app, x-akvot-battery:1
+
+→ a-netanyahu-keep (KEEP) ... PASS 2987ms http=200 ui=dossier qid=Q43723 faces=true
+→ b-cohen-keep (KEEP) ... PASS 209ms http=200 ui=need_context qid=- faces=false
+→ c-smith-bare-keep (KEEP) ... PASS 5692ms http=200 ui=need_context qid=- faces=false
+→ d-smith-ctx-p0 (P0) ... PASS 6352ms http=200 ui=candidates qid=- faces=false
+→ e-smith-email-g11-p0 (P0) ... PASS 7774ms http=200 ui=candidates qid=- faces=false
+
+========== SUMMARY ==========
+כל חוזי הזהות עברו (5/5)
+pass=5/5  improve=0  exit=0
+  ✓ [KEEP] a-netanyahu-keep  ui=dossier faces=true
+  ✓ [KEEP] b-cohen-keep  ui=need_context faces=false
+  ✓ [KEEP] c-smith-bare-keep  ui=need_context faces=false
+  ✓ [P0] d-smith-ctx-p0  ui=candidates faces=false
+  ✓ [P0] e-smith-email-g11-p0  ui=candidates faces=false
+report: /workspace/akvot-quick-demo/test-results/CONTRACT-identity-p0-בודק-2026-09-09.json
+=============================
+
+contract exit=0 ms=30658 pass=true
+
+── 3) SAFETY / runtime smoke ──
+→ s1-netanyahu ... PASS 1845ms ui=dossier mode=wiki+google qid=Q43723 faces=true
+→ s2-dani-cohen ... PASS 188ms ui=need_context mode=ambiguous qid=- faces=false
+→ s3-smith-bare ... PASS 5700ms ui=need_context mode=ambiguous qid=- faces=false
+→ s4-smith-ibm ... PASS 8916ms ui=candidates mode=candidates qid=- faces=false
+→ s5-smith-email ... PASS 7019ms ui=candidates mode=candidates qid=- faces=false
+→ s6-orly-levy ... PASS 1411ms ui=dossier mode=wiki+google qid=Q466537 faces=true | dossier preferred — OK
+
+── 4) Red-team uncertainty ──
+→ r1-junk-he ... PASS 45184ms ui=thin mode=google qid=- faces=false
+→ r2-smith-bare-covered ... SKIP John Smith bare (covered by SAFETY)
+→ r3-conflict-skip ... SKIP conflict-ish optional SKIP
+
+── 5) ALIAS_RECALL (record only; soft) ──
+→ a1-netanyahu-alone ... PASS 2109ms ui=dossier mode=wiki+google qid=Q43723 faces=true
+→ a2-bibi-netanyahu ... PASS 1474ms ui=dossier mode=wiki+google qid=Q43723 faces=true
+→ a3-angela-merkel ... PASS 1231ms ui=dossier mode=wiki+google qid=Q567 faces=true
+→ a4-zehava-galon ... PASS 1074ms ui=dossier mode=wiki+google qid=Q2630062 faces=true
+
+========== SUMMARY ==========
+ריליס עבר — units+contract+SAFETY ירוקים · ALIAS_RECALL מלא
+exit=0
+units=true contract=true SAFETY=true RED=true ALIAS=4/4 (prettyWrong=false)
+JSON: /workspace/akvot-quick-demo/test-results/RELEASE-SUITE-latest.json
+MD:   /workspace/akvot-quick-demo/test-results/RELEASE-SUITE-בודק-latest.md
+=============================
+
+EXIT:0

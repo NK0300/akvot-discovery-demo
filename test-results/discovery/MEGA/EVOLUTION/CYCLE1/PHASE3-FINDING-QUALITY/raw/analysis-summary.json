@@ -1,0 +1,68 @@
+{
+  "classified_n": 129,
+  "class_counts": {
+    "identity-relevant": 40,
+    "publication": 30,
+    "contextual": 9,
+    "professional": 5,
+    "corporate": 44,
+    "geographic": 1
+  },
+  "pct": {
+    "identity-relevant": 31.01,
+    "corporate": 34.11,
+    "ownership": 0.0,
+    "affiliation": 0.0,
+    "professional": 3.88,
+    "geographic": 0.78,
+    "publication": 23.26,
+    "legal/public": 0.0,
+    "contact/public-endpoint": 0.0,
+    "historical": 0.0,
+    "relationship": 0.0,
+    "technical": 0.0,
+    "contextual": 6.98,
+    "other": 0.0
+  },
+  "overall": 55.9,
+  "dimensions": {
+    "Coverage": 60.0,
+    "Relevance": 67.4,
+    "Evidence": 81.8,
+    "Novelty": 71.1,
+    "Diversity": 15.0,
+    "Accuracy": 67.5,
+    "Ambiguity": 53.0,
+    "Contradiction": 25.0
+  },
+  "ev_all": {
+    "n_findings": 244,
+    "without_evidence": 0,
+    "without_evidence_rate": 0.0,
+    "weak_evidence": 127,
+    "weak_evidence_rate": 0.5205,
+    "single_source": 244,
+    "single_source_rate": 1.0,
+    "multi_independent_source": 0,
+    "multi_independent_source_rate": 0.0
+  },
+  "exact_summary": {
+    "sessions_with_findings": 19,
+    "mean_rate_id": 0.0,
+    "mean_rate_title": 0.2552,
+    "mean_rate_url": 0.0,
+    "total_dup_id": 0,
+    "total_dup_title": 79,
+    "total_dup_url": 0,
+    "note": "Exact duplicate = count of surplus items sharing identical id/title/url within a session. rate = surplus/n_findings."
+  },
+  "near_summary": {
+    "sessions_with_findings": 19,
+    "mean_rate_norm_title": 0.289,
+    "mean_rate_norm_url": 0.0,
+    "total_near_title_surplus": 92,
+    "total_near_url_surplus": 0,
+    "note": "Near-duplicate = surplus items after normalizing title (lower/punct-strip) or url (strip scheme/www/trailing slash)."
+  },
+  "acc": 0
+}

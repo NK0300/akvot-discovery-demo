@@ -1,0 +1,576 @@
+{
+  "ok": true,
+  "sessionId": "kv1.4530a3ac18960f9c9c95ec1bc33ebe58",
+  "seed": "Tim Berners-Lee",
+  "q": "Tim Berners-Lee",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wd-Q80",
+      "kind": "registry",
+      "title": "Tim Berners-Lee",
+      "summary": "English computer scientist (born 1955)",
+      "evidenceIds": [
+        "ev-1bc4633ed032bd7d454682f1"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q80"
+      ],
+      "scoreFinding": 0.7183333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q120373140",
+      "kind": "registry",
+      "title": "Tim Berners-Lee",
+      "summary": "2015 edition of a biography by Claudia Martin",
+      "evidenceIds": [
+        "ev-9dae5e6e5b505dbfed817fb6"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q120373140"
+      ],
+      "scoreFinding": 0.7083333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q120373262",
+      "kind": "registry",
+      "title": "Tim Berners-Lee",
+      "summary": "2015 biography by Jason Porterfield",
+      "evidenceIds": [
+        "ev-deec608d0782116cb1c5ca08"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q120373262"
+      ],
+      "scoreFinding": 0.6983333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q22991023",
+      "kind": "registry",
+      "title": "Tim Berners-Lee: A Magna Carta for the web",
+      "summary": "TED2014",
+      "evidenceIds": [
+        "ev-c7f185fbae6640484c617f83"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q22991023"
+      ],
+      "scoreFinding": 0.6883333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q22946133",
+      "kind": "registry",
+      "title": "Tim Berners-Lee: The year open data went worldwide",
+      "summary": "TED2010",
+      "evidenceIds": [
+        "ev-8314c7d5a762d02d56ed021d"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q22946133"
+      ],
+      "scoreFinding": 0.6783333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q22980417",
+      "kind": "registry",
+      "title": "Tim Berners-Lee: The next web",
+      "summary": "TED2009",
+      "evidenceIds": [
+        "ev-08cb147dee8c713927983c2b"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q22980417"
+      ],
+      "scoreFinding": 0.6683333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q19761597",
+      "kind": "registry",
+      "title": "Tim Berners-Lee",
+      "summary": "Wikinews article",
+      "evidenceIds": [
+        "ev-d571998ff143b8c65d0a81a1"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q19761597"
+      ],
+      "scoreFinding": 0.6583333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q55693401",
+      "kind": "registry",
+      "title": "Tim Berners-Lee",
+      "summary": "article in Physics Today",
+      "evidenceIds": [
+        "ev-29f751a2d57f2094590e70b0"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q55693401"
+      ],
+      "scoreFinding": 0.6483333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Tim_Berners_Lee",
+      "kind": "page",
+      "title": "Tim Berners-Lee",
+      "evidenceIds": [
+        "ev-6131f395a12acb1f40ccf423"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Tim Berners-Lee"
+      ],
+      "scoreFinding": 0.5683333333333334,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-1bc4633ed032bd7d454682f1",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q80",
+      "url": "https://www.wikidata.org/wiki/Q80",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "English computer scientist (born 1955)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-9dae5e6e5b505dbfed817fb6",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q120373140",
+      "url": "https://www.wikidata.org/wiki/Q120373140",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "2015 edition of a biography by Claudia Martin",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-deec608d0782116cb1c5ca08",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q120373262",
+      "url": "https://www.wikidata.org/wiki/Q120373262",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "2015 biography by Jason Porterfield",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-c7f185fbae6640484c617f83",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q22991023",
+      "url": "https://www.wikidata.org/wiki/Q22991023",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "TED2014",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8314c7d5a762d02d56ed021d",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q22946133",
+      "url": "https://www.wikidata.org/wiki/Q22946133",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "TED2010",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-08cb147dee8c713927983c2b",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q22980417",
+      "url": "https://www.wikidata.org/wiki/Q22980417",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "TED2009",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-d571998ff143b8c65d0a81a1",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q19761597",
+      "url": "https://www.wikidata.org/wiki/Q19761597",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "Wikinews article",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-29f751a2d57f2094590e70b0",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q55693401",
+      "url": "https://www.wikidata.org/wiki/Q55693401",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:18:29.133Z",
+      "evidenceType": "registry",
+      "quote": "article in Physics Today",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-6131f395a12acb1f40ccf423",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+      "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:18:28.904Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "wikidata",
+          "count": 8
+        },
+        {
+          "value": "wikipedia",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 8
+        },
+        {
+          "value": "page",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "error",
+    "wikipedia": "ok"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:4966fd884daa"
+    ],
+    "status": "candidate",
+    "displayHint": "Tim Berners-Lee",
+    "hints": {}
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T07:18:28.842Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:4966fd884daa",
+        "kind": "seed"
+      },
+      {
+        "id": "wd-Q80",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q120373140",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q120373262",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q22991023",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q22946133",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q22980417",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q19761597",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q55693401",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Tim_Berners_Lee",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [
+    {
+      "type": "same_title_multi_domain",
+      "title": "tim berners-lee",
+      "findingIds": [
+        "wd-Q80",
+        "wd-Q120373140",
+        "wd-Q120373262",
+        "wd-Q19761597",
+        "wd-Q55693401",
+        "wp-en-Tim_Berners_Lee"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    }
+  ],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

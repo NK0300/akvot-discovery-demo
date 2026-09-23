@@ -1,0 +1,3468 @@
+{
+  "doc": "QA-AFTER-vs-B0-בודק-2026-09-20",
+  "role": "בודק",
+  "phase": "CYCLE1-PHASE4-EXPERIMENT-A-VIAF",
+  "stamp": "2026-09-20T10:04:07+03:00",
+  "promote": "HOLD",
+  "no_promote": true,
+  "core_untouched": true,
+  "targets": {
+    "preview": {
+      "url": "https://akvot-simple-demo-93bc30m30-k-akvot.vercel.app",
+      "dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+      "DISCOVERY_ENABLE_VIAF": "1 expected (preview env)",
+      "build_match": true
+    },
+    "b0": {
+      "alias": "https://akvot-discovery.vercel.app",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "alias_actual": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "unchanged": true
+    },
+    "core": {
+      "alias": "https://akvot-simple-demo.vercel.app",
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "alias_actual": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "locked": true
+    }
+  },
+  "seeds": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person"
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company"
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization"
+    }
+  ],
+  "family_mapping": {
+    "acc_sot": "wikidata ≠ wikipedia ≠ openlibrary ≠ viaf (Acc BEFORE pack)",
+    "runtime_exp_a": "wikimedia(wikidata+wikipedia) ≠ openlibrary ≠ viaf (store.hostFamily)",
+    "primary_gate_metric": "mean of per-seed multi_independent_rate; PASS if Acc-map OR runtime-map mean ≥ 0.15"
+  },
+  "gate": {
+    "threshold": 0.15,
+    "acc_leakage": 0,
+    "acc_leakage_pass": true,
+    "core_still_8ag": true,
+    "b0_alias_unchanged": true,
+    "dossier_bind": false,
+    "multi_independent_mean_acc": 0.0,
+    "multi_independent_mean_runtime": 0.0,
+    "multi_independent_agg_acc": {
+      "findings_n": 78,
+      "multi_n": 0,
+      "rate": 0
+    },
+    "multi_independent_agg_runtime": {
+      "findings_n": 78,
+      "multi_n": 0,
+      "rate": 0
+    },
+    "per_seed_acc": [
+      {
+        "id": "S01",
+        "rate": 0,
+        "pass": false
+      },
+      {
+        "id": "S04",
+        "rate": 0,
+        "pass": false
+      },
+      {
+        "id": "S05",
+        "rate": 0,
+        "pass": false
+      }
+    ],
+    "per_seed_runtime": [
+      {
+        "id": "S01",
+        "rate": 0,
+        "pass": false
+      },
+      {
+        "id": "S04",
+        "rate": 0,
+        "pass": false
+      },
+      {
+        "id": "S05",
+        "rate": 0,
+        "pass": false
+      }
+    ],
+    "viaf_on_preview_all": true,
+    "viaf_on_b0_any": false,
+    "multi_gate_pass": false
+  },
+  "verdict": "FAIL",
+  "fail_reasons": [
+    "multi_independent meanAcc=0.000 meanRt=0.000 < 0.15"
+  ],
+  "rca": [
+    "FAIL gate: multi_independent_rate mean on Preview S01/S04/S05 = 0.000 < 0.15 (Acc family map AND runtime hostFamily map).",
+    "VIAF provider IS present on Preview (providers.viaf=partial) for all 3 seeds — wiring/flag DISCOVERY_ENABLE_VIAF appears ON.",
+    "Root cause: adapters emit parallel single-provider Findings; no live soft-label cross-family merge observed on this deployment.",
+    "Evidence: multi_provider_findings_n=0 and corroboration:multi_family facet count=0 on all Preview seeds; corroborationEdges absent in session payloads.",
+    "Session-level family union includes viaf (+wikidata/wikipedia/openlibrary) but ARCH/Acc metric is per-Finding ≥2 hostFamilies on surviving Evidence — not session union, not providers.length alone.",
+    "B0 baseline correctly has viaf=false and multi_independent_rate=0.000 (matches Acc BEFORE freeze).",
+    "Therefore EXP-A Preview adds VIAF hits but does NOT lift multi_independent_rate vs B0 on dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU.",
+    "Suggested fix ownership (not applied — HOLD): ensure corroborateBySoftLabel runs in orchestrator finalize on Preview build; verify softLabel title normalization matches VIAF↔WD/WP labels; re-measure same seeds."
+  ],
+  "preview": {
+    "label": "PREVIEW",
+    "dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "url": "https://akvot-simple-demo-93bc30m30-k-akvot.vercel.app",
+    "seeds": {
+      "S01": {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "category": "person",
+        "label": "PREVIEW",
+        "sessionId": "kv1.5a5825d6f5bcee5b913d2c3d5d2239af",
+        "status": "partial",
+        "findings_n": 18,
+        "evidence_n": 18,
+        "providers_present": [
+          "wikidata",
+          "openlibrary",
+          "wikipedia",
+          "viaf"
+        ],
+        "providers_state": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "partial"
+        },
+        "viaf_present": true,
+        "viaf_findings_n": 8,
+        "multi_independent_n_acc": 0,
+        "multi_independent_rate_acc": 0.0,
+        "multi_independent_n_runtime": 0,
+        "multi_independent_rate_runtime": 0.0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['viaf']": 8,
+          "['openlibrary']": 1,
+          "['wikipedia']": 1
+        },
+        "hostFamily_histogram_runtime": {
+          "[\"wikimedia\"]": 9,
+          "[\"viaf\"]": 8,
+          "[\"openlibrary\"]": 1
+        },
+        "acc_leak_n": 0,
+        "acc_leak_hits": [],
+        "b23_Q1701775_hits": 0,
+        "dossier_bind": false,
+        "corroborationEdges_n": 0,
+        "findingRows": [
+          {
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-1bc4633ed032bd7d454682f1"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-9dae5e6e5b505dbfed817fb6"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-deec608d0782116cb1c5ca08"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-c7f185fbae6640484c617f83"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-8314c7d5a762d02d56ed021d"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q22980417",
+            "title": "Tim Berners-Lee: The next web",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-08cb147dee8c713927983c2b"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q19761597",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-d571998ff143b8c65d0a81a1"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q55693401",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-29f751a2d57f2094590e70b0"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ded4492e49be949e449272fe"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, 1955-",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ce87e4b18f0524a64903c21e"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ceaa76317f5993f3ddd9daf0"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-6aeb95eb2486847285c477bc"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-256520dfd012cc9f5c748809"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, Brits natuurkundige",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-15faf7baf2cf5f6111cdf54a"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, britský informatik",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ae75562849264469888e7d58"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, britannialainen tietotekniikka-asiantuntija ja World Wide Webin keksijä",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-cc1c95dd00fec531a44ee1d7"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-8b78b3cd061f3cc8d479260b"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wp-en-Tim_Berners_Lee",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-6131f395a12acb1f40ccf423"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          }
+        ]
+      },
+      "S04": {
+        "id": "S04",
+        "seed": "Stripe",
+        "category": "company",
+        "label": "PREVIEW",
+        "sessionId": "kv1.888184e9bcc0b35ab127e1e040148293",
+        "status": "partial",
+        "findings_n": 30,
+        "evidence_n": 30,
+        "providers_present": [
+          "wikidata",
+          "openlibrary",
+          "wikipedia",
+          "viaf"
+        ],
+        "providers_state": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "viaf_present": true,
+        "viaf_findings_n": 8,
+        "multi_independent_n_acc": 0,
+        "multi_independent_rate_acc": 0.0,
+        "multi_independent_n_runtime": 0,
+        "multi_independent_rate_runtime": 0.0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['viaf']": 8,
+          "['openlibrary']": 8,
+          "['wikipedia']": 6
+        },
+        "hostFamily_histogram_runtime": {
+          "[\"wikimedia\"]": 14,
+          "[\"viaf\"]": 8,
+          "[\"openlibrary\"]": 8
+        },
+        "acc_leak_n": 0,
+        "acc_leak_hits": [],
+        "b23_Q1701775_hits": 0,
+        "dossier_bind": false,
+        "corroborationEdges_n": 0,
+        "findingRows": [
+          {
+            "findingId": "wd-Q7624104",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-334c73b08ab99c1ee0dc81a4"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q3421342",
+            "title": "stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-3e752877b4573df7af5d98ee"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q127900502",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-4ed726688c56f19afcfd7a0f"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q117454382",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-546c719a55dffeef9979e8b4"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q297115",
+            "title": "Meloidae",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-efcccbd10accb458ac155f4d"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q469754",
+            "title": "Perca flavescens",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-e118c5fd64f51337cdb6e30d"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q842647",
+            "title": "striped bass",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-3ae89f9dcb348bcd961d54a0"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q368495",
+            "title": "striped skunk",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-09f4a1ea15f73ab4bc4451c9"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-30463651",
+            "title": "Stripe, John, 1643-1737",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-3dba3cfaf0d94747227a8060"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-126600779",
+            "title": "Stripes",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-25b75575df997e0428541335"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-138753783",
+            "title": "Striped house museum of art Tokyo",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ef2f297d2654239f1ca17f14"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-57307946",
+            "title": "Stripecke, Renata",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-1a07987497b0c143a91105fa"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-156206104",
+            "title": "Stripe, Adelle, 1976-",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-e07dd871f072477c5319125a"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-124465779",
+            "title": "Striped Horse France",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ab5afc1bd4b80e6d4d79bd03"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-83910682",
+            "title": "Střípek, Jiří, asi 1545-asi 1575",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-58fa1960203e386ac623ca50"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-172149106019768490790",
+            "title": "Stripe Eroeg",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-0f7997a6eb36e8b6abdd5eba"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL8376862A",
+            "title": "Five Stripe Books",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-92cdcc43e5252f3238d5b475"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL8613090A",
+            "title": "Adelle Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-f223a57aafa0191f8a88ae9c"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-71690f2975616e8c8ae0c510"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-70eafe76a4960f8cee70eb95"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL3492368A",
+            "title": "Stephen Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-e4b27ceee54073b58012ffd2"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL14670551A",
+            "title": "Stripe Journals",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-4e41ef9616742d445c82996c"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL3905682A",
+            "title": "Subdued Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-42a0dde0cdb4056815e23e44"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL15943217A",
+            "title": "Sebastian Friedrich Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-3770035cce8ef3eaf83b4ee5"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wp-en-Stripe",
+            "title": "Stripe",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-1b2261a8659f20af0dafa200"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Striped_hyena",
+            "title": "Striped hyena",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-5cf126c02d884d0d0f0cbf8c"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Stripe_Inc_",
+            "title": "Stripe, Inc.",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-3d21c3bbce21b1c0f2191884"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Striped_polecat",
+            "title": "Striped polecat",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-bf6bbf30d4fe259eaba3bab8"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Striped_skunk",
+            "title": "Striped skunk",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-16e4af35d2a9aa3f367fae87"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Stripes_film_",
+            "title": "Stripes (film)",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-8e7c74de03edfd4b5052b0b6"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          }
+        ]
+      },
+      "S05": {
+        "id": "S05",
+        "seed": "Red Cross",
+        "category": "organization",
+        "label": "PREVIEW",
+        "sessionId": "kv1.7d5ef4b6e586a3456f1dba7a91702a4c",
+        "status": "partial",
+        "findings_n": 30,
+        "evidence_n": 30,
+        "providers_present": [
+          "wikidata",
+          "openlibrary",
+          "wikipedia",
+          "viaf"
+        ],
+        "providers_state": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "viaf_present": true,
+        "viaf_findings_n": 8,
+        "multi_independent_n_acc": 0,
+        "multi_independent_rate_acc": 0.0,
+        "multi_independent_n_runtime": 0,
+        "multi_independent_rate_runtime": 0.0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['viaf']": 8,
+          "['openlibrary']": 8,
+          "['wikipedia']": 6
+        },
+        "hostFamily_histogram_runtime": {
+          "[\"wikimedia\"]": 14,
+          "[\"viaf\"]": 8,
+          "[\"openlibrary\"]": 8
+        },
+        "acc_leak_n": 0,
+        "acc_leak_hits": [],
+        "b23_Q1701775_hits": 0,
+        "dossier_bind": false,
+        "corroborationEdges_n": 0,
+        "findingRows": [
+          {
+            "findingId": "wd-Q470110",
+            "title": "American Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-ee4c11b54b55f169c6f8cca2"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-92cfaa4bad3fa3427bc8a8d3"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-28dc3a2dd271571999554686"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-faabe05f0cb668583c3d825a"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q104700248",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-98326805bf197875893b7480"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-b875339d7c0f92507b438e76"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q116059498",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-21517941a71e353af0febe4e"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q50320550",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-2b588e4983aaeb619f948db3"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-160178001",
+            "title": "Red Cross. International Committee, Geneva",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-13285e3216db2f74af51ce25"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-167237176",
+            "title": "Red Cross and Red Crescent",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-4e71da3838a94210d282a697"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-151269599",
+            "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-3f984d8965e8f2209149bd92"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-148420048",
+            "title": "Red Cross (Great Britain)",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-46cb23860f7cc48e224c41fb"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-122023057",
+            "title": "Red Cross USA",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-1b136765bf75268ad3acb1ff"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-997897",
+            "title": "Red Cross international lawyer (1914-2002) Jean Pictet",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-ee4796ee86fd6f94d933d82b"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-312731766",
+            "title": "Red Cross, Henry Dunant Institute",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-3dd8cba20369d737ff3133be"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "viaf-159584209",
+            "title": "Red Cross, Deutsches Rotes Kreuz",
+            "providers": [
+              "viaf"
+            ],
+            "evidenceIds": [
+              "ev-5cd7945080ba1259ee41ff2f"
+            ],
+            "accFamilies": [
+              "viaf"
+            ],
+            "runtimeFamilies": [
+              "viaf"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:viaf",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL17804A",
+            "title": "American National Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-0c8c971f07faa83033a4109e"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-73aacea394afaa29ed6d68c5"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL2917704A",
+            "title": "Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-49e0d67756ed1980a1094e23"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL10303910A",
+            "title": "American Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-af53efed094339e00e98b2a0"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL4511273A",
+            "title": "Red Cross.",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-f142608bc15a1ce36195b33e"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL6290095A",
+            "title": "Red Cross. Portuguese Red Cross.",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-02defb0dec3845d5c3c8e5ae"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL13846643A",
+            "title": "Red Cross. Portuguese Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-dc9d51c2bf301175fa3acbca"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL2343831A",
+            "title": "Red Cross. Junior Red Cross.",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-941192b76d0cc6e71b137b13"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross",
+            "title": "Red Cross",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-bd3835ec8708469c4d23938e"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_parcel",
+            "title": "Red Cross parcel",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-fb8c267bc13768462503dbb0"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+            "title": "Red Cross Youth (Philippines)",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-1e3332c5beb9a1cedc3e2233"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_of_Constantine",
+            "title": "Red Cross of Constantine",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-00dd79dec29cfd4788ec7d09"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_crossbill",
+            "title": "Red crossbill",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-3effb23f7efddf49a3a83160"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_EP_",
+            "title": "Red Cross (EP)",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-3fe05e34eacda215e4718816"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "b0": {
+    "label": "B0",
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "url": "https://akvot-discovery.vercel.app",
+    "seeds": {
+      "S01": {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "category": "person",
+        "label": "B0",
+        "sessionId": "kv1.9aa5ab42ea82c6023cc97534b494b239",
+        "status": "partial",
+        "findings_n": 10,
+        "evidence_n": 10,
+        "providers_present": [
+          "wikidata",
+          "openlibrary",
+          "wikipedia"
+        ],
+        "providers_state": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok"
+        },
+        "viaf_present": false,
+        "viaf_findings_n": 0,
+        "multi_independent_n_acc": 0,
+        "multi_independent_rate_acc": 0.0,
+        "multi_independent_n_runtime": 0,
+        "multi_independent_rate_runtime": 0,
+        "hostFamily_histogram_acc": {
+          "[\"wikidata\"]": 8,
+          "[\"openlibrary\"]": 1,
+          "[\"wikipedia\"]": 1
+        },
+        "hostFamily_histogram_runtime": {
+          "[\"wikimedia\"]": 9,
+          "[\"openlibrary\"]": 1
+        },
+        "acc_leak_n": 0,
+        "acc_leak_hits": [],
+        "b23_Q1701775_hits": 0,
+        "dossier_bind": false,
+        "corroborationEdges_n": 0,
+        "findingRows": [
+          {
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-1bc4633ed032bd7d454682f1"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-9dae5e6e5b505dbfed817fb6"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-deec608d0782116cb1c5ca08"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-c7f185fbae6640484c617f83"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-8314c7d5a762d02d56ed021d"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q22980417",
+            "title": "Tim Berners-Lee: The next web",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-08cb147dee8c713927983c2b"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q19761597",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-d571998ff143b8c65d0a81a1"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q55693401",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-29f751a2d57f2094590e70b0"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-8b78b3cd061f3cc8d479260b"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wp-en-Tim_Berners_Lee",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-6131f395a12acb1f40ccf423"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          }
+        ]
+      },
+      "S04": {
+        "id": "S04",
+        "seed": "Stripe",
+        "category": "company",
+        "label": "B0",
+        "sessionId": "kv1.d21fe61ccd7858a3dc4bb4a997d9aa26",
+        "status": "partial",
+        "findings_n": 22,
+        "evidence_n": 22,
+        "providers_present": [
+          "wikidata",
+          "openlibrary",
+          "wikipedia"
+        ],
+        "providers_state": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "viaf_present": false,
+        "viaf_findings_n": 0,
+        "multi_independent_n_acc": 0,
+        "multi_independent_rate_acc": 0.0,
+        "multi_independent_n_runtime": 0,
+        "multi_independent_rate_runtime": 0,
+        "hostFamily_histogram_acc": {
+          "[\"wikidata\"]": 8,
+          "[\"openlibrary\"]": 8,
+          "[\"wikipedia\"]": 6
+        },
+        "hostFamily_histogram_runtime": {
+          "[\"wikimedia\"]": 14,
+          "[\"openlibrary\"]": 8
+        },
+        "acc_leak_n": 0,
+        "acc_leak_hits": [],
+        "b23_Q1701775_hits": 0,
+        "dossier_bind": false,
+        "corroborationEdges_n": 0,
+        "findingRows": [
+          {
+            "findingId": "wd-Q7624104",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-334c73b08ab99c1ee0dc81a4"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q3421342",
+            "title": "stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-3e752877b4573df7af5d98ee"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q127900502",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-4ed726688c56f19afcfd7a0f"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q117454382",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-546c719a55dffeef9979e8b4"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q297115",
+            "title": "Meloidae",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-efcccbd10accb458ac155f4d"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q469754",
+            "title": "Perca flavescens",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-e118c5fd64f51337cdb6e30d"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q842647",
+            "title": "striped bass",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-3ae89f9dcb348bcd961d54a0"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q368495",
+            "title": "striped skunk",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-09f4a1ea15f73ab4bc4451c9"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL8376862A",
+            "title": "Five Stripe Books",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-92cdcc43e5252f3238d5b475"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL8613090A",
+            "title": "Adelle Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-f223a57aafa0191f8a88ae9c"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-71690f2975616e8c8ae0c510"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-70eafe76a4960f8cee70eb95"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL3492368A",
+            "title": "Stephen Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-e4b27ceee54073b58012ffd2"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL14670551A",
+            "title": "Stripe Journals",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-4e41ef9616742d445c82996c"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL3905682A",
+            "title": "Subdued Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-42a0dde0cdb4056815e23e44"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL15943217A",
+            "title": "Sebastian Friedrich Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-3770035cce8ef3eaf83b4ee5"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wp-en-Stripe",
+            "title": "Stripe",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-1b2261a8659f20af0dafa200"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Striped_hyena",
+            "title": "Striped hyena",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-5cf126c02d884d0d0f0cbf8c"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Stripe_Inc_",
+            "title": "Stripe, Inc.",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-3d21c3bbce21b1c0f2191884"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Striped_polecat",
+            "title": "Striped polecat",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-bf6bbf30d4fe259eaba3bab8"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Striped_skunk",
+            "title": "Striped skunk",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-16e4af35d2a9aa3f367fae87"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Stripes_film_",
+            "title": "Stripes (film)",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-8e7c74de03edfd4b5052b0b6"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          }
+        ]
+      },
+      "S05": {
+        "id": "S05",
+        "seed": "Red Cross",
+        "category": "organization",
+        "label": "B0",
+        "sessionId": "kv1.6d0c7ab93878fb147a5aa0d60f7c7825",
+        "status": "partial",
+        "findings_n": 22,
+        "evidence_n": 22,
+        "providers_present": [
+          "wikidata",
+          "openlibrary",
+          "wikipedia"
+        ],
+        "providers_state": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "viaf_present": false,
+        "viaf_findings_n": 0,
+        "multi_independent_n_acc": 0,
+        "multi_independent_rate_acc": 0.0,
+        "multi_independent_n_runtime": 0,
+        "multi_independent_rate_runtime": 0,
+        "hostFamily_histogram_acc": {
+          "[\"wikidata\"]": 8,
+          "[\"openlibrary\"]": 8,
+          "[\"wikipedia\"]": 6
+        },
+        "hostFamily_histogram_runtime": {
+          "[\"wikimedia\"]": 14,
+          "[\"openlibrary\"]": 8
+        },
+        "acc_leak_n": 0,
+        "acc_leak_hits": [],
+        "b23_Q1701775_hits": 0,
+        "dossier_bind": false,
+        "corroborationEdges_n": 0,
+        "findingRows": [
+          {
+            "findingId": "wd-Q470110",
+            "title": "American Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-ee4c11b54b55f169c6f8cca2"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-92cfaa4bad3fa3427bc8a8d3"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-28dc3a2dd271571999554686"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-faabe05f0cb668583c3d825a"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q104700248",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-98326805bf197875893b7480"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-b875339d7c0f92507b438e76"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q116059498",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-21517941a71e353af0febe4e"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wd-Q50320550",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "evidenceIds": [
+              "ev-2b588e4983aaeb619f948db3"
+            ],
+            "accFamilies": [
+              "wikidata"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikidata",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL17804A",
+            "title": "American National Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-0c8c971f07faa83033a4109e"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-73aacea394afaa29ed6d68c5"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL2917704A",
+            "title": "Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-49e0d67756ed1980a1094e23"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL10303910A",
+            "title": "American Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-af53efed094339e00e98b2a0"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL4511273A",
+            "title": "Red Cross.",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-f142608bc15a1ce36195b33e"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL6290095A",
+            "title": "Red Cross. Portuguese Red Cross.",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-02defb0dec3845d5c3c8e5ae"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL13846643A",
+            "title": "Red Cross. Portuguese Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-dc9d51c2bf301175fa3acbca"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "ol-OL2343831A",
+            "title": "Red Cross. Junior Red Cross.",
+            "providers": [
+              "openlibrary"
+            ],
+            "evidenceIds": [
+              "ev-941192b76d0cc6e71b137b13"
+            ],
+            "accFamilies": [
+              "openlibrary"
+            ],
+            "runtimeFamilies": [
+              "openlibrary"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:openlibrary",
+              "kind:registry"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross",
+            "title": "Red Cross",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-bd3835ec8708469c4d23938e"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_parcel",
+            "title": "Red Cross parcel",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-fb8c267bc13768462503dbb0"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+            "title": "Red Cross Youth (Philippines)",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-1e3332c5beb9a1cedc3e2233"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_of_Constantine",
+            "title": "Red Cross of Constantine",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-00dd79dec29cfd4788ec7d09"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_crossbill",
+            "title": "Red crossbill",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-3effb23f7efddf49a3a83160"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          },
+          {
+            "findingId": "wp-en-Red_Cross_EP_",
+            "title": "Red Cross (EP)",
+            "providers": [
+              "wikipedia"
+            ],
+            "evidenceIds": [
+              "ev-3fe05e34eacda215e4718816"
+            ],
+            "accFamilies": [
+              "wikipedia"
+            ],
+            "runtimeFamilies": [
+              "wikimedia"
+            ],
+            "multi_independent_acc": false,
+            "multi_independent_runtime": false,
+            "facetHints": [
+              "provider:wikipedia",
+              "kind:page"
+            ]
+          }
+        ]
+      }
+    },
+    "before_frozen_reference": {
+      "note": "Acc B0 BEFORE pack rates were 0.0/0.0/0.0 (VIAF absent)",
+      "S01": 0,
+      "S04": 0,
+      "S05": 0
+    }
+  },
+  "compare": {
+    "S01": {
+      "preview_acc": 0,
+      "b0_acc": 0,
+      "preview_n": 18,
+      "b0_n": 10,
+      "viaf_preview": true
+    },
+    "S04": {
+      "preview_acc": 0,
+      "b0_acc": 0,
+      "preview_n": 30,
+      "b0_n": 22,
+      "viaf_preview": true
+    },
+    "S05": {
+      "preview_acc": 0,
+      "b0_acc": 0,
+      "preview_n": 30,
+      "b0_n": 22,
+      "viaf_preview": true
+    }
+  },
+  "diagnosis": {
+    "preview_dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "viaf_wired": true,
+    "corroboration_observed": false,
+    "preview_detail": {
+      "S01": {
+        "findings_n": 18,
+        "evidence_n": 18,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0.0,
+        "multi_provider_findings_n": 0,
+        "corroboration_facet_n": 0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['viaf']": 8,
+          "['openlibrary']": 1,
+          "['wikipedia']": 1
+        },
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "partial"
+        },
+        "status": "partial",
+        "sessionId": "kv1.5a5825d6f5bcee5b913d2c3d5d2239af"
+      },
+      "S04": {
+        "findings_n": 30,
+        "evidence_n": 30,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0.0,
+        "multi_provider_findings_n": 0,
+        "corroboration_facet_n": 0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['viaf']": 8,
+          "['openlibrary']": 8,
+          "['wikipedia']": 6
+        },
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "status": "partial",
+        "sessionId": "kv1.888184e9bcc0b35ab127e1e040148293"
+      },
+      "S05": {
+        "findings_n": 30,
+        "evidence_n": 30,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0.0,
+        "multi_provider_findings_n": 0,
+        "corroboration_facet_n": 0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['viaf']": 8,
+          "['openlibrary']": 8,
+          "['wikipedia']": 6
+        },
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "status": "partial",
+        "sessionId": "kv1.7d5ef4b6e586a3456f1dba7a91702a4c"
+      }
+    },
+    "b0_detail": {
+      "S01": {
+        "findings_n": 10,
+        "evidence_n": 10,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0.0,
+        "multi_provider_findings_n": 0,
+        "corroboration_facet_n": 0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['openlibrary']": 1,
+          "['wikipedia']": 1
+        },
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok"
+        },
+        "status": "partial",
+        "sessionId": "kv1.9aa5ab42ea82c6023cc97534b494b239"
+      },
+      "S04": {
+        "findings_n": 22,
+        "evidence_n": 22,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0.0,
+        "multi_provider_findings_n": 0,
+        "corroboration_facet_n": 0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['openlibrary']": 8,
+          "['wikipedia']": 6
+        },
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "status": "partial",
+        "sessionId": "kv1.d21fe61ccd7858a3dc4bb4a997d9aa26"
+      },
+      "S05": {
+        "findings_n": 22,
+        "evidence_n": 22,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0.0,
+        "multi_provider_findings_n": 0,
+        "corroboration_facet_n": 0,
+        "hostFamily_histogram_acc": {
+          "['wikidata']": 8,
+          "['openlibrary']": 8,
+          "['wikipedia']": 6
+        },
+        "providers": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "status": "partial",
+        "sessionId": "kv1.6d0c7ab93878fb147a5aa0d60f7c7825"
+      }
+    }
+  }
+}

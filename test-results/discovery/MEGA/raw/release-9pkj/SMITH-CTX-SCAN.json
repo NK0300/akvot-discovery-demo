@@ -1,0 +1,36 @@
+{
+  "pass": true,
+  "postHttp": 201,
+  "getHttp": 200,
+  "sessionId": "kv1.ce166b9c05aaa142474615fc538fcd32",
+  "findings": 21,
+  "regenerated": null,
+  "scanPost": {
+    "surface": 0,
+    "entity": 0,
+    "contra": [],
+    "total": 0
+  },
+  "scanGet": {
+    "surface": 0,
+    "entity": 0,
+    "contra": [],
+    "total": 0
+  },
+  "bans": [],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "forbiddenStripped": 1
+}

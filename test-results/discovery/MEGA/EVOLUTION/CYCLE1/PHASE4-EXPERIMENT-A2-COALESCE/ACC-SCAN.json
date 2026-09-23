@@ -1,0 +1,34 @@
+{
+  "stamp": "2026-09-20T10:12:51+03:00",
+  "forbiddenQID": "Q1701775",
+  "leak_total": 0,
+  "result": "PASS",
+  "preview_leaks": [
+    {
+      "id": "S01",
+      "leak": 0
+    },
+    {
+      "id": "S04",
+      "leak": 0
+    },
+    {
+      "id": "S05",
+      "leak": 0
+    }
+  ],
+  "b0_leaks": [
+    {
+      "id": "S01",
+      "leak": 0
+    },
+    {
+      "id": "S04",
+      "leak": 0
+    },
+    {
+      "id": "S05",
+      "leak": 0
+    }
+  ]
+}

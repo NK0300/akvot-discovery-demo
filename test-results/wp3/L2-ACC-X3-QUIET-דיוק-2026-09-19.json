@@ -1,0 +1,346 @@
+{
+  "when": "2026-09-19T22:53:07.500704+03:00",
+  "whenEnd": "2026-09-19T22:54:06.470814+03:00",
+  "zone": "Asia/Jerusalem",
+  "role": "דיוק",
+  "task": "WP3 L2 Acc×3 QUIET after F-L2-ACC-001 STOP",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "expectedBuild": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "buildMatch": true,
+  "access": "plain urllib · Origin=alias · x-akvot-battery:1 · sequential quiet",
+  "deploy": false,
+  "expectedRewrite": false,
+  "coreTouch": false,
+  "mode": "QUIET Acc×3 · MEASURE ONLY · NO load storm",
+  "roundsPlanned": 3,
+  "roundsCompleted": 2,
+  "interProbeSleepSec": 2.5,
+  "interRoundSleepSec": 3.0,
+  "PASS": false,
+  "prettyWrong": 1,
+  "pwHard": 1,
+  "Q1701775_seen_any": true,
+  "stopReason": "Q1701775 present in Smith round 2 — Acc STOP FAIL",
+  "verdict": "NO-GO",
+  "accGO": "NO-GO",
+  "chiefResume": "NO-GO",
+  "probes": [
+    {
+      "tag": "r1-assaf",
+      "id": "Assaf Rappaport",
+      "result": "PASS",
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "faces_n": 0,
+      "Q1701775_seen": false,
+      "ms": 721,
+      "requestId": "c57bcb53-1f85-4764-b586-3d7bc797c705",
+      "fails": []
+    },
+    {
+      "tag": "r1-smith",
+      "id": "POST John Smith + ctx IBM/NY/US",
+      "result": "PASS",
+      "ui": "candidates",
+      "qid": null,
+      "faces_n": 0,
+      "Q1701775_seen": false,
+      "ms": 7683,
+      "requestId": "408eddc7-c7cb-4dc7-b642-f07ba81df2cb",
+      "fails": []
+    },
+    {
+      "tag": "r1-cohen",
+      "id": "bare כהן",
+      "result": "PASS",
+      "ui": "need_context",
+      "qid": null,
+      "faces_n": 0,
+      "Q1701775_seen": false,
+      "ms": 26757,
+      "requestId": "fad1b235-0f98-4c2d-8af8-f4e82009ab7d",
+      "fails": []
+    },
+    {
+      "tag": "r2-assaf",
+      "id": "Assaf Rappaport",
+      "result": "PASS",
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "faces_n": 0,
+      "Q1701775_seen": false,
+      "ms": 1644,
+      "requestId": "7dbbe2f2-ef29-407e-beb6-842308311da8",
+      "fails": []
+    },
+    {
+      "tag": "r2-smith",
+      "id": "POST John Smith + ctx IBM/NY/US",
+      "result": "FAIL",
+      "ui": "candidates",
+      "qid": null,
+      "faces_n": 0,
+      "Q1701775_seen": true,
+      "ms": 7461,
+      "requestId": "9c5aa59b-3ab0-4051-834d-ba1941f3ea73",
+      "fails": [
+        "Q1701775 present (3 hit(s)): $.sources[0].url=https://www.wikidata.org/wiki/Q1701775; $.candidates[0].id=wd-Q1701775; $.candidates[0].sourcesPreview[0].url=https://www.wikidata.org/wiki/Q1701775"
+      ]
+    },
+    {
+      "tag": "r2-cohen",
+      "id": "bare כהן",
+      "result": "PASS",
+      "ui": "need_context",
+      "qid": null,
+      "faces_n": 0,
+      "Q1701775_seen": false,
+      "ms": 1297,
+      "requestId": "91598847-e9db-4d91-ab27-9c8b54874440",
+      "fails": []
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "cases": [
+        {
+          "id": "Assaf Rappaport",
+          "tag": "r1-assaf",
+          "method": "GET",
+          "pass": true,
+          "prettyWrong": false,
+          "fails": [],
+          "error": null,
+          "actual": {
+            "ui": "dossier",
+            "qid": "Q47507930",
+            "faces": null,
+            "faces_n": 0,
+            "images": 2,
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg?utm_source=he.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+            "label": "אסף רפפורט",
+            "requestId": "c57bcb53-1f85-4764-b586-3d7bc797c705",
+            "phase": "orchestrator-v0-b",
+            "candidates_n": 0,
+            "wikiMeta": {
+              "wiki429": 0,
+              "wikiTimeout": 0,
+              "wikiRetries": 0
+            },
+            "mode": "wiki",
+            "thin": false,
+            "http": 200,
+            "ms": 721,
+            "has_Q1701775": false,
+            "q1701775_hits": []
+          }
+        },
+        {
+          "id": "POST John Smith + ctx IBM/NY/US",
+          "tag": "r1-smith",
+          "method": "POST",
+          "body": {
+            "q": "John Smith",
+            "ctx": {
+              "org": "IBM",
+              "city": "New York",
+              "country": "US"
+            },
+            "nocache": 1
+          },
+          "pass": true,
+          "prettyWrong": false,
+          "fails": [],
+          "error": null,
+          "actual": {
+            "ui": "candidates",
+            "qid": null,
+            "faces": false,
+            "faces_n": 0,
+            "images": 0,
+            "photo": null,
+            "label": "John Smith",
+            "requestId": "408eddc7-c7cb-4dc7-b642-f07ba81df2cb",
+            "phase": "orchestrator-v0-b",
+            "candidates_n": 6,
+            "wikiMeta": {
+              "wiki429": 4,
+              "wikiTimeout": 1,
+              "wikiRetries": 5
+            },
+            "mode": "candidates",
+            "thin": false,
+            "http": 200,
+            "ms": 7683,
+            "has_Q1701775": false,
+            "q1701775_hits": []
+          }
+        },
+        {
+          "id": "bare כהן",
+          "tag": "r1-cohen",
+          "method": "GET",
+          "pass": true,
+          "prettyWrong": false,
+          "fails": [],
+          "error": null,
+          "actual": {
+            "ui": "need_context",
+            "qid": null,
+            "faces": false,
+            "faces_n": 0,
+            "images": 0,
+            "photo": null,
+            "label": "כהן",
+            "requestId": "fad1b235-0f98-4c2d-8af8-f4e82009ab7d",
+            "phase": "orchestrator-v0-b",
+            "candidates_n": 0,
+            "wikiMeta": {
+              "wiki429": 17,
+              "wikiTimeout": 0,
+              "wikiRetries": 17
+            },
+            "mode": "google",
+            "thin": false,
+            "http": 200,
+            "ms": 26757,
+            "has_Q1701775": false,
+            "q1701775_hits": []
+          }
+        }
+      ],
+      "pass": true,
+      "pw": 0
+    },
+    {
+      "round": 2,
+      "cases": [
+        {
+          "id": "Assaf Rappaport",
+          "tag": "r2-assaf",
+          "method": "GET",
+          "pass": true,
+          "prettyWrong": false,
+          "fails": [],
+          "error": null,
+          "actual": {
+            "ui": "dossier",
+            "qid": "Q47507930",
+            "faces": null,
+            "faces_n": 0,
+            "images": 7,
+            "photo": "https://pic1.calcalist.co.il/picserver3/crop_images/2025/03/19/r1ePzp4dn1e/r1ePzp4dn1e_0_0_3000_2000_0_x-large.jpg",
+            "label": "Assaf Rappaport",
+            "requestId": "7dbbe2f2-ef29-407e-beb6-842308311da8",
+            "phase": "orchestrator-v0-b",
+            "candidates_n": 0,
+            "wikiMeta": {
+              "wiki429": 2,
+              "wikiTimeout": 0,
+              "wikiRetries": 2
+            },
+            "mode": "wiki+google",
+            "thin": false,
+            "http": 200,
+            "ms": 1644,
+            "has_Q1701775": false,
+            "q1701775_hits": []
+          }
+        },
+        {
+          "id": "POST John Smith + ctx IBM/NY/US",
+          "tag": "r2-smith",
+          "method": "POST",
+          "body": {
+            "q": "John Smith",
+            "ctx": {
+              "org": "IBM",
+              "city": "New York",
+              "country": "US"
+            },
+            "nocache": 1
+          },
+          "pass": false,
+          "prettyWrong": true,
+          "fails": [
+            "Q1701775 present (3 hit(s)): $.sources[0].url=https://www.wikidata.org/wiki/Q1701775; $.candidates[0].id=wd-Q1701775; $.candidates[0].sourcesPreview[0].url=https://www.wikidata.org/wiki/Q1701775"
+          ],
+          "error": null,
+          "actual": {
+            "ui": "candidates",
+            "qid": null,
+            "faces": false,
+            "faces_n": 0,
+            "images": 0,
+            "photo": null,
+            "label": "John Smith",
+            "requestId": "9c5aa59b-3ab0-4051-834d-ba1941f3ea73",
+            "phase": "orchestrator-v0-b",
+            "candidates_n": 7,
+            "wikiMeta": {
+              "wiki429": 6,
+              "wikiTimeout": 1,
+              "wikiRetries": 7
+            },
+            "mode": "candidates",
+            "thin": false,
+            "http": 200,
+            "ms": 7461,
+            "has_Q1701775": true,
+            "q1701775_hits": [
+              "$.sources[0].url=https://www.wikidata.org/wiki/Q1701775",
+              "$.candidates[0].id=wd-Q1701775",
+              "$.candidates[0].sourcesPreview[0].url=https://www.wikidata.org/wiki/Q1701775"
+            ]
+          }
+        },
+        {
+          "id": "bare כהן",
+          "tag": "r2-cohen",
+          "method": "GET",
+          "pass": true,
+          "prettyWrong": false,
+          "fails": [],
+          "error": null,
+          "actual": {
+            "ui": "need_context",
+            "qid": null,
+            "faces": false,
+            "faces_n": 0,
+            "images": 0,
+            "photo": null,
+            "label": "כהן",
+            "requestId": "91598847-e9db-4d91-ab27-9c8b54874440",
+            "phase": "orchestrator-v0-b",
+            "candidates_n": 0,
+            "wikiMeta": {
+              "wiki429": 0,
+              "wikiTimeout": 0,
+              "wikiRetries": 0
+            },
+            "mode": "candidates",
+            "thin": false,
+            "http": 200,
+            "ms": 1297,
+            "has_Q1701775": false,
+            "q1701775_hits": []
+          }
+        }
+      ],
+      "pass": false,
+      "pw": 1
+    }
+  ],
+  "paths": {
+    "md": "test-results/wp3/L2-ACC-X3-QUIET-דיוק-2026-09-19.md",
+    "json": "test-results/wp3/L2-ACC-X3-QUIET-דיוק-2026-09-19.json",
+    "raw": "test-results/wp3/l2-acc-x3-quiet-raw-2026-09-19"
+  }
+}

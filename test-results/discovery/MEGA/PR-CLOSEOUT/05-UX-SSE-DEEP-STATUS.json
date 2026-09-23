@@ -1,0 +1,120 @@
+{
+  "stamp": "2026-09-20T08:50:01+03:00",
+  "zone": "Asia/Jerusalem",
+  "role": "ממשק",
+  "track": "PR-CLOSEOUT-05-UX-SSE-DEEP",
+  "overall": "PARTIAL",
+  "promote": "HOLD",
+  "deploy": false,
+  "coreAliasTouched": false,
+  "canonical": {
+    "deploymentId": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+    "url": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app",
+    "storeBackend": "upstash",
+    "durable": true,
+    "sessionId": "kv1.5496b081a5875d1c0b20338d3d6689da"
+  },
+  "client": {
+    "path": "discovery-ui.js",
+    "bytes": 55458,
+    "localMatchesPreview": true,
+    "changedThisWave": false
+  },
+  "items": [
+    {
+      "id": "reconnect_cursor_last_event_id",
+      "status": "GREEN",
+      "evidence": [
+        "discovery-ui.js:runViaSse/buildUrl/noteSseCursor",
+        "raw/sse-deep-9PkJ-2026-09-20/08-events-cursor5.txt",
+        "raw/sse-deep-9PkJ-2026-09-20/09-events-cursor99.txt"
+      ]
+    },
+    {
+      "id": "abort_close_eventsource_cleanup",
+      "status": "GREEN",
+      "evidence": [
+        "discovery-ui.js:closeSse/clearDiscTimers/finish/onAbort/startDiscovery"
+      ]
+    },
+    {
+      "id": "duplicate_finding_merge_by_id",
+      "status": "GREEN",
+      "evidence": [
+        "discovery-ui.js:mergeById/mergeFindingChunk/metaMergeHint",
+        "raw/sse-deep-9PkJ-2026-09-20/06-events1.txt",
+        "raw/sse-deep-9PkJ-2026-09-20/07-events2.txt"
+      ]
+    },
+    {
+      "id": "event_order_terminal_no_thrash",
+      "status": "GREEN",
+      "evidence": [
+        "raw/sse-deep-9PkJ-2026-09-20/06-events1.txt",
+        "discovery-ui.js:reachedTerminal/settleTerminalStatus/scheduleReconnect"
+      ]
+    },
+    {
+      "id": "replay_from_complete",
+      "status": "GREEN",
+      "evidence": [
+        "discovery-ui.js:hydrateSession",
+        "raw/sse-deep-9PkJ-2026-09-20/07-events2.txt"
+      ]
+    },
+    {
+      "id": "narrow_then_hit_get_consistency",
+      "status": "YELLOW",
+      "evidence": [
+        "raw/sse-deep-9PkJ-2026-09-20/12-narrow-registry.txt",
+        "raw/sse-deep-9PkJ-2026-09-20/13-get3-after-registry-narrow.json",
+        "raw/sse-deep-9PkJ-2026-09-20/16-events-after-narrow.txt",
+        "api/lib/discovery/orchestrator.js:narrowDiscoverySession/getDiscoverySession"
+      ],
+      "note": "Narrow 200 1→0 OK; GET/SSE still full findings — lastNarrow not projected"
+    },
+    {
+      "id": "partial_to_final_ui_states",
+      "status": "GREEN",
+      "evidence": [
+        "discovery-ui.js:isTerminalStatus/preserveTerminal/STATUS_HE",
+        "raw/sse-deep-9PkJ-2026-09-20/04-post.txt"
+      ]
+    },
+    {
+      "id": "no_identity_chrome",
+      "status": "GREEN",
+      "evidence": [
+        "discovery-ui.js:stripIdentityChrome",
+        "raw/sse-deep-9PkJ-2026-09-20/14-root.html",
+        "raw/sse-deep-9PkJ-2026-09-20/05-get1.txt"
+      ]
+    }
+  ],
+  "liveSmoke": {
+    "postGetEvents2NarrowGet": "PARTIAL",
+    "storeBackend": "upstash",
+    "summary": "raw/sse-deep-9PkJ-2026-09-20/00-SMOKE-SUMMARY.json"
+  },
+  "openItems": [
+    {
+      "id": "O1",
+      "owner": "server",
+      "severity": "P1",
+      "summary": "Project lastNarrow on GET/HIT and SSE when narrowActive"
+    },
+    {
+      "id": "O2",
+      "owner": "client-spec",
+      "severity": "soft",
+      "summary": "EventSource cannot set Last-Event-ID header; query mitigation live-proven"
+    },
+    {
+      "id": "O3",
+      "owner": "ops",
+      "severity": "soft",
+      "summary": "This wave POST partial (wikidata error); richer 3→2 narrow not re-run"
+    }
+  ],
+  "report": "05-UX-SSE-DEEP-ממשק-2026-09-20.md"
+}

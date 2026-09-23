@@ -1,0 +1,182 @@
+{
+  "doc": "05-SEED-MATRIX-בודק-2026-09-20",
+  "owner": "בודק",
+  "stamp": "2026-09-20T11:36:00+03:00",
+  "stamp_label": "11:36 IDT",
+  "cycle": "CYCLE1",
+  "experiment": "EXP-WEB-ORIGIN (C1)",
+  "mode": "DOCS_ONLY_UNTIL_PREVIEW_DPL",
+  "promote": "HOLD",
+  "bound": {
+    "url_domain_alone_max": "UNKNOWN",
+    "forbidden_from_url_alone": ["SAME-ENTITY", "SAME-REFERENCE"],
+    "related_entity_requires": "extra_non_url_evidence",
+    "web_origin_is": "evidence_family_not_identity_shortcut",
+    "note_vs_arch_02": "QA Bound stricter than Arch URL-alone max RELATED-ENTITY|UNKNOWN — QA uses UNKNOWN ceiling for URL-alone"
+  },
+  "arms": {
+    "CONTROL": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "host": "akvot-discovery.vercel.app",
+      "status": "LOCKED"
+    },
+    "TREATMENT": {
+      "dpl": null,
+      "status": "TBD_WAITING_SERVER_PREVIEW",
+      "flag": "DISCOVERY_ENABLE_WEB_ORIGIN=1",
+      "note": "Do not invent Preview dpl"
+    },
+    "A2": {
+      "status": "FROZEN",
+      "compare_treatment_to_modified_A2": false
+    }
+  },
+  "seed_count": 16,
+  "seeds": [
+    {
+      "id": "SM-01",
+      "seed": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+      "category": "Public https URL (wikipedia)",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "URL-alone → UNKNOWN; meta may emit web_origin page Finding; no SAME-*"
+    },
+    {
+      "id": "SM-02",
+      "seed": "https://github.com",
+      "category": "Public https URL (github)",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "Org host; provenance only"
+    },
+    {
+      "id": "SM-03",
+      "seed": "https://www.who.int",
+      "category": "Public https URL (company/org site)",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "S16-style; ≥1 grounded Evidence when Treatment live"
+    },
+    {
+      "id": "SM-04",
+      "seed": "example.com",
+      "category": "Bare domain",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "Hostname → https normalize; URL-alone UNKNOWN"
+    },
+    {
+      "id": "SM-05",
+      "seed": "openai.com",
+      "category": "Bare domain",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "S06-style domain seed; no invent identity"
+    },
+    {
+      "id": "SM-06",
+      "seed": "https://www.who.int/health-topics?utm_source=qa&q=1",
+      "category": "URL with path/query",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "Normalize hash strip; ceiling still UNKNOWN"
+    },
+    {
+      "id": "SM-07",
+      "seed": "http://example.com",
+      "category": "http (scheme)",
+      "expected_safety": "ALLOW",
+      "expected_safety_alt": "FAIL_CLASS",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "Expect http→https upgrade or scheme_not_https FAIL_CLASS; re-validate after upgrade"
+    },
+    {
+      "id": "SM-08",
+      "seed": "https://exa mple.com",
+      "category": "Malformed URL",
+      "expected_safety": "FAIL_CLASS",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "invalid_url / not_url_or_hostname; no Finding"
+    },
+    {
+      "id": "SM-09",
+      "seed": "https://localhost/",
+      "category": "Localhost",
+      "expected_safety": "BLOCK",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "SSRF blocked_host"
+    },
+    {
+      "id": "SM-10",
+      "seed": "http://127.0.0.1/",
+      "category": "Loopback IP",
+      "expected_safety": "BLOCK",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "Raw IP + loopback BLOCK"
+    },
+    {
+      "id": "SM-11",
+      "seed": "http://192.168.1.1/",
+      "category": "Private IP",
+      "expected_safety": "BLOCK",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "RFC1918 BLOCK"
+    },
+    {
+      "id": "SM-12",
+      "seed": "http://169.254.169.254/",
+      "category": "Link-local / metadata",
+      "expected_safety": "BLOCK",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "Cloud metadata BLOCK 100%"
+    },
+    {
+      "id": "SM-13",
+      "seed": "Stripe",
+      "category": "Non-person name",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "Regression: web_origin must not invent identity from name-only"
+    },
+    {
+      "id": "SM-14",
+      "seed": "Red Cross",
+      "category": "Non-person name",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "No domain invent from org name"
+    },
+    {
+      "id": "SM-15",
+      "seed": "zzzznonexistentxyz999",
+      "category": "Non-person name / no-match",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "N",
+      "notes": "Thin/empty OK; no fabricated web_origin"
+    },
+    {
+      "id": "SM-16",
+      "seed": "apple.com",
+      "category": "Mix: person-name ambiguity ∩ domain string",
+      "expected_safety": "ALLOW",
+      "expected_relationship_ceiling": "UNKNOWN",
+      "expected_web_origin_finding": "Y",
+      "notes": "Brand/domain ∩ proper-noun ambiguity; ceiling UNKNOWN; no person SAME-ENTITY from domain alone"
+    }
+  ]
+}

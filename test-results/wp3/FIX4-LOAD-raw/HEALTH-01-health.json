@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "level": "HEALTH",
+    "request": 1,
+    "case": "health",
+    "variant": null,
+    "method": "GET",
+    "path": "/api/health",
+    "ms": 2736,
+    "status": 200,
+    "ok": true,
+    "failure": null,
+    "err": null,
+    "timedOut": false,
+    "forbiddenLeak": false,
+    "leak_hits": 0,
+    "leak_detail": [],
+    "candLeak": false,
+    "dossierLeak": false,
+    "sourcesLeak": false,
+    "ui": null,
+    "qid": null,
+    "faces": false,
+    "facesCount": null,
+    "top": [],
+    "stripped": null,
+    "ver": null,
+    "rid": null,
+    "label": null,
+    "rawFile": "HEALTH-01-health.json"
+  },
+  "response": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+    "baselineHint": "dpl_DNfPZ9"
+  }
+}

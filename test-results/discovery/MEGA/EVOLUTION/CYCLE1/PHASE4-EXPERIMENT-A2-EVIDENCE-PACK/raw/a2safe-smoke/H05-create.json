@@ -1,0 +1,1723 @@
+{
+  "ms": 4061,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.22cfc8b3e8c698a534548e4ac9117e95",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9iaxy3-a59bc0",
+    "snapshot": {
+      "sessionId": "kv1.22cfc8b3e8c698a534548e4ac9117e95",
+      "seed": "Cohen",
+      "q": "Cohen",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q76709",
+          "kind": "registry",
+          "title": "Hermann Cohen",
+          "summary": "German philosopher (1842–1918)",
+          "evidenceIds": [
+            "ev-2cda39dcec9fdb763e752838",
+            "ev-63257c0562ee022c75b2d278"
+          ],
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q76709",
+            "wd-Q76709",
+            "viaf:12326139"
+          ],
+          "scoreFinding": 0.8316666666666667,
+          "ranking": {
+            "discoveryScore": 0.8316666666666667,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.667,
+              "directness": 0.8,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 2,
+              "evidenceCount": 2,
+              "domains": [
+                "www.wikidata.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-12326139",
+          "kind": "registry",
+          "title": "Cohén, Hermann 1842-1918",
+          "summary": "type:personal · lc:n79066434 · dnb:118521411",
+          "evidenceIds": [
+            "ev-2cda39dcec9fdb763e752838",
+            "ev-63257c0562ee022c75b2d278"
+          ],
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q76709",
+            "wd-Q76709",
+            "viaf:12326139"
+          ],
+          "scoreFinding": 0.8216666666666667,
+          "ranking": {
+            "discoveryScore": 0.8316666666666667,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.667,
+              "directness": 0.8,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 2,
+              "evidenceCount": 2,
+              "domains": [
+                "www.wikidata.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q1158586",
+          "kind": "registry",
+          "title": "Cohen",
+          "summary": "family name",
+          "evidenceIds": [
+            "ev-7a9f435fd069074d5c4a5252"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q1158586",
+            "wd-Q1158586"
+          ],
+          "scoreFinding": 0.6983333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q61749720",
+          "kind": "registry",
+          "title": "Cohen",
+          "summary": "male given name",
+          "evidenceIds": [
+            "ev-02b1a8b58ea68fd047acc1fe"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q61749720",
+            "wd-Q61749720"
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q110476307",
+          "kind": "registry",
+          "title": "Cohen",
+          "summary": "Dutch carpet weaver",
+          "evidenceIds": [
+            "ev-a402cbf718df73b17138c83d"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q110476307",
+            "wd-Q110476307"
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q728973",
+          "kind": "registry",
+          "title": "kohen",
+          "summary": "hereditary priest in Judaism, descendant of Aaron",
+          "evidenceIds": [
+            "ev-1b478b17f0d77a32cba4e63f"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q728973",
+            "wd-Q728973"
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q232299",
+          "kind": "registry",
+          "title": "Stanley Cohen",
+          "summary": "American biochemist",
+          "evidenceIds": [
+            "ev-9e52d06a9879ba61c3894e3b"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q232299",
+            "wd-Q232299",
+            "viaf:63975585"
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q66723764",
+          "kind": "registry",
+          "title": "Cohen",
+          "summary": "family name (כהן)",
+          "evidenceIds": [
+            "ev-5452be7fe192d1329360aa42"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q66723764",
+            "wd-Q66723764"
+          ],
+          "scoreFinding": 0.6483333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q670357",
+          "kind": "registry",
+          "title": "Cohennoz",
+          "summary": "commune in Savoie, France",
+          "evidenceIds": [
+            "ev-7d0b176dc6cd0e22cb068320"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q670357",
+            "wd-Q670357"
+          ],
+          "scoreFinding": 0.6383333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-56703476",
+          "kind": "registry",
+          "title": "Cohen, Leonard, 1934-2016",
+          "summary": "type:personal · lc:n79033018 · dnb:11867658x",
+          "evidenceIds": [
+            "ev-9cecc55817fa59dda323919c"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:56703476"
+          ],
+          "scoreFinding": 0.6108333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-293149106170968491338",
+          "kind": "registry",
+          "title": "Cohen, Albert, 1895-1981",
+          "summary": "type:personal · lc:n80131676 · dnb:118676571",
+          "evidenceIds": [
+            "ev-e580c42caf20cc1b72cb623a"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:293149106170968491338"
+          ],
+          "scoreFinding": 0.6008333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-76149066350065600500",
+          "kind": "registry",
+          "title": "Cohen de Herrera, Abraham",
+          "summary": "type:personal · dnb:120449935",
+          "evidenceIds": [
+            "ev-a0cf8185a7a1e7eecacddbe9"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:76149066350065600500"
+          ],
+          "scoreFinding": 0.5908333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-209945",
+          "kind": "registry",
+          "title": "Cohen, Samuel",
+          "summary": "type:personal · lc:n82096094 · dnb:124800823",
+          "evidenceIds": [
+            "ev-0ba07517896d21c851334583"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:209945"
+          ],
+          "scoreFinding": 0.5808333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-47000586",
+          "kind": "registry",
+          "title": "Cohen, Sacha Baron 1971-",
+          "summary": "type:personal · lc:no2003004445 · dnb:132467402",
+          "evidenceIds": [
+            "ev-0d619b68aebad870705c1dc2"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:47000586"
+          ],
+          "scoreFinding": 0.5708333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-100921459",
+          "kind": "registry",
+          "title": "Cohen, Israel Meir, of Radun, 1838-1933",
+          "summary": "type:personal · lc:n50043806 · dnb:119150530",
+          "evidenceIds": [
+            "ev-1d826fc45ad9779a6df72e2c"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:100921459"
+          ],
+          "scoreFinding": 0.5608333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-24721612",
+          "kind": "registry",
+          "title": "Cohen-Solal, Annie, 1948-",
+          "summary": "type:personal · lc:n81064657 · dnb:1037094522",
+          "evidenceIds": [
+            "ev-6ca05b4cdce6a91741a4b82d"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:24721612"
+          ],
+          "scoreFinding": 0.5508333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL2657689A",
+          "kind": "registry",
+          "title": "Albert Cohen",
+          "summary": "Top work: Belle du Seigneur",
+          "evidenceIds": [
+            "ev-de2384dd1f9f8caad7f53c75"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL2657689A",
+            "ol-OL2657689A",
+            "viaf:2468375",
+            "qid:Q123553",
+            "wd-Q123553"
+          ],
+          "scoreFinding": 0.5058333333333332,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL710960A",
+          "kind": "registry",
+          "title": "Morris Raphael Cohen",
+          "summary": "Top work: A preface to logic",
+          "evidenceIds": [
+            "ev-645a7bc5a7b940f93c76f0bd"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL710960A",
+            "ol-OL710960A",
+            "viaf:29600629",
+            "qid:Q3863186",
+            "wd-Q3863186"
+          ],
+          "scoreFinding": 0.49583333333333324,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL237711A",
+          "kind": "registry",
+          "title": "I. Bernard Cohen",
+          "summary": "Top work: The works of Charles Babbage",
+          "evidenceIds": [
+            "ev-053c7a29dd2ea796f7e5c2f3"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL237711A",
+            "ol-OL237711A",
+            "viaf:109027684",
+            "qid:Q1347036",
+            "wd-Q1347036"
+          ],
+          "scoreFinding": 0.4858333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL338659A",
+          "kind": "registry",
+          "title": "J. M. (John Michael) Cohen",
+          "summary": "Top work: The Penguin book of Spanish verse",
+          "evidenceIds": [
+            "ev-f0f29237deb0527cf1e9aa80"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL338659A",
+            "ol-OL338659A"
+          ],
+          "scoreFinding": 0.4758333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL26082A",
+          "kind": "registry",
+          "title": "Naomi Wiener Cohen",
+          "summary": "Top work: Essential Papers on Jewish-Christian Relations in the United States",
+          "evidenceIds": [
+            "ev-224181c1963e80ea8c8bf209"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL26082A",
+            "ol-OL26082A",
+            "viaf:97741194",
+            "qid:Q108883819",
+            "wd-Q108883819"
+          ],
+          "scoreFinding": 0.46583333333333327,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL1208037A",
+          "kind": "registry",
+          "title": "Octavus Roy Cohen",
+          "summary": "Top work: Midnight",
+          "evidenceIds": [
+            "ev-124784be09bfff15c2a220c2"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL1208037A",
+            "ol-OL1208037A",
+            "viaf:72921721",
+            "qid:Q1699493",
+            "wd-Q1699493"
+          ],
+          "scoreFinding": 0.4558333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL587119A",
+          "kind": "registry",
+          "title": "Simon Baron-Cohen",
+          "summary": "Top work: Teaching Children with Autism to Mind-Read",
+          "evidenceIds": [
+            "ev-3749572230e534aaecefb56d"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL587119A",
+            "ol-OL587119A"
+          ],
+          "scoreFinding": 0.4458333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL393855A",
+          "kind": "registry",
+          "title": "Cohen, David",
+          "summary": "Top work: College algebra",
+          "evidenceIds": [
+            "ev-e905204fc4629d870fcf8be3"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL393855A",
+            "ol-OL393855A"
+          ],
+          "scoreFinding": 0.4358333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Cohen",
+          "kind": "page",
+          "title": "Cohen",
+          "evidenceIds": [
+            "ev-e9225e284d7d1b265599cdae"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Cohen"
+          ],
+          "scoreFinding": 0.4083333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Leonard_Cohen",
+          "kind": "page",
+          "title": "Leonard Cohen",
+          "evidenceIds": [
+            "ev-8b0ec438f2bbad79271e6607"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Leonard Cohen"
+          ],
+          "scoreFinding": 0.3983333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Sasha_Cohen",
+          "kind": "page",
+          "title": "Sasha Cohen",
+          "evidenceIds": [
+            "ev-d6db26bf0fbf826fb068f8f1"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Sasha Cohen"
+          ],
+          "scoreFinding": 0.3883333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Steve_Cohen_businessman_",
+          "kind": "page",
+          "title": "Steve Cohen (businessman)",
+          "evidenceIds": [
+            "ev-e8152d201f2554c37a927349"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Steve Cohen (businessman)"
+          ],
+          "scoreFinding": 0.3783333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Steve_Cohen_politician_",
+          "kind": "page",
+          "title": "Steve Cohen (politician)",
+          "evidenceIds": [
+            "ev-b58e2ec8dc186fd1a77ed4db"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Steve Cohen (politician)"
+          ],
+          "scoreFinding": 0.3683333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Mickey_Cohen",
+          "kind": "page",
+          "title": "Mickey Cohen",
+          "evidenceIds": [
+            "ev-eb6d825560f572fa6d1f74ea"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Mickey Cohen"
+          ],
+          "scoreFinding": 0.35833333333333334,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-7a9f435fd069074d5c4a5252",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q1158586",
+          "url": "https://www.wikidata.org/wiki/Q1158586",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "family name",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-02b1a8b58ea68fd047acc1fe",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q61749720",
+          "url": "https://www.wikidata.org/wiki/Q61749720",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "male given name",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a402cbf718df73b17138c83d",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q110476307",
+          "url": "https://www.wikidata.org/wiki/Q110476307",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "Dutch carpet weaver",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-1b478b17f0d77a32cba4e63f",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q728973",
+          "url": "https://www.wikidata.org/wiki/Q728973",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "hereditary priest in Judaism, descendant of Aaron",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-9e52d06a9879ba61c3894e3b",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q232299",
+          "url": "https://www.wikidata.org/wiki/Q232299",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "American biochemist",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2cda39dcec9fdb763e752838",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q76709",
+          "url": "https://www.wikidata.org/wiki/Q76709",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "German philosopher (1842–1918)",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-5452be7fe192d1329360aa42",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q66723764",
+          "url": "https://www.wikidata.org/wiki/Q66723764",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "family name (כהן)",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7d0b176dc6cd0e22cb068320",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q670357",
+          "url": "https://www.wikidata.org/wiki/Q670357",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:19.651Z",
+          "evidenceType": "registry",
+          "quote": "commune in Savoie, France",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-de2384dd1f9f8caad7f53c75",
+          "provenanceUrl": "https://openlibrary.org/authors/OL2657689A",
+          "url": "https://openlibrary.org/authors/OL2657689A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "Belle du Seigneur",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-645a7bc5a7b940f93c76f0bd",
+          "provenanceUrl": "https://openlibrary.org/authors/OL710960A",
+          "url": "https://openlibrary.org/authors/OL710960A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "A preface to logic",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-053c7a29dd2ea796f7e5c2f3",
+          "provenanceUrl": "https://openlibrary.org/authors/OL237711A",
+          "url": "https://openlibrary.org/authors/OL237711A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "The works of Charles Babbage",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f0f29237deb0527cf1e9aa80",
+          "provenanceUrl": "https://openlibrary.org/authors/OL338659A",
+          "url": "https://openlibrary.org/authors/OL338659A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "The Penguin book of Spanish verse",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-224181c1963e80ea8c8bf209",
+          "provenanceUrl": "https://openlibrary.org/authors/OL26082A",
+          "url": "https://openlibrary.org/authors/OL26082A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "Essential Papers on Jewish-Christian Relations in the United States",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-124784be09bfff15c2a220c2",
+          "provenanceUrl": "https://openlibrary.org/authors/OL1208037A",
+          "url": "https://openlibrary.org/authors/OL1208037A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "Midnight",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-3749572230e534aaecefb56d",
+          "provenanceUrl": "https://openlibrary.org/authors/OL587119A",
+          "url": "https://openlibrary.org/authors/OL587119A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "Teaching Children with Autism to Mind-Read",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e905204fc4629d870fcf8be3",
+          "provenanceUrl": "https://openlibrary.org/authors/OL393855A",
+          "url": "https://openlibrary.org/authors/OL393855A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:20.369Z",
+          "evidenceType": "registry",
+          "quote": "College algebra",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e9225e284d7d1b265599cdae",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Cohen",
+          "url": "https://en.wikipedia.org/wiki/Cohen",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:19.706Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-8b0ec438f2bbad79271e6607",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Leonard_Cohen",
+          "url": "https://en.wikipedia.org/wiki/Leonard_Cohen",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:19.706Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d6db26bf0fbf826fb068f8f1",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Sasha_Cohen",
+          "url": "https://en.wikipedia.org/wiki/Sasha_Cohen",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:19.706Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e8152d201f2554c37a927349",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Steve_Cohen_(businessman)",
+          "url": "https://en.wikipedia.org/wiki/Steve_Cohen_(businessman)",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:19.706Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b58e2ec8dc186fd1a77ed4db",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Steve_Cohen_(politician)",
+          "url": "https://en.wikipedia.org/wiki/Steve_Cohen_(politician)",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:19.706Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-eb6d825560f572fa6d1f74ea",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Mickey_Cohen",
+          "url": "https://en.wikipedia.org/wiki/Mickey_Cohen",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:19.706Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-9cecc55817fa59dda323919c",
+          "provenanceUrl": "https://viaf.org/viaf/56703476",
+          "url": "https://viaf.org/viaf/56703476",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen, Leonard, 1934-2016",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e580c42caf20cc1b72cb623a",
+          "provenanceUrl": "https://viaf.org/viaf/293149106170968491338",
+          "url": "https://viaf.org/viaf/293149106170968491338",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen, Albert, 1895-1981",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-63257c0562ee022c75b2d278",
+          "provenanceUrl": "https://viaf.org/viaf/12326139",
+          "url": "https://viaf.org/viaf/12326139",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohén, Hermann 1842-1918",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a0cf8185a7a1e7eecacddbe9",
+          "provenanceUrl": "https://viaf.org/viaf/76149066350065600500",
+          "url": "https://viaf.org/viaf/76149066350065600500",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen de Herrera, Abraham",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-0ba07517896d21c851334583",
+          "provenanceUrl": "https://viaf.org/viaf/209945",
+          "url": "https://viaf.org/viaf/209945",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen, Samuel",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-0d619b68aebad870705c1dc2",
+          "provenanceUrl": "https://viaf.org/viaf/47000586",
+          "url": "https://viaf.org/viaf/47000586",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen, Sacha Baron 1971-",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-1d826fc45ad9779a6df72e2c",
+          "provenanceUrl": "https://viaf.org/viaf/100921459",
+          "url": "https://viaf.org/viaf/100921459",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen, Israel Meir, of Radun, 1838-1933",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6ca05b4cdce6a91741a4b82d",
+          "provenanceUrl": "https://viaf.org/viaf/24721612",
+          "url": "https://viaf.org/viaf/24721612",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:19.608Z",
+          "evidenceType": "registry",
+          "quote": "Cohen-Solal, Annie, 1948-",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "viaf",
+              "count": 9
+            },
+            {
+              "value": "wikidata",
+              "count": 9
+            },
+            {
+              "value": "openlibrary",
+              "count": 8
+            },
+            {
+              "value": "wikipedia",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 24
+            },
+            {
+              "value": "page",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [
+            {
+              "value": "corroboration:multi_family",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "progress": {
+        "done": 7,
+        "totalHint": 7
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:ce4e149f7e78"
+        ],
+        "status": "candidate",
+        "displayHint": "Cohen",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T07:40:19.419Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:ce4e149f7e78",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q1158586",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q61749720",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q110476307",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q728973",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q232299",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q76709",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-12326139",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q66723764",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q670357",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL2657689A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL710960A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL237711A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL338659A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL26082A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL1208037A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL587119A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL393855A",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Cohen",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Leonard_Cohen",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Sasha_Cohen",
+            "kind": "finding"
+          }
+        ],
+        "edges": [
+          {
+            "id": "corr-0-0-1",
+            "kind": "corroboration",
+            "from": "wd-Q76709",
+            "to": "viaf-12326139",
+            "source": "wd-Q76709",
+            "target": "viaf-12326139",
+            "findingIds": [
+              "wd-Q76709",
+              "viaf-12326139"
+            ],
+            "families": [
+              "wikimedia",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q76709",
+              "viaf:12326139"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          }
+        ]
+      },
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "cohen",
+          "findingIds": [
+            "wd-Q1158586",
+            "wd-Q61749720",
+            "wd-Q110476307",
+            "wd-Q66723764",
+            "wp-en-Cohen"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  }
+}

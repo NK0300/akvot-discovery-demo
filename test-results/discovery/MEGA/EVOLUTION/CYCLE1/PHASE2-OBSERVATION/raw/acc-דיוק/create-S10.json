@@ -1,0 +1,1264 @@
+{
+  "ok": true,
+  "sessionId": "kv1.7826738614688a7ef259fe2b68a262b1",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9gl2qa-f5167c",
+  "snapshot": {
+    "sessionId": "kv1.7826738614688a7ef259fe2b68a262b1",
+    "seed": "Francis Bacon",
+    "q": "Francis Bacon",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q154340",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "Irish-born British figurative painter (1909–1992)",
+        "evidenceIds": [
+          "ev-dc86df99fff0c8f7ff8c25f6"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q154340"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q37388",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "English philosopher and statesman (1561–1626)",
+        "evidenceIds": [
+          "ev-84457eea864b634ae7eb5d38"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q37388"
+        ],
+        "scoreFinding": 0.7083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q5480102",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "English cricketer (1869-1915)",
+        "evidenceIds": [
+          "ev-0d9b505884c92f4855948a3c"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q5480102"
+        ],
+        "scoreFinding": 0.6983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q136428482",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "evidenceIds": [
+          "ev-3a48cbe60f1d202151a55ce0"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q136428482"
+        ],
+        "scoreFinding": 0.6883333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q29583002",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "American surgeon (1831–1912)",
+        "evidenceIds": [
+          "ev-2a02afecf919abf1c1a2724a"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q29583002"
+        ],
+        "scoreFinding": 0.6783333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q24952667",
+        "kind": "registry",
+        "title": "Portrait of Francis Bacon",
+        "summary": "painting by Lucian Freud",
+        "evidenceIds": [
+          "ev-00f68be18fa05cd516845259"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q24952667"
+        ],
+        "scoreFinding": 0.6683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q341032",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "Wikimedia disambiguation page",
+        "evidenceIds": [
+          "ev-8af08df7e484e8f6b7326e7a"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q341032"
+        ],
+        "scoreFinding": 0.6583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q28052097",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "1984 painting by Ruskin Spear",
+        "evidenceIds": [
+          "ev-47f7b55b3d56f76bd42a3ae7"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q28052097"
+        ],
+        "scoreFinding": 0.6483333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL23720A",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "Top work: Essays",
+        "evidenceIds": [
+          "ev-3fac2a36448d1070abd6abf1"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL23720A"
+        ],
+        "scoreFinding": 0.5858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL82840A",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "Top work: Francis Bacon",
+        "evidenceIds": [
+          "ev-462a84e080e2fc25dcabdbfa"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL82840A"
+        ],
+        "scoreFinding": 0.5758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2029650A",
+        "kind": "registry",
+        "title": "Francis Bacon Library",
+        "summary": "Top work: Short title catalogue numbers in the library of the Francis Bacon Foundation, Inc",
+        "evidenceIds": [
+          "ev-ba3527571419ede6d14dd2b6"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL2029650A"
+        ],
+        "scoreFinding": 0.5658333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2335032A",
+        "kind": "registry",
+        "title": "David Francis Bacon",
+        "summary": "Top work: Lives of the Apostles of Jesus Christ",
+        "evidenceIds": [
+          "ev-d2883bcc347c89dbf9440843"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL2335032A"
+        ],
+        "scoreFinding": 0.5558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15242943A",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "Top work: 12 Prose Writers",
+        "evidenceIds": [
+          "ev-0df790ddbc4891327c9dc38b"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15242943A"
+        ],
+        "scoreFinding": 0.5458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2432505A",
+        "kind": "registry",
+        "title": "Francis Bacon Crocker",
+        "summary": "Top work: Electric lighting: a practical exposition of the art, for the use of engineers, students, and others interested in the installation or operation of electrical plants ...",
+        "evidenceIds": [
+          "ev-cd3eb486953f6a7194ea1c65"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL2432505A"
+        ],
+        "scoreFinding": 0.5358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15865902A",
+        "kind": "registry",
+        "title": "Francis Bacon",
+        "summary": "Top work: Advancement of Learning and Novum Organum",
+        "evidenceIds": [
+          "ev-d6c8f90a579dc65d5ebb5148"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15865902A"
+        ],
+        "scoreFinding": 0.5258333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL156101A",
+        "kind": "registry",
+        "title": "Francis Bacon James",
+        "summary": "Top work: Legal and commercial aspect of bills of lading",
+        "evidenceIds": [
+          "ev-6cca883be4c0ee78f285cb50"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL156101A"
+        ],
+        "scoreFinding": 0.5158333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Francis_Bacon",
+        "kind": "page",
+        "title": "Francis Bacon",
+        "evidenceIds": [
+          "ev-3449b9ce7a585a7817a85fc4"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Francis Bacon"
+        ],
+        "scoreFinding": 0.4883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Francis_Bacon_artist_",
+        "kind": "page",
+        "title": "Francis Bacon (artist)",
+        "evidenceIds": [
+          "ev-fe2a23cac23581cc215a29bc"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Francis Bacon (artist)"
+        ],
+        "scoreFinding": 0.4783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Francis_Bacon_American_football_",
+        "kind": "page",
+        "title": "Francis Bacon (American football)",
+        "evidenceIds": [
+          "ev-7818c921ae1e0a264a38ce91"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Francis Bacon (American football)"
+        ],
+        "scoreFinding": 0.4683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Francis_Bacon_The_Logic_of_Sensation",
+        "kind": "page",
+        "title": "Francis Bacon: The Logic of Sensation",
+        "evidenceIds": [
+          "ev-26117cdc84ed794756bd411b"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Francis Bacon: The Logic of Sensation"
+        ],
+        "scoreFinding": 0.4583333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Francis_Bacon_cricketer_",
+        "kind": "page",
+        "title": "Francis Bacon (cricketer)",
+        "evidenceIds": [
+          "ev-cb7df962b5c0814fe6e007a9"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Francis Bacon (cricketer)"
+        ],
+        "scoreFinding": 0.4483333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-The_Francis_Bacon_Opera",
+        "kind": "page",
+        "title": "The Francis Bacon Opera",
+        "evidenceIds": [
+          "ev-0a7aaa5b78735ab8c3791443"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:The Francis Bacon Opera"
+        ],
+        "scoreFinding": 0.43833333333333335,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-dc86df99fff0c8f7ff8c25f6",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q154340",
+        "url": "https://www.wikidata.org/wiki/Q154340",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "Irish-born British figurative painter (1909–1992)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-84457eea864b634ae7eb5d38",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q37388",
+        "url": "https://www.wikidata.org/wiki/Q37388",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "English philosopher and statesman (1561–1626)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0d9b505884c92f4855948a3c",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q5480102",
+        "url": "https://www.wikidata.org/wiki/Q5480102",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "English cricketer (1869-1915)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3a48cbe60f1d202151a55ce0",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q136428482",
+        "url": "https://www.wikidata.org/wiki/Q136428482",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2a02afecf919abf1c1a2724a",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q29583002",
+        "url": "https://www.wikidata.org/wiki/Q29583002",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "American surgeon (1831–1912)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-00f68be18fa05cd516845259",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q24952667",
+        "url": "https://www.wikidata.org/wiki/Q24952667",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "painting by Lucian Freud",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8af08df7e484e8f6b7326e7a",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q341032",
+        "url": "https://www.wikidata.org/wiki/Q341032",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "Wikimedia disambiguation page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-47f7b55b3d56f76bd42a3ae7",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q28052097",
+        "url": "https://www.wikidata.org/wiki/Q28052097",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:52:13.221Z",
+        "evidenceType": "registry",
+        "quote": "1984 painting by Ruskin Spear",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3fac2a36448d1070abd6abf1",
+        "provenanceUrl": "https://openlibrary.org/authors/OL23720A",
+        "url": "https://openlibrary.org/authors/OL23720A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Essays",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-462a84e080e2fc25dcabdbfa",
+        "provenanceUrl": "https://openlibrary.org/authors/OL82840A",
+        "url": "https://openlibrary.org/authors/OL82840A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Francis Bacon",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba3527571419ede6d14dd2b6",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2029650A",
+        "url": "https://openlibrary.org/authors/OL2029650A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Short title catalogue numbers in the library of the Francis Bacon Foundation, Inc",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d2883bcc347c89dbf9440843",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2335032A",
+        "url": "https://openlibrary.org/authors/OL2335032A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Lives of the Apostles of Jesus Christ",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0df790ddbc4891327c9dc38b",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15242943A",
+        "url": "https://openlibrary.org/authors/OL15242943A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "12 Prose Writers",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-cd3eb486953f6a7194ea1c65",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2432505A",
+        "url": "https://openlibrary.org/authors/OL2432505A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Electric lighting: a practical exposition of the art, for the use of engineers, students, and others interested in the installation or operation of electrical plants ...",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d6c8f90a579dc65d5ebb5148",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15865902A",
+        "url": "https://openlibrary.org/authors/OL15865902A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Advancement of Learning and Novum Organum",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6cca883be4c0ee78f285cb50",
+        "provenanceUrl": "https://openlibrary.org/authors/OL156101A",
+        "url": "https://openlibrary.org/authors/OL156101A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:52:14.525Z",
+        "evidenceType": "registry",
+        "quote": "Legal and commercial aspect of bills of lading",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3449b9ce7a585a7817a85fc4",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Francis_Bacon",
+        "url": "https://en.wikipedia.org/wiki/Francis_Bacon",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:52:13.237Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-fe2a23cac23581cc215a29bc",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Francis_Bacon_(artist)",
+        "url": "https://en.wikipedia.org/wiki/Francis_Bacon_(artist)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:52:13.237Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-7818c921ae1e0a264a38ce91",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Francis_Bacon_(American_football)",
+        "url": "https://en.wikipedia.org/wiki/Francis_Bacon_(American_football)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:52:13.237Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-26117cdc84ed794756bd411b",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Francis_Bacon:_The_Logic_of_Sensation",
+        "url": "https://en.wikipedia.org/wiki/Francis_Bacon:_The_Logic_of_Sensation",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:52:13.237Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-cb7df962b5c0814fe6e007a9",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Francis_Bacon_(cricketer)",
+        "url": "https://en.wikipedia.org/wiki/Francis_Bacon_(cricketer)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:52:13.237Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0a7aaa5b78735ab8c3791443",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/The_Francis_Bacon_Opera",
+        "url": "https://en.wikipedia.org/wiki/The_Francis_Bacon_Opera",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:52:13.237Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "wikidata",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 16
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:5260f175051a"
+      ],
+      "status": "candidate",
+      "displayHint": "Francis Bacon",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T06:52:12.946Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:5260f175051a",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q154340",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q37388",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q5480102",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q136428482",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q29583002",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q24952667",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q341032",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q28052097",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL23720A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL82840A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2029650A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2335032A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15242943A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2432505A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15865902A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL156101A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Francis_Bacon",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Francis_Bacon_artist_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Francis_Bacon_American_football_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Francis_Bacon_The_Logic_of_Sensation",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "francis bacon",
+        "findingIds": [
+          "wd-Q154340",
+          "wd-Q37388",
+          "wd-Q5480102",
+          "wd-Q136428482",
+          "wd-Q29583002",
+          "wd-Q341032",
+          "wd-Q28052097",
+          "ol-OL23720A",
+          "ol-OL82840A",
+          "ol-OL15242943A",
+          "ol-OL15865902A",
+          "wp-en-Francis_Bacon"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "openlibrary.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

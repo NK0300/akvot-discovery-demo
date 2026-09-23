@@ -1,0 +1,46 @@
+[mega-qr] start 2026-09-20T07:23:09+03:00
+[mega-qr] HOLD promote · Core dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · Preview dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB
+
+=== CORE alias smoke ===
+[CORE] health=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 assaf=dossier/Q47507930 cohen=need_context smith=candidates faces=0 pw=0 leak=0 PASS=true
+
+=== HARDEN Preview recheck ===
+[health] ok=true build=dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB status=200
+
+=== S1 seed=דוד כהן ===
+[POST] status=201 sid=ds1.eyJ2IjoxLCJzIjoi15PX findings=13 store=fs-regen ms=2968
+[GET] status=200 regenerated=true ms=2807
+[SSE] ct=text/event-stream; charset=utf-8 events=20 types=meta,progress,provider,finding,facets,status,done ms=3276
+[NARROW] status=200 before=13 after=13 ms=3046
+[S1] PASS fails=none
+
+=== S2 seed=Alex Morgan ===
+[POST] status=201 sid=ds1.eyJ2IjoxLCJzIjoiQWxl findings=15 store=fs-regen ms=3032
+[GET] status=200 regenerated=true ms=2834
+[SSE] ct=text/event-stream; charset=utf-8 events=22 types=meta,progress,provider,finding,facets,status,done ms=3188
+[NARROW] status=200 before=15 after=15 ms=2855
+[S2] PASS fails=none
+
+=== S3 seed=example.org ===
+[POST] status=201 sid=ds1.eyJ2IjoxLCJzIjoiZXhh findings=2 store=fs-regen ms=2867
+[GET] status=200 regenerated=true ms=2802
+[SSE] ct=text/event-stream; charset=utf-8 events=9 types=meta,progress,provider,finding,facets,status,done ms=3103
+[NARROW] status=200 before=2 after=2 ms=2945
+[S3] PASS fails=none
+
+[HARDEN] seedsPass=3/3 entityAgnostic=true store=fs-regen leak=0 PASS=true
+[STORE] backend=fs-regen fs-regen≠promoteSoT promoteBlocked=true
+
+=== Local unit / adversarial ===
+[unit] forbidden=PASS adv=PASS session=PASS orch=PASS
+
+=== Live adversarial RUNNOW (Preview) ===
+[ADV-L1] PASS http=201 findings=13 leak=0 bans=none
+[ADV-L2] PASS http=201 findings=15 leak=0
+[ADV-L3] PASS http=201 findings=2 leak=0
+[ADV-L4] PASS http=201 entityLeak=0 rawTokens=3 bans=none
+
+========== MEGA QR DONE ==========
+PASS=88 FAIL=0 DEFERRED=1 BLOCKED_KV=11
+Core=PASS Harden=PASS store=fs-regen
+HOLD promote.

@@ -1,0 +1,68 @@
+[בודק] QA-FINAL CANONICAL Preview start 2026-09-20T10:09:36+03:00
+[בודק] Preview https://akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app → dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE (H9o45 SUPERSEDED)
+[בודק] B0 https://akvot-discovery.vercel.app → dpl_AvyhrW24gGRquWCPPZdydBiz81dv
+[בודק] Core https://akvot-simple-demo.vercel.app → dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · HOLD promote
+[lock] preview build=dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE ok=true
+[lock] b0 build=dpl_AvyhrW24gGRquWCPPZdydBiz81dv ok=true
+[lock] core build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 ok=true
+[PREVIEW] CREATE S01 Tim Berners-Lee
+[PREVIEW] POLL S01 i=0 status=partial findings=1
+[PREVIEW] POLL S01 i=1 status=partial findings=1
+[PREVIEW] POLL S01 i=2 status=partial findings=1
+[PREVIEW] POLL S01 i=3 status=partial findings=1
+[PREVIEW] POLL S01 i=4 status=partial findings=1
+[PREVIEW] POLL S01 i=5 status=partial findings=1
+[PREVIEW] POLL S01 i=6 status=partial findings=1
+[PREVIEW] CREATE S04 Stripe
+[PREVIEW] POLL S04 i=0 status=partial findings=22
+[PREVIEW] POLL S04 i=1 status=partial findings=22
+[PREVIEW] POLL S04 i=2 status=partial findings=22
+[PREVIEW] POLL S04 i=3 status=partial findings=22
+[PREVIEW] POLL S04 i=4 status=partial findings=22
+[PREVIEW] POLL S04 i=5 status=partial findings=22
+[PREVIEW] POLL S04 i=6 status=partial findings=22
+[PREVIEW] CREATE S05 Red Cross
+[PREVIEW] POLL S05 i=0 status=partial findings=19
+[PREVIEW] POLL S05 i=1 status=partial findings=19
+[PREVIEW] POLL S05 i=2 status=partial findings=19
+[PREVIEW] POLL S05 i=3 status=partial findings=19
+[PREVIEW] POLL S05 i=4 status=partial findings=19
+[PREVIEW] POLL S05 i=5 status=partial findings=19
+[PREVIEW] POLL S05 i=6 status=partial findings=19
+[B0] CREATE S01 Tim Berners-Lee
+[B0] POLL S01 i=0 status=partial findings=10
+[B0] POLL S01 i=1 status=partial findings=10
+[B0] POLL S01 i=2 status=partial findings=10
+[B0] POLL S01 i=3 status=partial findings=10
+[B0] POLL S01 i=4 status=partial findings=10
+[B0] POLL S01 i=5 status=partial findings=10
+[B0] POLL S01 i=6 status=partial findings=10
+[B0] CREATE S04 Stripe
+[B0] POLL S04 i=0 status=partial findings=22
+[B0] POLL S04 i=1 status=partial findings=22
+[B0] POLL S04 i=2 status=partial findings=22
+[B0] POLL S04 i=3 status=partial findings=22
+[B0] POLL S04 i=4 status=partial findings=22
+[B0] POLL S04 i=5 status=partial findings=22
+[B0] POLL S04 i=6 status=partial findings=22
+[B0] CREATE S05 Red Cross
+[B0] POLL S05 i=0 status=partial findings=22
+[B0] POLL S05 i=1 status=partial findings=22
+[B0] POLL S05 i=2 status=partial findings=22
+[B0] POLL S05 i=3 status=partial findings=22
+[B0] POLL S05 i=4 status=partial findings=22
+[B0] POLL S05 i=5 status=partial findings=22
+[B0] POLL S05 i=6 status=partial findings=22
+{
+  "verdict": "PASS",
+  "previewMean": 0.4139,
+  "pooledPreview": {
+    "findings_n": 42,
+    "multi_n": 6,
+    "rate": 0.14285714285714285
+  },
+  "accLeakTotal": 0,
+  "viafAllPreview": true,
+  "promote": "HOLD"
+}
+[בודק] wrote QA-FINAL-RESULT-בודק-2026-09-20.{md,json} · STATUS-בודק.md

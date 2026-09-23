@@ -1,0 +1,14 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Fetching aliases under k-akvot
+> aliases found under k-akvot [882ms]
+  source                                            url                                     age    
+  akvot-simple-demo-6palh6t62-k-akvot.vercel.app    akvot-discovery-k-akvot.vercel.app      47m    
+  akvot-simple-demo-6palh6t62-k-akvot.vercel.app    akvot-discovery.vercel.app              47m    
+  akvot-simple-demo-3i5lh8hts-k-akvot.vercel.app    akvot-simple-demo-k-akvot.vercel.app    16d    
+  akvot-simple-demo-3i5lh8hts-k-akvot.vercel.app    akvot-simple-demo.vercel.app            16d    
+  traces-7ydzva44j-k-akvot.vercel.app               traces-git-main-k-akvot.vercel.app      17d    
+  traces-7ydzva44j-k-akvot.vercel.app               traces-k-akvot.vercel.app               17d    
+  akvot-146u4wz71-k-akvot.vercel.app                akvot-k-akvot.vercel.app                17d    
+  traces-7ydzva44j-k-akvot.vercel.app               akvot-bice.vercel.app                   17d    
+  akvot-146u4wz71-k-akvot.vercel.app                akvot-git-main-k-akvot.vercel.app       17d    
+

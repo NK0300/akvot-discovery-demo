@@ -1,0 +1,15 @@
+{
+  "step": 28,
+  "metric": "single_source_findings",
+  "definition": "finding whose evidence/ranking domains map to ≤1 independent source family (wikimedia|openlibrary|other)",
+  "independenceFamilies": [
+    "openlibrary",
+    "wikimedia"
+  ],
+  "all_sessions_with_findings": {
+    "n_findings": 244,
+    "single_source": 244,
+    "rate": 1.0
+  },
+  "note": "providerDiversity factor often=1 even when corroboration cites single registry domain."
+}

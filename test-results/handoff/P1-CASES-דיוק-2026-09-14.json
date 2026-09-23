@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "title": "P1-CASES",
+    "date": "2026-09-14",
+    "baseline": "dpl_D2zv",
+    "mode": "SPEC_ONLY",
+    "owner": "דיוק",
+    "pretty_wrong_must": 0,
+    "assaf": "P2"
+  },
+  "n": 25,
+  "cases": [
+    {
+      "id": "S01",
+      "category": "ambiguous",
+      "q": "דני כהן",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier",
+        "pretty_wrong"
+      ]
+    },
+    {
+      "id": "S02",
+      "category": "ambiguous",
+      "q": "משה כהן",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "S03",
+      "category": "duplicate",
+      "q": "John Smith",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "S04",
+      "category": "conflict",
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York"
+      },
+      "expected_ui": [
+        "candidates",
+        "thin",
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "S05",
+      "category": "conflict",
+      "q": "John Smith",
+      "ctx": {
+        "email": "qa.rethink.test@example.com"
+      },
+      "expected_ui": [
+        "candidates",
+        "thin"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier",
+        "email_leak"
+      ]
+    },
+    {
+      "id": "S06",
+      "category": "non-match",
+      "q": "Xzqplmnvwtr987654321asdfgh",
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "faces": 0
+    },
+    {
+      "id": "S07",
+      "category": "unknown",
+      "q": "פלמוני אלמוניזקש",
+      "ctx": {
+        "org": "מפעל בדיקה פיקטיבי"
+      },
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "faces": 0
+    },
+    {
+      "id": "N01",
+      "category": "exact",
+      "q": "בנימין נתניהו",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N02",
+      "category": "alias",
+      "q": "נתניהו",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N03",
+      "category": "alias",
+      "q": "ביבי נתניהו",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N04",
+      "category": "alias",
+      "q": "ביבי",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N05",
+      "category": "transliteration",
+      "q": "Benjamin Netanyahu",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N06",
+      "category": "transliteration",
+      "q": "Bibi Netanyahu",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N07",
+      "category": "near",
+      "q": "Netanyahu",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "N08",
+      "category": "exact",
+      "q": "אורלי לוי",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q466537"
+    },
+    {
+      "id": "G01",
+      "category": "exact",
+      "q": "זהבה גלאון",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q2630062"
+    },
+    {
+      "id": "G02",
+      "category": "transliteration",
+      "q": "Zehava Galon",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q2630062"
+    },
+    {
+      "id": "G03",
+      "category": "near",
+      "q": "Zahava Gal-On",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q2630062"
+    },
+    {
+      "id": "M01",
+      "category": "transliteration",
+      "q": "Angela Merkel",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q567"
+    },
+    {
+      "id": "P01",
+      "category": "exact",
+      "q": "יאיר לפיד",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q1396120"
+    },
+    {
+      "id": "P02",
+      "category": "alias",
+      "q": "לפיד",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q1396120"
+    },
+    {
+      "id": "P03",
+      "category": "conflict",
+      "q": "כהן",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "P04",
+      "category": "partial",
+      "q": "Emily Chen",
+      "ctx": {
+        "city": "Palo Alto",
+        "role": "student"
+      },
+      "expected_ui": [
+        "candidates",
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "P05",
+      "category": "duplicate",
+      "q": "Michael Brown",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0
+    },
+    {
+      "id": "P06",
+      "category": "non-match",
+      "q": "Assaf Rappaport",
+      "expected_ui": [
+        "need_context",
+        "thin",
+        "dossier"
+      ],
+      "notes": "P2 backlog — do not force PASS in P1; FINAL-ACCURACY FAIL preserved",
+      "p2": true
+    }
+  ]
+}

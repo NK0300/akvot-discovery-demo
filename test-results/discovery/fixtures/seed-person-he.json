@@ -1,0 +1,137 @@
+{
+  "fixtureId": "seed-person-he",
+  "seedKind": "person_name",
+  "q": "דוד כהן",
+  "matchHints": ["דוד כהן"],
+  "locale": "he",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "evidence": [
+    {
+      "id": "ev-he-1",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Special:Search?search=%D7%93%D7%95%D7%93+%D7%9B%D7%94%D7%9F",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T00:00:00.000Z",
+      "quote": "תוצאות חיפוש ציבוריות ב-Wikidata לשאילתת Seed",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-he-2",
+      "provenanceUrl": "https://openlibrary.org/search/authors?q=%D7%93%D7%95%D7%93+%D7%9B%D7%94%D7%9F",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T00:00:01.000Z",
+      "quote": "רשומות מחברים ציבוריות ב-Open Library",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-he-3",
+      "provenanceUrl": "https://viaf.org/viaf/search?query=local.personalNames+%3D+%22cohen%22&sortKeys=holdingscount",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T00:00:02.000Z",
+      "quote": "רשומת registry ציבורית (VIAF) — לא זהות מחויבת",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-he-4",
+      "provenanceUrl": "https://he.wikipedia.org/w/index.php?search=%D7%93%D7%95%D7%93+%D7%9B%D7%94%D7%9F&title=Special%3ASearch",
+      "providerId": "web_public",
+      "retrievedAt": "2026-09-20T00:00:03.000Z",
+      "quote": "דף תוצאות חיפוש ציבורי — ממצא בלבד",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-he-1",
+      "kind": "registry",
+      "title": "רשומת Wikidata (חיפוש ציבורי)",
+      "summary": "ממצא registry ממקור ציבורי. אינו מאשר זהות.",
+      "evidenceIds": ["ev-he-1"],
+      "providers": ["wikidata"],
+      "facetHints": ["provider:wikidata", "kind:registry", "relationship:name_match"],
+      "entityRefs": [],
+      "scoreFinding": 0.92
+    },
+    {
+      "id": "f-he-2",
+      "kind": "registry",
+      "title": "מחבר / רשומה ב-Open Library",
+      "summary": "התאמת שם ברמת ממצא — לא מיזוג זהות.",
+      "evidenceIds": ["ev-he-2"],
+      "providers": ["openlibrary"],
+      "facetHints": ["provider:openlibrary", "kind:registry", "relationship:author_record"],
+      "entityRefs": [],
+      "scoreFinding": 0.84
+    },
+    {
+      "id": "f-he-3",
+      "kind": "registry",
+      "title": "רמז VIAF (registry)",
+      "summary": "רשומה ציבורית עם provenance. UNKNOWN נשאר UNKNOWN.",
+      "evidenceIds": ["ev-he-3"],
+      "providers": ["viaf"],
+      "facetHints": ["provider:viaf", "kind:registry", "confidence_band:low"],
+      "entityRefs": [],
+      "scoreFinding": 0.71
+    },
+    {
+      "id": "f-he-4",
+      "kind": "page",
+      "title": "דף חיפוש ציבורי (ויקיפדיה)",
+      "summary": "עמוד תוצאות — לא תיק זהות.",
+      "evidenceIds": ["ev-he-4"],
+      "providers": ["web_public"],
+      "facetHints": ["provider:web_public", "kind:page", "confidence_band:medium"],
+      "entityRefs": [],
+      "scoreFinding": 0.66
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": { "done": 0, "totalHint": 4, "findingsN": 0 },
+      "providers": { "wikidata": "pending", "openlibrary": "pending", "viaf": "pending", "web_public": "pending" },
+      "findingIds": [],
+      "facets": []
+    },
+    {
+      "afterMs": 450,
+      "status": "partial",
+      "progress": { "done": 1, "totalHint": 4, "findingsN": 1 },
+      "providers": { "wikidata": "ok", "openlibrary": "pending", "viaf": "pending", "web_public": "pending" },
+      "findingIds": ["f-he-1"],
+      "facets": [
+        { "key": "provider", "label": "Provider", "buckets": [{ "value": "wikidata", "count": 1 }] },
+        { "key": "kind", "label": "Kind", "buckets": [{ "value": "registry", "count": 1 }] }
+      ]
+    },
+    {
+      "afterMs": 900,
+      "status": "partial",
+      "progress": { "done": 2, "totalHint": 4, "findingsN": 2 },
+      "providers": { "wikidata": "ok", "openlibrary": "ok", "viaf": "pending", "web_public": "pending" },
+      "findingIds": ["f-he-1", "f-he-2"],
+      "facets": [
+        { "key": "provider", "label": "Provider", "buckets": [{ "value": "wikidata", "count": 1 }, { "value": "openlibrary", "count": 1 }] },
+        { "key": "kind", "label": "Kind", "buckets": [{ "value": "registry", "count": 2 }] }
+      ]
+    },
+    {
+      "afterMs": 1400,
+      "status": "complete",
+      "progress": { "done": 4, "totalHint": 4, "findingsN": 4 },
+      "providers": { "wikidata": "ok", "openlibrary": "ok", "viaf": "ok", "web_public": "ok" },
+      "findingIds": ["f-he-1", "f-he-2", "f-he-3", "f-he-4"],
+      "facets": [
+        { "key": "provider", "label": "Provider", "buckets": [{ "value": "wikidata", "count": 1 }, { "value": "openlibrary", "count": 1 }, { "value": "viaf", "count": 1 }, { "value": "web_public", "count": 1 }] },
+        { "key": "kind", "label": "Kind", "buckets": [{ "value": "registry", "count": 3 }, { "value": "page", "count": 1 }] },
+        { "key": "relationship", "label": "Relationship", "buckets": [{ "value": "name_match", "count": 1 }, { "value": "author_record", "count": 1 }] },
+        { "key": "confidence_band", "label": "Confidence band", "buckets": [{ "value": "medium", "count": 1 }, { "value": "low", "count": 1 }] }
+      ]
+    }
+  ]
+}

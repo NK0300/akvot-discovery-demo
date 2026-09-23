@@ -1,0 +1,95 @@
+{
+  "ok": true,
+  "sessionId": "kv1.29d3ac675db2ecd2751bd0dbab46cecd",
+  "status": "failed_soft",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9glx4g-13a6d1",
+  "snapshot": {
+    "sessionId": "kv1.29d3ac675db2ecd2751bd0dbab46cecd",
+    "seed": "Mark Zuckerberg / Meta CEO",
+    "q": "Mark Zuckerberg / Meta CEO",
+    "status": "failed_soft",
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "error",
+      "wikipedia": "error"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:8b72baa980d7"
+      ],
+      "status": "candidate",
+      "displayHint": "Mark Zuckerberg / Meta CEO",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T06:52:52.336Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:8b72baa980d7",
+          "kind": "seed"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

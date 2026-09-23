@@ -1,0 +1,59 @@
+{
+  "snap": {
+    "status": "failed_soft",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R12",
+    "seed": "http://127.0.0.1/",
+    "expect": "BLOCK",
+    "note": "SSRF; no wo emit",
+    "sessionId": "kv1.fb7072f87b07b993923ca4fff85c2668",
+    "status": "failed_soft",
+    "polls": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": true,
+    "reason": "SSRF blocked; no wo",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

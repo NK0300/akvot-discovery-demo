@@ -1,0 +1,43 @@
+{
+  "stamp": "2026-09-20T09:47:15+03:00",
+  "alias": "https://akvot-simple-demo.vercel.app",
+  "deploymentId": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "health_build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "health_build_match_8ag": true,
+  "forbidden_qid": "Q1701775",
+  "lookups": [
+    {
+      "file": "08-core-assaf.json",
+      "mode": "ambiguous",
+      "qid": null,
+      "pw": 0,
+      "leakage": 0,
+      "cand_forbid": 0,
+      "label": "Assaf",
+      "pass": true
+    },
+    {
+      "file": "08-core-smith-ctx.json",
+      "mode": "candidates",
+      "qid": null,
+      "pw": 0,
+      "leakage": 0,
+      "cand_forbid": 0,
+      "label": "John Smith",
+      "pass": true
+    },
+    {
+      "file": "08-core-smith.json",
+      "mode": "ambiguous",
+      "qid": null,
+      "pw": 0,
+      "leakage": 0,
+      "cand_forbid": 0,
+      "label": "John Smith",
+      "pass": true
+    }
+  ],
+  "pw_total": 0,
+  "leakage_total": 0,
+  "pass": true
+}

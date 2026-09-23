@@ -1,0 +1,27 @@
+{
+  "doc": "MEGA-ACC-EFK-דיוק-2026-09-20",
+  "checked": "2026-09-20T07:23:00+03:00",
+  "status": "LOCKED",
+  "promote": false,
+  "rules": [
+    "provenance_mandatory",
+    "pretty_wrong_eq_0",
+    "UNKNOWN_neq_FALSE",
+    "same_name_neq_same_person",
+    "merge_only_on_evidence",
+    "forbidden_QID_strip_all_surfaces"
+  ],
+  "invariant_ids": [
+    "ACC-EFK-01",
+    "ACC-EFK-02",
+    "ACC-DISC-01",
+    "ACC-DISC-02",
+    "ACC-DISC-03",
+    "ACC-DISC-04",
+    "ACC-DISC-05",
+    "ACC-DISC-06"
+  ],
+  "forbidden_class": "Q1701775",
+  "denylist_version": "2026-09-19.1",
+  "core_alias_locked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+}

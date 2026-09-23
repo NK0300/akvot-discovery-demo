@@ -1,0 +1,140 @@
+{
+  "ok": true,
+  "sessionId": "60ea1021-b58d-4154-a4c4-036fc3a0f976",
+  "status": "complete",
+  "pollAfterMs": 300,
+  "snapshot": {
+    "sessionId": "60ea1021-b58d-4154-a4c4-036fc3a0f976",
+    "seed": "example.org",
+    "q": "example.org",
+    "status": "complete",
+    "findings": [
+      {
+        "id": "wd-Q306656",
+        "kind": "registry",
+        "title": "example.com",
+        "summary": "domain name reserved for documentation purposes and as an example of the use of domain names",
+        "evidenceIds": [
+          "ev-15f62f74222c0d22f4e3c93d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q306656"
+        ],
+        "scoreFinding": 1
+      },
+      {
+        "id": "wd-Q908643",
+        "kind": "registry",
+        "title": ".example",
+        "summary": "domain name",
+        "evidenceIds": [
+          "ev-331f0199fec0472f09f86532"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q908643"
+        ],
+        "scoreFinding": 0.97
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-15f62f74222c0d22f4e3c93d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q306656",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-19T23:54:47.187Z",
+        "quote": "domain name reserved for documentation purposes and as an example of the use of domain names",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-331f0199fec0472f09f86532",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q908643",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-19T23:54:47.187Z",
+        "quote": "domain name",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikidata",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 5,
+      "totalHint": 5
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:bfabc3743295"
+      ],
+      "status": "candidate",
+      "displayHint": "example.org",
+      "hints": {
+        "kind": "domain"
+      }
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-19T23:54:46.957Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:bfabc3743295",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q306656",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q908643",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    }
+  }
+}

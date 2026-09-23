@@ -1,0 +1,59 @@
+{
+  "snap": {
+    "status": "failed_soft",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R09",
+    "seed": "https://viaf.org/viaf/85312226",
+    "expect": "UNKNOWN",
+    "note": "VIAF URL-alone",
+    "sessionId": "kv1.fdbc11826c62df41e904a6aa4255357e",
+    "status": "failed_soft",
+    "polls": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": false,
+    "reason": "wo=0 unk=0 SE=0 SR=0",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

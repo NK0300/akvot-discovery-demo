@@ -1,0 +1,112 @@
+{
+  "role": "בודק",
+  "checkedAt": "2026-09-20T07:25:18+03:00",
+  "promote": "HOLD",
+  "verdict": "NOT GREEN",
+  "storeBackend": "fs-regen",
+  "counts": {
+    "BLOCKED_KV": 5,
+    "PASS": 7,
+    "FAIL": 2
+  },
+  "items": [
+    {
+      "id": "RB-01",
+      "gate": "KV SoT provisioned (UPSTASH/KV_* on Preview)",
+      "status": "BLOCKED_KV",
+      "evidence": "MEGA/C-STORAGE-FINDINGS-CHIEF-2026-09-20.md · PHASE-B-BOUNDARIES-KV-SOT",
+      "notes": "No KV credentials · cannot satisfy promote SoT"
+    },
+    {
+      "id": "RB-02",
+      "gate": "storeBackend ≠ fs-regen (live kv|upstash)",
+      "status": "BLOCKED_KV",
+      "evidence": "MEGA/QR-PREVIEW-HARDEN-RECHECK-בודק-2026-09-20.md",
+      "notes": "observed storeBackend=`fs-regen` · fs-regen ≠ promote SoT"
+    },
+    {
+      "id": "RB-03",
+      "gate": "Acc ≥3 Seeds PASS (entity-agnostic + Acc version)",
+      "status": "PASS",
+      "evidence": "MEGA/QR-PREVIEW-HARDEN-RECHECK-בודק-2026-09-20.md · raw/harden/",
+      "notes": "seedsPass=3 entityAgnostic=True Acc=2026-09-19.1"
+    },
+    {
+      "id": "RB-04",
+      "gate": "SSE progressive smoke (meta→…→done) all ≥3 seeds",
+      "status": "PASS",
+      "evidence": "MEGA/raw/harden/SSE-*.txt · QR-PREVIEW-HARDEN-RECHECK",
+      "notes": "S1=20 S2=22 S3=9 events · text/event-stream"
+    },
+    {
+      "id": "RB-05",
+      "gate": "SSE durable replay / Last-Event-ID cross-instance",
+      "status": "BLOCKED_KV",
+      "evidence": "MEGA/raw/adversarial/ADV-L10-sse-second-subscribe.meta.json",
+      "notes": "Soft second-subscribe PASS on fs-regen (ADV-L10) · durable cross-instance replay BLOCKED_KV"
+    },
+    {
+      "id": "RB-06",
+      "gate": "GET session durable SoT (KV HIT, not regen-only)",
+      "status": "BLOCKED_KV",
+      "evidence": "MEGA/raw/harden/GET-*.json",
+      "notes": "regenerated=true on all seeds · fs-regen path only"
+    },
+    {
+      "id": "RB-07",
+      "gate": "POST /narrow server recompute Acc-scrubbed",
+      "status": "PASS",
+      "evidence": "MEGA/raw/harden/NARROW-*.json",
+      "notes": "HTTP 200 all seeds · leak=0 · ADV-L11 poison filter entityLeak=0"
+    },
+    {
+      "id": "RB-08",
+      "gate": "Acc-DISC leakage = 0 (POST/GET/SSE/narrow)",
+      "status": "PASS",
+      "evidence": "MEGA/QR-PREVIEW-HARDEN-RECHECK · raw/harden/",
+      "notes": "aggregate leakage=0"
+    },
+    {
+      "id": "RB-09",
+      "gate": "Core pretty-wrong pw=0 · Smith faces=0 · no Q1701775",
+      "status": "PASS",
+      "evidence": "MEGA/QR-CORE-ALIAS-SMOKE-בודק-2026-09-20.md · raw/core/core-smith.json",
+      "notes": "pw=0 faces=0 leak=0"
+    },
+    {
+      "id": "RB-10",
+      "gate": "Core alias green (health + Assaf/כהן/Smith)",
+      "status": "PASS",
+      "evidence": "MEGA/QR-CORE-ALIAS-SMOKE-בודק-2026-09-20.md",
+      "notes": "build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 Assaf=dossier/Q47507930"
+    },
+    {
+      "id": "RB-11",
+      "gate": "KV rehydrate → Acc scrub → emit Evidence",
+      "status": "BLOCKED_KV",
+      "evidence": "MEGA/adversarial/ADV-07-kv-rehydrate-poison.json",
+      "notes": "Cannot run without KV SoT Preview"
+    },
+    {
+      "id": "RB-12",
+      "gate": "Adversarial RUNNOW battery green (L1–L12)",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ · ADV-EXPAND-L5-L12-SUMMARY.json",
+      "notes": "L1–L4 prior PASS · L5–L12 expand PASS=8 FAIL=0"
+    },
+    {
+      "id": "RB-13",
+      "gate": "Explicit Chief GO recorded",
+      "status": "FAIL",
+      "evidence": "MEGA/00-CONTROL-BOARD.md",
+      "notes": "HOLD promote · no Chief GO for Discovery promote ask"
+    },
+    {
+      "id": "RB-14",
+      "gate": "Promote ask allowed (all RB PASS)",
+      "status": "FAIL",
+      "evidence": "this checklist",
+      "notes": "Blocked by RB-01/02/05/06/11 BLOCKED_KV + RB-13 no Chief GO"
+    }
+  ]
+}

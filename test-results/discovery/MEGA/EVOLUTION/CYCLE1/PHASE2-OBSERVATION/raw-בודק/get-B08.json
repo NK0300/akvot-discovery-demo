@@ -1,0 +1,840 @@
+{
+  "ok": true,
+  "sessionId": "kv1.562faa3bd98f96341a0546fda52d0360",
+  "seed": "Albert Einstein",
+  "q": "Albert Einstein",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wd-Q937",
+      "kind": "registry",
+      "title": "Albert Einstein",
+      "summary": "German-born theoretical physicist (1879–1955)",
+      "evidenceIds": [
+        "ev-d54c1a7fcf2b72112a86d232"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q937"
+      ],
+      "scoreFinding": 0.7183333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q2030894",
+      "kind": "registry",
+      "title": "Albert Einstein College of Medicine",
+      "summary": "private medical school in New York City, NY",
+      "evidenceIds": [
+        "ev-d695136e5bec29bde27fefcd"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q2030894"
+      ],
+      "scoreFinding": 0.7083333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q2253683",
+      "kind": "registry",
+      "title": "Albert Einstein",
+      "summary": "train service",
+      "evidenceIds": [
+        "ev-2633acf336206588d668c391"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q2253683"
+      ],
+      "scoreFinding": 0.6983333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q21200226",
+      "kind": "registry",
+      "title": "Albert Einstein",
+      "summary": "Wikimedia permanent duplicate item",
+      "evidenceIds": [
+        "ev-682b2f5718c5fda06f2addf9"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q21200226"
+      ],
+      "scoreFinding": 0.6883333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q47513150",
+      "kind": "registry",
+      "title": "Albert Einstein",
+      "summary": "painting by Max Westfield",
+      "evidenceIds": [
+        "ev-3c1d9ac40d2c6b58fe94e22c"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q47513150"
+      ],
+      "scoreFinding": 0.6783333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q47510526",
+      "kind": "registry",
+      "title": "Albert Einstein",
+      "summary": "painting by Josef Scharl",
+      "evidenceIds": [
+        "ev-9af210628e3a393493c4fc32"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q47510526"
+      ],
+      "scoreFinding": 0.6683333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q1630439",
+      "kind": "registry",
+      "title": "Albert Einstein Israelite Hospital",
+      "summary": "hospital in São Paulo, Brazil",
+      "evidenceIds": [
+        "ev-dfb4ab517e98cee081047601"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q1630439"
+      ],
+      "scoreFinding": 0.6583333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q47512878",
+      "kind": "registry",
+      "title": "Albert Einstein",
+      "summary": "painting by Roy Andersen",
+      "evidenceIds": [
+        "ev-0b58106f16d40564b56ca1c4"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q47512878"
+      ],
+      "scoreFinding": 0.6483333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Albert_Einstein",
+      "kind": "page",
+      "title": "Albert Einstein",
+      "evidenceIds": [
+        "ev-77a810a7f9640bc7e4c33d88"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Albert Einstein"
+      ],
+      "scoreFinding": 0.5683333333333334,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Albert_Einstein_College_of_Medicine",
+      "kind": "page",
+      "title": "Albert Einstein College of Medicine",
+      "evidenceIds": [
+        "ev-071b65fce76db1b568563675"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Albert Einstein College of Medicine"
+      ],
+      "scoreFinding": 0.5583333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Albert_Einstein_in_popular_culture",
+      "kind": "page",
+      "title": "Albert Einstein in popular culture",
+      "evidenceIds": [
+        "ev-8db91ec9efc7f1b0524584bb"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Albert Einstein in popular culture"
+      ],
+      "scoreFinding": 0.5483333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Albert_Einstein_World_Award_of_Science",
+      "kind": "page",
+      "title": "Albert Einstein World Award of Science",
+      "evidenceIds": [
+        "ev-81bc5ac66cfbe25373f191ab"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Albert Einstein World Award of Science"
+      ],
+      "scoreFinding": 0.5383333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Albert_Einstein_album_",
+      "kind": "page",
+      "title": "Albert Einstein (album)",
+      "evidenceIds": [
+        "ev-52dbf003b35414f15eed2c77"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Albert Einstein (album)"
+      ],
+      "scoreFinding": 0.5283333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Albert_Einstein_ATV",
+      "kind": "page",
+      "title": "Albert Einstein ATV",
+      "evidenceIds": [
+        "ev-c6b5d8c97efff1dfda4a5fa5"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Albert Einstein ATV"
+      ],
+      "scoreFinding": 0.5183333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-d54c1a7fcf2b72112a86d232",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q937",
+      "url": "https://www.wikidata.org/wiki/Q937",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "German-born theoretical physicist (1879–1955)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-d695136e5bec29bde27fefcd",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q2030894",
+      "url": "https://www.wikidata.org/wiki/Q2030894",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "private medical school in New York City, NY",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-2633acf336206588d668c391",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q2253683",
+      "url": "https://www.wikidata.org/wiki/Q2253683",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "train service",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-682b2f5718c5fda06f2addf9",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q21200226",
+      "url": "https://www.wikidata.org/wiki/Q21200226",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "Wikimedia permanent duplicate item",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3c1d9ac40d2c6b58fe94e22c",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q47513150",
+      "url": "https://www.wikidata.org/wiki/Q47513150",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "painting by Max Westfield",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-9af210628e3a393493c4fc32",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q47510526",
+      "url": "https://www.wikidata.org/wiki/Q47510526",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "painting by Josef Scharl",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-dfb4ab517e98cee081047601",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q1630439",
+      "url": "https://www.wikidata.org/wiki/Q1630439",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "hospital in São Paulo, Brazil",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-0b58106f16d40564b56ca1c4",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q47512878",
+      "url": "https://www.wikidata.org/wiki/Q47512878",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:51:19.005Z",
+      "evidenceType": "registry",
+      "quote": "painting by Roy Andersen",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-77a810a7f9640bc7e4c33d88",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:19.000Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-071b65fce76db1b568563675",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein_College_of_Medicine",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein_College_of_Medicine",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:19.000Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8db91ec9efc7f1b0524584bb",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein_in_popular_culture",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein_in_popular_culture",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:19.000Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-81bc5ac66cfbe25373f191ab",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein_World_Award_of_Science",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein_World_Award_of_Science",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:19.000Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-52dbf003b35414f15eed2c77",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein_(album)",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein_(album)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:19.000Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-c6b5d8c97efff1dfda4a5fa5",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Albert_Einstein_ATV",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein_ATV",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:19.000Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "wikidata",
+          "count": 8
+        },
+        {
+          "value": "wikipedia",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 8
+        },
+        {
+          "value": "page",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "error",
+    "wikipedia": "partial"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:b3de298fc1dd"
+    ],
+    "status": "candidate",
+    "displayHint": "Albert Einstein",
+    "hints": {}
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T06:51:18.766Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:b3de298fc1dd",
+        "kind": "seed"
+      },
+      {
+        "id": "wd-Q937",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q2030894",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q2253683",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q21200226",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q47513150",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q47510526",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q1630439",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q47512878",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Albert_Einstein",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Albert_Einstein_College_of_Medicine",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Albert_Einstein_in_popular_culture",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Albert_Einstein_World_Award_of_Science",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Albert_Einstein_album_",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Albert_Einstein_ATV",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [
+    {
+      "type": "same_title_multi_domain",
+      "title": "albert einstein",
+      "findingIds": [
+        "wd-Q937",
+        "wd-Q2253683",
+        "wd-Q21200226",
+        "wd-Q47513150",
+        "wd-Q47510526",
+        "wd-Q47512878",
+        "wp-en-Albert_Einstein"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    },
+    {
+      "type": "same_title_multi_domain",
+      "title": "albert einstein college of medicine",
+      "findingIds": [
+        "wd-Q2030894",
+        "wp-en-Albert_Einstein_College_of_Medicine"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    }
+  ],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

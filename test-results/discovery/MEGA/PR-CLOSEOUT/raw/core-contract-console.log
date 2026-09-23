@@ -1,0 +1,20 @@
+CONTRACT identity-p0 → https://akvot-simple-demo.vercel.app
+cases=5  headers: Origin=https://akvot-simple-demo.vercel.app, x-akvot-battery:1
+
+→ a-netanyahu-keep (KEEP) ... PASS 1015ms http=200 ui=dossier qid=Q43723 faces=true
+→ b-cohen-keep (KEEP) ... PASS 175ms http=200 ui=need_context qid=- faces=false
+→ c-smith-bare-keep (KEEP) ... PASS 5665ms http=200 ui=need_context qid=- faces=false
+→ d-smith-ctx-p0 (P0) ... PASS 8024ms http=200 ui=candidates qid=- faces=false
+→ e-smith-email-g11-p0 (P0) ... PASS 11929ms http=200 ui=candidates qid=- faces=false
+
+========== SUMMARY ==========
+כל חוזי הזהות עברו (5/5)
+pass=5/5  improve=0  exit=0
+  ✓ [KEEP] a-netanyahu-keep  ui=dossier faces=true
+  ✓ [KEEP] b-cohen-keep  ui=need_context faces=false
+  ✓ [KEEP] c-smith-bare-keep  ui=need_context faces=false
+  ✓ [P0] d-smith-ctx-p0  ui=candidates faces=false
+  ✓ [P0] e-smith-email-g11-p0  ui=candidates faces=false
+report: /workspace/akvot-quick-demo/test-results/CONTRACT-identity-p0-בודק-2026-09-09.json
+=============================
+

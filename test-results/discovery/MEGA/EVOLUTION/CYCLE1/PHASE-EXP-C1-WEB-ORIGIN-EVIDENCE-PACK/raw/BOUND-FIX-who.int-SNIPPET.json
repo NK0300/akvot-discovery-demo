@@ -1,0 +1,25 @@
+{
+  "seed": "https://www.who.int",
+  "sessionId": "kv1.12fc1032d31d4cff159265c0c36cb125",
+  "status": "complete",
+  "providers": {
+    "wikidata": "ok",
+    "openlibrary": "ok",
+    "wikipedia": "ok",
+    "viaf": "ok",
+    "web_origin": "ok"
+  },
+  "finding": {
+    "id": "wo-7fd08b15039288ff",
+    "hostFamily": "web_origin",
+    "relationship": "UNKNOWN",
+    "facetHints": [
+      "provider:web_origin",
+      "kind:page",
+      "hostFamily:web_origin",
+      "relationship:UNKNOWN"
+    ],
+    "hostname": "www.who.int"
+  },
+  "evidence.relationship": "UNKNOWN"
+}

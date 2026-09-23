@@ -1,0 +1,101 @@
+{
+  "stamp": "2026-09-20T10:42:29+03:00",
+  "stampLabel": "2026-09-20 10:42:29 IDT",
+  "experiment": "EXP-A2-SAFE",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+    "url": "https://akvot-simple-demo-221421o5s-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/DZmXtttPqDjpecyXDnKpryJzyd6q",
+    "readyState": "READY",
+    "target": null,
+    "env": {
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "priorLanes": {
+    "B0": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "mean_multi": 0.0
+    },
+    "EXP-A": {
+      "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+      "note": "VIAF without cross-family attach"
+    },
+    "A2-bound-FRNDab": {
+      "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+      "mean_multi": 0.5189,
+      "caveat": "title-bridge \u2014 NOT promote-path"
+    },
+    "A2-Bound1-Fz2iq": {
+      "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+      "mean_multi": 0.0
+    },
+    "A2-typed-enrich-7Mmf": {
+      "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+      "mean_multi": 0.2408
+    },
+    "A2-SAFE-4Zxd9": {
+      "dpl": "dpl_4Zxd9MnMs6WsTgSLrryyvGY3htpY",
+      "note": "labelRelationship intro"
+    }
+  },
+  "smoke": {
+    "mean_multi_rate": 0.2074,
+    "pooled_multi_rate": 0.1714,
+    "acc_leak": 0,
+    "s01_findings_n": 18,
+    "gate": 0.15,
+    "mean_pass": true,
+    "per_seed": [
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "findings_n": 18,
+        "multi_rate": 0.5556,
+        "viaf_n": 10,
+        "edges_n": 45,
+        "relationship_counts": {
+          "related-entity": 45
+        },
+        "acc_leak": 0
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "findings_n": 22,
+        "multi_rate": 0,
+        "viaf_n": 8,
+        "edges_n": 0,
+        "relationship_counts": {},
+        "acc_leak": 0
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "findings_n": 30,
+        "multi_rate": 0.0667,
+        "viaf_n": 9,
+        "edges_n": 1,
+        "relationship_counts": {
+          "related-entity": 1
+        },
+        "acc_leak": 0
+      }
+    ]
+  },
+  "locks": {
+    "discovery": {
+      "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "actual": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "ok": true
+    },
+    "core": {
+      "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "actual": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "ok": true
+    }
+  }
+}

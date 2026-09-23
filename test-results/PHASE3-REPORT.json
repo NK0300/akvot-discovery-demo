@@ -1,0 +1,19 @@
+{
+  "phase": 3,
+  "prod": "https://akvot-simple-demo.vercel.app",
+  "successCriteria": {
+    "noCriticalWrongIdentity": true,
+    "wikiRich": true,
+    "obscureClean": true,
+    "prodStable": true
+  },
+  "deploys": [
+    {"id": "dpl_62VSbbqCWMUcnCoiofsn4XmZ5ypc", "fix": "P31=Q5 human guard; whole-token title score; photo leak when !allowBroad"},
+    {"id": "dpl_4vYf9iWFymfmJwi537MyLm1buhRx", "fix": "exact-title fast path + retries; skip paren/extended commits"},
+    {"id": "dpl_5NYxAQamnyDLjE4DsDBAf2wd6M8W", "fix": "ambiguous flag suppresses allowBroad; propagate wiki 429 for handler retry"},
+    {"id": "dpl_AYJVHc5XZi61RswmSirSze9hP6XG", "fix": "ambiguous => zero images + null photo (block JSON-LD leak)", "currentProd": true}
+  ],
+  "latencyMs_nocache": {"p50": 27831, "p95": 53709, "min": 7097, "max": 53709, "n": 16, "http429": 0},
+  "sse": true,
+  "mobileViewport": true
+}

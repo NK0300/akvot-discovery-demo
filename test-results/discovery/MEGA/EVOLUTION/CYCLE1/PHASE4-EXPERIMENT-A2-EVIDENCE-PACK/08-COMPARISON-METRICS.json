@@ -1,0 +1,224 @@
+{
+  "stamp": "2026-09-20T10:42:29+03:00",
+  "gate_mean_multi": 0.15,
+  "lanes": [
+    {
+      "lane": "B0",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "mean_multi": 0.0,
+      "pooled": 0.0,
+      "s01_findings": 10,
+      "acc_leak": 0,
+      "notes": "Discovery production alias frozen"
+    },
+    {
+      "lane": "A",
+      "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+      "mean_multi": 0.0,
+      "pooled": 0.0,
+      "s01_findings": 18,
+      "acc_leak": 0,
+      "notes": "EXP-A VIAF; multi stays 0"
+    },
+    {
+      "lane": "A2-bound(FRNDab)",
+      "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+      "mean_multi": 0.5189,
+      "pooled": 0.4675,
+      "s01_findings": 17,
+      "acc_leak": 0,
+      "notes": "title-bridge caveat NOT promote-path"
+    },
+    {
+      "lane": "A2-safe",
+      "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+      "mean_multi": 0.2074,
+      "pooled": 0.1714,
+      "s01_findings": 18,
+      "acc_leak": 0,
+      "notes": "Bound#1 + enrich + relationship labels; HOLD"
+    }
+  ],
+  "per_seed_a2safe": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "sessionId": "kv1.6ebffa2c3f6f5f4d7497627fe9b2109b",
+      "findings_n": 18,
+      "with_ev_n": 18,
+      "multi_n": 10,
+      "multi_rate": 0.5556,
+      "viaf_n": 10,
+      "providers_ge2": 10,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 45,
+      "relationship_counts": {
+        "related-entity": 45
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "evidence_n": 10,
+          "families": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "evidence_n": 10,
+          "families": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "evidence_n": 10,
+          "families": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "sessionId": "kv1.d4effff31d6a861e3d7146478fce34ff",
+      "findings_n": 22,
+      "with_ev_n": 22,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "families_union": [
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 2,
+      "sample_multi": [],
+      "dossier": false
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "sessionId": "kv1.224eff104463a934b30ed2e84c7bd526",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 2,
+      "multi_rate": 0.0667,
+      "viaf_n": 9,
+      "providers_ge2": 2,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 1,
+      "relationship_counts": {
+        "related-entity": 1
+      },
+      "contradictions_n": 2,
+      "sample_multi": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-122023057",
+          "title": "Red Cross USA",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false
+    }
+  ],
+  "verdict_smoke": "PASS"
+}

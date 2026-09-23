@@ -1,0 +1,545 @@
+{
+  "step": 25,
+  "metric": "contradictions",
+  "summary": {
+    "sessions_total": 32,
+    "sessions_with_findings": 19,
+    "sessions_with_contradictions": 11,
+    "total_contradiction_objects": 14,
+    "mean_contr_per_session_with_findings": 0.7368,
+    "type_histogram": {
+      "same_title_multi_domain": 14
+    },
+    "note": "API contradictions[] array; dominant type observed: same_title_multi_domain (not field-value conflict). Conflicting same-field (occupation/era) NOT first-class."
+  },
+  "perSession": [
+    {
+      "seedId": "S01",
+      "run": 1,
+      "n_findings": 10,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "tim berners-lee",
+          "nFindings": 7,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q80",
+            "wd-Q120373140",
+            "wd-Q120373262",
+            "wd-Q19761597",
+            "wd-Q55693401",
+            "ol-OL25245A",
+            "wp-en-Tim_Berners_Lee"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "n_findings": 10,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "tim berners-lee",
+          "nFindings": 7,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q80",
+            "wd-Q120373140",
+            "wd-Q120373262",
+            "wd-Q19761597",
+            "wd-Q55693401",
+            "ol-OL25245A",
+            "wp-en-Tim_Berners_Lee"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 1,
+      "n_findings": 21,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "john smith",
+          "nFindings": 16,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q3182477",
+            "wd-Q332377",
+            "wd-Q6258357",
+            "wd-Q6258267",
+            "wd-Q6258259",
+            "wd-Q541460",
+            "wd-Q991529",
+            "ol-OL177707A"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 2,
+      "n_findings": 21,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "john smith",
+          "nFindings": 16,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q3182477",
+            "wd-Q332377",
+            "wd-Q6258357",
+            "wd-Q6258267",
+            "wd-Q6258259",
+            "wd-Q541460",
+            "wd-Q991529",
+            "ol-OL177707A"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S03",
+      "run": 1,
+      "n_findings": 21,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "alex morgan",
+          "nFindings": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q233510",
+            "wd-Q126278685",
+            "wd-Q131542437",
+            "wd-Q43302646",
+            "wd-Q42805830",
+            "wd-Q16527618",
+            "wd-Q55603580",
+            "ol-OL1437248A"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S03",
+      "run": 2,
+      "n_findings": 21,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "alex morgan",
+          "nFindings": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q233510",
+            "wd-Q126278685",
+            "wd-Q131542437",
+            "wd-Q43302646",
+            "wd-Q42805830",
+            "wd-Q16527618",
+            "wd-Q55603580",
+            "ol-OL1437248A"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S04",
+      "run": 1,
+      "n_findings": 22,
+      "n_contradictions": 2,
+      "types": {
+        "same_title_multi_domain": 2
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "stripe",
+          "nFindings": 7,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q7624104",
+            "wd-Q3421342",
+            "wd-Q127900502",
+            "wd-Q117454382",
+            "ol-OL13079935A",
+            "ol-OL10372320A",
+            "wp-en-Stripe"
+          ]
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "striped skunk",
+          "nFindings": 2,
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q368495",
+            "wp-en-Striped_skunk"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S04",
+      "run": 2,
+      "n_findings": 14,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "stripe",
+          "nFindings": 3,
+          "domains": [
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "ol-OL13079935A",
+            "ol-OL10372320A",
+            "wp-en-Stripe"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S05",
+      "run": 1,
+      "n_findings": 22,
+      "n_contradictions": 2,
+      "types": {
+        "same_title_multi_domain": 2
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "american red cross",
+          "nFindings": 2,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org"
+          ],
+          "findingIds": [
+            "wd-Q470110",
+            "ol-OL10303910A"
+          ]
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "red cross",
+          "nFindings": 5,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q104700248",
+            "wd-Q116059498",
+            "wd-Q50320550",
+            "ol-OL2917704A",
+            "wp-en-Red_Cross"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S05",
+      "run": 2,
+      "n_findings": 22,
+      "n_contradictions": 2,
+      "types": {
+        "same_title_multi_domain": 2
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "american red cross",
+          "nFindings": 2,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org"
+          ],
+          "findingIds": [
+            "wd-Q470110",
+            "ol-OL10303910A"
+          ]
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "red cross",
+          "nFindings": 5,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "findingIds": [
+            "wd-Q104700248",
+            "wd-Q116059498",
+            "wd-Q50320550",
+            "ol-OL2917704A",
+            "wp-en-Red_Cross"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S06",
+      "run": 1,
+      "n_findings": 7,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S06",
+      "run": 2,
+      "n_findings": 7,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S07",
+      "run": 1,
+      "n_findings": 2,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S07",
+      "run": 2,
+      "n_findings": 2,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S08",
+      "run": 1,
+      "n_findings": 16,
+      "n_contradictions": 1,
+      "types": {
+        "same_title_multi_domain": 1
+      },
+      "items": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "tel aviv university",
+          "nFindings": 2,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org"
+          ],
+          "findingIds": [
+            "wd-Q319239",
+            "ol-OL12268891A"
+          ]
+        }
+      ]
+    },
+    {
+      "seedId": "S08",
+      "run": 2,
+      "n_findings": 8,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S09",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S09",
+      "run": 2,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S10",
+      "run": 1,
+      "n_findings": 8,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S10",
+      "run": 2,
+      "n_findings": 8,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S11",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S11",
+      "run": 2,
+      "n_findings": 2,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S12",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S12",
+      "run": 2,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S13",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S13",
+      "run": 2,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S14",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S14",
+      "run": 2,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S15",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S15",
+      "run": 2,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S16",
+      "run": 1,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    },
+    {
+      "seedId": "S16",
+      "run": 2,
+      "n_findings": 0,
+      "n_contradictions": 0,
+      "types": {},
+      "items": []
+    }
+  ],
+  "fieldConflictFirstClass": false,
+  "observation": "contradictions[] present on ambiguous seeds but typed as same_title_multi_domain; no occupation/era/value field conflicts emitted. S10 (conflicting-evidence) returned contradictions=[] when wikidata/wikipedia errored."
+}

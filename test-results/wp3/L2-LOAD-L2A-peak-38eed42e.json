@@ -1,0 +1,2255 @@
+{
+  "schema": "wp3-l2-metrics/v1",
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "version": "wp3-l2-1.1.0"
+  },
+  "mode": "L2-A",
+  "stream": "L2-A",
+  "constraint": "MEASURE ONLY — CLIENT_STRESS probes only — no Core / no dpl / no injected dep faults",
+  "runId": "38eed42e",
+  "tag": "L2A-peak",
+  "started": "2026-09-19T19:30:06.026Z",
+  "finished": "2026-09-19T19:32:15.160Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 10,
+  "fingerprintRef": "test-results/wp3/L2-FINGERPRINT-FROZEN-שרת-2026-09-19.json",
+  "fingerprint": {
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "dpl": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "frozenAt": "2026-09-19T19:12:20+00:00",
+    "missing": false
+  },
+  "locks": {
+    "noCore": true,
+    "noAccChange": true,
+    "noSmithCohenChange": true,
+    "noCacheSemantics": true,
+    "noUx": true,
+    "noDpl": true,
+    "clientStressOnly": true
+  },
+  "stopRules": {
+    "abortOnPw": true,
+    "note": "pw>0 → abort immediately; report to Chief"
+  },
+  "steps": [
+    {
+      "stream": "L2-A",
+      "step": "peak",
+      "concurrency": 20,
+      "caseId": "A-assaf-get",
+      "mix": "COLD",
+      "nRequested": 10,
+      "agg": {
+        "n": 10,
+        "wall": {
+          "n": 10,
+          "min": 785,
+          "max": 7079,
+          "mean": 1699,
+          "p50": 926,
+          "p90": 2592,
+          "p95": 7079,
+          "p99": 7079
+        },
+        "wiki": {
+          "n": 10,
+          "min": 122,
+          "max": 2183,
+          "mean": 655,
+          "p50": 475,
+          "p90": 826,
+          "p95": 2183,
+          "p99": 2183
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 10
+        },
+        "uiCounts": {
+          "dossier": 10
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 10,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 11,
+          "wikiTimeout_sum": 0,
+          "wikiRetries_sum": 11,
+          "samplesWith429": 2,
+          "samplesWithWikiTimeout": 0
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 1.401,
+        "wallClockMs": 7139
+      },
+      "samples": [
+        {
+          "i": 6,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 785,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "3cc2c679-9fe3-4f97-9eb0-327d848b505d",
+          "timings": {
+            "wiki": 387,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 388
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:06.873Z"
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 785,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "2f54ad69-005a-460a-a1bd-ab8cc1613dda",
+          "timings": {
+            "wiki": 420,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 422
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:06.875Z"
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 820,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "8406c0c0-4fac-4e12-9682-d2c818f475d0",
+          "timings": {
+            "wiki": 437,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 438
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:06.902Z"
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 849,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "58e91a5a-0dfa-44ab-bbe8-ae0b2ed8d2df",
+          "timings": {
+            "wiki": 475,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 479
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:06.938Z"
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 926,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "0e319584-66fa-4826-bb2b-031f4bf930c7",
+          "timings": {
+            "wiki": 555,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 557
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:07.011Z"
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 967,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "14f3654e-d7d9-4b68-9841-d40830b1b7ba",
+          "timings": {
+            "wiki": 551,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 552
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:07.056Z"
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 988,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "584712d6-a592-4d41-8f4e-19696881af29",
+          "timings": {
+            "wiki": 598,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 598
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:07.074Z"
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 1200,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "f6d6f49b-2f13-44e3-935a-673a67ce11c9",
+          "timings": {
+            "wiki": 826,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 828
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:07.285Z"
+        },
+        {
+          "i": 0,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 2592,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "df35ec99-22e5-4e54-88f1-757f04165735",
+          "timings": {
+            "wiki": 2183,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 2183
+          },
+          "wikiMeta": {
+            "wiki429": 3,
+            "wikiTimeout": 0,
+            "wikiRetries": 3
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:08.620Z"
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 7079,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "3fbfc2a9-4096-4d58-badf-2f02a1bd1692",
+          "timings": {
+            "wiki": 122,
+            "gemini": 0,
+            "enrich": 1097,
+            "stageB": 0,
+            "total": 6720
+          },
+          "wikiMeta": {
+            "wiki429": 8,
+            "wikiTimeout": 0,
+            "wikiRetries": 8
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.166Z"
+        }
+      ]
+    },
+    {
+      "stream": "L2-A",
+      "step": "peak",
+      "concurrency": 20,
+      "caseId": "A-assaf-get",
+      "mix": "WARM",
+      "nRequested": 10,
+      "agg": {
+        "n": 10,
+        "wall": {
+          "n": 10,
+          "min": 102,
+          "max": 244,
+          "mean": 223,
+          "p50": 234,
+          "p90": 241,
+          "p95": 244,
+          "p99": 244
+        },
+        "wiki": {
+          "n": 10,
+          "min": 0,
+          "max": 356,
+          "mean": 36,
+          "p50": 0,
+          "p90": 0,
+          "p95": 356,
+          "p99": 356
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 10
+        },
+        "uiCounts": {
+          "dossier": 10
+        },
+        "cache": {
+          "hit": 9,
+          "miss": 1,
+          "hitRatio": 0.9
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 0,
+          "wikiTimeout_sum": 0,
+          "wikiRetries_sum": 0,
+          "samplesWith429": 0,
+          "samplesWithWikiTimeout": 0
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 40.161,
+        "wallClockMs": 249
+      },
+      "samples": [
+        {
+          "i": 5,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 102,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "8403ffa7-4758-45a3-8f17-a1e8939167bf",
+          "timings": {
+            "wiki": 356,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 356
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.274Z"
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 234,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.404Z"
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 229,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.404Z"
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 236,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.405Z"
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 232,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.406Z"
+        },
+        {
+          "i": 0,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 240,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.407Z"
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 236,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.407Z"
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 231,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.407Z"
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 241,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.414Z"
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "caseId": "A-assaf-get",
+          "concurrency": 20,
+          "wallMs": 244,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": true,
+          "requestId": "ec45084c-407d-4579-b643-b8214f57723a",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 0
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:13.416Z"
+        }
+      ]
+    },
+    {
+      "stream": "L2-A",
+      "step": "peak",
+      "concurrency": 20,
+      "caseId": "C-smith-ctx-post",
+      "mix": "COLD",
+      "nRequested": 10,
+      "agg": {
+        "n": 10,
+        "wall": {
+          "n": 10,
+          "min": 6234,
+          "max": 15375,
+          "mean": 9533,
+          "p50": 8533,
+          "p90": 12338,
+          "p95": 15375,
+          "p99": 15375
+        },
+        "wiki": {
+          "n": 10,
+          "min": 2474,
+          "max": 5501,
+          "mean": 4377,
+          "p50": 5499,
+          "p90": 5501,
+          "p95": 5501,
+          "p99": 5501
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 10
+        },
+        "uiCounts": {
+          "candidates": 8,
+          "thin": 2
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 10,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 40,
+          "wikiTimeout_sum": 6,
+          "wikiRetries_sum": 46,
+          "samplesWith429": 6,
+          "samplesWithWikiTimeout": 6
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 0.65,
+        "wallClockMs": 15377
+      },
+      "samples": [
+        {
+          "i": 8,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 6234,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "b3623f79-fa3f-4b8f-a19a-6b96affe3488",
+          "timings": {
+            "wiki": 2716,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3307,
+            "total": 6028
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:19.653Z"
+        },
+        {
+          "i": 0,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 6927,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "cebcb152-22b8-47ac-a0c4-d7082025c1f2",
+          "timings": {
+            "wiki": 2916,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3789,
+            "total": 6709
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:20.343Z"
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 7536,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "f275d3ca-3f4f-4a15-a3ef-07dd55cedec3",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1841,
+            "total": 7346
+          },
+          "wikiMeta": {
+            "wiki429": 4,
+            "wikiTimeout": 1,
+            "wikiRetries": 5
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:20.954Z"
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 8485,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "92c5a27b-a107-4777-8ceb-939bb408a3e2",
+          "timings": {
+            "wiki": 5499,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 2780,
+            "total": 8285
+          },
+          "wikiMeta": {
+            "wiki429": 6,
+            "wikiTimeout": 1,
+            "wikiRetries": 7
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:21.902Z"
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 8533,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "c64706a5-bfea-445e-a952-1a75dc1f0e5f",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 2828,
+            "total": 8334
+          },
+          "wikiMeta": {
+            "wiki429": 8,
+            "wikiTimeout": 1,
+            "wikiRetries": 9
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:21.951Z"
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 9045,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "42db8531-775a-4f81-abfd-f8b22a4aa101",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3344,
+            "total": 8848
+          },
+          "wikiMeta": {
+            "wiki429": 6,
+            "wikiTimeout": 1,
+            "wikiRetries": 7
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:22.464Z"
+        },
+        {
+          "i": 5,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 10173,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "14edbc05-73d6-4353-9a33-d80ded8cb4c1",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 187,
+            "enrich": 0,
+            "stageB": 4001,
+            "total": 9991
+          },
+          "wikiMeta": {
+            "wiki429": 10,
+            "wikiTimeout": 1,
+            "wikiRetries": 11
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:23.591Z"
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 10685,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "e4e584ec-c784-4786-9e84-fd993cfa588e",
+          "timings": {
+            "wiki": 2659,
+            "gemini": 195,
+            "enrich": 0,
+            "stageB": 4001,
+            "total": 10445
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:24.103Z"
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 12338,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "0c5b7c80-719e-4972-ad9e-0b0578d7a2b2",
+          "timings": {
+            "wiki": 2474,
+            "gemini": 151,
+            "enrich": 0,
+            "stageB": 4000,
+            "total": 12131
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:25.756Z"
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 15375,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "7b135ad4-2763-417d-8544-575cdb3f00a3",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 171,
+            "enrich": 0,
+            "stageB": 4001,
+            "total": 15177
+          },
+          "wikiMeta": {
+            "wiki429": 6,
+            "wikiTimeout": 1,
+            "wikiRetries": 7
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:28.793Z"
+        }
+      ]
+    },
+    {
+      "stream": "L2-A",
+      "step": "peak",
+      "concurrency": 20,
+      "caseId": "C-smith-ctx-post",
+      "mix": "WARM",
+      "nRequested": 10,
+      "agg": {
+        "n": 10,
+        "wall": {
+          "n": 10,
+          "min": 7600,
+          "max": 15544,
+          "mean": 10981,
+          "p50": 9381,
+          "p90": 15543,
+          "p95": 15544,
+          "p99": 15544
+        },
+        "wiki": {
+          "n": 10,
+          "min": 5500,
+          "max": 5501,
+          "mean": 5500,
+          "p50": 5500,
+          "p90": 5501,
+          "p95": 5501,
+          "p99": 5501
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 10
+        },
+        "uiCounts": {
+          "candidates": 5,
+          "thin": 5
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 10,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 143,
+          "wikiTimeout_sum": 18,
+          "wikiRetries_sum": 161,
+          "samplesWith429": 10,
+          "samplesWithWikiTimeout": 10
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 0.643,
+        "wallClockMs": 15546
+      },
+      "samples": [
+        {
+          "i": 6,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 7600,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "adc14569-4382-4544-a06a-1eae54f27c20",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1746,
+            "total": 7250
+          },
+          "wikiMeta": {
+            "wiki429": 8,
+            "wikiTimeout": 1,
+            "wikiRetries": 9
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:36.395Z"
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 7609,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "93b0af85-a95b-423a-8a62-e9c4380cda19",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1761,
+            "total": 7267
+          },
+          "wikiMeta": {
+            "wiki429": 11,
+            "wikiTimeout": 2,
+            "wikiRetries": 13
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:36.403Z"
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 8263,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "11b0c31c-601d-40eb-8940-a5af1013c2fc",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 2544,
+            "total": 8048
+          },
+          "wikiMeta": {
+            "wiki429": 12,
+            "wikiTimeout": 2,
+            "wikiRetries": 14
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:37.058Z"
+        },
+        {
+          "i": 0,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 9374,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "d87ec9ea-c404-4ded-b9e2-b84cba3b7001",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3480,
+            "total": 8985
+          },
+          "wikiMeta": {
+            "wiki429": 19,
+            "wikiTimeout": 2,
+            "wikiRetries": 21
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:38.167Z"
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 9381,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "e7cd6781-d925-4a2c-aaf1-80f26c7bcc11",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3540,
+            "total": 9043
+          },
+          "wikiMeta": {
+            "wiki429": 14,
+            "wikiTimeout": 2,
+            "wikiRetries": 16
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:38.175Z"
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 10327,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "129af288-72f9-4ceb-8fa6-475d1958abc5",
+          "timings": {
+            "wiki": 5501,
+            "gemini": 191,
+            "enrich": 0,
+            "stageB": 4000,
+            "total": 10079
+          },
+          "wikiMeta": {
+            "wiki429": 14,
+            "wikiTimeout": 2,
+            "wikiRetries": 16
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:39.121Z"
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 10628,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "2d515fba-7d53-4bb9-865c-04dfb25df156",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 178,
+            "enrich": 0,
+            "stageB": 4000,
+            "total": 10268
+          },
+          "wikiMeta": {
+            "wiki429": 21,
+            "wikiTimeout": 2,
+            "wikiRetries": 23
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:39.424Z"
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 15538,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "fbb72270-e085-40eb-937a-8e6d68cfe55a",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 179,
+            "enrich": 0,
+            "stageB": 4000,
+            "total": 15183
+          },
+          "wikiMeta": {
+            "wiki429": 8,
+            "wikiTimeout": 1,
+            "wikiRetries": 9
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:44.334Z"
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 15543,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "ea70703a-8d7a-4453-82e7-7e7fd87154ed",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 153,
+            "enrich": 0,
+            "stageB": 4000,
+            "total": 15157
+          },
+          "wikiMeta": {
+            "wiki429": 18,
+            "wikiTimeout": 2,
+            "wikiRetries": 20
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:44.339Z"
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "caseId": "C-smith-ctx-post",
+          "concurrency": 20,
+          "wallMs": 15544,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "343ce350-8f16-4a7e-b92b-dc8fdd9622c5",
+          "timings": {
+            "wiki": 5500,
+            "gemini": 179,
+            "enrich": 0,
+            "stageB": 4000,
+            "total": 15183
+          },
+          "wikiMeta": {
+            "wiki429": 18,
+            "wikiTimeout": 2,
+            "wikiRetries": 20
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:30:44.339Z"
+        }
+      ]
+    },
+    {
+      "stream": "L2-A",
+      "step": "peak",
+      "concurrency": 20,
+      "caseId": "D-cohen-get",
+      "mix": "COLD",
+      "nRequested": 10,
+      "agg": {
+        "n": 10,
+        "wall": {
+          "n": 10,
+          "min": 16789,
+          "max": 45356,
+          "mean": 27886,
+          "p50": 19289,
+          "p90": 45328,
+          "p95": 45356,
+          "p99": 45356
+        },
+        "wiki": {
+          "n": 10,
+          "min": 0,
+          "max": 19140,
+          "mean": 12806,
+          "p50": 16660,
+          "p90": 19065,
+          "p95": 19140,
+          "p99": 19140
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 10
+        },
+        "uiCounts": {
+          "need_context": 7,
+          "thin": 3
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 10,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 364,
+          "wikiTimeout_sum": 0,
+          "wikiRetries_sum": 364,
+          "samplesWith429": 10,
+          "samplesWithWikiTimeout": 0
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 0.22,
+        "wallClockMs": 45362
+      },
+      "samples": [
+        {
+          "i": 5,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 16789,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "082a901c-07f4-4e28-9380-5e019ee36d18",
+          "timings": {
+            "wiki": 16589,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 16590
+          },
+          "wikiMeta": {
+            "wiki429": 24,
+            "wikiTimeout": 0,
+            "wikiRetries": 24
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:01.133Z"
+        },
+        {
+          "i": 7,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 16858,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "b0545ff4-7cbc-42df-86a2-6824b752a276",
+          "timings": {
+            "wiki": 16660,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 16661
+          },
+          "wikiMeta": {
+            "wiki429": 16,
+            "wikiTimeout": 0,
+            "wikiRetries": 16
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:01.203Z"
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 19156,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "68fe1626-3b9f-4a1e-a9f0-2ca650401b5c",
+          "timings": {
+            "wiki": 18818,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 18818
+          },
+          "wikiMeta": {
+            "wiki429": 26,
+            "wikiTimeout": 0,
+            "wikiRetries": 26
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:03.497Z"
+        },
+        {
+          "i": 0,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 19183,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "53cdc333-5f50-4dc2-b1b1-f063de6e0270",
+          "timings": {
+            "wiki": 18825,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 18825
+          },
+          "wikiMeta": {
+            "wiki429": 26,
+            "wikiTimeout": 0,
+            "wikiRetries": 26
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:03.523Z"
+        },
+        {
+          "i": 6,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 19289,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "8aa5e5dc-c532-472d-b2ab-dda0f10ab209",
+          "timings": {
+            "wiki": 18959,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 18959
+          },
+          "wikiMeta": {
+            "wiki429": 17,
+            "wikiTimeout": 0,
+            "wikiRetries": 17
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:03.633Z"
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 23172,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "3e47e9a8-b8a7-425e-b18f-b487aae1fab6",
+          "timings": {
+            "wiki": 19065,
+            "gemini": 0,
+            "enrich": 172,
+            "stageB": 3313,
+            "total": 22812
+          },
+          "wikiMeta": {
+            "wiki429": 12,
+            "wikiTimeout": 0,
+            "wikiRetries": 12
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:07.514Z"
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 28478,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "bb80461b-923e-4da1-976e-a3931972a248",
+          "timings": {
+            "wiki": 19140,
+            "gemini": 0,
+            "enrich": 187,
+            "stageB": 3498,
+            "total": 28085
+          },
+          "wikiMeta": {
+            "wiki429": 12,
+            "wikiTimeout": 0,
+            "wikiRetries": 12
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:12.821Z"
+        },
+        {
+          "i": 8,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 45255,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "0f00bcad-03dc-477b-8885-8a784a148fcc",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 45000
+          },
+          "wikiMeta": {
+            "wiki429": 77,
+            "wikiTimeout": 0,
+            "wikiRetries": 77
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:29.600Z"
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 45328,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "1d4d0494-9a63-46d4-871f-8f5de882a5c9",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 45000
+          },
+          "wikiMeta": {
+            "wiki429": 77,
+            "wikiTimeout": 0,
+            "wikiRetries": 77
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:29.671Z"
+        },
+        {
+          "i": 9,
+          "mode": "COLD",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 45356,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "00d560ff-0f83-45c9-9556-6c7f68b28bc9",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 45000
+          },
+          "wikiMeta": {
+            "wiki429": 77,
+            "wikiTimeout": 0,
+            "wikiRetries": 77
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:29.702Z"
+        }
+      ]
+    },
+    {
+      "stream": "L2-A",
+      "step": "peak",
+      "concurrency": 20,
+      "caseId": "D-cohen-get",
+      "mix": "WARM",
+      "nRequested": 10,
+      "agg": {
+        "n": 10,
+        "wall": {
+          "n": 10,
+          "min": 983,
+          "max": 45454,
+          "mean": 25589,
+          "p50": 28519,
+          "p90": 45335,
+          "p95": 45454,
+          "p99": 45454
+        },
+        "wiki": {
+          "n": 10,
+          "min": 0,
+          "max": 32344,
+          "mean": 14511,
+          "p50": 900,
+          "p90": 31614,
+          "p95": 32344,
+          "p99": 32344
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 10
+        },
+        "uiCounts": {
+          "need_context": 8,
+          "thin": 2
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 10,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 302,
+          "wikiTimeout_sum": 0,
+          "wikiRetries_sum": 302,
+          "samplesWith429": 7,
+          "samplesWithWikiTimeout": 0
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 0.22,
+        "wallClockMs": 45458
+      },
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 983,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "a787d843-6e00-49e1-97fb-17c52f7362e3",
+          "timings": {
+            "wiki": 626,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 627
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:30.685Z"
+        },
+        {
+          "i": 7,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 1119,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "aad13f5d-ccc7-4588-a4a9-57f3a0cab1cb",
+          "timings": {
+            "wiki": 697,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 698
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:30.827Z"
+        },
+        {
+          "i": 9,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 1305,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "99e2c19c-f247-42e9-a872-d2bc9bc93b13",
+          "timings": {
+            "wiki": 900,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 901
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:31.014Z"
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 26433,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "0d1e7215-34d0-4672-a599-c5aa55f23540",
+          "timings": {
+            "wiki": 22674,
+            "gemini": 0,
+            "enrich": 151,
+            "stageB": 2722,
+            "total": 26089
+          },
+          "wikiMeta": {
+            "wiki429": 15,
+            "wikiTimeout": 0,
+            "wikiRetries": 15
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:56.138Z"
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 28519,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "8f42f978-d3eb-461f-8534-d58ab4cbf7e5",
+          "timings": {
+            "wiki": 25276,
+            "gemini": 0,
+            "enrich": 162,
+            "stageB": 2536,
+            "total": 28167
+          },
+          "wikiMeta": {
+            "wiki429": 17,
+            "wikiTimeout": 0,
+            "wikiRetries": 17
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:31:58.223Z"
+        },
+        {
+          "i": 6,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 34857,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "4293a445-5c76-4340-b5d7-d7ebb972efba",
+          "timings": {
+            "wiki": 32344,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1887,
+            "total": 34524
+          },
+          "wikiMeta": {
+            "wiki429": 31,
+            "wikiTimeout": 0,
+            "wikiRetries": 31
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:32:04.564Z"
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 35374,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "9a0d160e-c5bf-498b-81ff-067242156e1e",
+          "timings": {
+            "wiki": 31614,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3066,
+            "total": 35168
+          },
+          "wikiMeta": {
+            "wiki429": 62,
+            "wikiTimeout": 0,
+            "wikiRetries": 62
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:32:05.079Z"
+        },
+        {
+          "i": 8,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 36514,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "c8976924-2072-49cf-a27a-6116e017bdca",
+          "timings": {
+            "wiki": 30983,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 3499,
+            "total": 36312
+          },
+          "wikiMeta": {
+            "wiki429": 31,
+            "wikiTimeout": 0,
+            "wikiRetries": 31
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:32:06.222Z"
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 45335,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "22579dd8-a92f-4136-975c-fdc83a36ae6b",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 45000
+          },
+          "wikiMeta": {
+            "wiki429": 73,
+            "wikiTimeout": 0,
+            "wikiRetries": 73
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:32:15.041Z"
+        },
+        {
+          "i": 5,
+          "mode": "WARM",
+          "caseId": "D-cohen-get",
+          "concurrency": 20,
+          "wallMs": 45454,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "thin",
+          "qid": null,
+          "faces": false,
+          "photo": false,
+          "cached": false,
+          "requestId": "21cd55df-eb87-481b-88e0-c295d9a76738",
+          "timings": {
+            "wiki": 0,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 44999
+          },
+          "wikiMeta": {
+            "wiki429": 73,
+            "wikiTimeout": 0,
+            "wikiRetries": 73
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:32:15.160Z"
+        }
+      ]
+    }
+  ],
+  "stop": {
+    "aborted": false,
+    "reason": null,
+    "pwEvents": []
+  }
+}

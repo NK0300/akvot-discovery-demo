@@ -1,0 +1,130 @@
+{
+  "when": "2026-09-08T05:41:25.454Z",
+  "live": [
+    {
+      "q": "בנימין נתניהו",
+      "http": 504,
+      "ms": 60561,
+      "parseErr": "Unexpected token 'A', \"An error o\"... is not valid JSON",
+      "qid": null,
+      "faces": false,
+      "imgs": 0,
+      "src": 0,
+      "bodyHead": "An error occurred with your deployment\n\nFUNCTION_INVOCATION_TIMEOUT\n\ncle1::fbvcn-1788846015839-2611d81a1e3c\n"
+    },
+    {
+      "q": "גדעון סער",
+      "http": 200,
+      "ms": 1794,
+      "parseErr": null,
+      "phase": "orchestrator-v0-b",
+      "ui": "dossier",
+      "scn": "known",
+      "qid": "Q966349",
+      "mode": "wiki",
+      "faces": true,
+      "imgs": 2,
+      "src": 16,
+      "label": "גדעון סער"
+    },
+    {
+      "q": "חיים רמון",
+      "http": 200,
+      "ms": 7563,
+      "parseErr": null,
+      "phase": "orchestrator-v0-b",
+      "ui": "dossier",
+      "scn": "known",
+      "qid": "Q652581",
+      "mode": "wiki",
+      "faces": true,
+      "imgs": 1,
+      "src": 12,
+      "label": "חיים רמון"
+    }
+  ],
+  "hist": [
+    {
+      "from": "SMOKE-A-retest-2026-09-08.json",
+      "id": "G1-bibi",
+      "ui": "dossier",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "google",
+      "ms": 11692
+    },
+    {
+      "from": "SMOKE-A-retest-2026-09-08.json",
+      "id": "G2a-galon-he",
+      "ui": "need_context",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "ambiguous",
+      "ms": 2381
+    },
+    {
+      "from": "SMOKE-A-retest-2026-09-08.json",
+      "id": "G3a-obama-en",
+      "ui": "need_context",
+      "scn": "foreign",
+      "qid": null,
+      "mode": "google",
+      "ms": 60885
+    },
+    {
+      "from": "SMOKE-A-retest-2026-09-08.json",
+      "id": "G3b-obama-he",
+      "ui": "need_context",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "candidates",
+      "ms": 29292
+    },
+    {
+      "from": "SMOKE-12gate-orchestrator-v0-2026-09-08.json",
+      "id": "G1-bibi",
+      "ui": "dossier",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "google",
+      "ms": 13764,
+      "pass": false,
+      "fails": [
+        "SAFETY fail"
+      ]
+    },
+    {
+      "from": "SMOKE-12gate-orchestrator-v0-2026-09-08.json",
+      "id": "G2a-galon-he",
+      "ui": "need_context",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "ambiguous",
+      "ms": 3394,
+      "pass": false,
+      "fails": []
+    },
+    {
+      "from": "SMOKE-12gate-orchestrator-v0-2026-09-08.json",
+      "id": "G3a-obama-en",
+      "ui": "dossier",
+      "scn": "known",
+      "qid": "Q76",
+      "mode": "wiki",
+      "ms": 14212,
+      "pass": true,
+      "fails": []
+    },
+    {
+      "from": "SMOKE-12gate-orchestrator-v0-2026-09-08.json",
+      "id": "G3b-obama-he",
+      "ui": "need_context",
+      "scn": "stranger",
+      "qid": null,
+      "mode": "google",
+      "ms": 13046,
+      "pass": false,
+      "fails": []
+    }
+  ]
+}

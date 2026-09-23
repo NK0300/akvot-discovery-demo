@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/impl-ready/evidence/v1",
+  "title": "Evidence + Finding (implementation-readiness design schema)",
+  "type": "object",
+  "required": [
+    "evidenceId",
+    "findingId",
+    "providerId",
+    "familyId",
+    "extractionMethod",
+    "evidenceStrength",
+    "provenance",
+    "timestamp"
+  ],
+  "properties": {
+    "evidenceId": {
+      "type": "string"
+    },
+    "findingId": {
+      "type": "string"
+    },
+    "providerId": {
+      "type": "string"
+    },
+    "familyId": {
+      "type": "string"
+    },
+    "hostFamily": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "object"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "extractionMethod": {
+      "enum": [
+        "api_search",
+        "registry_lookup",
+        "origin_metadata",
+        "enrich_typed_ref",
+        "other"
+      ]
+    },
+    "evidenceStrength": {
+      "enum": [
+        "strong",
+        "moderate",
+        "weak",
+        "metadata_only"
+      ]
+    },
+    "quote": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "relationshipState": {
+      "enum": [
+        "SAME-ENTITY",
+        "SAME-REFERENCE",
+        "RELATED-ENTITY",
+        "POSSIBLE-MATCH",
+        "UNKNOWN",
+        "CONTRADICTORY"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "planId",
+        "intentId",
+        "familyId",
+        "signalSummary",
+        "createdAt"
+      ],
+      "properties": {
+        "planId": {
+          "type": "string"
+        },
+        "intentId": {
+          "type": "string"
+        },
+        "familyId": {
+          "type": "string"
+        },
+        "providerId": {
+          "type": "string"
+        },
+        "extractionMethod": {
+          "type": "string"
+        },
+        "signalSummary": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

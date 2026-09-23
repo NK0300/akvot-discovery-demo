@@ -1,0 +1,245 @@
+{
+  "count": 40,
+  "cases": [
+    {
+      "q": "מנחם בגין",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "גדעון סער",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "חיים רמון",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "יאיר לפיד",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Giorgia Meloni",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "שמעון פרס",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "מרב מיכאלי",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Mark Zuckerberg",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "יואב גלנט",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "ציפי לבני",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "נפתלי בנט",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אהוד ברק",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "הרצל בוקר",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "יצחק רבין",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Xi Jinping",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Aisha Rahman Lagos",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 41 City10",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 27 עיר6",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "יוסי כהן חיפה הייטק",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 31 עיר10",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 47 City1",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 52 City6",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 34 עיר13",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 32 עיר11",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Sarah Miller Stanford CS",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 27 City11",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 51 עיר10",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Emily Watson Melbourne nurse",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Chen Wei Shanghai engineer",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "מיכל שפירא רעננה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Nullius Nomen Void",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "מישהו_בדוי_למערכת",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "פלצמקרוניוס זרבוטן",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "טסט_לא_קיים_אבג",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "איש_לא_קיים_טסט",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Fictional McFakeFace",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Qwerty Asdfgh Lkjh",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Completely Invented Persona ZX9",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Dummy Human Placeholder X",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Phantom Lookup Target 77",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    }
+  ]
+}

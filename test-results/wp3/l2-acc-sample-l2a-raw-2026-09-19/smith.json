@@ -1,0 +1,69 @@
+{
+  "mode": "ambiguous",
+  "label": "John Smith",
+  "qid": null,
+  "birth": null,
+  "age": null,
+  "place": null,
+  "desc": "Several possible matches — pick one",
+  "extract": "",
+  "photo": null,
+  "alts": [],
+  "note": "Common English name — no portrait until you pick a candidate.",
+  "email": null,
+  "phone": null,
+  "wikiError": "wiki_budget",
+  "sources": [],
+  "images": [],
+  "extra_facts": [],
+  "queries": [],
+  "scanned": 0,
+  "allowBroadImages": false,
+  "ambiguous": true,
+  "thin": true,
+  "candidates": [],
+  "contextUsed": {
+    "city": "New York",
+    "org": "IBM",
+    "role": "",
+    "country": "US",
+    "context": "",
+    "phone": "",
+    "email": "",
+    "focus": ""
+  },
+  "searchQ": "John Smith IBM New York US",
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 5501,
+    "gemini": 158,
+    "enrich": 0,
+    "stageB": 3999,
+    "total": 9995,
+    "wikiMeta": {
+      "wiki429": 10,
+      "wikiTimeout": 0,
+      "wikiRetries": 10
+    }
+  },
+  "phonePath": false,
+  "uiState": "thin",
+  "scenario": "foreign",
+  "confidence": "none",
+  "needContextFields": [
+    "country",
+    "city",
+    "org",
+    "role"
+  ],
+  "messageKey": "no_public_sources",
+  "photoUrl": null,
+  "faces": false,
+  "needCandidatePick": false,
+  "requestId": "0f5b45ad-e827-4443-9c79-ab2ae11e5a6b",
+  "wikiMeta": {
+    "wiki429": 10,
+    "wikiTimeout": 0,
+    "wikiRetries": 10
+  }
+}

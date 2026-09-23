@@ -1,0 +1,1924 @@
+{
+  "meta": {
+    "id": "ACCURACY_EVAL-P1-HTTP-דיוק-2026-09-09",
+    "agent": "דיוק",
+    "role": "Accuracy",
+    "when": "2026-09-09T10:20:49.416405+00:00",
+    "whenLocal": "9.9.2026, 13:20:49 Asia/Jerusalem",
+    "deploy": "dpl_D2zvC3QvUVgz6kaSaWqnSUCoD9hU",
+    "base": "https://akvot-simple-demo.vercel.app",
+    "origin": "https://akvot-simple-demo.vercel.app",
+    "phaseExpected": "orchestrator-v0-b",
+    "phaseOk": true,
+    "caseSet": "ACCURACY_EVAL-v2-set-דיוק-2026-09-09.json",
+    "nCaseSet": 34,
+    "nRun": 35,
+    "skipped": [],
+    "concurrency": 3,
+    "timeoutMs": 65000,
+    "elapsedMs": 110557,
+    "recommendation": "GO",
+    "recommendationReasons": [
+      "1 non-critical FAIL(s) — GO with caveats"
+    ]
+  },
+  "summary": {
+    "N": 35,
+    "PASS": 34,
+    "FAIL": 1,
+    "TP": 19,
+    "FP": 0,
+    "TN": 15,
+    "FN": 1,
+    "OVER_GATE": 1,
+    "PRETTY_WRONG": 0,
+    "byCategory": {
+      "exact": {
+        "n": 7,
+        "pass": 7,
+        "fail": 0
+      },
+      "alias": {
+        "n": 5,
+        "pass": 5,
+        "fail": 0
+      },
+      "transliteration": {
+        "n": 8,
+        "pass": 7,
+        "fail": 1
+      },
+      "non-match": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      },
+      "ambiguous": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      },
+      "unknown": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      },
+      "conflict": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0
+      },
+      "partial": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      },
+      "near": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      },
+      "duplicate": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      }
+    },
+    "errorTypeCounts": {
+      "OVER-GATE": 1
+    },
+    "regression": {
+      "n": 4,
+      "pass": 4,
+      "fail": []
+    },
+    "keepSafety": {
+      "n": 5,
+      "pass": 5,
+      "fail": []
+    },
+    "forcedSmoke": [
+      {
+        "id": "reg-netanyahu-bare",
+        "pass": true,
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "errorType": null
+      },
+      {
+        "id": "reg-bibi-netanyahu",
+        "pass": true,
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "errorType": null
+      },
+      {
+        "id": "reg-zehava-galon",
+        "pass": true,
+        "ui": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "errorType": null
+      },
+      {
+        "id": "reg-angela-merkel",
+        "pass": true,
+        "ui": "dossier",
+        "qid": "Q567",
+        "faces": true,
+        "errorType": null
+      },
+      {
+        "id": "ambiguous-danny-cohen",
+        "pass": true,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "errorType": null
+      },
+      {
+        "id": "duplicate-john-smith-bare",
+        "pass": true,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "errorType": null
+      },
+      {
+        "id": "conflict-smith-email",
+        "pass": true,
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "errorType": null
+      },
+      {
+        "id": "smoke-smith-ibm-ny",
+        "pass": true,
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "errorType": null
+      }
+    ]
+  },
+  "rows": [
+    {
+      "id": "reg-netanyahu-bare",
+      "category": "exact",
+      "subset": "regression",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "נתניהו"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q43723 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1746,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q43723",
+        "photo": true,
+        "images": 2,
+        "faces": true,
+        "sources": 17,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "בנימין נתניהו"
+      },
+      "confidence": "high",
+      "evidence": "NLI:987007265800905171@www.nli.org.il; NLI HE:000098960@www.nli.org.il; ויקיפדיה:בנימין נתניהו@he.wikipedia.org; Wikidata:Q43723@www.wikidata.org; Wikipedia EN:Benjamin Netanyahu@en.wikipedia.org"
+    },
+    {
+      "id": "reg-bibi-netanyahu",
+      "category": "alias",
+      "subset": "regression",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "ביבי נתניהו"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q43723 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1426,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q43723",
+        "photo": true,
+        "images": 2,
+        "faces": true,
+        "sources": 17,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "בנימין נתניהו"
+      },
+      "confidence": "high",
+      "evidence": "NLI:987007265800905171@www.nli.org.il; NLI HE:000098960@www.nli.org.il; ויקיפדיה:בנימין נתניהו@he.wikipedia.org; Wikidata:Q43723@www.wikidata.org; Wikipedia EN:Benjamin Netanyahu@en.wikipedia.org"
+    },
+    {
+      "id": "reg-zehava-galon",
+      "category": "transliteration",
+      "subset": "regression",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Zehava Galon"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q2630062 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1546,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q2630062",
+        "photo": true,
+        "images": 2,
+        "faces": true,
+        "sources": 13,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "זהבה גלאון"
+      },
+      "confidence": "high",
+      "evidence": "NLI:987007585771105171@www.nli.org.il; NLI HE:001759073@www.nli.org.il; ויקיפדיה:זהבה גלאון@he.wikipedia.org; Wikidata:Q2630062@www.wikidata.org; Wikipedia EN:Zehava Galon@en.wikipedia.org"
+    },
+    {
+      "id": "reg-angela-merkel",
+      "category": "transliteration",
+      "subset": "regression",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Angela Merkel"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q567 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q567",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1845,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q567",
+        "photo": true,
+        "images": 2,
+        "faces": true,
+        "sources": 20,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "אנגלה מרקל"
+      },
+      "confidence": "high",
+      "evidence": "NLI:987007314303005171@www.nli.org.il; NLI HE:004227574@www.nli.org.il; ויקיפדיה:אנגלה מרקל@he.wikipedia.org; Wikidata:Q567@www.wikidata.org; Wikipedia EN:Angela Merkel@en.wikipedia.org"
+    },
+    {
+      "id": "exact-benjamin-netanyahu",
+      "category": "exact",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "בנימין נתניהו"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q43723 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1181,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q43723",
+        "photo": true,
+        "images": 2,
+        "faces": true,
+        "sources": 17,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "בנימין נתניהו"
+      },
+      "confidence": "high",
+      "evidence": "NLI:987007265800905171@www.nli.org.il; NLI HE:000098960@www.nli.org.il; ויקיפדיה:בנימין נתניהו@he.wikipedia.org; Wikidata:Q43723@www.wikidata.org; Wikipedia EN:Benjamin Netanyahu@en.wikipedia.org"
+    },
+    {
+      "id": "exact-yair-lapid",
+      "category": "exact",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "יאיר לפיד"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q1396120 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q1396120",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1140,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q1396120",
+        "photo": true,
+        "images": 2,
+        "faces": true,
+        "sources": 18,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "יאיר לפיד"
+      },
+      "confidence": "high",
+      "evidence": "NLI:987007463139205171@www.nli.org.il; NLI HE:000397989@www.nli.org.il; ויקיפדיה:יאיר לפיד@he.wikipedia.org; Wikidata:Q1396120@www.wikidata.org; Wikipedia EN:Yair Lapid@en.wikipedia.org"
+    },
+    {
+      "id": "exact-benny-gantz",
+      "category": "exact",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "בני גנץ"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q16131258 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q16131258",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 6543,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q16131258",
+        "photo": true,
+        "images": 6,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "בני גנץ"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q16131258@www.wikidata.org"
+    },
+    {
+      "id": "exact-obama-he",
+      "category": "exact",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "ברק אובמה"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q76 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q76",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 7190,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q76",
+        "photo": true,
+        "images": 6,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "ברק אובמה"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q76@www.wikidata.org"
+    },
+    {
+      "id": "exact-orly-levy",
+      "category": "exact",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "אורלי לוי"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q466537 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q466537",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5044,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q466537",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "אורלי לוי"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q466537@www.wikidata.org"
+    },
+    {
+      "id": "nonmatch-nonsense-latin",
+      "category": "non-match",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "expectedLabel": "ui∈[thin|need_context] · 0 faces · must_not=fake_dossier,dossier+faces,faces,qid_when_unknown",
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5842,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "nonmatch-nonsense-he",
+      "category": "non-match",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "קוקומלומבופלומפ123zzz"
+      },
+      "expectedLabel": "ui∈[thin|need_context] · 0 faces · must_not=fake_dossier,dossier+faces,faces,qid_when_unknown",
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 45329,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "google",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": false,
+        "messageKey": "no_public_sources",
+        "label": "קוקומלומבופלומפ123zzz"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "ambiguous-danny-cohen",
+      "category": "ambiguous",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "דני כהן"
+      },
+      "expectedLabel": "ui∈[need_context] · 0 faces · must_not=dossier+faces,faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 384,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "דני כהן"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "ambiguous-yossi-levy",
+      "category": "ambiguous",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "יוסי לוי"
+      },
+      "expectedLabel": "ui∈[need_context|candidates] · 0 faces · must_not=dossier+faces,faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "need_context",
+          "candidates"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 333,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "יוסי לוי"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "unknown-fake-obscure-he",
+      "category": "unknown",
+      "subset": "new",
+      "smoke": false,
+      "method": "POST",
+      "input": {
+        "q": "פלמוני אלמוניזקש",
+        "ctx": {
+          "city": "דימונה",
+          "org": "מפעל בדיקה פיקטיבי"
+        }
+      },
+      "expectedLabel": "ui∈[thin|need_context] · 0 faces · must_not=fake_dossier,dossier+faces,faces,qid_when_unknown",
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 45380,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "google",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": false,
+        "messageKey": "no_public_sources",
+        "label": "פלמוני אלמוניזקש"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "unknown-fake-obscure-en",
+      "category": "unknown",
+      "subset": "new",
+      "smoke": false,
+      "method": "POST",
+      "input": {
+        "q": "Quentin Zzyzxworth Blorple",
+        "ctx": {
+          "city": "Reykjavik",
+          "org": "Nonexistent Labs LLC"
+        }
+      },
+      "expectedLabel": "ui∈[thin|need_context|candidates] · 0 faces · must_not=fake_dossier,dossier+faces,faces,qid_when_unknown",
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context",
+          "candidates"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 15568,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": true,
+        "messageKey": "no_public_sources",
+        "label": "Quentin Zzyzxworth Blorple"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "conflict-smith-microsoft-seattle",
+      "category": "conflict",
+      "subset": "new",
+      "smoke": false,
+      "method": "POST",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "Microsoft",
+          "city": "Seattle",
+          "country": "US"
+        }
+      },
+      "expectedLabel": "ui∈[candidates|need_context|thin] · 0 faces · must_not=dossier+faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 9093,
+      "err": null,
+      "actual": {
+        "uiState": "candidates",
+        "mode": "candidates",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 6,
+        "candidates": 6,
+        "scenario": "foreign",
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "pick_one",
+        "label": "John Smith"
+      },
+      "confidence": "low",
+      "evidence": "Open Library:John Smith@openlibrary.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org"
+    },
+    {
+      "id": "conflict-smith-email",
+      "category": "conflict",
+      "subset": "new",
+      "smoke": false,
+      "method": "POST",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        }
+      },
+      "expectedLabel": "ui∈[candidates|need_context|thin] · 0 faces · must_not=dossier+faces,fake_dossier,email_leak",
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier",
+          "email_leak"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 14471,
+      "err": null,
+      "actual": {
+        "uiState": "candidates",
+        "mode": "candidates",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 6,
+        "candidates": 6,
+        "scenario": "identifier",
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "pick_one",
+        "label": "John Smith"
+      },
+      "confidence": "low",
+      "evidence": "Open Library:John Smith@openlibrary.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org"
+    },
+    {
+      "id": "partial-role-only",
+      "category": "partial",
+      "subset": "new",
+      "smoke": false,
+      "method": "POST",
+      "input": {
+        "q": "Sarah Johnson",
+        "ctx": {
+          "role": "product manager"
+        }
+      },
+      "expectedLabel": "ui∈[candidates|need_context|thin] · 0 faces · must_not=dossier+faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 8830,
+      "err": null,
+      "actual": {
+        "uiState": "candidates",
+        "mode": "candidates",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 5,
+        "candidates": 5,
+        "scenario": "foreign",
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "pick_one",
+        "label": "Sarah Johnson"
+      },
+      "confidence": "low",
+      "evidence": "Open Library:Sarah Johnson@openlibrary.org; VIAF:Sarah Johnson, 1958-@viaf.org; VIAF:Sarah Johnson, 1980-@viaf.org; VIAF:Sarah Johnson Prichard@viaf.org; VIAF:Sarah Johnson, 1950-@viaf.org"
+    },
+    {
+      "id": "partial-emily-chen-student",
+      "category": "partial",
+      "subset": "new",
+      "smoke": false,
+      "method": "POST",
+      "input": {
+        "q": "Emily Chen",
+        "ctx": {
+          "city": "Palo Alto",
+          "role": "student"
+        }
+      },
+      "expectedLabel": "ui∈[candidates|need_context|thin] · 0 faces · must_not=dossier+faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 9337,
+      "err": null,
+      "actual": {
+        "uiState": "candidates",
+        "mode": "candidates",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 8,
+        "candidates": 7,
+        "scenario": "foreign",
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "pick_one",
+        "label": "Emily Chen"
+      },
+      "confidence": "low",
+      "evidence": "ORCID:Emily Chen@orcid.org; Wikidata:Xiaofan Chen — author of 2012 doctoral thesis at University of Auckland tit@www.wikidata.org; Wikidata:Wikidata search: Emily Chen@www.wikidata.org; Wikidata:Emily Chenevert — American politician@www.wikidata.org; VIAF:Emily Cheney Neville 1919-1997@viaf.org"
+    },
+    {
+      "id": "near-netenyahu-typo",
+      "category": "near",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Netenyahu"
+      },
+      "expectedLabel": "ui∈[dossier|need_context|candidates|thin] · must_not=wrong_person_dossier",
+      "expected": {
+        "uiState": [
+          "dossier",
+          "need_context",
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": null,
+        "must_not": [
+          "wrong_person_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5837,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "Netenyahu"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "near-zehava-missing-alef",
+      "category": "near",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "זהבה גלון"
+      },
+      "expectedLabel": "ui∈[dossier|need_context|candidates|thin] · must_not=wrong_person_dossier",
+      "expected": {
+        "uiState": [
+          "dossier",
+          "need_context",
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": null,
+        "must_not": [
+          "wrong_person_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 45341,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "google",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": false,
+        "messageKey": "no_public_sources",
+        "label": "זהבה גלון"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "duplicate-michael-brown",
+      "category": "duplicate",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Michael Brown"
+      },
+      "expectedLabel": "ui∈[need_context|candidates] · 0 faces · must_not=dossier+faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "need_context",
+          "candidates"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5842,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "Michael Brown"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "duplicate-john-smith-bare",
+      "category": "duplicate",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "John Smith"
+      },
+      "expectedLabel": "ui∈[need_context] · 0 faces · must_not=dossier+faces,faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5833,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "John Smith"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "alias-lapid-bare",
+      "category": "alias",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "לפיד"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q1396120 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q1396120",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 4118,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q1396120",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "לפיד"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q1396120@www.wikidata.org"
+    },
+    {
+      "id": "alias-gantz-bare",
+      "category": "alias",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "גנץ"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q16131258 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q16131258",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 6987,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q16131258",
+        "photo": true,
+        "images": 6,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "גנץ"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q16131258@www.wikidata.org"
+    },
+    {
+      "id": "alias-bibi-alone",
+      "category": "alias",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "ביבי"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q43723 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 2029,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q43723",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "ביבי"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q43723@www.wikidata.org"
+    },
+    {
+      "id": "alias-obama-surname",
+      "category": "alias",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Obama"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q76 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q76",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 2062,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q76",
+        "photo": false,
+        "images": 6,
+        "faces": true,
+        "sources": 3,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Obama"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q76@www.wikidata.org; Open Library:Barack Obama@openlibrary.orgol529531a; Open Library:Barack Obama@openlibrary.orgol13898264a"
+    },
+    {
+      "id": "translit-meloni-bare",
+      "category": "transliteration",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Meloni"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q451791 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q451791",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 3132,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q451791",
+        "photo": false,
+        "images": 6,
+        "faces": true,
+        "sources": 3,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Meloni"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q451791@www.wikidata.org; Open Library:Julie C. Meloni@openlibrary.orgol1395088a; Open Library:Giuseppe Meloni@openlibrary.orgol484098a"
+    },
+    {
+      "id": "translit-giorgia-meloni",
+      "category": "transliteration",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Giorgia Meloni"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q451791 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q451791",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1728,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q451791",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 3,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Giorgia Meloni"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q451791@www.wikidata.org; Open Library:Giorgia Meloni@openlibrary.orgol11595640a; Open Library:Giorgia Meloni@openlibrary.orgol7101509a"
+    },
+    {
+      "id": "translit-assaf-rappaport",
+      "category": "transliteration",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Assaf Rappaport"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q47507930 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q47507930",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": false,
+      "prettyWrong": false,
+      "errorType": "OVER-GATE",
+      "confusion": "FN",
+      "fails": [
+        "uiState=need_context expected dossier",
+        "qid=None expected Q47507930",
+        "faces expected"
+      ],
+      "notes": [],
+      "http": 200,
+      "ms": 5829,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "Assaf Rappaport"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "translit-obama-en",
+      "category": "transliteration",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Barack Obama"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q76 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q76",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1795,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q76",
+        "photo": false,
+        "images": 6,
+        "faces": true,
+        "sources": 3,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Barack Obama"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q76@www.wikidata.org; Open Library:Barack Obama@openlibrary.orgol529531a; Open Library:Barack Obama@openlibrary.orgol13898264a"
+    },
+    {
+      "id": "translit-yair-lapid-en",
+      "category": "transliteration",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Yair Lapid"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q1396120 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q1396120",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 1810,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q1396120",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 2,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Yair Lapid"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q1396120@www.wikidata.org; Open Library:Yair Lapid@openlibrary.orgol4181325a"
+    },
+    {
+      "id": "translit-zahava-gal-on",
+      "category": "transliteration",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Zahava Gal-On"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q2630062 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 3198,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q2630062",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Zahava Gal-On"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q2630062@www.wikidata.org"
+    },
+    {
+      "id": "diaspora-rahm-emanuel",
+      "category": "exact",
+      "subset": "new",
+      "smoke": false,
+      "method": "GET",
+      "input": {
+        "q": "Rahm Emanuel"
+      },
+      "expectedLabel": "ui∈[dossier] · qid=Q298443 · faces",
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "qid": "Q298443",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TP",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 3518,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q298443",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 3,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "Rahm Emanuel"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q298443@www.wikidata.org; Open Library:Rahm Emanuel@openlibrary.orgol3107868a; Open Library:Rahm Emanuel@openlibrary.orgol6925400a"
+    },
+    {
+      "id": "smoke-smith-ibm-ny",
+      "category": "conflict",
+      "subset": "smoke",
+      "smoke": true,
+      "method": "POST",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "expectedLabel": "ui∈[candidates|need_context|thin] · 0 faces · must_not=dossier+faces,fake_dossier",
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "confusion": "TN",
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 13878,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": true,
+        "messageKey": "no_public_sources",
+        "label": "John Smith"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    }
+  ]
+}

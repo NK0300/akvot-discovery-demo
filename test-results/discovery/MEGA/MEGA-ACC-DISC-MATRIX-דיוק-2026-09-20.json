@@ -1,0 +1,79 @@
+{
+  "doc": "MEGA-ACC-DISC-MATRIX-דיוק-2026-09-20",
+  "checked": "2026-09-20T07:23:13+03:00",
+  "preview": "https://akvot-simple-demo-kppgm355g-k-akvot.vercel.app",
+  "dpl": "dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+  "alias_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "promote": false,
+  "kv_credentials": "blocked",
+  "verdict": "GO",
+  "leakage_total": 0,
+  "pw_total": 0,
+  "seeds": {
+    "he_soft_david_cohen": {
+      "ok": true,
+      "status": "partial",
+      "findings": 13,
+      "fiv": "2026-09-19.1",
+      "store": "fs-regen",
+      "leak": 0,
+      "dossier": false
+    },
+    "smith_ctx": {
+      "ok": true,
+      "status": "partial",
+      "findings": 15,
+      "fiv": "2026-09-19.1",
+      "store": "fs-regen",
+      "leak": 0,
+      "dossier": false
+    },
+    "org_example": {
+      "ok": true,
+      "status": "complete",
+      "findings": 2,
+      "fiv": "2026-09-19.1",
+      "store": "fs-regen",
+      "leak": 0,
+      "dossier": false
+    }
+  },
+  "paths": {
+    "get_regen": {
+      "ok": true,
+      "status": "partial",
+      "findings": 15,
+      "fiv": "2026-09-19.1",
+      "store": "fs-regen",
+      "leak": 0
+    },
+    "narrow": {
+      "ok": true,
+      "status": "partial",
+      "findings": 15,
+      "fiv": "2026-09-19.1",
+      "store": "fs-regen",
+      "leak": 0
+    },
+    "sse": {
+      "data_lines": 22,
+      "leak": 0,
+      "dossier_emit": false,
+      "fiv_seen": true
+    }
+  },
+  "adversarial": [
+    "ADV-01",
+    "ADV-02",
+    "ADV-03",
+    "ADV-04"
+  ],
+  "invariants": [
+    "ACC-DISC-01",
+    "ACC-DISC-02",
+    "ACC-DISC-03",
+    "ACC-DISC-04",
+    "ACC-DISC-05",
+    "ACC-DISC-06"
+  ]
+}

@@ -1,0 +1,21 @@
+HTTP/2 404 
+access-control-allow-methods: GET, HEAD, OPTIONS
+access-control-allow-origin: *
+age: 0
+cache-control: no-store
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: application/json; charset=utf-8
+date: Sun, 20 Sep 2026 04:36:56 GMT
+etag: W/"16b-35ZVg+TBz49536wraeOiRH1fGJ8"
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-robots-tag: noindex
+x-vercel-cache: MISS
+x-vercel-id: cle1::fra1::9xptx-1789879005755-41d3049b83b4
+content-length: 363
+
+{"ok":false,"error":"session not found","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true}}

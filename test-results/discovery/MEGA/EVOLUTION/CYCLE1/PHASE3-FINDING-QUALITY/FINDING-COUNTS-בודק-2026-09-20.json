@@ -1,0 +1,266 @@
+{
+  "stamp": "2026-09-20T09:53:15+03:00",
+  "author": "בודק",
+  "baselineId": "B0",
+  "discoveryDeploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "promote": "HOLD",
+  "accLeakageTotal": 0,
+  "perSeed": [
+    {
+      "id": "FQ01",
+      "seed": "דוד כהן",
+      "type": "HE_person_soft",
+      "source": "fresh",
+      "status": "partial",
+      "sessionId": "kv1.2ad2c1acc9fa9f10ca77dd8b4284e96f",
+      "nFindings": 5,
+      "nEvidence": 5,
+      "nContradictions": 0,
+      "counts": {
+        "duplicate": 0,
+        "near-dup": 0,
+        "contradiction": 0,
+        "no-evidence": 0,
+        "weak-evidence": 4,
+        "single-source": 5,
+        "multi-source": 0
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.0,
+        "contradiction": 0.0,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.8,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "uniqProviders": [
+        "openlibrary"
+      ],
+      "uniqDomains": [
+        "openlibrary.org"
+      ],
+      "idCollisions": {}
+    },
+    {
+      "id": "FQ02",
+      "seed": "Alex Morgan",
+      "type": "Latin_ambiguous",
+      "source": "phase2-reuse-B02",
+      "status": "partial",
+      "sessionId": "kv1.7fa51090f9f22cdb91d894f7931c5613",
+      "nFindings": 21,
+      "nEvidence": 21,
+      "nContradictions": 1,
+      "counts": {
+        "duplicate": 0,
+        "near-dup": 10,
+        "contradiction": 10,
+        "no-evidence": 0,
+        "weak-evidence": 19,
+        "single-source": 21,
+        "multi-source": 0
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.4762,
+        "contradiction": 0.4762,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.9048,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "uniqProviders": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "wikidata.org"
+      ],
+      "idCollisions": {}
+    },
+    {
+      "id": "FQ03",
+      "seed": "example.org",
+      "type": "org_domain",
+      "source": "phase2-reuse-B03",
+      "status": "complete",
+      "sessionId": "kv1.501561a083669ed5bbdae564d7641687",
+      "nFindings": 3,
+      "nEvidence": 3,
+      "nContradictions": 0,
+      "counts": {
+        "duplicate": 0,
+        "near-dup": 0,
+        "contradiction": 0,
+        "no-evidence": 0,
+        "weak-evidence": 2,
+        "single-source": 3,
+        "multi-source": 0
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.0,
+        "contradiction": 0.0,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.6667,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "uniqProviders": [
+        "wikidata",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "wikidata.org"
+      ],
+      "idCollisions": {}
+    },
+    {
+      "id": "FQ04",
+      "seed": "John Smith+IBM/NY/US",
+      "type": "Smith_plus_ctx",
+      "source": "fresh-with-hints",
+      "status": "partial",
+      "sessionId": "kv1.7291c35503783a88bb291e82833d8c80",
+      "nFindings": 14,
+      "nEvidence": 14,
+      "nContradictions": 1,
+      "counts": {
+        "duplicate": 0,
+        "near-dup": 9,
+        "contradiction": 9,
+        "no-evidence": 0,
+        "weak-evidence": 8,
+        "single-source": 14,
+        "multi-source": 0
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.6429,
+        "contradiction": 0.6429,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.5714,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "uniqProviders": [
+        "openlibrary",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "openlibrary.org"
+      ],
+      "idCollisions": {}
+    },
+    {
+      "id": "FQ05",
+      "seed": "כהן",
+      "type": "bare_surname",
+      "source": "fresh",
+      "status": "partial",
+      "sessionId": "kv1.174ee069c73bd91143fbf3063c26b317",
+      "nFindings": 14,
+      "nEvidence": 14,
+      "nContradictions": 0,
+      "counts": {
+        "duplicate": 6,
+        "near-dup": 0,
+        "contradiction": 0,
+        "no-evidence": 0,
+        "weak-evidence": 11,
+        "single-source": 14,
+        "multi-source": 0
+      },
+      "rates": {
+        "duplicate": 0.4286,
+        "near-dup": 0.0,
+        "contradiction": 0.0,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.7857,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "uniqProviders": [
+        "openlibrary",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "openlibrary.org"
+      ],
+      "idCollisions": {
+        "wp-en-_": 6
+      }
+    }
+  ],
+  "aggregate": {
+    "nSeeds": 5,
+    "nFindingsTotal": 57,
+    "counts": {
+      "duplicate": 6,
+      "near-dup": 19,
+      "contradiction": 19,
+      "no-evidence": 0,
+      "weak-evidence": 44,
+      "single-source": 57,
+      "multi-source": 0
+    },
+    "ratesPool": {
+      "duplicate": 0.1053,
+      "near-dup": 0.3333,
+      "contradiction": 0.3333,
+      "no-evidence": 0.0,
+      "weak-evidence": 0.7719,
+      "single-source": 1.0,
+      "multi-source": 0.0
+    },
+    "ratesMeanPerSeed": {
+      "duplicate": 0.0857,
+      "near-dup": 0.2238,
+      "contradiction": 0.2238,
+      "no-evidence": 0.0,
+      "weak-evidence": 0.7457,
+      "single-source": 1.0,
+      "multi-source": 0.0
+    },
+    "meanFindings": 11.4,
+    "meanCoverage": 1.0,
+    "meanProvCompleteness": 1.0,
+    "accLeakageTotal": 0,
+    "kinds": {
+      "registry": 38,
+      "page": 19
+    },
+    "providers": {
+      "openlibrary": 29,
+      "wikidata": 9,
+      "wikipedia": 19
+    },
+    "domains": {
+      "openlibrary.org": 29,
+      "wikidata.org": 9,
+      "en.wikipedia.org": 19
+    }
+  }
+}

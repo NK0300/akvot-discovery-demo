@@ -1,0 +1,32 @@
+{
+  "forbiddenQid": "Q1701775",
+  "variants": [
+    "Q1701775",
+    "wd-Q1701775",
+    "wikidata.org/wiki/Q1701775",
+    "wikidata.org/entity/Q1701775"
+  ],
+  "scannedAt": "2026-09-20T09:54:30+03:00",
+  "scope": "PHASE2-OBSERVATION/raw create-S*.json + get-S*.json (session payloads only)",
+  "filesScanned": 64,
+  "leakageTotal": 0,
+  "hits": [],
+  "metaLogMentionsExcluded": [
+    {
+      "file": "acc-\u05d3\u05d9\u05d5\u05e7/runner-log.txt",
+      "variant": "Q1701775",
+      "note": "adversarial inject instruction text; not session leakage"
+    },
+    {
+      "file": "acc-\u05d3\u05d9\u05d5\u05e7/runner-log.txt",
+      "variant": "wd-Q1701775",
+      "note": "adversarial inject instruction text; not session leakage"
+    }
+  ],
+  "metaLogNote": "runner-log.txt mentions Q1701775 as adversarial inject probe text; excluded from leakageTotal (pass=true when session payloads clean)",
+  "phase2AccPass": true,
+  "phase2Leakage": 0,
+  "phase3AccPass": true,
+  "phase3Leakage": 0,
+  "pass": true
+}

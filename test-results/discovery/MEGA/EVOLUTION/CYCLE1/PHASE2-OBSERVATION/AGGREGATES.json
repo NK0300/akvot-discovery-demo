@@ -1,0 +1,576 @@
+{
+  "baselineId": "B0",
+  "runs": 32,
+  "seeds": 16,
+  "accLeakage": 0,
+  "findingsMean": 7.625,
+  "findingsP50": 7,
+  "findingsP90": 21,
+  "domainsMean": 1.34375,
+  "duplicateRateMean": 0,
+  "evidenceCoverageMean": 1,
+  "unsupportedMean": 0,
+  "createMsMean": 646.71875,
+  "createMsP50": 494,
+  "createMsP90": 943.6,
+  "getMsMean": 215.43125,
+  "latencyCreateGetMean": 862.15,
+  "create201": 32,
+  "get200": 32,
+  "productGaps": [
+    "PG-01: Source-domain monoculture on many seeds",
+    "PG-02: Keyword/context and role seeds under-resolve vs proper names",
+    "PG-03: Ambiguity & conflicting-evidence not first-class in session snapshot",
+    "PG-04: Hebrew/multilingual path may be English-registry biased"
+  ],
+  "perSeed": [
+    {
+      "id": "S01",
+      "category": "person",
+      "seed": "Tim Berners-Lee",
+      "runs": 2,
+      "findings_mean": 10,
+      "findings_delta": 0,
+      "domains_mean": 3,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 667.3,
+      "get_ms_mean": 215.45,
+      "latency_cg_mean": 882.75,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S02",
+      "category": "common-name",
+      "seed": "John Smith",
+      "runs": 2,
+      "findings_mean": 21,
+      "findings_delta": 0,
+      "domains_mean": 3,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 439.95,
+      "get_ms_mean": 204.25,
+      "latency_cg_mean": 644.2,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S03",
+      "category": "ambiguous-person",
+      "seed": "Alex Morgan",
+      "runs": 2,
+      "findings_mean": 21,
+      "findings_delta": 0,
+      "domains_mean": 3,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 694.25,
+      "get_ms_mean": 204.85000000000002,
+      "latency_cg_mean": 899.1,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S04",
+      "category": "company",
+      "seed": "Stripe",
+      "runs": 2,
+      "findings_mean": 18,
+      "findings_delta": 8,
+      "domains_mean": 2.5,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 528.6,
+      "get_ms_mean": 222.05,
+      "latency_cg_mean": 750.6500000000001,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S05",
+      "category": "organization",
+      "seed": "Red Cross",
+      "runs": 2,
+      "findings_mean": 22,
+      "findings_delta": 0,
+      "domains_mean": 3,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 465.9,
+      "get_ms_mean": 200.7,
+      "latency_cg_mean": 666.6,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S06",
+      "category": "domain",
+      "seed": "openai.com",
+      "runs": 2,
+      "findings_mean": 7,
+      "findings_delta": 0,
+      "domains_mean": 2,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 444.75,
+      "get_ms_mean": 200.10000000000002,
+      "latency_cg_mean": 644.8499999999999,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S07",
+      "category": "multilingual",
+      "seed": "בנימין נתניהו",
+      "runs": 2,
+      "findings_mean": 2,
+      "findings_delta": 0,
+      "domains_mean": 2,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 800.8499999999999,
+      "get_ms_mean": 197.75,
+      "latency_cg_mean": 998.6,
+      "stable_ok": true,
+      "status": "complete"
+    },
+    {
+      "id": "S08",
+      "category": "multilingual",
+      "seed": "Tel Aviv University",
+      "runs": 2,
+      "findings_mean": 12,
+      "findings_delta": 8,
+      "domains_mean": 1.5,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 427.85,
+      "get_ms_mean": 231.55,
+      "latency_cg_mean": 659.4,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S09",
+      "category": "no-match",
+      "seed": "zzzznonexistentxyz999",
+      "runs": 2,
+      "findings_mean": 0,
+      "findings_delta": 0,
+      "domains_mean": 0,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 673.4000000000001,
+      "get_ms_mean": 202.0,
+      "latency_cg_mean": 875.4,
+      "stable_ok": true,
+      "status": "failed_soft"
+    },
+    {
+      "id": "S10",
+      "category": "conflicting-evidence",
+      "seed": "Francis Bacon",
+      "runs": 2,
+      "findings_mean": 8,
+      "findings_delta": 0,
+      "domains_mean": 1,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 972.65,
+      "get_ms_mean": 202.4,
+      "latency_cg_mean": 1175.05,
+      "stable_ok": true,
+      "status": "partial"
+    },
+    {
+      "id": "S11",
+      "category": "wrong-person-trap",
+      "seed": "Michael Jordan baseball",
+      "runs": 2,
+      "findings_mean": 1,
+      "findings_delta": 2,
+      "domains_mean": 0.5,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 596.35,
+      "get_ms_mean": 213.3,
+      "latency_cg_mean": 809.6500000000001,
+      "stable_ok": true,
+      "status": "failed_soft"
+    },
+    {
+      "id": "S12",
+      "category": "duplicate-source-trap",
+      "seed": "Wikipedia Wikimedia Foundation",
+      "runs": 2,
+      "findings_mean": 0,
+      "findings_delta": 0,
+      "domains_mean": 0,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 652.6500000000001,
+      "get_ms_mean": 300.7,
+      "latency_cg_mean": 953.35,
+      "stable_ok": true,
+      "status": "complete"
+    },
+    {
+      "id": "S13",
+      "category": "high-value-sparse",
+      "seed": "Demis Hassabis DeepMind",
+      "runs": 2,
+      "findings_mean": 0,
+      "findings_delta": 0,
+      "domains_mean": 0,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 1073.65,
+      "get_ms_mean": 257.6,
+      "latency_cg_mean": 1331.25,
+      "stable_ok": true,
+      "status": "complete"
+    },
+    {
+      "id": "S14",
+      "category": "keyword-context",
+      "seed": "CEO of Microsoft",
+      "runs": 2,
+      "findings_mean": 0,
+      "findings_delta": 0,
+      "domains_mean": 0,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 948.95,
+      "get_ms_mean": 195.85,
+      "latency_cg_mean": 1144.8,
+      "stable_ok": true,
+      "status": "failed_soft"
+    },
+    {
+      "id": "S15",
+      "category": "alias-like",
+      "seed": "Mark Zuckerberg / Meta CEO",
+      "runs": 2,
+      "findings_mean": 0,
+      "findings_delta": 0,
+      "domains_mean": 0,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 535.5,
+      "get_ms_mean": 194.8,
+      "latency_cg_mean": 730.3,
+      "stable_ok": true,
+      "status": "failed_soft"
+    },
+    {
+      "id": "S16",
+      "category": "website",
+      "seed": "https://www.who.int",
+      "runs": 2,
+      "findings_mean": 0,
+      "findings_delta": 0,
+      "domains_mean": 0,
+      "dup_mean": 0,
+      "coverage_mean": 1,
+      "unsupported_mean": 0,
+      "create_ms_mean": 424.9,
+      "get_ms_mean": 203.55,
+      "latency_cg_mean": 628.45,
+      "stable_ok": true,
+      "status": "failed_soft"
+    }
+  ],
+  "peeks": {
+    "S01": {
+      "status": "partial",
+      "n": 10,
+      "domains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "Tim Berners-Lee",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee: A Magna Carta for the web",
+        "Tim Berners-Lee: The year open data went worldwide"
+      ],
+      "contradictions_n": 1,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      }
+    },
+    "S02": {
+      "status": "partial",
+      "n": 21,
+      "domains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith"
+      ],
+      "contradictions_n": 1,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      }
+    },
+    "S03": {
+      "status": "partial",
+      "n": 21,
+      "domains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "Alex Morgan",
+        "Alex Morgan",
+        "Alex Morgan",
+        "Alex Morgan",
+        "Alex Morgan"
+      ],
+      "contradictions_n": 1,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      }
+    },
+    "S04": {
+      "status": "partial",
+      "n": 22,
+      "domains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "Stripe",
+        "stripe",
+        "Stripe",
+        "Stripe",
+        "Meloidae"
+      ],
+      "contradictions_n": 2,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      }
+    },
+    "S05": {
+      "status": "partial",
+      "n": 22,
+      "domains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "American Red Cross",
+        "International Red Cross and Red Crescent Movement",
+        "Saint George",
+        "Redd Kross",
+        "Red Cross"
+      ],
+      "contradictions_n": 2,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      }
+    },
+    "S06": {
+      "status": "partial",
+      "n": 7,
+      "domains": [
+        "en.wikipedia.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "OpenAI",
+        "Openai.com",
+        "OpenAI Codex (AI agent)",
+        "OpenAI Codex (language model)",
+        "OpenAI Codex"
+      ],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial"
+      }
+    },
+    "S07": {
+      "status": "complete",
+      "n": 2,
+      "domains": [
+        "en.wikipedia.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "Benjamin Netanyahu",
+        "בנימין נתניהו"
+      ],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      }
+    },
+    "S08": {
+      "status": "partial",
+      "n": 16,
+      "domains": [
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "titles": [
+        "Tel Aviv University",
+        "Steve Tisch School of Film and Television",
+        "Tel Aviv University Iby and Aladar Fleischman Faculty of Engineering",
+        "Tel Aviv University School of Medicine",
+        "Cohn Institute for the History and Philosophy of Science and Ideas"
+      ],
+      "contradictions_n": 1,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "error"
+      }
+    },
+    "S09": {
+      "status": "failed_soft",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error"
+      }
+    },
+    "S10": {
+      "status": "partial",
+      "n": 8,
+      "domains": [
+        "openlibrary.org"
+      ],
+      "titles": [
+        "Francis Bacon",
+        "Francis Bacon",
+        "Francis Bacon Library",
+        "David Francis Bacon",
+        "Francis Bacon"
+      ],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "error"
+      }
+    },
+    "S11": {
+      "status": "failed_soft",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error"
+      }
+    },
+    "S12": {
+      "status": "complete",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      }
+    },
+    "S13": {
+      "status": "complete",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      }
+    },
+    "S14": {
+      "status": "failed_soft",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "error"
+      }
+    },
+    "S15": {
+      "status": "failed_soft",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error"
+      }
+    },
+    "S16": {
+      "status": "failed_soft",
+      "n": 0,
+      "domains": [],
+      "titles": [],
+      "contradictions_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error"
+      }
+    }
+  }
+}

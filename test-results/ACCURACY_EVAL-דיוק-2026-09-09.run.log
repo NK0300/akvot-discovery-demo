@@ -1,0 +1,39 @@
+ACCURACY EVAL דיוק → https://akvot-simple-demo.vercel.app
+deploy hint: dpl_9V8iig4PLALA4t7V7hNNQFo8Q3az
+cases=13 Origin=https://akvot-simple-demo.vercel.app timeout=65000ms
+
+→ 1-exact-netanyahu [exact] GET ... FAIL 35011ms http=200 ui=need_context qid=- faces=false conf=none phase=orchestrator-v0-b | uiState=need_context expected dossier; qid=null expected Q43723; faces expected
+→ 1b-exact-bibi-full [exact] GET ... PASS 5416ms http=200 ui=dossier qid=Q43723 faces=true conf=high phase=orchestrator-v0-b
+→ 2-garbage-nonsense [garbage] GET ... PASS 5734ms http=200 ui=need_context qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 2b-garbage-he [garbage] GET ... PASS 5875ms http=200 ui=need_context qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 3-ambiguous-danny-cohen [ambiguous] GET ... PASS 190ms http=200 ui=need_context qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 4-unknown-obscure [unknown] POST ... PASS 32451ms http=200 ui=thin qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 4b-unknown-latin-obscure [unknown] POST ... PASS 15337ms http=200 ui=thin qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 5-conflict-smith-ibm-ny [conflict] POST ... PASS 15555ms http=200 ui=thin qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 5b-conflict-smith-email [conflict] POST ... PASS 9662ms http=200 ui=candidates qid=- faces=false conf=low phase=orchestrator-v0-b
+→ 6-partial-emily-chen [partial] POST ... PASS 9212ms http=200 ui=candidates qid=- faces=false conf=low phase=orchestrator-v0-b
+→ 7-near-zehava-galon [near-match] GET ... FAIL 5709ms http=200 ui=need_context qid=- faces=false conf=none phase=orchestrator-v0-b | uiState=need_context expected dossier; faces expected
+→ 8-dup-john-smith-bare [duplicate] GET ... PASS 5700ms http=200 ui=need_context qid=- faces=false conf=none phase=orchestrator-v0-b
+→ 9-keep-orly-levy [regression] GET ... PASS 4596ms http=200 ui=dossier qid=Q466537 faces=true conf=high phase=orchestrator-v0-b
+
+========== SUMMARY ==========
+N=13 PASS=11 FAIL=2 pretty-wrong=0
+phaseOk=true
+md: /workspace/akvot-quick-demo/test-results/ACCURACY_EVAL-דיוק-2026-09-09.md
+json: /workspace/akvot-quick-demo/test-results/ACCURACY_EVAL-דיוק-2026-09-09.json
+report: /workspace/akvot-quick-demo/test-results/ACCURACY_REPORT.md
+  ✗ 1-exact-netanyahu ui=need_context faces=false :: uiState=need_context expected dossier; qid=null expected Q43723; faces expected
+  ✓ 1b-exact-bibi-full ui=dossier faces=true
+  ✓ 2-garbage-nonsense ui=need_context faces=false
+  ✓ 2b-garbage-he ui=need_context faces=false
+  ✓ 3-ambiguous-danny-cohen ui=need_context faces=false
+  ✓ 4-unknown-obscure ui=thin faces=false
+  ✓ 4b-unknown-latin-obscure ui=thin faces=false
+  ✓ 5-conflict-smith-ibm-ny ui=thin faces=false
+  ✓ 5b-conflict-smith-email ui=candidates faces=false
+  ✓ 6-partial-emily-chen ui=candidates faces=false
+  ✗ 7-near-zehava-galon ui=need_context faces=false :: uiState=need_context expected dossier; faces expected
+  ✓ 8-dup-john-smith-bare ui=need_context faces=false
+  ✓ 9-keep-orly-levy ui=dossier faces=true
+=============================
+

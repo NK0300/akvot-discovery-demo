@@ -1,0 +1,54 @@
+{
+  "doc": "RCA-CROSS-FAMILY-MERGE-שרת",
+  "stamp": "2026-09-20T10:11:36+03:00",
+  "zone": "Asia/Jerusalem",
+  "agent": "שרת",
+  "phase": "CYCLE1/PHASE4-EXPERIMENT-A-VIAF",
+  "experiment": "EXP-A2-Option-A",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "coreTouch": false,
+  "symptom": {
+    "metric": "multi_independent_rate",
+    "accAfterPreview": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "observed": 0,
+    "gate": 0.15,
+    "viafFindingsPerSeedApprox": 8,
+    "findingLevelMulti": 0
+  },
+  "rootCause": {
+    "primary": "S5 evidenceFingerprint is URL|quote|provider scoped; distinct provenance URLs never merge",
+    "secondary": "Acc counts Finding-level hostFamily diversity; VIAF emitted separate single-family Findings",
+    "measurementSkew": "Acc AFTER targeted H9o45 (emit-only); units called coalesce directly",
+    "canonicalCaveat": "dpl_4Rj7c unconstrained softLabel vacuumed S01 10→1 — Acc-unsafe"
+  },
+  "codePointers": [
+    "api/lib/discovery/store.js#evidenceFingerprint",
+    "api/lib/discovery/store.js#dedupeByEvidenceFingerprint",
+    "api/lib/discovery/store.js#coalesceTitleKey",
+    "api/lib/discovery/store.js#corroborateBySoftLabel",
+    "api/lib/discovery/store.js#coalesceBySoftEntity",
+    "api/lib/discovery/orchestrator.js#coalesceBySoftEntity",
+    "api/lib/discovery/emit.js#sanitizeDiscoveryPayload"
+  ],
+  "fixClass": {
+    "locked": "OptionA",
+    "summary": "soft-entity coalesce + multi-provider Evidence[] attach; Acc scrub after; never dossier; entity-agnostic",
+    "rejected": [
+      "OptionB_metric_only"
+    ]
+  },
+  "unitStatus": {
+    "corroboration.viaf": "passed=23 failed=0",
+    "providers.viaf": "passed=27 failed=0",
+    "adversarial.acc": "passed=65 failed=0",
+    "orchestrator": "passed=113 failed=0",
+    "prCloseout.acc": "passed=107 failed=0"
+  },
+  "risks": {
+    "prettyWrong": "mitigated by exact coalesce keys + Surname,Given guard",
+    "coverageVacuum": "mitigated by attach_keep (no Finding collapse)",
+    "accLeak": "scrub after coalesce; units leak=0",
+    "dossier": "forbidden — scoreIdentity null; no mayCommitDossier"
+  }
+}

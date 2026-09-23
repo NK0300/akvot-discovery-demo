@@ -1,0 +1,668 @@
+{
+  "units": {
+    "passed": 93,
+    "failed": 0
+  },
+  "n": 18,
+  "pass": 17,
+  "fail": 1,
+  "pretty_wrong": 0,
+  "s03": {
+    "id": "P2-S03",
+    "q": "John Smith",
+    "ctx": {
+      "org": "IBM",
+      "city": "New York",
+      "country": "US"
+    },
+    "category": "conflict",
+    "expected_ui": [
+      "candidates",
+      "thin",
+      "need_context"
+    ],
+    "expected_qid": null,
+    "must_not": [
+      "dossier"
+    ],
+    "seed": null,
+    "smithClass": true,
+    "heBare": false,
+    "softAmb": true,
+    "commitOk": false,
+    "commitReason": "soft_ambiguous",
+    "ui": "thin",
+    "scenario": "foreign",
+    "faces": 0,
+    "photo": null,
+    "pass": true,
+    "prettyWrong": false,
+    "error": null,
+    "notes": "Align contract d-smith-ctx-p0 · country=US closes Acc soft-path gap (2026-09-15)"
+  },
+  "a01": {
+    "id": "P2-A01",
+    "q": "Assaf Rappaport",
+    "ctx": {},
+    "category": "exact",
+    "expected_ui": [
+      "dossier"
+    ],
+    "expected_qid": "Q47507930",
+    "must_not": [],
+    "seed": "Q47507930",
+    "smithClass": false,
+    "heBare": false,
+    "softAmb": false,
+    "commitOk": true,
+    "commitReason": "wiki_seeded",
+    "ui": "dossier",
+    "scenario": "known",
+    "faces": 1,
+    "photo": "https://upload.wikimedia.org/x.jpg",
+    "pass": true,
+    "prettyWrong": false,
+    "error": null,
+    "notes": "PRIMARY class Latin mid-tier; live baseline already dossier"
+  },
+  "probes": [
+    {
+      "label": "P1 realistic layer (no wiki QID, Application softAmb)",
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US",
+        "any": true
+      },
+      "seed": null,
+      "smithClass": true,
+      "softAmb": true,
+      "wikiQid": null,
+      "wikiSeeded": false,
+      "wikiAmbiguous": true,
+      "evidenceScore": 0,
+      "orgCityMatch": false,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "thin",
+      "scenario": "foreign",
+      "faces": 0,
+      "notDossier": true,
+      "notQ1701775": true,
+      "pass": true
+    },
+    {
+      "label": "P2 adversarial wikiExact Q1701775 + Application-forced softAmb (lookup belt)",
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US",
+        "any": true
+      },
+      "seed": null,
+      "smithClass": true,
+      "softAmb": true,
+      "wikiQid": "Q1701775",
+      "wikiSeeded": false,
+      "wikiAmbiguous": true,
+      "evidenceScore": 0.3,
+      "orgCityMatch": false,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "thin",
+      "scenario": "foreign",
+      "faces": 0,
+      "notDossier": true,
+      "notQ1701775": true,
+      "pass": true
+    },
+    {
+      "label": "P3 adversarial wikiExact Q1701775 + softAmb CLEARED (Domain-only belt)",
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US",
+        "any": true
+      },
+      "seed": null,
+      "smithClass": true,
+      "softAmb": false,
+      "wikiQid": "Q1701775",
+      "wikiSeeded": false,
+      "wikiAmbiguous": false,
+      "evidenceScore": 0.3,
+      "orgCityMatch": false,
+      "commitOk": false,
+      "commitReason": "latin_common_ambiguous",
+      "ui": "thin",
+      "scenario": "known",
+      "faces": 0,
+      "notDossier": true,
+      "notQ1701775": true,
+      "pass": true
+    }
+  ],
+  "countryIso2": {
+    "ok": false,
+    "reason": "latin_common_ambiguous",
+    "evidenceScore": 0.15
+  },
+  "e01": [
+    {
+      "probe": "URL-noise org ib in path",
+      "expect": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "probe": "title token IBM",
+      "expect": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "probe": "URL-only boston len≥4",
+      "expect": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "P2-S01",
+      "q": "דני כהן",
+      "ctx": {},
+      "category": "ambiguous",
+      "expected_ui": [
+        "need_context"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier"
+      ],
+      "seed": null,
+      "smithClass": false,
+      "heBare": true,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "need_context",
+      "scenario": "stranger",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-S02",
+      "q": "John Smith",
+      "ctx": {},
+      "category": "duplicate",
+      "expected_ui": [
+        "need_context"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier"
+      ],
+      "seed": null,
+      "smithClass": true,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "need_context",
+      "scenario": "foreign",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-S03",
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US"
+      },
+      "category": "conflict",
+      "expected_ui": [
+        "candidates",
+        "thin",
+        "need_context"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier"
+      ],
+      "seed": null,
+      "smithClass": true,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "thin",
+      "scenario": "foreign",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": "Align contract d-smith-ctx-p0 · country=US closes Acc soft-path gap (2026-09-15)"
+    },
+    {
+      "id": "P2-S04",
+      "q": "John Smith",
+      "ctx": {
+        "email": "qa.rethink.test@example.com"
+      },
+      "category": "conflict",
+      "expected_ui": [
+        "candidates",
+        "thin"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier",
+        "email_leak"
+      ],
+      "seed": null,
+      "smithClass": true,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "identifier_blocks_wiki",
+      "ui": "thin",
+      "scenario": "identifier",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-S05",
+      "q": "Xzqplmnvwtr987654321asdfgh",
+      "ctx": {},
+      "category": "non-match",
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "expected_qid": null,
+      "must_not": [],
+      "seed": null,
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": false,
+      "commitReason": "latin_bare",
+      "ui": "need_context",
+      "scenario": "foreign",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-S06",
+      "q": "פלמוני אלמוניזקש",
+      "ctx": {
+        "org": "מפעל בדיקה פיקטיבי"
+      },
+      "category": "unknown",
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "expected_qid": null,
+      "must_not": [],
+      "seed": null,
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": false,
+      "commitReason": "no_commit",
+      "ui": "thin",
+      "scenario": "stranger",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-S07",
+      "q": "כהן",
+      "ctx": {},
+      "category": "conflict",
+      "expected_ui": [
+        "need_context"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier"
+      ],
+      "seed": null,
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "need_context",
+      "scenario": "stranger",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-K01",
+      "q": "נתניהו",
+      "ctx": {},
+      "category": "exact",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q43723",
+      "must_not": [],
+      "seed": "Q43723",
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-K02",
+      "q": "Zehava Galon",
+      "ctx": {},
+      "category": "transliteration",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q2630062",
+      "must_not": [],
+      "seed": "Q2630062",
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-K03",
+      "q": "Angela Merkel",
+      "ctx": {},
+      "category": "transliteration",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q567",
+      "must_not": [],
+      "seed": "Q567",
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-K04",
+      "q": "אורלי לוי",
+      "ctx": {},
+      "category": "exact",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q466537",
+      "must_not": [],
+      "seed": "Q466537",
+      "smithClass": false,
+      "heBare": true,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-A01",
+      "q": "Assaf Rappaport",
+      "ctx": {},
+      "category": "exact",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q47507930",
+      "must_not": [],
+      "seed": "Q47507930",
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": "PRIMARY class Latin mid-tier; live baseline already dossier"
+    },
+    {
+      "id": "P2-A03",
+      "q": "אסף רפפורט",
+      "ctx": {},
+      "category": "exact",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q47507930",
+      "must_not": [],
+      "seed": "Q47507930",
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-A05",
+      "q": "Assaf Smith",
+      "ctx": {},
+      "category": "near-miss",
+      "expected_ui": [
+        "need_context",
+        "candidates",
+        "thin"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "qid:Q47507930"
+      ],
+      "seed": null,
+      "smithClass": true,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "need_context",
+      "scenario": "foreign",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-A06",
+      "q": "John Rappaport",
+      "ctx": {},
+      "category": "conflict",
+      "expected_ui": [
+        "need_context",
+        "candidates",
+        "thin"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "qid:Q47507930"
+      ],
+      "seed": null,
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "need_context",
+      "scenario": "foreign",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-E02",
+      "q": "Emily Chen",
+      "ctx": {
+        "city": "Palo Alto",
+        "role": "student"
+      },
+      "category": "partial",
+      "expected_ui": [
+        "candidates",
+        "need_context"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier"
+      ],
+      "seed": null,
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "soft_ambiguous",
+      "ui": "thin",
+      "scenario": "foreign",
+      "faces": 0,
+      "photo": null,
+      "pass": false,
+      "prettyWrong": false,
+      "error": "OTHER",
+      "notes": ""
+    },
+    {
+      "id": "P2-E04",
+      "q": "John Smith",
+      "ctx": {
+        "email": "qa.rethink.test@example.com"
+      },
+      "category": "conflict",
+      "expected_ui": [
+        "candidates",
+        "thin"
+      ],
+      "expected_qid": null,
+      "must_not": [
+        "dossier"
+      ],
+      "seed": null,
+      "smithClass": true,
+      "heBare": false,
+      "softAmb": true,
+      "commitOk": false,
+      "commitReason": "identifier_blocks_wiki",
+      "ui": "thin",
+      "scenario": "identifier",
+      "faces": 0,
+      "photo": null,
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    },
+    {
+      "id": "P2-L03",
+      "q": "Assaf Rappaport",
+      "ctx": {},
+      "category": "latency",
+      "expected_ui": [
+        "dossier"
+      ],
+      "expected_qid": "Q47507930",
+      "must_not": [],
+      "seed": "Q47507930",
+      "smithClass": false,
+      "heBare": false,
+      "softAmb": false,
+      "commitOk": true,
+      "commitReason": "wiki_seeded",
+      "ui": "dossier",
+      "scenario": "known",
+      "faces": 1,
+      "photo": "https://upload.wikimedia.org/x.jpg",
+      "pass": true,
+      "prettyWrong": false,
+      "error": null,
+      "notes": ""
+    }
+  ]
+}

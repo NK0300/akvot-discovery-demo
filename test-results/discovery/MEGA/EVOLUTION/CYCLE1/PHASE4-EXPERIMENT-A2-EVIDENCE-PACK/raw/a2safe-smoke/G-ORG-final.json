@@ -1,0 +1,1271 @@
+{
+  "ms": 2347,
+  "status": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.15f4b86181a7d9c78e130357dbacdedd",
+    "seed": "UNESCO",
+    "q": "UNESCO",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "ol-OL81751A",
+        "kind": "registry",
+        "title": "UNESCO",
+        "summary": "Top work: International Geological Map of Europe and the Mediterranean Regions",
+        "evidenceIds": [
+          "ev-da5c26ba823ecc943eff32eb",
+          "ev-df03535bf01b998db98e6e14"
+        ],
+        "providers": [
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "ol:OL81751A",
+          "ol-OL81751A",
+          "viaf:139500314",
+          "qid:Q7809",
+          "wd-Q7809"
+        ],
+        "scoreFinding": 0.8141666666666666,
+        "ranking": {
+          "discoveryScore": 0.8141666666666666,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-139500314",
+        "kind": "registry",
+        "title": "Unesco",
+        "summary": "type:corporate · lc:n79054523 · dnb:004811798",
+        "evidenceIds": [
+          "ev-da5c26ba823ecc943eff32eb",
+          "ev-df03535bf01b998db98e6e14"
+        ],
+        "providers": [
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "ol:OL81751A",
+          "ol-OL81751A",
+          "viaf:139500314",
+          "qid:Q7809",
+          "wd-Q7809"
+        ],
+        "scoreFinding": 0.8041666666666666,
+        "ranking": {
+          "discoveryScore": 0.8141666666666666,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-151952486",
+        "kind": "registry",
+        "title": "UNESCO., International Council on Archives",
+        "summary": "type:corporate · lc:n81038583 · dnb:1202800149",
+        "evidenceIds": [
+          "ev-5401b9b02309472234579d48"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:151952486"
+        ],
+        "scoreFinding": 0.6808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-154839678",
+        "kind": "registry",
+        "title": "Unesco., International Institute for Educational Planning",
+        "summary": "type:corporate · lc:n80051852 · dnb:004024354",
+        "evidenceIds": [
+          "ev-6ec1909027ce1def7cb9238e"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:154839678"
+        ],
+        "scoreFinding": 0.6708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-130849612",
+        "kind": "registry",
+        "title": "Unesco., Institute for Education",
+        "summary": "type:corporate · lc:n79130814 · dnb:041352033",
+        "evidenceIds": [
+          "ev-252b1c8267aba57718c93475"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:130849612"
+        ],
+        "scoreFinding": 0.6608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-160731962",
+        "kind": "registry",
+        "title": "UNESCO. Intergovernmental Oceanographic Commission",
+        "summary": "type:corporate · lc:n81019835 · dnb:004063198",
+        "evidenceIds": [
+          "ev-2db2b6b106d86908d7b09234"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:160731962"
+        ],
+        "scoreFinding": 0.6508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-125464870",
+        "kind": "registry",
+        "title": "Unesco-Kommission Allemagne République fédérale",
+        "summary": "type:corporate · lc:n50082956 · dnb:004677420",
+        "evidenceIds": [
+          "ev-64e47225f2500c6c02887bdc"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:125464870"
+        ],
+        "scoreFinding": 0.6408333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-137857259",
+        "kind": "registry",
+        "title": "Unesco. Programme on Man and the Biosphere",
+        "summary": "type:corporate · lc:n82204694 · dnb:000191647",
+        "evidenceIds": [
+          "ev-f3fc430e1eb3f95d26f60d9b"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:137857259"
+        ],
+        "scoreFinding": 0.6308333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-125282653",
+        "kind": "registry",
+        "title": "Unesco Secteur de la communication, de l'information et de l'informatique",
+        "summary": "type:corporate · lc:n85083501 · dnb:004072332",
+        "evidenceIds": [
+          "ev-6070a8ea9425beb2caa3ff33"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:125282653"
+        ],
+        "scoreFinding": 0.6208333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL13214278A",
+        "kind": "registry",
+        "title": "Unesco",
+        "summary": "Top work: Naturwunder und Kulturschätze unserer Welt",
+        "evidenceIds": [
+          "ev-de239a58ddd91be55f887a6e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL13214278A",
+          "ol-OL13214278A"
+        ],
+        "scoreFinding": 0.5758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL8138787A",
+        "kind": "registry",
+        "title": "Unesco Staff",
+        "summary": "Top work: History of Humanity",
+        "evidenceIds": [
+          "ev-bd32c3ed7dc8708fe118fdb9"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL8138787A",
+          "ol-OL8138787A"
+        ],
+        "scoreFinding": 0.5658333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL6842768A",
+        "kind": "registry",
+        "title": "Unesco Brasil",
+        "summary": "Top work: Fazendo a diferença",
+        "evidenceIds": [
+          "ev-d3242b8359e14fff717e99ae"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL6842768A",
+          "ol-OL6842768A"
+        ],
+        "scoreFinding": 0.5558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL3205919A",
+        "kind": "registry",
+        "title": "UNESCO Institute for Statistics",
+        "summary": "Top work: Global education digest 2006",
+        "evidenceIds": [
+          "ev-21eb1c8d2b6c0de38fb4be56"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL3205919A",
+          "ol-OL3205919A"
+        ],
+        "scoreFinding": 0.5458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL416482A",
+        "kind": "registry",
+        "title": "Unesco. General Conference",
+        "summary": "Top work: Records of the General Conference, seventeenth session, Paris, 17 October to 21 November1972",
+        "evidenceIds": [
+          "ev-d98a41b3b5d336ee3fca27b8"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL416482A",
+          "ol-OL416482A"
+        ],
+        "scoreFinding": 0.5358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL1746179A",
+        "kind": "registry",
+        "title": "U.S. National Commission for UNESCO.",
+        "summary": "Top work: UNESCO and the U.S. National Commission for UNESCO",
+        "evidenceIds": [
+          "ev-f06b32bc958f809cd52dd5eb"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL1746179A",
+          "ol-OL1746179A"
+        ],
+        "scoreFinding": 0.5258333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL315743A",
+        "kind": "registry",
+        "title": "Unesco. Regional Office for Education in Africa.",
+        "summary": "Top work: EFA",
+        "evidenceIds": [
+          "ev-1652bbd11ccf8f62a90ef94b"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL315743A",
+          "ol-OL315743A"
+        ],
+        "scoreFinding": 0.5158333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-UNESCO",
+        "kind": "page",
+        "title": "UNESCO",
+        "evidenceIds": [
+          "ev-8d6474c31d5deacb74dac2d9"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:UNESCO"
+        ],
+        "scoreFinding": 0.4883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-UNESCO_Global_Geoparks",
+        "kind": "page",
+        "title": "UNESCO Global Geoparks",
+        "evidenceIds": [
+          "ev-a4eb5c2665bcde435131fb36"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:UNESCO Global Geoparks"
+        ],
+        "scoreFinding": 0.4783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-UNESCO_1970_Convention",
+        "kind": "page",
+        "title": "UNESCO 1970 Convention",
+        "evidenceIds": [
+          "ev-28c0ce0a7ebef7de1e153d47"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:UNESCO 1970 Convention"
+        ],
+        "scoreFinding": 0.4683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-UNESCO_King_Hamad_Bin_Isa_Al_Khalifa_Prize",
+        "kind": "page",
+        "title": "UNESCO King Hamad Bin Isa Al-Khalifa Prize",
+        "evidenceIds": [
+          "ev-f9b377b7ab30dd5ae62fb012"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:UNESCO King Hamad Bin Isa Al-Khalifa Prize"
+        ],
+        "scoreFinding": 0.4583333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-UNESCO_statements_on_race",
+        "kind": "page",
+        "title": "UNESCO statements on race",
+        "evidenceIds": [
+          "ev-8e38a9843eb87daa122ab640"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:UNESCO statements on race"
+        ],
+        "scoreFinding": 0.4483333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-UNESCO_International_Days",
+        "kind": "page",
+        "title": "UNESCO International Days",
+        "evidenceIds": [
+          "ev-70d3ad56b1bfd357094ee4de"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:UNESCO International Days"
+        ],
+        "scoreFinding": 0.43833333333333335,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-de239a58ddd91be55f887a6e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL13214278A",
+        "url": "https://openlibrary.org/authors/OL13214278A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "Naturwunder und Kulturschätze unserer Welt",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-da5c26ba823ecc943eff32eb",
+        "provenanceUrl": "https://openlibrary.org/authors/OL81751A",
+        "url": "https://openlibrary.org/authors/OL81751A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "International Geological Map of Europe and the Mediterranean Regions",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-bd32c3ed7dc8708fe118fdb9",
+        "provenanceUrl": "https://openlibrary.org/authors/OL8138787A",
+        "url": "https://openlibrary.org/authors/OL8138787A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "History of Humanity",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d3242b8359e14fff717e99ae",
+        "provenanceUrl": "https://openlibrary.org/authors/OL6842768A",
+        "url": "https://openlibrary.org/authors/OL6842768A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "Fazendo a diferença",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-21eb1c8d2b6c0de38fb4be56",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3205919A",
+        "url": "https://openlibrary.org/authors/OL3205919A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "Global education digest 2006",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d98a41b3b5d336ee3fca27b8",
+        "provenanceUrl": "https://openlibrary.org/authors/OL416482A",
+        "url": "https://openlibrary.org/authors/OL416482A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "Records of the General Conference, seventeenth session, Paris, 17 October to 21 November1972",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f06b32bc958f809cd52dd5eb",
+        "provenanceUrl": "https://openlibrary.org/authors/OL1746179A",
+        "url": "https://openlibrary.org/authors/OL1746179A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "UNESCO and the U.S. National Commission for UNESCO",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1652bbd11ccf8f62a90ef94b",
+        "provenanceUrl": "https://openlibrary.org/authors/OL315743A",
+        "url": "https://openlibrary.org/authors/OL315743A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:37:39.836Z",
+        "evidenceType": "registry",
+        "quote": "EFA",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8d6474c31d5deacb74dac2d9",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/UNESCO",
+        "url": "https://en.wikipedia.org/wiki/UNESCO",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:38.475Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a4eb5c2665bcde435131fb36",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/UNESCO_Global_Geoparks",
+        "url": "https://en.wikipedia.org/wiki/UNESCO_Global_Geoparks",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:38.475Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-28c0ce0a7ebef7de1e153d47",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/UNESCO_1970_Convention",
+        "url": "https://en.wikipedia.org/wiki/UNESCO_1970_Convention",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:38.475Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f9b377b7ab30dd5ae62fb012",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/UNESCO_King_Hamad_Bin_Isa_Al-Khalifa_Prize",
+        "url": "https://en.wikipedia.org/wiki/UNESCO_King_Hamad_Bin_Isa_Al-Khalifa_Prize",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:38.475Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8e38a9843eb87daa122ab640",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/UNESCO_statements_on_race",
+        "url": "https://en.wikipedia.org/wiki/UNESCO_statements_on_race",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:38.475Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-70d3ad56b1bfd357094ee4de",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/UNESCO_International_Days",
+        "url": "https://en.wikipedia.org/wiki/UNESCO_International_Days",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:38.475Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-df03535bf01b998db98e6e14",
+        "provenanceUrl": "https://viaf.org/viaf/139500314",
+        "url": "https://viaf.org/viaf/139500314",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "Unesco",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-5401b9b02309472234579d48",
+        "provenanceUrl": "https://viaf.org/viaf/151952486",
+        "url": "https://viaf.org/viaf/151952486",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "UNESCO., International Council on Archives",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6ec1909027ce1def7cb9238e",
+        "provenanceUrl": "https://viaf.org/viaf/154839678",
+        "url": "https://viaf.org/viaf/154839678",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "Unesco., International Institute for Educational Planning",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-252b1c8267aba57718c93475",
+        "provenanceUrl": "https://viaf.org/viaf/130849612",
+        "url": "https://viaf.org/viaf/130849612",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "Unesco., Institute for Education",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2db2b6b106d86908d7b09234",
+        "provenanceUrl": "https://viaf.org/viaf/160731962",
+        "url": "https://viaf.org/viaf/160731962",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "UNESCO. Intergovernmental Oceanographic Commission",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-64e47225f2500c6c02887bdc",
+        "provenanceUrl": "https://viaf.org/viaf/125464870",
+        "url": "https://viaf.org/viaf/125464870",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "Unesco-Kommission Allemagne République fédérale",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f3fc430e1eb3f95d26f60d9b",
+        "provenanceUrl": "https://viaf.org/viaf/137857259",
+        "url": "https://viaf.org/viaf/137857259",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "Unesco. Programme on Man and the Biosphere",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6070a8ea9425beb2caa3ff33",
+        "provenanceUrl": "https://viaf.org/viaf/125282653",
+        "url": "https://viaf.org/viaf/125282653",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:38.454Z",
+        "evidenceType": "registry",
+        "quote": "Unesco Secteur de la communication, de l'information et de l'informatique",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 9
+          },
+          {
+            "value": "viaf",
+            "count": 9
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 16
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "partial",
+      "wikipedia": "partial",
+      "viaf": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:d9442e64b8ff"
+      ],
+      "status": "candidate",
+      "displayHint": "UNESCO",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:37:38.250Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:d9442e64b8ff",
+          "kind": "seed"
+        },
+        {
+          "id": "ol-OL13214278A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL81751A",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-139500314",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL8138787A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL6842768A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL3205919A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL416482A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL1746179A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL315743A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-UNESCO",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-UNESCO_Global_Geoparks",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-UNESCO_1970_Convention",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-UNESCO_King_Hamad_Bin_Isa_Al_Khalifa_Prize",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-UNESCO_statements_on_race",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-UNESCO_International_Days",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-151952486",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-154839678",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-130849612",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-160731962",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-125464870",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "unesco",
+        "findingIds": [
+          "ol-OL81751A",
+          "viaf-139500314",
+          "ol-OL13214278A",
+          "wp-en-UNESCO"
+        ],
+        "domains": [
+          "openlibrary.org",
+          "viaf.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

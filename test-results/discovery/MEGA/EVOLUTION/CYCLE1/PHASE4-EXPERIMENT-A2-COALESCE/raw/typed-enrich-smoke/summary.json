@@ -1,0 +1,321 @@
+{
+  "stamp": "2026-09-20T10:31:06+03:00",
+  "stampLabel": "2026-09-20 10:31:06 IDT",
+  "experiment": "EXP-A2-COALESCE",
+  "wave": "typed-softref-enrich",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app"
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "status": "UNCHANGED"
+    },
+    "core": {
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "status": "LOCKED"
+    }
+  },
+  "gate": 0.15,
+  "mean_multi_rate": 0.2408,
+  "pooled_multi_rate": 0.2143,
+  "mean_pass": true,
+  "acc_leak": 0,
+  "s01_findings_n": 18,
+  "per_seed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.9f3d437370af9b0c0bedd7b0cbc98b6a",
+      "status": "partial",
+      "findings_n": 18,
+      "with_ev_n": 18,
+      "multi_n": 10,
+      "multi_rate": 0.5556,
+      "viaf_n": 10,
+      "providers_ge2": 10,
+      "corr_edges": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "sample_multi": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ]
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ]
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ]
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, 1955-",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ]
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la T",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ]
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.d39d175b883ff0cb9c90c59f4e516a76",
+      "status": "partial",
+      "findings_n": 22,
+      "with_ev_n": 22,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "corr_edges": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "sample_multi": []
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.069611f484bafd3cf8e62ed5a9337b6c",
+      "status": "partial",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 5,
+      "multi_rate": 0.1667,
+      "viaf_n": 11,
+      "providers_ge2": 5,
+      "corr_edges": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "sample_multi": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057",
+            "ol:OL17804A",
+            "ol-OL17804A"
+          ]
+        },
+        {
+          "id": "ol-OL17804A",
+          "title": "American National Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057",
+            "ol:OL17804A",
+            "ol-OL17804A"
+          ]
+        },
+        {
+          "id": "viaf-122023057",
+          "title": "Red Cross USA",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057",
+            "ol:OL17804A",
+            "ol-OL17804A"
+          ]
+        },
+        {
+          "id": "ol-OL124327A",
+          "title": "International Committee of the Red Cross",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL124327A",
+            "ol-OL124327A",
+            "viaf:160178001",
+            "qid:Q5987345",
+            "wd-Q5987345"
+          ]
+        },
+        {
+          "id": "viaf-160178001",
+          "title": "Red Cross. International Committee, Geneva",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "fams": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL124327A",
+            "ol-OL124327A",
+            "viaf:160178001",
+            "qid:Q5987345",
+            "wd-Q5987345"
+          ]
+        }
+      ]
+    }
+  ]
+}

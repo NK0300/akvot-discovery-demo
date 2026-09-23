@@ -1,0 +1,117 @@
+=== TREATMENT Preview C1 ===
+[TREAT] S01 findings=18 wo=0 leak=0 5936ms
+[TREAT] S04 findings=30 wo=0 leak=0 5155ms
+[TREAT] S05 findings=30 wo=0 leak=0 4448ms
+[TREAT] S06 findings=7 wo=0 leak=0 3114ms
+[TREAT] S16 findings=1 wo=1 leak=0 2480ms
+[TREAT] S02 findings=16 wo=0 leak=0 4375ms
+[TREAT] S09 findings=0 wo=0 leak=0 2726ms
+[TREAT] W5 findings=9 wo=1 leak=0 2632ms
+[TREAT] W7 findings=1 wo=1 leak=0 2757ms
+[TREAT] W1 findings=0 wo=0 leak=0 2636ms
+[TREAT] ADV-sub findings=5 wo=0 leak=0 2775ms
+[TREAT] ADV-park findings=0 wo=0 leak=0 2535ms
+[TREAT] ADV-query findings=0 wo=0 leak=0 2587ms
+[TREAT] ADV-www findings=1 wo=1 leak=0 2498ms
+[TREAT] ADV-http findings=0 wo=0 leak=0 2578ms
+[TREAT] ADV-private findings=0 wo=0 leak=0 2578ms
+[TREAT] ADV-meta findings=0 wo=0 leak=0 2611ms
+[TREAT] ADV-local findings=0 wo=0 leak=0 2892ms
+[TREAT] ADV-internal findings=0 wo=0 leak=0 3601ms
+[TREAT] ADV-poison findings=0 wo=0 leak=0 2586ms
+[TREAT] ADV-unrelated findings=1 wo=1 leak=0 2599ms
+[TREAT] ADV-social findings=1 wo=1 leak=0 2735ms
+[TREAT] ADV-doc findings=1 wo=1 leak=0 2540ms
+[TREAT] ADV-archive findings=0 wo=0 leak=0 3118ms
+[TREAT] ADV-js findings=0 wo=0 leak=0 2608ms
+=== CONTROL B0 ===
+[CTRL] S01 findings=10 wo=0 leak=0 3653ms
+[CTRL] S04 findings=22 wo=0 leak=0 2655ms
+[CTRL] S05 findings=22 wo=0 leak=0 3347ms
+[CTRL] S06 findings=7 wo=0 leak=0 2589ms
+[CTRL] S16 findings=0 wo=0 leak=0 2602ms
+[CTRL] W5 findings=7 wo=0 leak=0 2690ms
+[CTRL] W1 findings=0 wo=0 leak=0 2941ms
+[CTRL] ADV-private findings=0 wo=0 leak=0 2726ms
+=== CORE smoke ===
+[CORE] Assaf leak=0 pw=0 ui=need_context
+[CORE] Cohen leak=0 pw=0 ui=need_context
+[CORE] Smith leak=0 pw=0 ui=need_context
+{
+  "gate_pass": true,
+  "gates": {
+    "A_acc_leak_treat": {
+      "value": 0,
+      "pass": true
+    },
+    "B_acc_leak_ctrl": {
+      "value": 0,
+      "pass": true
+    },
+    "C_core_leak": {
+      "value": 0,
+      "pass": true
+    },
+    "D_core_pw": {
+      "value": 0,
+      "pass": true
+    },
+    "E_ssrf_suite": {
+      "value": [
+        {
+          "id": "ADV-private",
+          "wo": 0
+        },
+        {
+          "id": "ADV-meta",
+          "wo": 0
+        },
+        {
+          "id": "ADV-local",
+          "wo": 0
+        },
+        {
+          "id": "ADV-internal",
+          "wo": 0
+        },
+        {
+          "id": "ADV-js",
+          "wo": 0
+        }
+      ],
+      "pass": true
+    },
+    "F_no_url_alone_same_entity": {
+      "value": 0,
+      "pass": true
+    },
+    "G_s16_web_origin": {
+      "value": {
+        "wo": 1,
+        "family": true,
+        "provider": true
+      },
+      "pass": true
+    },
+    "H_s06_web_origin": {
+      "value": {
+        "wo": 0,
+        "family": false
+      },
+      "pass": true
+    },
+    "I_flag_on_treat": {
+      "value": 25,
+      "pass": true
+    },
+    "J_flag_off_ctrl": {
+      "value": 0,
+      "pass": true
+    },
+    "K_locks": {
+      "discovery_b0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "core": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "pass": true
+    }
+  }
+}

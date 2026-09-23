@@ -1,0 +1,31 @@
+[
+  {
+    "type": "same_title_multi_domain",
+    "title": "john smith",
+    "findingIds": [
+      "wd-Q3182477",
+      "wd-Q332377",
+      "wd-Q1701775",
+      "wd-Q6258357",
+      "wd-Q6258267",
+      "wd-Q6258259",
+      "wd-Q541460",
+      "wd-Q991529",
+      "ol-OL177707A",
+      "ol-OL12988612A",
+      "ol-OL2642558A",
+      "ol-OL2404636A",
+      "ol-OL15752758A",
+      "ol-OL9615641A",
+      "ol-OL4474728A",
+      "ol-OL646156A",
+      "wp-en-John_Smith"
+    ],
+    "domains": [
+      "www.wikidata.org",
+      "openlibrary.org",
+      "en.wikipedia.org"
+    ],
+    "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+  }
+]

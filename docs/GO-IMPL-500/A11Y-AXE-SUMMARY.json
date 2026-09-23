@@ -1,0 +1,59 @@
+{
+  "home": {
+    "violations": [],
+    "passes": 41,
+    "incomplete": 1
+  },
+  "discHome": {
+    "violations": [],
+    "passes": 42,
+    "incomplete": 2
+  },
+  "discRes": {
+    "violations": [
+      {
+        "id": "aria-required-children",
+        "impact": "critical",
+        "nodes": 1,
+        "help": "Certain ARIA roles must contain particular children"
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": 1,
+        "help": "Elements must meet minimum color contrast ratio thresholds"
+      }
+    ],
+    "passes": 45,
+    "incomplete": 2
+  },
+  "checklist": {
+    "skip": true,
+    "banner": true,
+    "main": true,
+    "contentinfo": true,
+    "tablist": true,
+    "progressbar": true,
+    "lifeList": true,
+    "ariaCurrent": true,
+    "entityMore": true,
+    "gapsIntro": true,
+    "stageSrc": true,
+    "hierarchy": true
+  },
+  "stamp": "2026-09-21T21:09:07.640Z",
+  "postFix": {
+    "discResultsViolations": [],
+    "note": "Fixed aria-required-children (graph listbox\u2192group) and url-alone contrast (\u22654.5:1)",
+    "checklist": {
+      "skipLink": true,
+      "landmarks": true,
+      "tablist": true,
+      "progressbar": true,
+      "ariaCurrentStep": true,
+      "entityMoreCollapsed": true,
+      "gapsIntro": true,
+      "serverStagePreferred": true
+    }
+  }
+}

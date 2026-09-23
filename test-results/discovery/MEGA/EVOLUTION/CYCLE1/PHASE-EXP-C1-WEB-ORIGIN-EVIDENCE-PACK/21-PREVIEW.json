@@ -1,0 +1,130 @@
+{
+  "stamp": "2026-09-20T11:54:25+0300",
+  "stampLabel": "20/09/2026, 11:54:25 IDT",
+  "experiment": "EXP-C1-WEB-ORIGIN",
+  "fix": "BOUND-FIX-URL-ALONE-UNKNOWN",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "supersedes": {
+    "failed_acc_dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "failed_label": "SAME-REFERENCE",
+    "prior_preview": "dpl_BynXm5iQ17wLzYZ4aiHiMbGFJSkx"
+  },
+  "preview": {
+    "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+    "url": "https://akvot-simple-demo-c5if0fxif-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+    "target": "preview",
+    "readyState": "READY",
+    "stamp": "C1-PATCHED",
+    "env": {
+      "DISCOVERY_ENABLE_WEB_ORIGIN": "1",
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "smoke": {
+    "who.int": {
+      "seed": "https://www.who.int",
+      "sessionId": "kv1.12fc1032d31d4cff159265c0c36cb125",
+      "status": "complete",
+      "providers.web_origin": "ok",
+      "webOriginFindings": 1,
+      "relationship": "UNKNOWN",
+      "facetHints": [
+        "relationship:UNKNOWN"
+      ],
+      "evidence.relationship": "UNKNOWN",
+      "SAME-REFERENCE": false,
+      "SAME-ENTITY": false,
+      "bound_ok": true
+    },
+    "example.com": {
+      "seed": "example.com",
+      "sessionId": "kv1.5f26a6e3dcca0f98191838d3c878f6f3",
+      "note": "web_origin soft-fail (error/weak_snippet); zero findings; zero SAME-* in JSON",
+      "providers.web_origin": "error",
+      "webOriginFindings": 0,
+      "SAME-REFERENCE": false,
+      "SAME-ENTITY": false,
+      "bound_ok": true
+    }
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "status": "LOCKED"
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "status": "LOCKED"
+    }
+  },
+  "unitsLocal": {
+    "webOrigin": "96/0"
+  },
+  "codePaths": {
+    "labelWebOriginRelationship": "api/lib/discovery/webOrigin.js \u2014 seedIsUrl \u2192 UNKNOWN",
+    "providers": "passthrough via resolveWebOriginCandidates/buildWebOriginFinding",
+    "store.normalizeRawHit": "clampWebOriginRelationship \u2014 NEVER SAME-* on web_origin",
+    "orchestrator.graph.edges": "default relationship \u2192 unknown (was same-reference)",
+    "emit": "Acc scrub only \u2014 does NOT rewrite relationship labels"
+  },
+  "note": "Confirmed OK on dpl_Ho6jg \u2014 no successor redeploy. HOLD promote. No C2. Acc re-AFTER pending.",
+  "c1Gate": "NOT_PASS_UNTIL_ACC",
+  "c2": false,
+  "stamps": {
+    "C1-PREPATCH": {
+      "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+      "url": "https://akvot-simple-demo-kqiu92b4a-k-akvot.vercel.app",
+      "outcome": "FAIL",
+      "who.int": "SAME-REFERENCE on finding+evidence+facet"
+    },
+    "C1-PATCHED": {
+      "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+      "url": "https://akvot-simple-demo-c5if0fxif-k-akvot.vercel.app",
+      "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+      "outcome": "BOUND_OK",
+      "who.int": "UNKNOWN on finding+evidence+facet+narrow"
+    }
+  },
+  "liveSurfaces": {
+    "https://www.who.int": {
+      "sessionId": "kv1.334a43b060f81f7b08cd98456f7426f9",
+      "finding.relationship": "UNKNOWN",
+      "evidence.relationship": "UNKNOWN",
+      "facetHints.relationship": "relationship:UNKNOWN",
+      "facet.hint.bucket": "relationship:UNKNOWN",
+      "narrow": "UNKNOWN",
+      "SAME-REFERENCE": false,
+      "SAME-ENTITY": false,
+      "bound_ok": true
+    },
+    "who.int": {
+      "sessionId": "kv1.b6004efe59be42283671cad504cdd49f",
+      "finding.relationship": "UNKNOWN",
+      "evidence.relationship": "UNKNOWN",
+      "facet.hint.bucket": "relationship:UNKNOWN",
+      "SAME-REFERENCE": false,
+      "bound_ok": true
+    },
+    "example.com": {
+      "sessionId": "kv1.18f948a607ad8412e02f03fb0515ee69",
+      "web_origin": "error / 0 findings",
+      "SAME-REFERENCE_anywhere": false,
+      "bound_ok": true
+    }
+  },
+  "codePathsChecked": [
+    "webOrigin.js labelWebOriginRelationship (seedIsUrl\u2192UNKNOWN)",
+    "webOrigin.js buildWebOriginFinding facetHints relationship:*",
+    "providers.js webOriginProvider passthrough",
+    "store.js clampWebOriginRelationship on finding+evidence",
+    "store.js facetHints SAME-* \u2192 relationship:UNKNOWN",
+    "store.js labelRelationship typed-only (qid|viaf|ol) \u2014 web_origin excluded",
+    "facets.js aggregateFacets from post-clamp facetHints",
+    "orchestrator.js edge default unknown",
+    "emit.js Acc scrub only (no relationship rewrite)",
+    "narrow.js filters facetHints (no relabel)"
+  ]
+}

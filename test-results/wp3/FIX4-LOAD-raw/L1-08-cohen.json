@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "level": "L1",
+    "request": 8,
+    "case": "cohen",
+    "variant": null,
+    "method": "GET",
+    "path": "/api/lookup?q=%D7%9B%D7%94%D7%9F",
+    "ms": 2357,
+    "status": 200,
+    "ok": true,
+    "failure": null,
+    "err": null,
+    "timedOut": false,
+    "forbiddenLeak": false,
+    "leak_hits": 0,
+    "leak_detail": [],
+    "candLeak": false,
+    "dossierLeak": false,
+    "sourcesLeak": false,
+    "ui": "thin",
+    "qid": null,
+    "faces": false,
+    "facesCount": 0,
+    "top": [],
+    "stripped": null,
+    "ver": null,
+    "rid": "8f504221-080e-4f14-a77a-a7051a7232d3",
+    "label": "כהן",
+    "rawFile": "L1-08-cohen.json"
+  },
+  "response": {
+    "mode": "google",
+    "label": "כהן",
+    "qid": null,
+    "desc": "תקציב זמן — תשובה חלקית",
+    "extract": "",
+    "photo": null,
+    "sources": [],
+    "images": [],
+    "extra_facts": [],
+    "candidates": [],
+    "ambiguous": false,
+    "thin": true,
+    "degraded": true,
+    "error": "budget_timeout",
+    "uiState": "thin",
+    "scenario": "stranger",
+    "confidence": "none",
+    "messageKey": "no_public_sources",
+    "needContextFields": [
+      "city",
+      "org",
+      "country",
+      "role"
+    ],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 0,
+      "gemini": 0,
+      "enrich": 0,
+      "stageB": 0,
+      "total": 45000,
+      "wikiMeta": {
+        "wiki429": 59,
+        "wikiTimeout": 3,
+        "wikiRetries": 62
+      }
+    },
+    "requestId": "8f504221-080e-4f14-a77a-a7051a7232d3",
+    "wikiMeta": {
+      "wiki429": 59,
+      "wikiTimeout": 3,
+      "wikiRetries": 62
+    }
+  }
+}

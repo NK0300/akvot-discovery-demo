@@ -1,0 +1,76 @@
+{
+  "case": "d-smith-ctx-p0",
+  "method": "POST",
+  "base": "https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app",
+  "dpl": "dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk",
+  "when": "2026-09-15T14:51:05.696Z",
+  "whenLocal": "15.9.2026, 17:51:05 Asia/Jerusalem",
+  "expected": "NOT dossier+faces · NOT qid Q1701775 · ui in candidates|need_context|thin · pretty-wrong=0",
+  "body": {
+    "q": "John Smith",
+    "ctx": {
+      "org": "IBM",
+      "city": "New York",
+      "country": "US"
+    },
+    "nocache": 1
+  },
+  "runs": [
+    {
+      "run": 1,
+      "method": "POST",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "http": 200,
+      "ms": 7759,
+      "err": null,
+      "ui": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": false,
+      "images": 0,
+      "mode": "candidates",
+      "requestId": "303c0905-a1cd-4100-b3dd-658fb2ede799",
+      "build": null
+    },
+    {
+      "run": 2,
+      "method": "POST",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "http": 200,
+      "ms": 7646,
+      "err": null,
+      "ui": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": false,
+      "images": 0,
+      "mode": "candidates",
+      "requestId": "3e5eacae-935a-46ab-bc89-b279f5ce419c",
+      "build": null
+    },
+    {
+      "run": 3,
+      "method": "POST",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "http": 200,
+      "ms": 6665,
+      "err": null,
+      "ui": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": false,
+      "images": 0,
+      "mode": "candidates",
+      "requestId": "18826adc-e054-47e0-8dbd-52f848ac2b87",
+      "build": null
+    }
+  ],
+  "allPass": true,
+  "prettyWrong": 0
+}

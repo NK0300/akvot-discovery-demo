@@ -1,0 +1,22 @@
+{
+  "httpStatus": 400,
+  "ms": 2316,
+  "meta": {
+    "sessionId": null,
+    "status": null,
+    "findings": 0,
+    "evidence": 0,
+    "facets": 0,
+    "contradictions": 0,
+    "regenerated": null,
+    "storeBackend": null,
+    "durable": null,
+    "fiv": null,
+    "candidatesPresent": false
+  },
+  "leak": 0,
+  "json": {
+    "ok": false,
+    "error": "seed required"
+  }
+}

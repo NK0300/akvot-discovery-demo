@@ -1,0 +1,1109 @@
+{
+  "doc": "ACC-B0-BEFORE-S01-S04-S05-דיוק-2026-09-20",
+  "role": "דיוק",
+  "phase": "CYCLE1-PHASE4-EXPERIMENT-A-VIAF",
+  "purpose": "Freeze B0 BEFORE Acc metrics for EXP-A (VIAF) multi_independent_rate compare — observation only",
+  "stamp": "2026-09-20T09:58:53+03:00",
+  "mode": "OBSERVATION_ONLY",
+  "preview": "WAITING_FOR_PREVIEW",
+  "promote": "HOLD",
+  "no_code": true,
+  "no_promote": true,
+  "baselineId": "B0",
+  "alias": "https://akvot-discovery.vercel.app",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "forbidden": [
+    "Q1701775",
+    "wd-Q1701775"
+  ],
+  "corpus": {
+    "file": "GOLDEN-CORPUS-v0.json",
+    "seeds": [
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "category": "person"
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "category": "company"
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "category": "organization"
+      }
+    ]
+  },
+  "data_source": {
+    "kind": "existing_phase2_raw",
+    "dir": "PHASE2-OBSERVATION/raw/acc-דיוק/",
+    "live_fetch": false,
+    "note": "Phase2 Acc sticky GET snapshots reused; no live re-fetch required"
+  },
+  "family_mapping": {
+    "definition": "multi_independent_rate = share of accepted Findings with ≥2 distinct independent hostFamilies on surviving Evidence",
+    "families": {
+      "wikidata": "host *.wikidata.org OR providerId=wikidata",
+      "wikipedia": "host *.wikipedia.org OR *.wikimedia.org (non-wikidata) OR providerId=wikipedia — language mirrors count as ONE family",
+      "openlibrary": "host *.openlibrary.org OR providerId=openlibrary",
+      "viaf": "host *.viaf.org OR providerId=viaf — ABSENT on B0 Discovery deployment",
+      "other": "any other apex host → other:<apex> (each apex is its own family bucket)"
+    },
+    "not_mirror_twins": [
+      "en.wikipedia.org and he.wikipedia.org → both wikipedia (same family)",
+      "www.wikidata.org and wikidata.org → both wikidata",
+      "CDN/www prefixes stripped before family map"
+    ],
+    "independent_pairs": [
+      "wikidata ≠ wikipedia (Acc brief lists both; corroboration requires both on same Finding)",
+      "wikidata ≠ openlibrary ≠ viaf ≠ wikipedia"
+    ],
+    "counting_rule": "providers.length alone is NOT corroboration; independence = distinct hostFamily on Evidence (ARCH EXP-A §2.2 / §4.1)",
+    "b0_note": "B0 runtime providers observed: wikidata, wikipedia, openlibrary only — viaf not present; per-Finding evidence is single-family → expected multi_independent_rate=0"
+  },
+  "success_threshold_exp_a": {
+    "multi_independent_rate_aggregate": ">= 0.15 (AFTER Preview — not evaluated yet)",
+    "acc_leak": 0
+  },
+  "per_seed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "findings_count": 10,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0.0,
+      "acc_leak_count": 0,
+      "contradictions_n": 1,
+      "contradictions_findingIds_Q1701775_hits": 0,
+      "contradictions_findingIds": [
+        "wd-Q80",
+        "wd-Q120373140",
+        "wd-Q120373262",
+        "wd-Q19761597",
+        "wd-Q55693401",
+        "ol-OL25245A",
+        "wp-en-Tim_Berners_Lee"
+      ],
+      "hostFamily_histogram": {
+        "['wikidata']": 8,
+        "['openlibrary']": 1,
+        "['wikipedia']": 1
+      },
+      "fir_pretty_wrong_smell_notes": [
+        "FIR/near-dup smell: 8 distinct Wikidata QIDs for same seed label (person + talks/works collapse): ['wd-Q80', 'wd-Q120373140', 'wd-Q120373262', 'wd-Q22991023', 'wd-Q22946133', 'wd-Q22980417', 'wd-Q19761597', 'wd-Q55693401']",
+        "pretty-wrong smell: talk/work titles surfaced as peer findings alongside person: ['Tim Berners-Lee: A Magna Carta for the web', 'Tim Berners-Lee: The year open data went worldwide', 'Tim Berners-Lee: The next web']"
+      ],
+      "sessionId": "kv1.e661e7d13320e4187651f0f60549cb2d",
+      "status": "partial",
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "raw_get": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/get-S01.json",
+      "findings": [
+        {
+          "findingId": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-1bc4633ed032bd7d454682f1",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q80",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q80",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.7183333333333333,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-9dae5e6e5b505dbfed817fb6"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-9dae5e6e5b505dbfed817fb6",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q120373140",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q120373140",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.7083333333333333,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-deec608d0782116cb1c5ca08"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-deec608d0782116cb1c5ca08",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q120373262",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q120373262",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6983333333333333,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q22991023",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-c7f185fbae6640484c617f83"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-c7f185fbae6640484c617f83",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q22991023",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q22991023",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q22946133",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-8314c7d5a762d02d56ed021d"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-8314c7d5a762d02d56ed021d",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q22946133",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q22946133",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q22980417",
+          "title": "Tim Berners-Lee: The next web",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-08cb147dee8c713927983c2b"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-08cb147dee8c713927983c2b",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q22980417",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q22980417",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-d571998ff143b8c65d0a81a1"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-d571998ff143b8c65d0a81a1",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q19761597",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q19761597",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "kind": "registry",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-29f751a2d57f2094590e70b0"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-29f751a2d57f2094590e70b0",
+              "providerId": "wikidata",
+              "domain": "www.wikidata.org",
+              "url": "https://www.wikidata.org/wiki/Q55693401",
+              "provenanceUrl": "https://www.wikidata.org/wiki/Q55693401",
+              "families": [
+                "wikidata"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6483333333333332,
+          "discoveryScore": 0.7183333333333333
+        },
+        {
+          "findingId": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-8b78b3cd061f3cc8d479260b"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-8b78b3cd061f3cc8d479260b",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL25245A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL25245A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5858333333333333,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-6131f395a12acb1f40ccf423"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-6131f395a12acb1f40ccf423",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5583333333333333,
+          "discoveryScore": 0.6483333333333333
+        }
+      ],
+      "acc_leak_hits": []
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "findings_count": 14,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0.0,
+      "acc_leak_count": 0,
+      "contradictions_n": 1,
+      "contradictions_findingIds_Q1701775_hits": 0,
+      "contradictions_findingIds": [
+        "ol-OL13079935A",
+        "ol-OL10372320A",
+        "wp-en-Stripe"
+      ],
+      "hostFamily_histogram": {
+        "['openlibrary']": 8,
+        "['wikipedia']": 6
+      },
+      "fir_pretty_wrong_smell_notes": [
+        "pretty-wrong smell: brand/common-noun collision — non-company hits dominate: ['Five Stripe Books', 'Adelle Stripe', 'Stephen Stripe', 'Stripe Journals', 'Subdued Stripe', 'Sebastian Friedrich Stripe', 'Striped hyena', 'Striped polecat', 'Striped skunk', 'Stripes (film)']",
+        "company-primary share: 3/14 titles look company-primary (['Stripe', 'Stripe', 'Stripe, Inc.'])"
+      ],
+      "sessionId": "kv1.08e32515acc818679552d82cb28ae49c",
+      "status": "partial",
+      "providers_session": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "raw_get": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/get-S04.json",
+      "findings": [
+        {
+          "findingId": "ol-OL8376862A",
+          "title": "Five Stripe Books",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-92cdcc43e5252f3238d5b475"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-92cdcc43e5252f3238d5b475",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL8376862A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL8376862A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6658333333333333,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL8613090A",
+          "title": "Adelle Stripe",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-f223a57aafa0191f8a88ae9c"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-f223a57aafa0191f8a88ae9c",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL8613090A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL8613090A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6558333333333333,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL13079935A",
+          "title": "Stripe",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-71690f2975616e8c8ae0c510"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-71690f2975616e8c8ae0c510",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL13079935A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL13079935A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6458333333333333,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL10372320A",
+          "title": "STRIPE",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-70eafe76a4960f8cee70eb95"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-70eafe76a4960f8cee70eb95",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL10372320A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL10372320A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6358333333333333,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL3492368A",
+          "title": "Stephen Stripe",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-e4b27ceee54073b58012ffd2"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-e4b27ceee54073b58012ffd2",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL3492368A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL3492368A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6258333333333332,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL14670551A",
+          "title": "Stripe Journals",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-4e41ef9616742d445c82996c"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-4e41ef9616742d445c82996c",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL14670551A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL14670551A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6158333333333332,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL3905682A",
+          "title": "Subdued Stripe",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-42a0dde0cdb4056815e23e44"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-42a0dde0cdb4056815e23e44",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL3905682A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL3905682A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6058333333333332,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "ol-OL15943217A",
+          "title": "Sebastian Friedrich Stripe",
+          "kind": "registry",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-3770035cce8ef3eaf83b4ee5"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-3770035cce8ef3eaf83b4ee5",
+              "providerId": "openlibrary",
+              "domain": "openlibrary.org",
+              "url": "https://openlibrary.org/authors/OL15943217A",
+              "provenanceUrl": "https://openlibrary.org/authors/OL15943217A",
+              "families": [
+                "openlibrary"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5958333333333332,
+          "discoveryScore": 0.6658333333333333
+        },
+        {
+          "findingId": "wp-en-Stripe",
+          "title": "Stripe",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-1b2261a8659f20af0dafa200"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-1b2261a8659f20af0dafa200",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Stripe",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Stripe",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5683333333333334,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Striped_hyena",
+          "title": "Striped hyena",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-5cf126c02d884d0d0f0cbf8c"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-5cf126c02d884d0d0f0cbf8c",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Striped_hyena",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Striped_hyena",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5583333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Stripe_Inc_",
+          "title": "Stripe, Inc.",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-3d21c3bbce21b1c0f2191884"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-3d21c3bbce21b1c0f2191884",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5483333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Striped_polecat",
+          "title": "Striped polecat",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-bf6bbf30d4fe259eaba3bab8"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-bf6bbf30d4fe259eaba3bab8",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Striped_polecat",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Striped_polecat",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5383333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Striped_skunk",
+          "title": "Striped skunk",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-16e4af35d2a9aa3f367fae87"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-16e4af35d2a9aa3f367fae87",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Striped_skunk",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Striped_skunk",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5283333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Stripes_film_",
+          "title": "Stripes (film)",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-8e7c74de03edfd4b5052b0b6"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-8e7c74de03edfd4b5052b0b6",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Stripes_(film)",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Stripes_(film)",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5183333333333333,
+          "discoveryScore": 0.6483333333333333
+        }
+      ],
+      "acc_leak_hits": []
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "findings_count": 6,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0.0,
+      "acc_leak_count": 0,
+      "contradictions_n": 0,
+      "contradictions_findingIds_Q1701775_hits": 0,
+      "contradictions_findingIds": [],
+      "hostFamily_histogram": {
+        "['wikipedia']": 6
+      },
+      "fir_pretty_wrong_smell_notes": [
+        "pretty-wrong smell: national-society / homonym / unrelated hits vs org-primary: ['Red Cross parcel', 'Red Cross Youth (Philippines)', 'Red Cross of Constantine', 'Red crossbill', 'Red Cross (EP)']",
+        "FIR smell: 'Red crossbill' (bird) co-listed with humanitarian org — false-identity risk if UI treats flat list as peers"
+      ],
+      "sessionId": "kv1.0a5ea6f58b6ca477dd21833867945ef0",
+      "status": "partial",
+      "providers_session": {
+        "wikidata": "error",
+        "openlibrary": "error",
+        "wikipedia": "partial"
+      },
+      "raw_get": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/get-S05.json",
+      "findings": [
+        {
+          "findingId": "wp-en-Red_Cross",
+          "title": "Red Cross",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-bd3835ec8708469c4d23938e"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-bd3835ec8708469c4d23938e",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Red_Cross",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6483333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Red_Cross_parcel",
+          "title": "Red Cross parcel",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-fb8c267bc13768462503dbb0"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-fb8c267bc13768462503dbb0",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6383333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+          "title": "Red Cross Youth (Philippines)",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-1e3332c5beb9a1cedc3e2233"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-1e3332c5beb9a1cedc3e2233",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6283333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Red_Cross_of_Constantine",
+          "title": "Red Cross of Constantine",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-00dd79dec29cfd4788ec7d09"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-00dd79dec29cfd4788ec7d09",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6183333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Red_crossbill",
+          "title": "Red crossbill",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-3effb23f7efddf49a3a83160"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-3effb23f7efddf49a3a83160",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Red_crossbill",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Red_crossbill",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.6083333333333333,
+          "discoveryScore": 0.6483333333333333
+        },
+        {
+          "findingId": "wp-en-Red_Cross_EP_",
+          "title": "Red Cross (EP)",
+          "kind": "page",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "hostFamilyCount": 1,
+          "multi_independent": false,
+          "evidenceIds": [
+            "ev-3fe05e34eacda215e4718816"
+          ],
+          "evidence": [
+            {
+              "evidenceId": "ev-3fe05e34eacda215e4718816",
+              "providerId": "wikipedia",
+              "domain": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+              "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+              "families": [
+                "wikipedia"
+              ]
+            }
+          ],
+          "scoreFinding": 0.5983333333333333,
+          "discoveryScore": 0.6483333333333333
+        }
+      ],
+      "acc_leak_hits": []
+    }
+  ],
+  "aggregate": {
+    "seeds": [
+      "S01",
+      "S04",
+      "S05"
+    ],
+    "findings_total": 30,
+    "multi_independent_n": 0,
+    "multi_independent_rate_pooled": 0.0,
+    "multi_independent_rate_mean_of_seeds": 0.0,
+    "per_seed_rates": {
+      "S01": 0.0,
+      "S04": 0.0,
+      "S05": 0.0
+    },
+    "acc_leak_count_total": 0,
+    "contradictions_findingIds_Q1701775_hits_total": 0,
+    "viaf_findings_n": 0,
+    "viaf_present_on_b0": false
+  },
+  "invariants": {
+    "ACC-DISC-01": "leakage=0",
+    "ACC-DISC-06": "NEVER Q1701775 on any emit surface",
+    "B23": "contradictions[].findingIds NEVER Q1701775 / wd-Q1701775",
+    "EXP-A-BEFORE": "B0 frozen prior to Preview; HOLD promote"
+  },
+  "verdict_before": {
+    "acc_leak": "PASS",
+    "multi_independent_rate_b0": 0.0,
+    "note": "B0 BEFORE freeze complete. EXP-A AFTER compare deferred until Preview exists. WAITING_FOR_PREVIEW · HOLD promote."
+  }
+}

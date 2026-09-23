@@ -1,0 +1,11 @@
+{
+  "httpStatus": 400,
+  "ms": 2626,
+  "summary": {
+    "softFail": true,
+    "sessionId": null,
+    "entityLeak": 0,
+    "bans": [],
+    "error": "seed required"
+  }
+}

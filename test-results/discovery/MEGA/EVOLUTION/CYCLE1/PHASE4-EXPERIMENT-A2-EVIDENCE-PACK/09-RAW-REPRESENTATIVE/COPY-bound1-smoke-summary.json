@@ -1,0 +1,71 @@
+{
+  "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+  "url": "https://akvot-simple-demo-2u3mwx1k4-k-akvot.vercel.app",
+  "mean_multi_rate": 0,
+  "pooled_multi_rate": 0,
+  "acc_leak": 0,
+  "gate": 0.15,
+  "mean_pass": false,
+  "per_seed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.5fceeb37099f8ce460b8f50ecc3a9e0c",
+      "findings_n": 18,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "corr_facet_n": 0,
+      "acc_leak": 0,
+      "corr_edges": 0,
+      "providers_map": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial"
+      },
+      "status": "partial"
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.bbe764ef351d841079b1a0eefbf78b2a",
+      "findings_n": 30,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "corr_facet_n": 0,
+      "acc_leak": 0,
+      "corr_edges": 0,
+      "providers_map": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "status": "partial"
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.bdac3b6671182d88041b91481b831e0e",
+      "findings_n": 30,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "corr_facet_n": 0,
+      "acc_leak": 0,
+      "corr_edges": 0,
+      "providers_map": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "status": "partial"
+    }
+  ]
+}

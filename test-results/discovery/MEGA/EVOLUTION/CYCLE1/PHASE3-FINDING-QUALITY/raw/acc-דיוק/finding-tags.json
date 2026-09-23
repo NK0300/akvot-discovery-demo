@@ -1,0 +1,521 @@
+{
+  "S01": {
+    "wd-Q80": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q120373140": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q120373262": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q22991023": [
+      "weak",
+      "single-source"
+    ],
+    "wd-Q22946133": [
+      "weak",
+      "single-source"
+    ],
+    "wd-Q22980417": [
+      "weak",
+      "single-source"
+    ],
+    "wd-Q19761597": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q55693401": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL25245A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wp-en-Tim_Berners_Lee": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ]
+  },
+  "S02": {
+    "wd-Q3182477": [
+      "single-source",
+      "contradiction",
+      "near-dup",
+      "false-identity-risk"
+    ],
+    "wd-Q332377": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q6258357": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q6258267": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q6258259": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q541460": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q991529": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL177707A": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL12988612A": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL2642558A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL2404636A": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL15752758A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL9615641A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL4474728A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL646156A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wp-en-John_Smith": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wp-en-John_Smith_explorer_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-John_Smith_Labour_Party_leader_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-John_Smith_s_Brewery": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-John_Smith_Chippewa_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-John_Smith_actor_": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S03": {
+    "wd-Q233510": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup",
+      "false-identity-risk"
+    ],
+    "wd-Q126278685": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q131542437": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q43302646": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q42805830": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q16527618": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q55603580": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL1437248A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL7414531A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL3225320A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL11306519A": [
+      "single-source"
+    ],
+    "ol-OL11281210A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL15840118A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL9647235A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL4794660A": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Alex_Morgan": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wp-en-Alex_Morgan_Australian_footballer_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Alex_Morgan_runner_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Alex_Morgan_disambiguation_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Alex_Mol_an": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Alex_Morales": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S04": {
+    "ol-OL8376862A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL8613090A": [
+      "weak",
+      "single-source",
+      "near-dup"
+    ],
+    "ol-OL13079935A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL10372320A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL3492368A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL14670551A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL3905682A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL15943217A": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Stripe": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wp-en-Striped_hyena": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Stripe_Inc_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Striped_polecat": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Striped_skunk": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Stripes_film_": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S06": {
+    "wp-en-Openai_com": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-OpenAI_Codex_AI_agent_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-OpenAI_Codex_language_model_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-OpenAI_Codex": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-OpenAI_containment_escapes": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Opera_com": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S07": {
+    "wp-en-_": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S09": {},
+  "S10": {
+    "wd-Q154340": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q37388": [
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q5480102": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q136428482": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q29583002": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q24952667": [
+      "weak",
+      "single-source"
+    ],
+    "wd-Q341032": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wd-Q28052097": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL23720A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL82840A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL2029650A": [
+      "single-source"
+    ],
+    "ol-OL2335032A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL15242943A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL2432505A": [
+      "weak",
+      "single-source"
+    ],
+    "ol-OL15865902A": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "ol-OL156101A": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Francis_Bacon": [
+      "weak",
+      "single-source",
+      "contradiction",
+      "near-dup"
+    ],
+    "wp-en-Francis_Bacon_artist_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Francis_Bacon_American_football_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Francis_Bacon_The_Logic_of_Sensation": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Francis_Bacon_cricketer_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-The_Francis_Bacon_Opera": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S05": {
+    "wp-en-Red_Cross": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Red_Cross_parcel": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Red_Cross_Youth_Philippines_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Red_Cross_of_Constantine": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Red_crossbill": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Red_Cross_EP_": [
+      "weak",
+      "single-source"
+    ]
+  },
+  "S08": {},
+  "S11": {
+    "wp-en-Michael_Jordan_baseball_": [
+      "weak",
+      "single-source"
+    ],
+    "wp-en-Michael_Jordan_basketball_": [
+      "weak",
+      "single-source",
+      "false-identity-risk"
+    ]
+  },
+  "S12": {}
+}

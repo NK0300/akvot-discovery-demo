@@ -1,0 +1,97 @@
+{
+  "ok": true,
+  "sessionId": "kv1.d9b50c049e1a32a060f16929f509acb3",
+  "status": "failed_soft",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "c1-TREAT-ADV-http",
+  "snapshot": {
+    "sessionId": "kv1.d9b50c049e1a32a060f16929f509acb3",
+    "seed": "http://example.com",
+    "q": "http://example.com",
+    "status": "failed_soft",
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "ok",
+      "wikipedia": "error",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:f0e6a6a97042"
+      ],
+      "status": "candidate",
+      "displayHint": "http://example.com",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:38:17.984Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:f0e6a6a97042",
+          "kind": "seed"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

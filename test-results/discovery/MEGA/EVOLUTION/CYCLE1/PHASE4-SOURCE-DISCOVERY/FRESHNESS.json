@@ -1,0 +1,25 @@
+{
+  "step": 38,
+  "title": "FRESHNESS",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "available": true,
+  "fields": {
+    "evidence.retrievedAt": "ISO timestamp set at provider fetch (session-now)",
+    "ranking.factors.freshness": "0.6+0.3 if retrievedAt within 24h else lower; observed always 0.9 on B0"
+  },
+  "observed": {
+    "factor_mean": 0.9,
+    "factor_min": 0.9,
+    "factor_max": 0.9,
+    "retrievedAt_present_n": 244,
+    "retrievedAt_unique_n": 43,
+    "note": "B0 freshness factor is mostly constant (0.9) when retrievedAt is session-now; not true source modification time"
+  },
+  "gaps": [
+    "No source lastmod / revision timestamp from Wikidata/Wikipedia/OpenLibrary",
+    "No news-style publicationDate",
+    "retrievedAt uniqueness 43 across 244 findings — batch-shared timestamps per provider call",
+    "Cannot measure real-world staleness of registry facts"
+  ],
+  "implication": "Freshness is currently a fetch-recency proxy, not evidence currency. Strategy experiments needing true freshness require provider-native dates or news sources (BS-SRC-02)."
+}

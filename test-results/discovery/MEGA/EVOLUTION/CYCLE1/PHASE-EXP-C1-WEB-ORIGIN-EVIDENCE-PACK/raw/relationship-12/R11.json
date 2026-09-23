@@ -1,0 +1,87 @@
+{
+  "snap": {
+    "status": "partial",
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikidata",
+            "count": 17
+          },
+          {
+            "value": "openlibrary",
+            "count": 10
+          },
+          {
+            "value": "viaf",
+            "count": 10
+          },
+          {
+            "value": "wikipedia",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 17
+          },
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 10
+          }
+        ]
+      }
+    ]
+  },
+  "row": {
+    "id": "R11",
+    "seed": "Tim Berners-Lee",
+    "expect": "NO_URL_ALONE_SAME",
+    "note": "person seed; wo idle or non-SAME",
+    "sessionId": "kv1.7f511acd291527c61b961cfb23778e8c",
+    "status": "partial",
+    "polls": 14,
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": true,
+    "reason": "no URL-alone SAME-* on wo",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

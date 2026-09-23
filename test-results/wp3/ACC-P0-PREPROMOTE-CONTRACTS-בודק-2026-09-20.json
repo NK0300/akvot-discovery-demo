@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "checked_at": "2026-09-20T00:53:05+03:00",
+    "timezone": "Asia/Jerusalem (UTC+3)",
+    "base": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app",
+    "origin": "https://akvot-simple-demo.vercel.app",
+    "scope": "k-akvot",
+    "required_deployment": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+    "promote": false,
+    "core_patch": false,
+    "forbidden_pattern": "Q1701775|wd-Q1701775",
+    "access": "vercel curl URL --scope k-akvot --"
+  },
+  "health": {
+    "label": "health",
+    "method": "GET",
+    "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/health",
+    "request_body": null,
+    "ms": 2339,
+    "status": 200,
+    "err": null,
+    "ui": null,
+    "mode": null,
+    "uiState": null,
+    "qid": null,
+    "faces": null,
+    "candidates_count": 0,
+    "candidate_ids": [],
+    "leakage_count": 0,
+    "leakage_terms": [],
+    "candidate_leakage_count": 0,
+    "source_leakage_count": 0,
+    "raw_file": "health.json",
+    "build": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+    "build_match": true
+  },
+  "cases": [
+    {
+      "label": "assaf-get",
+      "method": "GET",
+      "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/lookup?q=Assaf%20Rappaport",
+      "request_body": null,
+      "ms": 3557,
+      "status": 200,
+      "err": null,
+      "ui": "dossier",
+      "mode": "wiki",
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "faces": 2,
+      "candidates_count": 0,
+      "candidate_ids": [],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "assaf-get.json"
+    },
+    {
+      "label": "cohen-get",
+      "method": "GET",
+      "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/lookup?q=%D7%9B%D7%94%D7%9F",
+      "request_body": null,
+      "ms": 3108,
+      "status": 200,
+      "err": null,
+      "ui": "need_context",
+      "mode": "candidates",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 0,
+      "candidate_ids": [],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "cohen-get.json"
+    },
+    {
+      "label": "john-smith-cold-nocache",
+      "method": "POST",
+      "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/lookup",
+      "request_body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      },
+      "ms": 9317,
+      "status": 200,
+      "err": null,
+      "ui": "candidates",
+      "mode": "candidates",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 6,
+      "candidate_ids": [
+        "ol-OL177707A",
+        "viaf-4952029",
+        "viaf-7575484",
+        "viaf-313041903",
+        "viaf-42025537",
+        "viaf-9921487"
+      ],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-smith-cold-nocache.json"
+    },
+    {
+      "label": "john-smith-warm-1",
+      "method": "POST",
+      "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/lookup",
+      "request_body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "ms": 8912,
+      "status": 200,
+      "err": null,
+      "ui": "candidates",
+      "mode": "candidates",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 6,
+      "candidate_ids": [
+        "ol-OL177707A",
+        "viaf-4952029",
+        "viaf-7575484",
+        "viaf-313041903",
+        "viaf-42025537",
+        "viaf-9921487"
+      ],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-smith-warm-1.json"
+    },
+    {
+      "label": "john-smith-warm-2",
+      "method": "POST",
+      "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/lookup",
+      "request_body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "ms": 9213,
+      "status": 200,
+      "err": null,
+      "ui": "candidates",
+      "mode": "candidates",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 6,
+      "candidate_ids": [
+        "ol-OL177707A",
+        "viaf-4952029",
+        "viaf-7575484",
+        "viaf-313041903",
+        "viaf-42025537",
+        "viaf-9921487"
+      ],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-smith-warm-2.json"
+    },
+    {
+      "label": "john-rappaport-get",
+      "method": "GET",
+      "url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app/api/lookup?q=John%20Rappaport",
+      "request_body": null,
+      "ms": 7837,
+      "status": 200,
+      "err": null,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 0,
+      "candidate_ids": [],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-rappaport-get.json"
+    }
+  ],
+  "checks": {
+    "health_build": true,
+    "assaf": true,
+    "cohen": true,
+    "john_smith_3x": true,
+    "john_rappaport_optional": true
+  },
+  "leakage_count": 0,
+  "status": "PASS",
+  "abort_fail": false,
+  "notes": [
+    "Preview-only verification; no promote performed and no Core patch performed.",
+    "Forbidden scan covers the complete response JSON and separately candidates and sources."
+  ]
+}

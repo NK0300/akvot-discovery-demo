@@ -1,0 +1,243 @@
+{
+  "stamp": "2026-09-20T11:44:43+03:00",
+  "stamp_label": "2026-09-20 11:44 IDT",
+  "agent": "דיוק",
+  "experiment": "EXP-C1-WEB-ORIGIN",
+  "verdict": "FAIL",
+  "identity_bound": "OPEN",
+  "promote": "HOLD",
+  "no_promote": true,
+  "no_C2": true,
+  "treatment_official": {
+    "source": "PREVIEW-DEPLOY.json + STATUS.md",
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "url": "https://akvot-simple-demo-kqiu92b4a-k-akvot.vercel.app",
+    "acc": "FAIL",
+    "reason": "URL-alone web_origin relationship=SAME-REFERENCE (S16 https://www.who.int); Acc ceiling=UNKNOWN only"
+  },
+  "observed_patch_candidate_NOT_pack_treatment": {
+    "dpl": "dpl_BynXm5iQ17wLzYZ4aiHiMbGFJSkx",
+    "url": "https://akvot-simple-demo-mwrxr18e1-k-akvot.vercel.app",
+    "s16_relationship": {
+      "UNKNOWN": 1
+    },
+    "note": "S16 shows UNKNOWN on this dpl, but Acc does NOT PASS until Server publishes patched Preview into STATUS-שרת / PREVIEW-DEPLOY as official Treatment"
+  },
+  "control": {
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "alias": "akvot-discovery.vercel.app",
+    "state": "LOCKED"
+  },
+  "core": {
+    "alias": "akvot-simple-demo.vercel.app",
+    "dpl_locked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "rows": [
+      {
+        "q": "Assaf",
+        "leak": 0,
+        "pw": 0,
+        "ui": "need_context"
+      },
+      {
+        "q": "Cohen",
+        "leak": 0,
+        "pw": 0,
+        "ui": "need_context"
+      },
+      {
+        "q": "Smith",
+        "leak": 0,
+        "pw": 0,
+        "ui": "need_context"
+      }
+    ],
+    "leak": 0,
+    "pw": 0
+  },
+  "gates": {
+    "AG1_leak": {
+      "value": 0,
+      "pass": true,
+      "note": "Hard leak gate green; does not override identity Bound"
+    },
+    "AG2_poison_surface": {
+      "value": 0,
+      "pass": true
+    },
+    "AG3_url_alone_identity": {
+      "value": {
+        "same_entity": 0,
+        "same_reference": 2,
+        "s16_rel": {
+          "SAME-REFERENCE": 1
+        }
+      },
+      "pass": false,
+      "fail_reason": "S16 URL-alone labeled SAME-REFERENCE on dpl_268RUsf — Acc ceiling UNKNOWN only (Chief Bound OPEN)"
+    },
+    "AG5_core_leak": {
+      "value": 0,
+      "pass": true
+    },
+    "AG5_core_pw": {
+      "value": 0,
+      "pass": true
+    },
+    "promote": {
+      "pass": false,
+      "value": "HOLD"
+    },
+    "C2": {
+      "pass": true,
+      "value": "NO C2"
+    }
+  },
+  "identity_audit_s16_official": {
+    "id": "S16",
+    "seed": "https://www.who.int",
+    "status": "complete",
+    "wo_n": 1,
+    "wo_e_n": 1,
+    "rel_hist": {
+      "SAME-REFERENCE": 1
+    },
+    "same_entity": 0,
+    "same_reference": 2,
+    "acc_leak": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "wo_sample": [
+      {
+        "id": "wo-7fd08b15039288ff",
+        "relationship": "SAME-REFERENCE",
+        "hostFamily": "web_origin"
+      }
+    ],
+    "create_ok": true
+  },
+  "identity_audit_full": {
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "rows": [
+      {
+        "id": "S16",
+        "seed": "https://www.who.int",
+        "status": "complete",
+        "wo_n": 1,
+        "wo_e_n": 1,
+        "rel_hist": {
+          "SAME-REFERENCE": 1
+        },
+        "same_entity": 0,
+        "same_reference": 2,
+        "acc_leak": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "ok"
+        },
+        "wo_sample": [
+          {
+            "id": "wo-7fd08b15039288ff",
+            "relationship": "SAME-REFERENCE",
+            "hostFamily": "web_origin"
+          }
+        ],
+        "create_ok": true
+      },
+      {
+        "id": "S06",
+        "seed": "openai.com",
+        "status": "partial",
+        "wo_n": 0,
+        "wo_e_n": 0,
+        "rel_hist": {},
+        "same_entity": 0,
+        "same_reference": 0,
+        "acc_leak": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "partial",
+          "viaf": "ok",
+          "web_origin": "error"
+        },
+        "wo_sample": [],
+        "create_ok": true
+      },
+      {
+        "id": "W1",
+        "seed": "https://www.example.com",
+        "status": "failed_soft",
+        "wo_n": 0,
+        "wo_e_n": 0,
+        "rel_hist": {},
+        "same_entity": 0,
+        "same_reference": 0,
+        "acc_leak": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "error"
+        },
+        "wo_sample": [],
+        "create_ok": true
+      },
+      {
+        "id": "ACC-U01",
+        "seed": "https://www.wikidata.org/wiki/Q80",
+        "status": "partial",
+        "wo_n": 0,
+        "wo_e_n": 0,
+        "rel_hist": {},
+        "same_entity": 0,
+        "same_reference": 0,
+        "acc_leak": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "error"
+        },
+        "wo_sample": [],
+        "create_ok": true
+      },
+      {
+        "id": "ACC-P01",
+        "seed": "https://www.example.com/page?qid=Q1701775",
+        "status": "partial",
+        "wo_n": 0,
+        "wo_e_n": 0,
+        "rel_hist": {},
+        "same_entity": 0,
+        "same_reference": 0,
+        "acc_leak": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "error"
+        },
+        "wo_sample": [],
+        "create_ok": true
+      }
+    ]
+  },
+  "chief": {
+    "bound": "OPEN on dpl_268RUsf",
+    "acc_ceiling": "UNKNOWN only for URL/domain alone",
+    "block_pack_acc_pass": true,
+    "waiting": "patched Preview published in STATUS-שרת / PREVIEW-DEPLOY"
+  },
+  "next": "WAITING patch Preview · Acc re-AFTER on new dpl · NO C2 · NO promote"
+}

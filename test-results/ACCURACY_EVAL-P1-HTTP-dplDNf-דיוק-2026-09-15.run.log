@@ -1,0 +1,53 @@
+# ACCURACY EVAL P1 HTTP dplDNf · 2026-09-14T21:52:16.568Z
+BASE=https://akvot-simple-demo.vercel.app DEPLOY=dpl_DNfPZ9oMSzqtjErqYeRtpT2t2fSu CONCURRENCY=3
+PROBE /api/lookup?q=test → HTTP 200 in 5972ms
+[w0] → S01 GET q="דני כהן"
+[w1] → S02 GET q="משה כהן"
+[w2] → S03 GET q="John Smith"
+[w0] ← S01 342ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=342 → PASS
+[w0] → S04 POST q="John Smith" ctx={"org":"IBM","city":"New York"}
+[w1] ← S02 779ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=779 → PASS
+[w1] → S05 POST q="John Smith" ctx={"email":"qa.rethink.test@example.com"}
+[w2] ← S03 5264ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=5264 → PASS
+[w2] → S06 GET q="Xzqplmnvwtr987654321asdfgh"
+[w0] ← S04 6261ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=6261 → PASS
+[w0] → S07 POST q="פלמוני אלמוניזקש" ctx={"org":"מפעל בדיקה פיקטיבי"}
+[w1] ← S05 6716ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=6716 → PASS
+[w1] → N01 GET q="בנימין נתניהו"
+[w1] ← N01 2399ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2399 → PASS
+[w1] → N02 GET q="נתניהו"
+[w2] ← S06 5914ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=5914 → PASS
+[w2] → N03 GET q="ביבי נתניהו"
+[w1] ← N02 2169ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2169 → PASS
+[w1] → N04 GET q="ביבי"
+[w1] ← N04 1526ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=1526 → PASS
+[w1] → N05 GET q="Benjamin Netanyahu"
+[w2] ← N03 2496ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2496 → PASS
+[w2] → N06 GET q="Bibi Netanyahu"
+[w1] ← N05 1523ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=3,confidence=high,phase=orchestrator-v0-b,ms=1523 → PASS
+[w1] → N07 GET q="Netanyahu"
+[w2] ← N06 2957ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2957 → PASS
+[w2] → N08 GET q="אורלי לוי"
+[w1] ← N07 1524ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=3,confidence=high,phase=orchestrator-v0-b,ms=1524 → PASS
+[w1] → G01 GET q="זהבה גלאון"
+[w2] ← N08 1972ms http=200 uiState=dossier,qid=Q466537,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=1972 → PASS
+[w2] → G02 GET q="Zehava Galon"
+[w1] ← G01 2257ms http=200 uiState=dossier,qid=Q2630062,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2257 → PASS
+[w1] → G03 GET q="Zahava Gal-On"
+[w2] ← G02 2529ms http=200 uiState=dossier,qid=Q2630062,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2529 → PASS
+[w2] → M01 GET q="Angela Merkel"
+[w1] ← G03 2270ms http=200 uiState=dossier,qid=Q2630062,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=2270 → PASS
+[w1] → P01 GET q="יאיר לפיד"
+[w2] ← M01 1549ms http=200 uiState=dossier,qid=Q567,faces=true,sources=3,confidence=high,phase=orchestrator-v0-b,ms=1549 → PASS
+[w2] → P02 GET q="לפיד"
+[w1] ← P01 1555ms http=200 uiState=dossier,qid=Q1396120,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=1555 → PASS
+[w1] → P03 GET q="כהן"
+[w2] ← P02 1390ms http=200 uiState=dossier,qid=Q1396120,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=1390 → PASS
+[w2] → P04 POST q="Emily Chen" ctx={"city":"Palo Alto","role":"student"}
+[w2] ← P04 6233ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=6233 → PASS
+[w2] → P05 GET q="Michael Brown"
+[w2] ← P05 5706ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=5706 → PASS
+[w2] → P06 GET q="Assaf Rappaport"
+[w2] ← P06 6080ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=6080 → PASS_DOCUMENTED_P2
+[w0] ← S07 45234ms http=200 uiState=thin,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=45234 → PASS
+[w1] ← P03 35338ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=35338 → PASS

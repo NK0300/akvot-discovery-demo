@@ -1,0 +1,9 @@
+Vercel CLI env ls (VALUES REDACTED — names only)
+Project: k-akvot/akvot-simple-demo
+
+NAME                              ENVIRONMENTS
+UPSTASH_REDIS_REST_TOKEN          Development, Preview, Production
+UPSTASH_REDIS_REST_URL            Development, Preview, Production
+GOOGLE_GENERATIVE_AI_API_KEY      Production, Preview, Development
+
+Absent: KV_REST_API_URL, KV_REST_API_TOKEN

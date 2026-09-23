@@ -1,0 +1,82 @@
+{
+  "case": "P2-S03 POST nested ×3 smoke",
+  "body": {
+    "q": "John Smith",
+    "ctx": {
+      "org": "IBM",
+      "city": "New York",
+      "country": "US"
+    },
+    "nocache": 1
+  },
+  "runs": [
+    {
+      "run": 1,
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "http": 200,
+      "ms": 10159,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "requestId": "7c02243e-f3b1-413d-9f29-9162ca961cf6",
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      }
+    },
+    {
+      "run": 2,
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "http": 200,
+      "ms": 8741,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "requestId": "493c7dda-9c00-40bc-8e9f-e24f7007519a",
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      }
+    },
+    {
+      "run": 3,
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "http": 200,
+      "ms": 9379,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "requestId": "07e277e9-7bb9-4a7c-a9ab-b22f17cd4c2a",
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      }
+    }
+  ],
+  "allPass": true,
+  "prettyWrong": 0
+}

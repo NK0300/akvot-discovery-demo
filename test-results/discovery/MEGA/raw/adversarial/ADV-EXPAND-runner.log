@@ -1,0 +1,11 @@
+[adv-expand] 2026-09-20T07:25:18+03:00 dpl=dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB
+[ADV-L5] PASS http=400 softFail=true entityLeak=0
+[ADV-L6] PASS http=400 softFail=true entityLeak=0
+[ADV-L7] PASS http=201 findings=16 entityLeak=0 bans=none
+[ADV-L8] PASS http=201 findings=15 entityLeak=0 bans=none
+[ADV-L9] PASS sidOk findings=15/15 regen=true,true entityLeak=0
+[ADV-L10] PASS ctOk=true ev=9/9 types2=meta,progress,provider,finding,facets entityLeak=0
+[ADV-L11] PASS http=200 findings=13 entityLeak=0 bans=none
+[ADV-L12] PASS http=201 findings=16 entityLeak=0
+
+[adv-expand] PASS=8 FAIL=0

@@ -1,0 +1,67 @@
+{
+  "snap": {
+    "status": "partial",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikidata",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R08",
+    "seed": "https://www.wikidata.org/wiki/Q80",
+    "expect": "UNKNOWN",
+    "note": "entity URL ≠ typed soft-ref",
+    "sessionId": "kv1.c6d7b15b5ee64193e4ecb4bd4bcb5bc6",
+    "status": "partial",
+    "polls": 14,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": false,
+    "reason": "wo=0 unk=0 SE=0 SR=0",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

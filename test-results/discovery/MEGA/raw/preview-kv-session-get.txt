@@ -1,0 +1,2 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+{"ok":false,"error":"session not found","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true}}

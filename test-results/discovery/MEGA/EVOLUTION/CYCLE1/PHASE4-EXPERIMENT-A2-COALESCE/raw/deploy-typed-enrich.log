@@ -1,0 +1,50 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Deploying akvot-simple-demo
+Uploading [--------------------] (0.0B/1.3MB)
+Uploading [=====---------------] (347.2KB/1.3MB)
+Uploading [==========----------] (683.5KB/1.3MB)
+Uploading [===============-----] (1011.5KB/1.3MB)
+Uploading [====================] (1.3MB/1.3MB)
+  Inspect         https://vercel.com/k-akvot/akvot-simple-demo/7MmfPSHByCLc3r86tnFVPZAWmRV9
+  Preview         https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app
+Building…
+Building…
+Running build in Cleveland, USA (East) – cle1
+Build machine configuration: 4 cores, 8 GB
+Retrieving list of deployment files...
+Previous build caches not available.
+Downloading 2483 deployment files...
+Running "vercel build"
+Vercel CLI 59.23.2
+Installing dependencies...
+up to date in 435ms
+Build Completed in /vercel/output [3s]
+Deploying outputs...
+[2K[1A[2K[G  Preview         https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app
+Completing…
+{
+  "status": "ok",
+  "deployment": {
+    "id": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app",
+    "inspectorUrl": "https://vercel.com/k-akvot/akvot-simple-demo/7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "readyState": "READY",
+    "target": null,
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9"
+  },
+  "message": "Deployment akvot-simple-demo-mcqip894c-k-akvot.vercel.app ready.",
+  "next": [
+    {
+      "command": "vercel curl https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app",
+      "when": "Verify deployment, including when Deployment Protection is enabled"
+    },
+    {
+      "command": "vercel inspect akvot-simple-demo-mcqip894c-k-akvot.vercel.app --scope k-akvot",
+      "when": "Inspect deployment"
+    },
+    {
+      "command": "vercel deploy --prod --scope k-akvot",
+      "when": "Promote to production"
+    }
+  ]
+}

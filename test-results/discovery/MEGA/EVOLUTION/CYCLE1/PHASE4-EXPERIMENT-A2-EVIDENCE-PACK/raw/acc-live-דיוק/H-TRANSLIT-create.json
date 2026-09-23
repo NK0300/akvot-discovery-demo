@@ -1,0 +1,964 @@
+{
+  "ms": 4809,
+  "status": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.4952d41541ce6eb1d614bc8720c9a498",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9ibiot-ab11f5",
+    "snapshot": {
+      "sessionId": "kv1.4952d41541ce6eb1d614bc8720c9a498",
+      "seed": "כהן",
+      "q": "כהן",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "viaf-56703476",
+          "kind": "registry",
+          "title": "כהן, ליאונרד, 1934-2016",
+          "summary": "type:personal · lc:n79033018 · dnb:11867658x",
+          "evidenceIds": [
+            "ev-c6e7c37fb4681d3ea9c2d930"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:56703476"
+          ],
+          "scoreFinding": 0.7008333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-100921459",
+          "kind": "registry",
+          "title": "כהן, ישראל מאיר, 1838-1933",
+          "summary": "type:personal · lc:n50043806 · dnb:119150530",
+          "evidenceIds": [
+            "ev-fd802c7003ebbd338d4e9985"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:100921459"
+          ],
+          "scoreFinding": 0.6908333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-293149106170968491338",
+          "kind": "registry",
+          "title": "כהן, אלבר, 1895-1981",
+          "summary": "type:personal · lc:n80131676 · dnb:118676571",
+          "evidenceIds": [
+            "ev-f76a953712e4369084063427"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:293149106170968491338"
+          ],
+          "scoreFinding": 0.6808333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-82207833",
+          "kind": "registry",
+          "title": "כהן, הנס, 1891-1971",
+          "summary": "type:personal · lc:n79126820 · dnb:118713647",
+          "evidenceIds": [
+            "ev-6310d64eddb624721251f342"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:82207833"
+          ],
+          "scoreFinding": 0.6708333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-12326139",
+          "kind": "registry",
+          "title": "כהן, הרמן, 1842-1918",
+          "summary": "type:personal · lc:n79066434 · dnb:118521411",
+          "evidenceIds": [
+            "ev-e4cc4260bd69f7c60ddd1829"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:12326139"
+          ],
+          "scoreFinding": 0.6608333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-17224634",
+          "kind": "registry",
+          "title": "כהן, אלברט אויגן, 1912-1979",
+          "summary": "type:personal · lc:n79121740 · dnb:118776568",
+          "evidenceIds": [
+            "ev-8ad932a2ba87d62bf61e73ac"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:17224634"
+          ],
+          "scoreFinding": 0.6508333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-108256022",
+          "kind": "registry",
+          "title": "כהן, נורמן רופוס קולין, 1915-2007",
+          "summary": "type:personal · lc:n50030572 · dnb:120099675",
+          "evidenceIds": [
+            "ev-b5d1460d870eee4a8d21c19c"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:108256022"
+          ],
+          "scoreFinding": 0.6408333333333331,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-71634419",
+          "kind": "registry",
+          "title": "כהן, יואל",
+          "summary": "type:personal · lc:n81144085 · dnb:118944134",
+          "evidenceIds": [
+            "ev-5c1d8ab9c851bc8bd4889de6"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:71634419"
+          ],
+          "scoreFinding": 0.6308333333333331,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL133038A",
+          "kind": "registry",
+          "title": "Israel Cohen",
+          "summary": "Top work: Ishim min ha-Miḳra",
+          "evidenceIds": [
+            "ev-cefe1a47671a408a23a34536"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL133038A",
+            "ol-OL133038A",
+            "viaf:7517894",
+            "qid:Q12408397",
+            "wd-Q12408397"
+          ],
+          "scoreFinding": 0.5858333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL4973655A",
+          "kind": "registry",
+          "title": "David Cohen",
+          "summary": "Top work: Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+          "evidenceIds": [
+            "ev-2ceeb07e90a5e99ca8a1eed2"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL4973655A",
+            "ol-OL4973655A",
+            "viaf:28180785",
+            "qid:Q2910274",
+            "wd-Q2910274"
+          ],
+          "scoreFinding": 0.5758333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL16098624A",
+          "kind": "registry",
+          "title": "זמיר בן אליעזר כהן",
+          "summary": "Top work: Leḳeṭ nevuʾot",
+          "evidenceIds": [
+            "ev-0499873426e44ae6118c76f0"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL16098624A",
+            "ol-OL16098624A"
+          ],
+          "scoreFinding": 0.5658333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL1801847A",
+          "kind": "registry",
+          "title": "Sholom Jacob Kahn",
+          "summary": "Top work: Science and Aesthetic Judgement",
+          "evidenceIds": [
+            "ev-f7e7eacb2219424632d368f4"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL1801847A",
+            "ol-OL1801847A",
+            "viaf:261208805",
+            "qid:Q111732729",
+            "wd-Q111732729"
+          ],
+          "scoreFinding": 0.5558333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL5263297A",
+          "kind": "registry",
+          "title": "Ṭoviyah Kohen",
+          "summary": "Top work: Nivon ʻIvri",
+          "evidenceIds": [
+            "ev-239a63032c03280838f0a2c3"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL5263297A",
+            "ol-OL5263297A",
+            "viaf:5159999710330112344"
+          ],
+          "scoreFinding": 0.5458333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15941596A",
+          "kind": "registry",
+          "title": "שירלי כהן",
+          "summary": "Top work: הקורס, \"טכנולוגיות חדשות ושינוי חברתי\"",
+          "evidenceIds": [
+            "ev-2c8a729192c43b5736f12d39"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL15941596A",
+            "ol-OL15941596A"
+          ],
+          "scoreFinding": 0.5358333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15386735A",
+          "kind": "registry",
+          "title": "ש. כהן",
+          "summary": "Top work: דוד ליב מגדבורגר",
+          "evidenceIds": [
+            "ev-e27251db5f4505ccb6c17933"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL15386735A",
+            "ol-OL15386735A"
+          ],
+          "scoreFinding": 0.5258333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15507527A",
+          "kind": "registry",
+          "title": "אידוב כהן",
+          "summary": "Top work: עשרים וארבע שעות בחייה של אשה",
+          "evidenceIds": [
+            "ev-fda11557d6f45f77b11c4d0c"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL15507527A",
+            "ol-OL15507527A"
+          ],
+          "scoreFinding": 0.5158333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-cefe1a47671a408a23a34536",
+          "provenanceUrl": "https://openlibrary.org/authors/OL133038A",
+          "url": "https://openlibrary.org/authors/OL133038A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "Ishim min ha-Miḳra",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2ceeb07e90a5e99ca8a1eed2",
+          "provenanceUrl": "https://openlibrary.org/authors/OL4973655A",
+          "url": "https://openlibrary.org/authors/OL4973655A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-0499873426e44ae6118c76f0",
+          "provenanceUrl": "https://openlibrary.org/authors/OL16098624A",
+          "url": "https://openlibrary.org/authors/OL16098624A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "Leḳeṭ nevuʾot",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f7e7eacb2219424632d368f4",
+          "provenanceUrl": "https://openlibrary.org/authors/OL1801847A",
+          "url": "https://openlibrary.org/authors/OL1801847A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "Science and Aesthetic Judgement",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-239a63032c03280838f0a2c3",
+          "provenanceUrl": "https://openlibrary.org/authors/OL5263297A",
+          "url": "https://openlibrary.org/authors/OL5263297A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "Nivon ʻIvri",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2c8a729192c43b5736f12d39",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15941596A",
+          "url": "https://openlibrary.org/authors/OL15941596A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "הקורס, \"טכנולוגיות חדשות ושינוי חברתי\"",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e27251db5f4505ccb6c17933",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15386735A",
+          "url": "https://openlibrary.org/authors/OL15386735A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "דוד ליב מגדבורגר",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fda11557d6f45f77b11c4d0c",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15507527A",
+          "url": "https://openlibrary.org/authors/OL15507527A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:47.462Z",
+          "evidenceType": "registry",
+          "quote": "עשרים וארבע שעות בחייה של אשה",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-c6e7c37fb4681d3ea9c2d930",
+          "provenanceUrl": "https://viaf.org/viaf/56703476",
+          "url": "https://viaf.org/viaf/56703476",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, ליאונרד, 1934-2016",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fd802c7003ebbd338d4e9985",
+          "provenanceUrl": "https://viaf.org/viaf/100921459",
+          "url": "https://viaf.org/viaf/100921459",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, ישראל מאיר, 1838-1933",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f76a953712e4369084063427",
+          "provenanceUrl": "https://viaf.org/viaf/293149106170968491338",
+          "url": "https://viaf.org/viaf/293149106170968491338",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, אלבר, 1895-1981",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6310d64eddb624721251f342",
+          "provenanceUrl": "https://viaf.org/viaf/82207833",
+          "url": "https://viaf.org/viaf/82207833",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, הנס, 1891-1971",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e4cc4260bd69f7c60ddd1829",
+          "provenanceUrl": "https://viaf.org/viaf/12326139",
+          "url": "https://viaf.org/viaf/12326139",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, הרמן, 1842-1918",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-8ad932a2ba87d62bf61e73ac",
+          "provenanceUrl": "https://viaf.org/viaf/17224634",
+          "url": "https://viaf.org/viaf/17224634",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, אלברט אויגן, 1912-1979",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b5d1460d870eee4a8d21c19c",
+          "provenanceUrl": "https://viaf.org/viaf/108256022",
+          "url": "https://viaf.org/viaf/108256022",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, נורמן רופוס קולין, 1915-2007",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-5c1d8ab9c851bc8bd4889de6",
+          "provenanceUrl": "https://viaf.org/viaf/71634419",
+          "url": "https://viaf.org/viaf/71634419",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:46.489Z",
+          "evidenceType": "registry",
+          "quote": "כהן, יואל",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "openlibrary",
+              "count": 8
+            },
+            {
+              "value": "viaf",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 16
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        }
+      ],
+      "progress": {
+        "done": 7,
+        "totalHint": 7
+      },
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "error",
+        "viaf": "partial"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:e0a4142e78fa"
+        ],
+        "status": "candidate",
+        "displayHint": "כהן",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T07:40:46.301Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:e0a4142e78fa",
+            "kind": "seed"
+          },
+          {
+            "id": "ol-OL133038A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL4973655A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL16098624A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL1801847A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL5263297A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15941596A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15386735A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15507527A",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-56703476",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-100921459",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-293149106170968491338",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-82207833",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-12326139",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-17224634",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-108256022",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-71634419",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  }
+}

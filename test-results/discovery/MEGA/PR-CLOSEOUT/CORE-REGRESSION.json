@@ -1,0 +1,104 @@
+{
+  "stamp": "2026-09-20T08:49:39+03:00",
+  "alias": {
+    "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "base": "https://akvot-simple-demo.vercel.app"
+  },
+  "cases": [
+    {
+      "label": "core-a-netanyahu-keep",
+      "surface": "core-lookup",
+      "ms": 2421,
+      "ui": "dossier",
+      "qid": "Q43723",
+      "faces": 7,
+      "leakage_count": 0,
+      "checks": {
+        "http_200": true,
+        "leakage_0": true,
+        "never_Q1701775_qid": true,
+        "ui": true,
+        "qid": true
+      },
+      "pass": true
+    },
+    {
+      "label": "core-b-cohen-keep",
+      "surface": "core-lookup",
+      "ms": 26632,
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leakage_count": 0,
+      "checks": {
+        "http_200": true,
+        "leakage_0": true,
+        "never_Q1701775_qid": true,
+        "ui": true,
+        "not_dossier": true,
+        "faces_0": true
+      },
+      "pass": true
+    },
+    {
+      "label": "core-c-smith-bare-keep",
+      "surface": "core-lookup",
+      "ms": 5775,
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leakage_count": 0,
+      "checks": {
+        "http_200": true,
+        "leakage_0": true,
+        "never_Q1701775_qid": true,
+        "ui": true,
+        "not_dossier": true,
+        "faces_0": true
+      },
+      "pass": true
+    },
+    {
+      "label": "core-d-smith-ctx-p0",
+      "surface": "core-lookup",
+      "ms": 6275,
+      "ui": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leakage_count": 0,
+      "checks": {
+        "http_200": true,
+        "leakage_0": true,
+        "never_Q1701775_qid": true,
+        "ui": true,
+        "not_dossier": true,
+        "faces_0": true
+      },
+      "pass": true
+    },
+    {
+      "label": "core-e-smith-email-g11-p0",
+      "surface": "core-lookup",
+      "ms": 8075,
+      "ui": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leakage_count": 0,
+      "checks": {
+        "http_200": true,
+        "leakage_0": true,
+        "never_Q1701775_qid": true,
+        "ui": true,
+        "not_dossier": true,
+        "faces_0": true
+      },
+      "pass": true
+    }
+  ],
+  "summary": {
+    "pw": 0,
+    "leakage": 0,
+    "pass": "PASS",
+    "verdict": "PASS"
+  }
+}

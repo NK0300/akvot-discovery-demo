@@ -1,0 +1,17 @@
+{
+  "label": "S01",
+  "sid": "kv1.dc65fcd3c8a259894d564ceb82b4d74d",
+  "surfaces": {
+    "GET": {
+      "leak": 0,
+      "findings": 18
+    },
+    "NARROW": {
+      "leak": 0
+    },
+    "SSE": {
+      "leak": 0,
+      "bytes": 55687
+    }
+  }
+}

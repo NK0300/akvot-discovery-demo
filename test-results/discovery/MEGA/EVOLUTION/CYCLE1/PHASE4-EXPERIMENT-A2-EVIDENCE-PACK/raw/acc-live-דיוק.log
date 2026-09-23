@@ -1,0 +1,49 @@
+ACC A2-SAFE LIVE dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9 2026-09-20T10:38:38+03:00
+seed S01 Tim Berners-Lee
+  findings 18 multi 0.5556 leak 0 title_only 0 labels { 'same-reference': 10, 'same-source': 7, unknown: 1 }
+seed S04 Stripe
+  findings 30 multi 0 leak 0 title_only 0 labels { 'same-source': 24, unknown: 6 }
+seed S05 Red Cross
+  findings 30 multi 0.1 leak 0 title_only 0 labels { 'same-reference': 3, 'same-source': 21, unknown: 6 }
+--- adversarial ---
+adv ADV-SMITH-CTX
+  findings 21 leak 0 pass true
+adv ADV-INJECT-QID
+  findings 29 leak 0 pass true
+adv ADV-INJECT-WD
+  findings 29 leak 0 pass true
+adv ADV-SEED-POISON
+  findings 0 leak 0 pass true
+--- homonym corpus ---
+homonym H-SAME-TITLE same_title Tim Berners-Lee
+  findings 18 multi 0.5556 leak 0 fm_risk false pass true
+homonym H-SAME-PERSON same_person_name John Smith
+  findings 29 multi 0.1379 leak 0 fm_risk false pass true
+homonym H-SAME-ORG same_org Red Cross
+  findings 30 multi 0.1667 leak 0 fm_risk false pass true
+homonym H-DOMAIN same_domain_pattern Stripe
+  findings 30 multi 0 leak 0 fm_risk false pass true
+homonym H-TRANSLATED translated_title International Committee of the Red Cross
+  findings 27 multi 0.1111 leak 0 fm_risk false pass true
+homonym H-TRANSLIT transliteration כהן
+  findings 16 multi 0 leak 0 fm_risk false pass true
+homonym H-SURNAME common_surname Cohen
+  findings 16 multi 0 leak 0 fm_risk false pass true
+homonym H-IDENT-META identical_metadata Ada Lovelace
+  findings 24 multi 0.125 leak 0 fm_risk false pass true
+homonym H-SIBLING sibling_works Michael Jordan
+  findings 30 multi 0.3333 leak 0 fm_risk false pass true
+homonym H-ALEX same_person_name Alex Morgan
+  findings 28 multi 0.0714 leak 0 fm_risk false pass true
+--- core smoke ---
+core core-assaf leak 0 ui ambiguous pass false
+core core-cohen leak 0 ui google pass true
+core core-smith leak 0 ui ambiguous pass true
+{
+  "mean": 0.2185,
+  "leak": 0,
+  "title_only": 0,
+  "false_merge_homonym": 0,
+  "verdict": "FAIL",
+  "promote": "HOLD"
+}

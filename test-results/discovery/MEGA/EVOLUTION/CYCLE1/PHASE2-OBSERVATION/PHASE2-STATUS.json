@@ -1,0 +1,36 @@
+{
+  "phase": 2,
+  "cycle": "CYCLE1",
+  "baselineId": "B0",
+  "observer": "ממשק",
+  "stamp": "2026-09-20T09:48:45+03:00",
+  "alias": "https://akvot-discovery.vercel.app",
+  "discoveryDpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreDplLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "mode": "observation-only",
+  "codeChanges": false,
+  "deploy": false,
+  "promote": false,
+  "health": {
+    "storeBackend": "upstash",
+    "durable": true,
+    "kvReachable": true,
+    "promoteEligible": true
+  },
+  "sessionId": "kv1.9c4d61492aeb8ee222ef4e9142c09d97",
+  "seed": "example.org",
+  "getFindingCount": 3,
+  "sseFrameCount": 11,
+  "sseDone": true,
+  "sseReplayAfter5FrameCount": 6,
+  "narrow": {
+    "provider": "wikidata",
+    "beforeCount": 3,
+    "afterCount": 2,
+    "getAfterCount": 3,
+    "o1": "soft-known ephemeral narrow; GET remains full snapshot"
+  },
+  "observation": "PASS",
+  "promote": "HOLD",
+  "notesPath": "PHASE2-UX-SSE-NARROW-OBSERVE-ממשק-2026-09-20.md"
+}

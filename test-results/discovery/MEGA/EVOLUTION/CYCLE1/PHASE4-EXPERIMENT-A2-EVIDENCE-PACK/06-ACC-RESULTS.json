@@ -1,0 +1,37 @@
+{
+  "stamp": "2026-09-20T10:42:29+03:00",
+  "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+  "forbidden": [
+    "Q1701775",
+    "wd-Q1701775"
+  ],
+  "leak_total": 0,
+  "seeds_leak": 0,
+  "homonym_leak": 0,
+  "surfaces": {
+    "sid": "kv1.6ebffa2c3f6f5f4d7497627fe9b2109b",
+    "surfaces": {
+      "GET": {
+        "leak": 0,
+        "findings": 18,
+        "edges": 45
+      },
+      "NARROW": {
+        "leak": 0
+      },
+      "SSE": {
+        "leak": 0,
+        "bytes": 55687
+      },
+      "NESTED": {
+        "leak": 0
+      }
+    }
+  },
+  "units": {
+    "adversarial.acc": "65/0",
+    "prCloseout.acc": "107/0",
+    "corroboration.viaf": "50/0"
+  },
+  "verdict": "PASS"
+}

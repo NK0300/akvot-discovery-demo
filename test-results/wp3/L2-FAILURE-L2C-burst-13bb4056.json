@@ -1,0 +1,103 @@
+{
+  "schema": "wp3-l2-metrics/v1",
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "version": "wp3-l2-1.1.0"
+  },
+  "mode": "L2-C",
+  "stream": "L2-C",
+  "constraint": "MEASURE ONLY — CLIENT_STRESS probes only — no Core / no dpl / no injected dep faults",
+  "runId": "13bb4056",
+  "tag": "L2C-burst",
+  "started": "2026-09-19T19:44:44.827Z",
+  "finished": "2026-09-19T19:46:20.840Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 20,
+  "fingerprintRef": "test-results/wp3/L2-FINGERPRINT-FROZEN-שרת-2026-09-19.json",
+  "fingerprint": {
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "dpl": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "frozenAt": "2026-09-19T19:12:20+00:00",
+    "missing": false
+  },
+  "locks": {
+    "noCore": true,
+    "noAccChange": true,
+    "noSmithCohenChange": true,
+    "noCacheSemantics": true,
+    "noUx": true,
+    "noDpl": true,
+    "clientStressOnly": true
+  },
+  "stopRules": {
+    "abortOnPw": true,
+    "note": "pw>0 → abort immediately; report to Chief"
+  },
+  "probes": [
+    {
+      "id": "burst",
+      "label": "CLIENT_STRESS peak burst 60s",
+      "kind": "CLIENT_STRESS",
+      "note": "Not injected dependency failure — client-side concurrency only",
+      "concurrency": 20,
+      "durationSec": 60,
+      "agg": {
+        "n": 187,
+        "wall": {
+          "n": 187,
+          "min": 75,
+          "max": 45203,
+          "mean": 8006,
+          "p50": 4040,
+          "p90": 33902,
+          "p95": 38209,
+          "p99": 45202
+        },
+        "wiki": {
+          "n": 187,
+          "min": 0,
+          "max": 38956,
+          "mean": 6043,
+          "p50": 1234,
+          "p90": 28972,
+          "p95": 35812,
+          "p99": 38893
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 187
+        },
+        "uiCounts": {
+          "dossier": 63,
+          "need_context": 57,
+          "candidates": 62,
+          "thin": 5
+        },
+        "cache": {
+          "hit": 5,
+          "miss": 182,
+          "hitRatio": 0.027
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 2054,
+          "wikiTimeout_sum": 159,
+          "wikiRetries_sum": 2213,
+          "samplesWith429": 94,
+          "samplesWithWikiTimeout": 75
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 1.948,
+        "wallClockMs": 96009
+      },
+      "sampleCount": 187
+    }
+  ],
+  "stop": {
+    "aborted": false,
+    "reason": null,
+    "pwEvents": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "stamp": "2026-09-20 12:03 IDT",
+  "passed": 96,
+  "failed": 0,
+  "file": "api/lib/discovery/webOrigin.test.mjs",
+  "asserts": [
+    "URL-alone\u2192UNKNOWN",
+    "clamp SAME-*\u2192UNKNOWN",
+    "SSRF redirect block",
+    "Acc scrub leak=0"
+  ]
+}

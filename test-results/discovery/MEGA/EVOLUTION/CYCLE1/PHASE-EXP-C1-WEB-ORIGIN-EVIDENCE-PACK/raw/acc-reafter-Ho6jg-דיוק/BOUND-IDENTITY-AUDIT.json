@@ -1,0 +1,198 @@
+{
+  "stamp": "2026-09-20T11:58:04+03:00",
+  "stamp_label": "2026-09-20 11:58 IDT",
+  "agent": "דיוק",
+  "semantic": {
+    "SAME_REFERENCE": "same canonical typed id (QID/VIAF/OL) ONLY — NOT URL/host/domain/page/origin/metadata/seed",
+    "URL_alone_ceiling": "UNKNOWN"
+  },
+  "treatment": {
+    "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+    "url": "https://akvot-simple-demo-c5if0fxif-k-akvot.vercel.app",
+    "class": "C1-PATCHED"
+  },
+  "scrap_prepatch": {
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "class": "C1-PREPATCH",
+    "note": "do not Acc-PASS · superseded"
+  },
+  "who_int": {
+    "seed": "https://www.who.int",
+    "sessionId": "kv1.d945925859cd433717e6d2f1a0550a48",
+    "status": "complete",
+    "finding": {
+      "id": "wo-7fd08b15039288ff",
+      "relationship": "UNKNOWN",
+      "hostFamily": "web_origin",
+      "title": "World Health Organization (WHO)",
+      "registrableDomain": "who.int",
+      "facetHints": [
+        "provider:web_origin",
+        "kind:page",
+        "hostFamily:web_origin",
+        "relationship:UNKNOWN"
+      ],
+      "entityRefs": [
+        "web_origin:who.int"
+      ]
+    },
+    "evidence_relationship": "UNKNOWN",
+    "facet_relationship_UNKNOWN": true,
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "acc_leak": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "label": "UNKNOWN",
+    "bound_ok": true,
+    "surfaces": {
+      "finding.relationship": "UNKNOWN",
+      "evidence.relationship": "UNKNOWN",
+      "facetHints": [
+        "provider:web_origin",
+        "kind:page",
+        "hostFamily:web_origin",
+        "relationship:UNKNOWN"
+      ]
+    }
+  },
+  "who_int_bare_W5": {
+    "seed": "who.int",
+    "rel_hist": {
+      "UNKNOWN": 1
+    },
+    "finding": {
+      "id": "wo-7fd08b15039288ff",
+      "relationship": "UNKNOWN",
+      "hostFamily": "web_origin",
+      "title": "World Health Organization (WHO)",
+      "registrableDomain": "who.int",
+      "facetHints": [
+        "provider:web_origin",
+        "kind:page",
+        "hostFamily:web_origin",
+        "relationship:UNKNOWN"
+      ],
+      "entityRefs": [
+        "web_origin:who.int"
+      ]
+    },
+    "evidence_relationship": "UNKNOWN",
+    "bound_ok": true
+  },
+  "url_alone_rows": [
+    {
+      "id": "S16",
+      "seed": "https://www.who.int",
+      "wo_n": 1,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "ok"
+    },
+    {
+      "id": "W5",
+      "seed": "who.int",
+      "wo_n": 1,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "ok"
+    },
+    {
+      "id": "W7",
+      "seed": "https://www.microsoft.com",
+      "wo_n": 1,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "ok"
+    },
+    {
+      "id": "W1",
+      "seed": "https://www.example.com",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "error"
+    },
+    {
+      "id": "S06",
+      "seed": "openai.com",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "error"
+    },
+    {
+      "id": "ACC-P01",
+      "seed": "https://www.example.com/page?qid=Q1701775",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "error"
+    },
+    {
+      "id": "ACC-P04",
+      "seed": "https://www.wikidata.org/wiki/Q1701775",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "ok"
+    },
+    {
+      "id": "ACC-U01",
+      "seed": "https://www.wikidata.org/wiki/Q80",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "error"
+    },
+    {
+      "id": "ACC-U02",
+      "seed": "https://viaf.org/viaf/85312226",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "error"
+    },
+    {
+      "id": "ACC-H04",
+      "seed": "https://en.wikipedia.org/wiki/John_Smith",
+      "wo_n": 0,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers_web_origin": "error"
+    }
+  ],
+  "BAD_URL_ALONE_SAME": 0,
+  "bound_closed": true
+}

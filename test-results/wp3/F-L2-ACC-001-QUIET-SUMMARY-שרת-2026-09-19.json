@@ -1,0 +1,111 @@
+{
+  "ui": "candidates",
+  "qid": null,
+  "faces": false,
+  "faces_n": null,
+  "candidates_n": 6,
+  "has_Q1701775": false,
+  "top": [
+    {
+      "i": 0,
+      "id": "ol-OL177707A",
+      "label": "John Smith",
+      "score": 0.82,
+      "why": [
+        "Open Library registry",
+        "ctx: IBM",
+        "ctx: New York"
+      ]
+    },
+    {
+      "i": 1,
+      "id": "viaf-4952029",
+      "label": "John Smith, 1580-1631",
+      "score": 0.77,
+      "why": [
+        "VIAF registry",
+        "ctx: IBM",
+        "ctx: New York"
+      ]
+    },
+    {
+      "i": 2,
+      "id": "viaf-7575484",
+      "label": "John Smith, 1750-1836",
+      "score": 0.75,
+      "why": [
+        "VIAF registry",
+        "ctx: IBM",
+        "ctx: New York"
+      ]
+    },
+    {
+      "i": 3,
+      "id": "viaf-313041903",
+      "label": "John Smith, 1749-1831",
+      "score": 0.74,
+      "why": [
+        "VIAF registry",
+        "ctx: IBM",
+        "ctx: New York"
+      ]
+    },
+    {
+      "i": 4,
+      "id": "viaf-42025537",
+      "label": "John Smith Hurt, 1894-1966",
+      "score": 0.74,
+      "why": [
+        "VIAF registry",
+        "ctx: IBM",
+        "ctx: New York"
+      ]
+    },
+    {
+      "i": 5,
+      "id": "viaf-9921487",
+      "label": "John Smith, Baron Kirkhill British politician",
+      "score": 0.74,
+      "why": [
+        "VIAF registry",
+        "ctx: IBM",
+        "ctx: New York"
+      ]
+    }
+  ],
+  "requestId": "1852d579-b926-496a-9386-5ce8919fde3e",
+  "cached": null,
+  "wikiMeta_or_timings": {
+    "wiki429": 3,
+    "wikiTimeout": 1,
+    "wikiRetries": 4
+  },
+  "keys": [
+    "alts",
+    "ambiguous",
+    "candidates",
+    "confidence",
+    "contextUsed",
+    "desc",
+    "extra_facts",
+    "extract",
+    "faces",
+    "images",
+    "label",
+    "messageKey",
+    "mode",
+    "needCandidatePick",
+    "needContextFields",
+    "phase",
+    "photo",
+    "photoUrl",
+    "qid",
+    "requestId",
+    "scenario",
+    "sources",
+    "thin",
+    "timings",
+    "uiState",
+    "wikiMeta"
+  ]
+}

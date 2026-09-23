@@ -1,0 +1,1252 @@
+{
+  "ok": true,
+  "sessionId": "kv1.5a6b4f42541e07bbde8cee6300b4e019",
+  "seed": "Red Cross",
+  "q": "Red Cross",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wd-Q104700248",
+      "kind": "registry",
+      "title": "Red Cross",
+      "summary": "subject category of the 20th Century Press Archives",
+      "evidenceIds": [
+        "ev-ee4c11b54b55f169c6f8cca2",
+        "ev-98326805bf197875893b7480",
+        "ev-21517941a71e353af0febe4e",
+        "ev-2b588e4983aaeb619f948db3",
+        "ev-0c8c971f07faa83033a4109e",
+        "ev-49e0d67756ed1980a1094e23",
+        "ev-af53efed094339e00e98b2a0",
+        "ev-f142608bc15a1ce36195b33e",
+        "ev-bd3835ec8708469c4d23938e",
+        "ev-3fe05e34eacda215e4718816",
+        "ev-46cb23860f7cc48e224c41fb"
+      ],
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia",
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry",
+        "provider:openlibrary",
+        "provider:wikipedia",
+        "kind:page",
+        "provider:viaf",
+        "corroboration:multi_family"
+      ],
+      "entityRefs": [
+        "wd-Q470110",
+        "wd-Q104700248",
+        "wd-Q116059498",
+        "wd-Q50320550",
+        "ol-OL17804A",
+        "ol-OL2917704A",
+        "ol-OL10303910A",
+        "ol-OL4511273A",
+        "wp:en:Red Cross",
+        "wp:en:Red Cross (EP)",
+        "viaf:148420048"
+      ],
+      "scoreFinding": 0.9549999999999998,
+      "ranking": {
+        "discoveryScore": 0.9549999999999998,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 4,
+          "evidenceCount": 11,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org",
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-167237176",
+      "kind": "registry",
+      "title": "Red Cross and Red Crescent",
+      "summary": "type:corporate · lc:nr91029304 · dnb:1086394402",
+      "evidenceIds": [
+        "ev-92cfaa4bad3fa3427bc8a8d3",
+        "ev-4e71da3838a94210d282a697"
+      ],
+      "providers": [
+        "wikidata",
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry",
+        "provider:viaf",
+        "corroboration:multi_family"
+      ],
+      "entityRefs": [
+        "wd-Q7178",
+        "viaf:167237176"
+      ],
+      "scoreFinding": 0.8216666666666667,
+      "ranking": {
+        "discoveryScore": 0.8316666666666667,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.667,
+          "directness": 0.8,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 2,
+          "evidenceCount": 2,
+          "domains": [
+            "www.wikidata.org",
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q48438",
+      "kind": "registry",
+      "title": "Saint George",
+      "summary": "Christian saint and martyr (died 303)",
+      "evidenceIds": [
+        "ev-28dc3a2dd271571999554686"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q48438"
+      ],
+      "scoreFinding": 0.6983333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q7305591",
+      "kind": "registry",
+      "title": "Redd Kross",
+      "summary": "American alternative rock band",
+      "evidenceIds": [
+        "ev-faabe05f0cb668583c3d825a"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q7305591"
+      ],
+      "scoreFinding": 0.6883333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q1968122",
+      "kind": "registry",
+      "title": "National Red Cross and Red Crescent society",
+      "summary": "humanitarian organisation with the official status of a National Society of a country according to Geneva Conventions",
+      "evidenceIds": [
+        "ev-b875339d7c0f92507b438e76"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q1968122"
+      ],
+      "scoreFinding": 0.6783333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-160178001",
+      "kind": "registry",
+      "title": "Red Cross. International Committee, Geneva",
+      "summary": "type:corporate · lc:n80158612 · dnb:000431958",
+      "evidenceIds": [
+        "ev-13285e3216db2f74af51ce25"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "viaf:160178001"
+      ],
+      "scoreFinding": 0.6508333333333332,
+      "ranking": {
+        "discoveryScore": 0.7008333333333332,
+        "factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-151269599",
+      "kind": "registry",
+      "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+      "summary": "type:corporate · lc:n80093481 · dnb:004794745",
+      "evidenceIds": [
+        "ev-3f984d8965e8f2209149bd92"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "viaf:151269599"
+      ],
+      "scoreFinding": 0.6408333333333331,
+      "ranking": {
+        "discoveryScore": 0.7008333333333332,
+        "factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-122023057",
+      "kind": "registry",
+      "title": "Red Cross USA",
+      "summary": "type:corporate · lc:n79096723 · dnb:000060453",
+      "evidenceIds": [
+        "ev-1b136765bf75268ad3acb1ff"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "viaf:122023057"
+      ],
+      "scoreFinding": 0.6308333333333331,
+      "ranking": {
+        "discoveryScore": 0.7008333333333332,
+        "factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-997897",
+      "kind": "registry",
+      "title": "Red Cross international lawyer (1914-2002) Jean Pictet",
+      "summary": "type:personal · lc:n84169021 · dnb:1017369038",
+      "evidenceIds": [
+        "ev-ee4796ee86fd6f94d933d82b"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "viaf:997897"
+      ],
+      "scoreFinding": 0.6208333333333332,
+      "ranking": {
+        "discoveryScore": 0.7008333333333332,
+        "factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-312731766",
+      "kind": "registry",
+      "title": "Red Cross, Henry Dunant Institute",
+      "summary": "type:corporate · lc:n80132911 · dnb:004036026",
+      "evidenceIds": [
+        "ev-3dd8cba20369d737ff3133be"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "viaf:312731766"
+      ],
+      "scoreFinding": 0.6108333333333332,
+      "ranking": {
+        "discoveryScore": 0.7008333333333332,
+        "factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "viaf-159584209",
+      "kind": "registry",
+      "title": "Red Cross, Deutsches Rotes Kreuz",
+      "summary": "type:corporate · lc:n91112682 · dnb:007642520",
+      "evidenceIds": [
+        "ev-5cd7945080ba1259ee41ff2f"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "viaf:159584209"
+      ],
+      "scoreFinding": 0.6008333333333332,
+      "ranking": {
+        "discoveryScore": 0.7008333333333332,
+        "factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL124327A",
+      "kind": "registry",
+      "title": "International Committee of the Red Cross",
+      "summary": "Top work: ICRC annual report",
+      "evidenceIds": [
+        "ev-73aacea394afaa29ed6d68c5"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL124327A"
+      ],
+      "scoreFinding": 0.5558333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL6290095A",
+      "kind": "registry",
+      "title": "Red Cross. Portuguese Red Cross.",
+      "summary": "Top work: The Portuguese Red Cross Society",
+      "evidenceIds": [
+        "ev-02defb0dec3845d5c3c8e5ae"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL6290095A"
+      ],
+      "scoreFinding": 0.5458333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL13846643A",
+      "kind": "registry",
+      "title": "Red Cross. Portuguese Red Cross",
+      "summary": "Top work: The Portuguese Red Cross Society",
+      "evidenceIds": [
+        "ev-dc9d51c2bf301175fa3acbca"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL13846643A"
+      ],
+      "scoreFinding": 0.5358333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2343831A",
+      "kind": "registry",
+      "title": "Red Cross. Junior Red Cross.",
+      "summary": "Top work: Our book",
+      "evidenceIds": [
+        "ev-941192b76d0cc6e71b137b13"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2343831A"
+      ],
+      "scoreFinding": 0.5258333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Red_Cross_parcel",
+      "kind": "page",
+      "title": "Red Cross parcel",
+      "evidenceIds": [
+        "ev-fb8c267bc13768462503dbb0"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Red Cross parcel"
+      ],
+      "scoreFinding": 0.4983333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Red_Cross_Youth_Philippines_",
+      "kind": "page",
+      "title": "Red Cross Youth (Philippines)",
+      "evidenceIds": [
+        "ev-1e3332c5beb9a1cedc3e2233"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Red Cross Youth (Philippines)"
+      ],
+      "scoreFinding": 0.4883333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Red_Cross_of_Constantine",
+      "kind": "page",
+      "title": "Red Cross of Constantine",
+      "evidenceIds": [
+        "ev-00dd79dec29cfd4788ec7d09"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Red Cross of Constantine"
+      ],
+      "scoreFinding": 0.4783333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Red_crossbill",
+      "kind": "page",
+      "title": "Red crossbill",
+      "evidenceIds": [
+        "ev-3effb23f7efddf49a3a83160"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Red crossbill"
+      ],
+      "scoreFinding": 0.4683333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-ee4c11b54b55f169c6f8cca2",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q470110",
+      "url": "https://www.wikidata.org/wiki/Q470110",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "National Red Cross Society in the United States",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-92cfaa4bad3fa3427bc8a8d3",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q7178",
+      "url": "https://www.wikidata.org/wiki/Q7178",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "international humanitarian movement",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-28dc3a2dd271571999554686",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q48438",
+      "url": "https://www.wikidata.org/wiki/Q48438",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "Christian saint and martyr (died 303)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-faabe05f0cb668583c3d825a",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q7305591",
+      "url": "https://www.wikidata.org/wiki/Q7305591",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "American alternative rock band",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-98326805bf197875893b7480",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q104700248",
+      "url": "https://www.wikidata.org/wiki/Q104700248",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "subject category of the 20th Century Press Archives",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-b875339d7c0f92507b438e76",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q1968122",
+      "url": "https://www.wikidata.org/wiki/Q1968122",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "humanitarian organisation with the official status of a National Society of a country according to Geneva Conventions",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-21517941a71e353af0febe4e",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q116059498",
+      "url": "https://www.wikidata.org/wiki/Q116059498",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "distinctive emblem of the International Red Cross and Red Crescent Movement and protective sign",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-2b588e4983aaeb619f948db3",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q50320550",
+      "url": "https://www.wikidata.org/wiki/Q50320550",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T07:03:07.950Z",
+      "evidenceType": "registry",
+      "quote": "painting by Judith Godwin",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-0c8c971f07faa83033a4109e",
+      "provenanceUrl": "https://openlibrary.org/authors/OL17804A",
+      "url": "https://openlibrary.org/authors/OL17804A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "The American Red cross",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-73aacea394afaa29ed6d68c5",
+      "provenanceUrl": "https://openlibrary.org/authors/OL124327A",
+      "url": "https://openlibrary.org/authors/OL124327A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "ICRC annual report",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-49e0d67756ed1980a1094e23",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2917704A",
+      "url": "https://openlibrary.org/authors/OL2917704A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "XVe Conférence internationale de la Croix-Rouge, Tokio, octobre 1934",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-af53efed094339e00e98b2a0",
+      "provenanceUrl": "https://openlibrary.org/authors/OL10303910A",
+      "url": "https://openlibrary.org/authors/OL10303910A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "American Red Cross Text-Book on Home Hygiene and Care of the Sick",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-f142608bc15a1ce36195b33e",
+      "provenanceUrl": "https://openlibrary.org/authors/OL4511273A",
+      "url": "https://openlibrary.org/authors/OL4511273A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "Disaster relief handbook",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-02defb0dec3845d5c3c8e5ae",
+      "provenanceUrl": "https://openlibrary.org/authors/OL6290095A",
+      "url": "https://openlibrary.org/authors/OL6290095A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "The Portuguese Red Cross Society",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-dc9d51c2bf301175fa3acbca",
+      "provenanceUrl": "https://openlibrary.org/authors/OL13846643A",
+      "url": "https://openlibrary.org/authors/OL13846643A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "The Portuguese Red Cross Society",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-941192b76d0cc6e71b137b13",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2343831A",
+      "url": "https://openlibrary.org/authors/OL2343831A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T07:03:08.888Z",
+      "evidenceType": "registry",
+      "quote": "Our book",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-bd3835ec8708469c4d23938e",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross",
+      "url": "https://en.wikipedia.org/wiki/Red_Cross",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:03:07.757Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-fb8c267bc13768462503dbb0",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+      "url": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:03:07.757Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-1e3332c5beb9a1cedc3e2233",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+      "url": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:03:07.757Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-00dd79dec29cfd4788ec7d09",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+      "url": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:03:07.757Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3effb23f7efddf49a3a83160",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Red_crossbill",
+      "url": "https://en.wikipedia.org/wiki/Red_crossbill",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:03:07.757Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3fe05e34eacda215e4718816",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+      "url": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T07:03:07.757Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-13285e3216db2f74af51ce25",
+      "provenanceUrl": "https://viaf.org/viaf/160178001",
+      "url": "https://viaf.org/viaf/160178001",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross. International Committee, Geneva",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-4e71da3838a94210d282a697",
+      "provenanceUrl": "https://viaf.org/viaf/167237176",
+      "url": "https://viaf.org/viaf/167237176",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross and Red Crescent",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3f984d8965e8f2209149bd92",
+      "provenanceUrl": "https://viaf.org/viaf/151269599",
+      "url": "https://viaf.org/viaf/151269599",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-46cb23860f7cc48e224c41fb",
+      "provenanceUrl": "https://viaf.org/viaf/148420048",
+      "url": "https://viaf.org/viaf/148420048",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross (Great Britain)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-1b136765bf75268ad3acb1ff",
+      "provenanceUrl": "https://viaf.org/viaf/122023057",
+      "url": "https://viaf.org/viaf/122023057",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross USA",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-ee4796ee86fd6f94d933d82b",
+      "provenanceUrl": "https://viaf.org/viaf/997897",
+      "url": "https://viaf.org/viaf/997897",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross international lawyer (1914-2002) Jean Pictet",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3dd8cba20369d737ff3133be",
+      "provenanceUrl": "https://viaf.org/viaf/312731766",
+      "url": "https://viaf.org/viaf/312731766",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross, Henry Dunant Institute",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-5cd7945080ba1259ee41ff2f",
+      "provenanceUrl": "https://viaf.org/viaf/159584209",
+      "url": "https://viaf.org/viaf/159584209",
+      "domain": "viaf.org",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T07:03:07.893Z",
+      "evidenceType": "registry",
+      "quote": "Red Cross, Deutsches Rotes Kreuz",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "viaf",
+          "count": 8
+        },
+        {
+          "value": "openlibrary",
+          "count": 5
+        },
+        {
+          "value": "wikidata",
+          "count": 5
+        },
+        {
+          "value": "wikipedia",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 15
+        },
+        {
+          "value": "page",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [
+        {
+          "value": "corroboration:multi_family",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "progress": {
+    "done": 7,
+    "totalHint": 7
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "partial",
+    "wikipedia": "partial",
+    "viaf": "partial"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:ac18ec394346"
+    ],
+    "status": "candidate",
+    "displayHint": "Red Cross",
+    "hints": {}
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T07:03:07.692Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:ac18ec394346",
+        "kind": "seed"
+      },
+      {
+        "id": "wd-Q104700248",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-167237176",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q48438",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q7305591",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q1968122",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL124327A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL6290095A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL13846643A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2343831A",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Red_Cross_parcel",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Red_Cross_Youth_Philippines_",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Red_Cross_of_Constantine",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Red_crossbill",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-160178001",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-151269599",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-122023057",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-997897",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-312731766",
+        "kind": "finding"
+      },
+      {
+        "id": "viaf-159584209",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

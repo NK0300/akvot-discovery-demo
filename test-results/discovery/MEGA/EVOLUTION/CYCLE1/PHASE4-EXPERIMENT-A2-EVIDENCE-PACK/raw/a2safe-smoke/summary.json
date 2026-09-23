@@ -1,0 +1,381 @@
+{
+  "stamp": "2026-09-20T10:42:29+03:00",
+  "experiment": "EXP-A2-SAFE",
+  "preview": {
+    "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+    "url": "https://akvot-simple-demo-221421o5s-k-akvot.vercel.app"
+  },
+  "gate": 0.15,
+  "mean_multi_rate": 0.2074,
+  "pooled_multi_rate": 0.1714,
+  "mean_pass": true,
+  "acc_leak_total": 0,
+  "s01_findings_n": 18,
+  "seeds": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "sessionId": "kv1.6ebffa2c3f6f5f4d7497627fe9b2109b",
+      "findings_n": 18,
+      "with_ev_n": 18,
+      "multi_n": 10,
+      "multi_rate": 0.5556,
+      "viaf_n": 10,
+      "providers_ge2": 10,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 45,
+      "relationship_counts": {
+        "related-entity": 45
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "evidence_n": 10,
+          "families": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "evidence_n": 10,
+          "families": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "evidence_n": 10,
+          "families": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "sessionId": "kv1.d4effff31d6a861e3d7146478fce34ff",
+      "findings_n": 22,
+      "with_ev_n": 22,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "families_union": [
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 2,
+      "sample_multi": [],
+      "dossier": false
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "sessionId": "kv1.224eff104463a934b30ed2e84c7bd526",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 2,
+      "multi_rate": 0.0667,
+      "viaf_n": 9,
+      "providers_ge2": 2,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 1,
+      "relationship_counts": {
+        "related-entity": 1
+      },
+      "contradictions_n": 2,
+      "sample_multi": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-122023057",
+          "title": "Red Cross USA",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false
+    }
+  ],
+  "golden_prior": [],
+  "surfaces": {
+    "sid": "kv1.6ebffa2c3f6f5f4d7497627fe9b2109b",
+    "surfaces": {
+      "GET": {
+        "leak": 0,
+        "findings": 18,
+        "edges": 45
+      },
+      "NARROW": {
+        "leak": 0
+      },
+      "SSE": {
+        "leak": 0,
+        "bytes": 55687
+      },
+      "NESTED": {
+        "leak": 0
+      }
+    }
+  },
+  "homonym": {
+    "n": 12,
+    "pass_n": 12,
+    "leak_total": 0,
+    "rows": [
+      {
+        "id": "H01",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "expect": "no_false_same_entity",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H02",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H03",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H04",
+        "seed": "John Smith Q1701775",
+        "findings_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H05",
+        "seed": "Cohen",
+        "findings_n": 30,
+        "multi_rate": 0.0667,
+        "acc_leak": 0,
+        "expect": "no_dossier_collapse",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H06",
+        "seed": "כהן",
+        "findings_n": 30,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "no_dossier_collapse",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H07",
+        "seed": "Alex Morgan",
+        "findings_n": 15,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "homonym_keep_separate",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H08",
+        "seed": "Red Cross",
+        "findings_n": 22,
+        "multi_rate": 0.1818,
+        "acc_leak": 0,
+        "expect": "pretty_wrong_national_societies_ok",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H09",
+        "seed": "Stripe",
+        "findings_n": 22,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "stripe_ne_stripe_john",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H10",
+        "seed": "Michael Jordan",
+        "findings_n": 30,
+        "multi_rate": 0.3333,
+        "acc_leak": 0,
+        "expect": "homonym_keep_separate",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H11",
+        "seed": "Smith",
+        "findings_n": 30,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "bare_surname_no_merge",
+        "pass": true,
+        "dossier": false
+      },
+      {
+        "id": "H12",
+        "seed": "Jordan",
+        "findings_n": 30,
+        "multi_rate": 0.1333,
+        "acc_leak": 0,
+        "expect": "bare_surname_no_merge",
+        "pass": true,
+        "dossier": false
+      }
+    ]
+  },
+  "core": {
+    "alias_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "rows": [
+      {
+        "id": "core-assaf",
+        "leak": 0,
+        "ui": "ambiguous",
+        "qid": null
+      },
+      {
+        "id": "core-cohen",
+        "leak": 0,
+        "ui": "google",
+        "qid": null
+      },
+      {
+        "id": "core-smith",
+        "leak": 0,
+        "ui": "ambiguous",
+        "qid": null
+      }
+    ],
+    "leak": 0,
+    "pw": 0
+  },
+  "locks": {
+    "discovery": {
+      "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "actual": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "ok": true
+    },
+    "core": {
+      "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "actual": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "ok": true
+    }
+  },
+  "promote": "HOLD"
+}

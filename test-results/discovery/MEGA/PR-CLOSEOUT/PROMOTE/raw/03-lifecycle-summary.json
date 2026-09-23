@@ -1,0 +1,26 @@
+{
+  "sessionId": "kv1.c6783cf7485013837007bbe78262e7d5",
+  "sse_events": [
+    "meta",
+    "progress",
+    "provider",
+    "provider",
+    "provider",
+    "finding",
+    "finding",
+    "finding",
+    "facets",
+    "status",
+    "done"
+  ],
+  "sse_has_done": true,
+  "sse_leak": 0,
+  "narrow_sid": "kv1.c6783cf7485013837007bbe78262e7d5",
+  "narrow_leak": 0,
+  "get2_sid": "kv1.c6783cf7485013837007bbe78262e7d5",
+  "get2_match": true,
+  "get2_leak": 0,
+  "other_sid": "kv1.551781e31edf0a74bc9cf1832b44bf9c",
+  "other_not_life": true,
+  "other_match_person": true
+}

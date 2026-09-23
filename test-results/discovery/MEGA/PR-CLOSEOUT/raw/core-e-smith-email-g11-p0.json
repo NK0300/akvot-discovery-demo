@@ -1,0 +1,225 @@
+{
+  "mode": "candidates",
+  "label": "John Smith",
+  "qid": null,
+  "birth": null,
+  "age": null,
+  "place": null,
+  "desc": "Several possible matches — pick one",
+  "extract": "Open Library: Author of The general historie of Virginia, New England and the Summer Isles, A sea grammar, New England trials, The United States in Literature [with three long stor",
+  "photo": null,
+  "alts": [],
+  "note": "בחרו מועמד כדי להעמיק את התיק.",
+  "email": null,
+  "phone": null,
+  "wikiError": "wiki_budget",
+  "sources": [
+    {
+      "kind": "Open Library",
+      "title": "John Smith",
+      "note": "Stage B open registry",
+      "url": "https://openlibrary.org/authors/OL177707A",
+      "group": "identity",
+      "conf": 0.8
+    },
+    {
+      "kind": "VIAF",
+      "title": "John Smith, 1580-1631",
+      "note": "Stage B open registry",
+      "url": "https://viaf.org/viaf/4952029/",
+      "group": "identity",
+      "conf": 0.78
+    },
+    {
+      "kind": "VIAF",
+      "title": "John Smith, 1750-1836",
+      "note": "Stage B open registry",
+      "url": "https://viaf.org/viaf/7575484/",
+      "group": "identity",
+      "conf": 0.78
+    },
+    {
+      "kind": "VIAF",
+      "title": "John Smith, 1749-1831",
+      "note": "Stage B open registry",
+      "url": "https://viaf.org/viaf/313041903/",
+      "group": "identity",
+      "conf": 0.77
+    },
+    {
+      "kind": "VIAF",
+      "title": "John Smith Hurt, 1894-1966",
+      "note": "Stage B open registry",
+      "url": "https://viaf.org/viaf/42025537/",
+      "group": "identity",
+      "conf": 0.77
+    },
+    {
+      "kind": "VIAF",
+      "title": "John Smith, Baron Kirkhill British politician",
+      "note": "Stage B open registry",
+      "url": "https://viaf.org/viaf/9921487/",
+      "group": "identity",
+      "conf": 0.77
+    }
+  ],
+  "images": [],
+  "extra_facts": [],
+  "queries": [],
+  "scanned": 1,
+  "allowBroadImages": false,
+  "ambiguous": true,
+  "thin": false,
+  "candidates": [
+    {
+      "id": "web-John%20Smith%2C%20Baron%20Kirkhill%2",
+      "label": "John Smith, Baron Kirkhill British politician",
+      "why": [
+        "מקורות מ־viaf.org",
+        "Stage B open registry"
+      ],
+      "sourcesPreview": [
+        {
+          "kind": "VIAF",
+          "title": "John Smith, 1580-1631",
+          "url": "https://viaf.org/viaf/4952029/"
+        },
+        {
+          "kind": "VIAF",
+          "title": "John Smith, 1750-1836",
+          "url": "https://viaf.org/viaf/7575484/"
+        },
+        {
+          "kind": "VIAF",
+          "title": "John Smith, 1749-1831",
+          "url": "https://viaf.org/viaf/313041903/"
+        }
+      ],
+      "score": 0.95
+    },
+    {
+      "id": "web-John%20Smith",
+      "label": "John Smith",
+      "why": [
+        "מקורות מ־openlibrary.org",
+        "Stage B open registry"
+      ],
+      "sourcesPreview": [
+        {
+          "kind": "Open Library",
+          "title": "John Smith",
+          "url": "https://openlibrary.org/authors/OL177707A"
+        }
+      ],
+      "score": 0.95
+    },
+    {
+      "id": "web-John%20Smith%20Hurt%2C%201894-1966",
+      "label": "John Smith Hurt, 1894-1966",
+      "why": [
+        "מקורות מ־viaf.org",
+        "Stage B open registry"
+      ],
+      "sourcesPreview": [
+        {
+          "kind": "VIAF",
+          "title": "John Smith Hurt, 1894-1966",
+          "url": "https://viaf.org/viaf/42025537/"
+        }
+      ],
+      "score": 0.95
+    },
+    {
+      "id": "viaf-4952029",
+      "label": "John Smith, 1580-1631",
+      "why": [
+        "VIAF registry",
+        "personal name authority"
+      ],
+      "sourcesPreview": [
+        {
+          "kind": "VIAF",
+          "title": "John Smith, 1580-1631",
+          "url": "https://viaf.org/viaf/4952029/"
+        }
+      ],
+      "score": 0.77
+    },
+    {
+      "id": "viaf-7575484",
+      "label": "John Smith, 1750-1836",
+      "why": [
+        "VIAF registry",
+        "personal name authority"
+      ],
+      "sourcesPreview": [
+        {
+          "kind": "VIAF",
+          "title": "John Smith, 1750-1836",
+          "url": "https://viaf.org/viaf/7575484/"
+        }
+      ],
+      "score": 0.75
+    },
+    {
+      "id": "viaf-313041903",
+      "label": "John Smith, 1749-1831",
+      "why": [
+        "VIAF registry",
+        "personal name authority"
+      ],
+      "sourcesPreview": [
+        {
+          "kind": "VIAF",
+          "title": "John Smith, 1749-1831",
+          "url": "https://viaf.org/viaf/313041903/"
+        }
+      ],
+      "score": 0.74
+    }
+  ],
+  "needCandidatePick": true,
+  "contextUsed": {
+    "city": "",
+    "org": "",
+    "role": "",
+    "country": "",
+    "context": "",
+    "phone": "",
+    "email": "[provided]",
+    "focus": ""
+  },
+  "searchQ": "John Smith [email]",
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 5500,
+    "gemini": 163,
+    "enrich": 1905,
+    "stageB": 388,
+    "total": 7797,
+    "wikiMeta": {
+      "wiki429": 1,
+      "wikiTimeout": 0,
+      "wikiRetries": 1
+    }
+  },
+  "phonePath": false,
+  "uiState": "candidates",
+  "scenario": "identifier",
+  "confidence": "low",
+  "needContextFields": [
+    "org",
+    "city",
+    "role"
+  ],
+  "messageKey": "pick_one",
+  "photoUrl": null,
+  "faces": false,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "requestId": "723aa127-e644-492b-a82e-d30c095252cd",
+  "wikiMeta": {
+    "wiki429": 1,
+    "wikiTimeout": 0,
+    "wikiRetries": 1
+  }
+}

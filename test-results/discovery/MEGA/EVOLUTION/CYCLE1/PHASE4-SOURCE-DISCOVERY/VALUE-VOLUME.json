@@ -1,0 +1,117 @@
+{
+  "step": 36,
+  "title": "HIGH-VALUE-LOW-VOLUME vs LOW-VALUE-HIGH-VOLUME",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "method": "Volume = Phase2 finding instances by provider/domain. Value proxy = P3 primaryClass mix (identity↑ publication↓) + thin-evidence penalty. Not domain prestige alone.",
+  "byProvider": [
+    {
+      "provider": "wikidata",
+      "volume_n": 80,
+      "volume_share": 0.328,
+      "P3_sample_n": 48,
+      "identity_rate": 0.479,
+      "publication_rate": 0.146,
+      "corporate_rate": 0.271,
+      "contextual_rate": 0.021,
+      "value_proxy": 0.573,
+      "thin_lt20_rate": 0.2625,
+      "bucket": "high_value_high_volume_mixed"
+    },
+    {
+      "provider": "openlibrary",
+      "volume_n": 98,
+      "volume_share": 0.402,
+      "P3_sample_n": 49,
+      "identity_rate": 0.224,
+      "publication_rate": 0.469,
+      "corporate_rate": 0.306,
+      "contextual_rate": 0.0,
+      "value_proxy": 0.173,
+      "thin_lt20_rate": 0.08163265306122448,
+      "bucket": "low_value_high_volume"
+    },
+    {
+      "provider": "wikipedia",
+      "volume_n": 66,
+      "volume_share": 0.27,
+      "P3_sample_n": 32,
+      "identity_rate": 0.188,
+      "publication_rate": 0.0,
+      "corporate_rate": 0.438,
+      "contextual_rate": 0.25,
+      "value_proxy": 0.5,
+      "thin_lt20_rate": 1.0,
+      "bucket": "low_value_high_volume"
+    }
+  ],
+  "byDomain": [
+    {
+      "domain": "openlibrary.org",
+      "n": 98,
+      "family": "openlibrary",
+      "quote_mean": 43.7,
+      "thin_lt20_rate": 0.082,
+      "score_mean": 0.666,
+      "seeds_n": 7,
+      "assessment": "high_volume_publication_risk"
+    },
+    {
+      "domain": "www.wikidata.org",
+      "n": 80,
+      "family": "wikimedia",
+      "quote_mean": 38.3,
+      "thin_lt20_rate": 0.263,
+      "score_mean": 0.718,
+      "seeds_n": 8,
+      "assessment": "high_volume_identity_anchor_mixed_noise"
+    },
+    {
+      "domain": "en.wikipedia.org",
+      "n": 66,
+      "family": "wikimedia",
+      "quote_mean": 0.0,
+      "thin_lt20_rate": 1.0,
+      "score_mean": 0.648,
+      "seeds_n": 8,
+      "assessment": "low_value_high_volume_thin"
+    }
+  ],
+  "high_value_low_volume": [
+    {
+      "item": "he.wikipedia.org / gov.il / viaf.org",
+      "status": "ABSENT on B0",
+      "why_high_value": "Would raise independence families, HE coverage, authority-control crosswalk",
+      "volume": 0
+    },
+    {
+      "item": "Structured company filings / official org pages",
+      "status": "ABSENT on B0",
+      "why_high_value": "Corporate/ownership/legal classes currently 0",
+      "volume": 0
+    }
+  ],
+  "low_value_high_volume": [
+    {
+      "item": "openlibrary.org author hits",
+      "volume": 98,
+      "why_low_value": "P3 publication rate 23/49 on OL sample; bibliographic top_work quotes; dominates ambiguous names"
+    },
+    {
+      "item": "en.wikipedia.org pages with empty quotes",
+      "volume": 66,
+      "why_low_value": "thin_lt20_rate=1.0; OpenSearch ambiguity (Opera.com); weak evidence"
+    },
+    {
+      "item": "wikidata works-about-person QIDs sharing person title",
+      "volume": "subset of 80",
+      "why_low_value": "TED/biography QIDs classified publication in P3; title collapse with person entity"
+    }
+  ],
+  "high_value_high_volume_mixed": [
+    {
+      "item": "www.wikidata.org person/org entities",
+      "volume": 80,
+      "why": "Highest identity-relevant rate in P3 (23/48) but coexists with publication QIDs and EN bias"
+    }
+  ]
+}

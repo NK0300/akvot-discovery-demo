@@ -1,0 +1,48 @@
+[PR-CLOSEOUT] health probe Preview dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2
+[PR-CLOSEOUT] POST create seed=person
+[PR-CLOSEOUT] GET HIT person
+[PR-CLOSEOUT] POST create seed=company
+[PR-CLOSEOUT] GET HIT company
+[PR-CLOSEOUT] POST create seed=domain
+[PR-CLOSEOUT] GET HIT domain
+[PR-CLOSEOUT] POST create seed=org
+[PR-CLOSEOUT] GET HIT org
+[PR-CLOSEOUT] POST create seed=ambiguous
+[PR-CLOSEOUT] GET HIT ambiguous
+[PR-CLOSEOUT] POST create seed=no-match
+[PR-CLOSEOUT] GET HIT no-match
+[PR-CLOSEOUT] POST create seed=adv-smith
+[PR-CLOSEOUT] GET HIT adv-smith
+[PR-CLOSEOUT] POST create seed=adv-qid
+[PR-CLOSEOUT] GET HIT adv-qid
+[PR-CLOSEOUT] POST create seed=adv-wd
+[PR-CLOSEOUT] GET HIT adv-wd
+[PR-CLOSEOUT] SSE kv1.83b5e2a2f5be09ab95be3d9054f963cd
+[PR-CLOSEOUT] narrow kv1.83b5e2a2f5be09ab95be3d9054f963cd
+[PR-CLOSEOUT] security live probes
+  sec oversized-seed: pass=true rejected=true
+  sec empty-seed: pass=true rejected=true
+  sec malformed-hints-huge: pass=true rejected=true
+[PR-CLOSEOUT] Core identity-p0 on alias
+  core a-netanyahu-keep: pass=true ui=dossier qid=Q43723 leak=0
+  core b-cohen-keep: pass=true ui=need_context qid=null leak=0
+  core c-smith-bare-keep: pass=true ui=need_context qid=null leak=0
+  core d-smith-ctx-p0: pass=true ui=candidates qid=null leak=0
+  core e-smith-email-g11-p0: pass=true ui=candidates qid=null leak=0
+
+=== PR-CLOSEOUT SUMMARY ===
+{
+  "disc_cases": 20,
+  "disc_pass": 20,
+  "disc_fail": 0,
+  "leakage_total": 0,
+  "sec_live_pass": true,
+  "core_pass": true,
+  "core_leakage": 0,
+  "core_pw": 0,
+  "health_ok": true,
+  "verdict_acc": "PASS",
+  "verdict_sec": "PASS",
+  "verdict_core": "PASS",
+  "verdict_ea": "PASS"
+}

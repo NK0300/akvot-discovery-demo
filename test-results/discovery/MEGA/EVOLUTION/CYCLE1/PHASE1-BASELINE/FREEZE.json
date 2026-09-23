@@ -1,0 +1,163 @@
+{
+  "stamp": "2026-09-20T09:47:15+03:00",
+  "zone": "Asia/Jerusalem",
+  "zone_label": "IDT",
+  "phase": "PHASE1-BASELINE",
+  "cycle": "CYCLE1",
+  "policy": "NO CODE CHANGES \u00b7 NO alias/promote mutations \u00b7 evidence only",
+  "repo": "/workspace/akvot-quick-demo",
+  "git": {
+    "available": false,
+    "commit": null,
+    "note": "No .git in workspace copy; commit SHA unavailable from inspect --json (meta/gitSource null)"
+  },
+  "vercel": {
+    "projectId": "prj_Xm61SjyuvgYXDf7Vs0IxBXbDI5V5",
+    "orgScope": "k-akvot",
+    "teamId": "team_8KGwOU0rBV7Lxrh5xMOia7fv",
+    "projectName": "akvot-simple-demo"
+  },
+  "discovery": {
+    "alias_primary": "https://akvot-discovery.vercel.app",
+    "alias_secondary": "https://akvot-discovery-k-akvot.vercel.app",
+    "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "deploymentId_full": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "url": "https://akvot-simple-demo-6palh6t62-k-akvot.vercel.app",
+    "target": "preview",
+    "readyState": "READY",
+    "createdAt": "2026-09-20T08:52:05+03:00",
+    "createdAt_ms": 1789883525279,
+    "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "match_expected": true,
+    "health_build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "phase": "orchestrator-v0-b"
+  },
+  "core": {
+    "alias_primary": "https://akvot-simple-demo.vercel.app",
+    "alias_secondary": "https://akvot-simple-demo-k-akvot.vercel.app",
+    "deploymentId": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "deploymentId_full": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "url": "https://akvot-simple-demo-3i5lh8hts-k-akvot.vercel.app",
+    "target": "production",
+    "readyState": "READY",
+    "createdAt": "2026-09-20T00:56:41+03:00",
+    "createdAt_ms": 1789855001278,
+    "expected_prefix": "dpl_8ag",
+    "locked": true,
+    "health_build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "unchanged": true,
+    "touch": false
+  },
+  "config_fingerprint_no_secrets": {
+    "env_key_names": [
+      {
+        "name": "UPSTASH_REDIS_REST_TOKEN",
+        "environments": [
+          "Development",
+          "Preview",
+          "Production"
+        ]
+      },
+      {
+        "name": "UPSTASH_REDIS_REST_URL",
+        "environments": [
+          "Development",
+          "Preview",
+          "Production"
+        ]
+      },
+      {
+        "name": "GOOGLE_GENERATIVE_AI_API_KEY",
+        "environments": [
+          "Production",
+          "Preview",
+          "Development"
+        ]
+      }
+    ],
+    "env_keys_absent": [
+      "KV_REST_API_URL",
+      "KV_REST_API_TOKEN"
+    ],
+    "storeBackend": "upstash",
+    "durable_flags_from_api_health": {
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "kvCredsPresent": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true
+    },
+    "discovery_health": {
+      "ok": true,
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "mode": "kv-shared",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "steps": [
+        {
+          "step": "WRITE",
+          "ok": true,
+          "ms": 122
+        },
+        {
+          "step": "READ",
+          "ok": true,
+          "ms": 122
+        },
+        {
+          "step": "UPDATE",
+          "ok": true,
+          "ms": 151
+        },
+        {
+          "step": "DELETE",
+          "ok": true,
+          "ms": 207
+        }
+      ],
+      "latencyMs": 207
+    }
+  },
+  "provider_configuration_names_types_only": {
+    "observed_on_discovery_sessions": {
+      "wikidata": "provider (status: partial|complete)",
+      "wikipedia": "provider (status: partial|complete)",
+      "openlibrary": "provider (status: partial|complete)"
+    },
+    "ai_env_key_present_name_only": "GOOGLE_GENERATIVE_AI_API_KEY",
+    "kv_provider_name_only": "upstash (UPSTASH_REDIS_REST_*)",
+    "note": "No API keys or tokens recorded"
+  },
+  "kv_state_from_health": {
+    "backend": "upstash",
+    "durable": true,
+    "promoteEligible": true,
+    "kvReachable": true
+  },
+  "forbidden_identity": {
+    "source": "api/lib/forbiddenIdentities.js",
+    "FORBIDDEN_IDENTITIES_VERSION": "2026-09-19.1",
+    "FORBIDDEN_IDENTITY_QIDS": [
+      "Q1701775"
+    ]
+  },
+  "checks": {
+    "01_discovery_dpl_exact": true,
+    "02_core_dpl_locked_8ag": true,
+    "03_discovery_alias_points_Avyhr": true,
+    "04_no_alias_mutations": true,
+    "05_kv_durable_promoteEligible": true,
+    "06_env_names_only_no_secrets": true,
+    "07_discovery_smoke_seeds_ge3": true,
+    "08_core_regression_pw0_leak0": true,
+    "09_acc_leakage_zero": true,
+    "10_evidence_pack_complete": true
+  },
+  "overall": "PASS"
+}

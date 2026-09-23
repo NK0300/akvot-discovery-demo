@@ -1,0 +1,154 @@
+=== Acc TREATMENT C1-PATCHED === dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w
+[TREAT] S16 status=complete wo=1 SE=0 SR=0 leak=0 10233ms rel={"UNKNOWN":1}
+[TREAT] W5 status=partial wo=1 SE=0 SR=0 leak=0 16750ms rel={"UNKNOWN":1}
+[TREAT] W7 status=complete wo=1 SE=0 SR=0 leak=0 7643ms rel={"UNKNOWN":1}
+[TREAT] W1 status=failed_soft wo=0 SE=0 SR=0 leak=0 8221ms rel={}
+[TREAT] S06 status=partial wo=0 SE=0 SR=0 leak=0 17409ms rel={}
+[TREAT] ACC-P01 status=partial wo=0 SE=0 SR=0 leak=0 16292ms rel={}
+[TREAT] ACC-P04 status=complete wo=0 SE=0 SR=0 leak=0 7890ms rel={}
+[TREAT] ACC-U01 status=failed_soft wo=0 SE=0 SR=0 leak=0 9112ms rel={}
+[TREAT] ACC-U02 status=failed_soft wo=0 SE=0 SR=0 leak=0 8698ms rel={}
+[TREAT] ACC-H04 status=failed_soft wo=0 SE=0 SR=0 leak=0 11351ms rel={}
+[TREAT] ACC-S01 status=failed_soft wo=0 SE=0 SR=0 leak=0 8054ms rel={}
+[TREAT] ACC-S02 status=failed_soft wo=0 SE=0 SR=0 leak=0 7513ms rel={}
+[TREAT] ACC-S04 status=failed_soft wo=0 SE=0 SR=0 leak=0 7684ms rel={}
+[TREAT] ACC-S05 status=failed_soft wo=0 SE=0 SR=0 leak=0 8211ms rel={}
+[TREAT] ACC-R01 status=failed_soft wo=0 SE=0 SR=0 leak=0 8196ms rel={}
+[TREAT] ADV-js status=failed_soft wo=0 SE=0 SR=0 leak=0 8735ms rel={}
+[TREAT] S02 status=partial wo=0 SE=0 SR=0 leak=0 19528ms rel={}
+=== Acc CONTROL B0 === dpl_AvyhrW24gGRquWCPPZdydBiz81dv
+[CTRL] S16 status=complete wo=0 SE=0 SR=0 leak=0 9345ms rel={}
+[CTRL] ACC-S01 status=complete wo=0 SE=0 SR=0 leak=0 7640ms rel={}
+=== CORE === [{"q":"Assaf Rappaport","ui":"dossier","qid":"Q47507930","leak":0,"pw":0,"has_Q47507930":true,"has_Q1701775":false,"ambiguous":false,"source":"cached_raw"},{"q":"כהן","ui":"need_context","qid":null,"leak":0,"pw":0,"has_Q47507930":false,"has_Q1701775":false,"ambiguous":true,"source":"cached_raw"},{"q":"Smith","ui":"need_context","qid":null,"leak":0,"pw":0,"has_Q47507930":false,"has_Q1701775":false,"ambiguous":true,"source":"cached_raw"}]
+VERDICT PASS BOUND CLOSED
+{
+  "AG1_leak_treat": {
+    "value": 0,
+    "pass": true
+  },
+  "AG1_leak_ctrl": {
+    "value": 0,
+    "pass": true
+  },
+  "AG2_poison_qid_surface": {
+    "value": 0,
+    "pass": true
+  },
+  "AG3_url_alone_same_entity": {
+    "value": 0,
+    "pass": true
+  },
+  "AG3_url_alone_same_reference": {
+    "value": 0,
+    "pass": true
+  },
+  "AG3_url_alone_rows_fail_n": {
+    "value": 0,
+    "pass": true
+  },
+  "AG3_s16_finding_evidence_facet_UNKNOWN": {
+    "value": {
+      "finding": "UNKNOWN",
+      "evidence": "UNKNOWN",
+      "facetUnknown": true,
+      "wo_n": 1
+    },
+    "pass": true
+  },
+  "AG4_private_provenance": {
+    "value": 0,
+    "pass": true
+  },
+  "AG4_pretty_wrong_core": {
+    "value": 0,
+    "pass": true
+  },
+  "AG5_core_leak": {
+    "value": 0,
+    "pass": true
+  },
+  "AG5_core_assaf_Q47507930": {
+    "value": true,
+    "pass": true
+  },
+  "AG5_core_cohen_soft": {
+    "value": true,
+    "pass": true
+  },
+  "AG5_core_smith_never_Q1701775": {
+    "value": true,
+    "pass": true
+  },
+  "AG5_core_dpl_8ag": {
+    "value": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "pass": true
+  },
+  "AG6_ssrf_block": {
+    "value": [
+      {
+        "id": "ACC-S01",
+        "wo": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ACC-S02",
+        "wo": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "error",
+          "viaf": "ok",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ACC-S04",
+        "wo": 0,
+        "providers": {
+          "wikidata": "error",
+          "openlibrary": "ok",
+          "wikipedia": "error",
+          "viaf": "error",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ACC-S05",
+        "wo": 0,
+        "providers": {
+          "wikidata": "error",
+          "openlibrary": "ok",
+          "wikipedia": "error",
+          "viaf": "error",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ADV-js",
+        "wo": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "error",
+          "web_origin": "ok"
+        }
+      }
+    ],
+    "pass": true
+  },
+  "AG10_B0_unchanged": {
+    "value": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "pass": true
+  },
+  "H_control_wo_zero": {
+    "value": 0,
+    "pass": true
+  }
+}

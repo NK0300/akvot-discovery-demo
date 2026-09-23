@@ -1,0 +1,87 @@
+{
+  "role": "שרת",
+  "phase": "CYCLE1/PHASE4-SOURCE-DISCOVERY",
+  "date": "2026-09-20",
+  "mode": "read-only",
+  "promote": "HOLD",
+  "coreLocked": "dpl_8ag…",
+  "b0Alias": "https://akvot-discovery.vercel.app",
+  "b0Dpl": "dpl_Avyhr…",
+  "defaultProviders": [
+    "wikidata",
+    "openlibrary",
+    "wikipedia"
+  ],
+  "providers": [
+    {
+      "providerId": "wikidata",
+      "file": "api/lib/discovery/providers.js",
+      "status": "in-code/live-seen",
+      "sourceTypes": [
+        "registry"
+      ]
+    },
+    {
+      "providerId": "openlibrary",
+      "file": "api/lib/discovery/providers.js",
+      "status": "in-code/live-seen",
+      "sourceTypes": [
+        "registry/authors"
+      ]
+    },
+    {
+      "providerId": "wikipedia",
+      "file": "api/lib/discovery/providers.js",
+      "status": "in-code/live-seen",
+      "sourceTypes": [
+        "page"
+      ],
+      "notes": "he host if locale=he; B0 corpora en-dominant"
+    },
+    {
+      "providerId": "viaf",
+      "file": null,
+      "status": "absent",
+      "sourceTypes": []
+    },
+    {
+      "providerId": "web_public",
+      "file": null,
+      "status": "interface-only/dead",
+      "sourceTypes": []
+    }
+  ],
+  "gaps": {
+    "inCodeNeverEmitted": [],
+    "emittedButUnowned": [],
+    "absentButDesired": [
+      "viaf",
+      "web_public"
+    ],
+    "heThin": true,
+    "qd01StructuralMonoculture": true
+  },
+  "alignsWithArch": true,
+  "experiment": "QD-01 design-only until Chief GO",
+  "openSoft": [
+    "O1-narrow-ne-GET"
+  ],
+  "b0DplExact": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "liveSample": {
+    "seeds": 5,
+    "findingsByProvider": {
+      "wikidata": 28,
+      "wikipedia": 20,
+      "openlibrary": 17
+    },
+    "hosts": {
+      "www.wikidata.org": 28,
+      "openlibrary.org": 17,
+      "en.wikipedia.org": 13,
+      "he.wikipedia.org": 7
+    },
+    "rawDir": "raw/live-sample-summary.json"
+  },
+  "inject": "dead on B0 normal (fault/test only)",
+  "proposalDoc": "PROPOSAL-QD01-EXPERIMENT.md"
+}

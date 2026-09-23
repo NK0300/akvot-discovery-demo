@@ -1,0 +1,369 @@
+{
+  "project": "akvot-simple-demo",
+  "generated": "2026-09-20",
+  "timezone": "Asia/Jerusalem",
+  "owner": "Arch-B",
+  "policy": {
+    "accP0CoreAlias": "dpl_8ag… LOCKED",
+    "promote": "HOLD",
+    "coreRewrite": false,
+    "kvCredentials": "BLOCKED",
+    "publicSourcesOnly": true
+  },
+  "modules": [
+    {
+      "path": "api/lookup.js",
+      "role": "core-lookup-entity-mode",
+      "dependsOn": [
+        "api/lib/orchestrator.js",
+        "api/lib/stageB.js",
+        "api/lib/knownIdentities.js",
+        "api/lib/obsTrust.js"
+      ],
+      "writesCache": true,
+      "accScrub": "via-revalidateDomainSafePayload+attachOrchestratorFields"
+    },
+    {
+      "path": "api/lib/orchestrator.js",
+      "role": "core-stage-decisions",
+      "dependsOn": [
+        "api/lib/knownIdentities.js",
+        "api/lib/forbiddenIdentities.js"
+      ],
+      "writesCache": false,
+      "accScrub": "sanitizeCandidatesPayload"
+    },
+    {
+      "path": "api/lib/stageB.js",
+      "role": "core-registry-discover",
+      "dependsOn": [],
+      "writesCache": false,
+      "accScrub": false
+    },
+    {
+      "path": "api/lib/forbiddenIdentities.js",
+      "role": "acc-scrub-sot",
+      "dependsOn": [],
+      "writesCache": false,
+      "accScrub": true
+    },
+    {
+      "path": "api/lib/knownIdentities.js",
+      "role": "core-seed-qid-sot",
+      "dependsOn": [],
+      "writesCache": false,
+      "accScrub": false
+    },
+    {
+      "path": "api/lib/discovery/orchestrator.js",
+      "role": "discovery-lifecycle-s0-s10",
+      "dependsOn": [
+        "providers.js",
+        "store.js",
+        "facets.js",
+        "emit.js",
+        "sessionStore.js",
+        "narrow.js",
+        "forbiddenIdentities.js"
+      ],
+      "writesCache": true,
+      "accScrub": "emitSnapshot"
+    },
+    {
+      "path": "api/lib/discovery/sessionStore.js",
+      "role": "session-backend-adapter",
+      "dependsOn": [],
+      "writesCache": true,
+      "accScrub": false
+    },
+    {
+      "path": "api/lib/discovery/providers.js",
+      "role": "search-providers+soft-er",
+      "dependsOn": [],
+      "writesCache": false,
+      "accScrub": false
+    },
+    {
+      "path": "api/lib/discovery/store.js",
+      "role": "normalize-evidence-rank-contradictions",
+      "dependsOn": [
+        "sessionStore.js(reexport)"
+      ],
+      "writesCache": false,
+      "accScrub": false
+    },
+    {
+      "path": "api/lib/discovery/emit.js",
+      "role": "discovery-acc-scrub",
+      "dependsOn": [
+        "../forbiddenIdentities.js"
+      ],
+      "writesCache": false,
+      "accScrub": true
+    },
+    {
+      "path": "api/lib/discovery/sse.js",
+      "role": "progressive-sse",
+      "dependsOn": [
+        "emit.js"
+      ],
+      "writesCache": false,
+      "accScrub": true
+    },
+    {
+      "path": "api/lib/discovery/narrow.js",
+      "role": "facet-narrow",
+      "dependsOn": [
+        "facets.js"
+      ],
+      "writesCache": false,
+      "accScrub": "caller"
+    },
+    {
+      "path": "api/lib/discovery/facets.js",
+      "role": "facet-aggregate",
+      "dependsOn": [],
+      "writesCache": false,
+      "accScrub": "caller"
+    },
+    {
+      "path": "api/lib/discovery/faultInject.js",
+      "role": "preview-dev-fault-hooks",
+      "dependsOn": [],
+      "writesCache": false,
+      "accScrub": false
+    },
+    {
+      "path": "discovery-ui.js",
+      "role": "ux-discovery-mode",
+      "dependsOn": [
+        "api/discovery/sessions/*",
+        "discovery-fixtures/*"
+      ],
+      "writesCache": false,
+      "accScrub": "server-side-only"
+    }
+  ],
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/api/lookup",
+      "file": "api/lookup.js",
+      "layer": "core"
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "file": "api/health.js",
+      "layer": "obs"
+    },
+    {
+      "method": "POST",
+      "path": "/api/discovery/sessions",
+      "file": "api/discovery/sessions/index.js",
+      "layer": "discovery"
+    },
+    {
+      "method": "GET",
+      "path": "/api/discovery/sessions/:id",
+      "file": "api/discovery/sessions/[id]/index.js",
+      "layer": "discovery"
+    },
+    {
+      "method": "GET",
+      "path": "/api/discovery/sessions/:id/events",
+      "file": "api/discovery/sessions/[id]/events.js",
+      "layer": "discovery"
+    },
+    {
+      "method": "POST",
+      "path": "/api/discovery/sessions/:id/narrow",
+      "file": "api/discovery/sessions/[id]/narrow.js",
+      "layer": "discovery"
+    },
+    {
+      "method": "GET",
+      "path": "/api/discovery/health",
+      "file": "api/discovery/health.js",
+      "layer": "discovery-obs"
+    }
+  ],
+  "storeBackends": [
+    {
+      "id": "vercel-kv",
+      "status": "blocked",
+      "reason": "KV_REST_API_URL+TOKEN absent"
+    },
+    {
+      "id": "upstash",
+      "status": "blocked",
+      "reason": "UPSTASH_REDIS_REST_URL+TOKEN absent"
+    },
+    {
+      "id": "fs-regen",
+      "status": "active",
+      "reason": "detectStoreBackend default; /tmp + seed-encoded sessionId + maybeRegenerate"
+    }
+  ],
+  "driftRisks": [
+    "Preview Discovery on fs-regen vs Prod Core alias without Discovery promote",
+    "Pack DEFAULT providers include viaf; runtime Discovery DEFAULT_PROVIDERS = [wikidata, openlibrary]",
+    "finding/evidence/session JSON schemas vs runtime extra fields (scoreIdentity, ranking, url/domain/evidenceType; findings embedded objects; facets array)",
+    "S7 relationship stage stub (edges always [])",
+    "Core Stage-B OL/WD search duplicated in Discovery providers"
+  ],
+  "deadCodeSuspects": [
+    {
+      "symbol": "canCommitIdentity",
+      "path": "api/lib/orchestrator.js",
+      "note": "export alias of mayCommitDossier; no production importers"
+    },
+    {
+      "symbol": "payloadContainsForbidden",
+      "path": "api/lib/forbiddenIdentities.js",
+      "note": "only used inside module + default export; no route callers"
+    },
+    {
+      "symbol": "extractPayloadQids",
+      "path": "api/lib/forbiddenIdentities.js",
+      "note": "internal + default export only"
+    },
+    {
+      "symbol": "COMMON_LATIN_SURNAMES",
+      "path": "api/lib/orchestrator.js",
+      "note": "exported; only used inside same file"
+    },
+    {
+      "symbol": "candidateHasEvidence",
+      "path": "api/lib/orchestrator.js",
+      "note": "exported; only used inside same file"
+    },
+    {
+      "symbol": "hasOrgCityEvidenceMatch",
+      "path": "api/lib/orchestrator.js",
+      "note": "exported; only used inside same file"
+    }
+  ],
+  "duplicateLogic": [
+    {
+      "id": "DUP-OL",
+      "a": "api/lib/stageB.js#openLibrarySearch",
+      "b": "api/lib/discovery/providers.js#openLibraryProvider",
+      "note": "same Open Library authors.json endpoint, different output shape"
+    },
+    {
+      "id": "DUP-WD",
+      "a": "api/lib/stageB.js#wikidataSearch",
+      "b": "api/lib/discovery/providers.js#wikidataProvider",
+      "note": "same wbsearchentities API"
+    },
+    {
+      "id": "DUP-TOK",
+      "a": "api/lib/stageB.js#tokenOverlap/nameTokens/norm",
+      "b": "api/lookup.js#tokenOverlapSafe/normNameTokens",
+      "note": "parallel name-token overlap helpers"
+    },
+    {
+      "id": "DUP-SCRUB-LOCAL",
+      "a": "api/lib/forbiddenIdentities.js#valueHasForbidden",
+      "b": "api/lib/discovery/emit.js#valueHasForbidden",
+      "note": "local reimplementation beside SoT import"
+    }
+  ],
+  "hiddenFallbacks": [
+    {
+      "id": "FB-FS-REGEN",
+      "path": "api/lib/discovery/sessionStore.js#detectStoreBackend",
+      "note": "silent default to fs-regen when KV env missing; telemetry now explicit"
+    },
+    {
+      "id": "FB-SEED-REGEN",
+      "path": "api/lib/discovery/orchestrator.js#maybeRegenerate",
+      "note": "GET/SSE/narrow miss → decode seed from sessionId → re-run pipeline; allowRegen default true"
+    },
+    {
+      "id": "FB-MAP-STORE",
+      "path": "api/lib/discovery/orchestrator.js#getSessionStore/resolveStore",
+      "note": "Map inject / createMemoryMapAdapter for tests; deprecated sync helper remains exported"
+    },
+    {
+      "id": "FB-UI-FIXTURE",
+      "path": "discovery-ui.js",
+      "note": "discoverySource=fixture|fixture=1 loads discovery-fixtures/*"
+    },
+    {
+      "id": "FB-UI-SSE-POLL",
+      "path": "discovery-ui.js#runViaSse→runViaPoll",
+      "note": "SSE failure soft-falls to poll"
+    },
+    {
+      "id": "FB-PROVIDER-SOFT",
+      "path": "api/lib/discovery/orchestrator.js#runPipeline",
+      "note": "provider throw → status error; session may become failed_soft/partial"
+    },
+    {
+      "id": "FB-CORE-SEED-DOSSIER",
+      "path": "api/lookup.js#seedDossierFromKnown",
+      "note": "Core static seed dossier when wikiPathFromQid times out — Core only; not Discovery"
+    }
+  ],
+  "layers": [
+    "ingest",
+    "providers",
+    "normalize",
+    "evidence",
+    "ER soft",
+    "facets",
+    "emit/SSE/narrow",
+    "Acc scrub",
+    "UI"
+  ],
+  "p1Closures": {
+    "updated": "2026-09-20T07:24:00+03:00",
+    "promote": "HOLD",
+    "coreLocked": true,
+    "items": [
+      {
+        "id": "B17",
+        "status": "OPEN",
+        "note": "Server in progress; fs-regen; durable=false; KV BLOCKED"
+      },
+      {
+        "id": "B18",
+        "status": "OPEN",
+        "note": "Server in progress; seed-decode regen; Acc via emitSnapshot"
+      },
+      {
+        "id": "B21",
+        "status": "DOCUMENTED",
+        "note": "Preview≠Prod drift"
+      },
+      {
+        "id": "B22",
+        "status": "OPEN",
+        "note": "facetHints not scrubbed in scrubFinding"
+      },
+      {
+        "id": "B23",
+        "status": "OPEN",
+        "note": "contradictions pass-through; no surviving-id filter"
+      },
+      {
+        "id": "candidates-acc-scrub",
+        "status": "CLOSED",
+        "note": "emit.js delete out.candidates after sanitizeCandidatesPayload"
+      }
+    ],
+    "openP1": [
+      "B17",
+      "B18",
+      "B22",
+      "B23"
+    ],
+    "refs": [
+      "MEGA-B-P1-CLOSURE-STATUS-ארכיטקט-2026-09-20.md",
+      "MEGA-B-ACC-EMIT-GLANCE-ארכיטקט-2026-09-20.md",
+      "MEGA-B-P1-ACC-SCRUB-GAPS-BOUND-ארכיטקט-2026-09-20.md"
+    ]
+  }
+}

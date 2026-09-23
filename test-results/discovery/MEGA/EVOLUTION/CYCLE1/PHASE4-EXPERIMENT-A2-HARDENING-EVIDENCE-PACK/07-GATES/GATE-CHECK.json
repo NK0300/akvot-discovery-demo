@@ -1,0 +1,77 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "gates": [
+    {
+      "id": "A",
+      "name": "Experiment definition",
+      "status": "PASS",
+      "note": "Typed soft-ref only; vocabulary closed; INFORMATION\u2260IDENTITY"
+    },
+    {
+      "id": "B",
+      "name": "Baseline",
+      "status": "PASS",
+      "note": "B0/A/A2-bound/A2-safe table present"
+    },
+    {
+      "id": "C",
+      "name": "Implementation diff",
+      "status": "PASS-HOLD",
+      "note": "No hardening code; prior A2-safe diff stands; hardening=forensics-only"
+    },
+    {
+      "id": "D",
+      "name": "Tests",
+      "status": "PASS",
+      "note": "Prior unit suites cited; no new code \u2192 no new suite required"
+    },
+    {
+      "id": "E",
+      "name": "Adversarial",
+      "status": "PASS",
+      "note": "Expanded 28/28 pass \u00b7 leak0"
+    },
+    {
+      "id": "F",
+      "name": "Acc",
+      "status": "PASS",
+      "note": "leak=0 on A2-safe; hardening no code"
+    },
+    {
+      "id": "G",
+      "name": "QA smoke",
+      "status": "PASS",
+      "note": "A2-safe mean 0.2074\u22650.15; hardening identical"
+    },
+    {
+      "id": "H",
+      "name": "Comparison metrics",
+      "status": "PASS",
+      "note": "Table B0|A|A2-bound|A2-safe|hardening"
+    },
+    {
+      "id": "I",
+      "name": "Representative success \u00d75",
+      "status": "PASS",
+      "note": "see 08-EXAMPLES"
+    },
+    {
+      "id": "J",
+      "name": "FP rejected \u00d75",
+      "status": "PASS",
+      "note": "see 08-EXAMPLES"
+    },
+    {
+      "id": "K",
+      "name": "UNKNOWN \u00d75",
+      "status": "PASS",
+      "note": "see 08-EXAMPLES"
+    },
+    {
+      "id": "L",
+      "name": "Limitations + decision",
+      "status": "PASS",
+      "note": "HOLD \u00b7 no promote \u00b7 no EXP-B \u00b7 experimental"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "F1_quiet_x5": "PASS",
+  "F2_cold_x3": "PASS",
+  "F3_warm_x3": "PASS",
+  "F4_assaf_x2": "PASS",
+  "F5_cohen_x2": "PASS",
+  "F6_john_rappaport_x1": "PASS",
+  "F7_body_scan_Q1701775": "PASS",
+  "leakage_count": 0,
+  "pw": 0,
+  "faces_smith_soft": 0,
+  "health_build_match": true,
+  "promote": false,
+  "alias_frozen": true,
+  "Acc_PRE_PROMOTE": "GO",
+  "Chief_REVIEW": "Alias frozen until Chief/שרת promote · דיוק does NOT promote"
+}

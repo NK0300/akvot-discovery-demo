@@ -1,0 +1,14 @@
+{
+  "label": "O-N2-put",
+  "http": 405,
+  "wallMs": 2613,
+  "curlTime": 0.339791,
+  "path": "/api/lookup?q=test",
+  "body": {
+    "error": "method not allowed"
+  },
+  "cliExit": 0,
+  "stderrTail": [
+    "Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback"
+  ]
+}

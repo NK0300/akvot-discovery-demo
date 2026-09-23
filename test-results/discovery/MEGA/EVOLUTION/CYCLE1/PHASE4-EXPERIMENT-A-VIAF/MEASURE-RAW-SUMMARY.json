@@ -1,0 +1,118 @@
+{
+  "stamp": "2026-09-20T07:01:43.430Z",
+  "zone": "Asia/Jerusalem",
+  "previewHost": "akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+  "b0Host": "akvot-discovery.vercel.app",
+  "preview": {
+    "label": "PREVIEW",
+    "host": "akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+    "seeds": {
+      "S01": {
+        "seedId": "S01",
+        "status": 0,
+        "findingsN": 0,
+        "evidenceN": 0,
+        "domains": [],
+        "families": [],
+        "providersUnion": [],
+        "providersState": {},
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "findingRows": []
+      },
+      "S04": {
+        "seedId": "S04",
+        "status": 0,
+        "findingsN": 0,
+        "evidenceN": 0,
+        "domains": [],
+        "families": [],
+        "providersUnion": [],
+        "providersState": {},
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "findingRows": []
+      },
+      "S05": {
+        "seedId": "S05",
+        "status": 0,
+        "findingsN": 0,
+        "evidenceN": 0,
+        "domains": [],
+        "families": [],
+        "providersUnion": [],
+        "providersState": {},
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "findingRows": []
+      }
+    }
+  },
+  "b0": {
+    "label": "B0",
+    "host": "akvot-discovery.vercel.app",
+    "seeds": {
+      "S01": {
+        "seedId": "S01",
+        "status": 0,
+        "findingsN": 0,
+        "evidenceN": 0,
+        "domains": [],
+        "families": [],
+        "providersUnion": [],
+        "providersState": {},
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "findingRows": []
+      },
+      "S04": {
+        "seedId": "S04",
+        "status": 0,
+        "findingsN": 0,
+        "evidenceN": 0,
+        "domains": [],
+        "families": [],
+        "providersUnion": [],
+        "providersState": {},
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "findingRows": []
+      },
+      "S05": {
+        "seedId": "S05",
+        "status": 0,
+        "findingsN": 0,
+        "evidenceN": 0,
+        "domains": [],
+        "families": [],
+        "providersUnion": [],
+        "providersState": {},
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "findingRows": []
+      }
+    }
+  },
+  "gate": {
+    "metric": "multi_independent_rate",
+    "seeds": [
+      "S01",
+      "S04",
+      "S05"
+    ],
+    "threshold": 0.15,
+    "b0Baseline": 0
+  }
+}

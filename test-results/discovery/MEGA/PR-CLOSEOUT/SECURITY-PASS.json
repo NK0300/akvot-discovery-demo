@@ -1,0 +1,104 @@
+{
+  "stamp": "2026-09-20T08:49:39+03:00",
+  "preview": {
+    "dpl": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+    "base": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app"
+  },
+  "live": [
+    {
+      "id": "oversized-seed",
+      "rejected": true,
+      "leakage_count": 0,
+      "pass": true,
+      "raw_file": "sec-oversized-seed.json",
+      "ms": 2182,
+      "error": "seed exceeds 500 chars"
+    },
+    {
+      "id": "empty-seed",
+      "rejected": true,
+      "leakage_count": 0,
+      "pass": true,
+      "raw_file": "sec-empty-seed.json",
+      "ms": 2428,
+      "error": "seed required"
+    },
+    {
+      "id": "malformed-hints-huge",
+      "rejected": true,
+      "leakage_count": 0,
+      "pass": true,
+      "raw_file": "sec-malformed-hints-huge.json",
+      "ms": 2529,
+      "error": "hints too large"
+    }
+  ],
+  "health": {
+    "preview_api": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+      "baselineHint": "dpl_DNfPZ9",
+      "discoveryStore": {
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "kvCredsPresent": true,
+        "crossInstance": "shared-kv"
+      }
+    },
+    "preview_discovery": {
+      "ok": true,
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "latencyMs": 111,
+      "correlationId": "hc-mu9ea4fr-241b44",
+      "fsRegenFallback": false,
+      "explicitFallback": false,
+      "promoteEligible": true,
+      "durable": true,
+      "fallback": false,
+      "kvCredsPresent": true,
+      "mode": "kv-shared",
+      "steps": [
+        {
+          "step": "WRITE",
+          "ok": true,
+          "ms": 34
+        },
+        {
+          "step": "READ",
+          "ok": true,
+          "ms": 34
+        },
+        {
+          "step": "UPDATE",
+          "ok": true,
+          "ms": 65
+        },
+        {
+          "step": "DELETE",
+          "ok": true,
+          "ms": 111
+        }
+      ],
+      "ttlMs": 3600000,
+      "faultInjectAvailable": false
+    },
+    "alias": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "baselineHint": "dpl_DNfPZ9"
+    },
+    "preview_build_match": true,
+    "preview_store": "upstash",
+    "preview_ok": true
+  },
+  "summary": {
+    "verdict": "PASS"
+  }
+}

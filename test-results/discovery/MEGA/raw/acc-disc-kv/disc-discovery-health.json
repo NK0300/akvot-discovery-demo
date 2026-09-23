@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "backend": "upstash",
+  "storeBackend": "upstash",
+  "latencyMs": 124,
+  "correlationId": "hc-mu9bs3vu-afabc9",
+  "fsRegenFallback": false,
+  "explicitFallback": false,
+  "promoteEligible": true,
+  "durable": true,
+  "fallback": false,
+  "kvCredsPresent": true,
+  "mode": "kv-shared",
+  "steps": [
+    {
+      "step": "WRITE",
+      "ok": true,
+      "ms": 41
+    },
+    {
+      "step": "READ",
+      "ok": true,
+      "ms": 41
+    },
+    {
+      "step": "UPDATE",
+      "ok": true,
+      "ms": 74
+    },
+    {
+      "step": "DELETE",
+      "ok": true,
+      "ms": 124
+    }
+  ],
+  "ttlMs": 3600000,
+  "faultInjectAvailable": false
+}

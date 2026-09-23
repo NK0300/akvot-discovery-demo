@@ -1,0 +1,13 @@
+[R01] pass=true wo=1 rels=["UNKNOWN"] wo≥1 UNKNOWN; zero SAME-*
+[R02] pass=true wo=1 rels=["UNKNOWN"] wo≥1 UNKNOWN; zero SAME-*
+[R03] pass=true wo=0 rels=[] no wo emit; zero SAME-*
+[R04] pass=true wo=0 rels=[] no wo emit; zero SAME-*
+[R05] pass=true wo=1 rels=["UNKNOWN"] wo≥1 UNKNOWN; zero SAME-*
+[R06] pass=true wo=0 rels=[] no wo emit; zero SAME-*
+[R07] pass=false wo=0 rels=[] wo=0 unk=0 SE=0 SR=0
+[R08] pass=false wo=0 rels=[] wo=0 unk=0 SE=0 SR=0
+[R09] pass=false wo=0 rels=[] wo=0 unk=0 SE=0 SR=0
+[R10] pass=true wo=0 rels=[] no wo emit; zero SAME-*
+[R11] pass=true wo=0 rels=[] no URL-alone SAME-* on wo
+[R12] pass=true wo=0 rels=[] SSRF blocked; no wo
+VERDICT FAIL 9/12

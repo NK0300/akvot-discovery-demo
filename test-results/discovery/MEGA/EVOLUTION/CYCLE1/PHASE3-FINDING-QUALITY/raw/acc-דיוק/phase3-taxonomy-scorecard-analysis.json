@@ -1,0 +1,2138 @@
+{
+  "agent": "דיוק",
+  "phase": "CYCLE1-PHASE3-FINDING-QUALITY",
+  "stamp": "2026-09-20T09:55:00+03:00",
+  "baselineId": "B0",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "focusSeeds": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S06",
+    "S07",
+    "S09",
+    "S10"
+  ],
+  "extraSeeds": [
+    "S05",
+    "S08",
+    "S11",
+    "S12"
+  ],
+  "totalFindingsFocus": 95,
+  "aggregateClassCounts": {
+    "weak": 81,
+    "contradiction": 48,
+    "single-source": 95,
+    "near-dup": 49,
+    "false-identity-risk": 2
+  },
+  "examples": {
+    "weak": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22991023",
+        "title": "Tim Berners-Lee: A Magna Carta for the web"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22946133",
+        "title": "Tim Berners-Lee: The year open data went worldwide"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q6258259",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "ol-OL2642558A",
+        "title": "John Smith"
+      }
+    ],
+    "contradiction": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q19761597",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith"
+      }
+    ],
+    "single-source": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22991023",
+        "title": "Tim Berners-Lee: A Magna Carta for the web"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith"
+      }
+    ],
+    "near-dup": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q19761597",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith"
+      }
+    ],
+    "false-identity-risk": [
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S03",
+        "findingId": "wd-Q233510",
+        "title": "Alex Morgan"
+      }
+    ]
+  },
+  "accLeakTotal": 0,
+  "scorecardAggregate": {
+    "score": 86.5,
+    "letter": "B",
+    "meanOfFocus": [
+      88.1,
+      84.9,
+      80.9,
+      88.6,
+      82.0,
+      82.0,
+      92,
+      93.8
+    ],
+    "focusSeeds": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S06",
+      "S07",
+      "S09",
+      "S10"
+    ]
+  },
+  "perSeedScores": {
+    "S01": {
+      "score": 88.1,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -8.4,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -13.5,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.7,
+          "no_evidence": 0.0,
+          "weak": 0.9,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.7
+        }
+      },
+      "findingsCount": 10,
+      "category": "person",
+      "classCounts": {
+        "weak": 9,
+        "contradiction": 7,
+        "single-source": 10,
+        "near-dup": 7
+      }
+    },
+    "S02": {
+      "score": 84.9,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [
+        "session_contradiction_present"
+      ],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -4.57,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -8.57,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": -12,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.762,
+          "no_evidence": 0.0,
+          "weak": 0.571,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.762
+        }
+      },
+      "findingsCount": 21,
+      "category": "common-name",
+      "classCounts": {
+        "contradiction": 16,
+        "single-source": 21,
+        "near-dup": 16,
+        "false-identity-risk": 1,
+        "weak": 12
+      }
+    },
+    "S03": {
+      "score": 80.9,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [
+        "session_contradiction_present"
+      ],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -2.86,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -14.29,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": -12,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.476,
+          "no_evidence": 0.0,
+          "weak": 0.952,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.476
+        }
+      },
+      "findingsCount": 21,
+      "category": "ambiguous-person",
+      "classCounts": {
+        "single-source": 21,
+        "weak": 20,
+        "near-dup": 10,
+        "false-identity-risk": 1,
+        "contradiction": 10
+      }
+    },
+    "S04": {
+      "score": 88.6,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -3.43,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 5,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.286,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.214
+        }
+      },
+      "findingsCount": 14,
+      "category": "company",
+      "classCounts": {
+        "weak": 14,
+        "single-source": 14,
+        "near-dup": 4,
+        "contradiction": 3
+      }
+    },
+    "S06": {
+      "score": 82.0,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 6,
+      "category": "domain",
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      }
+    },
+    "S07": {
+      "score": 82.0,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 1,
+      "category": "multilingual-HE",
+      "classCounts": {
+        "weak": 1,
+        "single-source": 1
+      }
+    },
+    "S09": {
+      "score": 92,
+      "letter": "A",
+      "accLeak": 0,
+      "formulaNotes": [
+        "no-match_empty_correct"
+      ],
+      "components": {
+        "empty_expected": 92
+      },
+      "findingsCount": 0,
+      "category": "no-match",
+      "classCounts": {}
+    },
+    "S10": {
+      "score": 93.8,
+      "letter": "A",
+      "accLeak": 0,
+      "formulaNotes": [
+        "session_contradiction_present"
+      ],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -3.27,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -12.95,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.545,
+          "no_evidence": 0.0,
+          "weak": 0.864,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.545
+        }
+      },
+      "findingsCount": 22,
+      "category": "conflicting-evidence",
+      "classCounts": {
+        "contradiction": 12,
+        "single-source": 22,
+        "near-dup": 12,
+        "weak": 19
+      }
+    },
+    "S05": {
+      "score": 82.0,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 6,
+      "category": "organization",
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      }
+    },
+    "S08": {
+      "score": 55,
+      "letter": "F",
+      "accLeak": 0,
+      "formulaNotes": [
+        "unexpected_empty"
+      ],
+      "components": {
+        "empty_unexpected": -45
+      },
+      "findingsCount": 0,
+      "category": "multilingual",
+      "classCounts": {}
+    },
+    "S11": {
+      "score": 70.0,
+      "letter": "C",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": -12,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 2,
+      "category": "wrong-person-trap",
+      "classCounts": {
+        "weak": 2,
+        "single-source": 2,
+        "false-identity-risk": 1
+      }
+    },
+    "S12": {
+      "score": 55,
+      "letter": "F",
+      "accLeak": 0,
+      "formulaNotes": [
+        "unexpected_empty"
+      ],
+      "components": {
+        "empty_unexpected": -45
+      },
+      "findingsCount": 0,
+      "category": "duplicate-source-trap",
+      "classCounts": {}
+    }
+  },
+  "perSeed": {
+    "S01": {
+      "seedId": "S01",
+      "category": "person",
+      "seed": "Tim Berners-Lee",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S01.json",
+      "status": "partial",
+      "findingsCount": 10,
+      "contradictionsSessionN": 1,
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "tim berners-lee",
+          "findingIds": [
+            "wd-Q80",
+            "wd-Q120373140",
+            "wd-Q120373262",
+            "wd-Q19761597",
+            "wd-Q55693401",
+            "ol-OL25245A",
+            "wp-en-Tim_Berners_Lee"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "sameTitleMultiEntityClusters": {
+        "tim berners-lee": [
+          "wd-Q80",
+          "wd-Q120373140",
+          "wd-Q120373262",
+          "wd-Q19761597",
+          "wd-Q55693401",
+          "ol-OL25245A",
+          "wp-en-Tim_Berners_Lee"
+        ]
+      },
+      "nearDupClusterN": 1,
+      "nearDupClustersSample": [
+        {
+          "title": "tim berners-lee",
+          "findingIds": [
+            "wd-Q80",
+            "wd-Q120373140",
+            "wd-Q120373262",
+            "wd-Q19761597",
+            "wd-Q55693401",
+            "ol-OL25245A",
+            "wp-en-Tim_Berners_Lee"
+          ],
+          "reason": "same_title_diff_entity"
+        }
+      ],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "weak": 9,
+        "contradiction": 7,
+        "single-source": 10,
+        "near-dup": 7
+      },
+      "examples": {
+        "weak": [
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide"
+          }
+        ],
+        "contradiction": [
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q19761597",
+            "title": "Tim Berners-Lee"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web"
+          }
+        ],
+        "near-dup": [
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee"
+          },
+          {
+            "seedId": "S01",
+            "findingId": "wd-Q19761597",
+            "title": "Tim Berners-Lee"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "hostFamiliesUnion": [
+        "openlibrary",
+        "wikimedia-wd",
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "titlePeek": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "summary": "English computer scientist (born 1955)"
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "summary": "2015 edition of a biography by Claudia Martin"
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "summary": "2015 biography by Jason Porterfield"
+        },
+        {
+          "id": "wd-Q22991023",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "summary": "TED2014"
+        },
+        {
+          "id": "wd-Q22946133",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "summary": "TED2010"
+        },
+        {
+          "id": "wd-Q22980417",
+          "title": "Tim Berners-Lee: The next web",
+          "summary": "TED2009"
+        }
+      ]
+    },
+    "S02": {
+      "seedId": "S02",
+      "category": "common-name",
+      "seed": "John Smith",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S02.json",
+      "status": "partial",
+      "findingsCount": 21,
+      "contradictionsSessionN": 1,
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "john smith",
+          "findingIds": [
+            "wd-Q3182477",
+            "wd-Q332377",
+            "wd-Q6258357",
+            "wd-Q6258267",
+            "wd-Q6258259",
+            "wd-Q541460",
+            "wd-Q991529",
+            "ol-OL177707A",
+            "ol-OL12988612A",
+            "ol-OL2642558A",
+            "ol-OL2404636A",
+            "ol-OL15752758A",
+            "ol-OL9615641A",
+            "ol-OL4474728A",
+            "ol-OL646156A",
+            "wp-en-John_Smith"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "sameTitleMultiEntityClusters": {
+        "john smith": [
+          "wd-Q3182477",
+          "wd-Q332377",
+          "wd-Q6258357",
+          "wd-Q6258267",
+          "wd-Q6258259",
+          "wd-Q541460",
+          "wd-Q991529",
+          "ol-OL177707A",
+          "ol-OL12988612A",
+          "ol-OL2642558A",
+          "ol-OL2404636A",
+          "ol-OL15752758A",
+          "ol-OL9615641A",
+          "ol-OL4474728A",
+          "ol-OL646156A",
+          "wp-en-John_Smith"
+        ]
+      },
+      "nearDupClusterN": 1,
+      "nearDupClustersSample": [
+        {
+          "title": "john smith",
+          "findingIds": [
+            "wd-Q3182477",
+            "wd-Q332377",
+            "wd-Q6258357",
+            "wd-Q6258267",
+            "wd-Q6258259",
+            "wd-Q541460",
+            "wd-Q991529",
+            "ol-OL177707A",
+            "ol-OL12988612A",
+            "ol-OL2642558A",
+            "ol-OL2404636A",
+            "ol-OL15752758A",
+            "ol-OL9615641A",
+            "ol-OL4474728A",
+            "ol-OL646156A",
+            "wp-en-John_Smith"
+          ],
+          "reason": "same_title_diff_entity"
+        }
+      ],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [
+        {
+          "findingId": "wd-Q3182477",
+          "reason": "ambiguous_flat_list_top_row_pretty_wrong_risk"
+        }
+      ],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "contradiction": 16,
+        "single-source": 21,
+        "near-dup": 16,
+        "false-identity-risk": 1,
+        "weak": 12
+      },
+      "examples": {
+        "contradiction": [
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q3182477",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q332377",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258357",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258267",
+            "title": "John Smith"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q3182477",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q332377",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258357",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258267",
+            "title": "John Smith"
+          }
+        ],
+        "near-dup": [
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q3182477",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q332377",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258357",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258267",
+            "title": "John Smith"
+          }
+        ],
+        "false-identity-risk": [
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q3182477",
+            "title": "John Smith"
+          }
+        ],
+        "weak": [
+          {
+            "seedId": "S02",
+            "findingId": "wd-Q6258259",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "ol-OL2642558A",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "ol-OL15752758A",
+            "title": "John Smith"
+          },
+          {
+            "seedId": "S02",
+            "findingId": "ol-OL9615641A",
+            "title": "John SMITH"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "hostFamiliesUnion": [
+        "openlibrary",
+        "wikimedia-wd",
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "titlePeek": [
+        {
+          "id": "wd-Q3182477",
+          "title": "John Smith",
+          "summary": "English botanist, first curator of Kew gardens (1798–1888)"
+        },
+        {
+          "id": "wd-Q332377",
+          "title": "John Smith",
+          "summary": "Labour Party leader from Scotland (1938-1994)"
+        },
+        {
+          "id": "wd-Q6258357",
+          "title": "John Smith",
+          "summary": "fifth Presiding Patriarch of The Church of Jesus Christ of Latter-day Saints (1832-1911)"
+        },
+        {
+          "id": "wd-Q6258267",
+          "title": "John Smith",
+          "summary": "British banker, Conservative Member of Parliament, and Lord Lieutenant of Berkshire (1923-2007)"
+        },
+        {
+          "id": "wd-Q6258259",
+          "title": "John Smith",
+          "summary": "British army general (1754-1837)"
+        },
+        {
+          "id": "wd-Q541460",
+          "title": "John Smith",
+          "summary": "American politician; U.S. senator from Ohio (173_-1824)"
+        }
+      ]
+    },
+    "S03": {
+      "seedId": "S03",
+      "category": "ambiguous-person",
+      "seed": "Alex Morgan",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S03.json",
+      "status": "partial",
+      "findingsCount": 21,
+      "contradictionsSessionN": 1,
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "alex morgan",
+          "findingIds": [
+            "wd-Q233510",
+            "wd-Q126278685",
+            "wd-Q131542437",
+            "wd-Q43302646",
+            "wd-Q42805830",
+            "wd-Q16527618",
+            "wd-Q55603580",
+            "ol-OL1437248A",
+            "ol-OL7414531A",
+            "wp-en-Alex_Morgan"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "sameTitleMultiEntityClusters": {
+        "alex morgan": [
+          "wd-Q233510",
+          "wd-Q126278685",
+          "wd-Q131542437",
+          "wd-Q43302646",
+          "wd-Q42805830",
+          "wd-Q16527618",
+          "wd-Q55603580",
+          "ol-OL1437248A",
+          "ol-OL7414531A",
+          "wp-en-Alex_Morgan"
+        ]
+      },
+      "nearDupClusterN": 1,
+      "nearDupClustersSample": [
+        {
+          "title": "alex morgan",
+          "findingIds": [
+            "wd-Q233510",
+            "wd-Q126278685",
+            "wd-Q131542437",
+            "wd-Q43302646",
+            "wd-Q42805830",
+            "wd-Q16527618",
+            "wd-Q55603580",
+            "ol-OL1437248A",
+            "ol-OL7414531A",
+            "wp-en-Alex_Morgan"
+          ],
+          "reason": "same_title_diff_entity"
+        }
+      ],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [
+        {
+          "findingId": "wd-Q233510",
+          "reason": "ambiguous_flat_list_top_row_pretty_wrong_risk"
+        }
+      ],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "single-source": 21,
+        "weak": 20,
+        "near-dup": 10,
+        "false-identity-risk": 1,
+        "contradiction": 10
+      },
+      "examples": {
+        "single-source": [
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q233510",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q126278685",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q131542437",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q43302646",
+            "title": "Alex Morgan"
+          }
+        ],
+        "weak": [
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q233510",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q126278685",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q131542437",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q43302646",
+            "title": "Alex Morgan"
+          }
+        ],
+        "near-dup": [
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q233510",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q126278685",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q131542437",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q43302646",
+            "title": "Alex Morgan"
+          }
+        ],
+        "false-identity-risk": [
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q233510",
+            "title": "Alex Morgan"
+          }
+        ],
+        "contradiction": [
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q233510",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q126278685",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q131542437",
+            "title": "Alex Morgan"
+          },
+          {
+            "seedId": "S03",
+            "findingId": "wd-Q43302646",
+            "title": "Alex Morgan"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "hostFamiliesUnion": [
+        "openlibrary",
+        "wikimedia-wd",
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "ok",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "titlePeek": [
+        {
+          "id": "wd-Q233510",
+          "title": "Alex Morgan",
+          "summary": "American soccer player"
+        },
+        {
+          "id": "wd-Q126278685",
+          "title": "Alex Morgan",
+          "summary": "journalist from the United Kingdom"
+        },
+        {
+          "id": "wd-Q131542437",
+          "title": "Alex Morgan",
+          "summary": "English researcher"
+        },
+        {
+          "id": "wd-Q43302646",
+          "title": "Alex Morgan",
+          "summary": "Wikimedia disambiguation page"
+        },
+        {
+          "id": "wd-Q42805830",
+          "title": "Alex Morgan",
+          "summary": "Jamaican athlete"
+        },
+        {
+          "id": "wd-Q16527618",
+          "title": "Alex Morgan",
+          "summary": "British racing driver"
+        }
+      ]
+    },
+    "S04": {
+      "seedId": "S04",
+      "category": "company",
+      "seed": "Stripe",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S04.json",
+      "status": "partial",
+      "findingsCount": 14,
+      "contradictionsSessionN": 1,
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "stripe",
+          "findingIds": [
+            "ol-OL13079935A",
+            "ol-OL10372320A",
+            "wp-en-Stripe"
+          ],
+          "domains": [
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "sameTitleMultiEntityClusters": {
+        "stripe": [
+          "ol-OL13079935A",
+          "ol-OL10372320A",
+          "wp-en-Stripe"
+        ]
+      },
+      "nearDupClusterN": 2,
+      "nearDupClustersSample": [
+        {
+          "title": "stripe",
+          "findingIds": [
+            "ol-OL13079935A",
+            "ol-OL10372320A",
+            "wp-en-Stripe"
+          ],
+          "reason": "same_title_diff_entity"
+        },
+        {
+          "findingIds": [
+            "ol-OL8613090A",
+            "ol-OL10372320A"
+          ],
+          "reason": "summary_sim=1.00"
+        }
+      ],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "weak": 14,
+        "single-source": 14,
+        "near-dup": 4,
+        "contradiction": 3
+      },
+      "examples": {
+        "weak": [
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL8376862A",
+            "title": "Five Stripe Books"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL8613090A",
+            "title": "Adelle Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL8376862A",
+            "title": "Five Stripe Books"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL8613090A",
+            "title": "Adelle Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE"
+          }
+        ],
+        "near-dup": [
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL8613090A",
+            "title": "Adelle Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "wp-en-Stripe",
+            "title": "Stripe"
+          }
+        ],
+        "contradiction": [
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE"
+          },
+          {
+            "seedId": "S04",
+            "findingId": "wp-en-Stripe",
+            "title": "Stripe"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org"
+      ],
+      "hostFamiliesUnion": [
+        "openlibrary",
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "titlePeek": [
+        {
+          "id": "ol-OL8376862A",
+          "title": "Five Stripe Books",
+          "summary": "Top work: Sketch Book"
+        },
+        {
+          "id": "ol-OL8613090A",
+          "title": "Adelle Stripe",
+          "summary": "Top work: Black Teeth and a Brilliant Smile"
+        },
+        {
+          "id": "ol-OL13079935A",
+          "title": "Stripe",
+          "summary": "Top work: Increment Box Set"
+        },
+        {
+          "id": "ol-OL10372320A",
+          "title": "STRIPE",
+          "summary": "Top work: Black Teeth and a Brilliant Smile"
+        },
+        {
+          "id": "ol-OL3492368A",
+          "title": "Stephen Stripe",
+          "summary": "Top work: The Journey to Paradise"
+        },
+        {
+          "id": "ol-OL14670551A",
+          "title": "Stripe Journals",
+          "summary": "Top work: Daily Five Minute Journal"
+        }
+      ]
+    },
+    "S06": {
+      "seedId": "S06",
+      "category": "domain",
+      "seed": "openai.com",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S06.json",
+      "status": "partial",
+      "findingsCount": 6,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      },
+      "examples": {
+        "weak": [
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-Openai_com",
+            "title": "Openai.com"
+          },
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-OpenAI_Codex_AI_agent_",
+            "title": "OpenAI Codex (AI agent)"
+          },
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-OpenAI_Codex_language_model_",
+            "title": "OpenAI Codex (language model)"
+          },
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-OpenAI_Codex",
+            "title": "OpenAI Codex"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-Openai_com",
+            "title": "Openai.com"
+          },
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-OpenAI_Codex_AI_agent_",
+            "title": "OpenAI Codex (AI agent)"
+          },
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-OpenAI_Codex_language_model_",
+            "title": "OpenAI Codex (language model)"
+          },
+          {
+            "seedId": "S06",
+            "findingId": "wp-en-OpenAI_Codex",
+            "title": "OpenAI Codex"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "hostFamiliesUnion": [
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "partial"
+      },
+      "titlePeek": [
+        {
+          "id": "wp-en-Openai_com",
+          "title": "Openai.com",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-OpenAI_Codex_AI_agent_",
+          "title": "OpenAI Codex (AI agent)",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-OpenAI_Codex_language_model_",
+          "title": "OpenAI Codex (language model)",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-OpenAI_Codex",
+          "title": "OpenAI Codex",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-OpenAI_containment_escapes",
+          "title": "OpenAI containment escapes",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Opera_com",
+          "title": "Opera.com",
+          "summary": ""
+        }
+      ]
+    },
+    "S07": {
+      "seedId": "S07",
+      "category": "multilingual-HE",
+      "seed": "בנימין נתניהו",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S07.json",
+      "status": "partial",
+      "findingsCount": 1,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "weak": 1,
+        "single-source": 1
+      },
+      "examples": {
+        "weak": [
+          {
+            "seedId": "S07",
+            "findingId": "wp-en-_",
+            "title": "בנימין נתניהו"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S07",
+            "findingId": "wp-en-_",
+            "title": "בנימין נתניהו"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "hostFamiliesUnion": [
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "error",
+        "wikipedia": "ok"
+      },
+      "titlePeek": [
+        {
+          "id": "wp-en-_",
+          "title": "בנימין נתניהו",
+          "summary": ""
+        }
+      ]
+    },
+    "S09": {
+      "seedId": "S09",
+      "category": "no-match",
+      "seed": "zzzznonexistentxyz999",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S09.json",
+      "status": "failed_soft",
+      "findingsCount": 0,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {},
+      "examples": {},
+      "sessionNotes": [
+        "empty_findings",
+        "no-match_expected_empty_PASS"
+      ],
+      "domainsUnion": [],
+      "hostFamiliesUnion": [],
+      "providersStatus": {
+        "wikidata": "ok",
+        "openlibrary": "error",
+        "wikipedia": "ok"
+      },
+      "titlePeek": []
+    },
+    "S10": {
+      "seedId": "S10",
+      "category": "conflicting-evidence",
+      "seed": "Francis Bacon",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S10.json",
+      "status": "partial",
+      "findingsCount": 22,
+      "contradictionsSessionN": 1,
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "francis bacon",
+          "findingIds": [
+            "wd-Q154340",
+            "wd-Q37388",
+            "wd-Q5480102",
+            "wd-Q136428482",
+            "wd-Q29583002",
+            "wd-Q341032",
+            "wd-Q28052097",
+            "ol-OL23720A",
+            "ol-OL82840A",
+            "ol-OL15242943A",
+            "ol-OL15865902A",
+            "wp-en-Francis_Bacon"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "sameTitleMultiEntityClusters": {
+        "francis bacon": [
+          "wd-Q154340",
+          "wd-Q37388",
+          "wd-Q5480102",
+          "wd-Q136428482",
+          "wd-Q29583002",
+          "wd-Q341032",
+          "wd-Q28052097",
+          "ol-OL23720A",
+          "ol-OL82840A",
+          "ol-OL15242943A",
+          "ol-OL15865902A",
+          "wp-en-Francis_Bacon"
+        ]
+      },
+      "nearDupClusterN": 1,
+      "nearDupClustersSample": [
+        {
+          "title": "francis bacon",
+          "findingIds": [
+            "wd-Q154340",
+            "wd-Q37388",
+            "wd-Q5480102",
+            "wd-Q136428482",
+            "wd-Q29583002",
+            "wd-Q341032",
+            "wd-Q28052097",
+            "ol-OL23720A",
+            "ol-OL82840A",
+            "ol-OL15242943A",
+            "ol-OL15865902A",
+            "wp-en-Francis_Bacon"
+          ],
+          "reason": "same_title_diff_entity"
+        }
+      ],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "contradiction": 12,
+        "single-source": 22,
+        "near-dup": 12,
+        "weak": 19
+      },
+      "examples": {
+        "contradiction": [
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q154340",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q37388",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q5480102",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q136428482",
+            "title": "Francis Bacon"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q154340",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q37388",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q5480102",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q136428482",
+            "title": "Francis Bacon"
+          }
+        ],
+        "near-dup": [
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q154340",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q37388",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q5480102",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q136428482",
+            "title": "Francis Bacon"
+          }
+        ],
+        "weak": [
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q5480102",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q136428482",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q29583002",
+            "title": "Francis Bacon"
+          },
+          {
+            "seedId": "S10",
+            "findingId": "wd-Q24952667",
+            "title": "Portrait of Francis Bacon"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "hostFamiliesUnion": [
+        "openlibrary",
+        "wikimedia-wd",
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "titlePeek": [
+        {
+          "id": "wd-Q154340",
+          "title": "Francis Bacon",
+          "summary": "Irish-born British figurative painter (1909–1992)"
+        },
+        {
+          "id": "wd-Q37388",
+          "title": "Francis Bacon",
+          "summary": "English philosopher and statesman (1561–1626)"
+        },
+        {
+          "id": "wd-Q5480102",
+          "title": "Francis Bacon",
+          "summary": "English cricketer (1869-1915)"
+        },
+        {
+          "id": "wd-Q136428482",
+          "title": "Francis Bacon",
+          "summary": ""
+        },
+        {
+          "id": "wd-Q29583002",
+          "title": "Francis Bacon",
+          "summary": "American surgeon (1831–1912)"
+        },
+        {
+          "id": "wd-Q24952667",
+          "title": "Portrait of Francis Bacon",
+          "summary": "painting by Lucian Freud"
+        }
+      ]
+    },
+    "S05": {
+      "seedId": "S05",
+      "category": "organization",
+      "seed": "Red Cross",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S05.json",
+      "status": "partial",
+      "findingsCount": 6,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      },
+      "examples": {
+        "weak": [
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross",
+            "title": "Red Cross"
+          },
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross_parcel",
+            "title": "Red Cross parcel"
+          },
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+            "title": "Red Cross Youth (Philippines)"
+          },
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross_of_Constantine",
+            "title": "Red Cross of Constantine"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross",
+            "title": "Red Cross"
+          },
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross_parcel",
+            "title": "Red Cross parcel"
+          },
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+            "title": "Red Cross Youth (Philippines)"
+          },
+          {
+            "seedId": "S05",
+            "findingId": "wp-en-Red_Cross_of_Constantine",
+            "title": "Red Cross of Constantine"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "hostFamiliesUnion": [
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "error",
+        "wikipedia": "partial"
+      },
+      "titlePeek": [
+        {
+          "id": "wp-en-Red_Cross",
+          "title": "Red Cross",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Red_Cross_parcel",
+          "title": "Red Cross parcel",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Red_Cross_Youth_Philippines_",
+          "title": "Red Cross Youth (Philippines)",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Red_Cross_of_Constantine",
+          "title": "Red Cross of Constantine",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Red_crossbill",
+          "title": "Red crossbill",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Red_Cross_EP_",
+          "title": "Red Cross (EP)",
+          "summary": ""
+        }
+      ]
+    },
+    "S08": {
+      "seedId": "S08",
+      "category": "multilingual",
+      "seed": "Tel Aviv University",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S08.json",
+      "status": "failed_soft",
+      "findingsCount": 0,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {},
+      "examples": {},
+      "sessionNotes": [
+        "empty_findings",
+        "blind_zero_findings"
+      ],
+      "domainsUnion": [],
+      "hostFamiliesUnion": [],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "error",
+        "wikipedia": "error"
+      },
+      "titlePeek": []
+    },
+    "S11": {
+      "seedId": "S11",
+      "category": "wrong-person-trap",
+      "seed": "Michael Jordan baseball",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S11.json",
+      "status": "partial",
+      "findingsCount": 2,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [
+        {
+          "findingId": "wp-en-Michael_Jordan_basketball_",
+          "reason": "seed_baseball_but_finding_basketball"
+        }
+      ],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {
+        "weak": 2,
+        "single-source": 2,
+        "false-identity-risk": 1
+      },
+      "examples": {
+        "weak": [
+          {
+            "seedId": "S11",
+            "findingId": "wp-en-Michael_Jordan_baseball_",
+            "title": "Michael Jordan (baseball)"
+          },
+          {
+            "seedId": "S11",
+            "findingId": "wp-en-Michael_Jordan_basketball_",
+            "title": "Michael Jordan (basketball)"
+          }
+        ],
+        "single-source": [
+          {
+            "seedId": "S11",
+            "findingId": "wp-en-Michael_Jordan_baseball_",
+            "title": "Michael Jordan (baseball)"
+          },
+          {
+            "seedId": "S11",
+            "findingId": "wp-en-Michael_Jordan_basketball_",
+            "title": "Michael Jordan (basketball)"
+          }
+        ],
+        "false-identity-risk": [
+          {
+            "seedId": "S11",
+            "findingId": "wp-en-Michael_Jordan_basketball_",
+            "title": "Michael Jordan (basketball)"
+          }
+        ]
+      },
+      "sessionNotes": [],
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "hostFamiliesUnion": [
+        "wikimedia-wp"
+      ],
+      "providersStatus": {
+        "wikidata": "ok",
+        "openlibrary": "error",
+        "wikipedia": "ok"
+      },
+      "titlePeek": [
+        {
+          "id": "wp-en-Michael_Jordan_baseball_",
+          "title": "Michael Jordan (baseball)",
+          "summary": ""
+        },
+        {
+          "id": "wp-en-Michael_Jordan_basketball_",
+          "title": "Michael Jordan (basketball)",
+          "summary": ""
+        }
+      ]
+    },
+    "S12": {
+      "seedId": "S12",
+      "category": "duplicate-source-trap",
+      "seed": "Wikipedia Wikimedia Foundation",
+      "sourcePack": "acc-דיוק",
+      "sourcePath": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE2-OBSERVATION/raw/acc-דיוק/create-S12.json",
+      "status": "failed_soft",
+      "findingsCount": 0,
+      "contradictionsSessionN": 0,
+      "contradictionObjects": [],
+      "sameTitleMultiEntityClusters": {},
+      "nearDupClusterN": 0,
+      "nearDupClustersSample": [],
+      "exactDupPairs": [],
+      "falseIdentityRisk": [],
+      "accLeakCreate": 0,
+      "accLeakGet": 0,
+      "classCounts": {},
+      "examples": {},
+      "sessionNotes": [
+        "empty_findings",
+        "blind_zero_findings"
+      ],
+      "domainsUnion": [],
+      "hostFamiliesUnion": [],
+      "providersStatus": {
+        "wikidata": "ok",
+        "openlibrary": "error",
+        "wikipedia": "ok"
+      },
+      "titlePeek": []
+    }
+  },
+  "observationStatus": "PASS",
+  "obsFailNotes": [],
+  "promote": "HOLD"
+}

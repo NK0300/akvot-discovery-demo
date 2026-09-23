@@ -1,0 +1,1802 @@
+{
+  "stamp": "2026-09-20T10:48:30+03:00",
+  "stampLabel": "2026-09-20 10:48 IDT",
+  "agent": "דיוק",
+  "promote": "HOLD",
+  "code_changes": false,
+  "preview": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app"
+  },
+  "acc_redef_note": "multi uses Acc Evidence families; wd+wp would count as multi (FC-FAMILY-MIRROR-ONLY) but observed 0 on S01/S04/S05 A2-safe finals.",
+  "failure_class_catalog": [
+    {
+      "id": "FC-NO-TYPED-REF",
+      "definition": "Finding lacks viaf/qid/ol typed refs (wikipedia wp: or empty). Cannot enter typed coalesce."
+    },
+    {
+      "id": "FC-REF-PRESENT-NO-CROSS-FAMILY",
+      "definition": "Typed ref present but Finding remains single-family (viaf-only / qid-only / ol-only siblings)."
+    },
+    {
+      "id": "FC-VIAF-ONLY-SIBLING",
+      "definition": "Subclass: viaf family + viaf: ref only; no WD/OL attach."
+    },
+    {
+      "id": "FC-QID-ONLY-NO-ENRICH",
+      "definition": "Subclass: wikidata family + qid only; enrichment did not attach VIAF/OL evidence."
+    },
+    {
+      "id": "FC-OL-ONLY-NO-ENRICH",
+      "definition": "Subclass: openlibrary family + ol only; no cross-family attach."
+    },
+    {
+      "id": "FC-HOMONYM-BLOCK",
+      "definition": "Correct non-merge of distinct entities sharing lexical stem (TRUTH>MULTI success)."
+    },
+    {
+      "id": "FC-SOFT-REF-MISS",
+      "definition": "Soft typed ref present (e.g. viaf on a WD Finding) but counterpart family Evidence not attached → still single-family."
+    },
+    {
+      "id": "FC-TYPED-CROSS-BUT-SINGLE-FAMILY",
+      "definition": "≥2 typed key kinds on Finding yet evidence_families still length 1."
+    },
+    {
+      "id": "FC-FAMILY-MIRROR-ONLY",
+      "definition": "Would count wd+wp as multi under Acc redef without authority (viaf/ol). Observed count=0 on these seeds — documented as non-issue here."
+    },
+    {
+      "id": "FC-COVERAGE-DILUTION",
+      "definition": "Large n of single-family Findings dilutes multi_rate even when a canonical cluster coalesces."
+    },
+    {
+      "id": "FC-ORG-DISAMBIG-SIBLING",
+      "definition": "National/affiliate org variants correctly kept separate (Red Cross national societies)."
+    },
+    {
+      "id": "FC-BRAND-CANONICAL-UNMERGED",
+      "definition": "Brand-named Findings that look like the target brand but lack cross-family typed intersection."
+    },
+    {
+      "id": "OK-MULTI",
+      "definition": "Finding already multi (≥2 Acc Evidence families) via typed soft-ref — not a failure."
+    }
+  ],
+  "family_mirror_observed": {
+    "S01": 0,
+    "S04": 0,
+    "S05": 0
+  },
+  "per_seed_mapping": {
+    "S01": {
+      "seed": "Tim Berners-Lee",
+      "archetype": "person-canonical",
+      "findings_n": 18,
+      "multi_n": 10,
+      "multi_rate": 0.5556,
+      "multi_gap_n": 8,
+      "class_counts": {
+        "OK-MULTI": 10,
+        "FC-COVERAGE-DILUTION": 8,
+        "FC-QID-ONLY-NO-ENRICH": 7,
+        "FC-REF-PRESENT-NO-CROSS-FAMILY": 7,
+        "FC-NO-TYPED-REF": 1
+      },
+      "class_examples": {
+        "OK-MULTI": [
+          {
+            "findingId": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:85312226"
+              ],
+              "qid": [
+                "qid:Q80",
+                "wd-Q80"
+              ],
+              "ol": [
+                "ol:OL25245A",
+                "ol-OL25245A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:85312226"
+              ],
+              "qid": [
+                "qid:Q80",
+                "wd-Q80"
+              ],
+              "ol": [
+                "ol:OL25245A",
+                "ol-OL25245A"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:85312226"
+              ],
+              "qid": [
+                "qid:Q80",
+                "wd-Q80"
+              ],
+              "ol": [
+                "ol:OL25245A",
+                "ol-OL25245A"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, 1955-",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:85312226"
+              ],
+              "qid": [
+                "qid:Q80",
+                "wd-Q80"
+              ],
+              "ol": [
+                "ol:OL25245A",
+                "ol-OL25245A"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-85312226",
+            "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:85312226"
+              ],
+              "qid": [
+                "qid:Q80",
+                "wd-Q80"
+              ],
+              "ol": [
+                "ol:OL25245A",
+                "ol-OL25245A"
+              ]
+            }
+          }
+        ],
+        "FC-COVERAGE-DILUTION": [
+          {
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q120373140",
+                "wd-Q120373140"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q120373262",
+                "wd-Q120373262"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22991023",
+                "wd-Q22991023"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22946133",
+                "wd-Q22946133"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22980417",
+            "title": "Tim Berners-Lee: The next web",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22980417",
+                "wd-Q22980417"
+              ]
+            }
+          }
+        ],
+        "FC-QID-ONLY-NO-ENRICH": [
+          {
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q120373140",
+                "wd-Q120373140"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q120373262",
+                "wd-Q120373262"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22991023",
+                "wd-Q22991023"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22946133",
+                "wd-Q22946133"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22980417",
+            "title": "Tim Berners-Lee: The next web",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22980417",
+                "wd-Q22980417"
+              ]
+            }
+          }
+        ],
+        "FC-REF-PRESENT-NO-CROSS-FAMILY": [
+          {
+            "findingId": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q120373140",
+                "wd-Q120373140"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q120373262",
+                "wd-Q120373262"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22991023",
+                "wd-Q22991023"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22946133",
+                "wd-Q22946133"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q22980417",
+            "title": "Tim Berners-Lee: The next web",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q22980417",
+                "wd-Q22980417"
+              ]
+            }
+          }
+        ],
+        "FC-NO-TYPED-REF": [
+          {
+            "findingId": "wp-en-Tim_Berners_Lee",
+            "title": "Tim Berners-Lee",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Tim Berners-Lee"
+              ]
+            }
+          }
+        ]
+      },
+      "gap_primary_drivers": [
+        {
+          "class": "FC-QID-ONLY-NO-ENRICH",
+          "n": 7,
+          "note": "Distinct QIDs for talks/works about TBL — correct non-merge"
+        },
+        {
+          "class": "FC-NO-TYPED-REF",
+          "n": 1,
+          "note": "wp-en-Tim_Berners_Lee wikipedia-only"
+        },
+        {
+          "class": "FC-COVERAGE-DILUTION",
+          "n": 8,
+          "note": "8 singles vs 10 multi still yields high rate 0.5556"
+        }
+      ]
+    },
+    "S04": {
+      "seed": "Stripe",
+      "archetype": "brand/homonym-heavy",
+      "findings_n": 30,
+      "multi_n": 0,
+      "multi_rate": 0.0,
+      "multi_gap_n": 30,
+      "class_counts": {
+        "FC-COVERAGE-DILUTION": 30,
+        "FC-REF-PRESENT-NO-CROSS-FAMILY": 24,
+        "FC-BRAND-CANONICAL-UNMERGED": 14,
+        "FC-HOMONYM-BLOCK": 9,
+        "FC-OL-ONLY-NO-ENRICH": 8,
+        "FC-QID-ONLY-NO-ENRICH": 8,
+        "FC-VIAF-ONLY-SIBLING": 8,
+        "FC-NO-TYPED-REF": 6
+      },
+      "class_examples": {
+        "FC-BRAND-CANONICAL-UNMERGED": [
+          {
+            "findingId": "wd-Q7624104",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q7624104",
+                "wd-Q7624104"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q3421342",
+            "title": "stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q3421342",
+                "wd-Q3421342"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q127900502",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q127900502",
+                "wd-Q127900502"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q117454382",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q117454382",
+                "wd-Q117454382"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL8376862A",
+            "title": "Five Stripe Books",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL8376862A",
+                "ol-OL8376862A"
+              ]
+            }
+          }
+        ],
+        "FC-COVERAGE-DILUTION": [
+          {
+            "findingId": "wd-Q7624104",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q7624104",
+                "wd-Q7624104"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q3421342",
+            "title": "stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q3421342",
+                "wd-Q3421342"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q127900502",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q127900502",
+                "wd-Q127900502"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q117454382",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q117454382",
+                "wd-Q117454382"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q297115",
+            "title": "Meloidae",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q297115",
+                "wd-Q297115"
+              ]
+            }
+          }
+        ],
+        "FC-QID-ONLY-NO-ENRICH": [
+          {
+            "findingId": "wd-Q7624104",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q7624104",
+                "wd-Q7624104"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q3421342",
+            "title": "stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q3421342",
+                "wd-Q3421342"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q127900502",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q127900502",
+                "wd-Q127900502"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q117454382",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q117454382",
+                "wd-Q117454382"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q297115",
+            "title": "Meloidae",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q297115",
+                "wd-Q297115"
+              ]
+            }
+          }
+        ],
+        "FC-REF-PRESENT-NO-CROSS-FAMILY": [
+          {
+            "findingId": "wd-Q7624104",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q7624104",
+                "wd-Q7624104"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q3421342",
+            "title": "stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q3421342",
+                "wd-Q3421342"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q127900502",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q127900502",
+                "wd-Q127900502"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q117454382",
+            "title": "Stripe",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q117454382",
+                "wd-Q117454382"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q297115",
+            "title": "Meloidae",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q297115",
+                "wd-Q297115"
+              ]
+            }
+          }
+        ],
+        "FC-HOMONYM-BLOCK": [
+          {
+            "findingId": "wd-Q297115",
+            "title": "Meloidae",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q297115",
+                "wd-Q297115"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q469754",
+            "title": "Perca flavescens",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q469754",
+                "wd-Q469754"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q842647",
+            "title": "striped bass",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q842647",
+                "wd-Q842647"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q368495",
+            "title": "striped skunk",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q368495",
+                "wd-Q368495"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-126600779",
+            "title": "Stripes",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:126600779"
+              ]
+            }
+          }
+        ],
+        "FC-VIAF-ONLY-SIBLING": [
+          {
+            "findingId": "viaf-30463651",
+            "title": "Stripe, John, 1643-1737",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:30463651"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-126600779",
+            "title": "Stripes",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:126600779"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-138753783",
+            "title": "Striped house museum of art Tokyo",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:138753783"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-57307946",
+            "title": "Stripecke, Renata",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:57307946"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-156206104",
+            "title": "Stripe, Adelle, 1976-",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:156206104"
+              ]
+            }
+          }
+        ],
+        "FC-OL-ONLY-NO-ENRICH": [
+          {
+            "findingId": "ol-OL8376862A",
+            "title": "Five Stripe Books",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL8376862A",
+                "ol-OL8376862A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL8613090A",
+            "title": "Adelle Stripe",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL8613090A",
+                "ol-OL8613090A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL13079935A",
+            "title": "Stripe",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL13079935A",
+                "ol-OL13079935A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL10372320A",
+            "title": "STRIPE",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL10372320A",
+                "ol-OL10372320A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL3492368A",
+            "title": "Stephen Stripe",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL3492368A",
+                "ol-OL3492368A"
+              ]
+            }
+          }
+        ],
+        "FC-NO-TYPED-REF": [
+          {
+            "findingId": "wp-en-Stripe",
+            "title": "Stripe",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Stripe"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Striped_hyena",
+            "title": "Striped hyena",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Striped hyena"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Stripe_Inc_",
+            "title": "Stripe, Inc.",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Stripe, Inc."
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Striped_polecat",
+            "title": "Striped polecat",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Striped polecat"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Striped_skunk",
+            "title": "Striped skunk",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Striped skunk"
+              ]
+            }
+          }
+        ]
+      },
+      "gap_primary_drivers": [
+        {
+          "class": "FC-REF-PRESENT-NO-CROSS-FAMILY",
+          "n": 24,
+          "note": "All typed Findings are single-family islands"
+        },
+        {
+          "class": "FC-HOMONYM-BLOCK",
+          "n": 5,
+          "note": "Zoology/film/people — correct Acc refusal"
+        },
+        {
+          "class": "FC-COVERAGE-DILUTION",
+          "n": 30,
+          "note": "No multi cluster; rate forced to 0"
+        },
+        {
+          "class": "FC-VIAF-ONLY-SIBLING",
+          "n": 8,
+          "note": "8 unique VIAFs never intersect WD/OL"
+        },
+        {
+          "class": "FC-BRAND-CANONICAL-UNMERGED",
+          "n": "~8",
+          "note": "Stripe-named WD/WP/OL lack shared authority keys"
+        }
+      ]
+    },
+    "S05": {
+      "seed": "Red Cross",
+      "archetype": "org-disambiguation",
+      "findings_n": 30,
+      "multi_n": 3,
+      "multi_rate": 0.1,
+      "multi_gap_n": 27,
+      "class_counts": {
+        "FC-COVERAGE-DILUTION": 27,
+        "FC-REF-PRESENT-NO-CROSS-FAMILY": 21,
+        "FC-ORG-DISAMBIG-SIBLING": 13,
+        "FC-OL-ONLY-NO-ENRICH": 7,
+        "FC-VIAF-ONLY-SIBLING": 7,
+        "FC-NO-TYPED-REF": 6,
+        "FC-HOMONYM-BLOCK": 5,
+        "FC-QID-ONLY-NO-ENRICH": 4,
+        "FC-SOFT-REF-MISS": 3,
+        "FC-TYPED-CROSS-BUT-SINGLE-FAMILY": 3,
+        "OK-MULTI": 3
+      },
+      "class_examples": {
+        "OK-MULTI": [
+          {
+            "findingId": "wd-Q470110",
+            "title": "American Red Cross",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:122023057"
+              ],
+              "qid": [
+                "qid:Q470110",
+                "wd-Q470110"
+              ],
+              "ol": [
+                "ol:OL17804A",
+                "ol-OL17804A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL17804A",
+            "title": "American National Red Cross",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:122023057"
+              ],
+              "qid": [
+                "qid:Q470110",
+                "wd-Q470110"
+              ],
+              "ol": [
+                "ol:OL17804A",
+                "ol-OL17804A"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-122023057",
+            "title": "Red Cross USA",
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:122023057"
+              ],
+              "qid": [
+                "qid:Q470110",
+                "wd-Q470110"
+              ],
+              "ol": [
+                "ol:OL17804A",
+                "ol-OL17804A"
+              ]
+            }
+          }
+        ],
+        "FC-COVERAGE-DILUTION": [
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:145680594"
+              ],
+              "qid": [
+                "qid:Q7178",
+                "wd-Q7178"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:27862930"
+              ],
+              "qid": [
+                "qid:Q48438",
+                "wd-Q48438"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:191149196678574792964"
+              ],
+              "qid": [
+                "qid:Q7305591",
+                "wd-Q7305591"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q104700248",
+            "title": "Red Cross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q104700248",
+                "wd-Q104700248"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q1968122",
+                "wd-Q1968122"
+              ]
+            }
+          }
+        ],
+        "FC-ORG-DISAMBIG-SIBLING": [
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:145680594"
+              ],
+              "qid": [
+                "qid:Q7178",
+                "wd-Q7178"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q1968122",
+                "wd-Q1968122"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-160178001",
+            "title": "Red Cross. International Committee, Geneva",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:160178001"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-167237176",
+            "title": "Red Cross and Red Crescent",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:167237176"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-151269599",
+            "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:151269599"
+              ]
+            }
+          }
+        ],
+        "FC-REF-PRESENT-NO-CROSS-FAMILY": [
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:145680594"
+              ],
+              "qid": [
+                "qid:Q7178",
+                "wd-Q7178"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:27862930"
+              ],
+              "qid": [
+                "qid:Q48438",
+                "wd-Q48438"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:191149196678574792964"
+              ],
+              "qid": [
+                "qid:Q7305591",
+                "wd-Q7305591"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q104700248",
+            "title": "Red Cross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q104700248",
+                "wd-Q104700248"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q1968122",
+                "wd-Q1968122"
+              ]
+            }
+          }
+        ],
+        "FC-SOFT-REF-MISS": [
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:145680594"
+              ],
+              "qid": [
+                "qid:Q7178",
+                "wd-Q7178"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:27862930"
+              ],
+              "qid": [
+                "qid:Q48438",
+                "wd-Q48438"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:191149196678574792964"
+              ],
+              "qid": [
+                "qid:Q7305591",
+                "wd-Q7305591"
+              ]
+            }
+          }
+        ],
+        "FC-TYPED-CROSS-BUT-SINGLE-FAMILY": [
+          {
+            "findingId": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:145680594"
+              ],
+              "qid": [
+                "qid:Q7178",
+                "wd-Q7178"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:27862930"
+              ],
+              "qid": [
+                "qid:Q48438",
+                "wd-Q48438"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:191149196678574792964"
+              ],
+              "qid": [
+                "qid:Q7305591",
+                "wd-Q7305591"
+              ]
+            }
+          }
+        ],
+        "FC-HOMONYM-BLOCK": [
+          {
+            "findingId": "wd-Q48438",
+            "title": "Saint George",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:27862930"
+              ],
+              "qid": [
+                "qid:Q48438",
+                "wd-Q48438"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q7305591",
+            "title": "Redd Kross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:191149196678574792964"
+              ],
+              "qid": [
+                "qid:Q7305591",
+                "wd-Q7305591"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_Cross_of_Constantine",
+            "title": "Red Cross of Constantine",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red Cross of Constantine"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_crossbill",
+            "title": "Red crossbill",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red crossbill"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_Cross_EP_",
+            "title": "Red Cross (EP)",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red Cross (EP)"
+              ]
+            }
+          }
+        ],
+        "FC-QID-ONLY-NO-ENRICH": [
+          {
+            "findingId": "wd-Q104700248",
+            "title": "Red Cross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q104700248",
+                "wd-Q104700248"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q1968122",
+                "wd-Q1968122"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q116059498",
+            "title": "Red Cross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q116059498",
+                "wd-Q116059498"
+              ]
+            }
+          },
+          {
+            "findingId": "wd-Q50320550",
+            "title": "Red Cross",
+            "families": [
+              "wikidata"
+            ],
+            "typed": {
+              "qid": [
+                "qid:Q50320550",
+                "wd-Q50320550"
+              ]
+            }
+          }
+        ],
+        "FC-VIAF-ONLY-SIBLING": [
+          {
+            "findingId": "viaf-160178001",
+            "title": "Red Cross. International Committee, Geneva",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:160178001"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-167237176",
+            "title": "Red Cross and Red Crescent",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:167237176"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-151269599",
+            "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:151269599"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-148420048",
+            "title": "Red Cross (Great Britain)",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:148420048"
+              ]
+            }
+          },
+          {
+            "findingId": "viaf-997897",
+            "title": "Red Cross international lawyer (1914-2002) Jean Pictet",
+            "families": [
+              "viaf"
+            ],
+            "typed": {
+              "viaf": [
+                "viaf:997897"
+              ]
+            }
+          }
+        ],
+        "FC-OL-ONLY-NO-ENRICH": [
+          {
+            "findingId": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL124327A",
+                "ol-OL124327A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL2917704A",
+            "title": "Red Cross",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL2917704A",
+                "ol-OL2917704A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL10303910A",
+            "title": "American Red Cross",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL10303910A",
+                "ol-OL10303910A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL4511273A",
+            "title": "Red Cross.",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL4511273A",
+                "ol-OL4511273A"
+              ]
+            }
+          },
+          {
+            "findingId": "ol-OL6290095A",
+            "title": "Red Cross. Portuguese Red Cross.",
+            "families": [
+              "openlibrary"
+            ],
+            "typed": {
+              "ol": [
+                "ol:OL6290095A",
+                "ol-OL6290095A"
+              ]
+            }
+          }
+        ],
+        "FC-NO-TYPED-REF": [
+          {
+            "findingId": "wp-en-Red_Cross",
+            "title": "Red Cross",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red Cross"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_Cross_parcel",
+            "title": "Red Cross parcel",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red Cross parcel"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+            "title": "Red Cross Youth (Philippines)",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red Cross Youth (Philippines)"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_Cross_of_Constantine",
+            "title": "Red Cross of Constantine",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red Cross of Constantine"
+              ]
+            }
+          },
+          {
+            "findingId": "wp-en-Red_crossbill",
+            "title": "Red crossbill",
+            "families": [
+              "wikipedia"
+            ],
+            "typed": {
+              "other": [
+                "wp:en:Red crossbill"
+              ]
+            }
+          }
+        ]
+      },
+      "gap_primary_drivers": [
+        {
+          "class": "FC-COVERAGE-DILUTION",
+          "n": 27,
+          "note": "3 multi drowned by 27 singles → 0.1"
+        },
+        {
+          "class": "FC-REF-PRESENT-NO-CROSS-FAMILY",
+          "n": 18,
+          "note": "viaf/ol/qid islands for national societies"
+        },
+        {
+          "class": "FC-SOFT-REF-MISS",
+          "n": 3,
+          "note": "WD has viaf soft-ref but VIAF Evidence not attached"
+        },
+        {
+          "class": "FC-ORG-DISAMBIG-SIBLING",
+          "n": 7,
+          "note": "Correct national society separation"
+        },
+        {
+          "class": "FC-HOMONYM-BLOCK",
+          "n": "~4",
+          "note": "band/bird/EP/saint — correct"
+        }
+      ]
+    }
+  },
+  "top_failure_classes": {
+    "S04": [
+      {
+        "id": "FC-REF-PRESENT-NO-CROSS-FAMILY",
+        "why": "24/30 Findings have a typed ref but never gain a second Acc family — islands"
+      },
+      {
+        "id": "FC-COVERAGE-DILUTION",
+        "why": "30 singles → multi_rate=0 with no canonical cluster"
+      },
+      {
+        "id": "FC-HOMONYM-BLOCK",
+        "why": "Lexical Stripe* zoology/film/people correctly blocked (TRUTH>MULTI)"
+      },
+      {
+        "id": "FC-VIAF-ONLY-SIBLING",
+        "why": "8 distinct VIAF people/orgs; no shared key with WD/OL"
+      }
+    ],
+    "S05": [
+      {
+        "id": "FC-COVERAGE-DILUTION",
+        "why": "27 singles dilute American Red Cross 3-Finding multi cluster to 0.1"
+      },
+      {
+        "id": "FC-REF-PRESENT-NO-CROSS-FAMILY",
+        "why": "National society VIAF/OL/WD remain single-family"
+      },
+      {
+        "id": "FC-SOFT-REF-MISS",
+        "why": "3 WD Findings carry viaf: but counterpart family Evidence not attached"
+      },
+      {
+        "id": "FC-ORG-DISAMBIG-SIBLING",
+        "why": "Correct non-merge across national Red Cross orgs"
+      }
+    ]
+  },
+  "why_S01_succeeds": {
+    "summary": "Person-canonical authority triangle Q80↔viaf:85312226↔ol:OL25245A fires viaf+qid+ol coalesce keys on 10 Findings.",
+    "not_a_false_merge": "Remaining 8 Findings are distinct works/QIDs or WP-only — left unknown/same-source, not force-merged."
+  },
+  "acc_leak_still": 0,
+  "policy": "TRUTH > MULTI · Prefer UNKNOWN over false same-entity · NO promote · NO EXP-B · await Arch/Server code GO"
+}

@@ -1,0 +1,82 @@
+{
+  "when": "2026-09-15T18:18:05.552918+03:00",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "baseline_note": "prod dpl_Crsqe… from RC dpl_HVGb…",
+  "PASS": true,
+  "cases": [
+    {
+      "id": "Assaf",
+      "pass": true,
+      "expected": "dossier Q47507930",
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "photo": true,
+        "mode": "wiki",
+        "requestId": "a2172be3-0ecb-4fd3-8be6-70f25c77f885",
+        "http": 200,
+        "ms": 840,
+        "headerRid": "a2172be3-0ecb-4fd3-8be6-70f25c77f885"
+      }
+    },
+    {
+      "id": "T-C6 John Rappaport",
+      "pass": true,
+      "expected": "need_context|cand|thin · qid=null · 0 faces",
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "fa6916bf-1411-4a20-9f25-f14c22302dea",
+        "http": 200,
+        "ms": 2696,
+        "headerRid": "fa6916bf-1411-4a20-9f25-f14c22302dea"
+      }
+    },
+    {
+      "id": "Smith POST nested",
+      "pass": true,
+      "expected": "not dossier · not Q1701775 · 0 faces",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "a3f94dd7-fbdc-4edf-8cec-4c78591e18bb",
+        "http": 200,
+        "ms": 7601,
+        "headerRid": "a3f94dd7-fbdc-4edf-8cec-4c78591e18bb",
+        "bodyRid": "a3f94dd7-fbdc-4edf-8cec-4c78591e18bb"
+      }
+    },
+    {
+      "id": "כהן",
+      "pass": true,
+      "expected": "need_context|thin · 0 faces · no QID",
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "google",
+        "requestId": "f1caa9cd-f660-4576-bac3-5580dd257a38",
+        "http": 200,
+        "ms": 20439,
+        "headerRid": "f1caa9cd-f660-4576-bac3-5580dd257a38"
+      }
+    }
+  ],
+  "health": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_CrsqeSQX1GAhi1VFExVsGwdsSYHt",
+      "baselineHint": "dpl_DNfPZ9"
+    }
+  }
+}

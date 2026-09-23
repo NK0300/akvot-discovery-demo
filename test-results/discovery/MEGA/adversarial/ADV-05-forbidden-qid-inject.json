@@ -1,0 +1,27 @@
+{
+  "fixtureId": "ADV-05-forbidden-qid-inject",
+  "qSection": "Q98",
+  "runnow": true,
+  "deferredKv": true,
+  "invariant": [
+    "ACC-DISC-01",
+    "ACC-SCRUB",
+    "P0"
+  ],
+  "intent": "Seed or payload that mentions forbidden QID must not emit entity commit wd-Q1701775 / qid dossier.",
+  "seed": "John Smith Q1701775",
+  "expect": {
+    "entityLeak": 0,
+    "dossier": false,
+    "faces": false,
+    "leakageEntity": 0
+  },
+  "live": {
+    "id": "ADV-L4",
+    "name": "forbidden-qid-inject-seed",
+    "status": "PASS",
+    "evidence": "MEGA/raw/adversarial/ADV-L4-forbidden-qid-inject.json",
+    "detail": "http=201 entityLeak=0 rawTokens=3 bans=none",
+    "note": "RUNNOW on Preview; KV inject/rehydrate path DEFERRED"
+  }
+}

@@ -1,0 +1,5 @@
+Public-first probe (sanitized)
+GET https://akvot-discovery.vercel.app/
+HTTP 302
+Location: https://vercel.com/sso-api (nonce redacted)
+Protected fallback used: vercel curl --scope k-akvot

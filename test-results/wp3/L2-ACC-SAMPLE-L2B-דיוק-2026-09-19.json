@@ -1,0 +1,133 @@
+{
+  "when": "2026-09-19T22:47:15.843903+03:00",
+  "whenLabel": "2026-09-19 22:47:15 IDT",
+  "whenUtc": "2026-09-19T19:47:15.844073+00:00",
+  "zone": "Asia/Jerusalem",
+  "role": "דיוק",
+  "task": "WP3 L2 Acc SAMPLE after L2-B Soak PASS · L2-C Failure starting",
+  "milestone": "L2-B→L2-C boundary",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "expectedBuild": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "buildMatch": true,
+  "access": "plain curl · Origin=alias · x-akvot-battery:1",
+  "deploy": false,
+  "expectedRewrite": false,
+  "PASS": false,
+  "prettyWrong": 1,
+  "pwHard": 1,
+  "accLock": "STOP",
+  "verdict": "FAIL",
+  "cases": [
+    {
+      "id": "Assaf",
+      "query": "Assaf Rappaport",
+      "expected": "dossier Q47507930",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ms": 2559,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": null,
+        "images": 7,
+        "mode": "wiki+google",
+        "label": "Assaf Rappaport",
+        "thin": false,
+        "needContext": false,
+        "candidates_n": 0,
+        "requestId": "9c4f48aa-38c8-4482-884e-af615d2ccc23",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 3,
+          "wikiTimeout": 0,
+          "wikiRetries": 3
+        }
+      }
+    },
+    {
+      "id": "POST Smith+IBM/NY/US",
+      "query": "John Smith",
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      },
+      "expected": "not dossier · not Q1701775 · faces=0",
+      "pass": false,
+      "prettyWrong": true,
+      "fails": [
+        "Q1701775 present (sources/candidates)"
+      ],
+      "actual": {
+        "http": 200,
+        "ms": 7062,
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "thin": false,
+        "needContext": false,
+        "candidates_n": 7,
+        "requestId": "f0969bc1-288e-4418-bf87-05624bdfb377",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 7,
+          "wikiTimeout": 1,
+          "wikiRetries": 8
+        },
+        "has_Q1701775": true,
+        "faces_n": 0
+      }
+    },
+    {
+      "id": "כהן",
+      "query": "כהן",
+      "expected": "not dossier · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ms": 2836,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "כהן",
+        "thin": false,
+        "needContext": true,
+        "candidates_n": 0,
+        "requestId": "1cdbbebf-3a77-4f6e-8388-db0f531ce63f",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 2,
+          "wikiTimeout": 0,
+          "wikiRetries": 2
+        },
+        "faces_n": 0
+      }
+    }
+  ],
+  "continuousAccProtocol": "Assaf + Smith + כהן · one sample each · pw=0 hard · STOP if pw>0",
+  "rawDir": "test-results/wp3/l2-acc-sample-l2b-raw-2026-09-19",
+  "paths": {
+    "md": "test-results/wp3/L2-ACC-SAMPLE-L2B-דיוק-2026-09-19.md",
+    "json": "test-results/wp3/L2-ACC-SAMPLE-L2B-דיוק-2026-09-19.json"
+  },
+  "smithContaminationNote": "Q1701775 appears as top candidate + source for POST Smith+IBM/NY/US (score 0.9, match: New York). Acc lock NEVER Q1701775 → pw + STOP."
+}

@@ -1,0 +1,52 @@
+{
+  "frozenAt": "2026-09-19T19:12:20+00:00",
+  "zone": "Asia/Jerusalem",
+  "mode": "WP3-L2 MEASURE ONLY",
+  "alias": "https://akvot-simple-demo.vercel.app",
+  "dpl": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "rollbackDpl": "dpl_6TmottkUQ3UbnHYfGNwYjeQbFJd8",
+  "health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "config": {
+    "vercelJsonSha256": "8e3577a192f412b92713b09eaacacd22587aea70317b537b081b1bb169f4e8f6",
+    "regions": [
+      "fra1"
+    ],
+    "lookupMaxDurationSec": 60
+  },
+  "codeSha256": {
+    "api/lookup.js": "8844817a67d125866aa2b83aad475db251bc201534a9b3849f9f946b2b507556",
+    "api/lib/orchestrator.js": "5d9b306911395901abc8a54179f638933022f198bda994662ffcae834809f6a8",
+    "api/lib/obsTrust.js": "0f981889ab35ace25efd8ed884cb129e6a548e2e71c9023ed98f120b4432d773",
+    "scripts/perf-harness.mjs": "4be9eeda488b53a844f4a598ab9c90575e76c048f82fa2eee7ae7c5e7faa8e8d",
+    "scripts/wp3-l2-harness.mjs": "d4d55d1b8eb3f05efca8c24f54ff48b62ff532e34b323cefb7031c832d465c63"
+  },
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "also": "scripts/perf-harness.mjs",
+    "version": "wp3-l2-1.1.0",
+    "extensions": [
+      "load-steps",
+      "soak-timeline",
+      "failure-probes",
+      "wikiMeta",
+      "cacheHitMiss",
+      "CLIENT_STRESS"
+    ],
+    "schema": "test-results/wp3/L2-METRICS-SCHEMA-שרת-2026-09-19.json"
+  },
+  "locks": {
+    "noCore": true,
+    "noAccChange": true,
+    "noSmithCohenChange": true,
+    "noCacheSemantics": true,
+    "noUx": true,
+    "noDpl": true
+  },
+  "harnessUpdatedAt": "2026-09-19T22:20:00+03:00",
+  "note": "Fingerprint baseline (alias/dpl/code product) FROZEN; harness.version/sha updated for L2 measure tooling only — no product/dpl change."
+}

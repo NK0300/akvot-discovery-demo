@@ -1,0 +1,14 @@
+{
+  "status": "FAIL_ACC_GATE",
+  "wp3": "NOT_CLOSED",
+  "baseline": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "streams": {
+    "L2A": "PASS",
+    "L2B": "PASS",
+    "L2C": "INCOMPLETE",
+    "L2D": "HOLD"
+  },
+  "finding": "F-L2-ACC-001",
+  "pack_md": "test-results/wp3/P3-WP3-PARTIAL-EVIDENCE-PACK-בודק-2026-09-19.md",
+  "wp4": "BLOCKED"
+}

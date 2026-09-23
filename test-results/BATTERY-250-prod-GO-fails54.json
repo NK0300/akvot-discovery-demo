@@ -1,0 +1,405 @@
+{
+  "source": "BATTERY-250-prod-GO.json",
+  "at": "2026-09-08T07:45:19.575Z",
+  "n": 54,
+  "productN": 8,
+  "infraN": 46,
+  "cases": [
+    {
+      "q": "Mark Zuckerberg",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "יואב גלנט",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "הרצל בוקר",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "יצחק רבין",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Donald Trump",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "עופר שלח",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "אורלי לוי",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "ambiguous"
+    },
+    {
+      "q": "Boris Johnson",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "מירי רגב",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "איציק שמולי",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "תמר זנדברג",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "עמיר פרץ",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "ambiguous"
+    },
+    {
+      "q": "Jacinda Ardern",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "שמעון שבס",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Greta Thunberg",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "רם עמנואל",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "Volodymyr Zelenskyy",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "משה דיין",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "רם בן ברק",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "גילעד ארדן",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Malala Yousafzai",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "ניצן הורוביץ",
+      "bucket": "famous",
+      "scenario": "A",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "Test Person 52 City6",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 27 City11",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Emily Watson Melbourne nurse",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "אדם בדיקה 36 עיר15",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 60 City14",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "אדם בדיקה 22 עיר1",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Yuki Tanaka Tokyo designer",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "אדם בדיקה 25 עיר4",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 34 City3",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "נועה אברהם ירושלים מורה",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 55 City9",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Omar Khalil Dubai",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 56 City10",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "אדם בדיקה 60 עיר19",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Daniel Cohen IBM Haifa",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 22 City6",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 54 City8",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Test Person 36 City5",
+      "bucket": "obscure",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Nullius Nomen Void",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Fictional McFakeFace",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Johnnnn Smiithh Fake",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Fake Israeli Name Qwfp",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 212",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 213",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 217",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 218",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 222",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 231",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 232",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 236",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 238",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Pad Case 241",
+      "bucket": "nonexist",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    }
+  ],
+  "productFamous": [
+    {
+      "q": "יואב גלנט",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "הרצל בוקר",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "עופר שלח",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "אורלי לוי",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "ambiguous"
+    },
+    {
+      "q": "מירי רגב",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "עמיר פרץ",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "ambiguous"
+    },
+    {
+      "q": "רם עמנואל",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    },
+    {
+      "q": "ניצן הורוביץ",
+      "reason": "expected_dossier_got_need_context",
+      "uiState": "need_context",
+      "mode": "google"
+    }
+  ],
+  "infraSample": [
+    {
+      "q": "Mark Zuckerberg",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "יצחק רבין",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Donald Trump",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Boris Johnson",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "איציק שמולי",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "תמר זנדברג",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Jacinda Ardern",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "שמעון שבס",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Greta Thunberg",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    },
+    {
+      "q": "Volodymyr Zelenskyy",
+      "bucket": "famous",
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON"
+    }
+  ]
+}

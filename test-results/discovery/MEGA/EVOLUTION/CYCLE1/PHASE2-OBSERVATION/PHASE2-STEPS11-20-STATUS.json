@@ -1,0 +1,56 @@
+{
+  "phase": 2,
+  "steps": "11-20",
+  "cycle": "CYCLE1",
+  "baselineId": "B0",
+  "role": "observation-corpus-metrics",
+  "stamp": "2026-09-20T09:49:34+03:00",
+  "alias": "https://akvot-discovery.vercel.app",
+  "discoveryDpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreDplLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "mode": "observation-only",
+  "codeChanges": false,
+  "deploy": false,
+  "promote": "HOLD",
+  "corpusSeeds": 16,
+  "runs": 32,
+  "accLeakage": 0,
+  "topMetrics": {
+    "findingsMean": 7.625,
+    "findingsP50": 7,
+    "findingsP90": 21,
+    "domainsMean": 1.34,
+    "duplicateRateMean": 0.0,
+    "evidenceCoverageMean": 1.0,
+    "unsupportedMean": 0.0,
+    "createMsP50": 494,
+    "createMsP90": 943.6,
+    "latencyCreateGetMean": 862.15,
+    "httpCreate201": "32/32",
+    "httpGet200": "32/32"
+  },
+  "emptyBothRuns": [
+    "S09",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16"
+  ],
+  "productGaps": [
+    "PG-01: Source-domain monoculture on many seeds",
+    "PG-02: Keyword/context and role seeds under-resolve vs proper names",
+    "PG-03: Ambiguity & conflicting-evidence not first-class in session snapshot",
+    "PG-04: Hebrew/multilingual path may be English-registry biased"
+  ],
+  "deliverables": [
+    "GOLDEN-CORPUS-v0.json",
+    "OBSERVATION-MATRIX.csv",
+    "OBSERVATION-MATRIX.json",
+    "OBSERVATION-SUMMARY.md",
+    "ACC-SCAN.json",
+    "AGGREGATES.json",
+    "raw/"
+  ],
+  "note": "PHASE2-STATUS.json owned by \u05de\u05de\u05e9\u05e7 UX/SSE observe; this file is Steps 11\u201320 corpus+metrics status"
+}

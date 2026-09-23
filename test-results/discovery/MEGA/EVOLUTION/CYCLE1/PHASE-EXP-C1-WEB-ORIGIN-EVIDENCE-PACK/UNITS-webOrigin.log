@@ -1,0 +1,98 @@
+PASS flag unset → excludes web_origin
+PASS DEFAULT_PROVIDERS excludes web_origin
+PASS flag off → B0 trio only
+PASS flag=1 → includes web_origin
+PASS provider id
+PASS authMode none
+PASS looksLike https URL
+PASS looksLike bare host
+PASS looksLike rejects person name
+PASS extract URL from seed
+PASS extract bare host seed
+PASS normalize who.int ok
+PASS normalize scheme https
+PASS normalize hostname
+PASS normalize registrable
+PASS normalize origin
+PASS normalize path
+PASS normalize deterministic
+PASS normalize bare → https
+PASS http upgraded to https
+PASS reject http://127.0.0.1/ → blocked_host
+PASS reject https://localhost/ → blocked_host
+PASS reject https://app.localhost/ → blocked_host
+PASS reject https://host.local/ → blocked_host
+PASS reject https://svc.internal/ → blocked_host
+PASS reject http://169.254.169.254/ → blocked_host
+PASS reject https://metadata.google.internal/ → blocked_host
+PASS reject https://192.168.1.1/ → blocked_host
+PASS reject https://10.0.0.1/ → blocked_host
+PASS reject https://172.16.5.1/ → blocked_host
+PASS reject https://[::1]/ → blocked_host
+PASS reject https://8.8.8.8/ → blocked_host
+PASS reject javascript:alert(1) → dangerous_scheme
+PASS reject data:text/html,hi → dangerous_scheme
+PASS reject file:///etc/passwd → dangerous_scheme
+PASS reject ftp://files.example.com/ → dangerous_scheme
+PASS reject https://user:pass@example.com/ → userinfo_forbidden
+PASS reject not a url at all!! → not_url_or_hostname
+PASS reject (empty) → empty
+PASS registrable example.com
+PASS registrable co.uk
+PASS registrable blocked empty
+PASS parse title
+PASS parse siteName
+PASS parse description
+PASS parse snippet long enough
+PASS thin snippet short
+PASS URL-alone "https://www.who.int" → UNKNOWN (not SAME-*)
+PASS URL-alone "https://www.who.int" ≠ SAME-ENTITY
+PASS URL-alone "https://www.who.int" ≠ SAME-REFERENCE
+PASS URL-alone "https://openai.com/about" → UNKNOWN (not SAME-*)
+PASS URL-alone "https://openai.com/about" ≠ SAME-ENTITY
+PASS URL-alone "https://openai.com/about" ≠ SAME-REFERENCE
+PASS URL-alone "openai.com" → UNKNOWN (not SAME-*)
+PASS URL-alone "openai.com" ≠ SAME-ENTITY
+PASS URL-alone "openai.com" ≠ SAME-REFERENCE
+PASS URL-alone "www.example.com" → UNKNOWN (not SAME-*)
+PASS URL-alone "www.example.com" ≠ SAME-ENTITY
+PASS URL-alone "www.example.com" ≠ SAME-REFERENCE
+PASS URL-alone "http://example.com/" → UNKNOWN (not SAME-*)
+PASS URL-alone "http://example.com/" ≠ SAME-ENTITY
+PASS URL-alone "http://example.com/" ≠ SAME-REFERENCE
+PASS name seed + typed title overlap → RELATED-ENTITY (extra evidence)
+PASS name seed without metadata → UNKNOWN
+PASS unrelated name → UNKNOWN
+PASS host-equal seed without typed title evidence → UNKNOWN
+PASS store labelRelationship web_origin-only → unknown
+PASS hostFamily web_origin token
+PASS hostFamily still wikimedia
+PASS build finding present
+PASS finding hostFamily
+PASS finding URL-alone relationship UNKNOWN
+PASS finding never SAME-ENTITY
+PASS finding never SAME-REFERENCE
+PASS normalize keeps web_origin evidence
+PASS evidence.hostFamily
+PASS evidence.registrableDomain
+PASS evidence.originalUrl
+PASS evidence.normalizedUrl
+PASS evidence.safetyDecision
+PASS evidence.resultClass
+PASS finding.hostFamily after norm
+PASS finding.relationship after norm UNKNOWN
+PASS weak snippet dropped
+PASS blocked no finding
+PASS poison URL still normalizes (host public)
+PASS Acc scrub leak=0 on web_origin surfaces
+PASS telemetry scrub strips forbidden QID
+PASS provider returns findings
+PASS providerId web_origin
+PASS facet hostFamily
+PASS provider URL-alone relationship UNKNOWN
+PASS provider never SAME-REFERENCE on URL seed
+PASS redirect-to-private blocked (no finding)
+PASS redirect-to-private failureClass
+PASS person seed → no URL spam
+
+webOrigin tests: 96 passed, 0 failed

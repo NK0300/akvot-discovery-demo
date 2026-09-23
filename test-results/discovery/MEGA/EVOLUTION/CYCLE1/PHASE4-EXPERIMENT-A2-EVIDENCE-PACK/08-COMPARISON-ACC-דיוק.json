@@ -1,0 +1,81 @@
+{
+  "stamp": "2026-09-20T10:44:54+03:00",
+  "table": {
+    "B0": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "multi": 0.0,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 10,
+        "S04": 14,
+        "S05": 6
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A-VIAF/ACC-B0-BEFORE",
+      "note": "no VIAF · multi=0"
+    },
+    "A": {
+      "dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU / canonical EXP-A AFTER pack",
+      "multi": 0.0,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 18,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A-VIAF/ACC-AFTER-PREVIEW",
+      "note": "VIAF present but no cross-family coalesce · multi=0"
+    },
+    "A2-bound(FRNDab)": {
+      "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+      "multi": 0.5189,
+      "false_merge_risk": "CAVEAT title-bridge",
+      "acc_leak": 0,
+      "pretty_wrong": "elevated risk (title:)",
+      "findings": {
+        "S01": 17,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A2-COALESCE/ACC-AFTER-FRNDab",
+      "note": "NON-promote · title: coalesce residual"
+    },
+    "A2-safe": {
+      "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+      "multi": 0.2185,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 18,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "LIVE Acc 2026-09-20",
+      "note": "typed soft-ref enrich only · title_only=0"
+    },
+    "Bound1": {
+      "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+      "multi": 0.0,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 18,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A2-COALESCE/ACC-AFTER-BOUND1",
+      "note": "typed keys no enrich · Acc FAIL multi gate"
+    }
+  },
+  "a2safe_live": {
+    "mean": 0.2185,
+    "leak": 0,
+    "verdict": "PASS"
+  },
+  "promote": "HOLD"
+}

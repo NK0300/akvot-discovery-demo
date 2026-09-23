@@ -1,0 +1,2012 @@
+{
+  "create": {
+    "ok": true,
+    "sessionId": "kv1.264dd878910ad4365632abf4c2ab0ab0",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "acc-reafter-Ho6jg-TREAT-W5",
+    "snapshot": {
+      "sessionId": "kv1.264dd878910ad4365632abf4c2ab0ab0",
+      "seed": "who.int",
+      "q": "who.int",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q7817",
+          "kind": "registry",
+          "title": "World Health Organization",
+          "summary": "United Nations agency concerned with international public health",
+          "evidenceIds": [
+            "ev-55c95168642f71f9d631fbfb"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q7817",
+            "wd-Q7817",
+            "viaf:135618969",
+            "viaf:158845049"
+          ],
+          "scoreFinding": 0.7183333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-158800605",
+          "kind": "registry",
+          "title": "WHO International Reference Centre for Community Water Supply",
+          "summary": "type:corporate · lc:n82016180 · dnb:1087585449",
+          "evidenceIds": [
+            "ev-b1e8bea918a39e12ff7078d2"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:158800605"
+          ],
+          "scoreFinding": 0.6908333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-149984809",
+          "kind": "registry",
+          "title": "WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care",
+          "summary": "type:corporate · lc:n2010017641",
+          "evidenceIds": [
+            "ev-98dfab199ddbde68aeb17d37"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:149984809"
+          ],
+          "scoreFinding": 0.6808333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-148738844",
+          "kind": "registry",
+          "title": "Who International Expert Meeting to review and analyse clinical reports on Combination treatment for SARS",
+          "summary": "type:corporate · dnb:974418056",
+          "evidenceIds": [
+            "ev-533f8b52fe8fbf08ad4162e8"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:148738844"
+          ],
+          "scoreFinding": 0.6708333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-840173669171707660009",
+          "kind": "registry",
+          "title": "WHO International Agency for Research on Cancer",
+          "summary": "type:corporate",
+          "evidenceIds": [
+            "ev-3bed38ebeae5dcdcb84d8dbb"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:840173669171707660009"
+          ],
+          "scoreFinding": 0.6608333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-305447069",
+          "kind": "registry",
+          "title": "WHO International Reference Centre for Chemical Reference Substances",
+          "summary": "type:corporate · lc:n2013187479",
+          "evidenceIds": [
+            "ev-6e544c76f343d61b7886f51c"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:305447069"
+          ],
+          "scoreFinding": 0.6508333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-306382847",
+          "kind": "registry",
+          "title": "WHO International Reference Centre for Diagnosis of Diseases of Vectors",
+          "summary": "type:corporate · lc:n2014181344",
+          "evidenceIds": [
+            "ev-4464afe43f41e6a70eb90fcb"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:306382847"
+          ],
+          "scoreFinding": 0.6408333333333331,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-307434245",
+          "kind": "registry",
+          "title": "WHO International Conference on Health Consequences of the Chernobyl and other Radiological Accidents",
+          "summary": "type:corporate · lc:n2014180394",
+          "evidenceIds": [
+            "ev-d41e6f9f3f595c4fcc772df6"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:307434245"
+          ],
+          "scoreFinding": 0.6308333333333331,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-283149294373780522364",
+          "kind": "registry",
+          "title": "WHO International working group for drug statistics methology",
+          "summary": "type:corporate",
+          "evidenceIds": [
+            "ev-729e6d9d493b02cfdc865eda"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:283149294373780522364"
+          ],
+          "scoreFinding": 0.6208333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Who_int",
+          "kind": "page",
+          "title": "Who.int",
+          "evidenceIds": [
+            "ev-b55ba17b0d23b4ce98f49005"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Who.int"
+          ],
+          "scoreFinding": 0.5583333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Whitney_Houston",
+          "kind": "page",
+          "title": "Whitney Houston",
+          "evidenceIds": [
+            "ev-f01eef7b257ca8303ef5deed"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Whitney Houston"
+          ],
+          "scoreFinding": 0.5483333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Whodini",
+          "kind": "page",
+          "title": "Whodini",
+          "evidenceIds": [
+            "ev-ba7d72f453f8f020ee6963dd"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Whodini"
+          ],
+          "scoreFinding": 0.5383333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-WHOI_TV_",
+          "kind": "page",
+          "title": "WHOI (TV)",
+          "evidenceIds": [
+            "ev-962372a1a35576682d5913a4"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:WHOI (TV)"
+          ],
+          "scoreFinding": 0.5283333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Whodini_discography",
+          "kind": "page",
+          "title": "Whodini discography",
+          "evidenceIds": [
+            "ev-15148210db2c9263b16288fe"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Whodini discography"
+          ],
+          "scoreFinding": 0.5183333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Who_Invited_Them",
+          "kind": "page",
+          "title": "Who Invited Them",
+          "evidenceIds": [
+            "ev-a8357728795e3d1047bf67b8"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Who Invited Them"
+          ],
+          "scoreFinding": 0.5083333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wo-7fd08b15039288ff",
+          "kind": "page",
+          "title": "World Health Organization (WHO)",
+          "summary": "World Health Organization (WHO) — The United Nations agency working to promote health, keep the world safe and serve the vulnerable.",
+          "evidenceIds": [
+            "ev-b568e650d6f4a41767d75ac8"
+          ],
+          "providers": [
+            "web_origin"
+          ],
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN"
+          ],
+          "entityRefs": [
+            "web_origin:who.int"
+          ],
+          "scoreFinding": 0.3933333333333333,
+          "hostFamily": "web_origin",
+          "relationship": "UNKNOWN",
+          "registrableDomain": "who.int",
+          "hostname": "www.who.int",
+          "ranking": {
+            "discoveryScore": 0.5433333333333333,
+            "factors": {
+              "authority": 0.4,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.who.int"
+              ]
+            },
+            "rationale": "authority=0.40 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-55c95168642f71f9d631fbfb",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q7817",
+          "url": "https://www.wikidata.org/wiki/Q7817",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:53:41.530Z",
+          "evidenceType": "registry",
+          "quote": "United Nations agency concerned with international public health",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b55ba17b0d23b4ce98f49005",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Who.int",
+          "url": "https://en.wikipedia.org/wiki/Who.int",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:53:41.299Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f01eef7b257ca8303ef5deed",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Whitney_Houston",
+          "url": "https://en.wikipedia.org/wiki/Whitney_Houston",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:53:41.299Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ba7d72f453f8f020ee6963dd",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Whodini",
+          "url": "https://en.wikipedia.org/wiki/Whodini",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:53:41.299Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-962372a1a35576682d5913a4",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/WHOI_(TV)",
+          "url": "https://en.wikipedia.org/wiki/WHOI_(TV)",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:53:41.299Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-15148210db2c9263b16288fe",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Whodini_discography",
+          "url": "https://en.wikipedia.org/wiki/Whodini_discography",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:53:41.299Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a8357728795e3d1047bf67b8",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Who_Invited_Them",
+          "url": "https://en.wikipedia.org/wiki/Who_Invited_Them",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:53:41.299Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b1e8bea918a39e12ff7078d2",
+          "provenanceUrl": "https://viaf.org/viaf/158800605",
+          "url": "https://viaf.org/viaf/158800605",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO International Reference Centre for Community Water Supply",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-98dfab199ddbde68aeb17d37",
+          "provenanceUrl": "https://viaf.org/viaf/149984809",
+          "url": "https://viaf.org/viaf/149984809",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-533f8b52fe8fbf08ad4162e8",
+          "provenanceUrl": "https://viaf.org/viaf/148738844",
+          "url": "https://viaf.org/viaf/148738844",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "Who International Expert Meeting to review and analyse clinical reports on Combination treatment for SARS",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-3bed38ebeae5dcdcb84d8dbb",
+          "provenanceUrl": "https://viaf.org/viaf/840173669171707660009",
+          "url": "https://viaf.org/viaf/840173669171707660009",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO International Agency for Research on Cancer",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6e544c76f343d61b7886f51c",
+          "provenanceUrl": "https://viaf.org/viaf/305447069",
+          "url": "https://viaf.org/viaf/305447069",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO International Reference Centre for Chemical Reference Substances",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-4464afe43f41e6a70eb90fcb",
+          "provenanceUrl": "https://viaf.org/viaf/306382847",
+          "url": "https://viaf.org/viaf/306382847",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO International Reference Centre for Diagnosis of Diseases of Vectors",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d41e6f9f3f595c4fcc772df6",
+          "provenanceUrl": "https://viaf.org/viaf/307434245",
+          "url": "https://viaf.org/viaf/307434245",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO International Conference on Health Consequences of the Chernobyl and other Radiological Accidents",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-729e6d9d493b02cfdc865eda",
+          "provenanceUrl": "https://viaf.org/viaf/283149294373780522364",
+          "url": "https://viaf.org/viaf/283149294373780522364",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:53:41.432Z",
+          "evidenceType": "registry",
+          "quote": "WHO International working group for drug statistics methology",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b568e650d6f4a41767d75ac8",
+          "provenanceUrl": "https://www.who.int/",
+          "url": "https://www.who.int/",
+          "domain": "www.who.int",
+          "providerId": "web_origin",
+          "retrievedAt": "2026-09-20T08:53:41.333Z",
+          "evidenceType": "page",
+          "quote": "World Health Organization (WHO) · The United Nations agency working to promote health, keep the world safe and serve the vulnerable.",
+          "contentType": "text/html",
+          "robotsOk": true,
+          "hostFamily": "web_origin",
+          "originalUrl": "who.int",
+          "normalizedUrl": "https://www.who.int/",
+          "origin": "https://www.who.int",
+          "hostname": "www.who.int",
+          "registrableDomain": "who.int",
+          "scheme": "https",
+          "path": "/",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          },
+          "httpStatus": 200,
+          "resultClass": "ok",
+          "relationship": "UNKNOWN",
+          "webOriginMeta": {
+            "title": "World Health Organization (WHO)",
+            "description": "The United Nations agency working to promote health, keep the world safe and serve the vulnerable."
+          }
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "viaf",
+              "count": 8
+            },
+            {
+              "value": "wikipedia",
+              "count": 6
+            },
+            {
+              "value": "web_origin",
+              "count": 1
+            },
+            {
+              "value": "wikidata",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 9
+            },
+            {
+              "value": "page",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [
+            {
+              "value": "hostFamily:web_origin",
+              "count": 1
+            },
+            {
+              "value": "relationship:UNKNOWN",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "progress": {
+        "done": 8,
+        "totalHint": 8
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:d1bb97578027"
+        ],
+        "status": "candidate",
+        "displayHint": "who.int",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T08:53:41.236Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:d1bb97578027",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q7817",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Who_int",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Whitney_Houston",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Whodini",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-WHOI_TV_",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Whodini_discography",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Who_Invited_Them",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-158800605",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-149984809",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-148738844",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-840173669171707660009",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-305447069",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-306382847",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-307434245",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-283149294373780522364",
+            "kind": "finding"
+          },
+          {
+            "id": "wo-7fd08b15039288ff",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  },
+  "final": {
+    "ok": true,
+    "sessionId": "kv1.264dd878910ad4365632abf4c2ab0ab0",
+    "seed": "who.int",
+    "q": "who.int",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q7817",
+        "kind": "registry",
+        "title": "World Health Organization",
+        "summary": "United Nations agency concerned with international public health",
+        "evidenceIds": [
+          "ev-55c95168642f71f9d631fbfb"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q7817",
+          "wd-Q7817",
+          "viaf:135618969",
+          "viaf:158845049"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-158800605",
+        "kind": "registry",
+        "title": "WHO International Reference Centre for Community Water Supply",
+        "summary": "type:corporate · lc:n82016180 · dnb:1087585449",
+        "evidenceIds": [
+          "ev-b1e8bea918a39e12ff7078d2"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:158800605"
+        ],
+        "scoreFinding": 0.6908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-149984809",
+        "kind": "registry",
+        "title": "WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care",
+        "summary": "type:corporate · lc:n2010017641",
+        "evidenceIds": [
+          "ev-98dfab199ddbde68aeb17d37"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:149984809"
+        ],
+        "scoreFinding": 0.6808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-148738844",
+        "kind": "registry",
+        "title": "Who International Expert Meeting to review and analyse clinical reports on Combination treatment for SARS",
+        "summary": "type:corporate · dnb:974418056",
+        "evidenceIds": [
+          "ev-533f8b52fe8fbf08ad4162e8"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:148738844"
+        ],
+        "scoreFinding": 0.6708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-840173669171707660009",
+        "kind": "registry",
+        "title": "WHO International Agency for Research on Cancer",
+        "summary": "type:corporate",
+        "evidenceIds": [
+          "ev-3bed38ebeae5dcdcb84d8dbb"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:840173669171707660009"
+        ],
+        "scoreFinding": 0.6608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-305447069",
+        "kind": "registry",
+        "title": "WHO International Reference Centre for Chemical Reference Substances",
+        "summary": "type:corporate · lc:n2013187479",
+        "evidenceIds": [
+          "ev-6e544c76f343d61b7886f51c"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:305447069"
+        ],
+        "scoreFinding": 0.6508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-306382847",
+        "kind": "registry",
+        "title": "WHO International Reference Centre for Diagnosis of Diseases of Vectors",
+        "summary": "type:corporate · lc:n2014181344",
+        "evidenceIds": [
+          "ev-4464afe43f41e6a70eb90fcb"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:306382847"
+        ],
+        "scoreFinding": 0.6408333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-307434245",
+        "kind": "registry",
+        "title": "WHO International Conference on Health Consequences of the Chernobyl and other Radiological Accidents",
+        "summary": "type:corporate · lc:n2014180394",
+        "evidenceIds": [
+          "ev-d41e6f9f3f595c4fcc772df6"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:307434245"
+        ],
+        "scoreFinding": 0.6308333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-283149294373780522364",
+        "kind": "registry",
+        "title": "WHO International working group for drug statistics methology",
+        "summary": "type:corporate",
+        "evidenceIds": [
+          "ev-729e6d9d493b02cfdc865eda"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:283149294373780522364"
+        ],
+        "scoreFinding": 0.6208333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Who_int",
+        "kind": "page",
+        "title": "Who.int",
+        "evidenceIds": [
+          "ev-b55ba17b0d23b4ce98f49005"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Who.int"
+        ],
+        "scoreFinding": 0.5583333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Whitney_Houston",
+        "kind": "page",
+        "title": "Whitney Houston",
+        "evidenceIds": [
+          "ev-f01eef7b257ca8303ef5deed"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Whitney Houston"
+        ],
+        "scoreFinding": 0.5483333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Whodini",
+        "kind": "page",
+        "title": "Whodini",
+        "evidenceIds": [
+          "ev-ba7d72f453f8f020ee6963dd"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Whodini"
+        ],
+        "scoreFinding": 0.5383333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-WHOI_TV_",
+        "kind": "page",
+        "title": "WHOI (TV)",
+        "evidenceIds": [
+          "ev-962372a1a35576682d5913a4"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:WHOI (TV)"
+        ],
+        "scoreFinding": 0.5283333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Whodini_discography",
+        "kind": "page",
+        "title": "Whodini discography",
+        "evidenceIds": [
+          "ev-15148210db2c9263b16288fe"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Whodini discography"
+        ],
+        "scoreFinding": 0.5183333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Who_Invited_Them",
+        "kind": "page",
+        "title": "Who Invited Them",
+        "evidenceIds": [
+          "ev-a8357728795e3d1047bf67b8"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Who Invited Them"
+        ],
+        "scoreFinding": 0.5083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wo-7fd08b15039288ff",
+        "kind": "page",
+        "title": "World Health Organization (WHO)",
+        "summary": "World Health Organization (WHO) — The United Nations agency working to promote health, keep the world safe and serve the vulnerable.",
+        "evidenceIds": [
+          "ev-b568e650d6f4a41767d75ac8"
+        ],
+        "providers": [
+          "web_origin"
+        ],
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ],
+        "entityRefs": [
+          "web_origin:who.int"
+        ],
+        "scoreFinding": 0.3933333333333333,
+        "hostFamily": "web_origin",
+        "relationship": "UNKNOWN",
+        "registrableDomain": "who.int",
+        "hostname": "www.who.int",
+        "ranking": {
+          "discoveryScore": 0.5433333333333333,
+          "factors": {
+            "authority": 0.4,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.who.int"
+            ]
+          },
+          "rationale": "authority=0.40 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-55c95168642f71f9d631fbfb",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q7817",
+        "url": "https://www.wikidata.org/wiki/Q7817",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:53:41.530Z",
+        "evidenceType": "registry",
+        "quote": "United Nations agency concerned with international public health",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b55ba17b0d23b4ce98f49005",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Who.int",
+        "url": "https://en.wikipedia.org/wiki/Who.int",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:53:41.299Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f01eef7b257ca8303ef5deed",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Whitney_Houston",
+        "url": "https://en.wikipedia.org/wiki/Whitney_Houston",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:53:41.299Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba7d72f453f8f020ee6963dd",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Whodini",
+        "url": "https://en.wikipedia.org/wiki/Whodini",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:53:41.299Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-962372a1a35576682d5913a4",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/WHOI_(TV)",
+        "url": "https://en.wikipedia.org/wiki/WHOI_(TV)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:53:41.299Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-15148210db2c9263b16288fe",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Whodini_discography",
+        "url": "https://en.wikipedia.org/wiki/Whodini_discography",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:53:41.299Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a8357728795e3d1047bf67b8",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Who_Invited_Them",
+        "url": "https://en.wikipedia.org/wiki/Who_Invited_Them",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:53:41.299Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b1e8bea918a39e12ff7078d2",
+        "provenanceUrl": "https://viaf.org/viaf/158800605",
+        "url": "https://viaf.org/viaf/158800605",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Reference Centre for Community Water Supply",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-98dfab199ddbde68aeb17d37",
+        "provenanceUrl": "https://viaf.org/viaf/149984809",
+        "url": "https://viaf.org/viaf/149984809",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-533f8b52fe8fbf08ad4162e8",
+        "provenanceUrl": "https://viaf.org/viaf/148738844",
+        "url": "https://viaf.org/viaf/148738844",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "Who International Expert Meeting to review and analyse clinical reports on Combination treatment for SARS",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3bed38ebeae5dcdcb84d8dbb",
+        "provenanceUrl": "https://viaf.org/viaf/840173669171707660009",
+        "url": "https://viaf.org/viaf/840173669171707660009",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Agency for Research on Cancer",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6e544c76f343d61b7886f51c",
+        "provenanceUrl": "https://viaf.org/viaf/305447069",
+        "url": "https://viaf.org/viaf/305447069",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Reference Centre for Chemical Reference Substances",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4464afe43f41e6a70eb90fcb",
+        "provenanceUrl": "https://viaf.org/viaf/306382847",
+        "url": "https://viaf.org/viaf/306382847",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Reference Centre for Diagnosis of Diseases of Vectors",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d41e6f9f3f595c4fcc772df6",
+        "provenanceUrl": "https://viaf.org/viaf/307434245",
+        "url": "https://viaf.org/viaf/307434245",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Conference on Health Consequences of the Chernobyl and other Radiological Accidents",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-729e6d9d493b02cfdc865eda",
+        "provenanceUrl": "https://viaf.org/viaf/283149294373780522364",
+        "url": "https://viaf.org/viaf/283149294373780522364",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:53:41.432Z",
+        "evidenceType": "registry",
+        "quote": "WHO International working group for drug statistics methology",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b568e650d6f4a41767d75ac8",
+        "provenanceUrl": "https://www.who.int/",
+        "url": "https://www.who.int/",
+        "domain": "www.who.int",
+        "providerId": "web_origin",
+        "retrievedAt": "2026-09-20T08:53:41.333Z",
+        "evidenceType": "page",
+        "quote": "World Health Organization (WHO) · The United Nations agency working to promote health, keep the world safe and serve the vulnerable.",
+        "contentType": "text/html",
+        "robotsOk": true,
+        "hostFamily": "web_origin",
+        "originalUrl": "who.int",
+        "normalizedUrl": "https://www.who.int/",
+        "origin": "https://www.who.int",
+        "hostname": "www.who.int",
+        "registrableDomain": "who.int",
+        "scheme": "https",
+        "path": "/",
+        "safetyDecision": {
+          "stage": "normalize",
+          "ok": true,
+          "reason": "allow"
+        },
+        "httpStatus": 200,
+        "resultClass": "ok",
+        "relationship": "UNKNOWN",
+        "webOriginMeta": {
+          "title": "World Health Organization (WHO)",
+          "description": "The United Nations agency working to promote health, keep the world safe and serve the vulnerable."
+        }
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "viaf",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          },
+          {
+            "value": "web_origin",
+            "count": 1
+          },
+          {
+            "value": "wikidata",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 9
+          },
+          {
+            "value": "page",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "hostFamily:web_origin",
+            "count": 1
+          },
+          {
+            "value": "relationship:UNKNOWN",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "partial",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:d1bb97578027"
+      ],
+      "status": "candidate",
+      "displayHint": "who.int",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:53:41.236Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:d1bb97578027",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q7817",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Who_int",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Whitney_Houston",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Whodini",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-WHOI_TV_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Whodini_discography",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Who_Invited_Them",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-158800605",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-149984809",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-148738844",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-840173669171707660009",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-305447069",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-306382847",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-307434245",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-283149294373780522364",
+          "kind": "finding"
+        },
+        {
+          "id": "wo-7fd08b15039288ff",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  },
+  "narrow": {
+    "ok": false,
+    "error": "method not allowed"
+  },
+  "analysis": {
+    "id": "W5",
+    "seed": "who.int",
+    "role": "bare_host",
+    "expect": "UNKNOWN_or_soft",
+    "status": "partial",
+    "findings_n": 16,
+    "evidence_n": 16,
+    "wo_findings_n": 1,
+    "wo_evidence_n": 1,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "partial",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "has_web_origin_provider": true,
+    "rel_hist": {
+      "UNKNOWN": 1
+    },
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "se_sr_hits": [],
+    "acc_leak": 0,
+    "private_provenance_n": 0,
+    "wo_sample": [
+      {
+        "id": "wo-7fd08b15039288ff",
+        "relationship": "UNKNOWN",
+        "hostFamily": "web_origin",
+        "title": "World Health Organization (WHO)",
+        "registrableDomain": "who.int",
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ],
+        "entityRefs": [
+          "web_origin:who.int"
+        ]
+      }
+    ],
+    "wo_ev_sample": [
+      {
+        "id": "ev-b568e650d6f4a41767d75ac8",
+        "relationship": "UNKNOWN",
+        "provenanceUrl": "https://www.who.int/",
+        "safetyDecision": {
+          "stage": "normalize",
+          "ok": true,
+          "reason": "allow"
+        },
+        "resultClass": "ok"
+      }
+    ],
+    "sessionId": "kv1.264dd878910ad4365632abf4c2ab0ab0",
+    "create_ok": true,
+    "polls": 2,
+    "latencyMs": 16750,
+    "narrow_leak": 0,
+    "sse_leak": 0,
+    "sse_sampled": true,
+    "hit_leak": 0,
+    "total_leak": 0
+  }
+}

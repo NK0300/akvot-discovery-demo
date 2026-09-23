@@ -1,0 +1,22 @@
+HTTP/2 200 
+access-control-allow-headers: Content-Type, Last-Event-ID
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+age: 0
+cache-control: no-cache, no-transform
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: text/event-stream; charset=utf-8
+date: Sun, 20 Sep 2026 04:47:36 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-accel-buffering: no
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-robots-tag: noindex
+x-sse-reconnect: Last-Event-ID
+x-sse-terminal: done,error
+x-vercel-cache: MISS
+x-vercel-id: cle1::fra1::29nmw-1789879656438-7e7273d17155
+

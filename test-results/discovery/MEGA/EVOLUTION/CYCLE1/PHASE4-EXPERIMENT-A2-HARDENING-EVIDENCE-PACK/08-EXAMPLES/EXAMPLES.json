@@ -1,0 +1,193 @@
+{
+  "success": [
+    {
+      "id": "OK1",
+      "seed": "S01",
+      "pair": "wd-Q80 \u2194 viaf-85312226",
+      "keys": [
+        "qid:Q80",
+        "viaf:85312226"
+      ],
+      "rel": "related-entity / SAME-REFERENCE ceiling",
+      "why": "P214+WKP typed intersection"
+    },
+    {
+      "id": "OK2",
+      "seed": "S01",
+      "pair": "locale VIAF variants attach_keep",
+      "keys": [
+        "viaf:85312226"
+      ],
+      "rel": "related-entity",
+      "why": "same viaf id \u00b7 titleSecondary disagree"
+    },
+    {
+      "id": "OK3",
+      "seed": "S05",
+      "pair": "wd-Q470110 \u2194 viaf-122023057",
+      "keys": [
+        "qid:Q470110",
+        "viaf:122023057"
+      ],
+      "rel": "related-entity",
+      "why": "ARC P214 bridge"
+    },
+    {
+      "id": "OK4",
+      "seed": "prior",
+      "pair": "TBL OL25245A triangle (smoke)",
+      "keys": [
+        "ol:OL25245A",
+        "qid:Q80",
+        "viaf:85312226"
+      ],
+      "rel": "SAME-REFERENCE",
+      "why": "remote_ids when enrich succeeds"
+    },
+    {
+      "id": "OK5",
+      "seed": "unit",
+      "pair": "same-VIAF synthetic",
+      "keys": [
+        "viaf:85312226"
+      ],
+      "rel": "same-reference",
+      "why": "unit corroboration.viaf"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "RJ1",
+      "what": "title-only Stripe\u2194Stripe",
+      "why": "FORBIDDEN"
+    },
+    {
+      "id": "RJ2",
+      "what": "Stripe corp \u2194 Stripe John",
+      "why": "Pretty-Wrong \u00b7 no typed \u2229"
+    },
+    {
+      "id": "RJ3",
+      "what": "title-homonym John Smith collapse",
+      "why": "no false same-entity"
+    },
+    {
+      "id": "RJ4",
+      "what": "FRNDab title-bridge promote",
+      "why": "A2-bound REJECTED"
+    },
+    {
+      "id": "RJ5",
+      "what": "non-intersecting typed forms force-merge",
+      "why": "UNKNOWN\u2260SAME"
+    }
+  ],
+  "unknown": [
+    {
+      "id": "U1",
+      "what": "S04 Stripe corp findings",
+      "why": "no shared typed id"
+    },
+    {
+      "id": "U2",
+      "what": "Wikipedia-only peers",
+      "why": "wp: underkey"
+    },
+    {
+      "id": "U3",
+      "what": "VIAF sans WKP",
+      "why": "cannot join WD/OL"
+    },
+    {
+      "id": "U4",
+      "what": "OL sans remote_ids",
+      "why": "ol: island"
+    },
+    {
+      "id": "U5",
+      "what": "Red Cross national siblings",
+      "why": "related without shared typed id"
+    }
+  ],
+  "s04_failures": [
+    {
+      "id": "F04-1",
+      "finding": "wd-Q7624104 Stripe",
+      "classes": [
+        "WD_MISSING_P214",
+        "TYPED_KEYS_NO_CROSS_FAMILY_PEER"
+      ]
+    },
+    {
+      "id": "F04-2",
+      "finding": "viaf-30463651 Stripe, John",
+      "classes": [
+        "VIAF_MISSING_WKP",
+        "CORRECT_NON_COALESCE_HOMONYM"
+      ]
+    },
+    {
+      "id": "F04-3",
+      "finding": "ol-OL13079935A Stripe",
+      "classes": [
+        "OL_MISSING_REMOTE_IDS",
+        "TITLE_PEER_NO_TYPED_INTERSECTION"
+      ]
+    },
+    {
+      "id": "F04-4",
+      "finding": "wp-en-Stripe_Inc_",
+      "classes": [
+        "WIKIPEDIA_UNDERKEYED",
+        "NO_TYPED_KEYS"
+      ]
+    },
+    {
+      "id": "F04-5",
+      "finding": "wp-en-Stripe",
+      "classes": [
+        "WIKIPEDIA_UNDERKEYED",
+        "AUTHORITY_GAP (disambig Q342029)"
+      ]
+    }
+  ],
+  "s05_failures": [
+    {
+      "id": "F05-1",
+      "finding": "wd-Q7178 Movement",
+      "classes": [
+        "TYPED_KEYS_NO_CROSS_FAMILY_PEER",
+        "VIAF peer id mismatch"
+      ]
+    },
+    {
+      "id": "F05-2",
+      "finding": "viaf-160178001 ICRC",
+      "classes": [
+        "VIAF_MISSING_WKP",
+        "no Q5987345 in WD hits"
+      ]
+    },
+    {
+      "id": "F05-3",
+      "finding": "ol-OL17804A ARC",
+      "classes": [
+        "OL_MISSING_REMOTE_IDS"
+      ]
+    },
+    {
+      "id": "F05-4",
+      "finding": "viaf-148420048 Red Cross (Great Britain)",
+      "classes": [
+        "CORRECT_NON_COALESCE_HOMONYM"
+      ]
+    },
+    {
+      "id": "F05-5",
+      "finding": "wp-en-Red_Cross",
+      "classes": [
+        "WIKIPEDIA_UNDERKEYED"
+      ]
+    }
+  ]
+}

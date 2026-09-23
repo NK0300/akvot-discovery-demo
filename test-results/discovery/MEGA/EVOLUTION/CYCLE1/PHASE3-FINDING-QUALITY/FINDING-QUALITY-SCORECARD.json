@@ -1,0 +1,201 @@
+{
+  "baselineId": "B0",
+  "phase": 3,
+  "cycle": "CYCLE1",
+  "createdAt": "2026-09-20T09:52:07+03:00",
+  "alias": "https://akvot-discovery.vercel.app",
+  "discoveryDpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreDplLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "mode": "analysis-only",
+  "codeChanges": false,
+  "deploy": false,
+  "promote": false,
+  "overallScore": 56.1,
+  "dimensions": {
+    "Coverage": {
+      "score": 60.0,
+      "weight": 1.0,
+      "proxy": "9/15 non-nomatch seeds have ≥1 finding on r1",
+      "notes": "S12–S16 empty (PG-02); S09 intentional empty excluded"
+    },
+    "Relevance": {
+      "score": 68.8,
+      "weight": 1.2,
+      "proxy": "weighted share of identity-relevant / corporate-fit / professional vs publication noise",
+      "notes": "identity-relevant=40 publication=30 affiliation=2"
+    },
+    "Evidence": {
+      "score": 81.8,
+      "weight": 1.2,
+      "proxy": "1 - withoutEvidence; penalize weak (thin snippet <20c or missing url)",
+      "notes": "without=0 weak=127 / 244"
+    },
+    "Novelty": {
+      "score": 71.1,
+      "weight": 1.0,
+      "proxy": "100*(1 - mean near-dup normalized-title rate)",
+      "notes": "mean near-title rate=0.289"
+    },
+    "Diversity": {
+      "score": 15.0,
+      "weight": 1.1,
+      "proxy": "multi-independent-source rate + family cardinality (wikimedia/openlibrary)",
+      "notes": "multi rate=0.0; families=['openlibrary', 'wikimedia']"
+    },
+    "Accuracy": {
+      "score": 67.5,
+      "weight": 1.3,
+      "proxy": "Acc leakage gate + identity share − contextual/publication noise",
+      "notes": "Acc leakage=0"
+    },
+    "Ambiguity": {
+      "score": 53.0,
+      "weight": 1.2,
+      "proxy": "S02/S03/S04/S10: contradiction presence + summary distinctness − label collapse − missing person-split facet",
+      "notes": "PG-03: flat lists; contradictions type mostly same_title_multi_domain"
+    },
+    "Contradiction": {
+      "score": 25.0,
+      "weight": 1.0,
+      "proxy": "contradictions[] presence & semantic depth (field conflicts)",
+      "notes": "objects=14; S10 conflicting-evidence contr=0; no same-field conflict type"
+    }
+  },
+  "supportingMetrics": {
+    "exactDuplicates": {
+      "sessions_with_findings": 19,
+      "mean_rate_id": 0.0,
+      "mean_rate_title": 0.2552,
+      "mean_rate_url": 0.0,
+      "total_dup_id": 0,
+      "total_dup_title": 79,
+      "total_dup_url": 0,
+      "note": "Exact duplicate = count of surplus items sharing identical id/title/url within a session. rate = surplus/n_findings."
+    },
+    "nearDuplicates": {
+      "sessions_with_findings": 19,
+      "mean_rate_norm_title": 0.289,
+      "mean_rate_norm_url": 0.0,
+      "total_near_title_surplus": 92,
+      "total_near_url_surplus": 0,
+      "note": "Near-duplicate = surplus items after normalizing title (lower/punct-strip) or url (strip scheme/www/trailing slash)."
+    },
+    "contradictions": {
+      "sessions_total": 32,
+      "sessions_with_findings": 19,
+      "sessions_with_contradictions": 11,
+      "total_contradiction_objects": 14,
+      "mean_contr_per_session_with_findings": 0.7368,
+      "type_histogram": {
+        "same_title_multi_domain": 14
+      }
+    },
+    "evidence": {
+      "n_findings": 244,
+      "without_evidence": 0,
+      "without_evidence_rate": 0.0,
+      "weak_evidence": 127,
+      "weak_evidence_rate": 0.5205,
+      "single_source": 244,
+      "single_source_rate": 1.0,
+      "multi_independent_source": 0,
+      "multi_independent_source_rate": 0.0
+    },
+    "classificationPct": {
+      "identity-relevant": 31.01,
+      "corporate": 32.56,
+      "ownership": 0.0,
+      "affiliation": 1.55,
+      "professional": 3.88,
+      "geographic": 0.78,
+      "publication": 23.26,
+      "legal/public": 0.0,
+      "contact/public-endpoint": 0.0,
+      "historical": 0.0,
+      "relationship": 0.0,
+      "technical": 0.0,
+      "contextual": 6.98,
+      "other": 0.0
+    },
+    "accRescan": {
+      "leakageTotal": 0,
+      "pass": true
+    },
+    "coverageDetail": {
+      "covered": 9,
+      "expected": 15,
+      "emptyNonNomatch": [
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16"
+      ]
+    }
+  },
+  "topQualityDefects": [
+    {
+      "rank": 1,
+      "id": "QD-01",
+      "title": "Source-family monoculture (single-source ≈100%)",
+      "links": [
+        "PG-01"
+      ],
+      "evidence": "multi_independent_source_rate=0.0; families=['openlibrary', 'wikimedia']; domains_mean Phase2=1.34",
+      "impact": "Corroboration/providerDiversity overstated; Diversity score=15.0",
+      "phase45_experiment": "Add non-wikimedia independent providers; measure multi-independent rate lift on S01/S04/S05"
+    },
+    {
+      "rank": 2,
+      "id": "QD-02",
+      "title": "Near-duplicate title flood (same normalized title, many QIDs)",
+      "links": [
+        "PG-03"
+      ],
+      "evidence": "mean near-title rate=0.289; exact title surplus total=79; S02/S03 'John Smith'/'Alex Morgan' collapsed labels",
+      "impact": "Novelty=71.1; UI cannot tell multi-person dossier vs spam",
+      "phase45_experiment": "Cluster-by-entity + dedupe near-title; surface person-split facet; target near-title rate <0.25 on S02/S03"
+    },
+    {
+      "rank": 3,
+      "id": "QD-03",
+      "title": "Ambiguity/conflict not first-class (shallow contradictions)",
+      "links": [
+        "PG-03"
+      ],
+      "evidence": "contradiction types={'same_title_multi_domain': 14}; S10 Francis Bacon contr=0 while WD/WP error; no occupation/era field-conflict type",
+      "impact": "Ambiguity=53.0 Contradiction=25.0; wrong-person risk",
+      "phase45_experiment": "Emit ambiguityClusters + fieldConflict contradictions; keep S10 WD/WP path healthy; UI badge"
+    },
+    {
+      "rank": 4,
+      "id": "QD-04",
+      "title": "Coverage hole on keyword/context/alias/URL seeds",
+      "links": [
+        "PG-02"
+      ],
+      "evidence": "S12–S16 = 0 findings both runs; S11 unstable 0/2; Coverage driven by proper-name seeds only",
+      "impact": "Coverage=60.0 on non-nomatch; intentful discovery gap",
+      "phase45_experiment": "Role/alias/URL resolvers; compound seed parsing; target ≥1 grounded finding on S13/S14/S15/S16"
+    },
+    {
+      "rank": 5,
+      "id": "QD-05",
+      "title": "Publication/noise & weak thin evidence dilute relevance",
+      "links": [
+        "PG-01",
+        "PG-04"
+      ],
+      "evidence": "publication primary=30 (23.26%); weak_evidence_rate=0.5205 (thin snippet<20); S07 HE thin EN-registry; S01 TED/biography QIDs share person title",
+      "impact": "Relevance=67.4 Evidence=81.8",
+      "phase45_experiment": "Filter work-about-person vs person entity; require snippet≥40 or structured claim; HE native sources for S07"
+    }
+  ],
+  "productGapsLinked": [
+    "PG-01",
+    "PG-02",
+    "PG-03",
+    "PG-04"
+  ]
+}

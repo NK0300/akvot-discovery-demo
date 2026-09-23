@@ -1,0 +1,97 @@
+{
+  "ok": true,
+  "sessionId": "kv1.d74559db4f1ec7a6b9dc1defbd4d0230",
+  "status": "complete",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9gm46n-59a708",
+  "snapshot": {
+    "sessionId": "kv1.d74559db4f1ec7a6b9dc1defbd4d0230",
+    "seed": "https://www.who.int",
+    "q": "https://www.who.int",
+    "status": "complete",
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:d247642d70e1"
+      ],
+      "status": "candidate",
+      "displayHint": "https://www.who.int",
+      "hints": {
+        "kind": "domain"
+      }
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T06:53:01.487Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:d247642d70e1",
+          "kind": "seed"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

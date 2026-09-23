@@ -1,0 +1,117 @@
+{
+  "httpStatus": 201,
+  "ms": 2909,
+  "meta": {
+    "sessionId": "kv1.50dac1757ce0b35b5701f768b73dfba2",
+    "status": "complete",
+    "findings": 0,
+    "evidence": 0,
+    "facets": 3,
+    "contradictions": 0,
+    "regenerated": null,
+    "storeBackend": null,
+    "durable": null,
+    "fiv": "2026-09-19.1",
+    "candidatesPresent": false
+  },
+  "leak": 0,
+  "surfaceLeak": 0,
+  "contraOk": true,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.50dac1757ce0b35b5701f768b73dfba2",
+    "status": "complete",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9eee8j-0a3557",
+    "snapshot": {
+      "sessionId": "kv1.50dac1757ce0b35b5701f768b73dfba2",
+      "status": "complete",
+      "findings": [],
+      "evidence": [],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        }
+      ],
+      "progress": {
+        "done": 6,
+        "totalHint": 6
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:4e03b75b2282"
+        ],
+        "status": "candidate",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T05:51:02.035Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:4e03b75b2282",
+            "kind": "seed"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      },
+      "forbiddenStripped": 1
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "mode": "wiki+google",
+  "label": "נתניהו",
+  "qid": "Q43723",
+  "birth": null,
+  "age": null,
+  "place": null,
+  "desc": "",
+  "extract": "Wikidata: Prime Minister of Israel (born 1949), (1996–1999; 2009–2021; 2022–present)",
+  "photo": "https://static.zman.co.il/www/uploads/2023/03/netanyahu-1024x640-1679638102.jpg",
+  "alts": [],
+  "email": null,
+  "phone": null,
+  "sources": [
+    {
+      "kind": "Wikidata",
+      "title": "Q43723",
+      "note": "Prime Minister of Israel (born 1949), (1996–1999; 2009–2021; 2022–present)",
+      "url": "https://www.wikidata.org/wiki/Q43723",
+      "group": "identity",
+      "conf": 0.85
+    }
+  ],
+  "images": [
+    {
+      "url": "https://static.zman.co.il/www/uploads/2023/03/netanyahu-1024x640-1679638102.jpg",
+      "source": "חיפוש תמונות",
+      "note": "תוצאת תמונה ציבורית"
+    },
+    {
+      "url": "https://www.kipa.co.il/userFiles/322479_4fa3fbdbb2c99ddd87d3e7891e9f9218.jpg",
+      "source": "חיפוש תמונות",
+      "note": "תוצאת תמונה ציבורית"
+    },
+    {
+      "url": "https://ynet-pic1.yit.co.il/picserver5/crop_images/2023/05/10/ryoj0DtNn/ryoj0DtNn_0_0_1280_793_0_x-large.jpg",
+      "source": "חיפוש תמונות",
+      "note": "תוצאת תמונה ציבורית"
+    },
+    {
+      "url": "https://img.mako.co.il/2023/01/12/FF_DAFNA_re_autoOrient_g_re.jpg_re.png",
+      "source": "חיפוש תמונות",
+      "note": "תוצאת תמונה ציבורית"
+    },
+    {
+      "url": "https://img.haarets.co.il/bs/00000192-1dd3-ddf9-a9fa-7fdfe9bf0000/ca/12/ec8275ef4c1697830fce9435fbb4/722375.jpg?precrop=2400",
+      "source": "חיפוש תמונות",
+      "note": "תוצאת תמונה ציבורית"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Benjamin_Netanyahu%2C_February_2023.jpg/960px-Benjamin_Netanyahu%2C_February_2023.jpg?utm_source=www.wikidata.org&utm_campaign=index&utm_content=thumbnail",
+      "source": "Wikidata",
+      "note": "Benjamin Netanyahu"
+    },
+    {
+      "url": "https://media.reshet.tv/image/upload/v1673294256/uploads/2023/903388099.webp",
+      "source": "חיפוש תמונות",
+      "note": "תוצאת תמונה ציבורית"
+    }
+  ],
+  "extra_facts": [],
+  "queries": [],
+  "scanned": 1,
+  "allowBroadImages": true,
+  "ambiguous": false,
+  "thin": false,
+  "candidates": [],
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 128,
+    "gemini": 0,
+    "enrich": 1473,
+    "stageB": 0,
+    "total": 2110,
+    "wikiMeta": {
+      "wiki429": 5,
+      "wikiTimeout": 0,
+      "wikiRetries": 5
+    }
+  },
+  "phonePath": false,
+  "demoCiteHost": "Wikidata",
+  "uiState": "dossier",
+  "scenario": "known",
+  "confidence": "high",
+  "needContextFields": [
+    "city",
+    "org",
+    "country",
+    "role"
+  ],
+  "messageKey": "dossier_ready",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "needCandidatePick": false,
+  "requestId": "76a427be-9f39-4a98-b65c-1ee5c154e02f",
+  "wikiMeta": {
+    "wiki429": 5,
+    "wikiTimeout": 0,
+    "wikiRetries": 5
+  }
+}

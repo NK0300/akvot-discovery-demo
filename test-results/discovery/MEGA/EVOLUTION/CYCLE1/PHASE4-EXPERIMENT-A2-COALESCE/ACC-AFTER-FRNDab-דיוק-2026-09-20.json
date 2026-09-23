@@ -1,0 +1,538 @@
+{
+  "doc": "ACC-AFTER-FRNDab-דיוק-2026-09-20",
+  "role": "דיוק",
+  "phase": "CYCLE1-PHASE4-EXPERIMENT-A2-COALESCE",
+  "stamp": "2026-09-20T10:26:08+03:00",
+  "ended": "2026-09-20T10:27:50+03:00",
+  "promote": "HOLD",
+  "mode": "ACC_AFTER_CAVEAT_BASELINE_NOT_PROMOTE_PATH",
+  "preview": {
+    "label": "frndab",
+    "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+    "url": "https://akvot-simple-demo-h9cq1ob4m-k-akvot.vercel.app",
+    "role": "CAVEAT_BASELINE"
+  },
+  "note": "FRNDab = interim/caveat baseline only (pre-Bound1 title-coalesce). Chief promote-path = Bound#1 Fz2iq.",
+  "per_seed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.eead087cbe2e4ea849d3c923dabf981e",
+      "status": "partial",
+      "findings_count": 17,
+      "findings_with_ge1_evidence_n": 17,
+      "multi_independent_n": 14,
+      "multi_independent_rate": 0.8235,
+      "viaf_findings_n": 14,
+      "families_union": [
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "sample_titles": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, 1955-",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, Brits natuurkundige",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 14,
+          "inDenom": true
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.1a9cefbb6217421a57199ae886aadf41",
+      "status": "partial",
+      "findings_count": 30,
+      "findings_with_ge1_evidence_n": 30,
+      "multi_independent_n": 10,
+      "multi_independent_rate": 0.3333,
+      "viaf_findings_n": 9,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "sample_titles": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q3421342",
+          "title": "stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q127900502",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q117454382",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "ol-OL13079935A",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "ol-OL10372320A",
+          "title": "STRIPE",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "wp-en-Stripe",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "wp-en-Stripe_Inc_",
+          "title": "Stripe, Inc.",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 8,
+          "inDenom": true
+        },
+        {
+          "id": "wp-en-Stripes_film_",
+          "title": "Stripes (film)",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikipedia"
+          ],
+          "nEv": 2,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-126600779",
+          "title": "Stripes",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikipedia"
+          ],
+          "nEv": 2,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q297115",
+          "title": "Meloidae",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q469754",
+          "title": "Perca flavescens",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.40d41a996900ac26c1ec2dda090fbba1",
+      "status": "partial",
+      "findings_count": 30,
+      "findings_with_ge1_evidence_n": 30,
+      "multi_independent_n": 12,
+      "multi_independent_rate": 0.4,
+      "viaf_findings_n": 15,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "sample_titles": [
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q116059498",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q50320550",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "ol-OL2917704A",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "ol-OL4511273A",
+          "title": "Red Cross.",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "wp-en-Red_Cross",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "wp-en-Red_Cross_EP_",
+          "title": "Red Cross (EP)",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-148420048",
+          "title": "Red Cross (Great Britain)",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-312731766",
+          "title": "Red Cross, Henry Dunant Institute",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-159584209",
+          "title": "Red Cross, Deutsches Rotes Kreuz",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "nEv": 10,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata"
+          ],
+          "nEv": 2,
+          "inDenom": true
+        },
+        {
+          "id": "ol-OL10303910A",
+          "title": "American Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikidata"
+          ],
+          "nEv": 2,
+          "inDenom": true
+        }
+      ]
+    }
+  ],
+  "aggregates": {
+    "mean_multi_independent_rate": 0.5189,
+    "pooled_multi_independent_rate": 0.4675,
+    "multi_total": 36,
+    "with_ev_total": 77,
+    "leak_total": 0,
+    "dossier_any": false,
+    "s01_findings": 17,
+    "s01_vs_b0_frozen": 7,
+    "multi_gate_pass": true,
+    "leak_pass": true,
+    "s01_coverage_pass": true,
+    "hard_pass": true,
+    "multi_threshold": 0.15
+  },
+  "confirm": "CONFIRM_PASS",
+  "expect": {
+    "mean_multi": "0.44–0.52",
+    "s01_findings": "~18",
+    "leak": 0
+  }
+}

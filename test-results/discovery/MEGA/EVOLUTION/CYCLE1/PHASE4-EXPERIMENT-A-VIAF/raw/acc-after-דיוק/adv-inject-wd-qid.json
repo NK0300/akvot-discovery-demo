@@ -1,0 +1,1610 @@
+{
+  "ok": true,
+  "sessionId": "kv1.9e552127336139ef60321636e841cfa5",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9h27yu-e36c80",
+  "snapshot": {
+    "sessionId": "kv1.9e552127336139ef60321636e841cfa5",
+    "seed": "John Smith",
+    "q": "John Smith",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q3182477",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "English botanist, first curator of Kew gardens (1798–1888)",
+        "evidenceIds": [
+          "ev-b893c906149d1b8130ebb91c"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q3182477"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q332377",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Labour Party leader from Scotland (1938-1994)",
+        "evidenceIds": [
+          "ev-c7a7515a0dc9e288a3772755"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q332377"
+        ],
+        "scoreFinding": 0.7083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q6258357",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "fifth Presiding Patriarch of The Church of Jesus Christ of Latter-day Saints (1832-1911)",
+        "evidenceIds": [
+          "ev-bfed6b6b3e2502e634740ed9"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q6258357"
+        ],
+        "scoreFinding": 0.6883333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q6258267",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "British banker, Conservative Member of Parliament, and Lord Lieutenant of Berkshire (1923-2007)",
+        "evidenceIds": [
+          "ev-a60fec3232272d754f66bd41"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q6258267"
+        ],
+        "scoreFinding": 0.6783333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q6258259",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "British army general (1754-1837)",
+        "evidenceIds": [
+          "ev-1cc4f6c38fdf3890cf39ebe3"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q6258259"
+        ],
+        "scoreFinding": 0.6683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q541460",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "American politician; U.S. senator from Ohio (173_-1824)",
+        "evidenceIds": [
+          "ev-07e4c8015b3a9cac2b90d1e4"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q541460"
+        ],
+        "scoreFinding": 0.6583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q991529",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "American politician from Vermont (1789-1858)",
+        "evidenceIds": [
+          "ev-d70f8af71b0d02210f6f3efe"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q991529"
+        ],
+        "scoreFinding": 0.6483333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-4952029",
+        "kind": "registry",
+        "title": "John Smith, 1580-1631",
+        "summary": "type:personal · lc:n80032759 · dnb:118797689",
+        "evidenceIds": [
+          "ev-093d1893503a116e174453aa"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:4952029"
+        ],
+        "scoreFinding": 0.6208333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-9921487",
+        "kind": "registry",
+        "title": "John Smith, Baron Kirkhill British politician",
+        "summary": "type:personal · lc:n50025210 · dnb:1089256469",
+        "evidenceIds": [
+          "ev-ea0f0d4686f5f36534e28070"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:9921487"
+        ],
+        "scoreFinding": 0.6108333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-7575484",
+        "kind": "registry",
+        "title": "John Smith, 1750-1836",
+        "summary": "type:personal · lc:n81126823 · dnb:119006960",
+        "evidenceIds": [
+          "ev-2f109fa6e128fcccfb4583bf"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:7575484"
+        ],
+        "scoreFinding": 0.6008333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-313041903",
+        "kind": "registry",
+        "title": "John Smith, 1749-1831",
+        "summary": "type:personal · lc:nr91033082 · dnb:13335380x",
+        "evidenceIds": [
+          "ev-a17fa51a3d741c2af9a8d991"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:313041903"
+        ],
+        "scoreFinding": 0.5908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-42025537",
+        "kind": "registry",
+        "title": "John Smith Hurt, 1894-1966",
+        "summary": "type:personal · lc:n83172297 · dnb:124224210",
+        "evidenceIds": [
+          "ev-d3bfaab4c1bc66c5cd142040"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:42025537"
+        ],
+        "scoreFinding": 0.5808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-91832825",
+        "kind": "registry",
+        "title": "John Smith, 1908-1994",
+        "summary": "type:personal · lc:no2006061251 · dnb:1117116468",
+        "evidenceIds": [
+          "ev-49776fe49803883fc7ee7db1"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:91832825"
+        ],
+        "scoreFinding": 0.5708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-64168972",
+        "kind": "registry",
+        "title": "John Smith, 1971-",
+        "summary": "type:personal · lc:no98126495",
+        "evidenceIds": [
+          "ev-76bb33ee74d57437ec0db542"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:64168972"
+        ],
+        "scoreFinding": 0.5608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-100212166",
+        "kind": "registry",
+        "title": "John Smith, 1747-1807",
+        "summary": "type:personal · lc:n85295009 · dnb:1055195998",
+        "evidenceIds": [
+          "ev-140efaf581f3ccaf7d56eeca"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:100212166"
+        ],
+        "scoreFinding": 0.5508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL177707A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: The general historie of Virginia, New England and the Summer Isles",
+        "evidenceIds": [
+          "ev-044834c623ca126245a161f9"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL177707A"
+        ],
+        "scoreFinding": 0.5058333333333332,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL12988612A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: Talk, Thinking and Philosophy in the Primary Classroom",
+        "evidenceIds": [
+          "ev-8581cea97a5b1093c3f9f933"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL12988612A"
+        ],
+        "scoreFinding": 0.49583333333333324,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2642558A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: John Smith Spelling Book 0",
+        "evidenceIds": [
+          "ev-d106c1eae2f9ba86575eeb63"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL2642558A"
+        ],
+        "scoreFinding": 0.4858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2404636A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: Lectures on the nature and end of the sacred office",
+        "evidenceIds": [
+          "ev-a32cc09480f36697818d16ba"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL2404636A"
+        ],
+        "scoreFinding": 0.4758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15752758A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: Herbal Antibiotics",
+        "evidenceIds": [
+          "ev-57678c28c9b848c05675aaf1"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15752758A"
+        ],
+        "scoreFinding": 0.46583333333333327,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL9615641A",
+        "kind": "registry",
+        "title": "John SMITH",
+        "summary": "Top work: Amish Cookbook and Lifestyle",
+        "evidenceIds": [
+          "ev-e87246d1a0ad152c54449bef"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL9615641A"
+        ],
+        "scoreFinding": 0.4558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL4474728A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: Catalogue Raisonné of the Works of the Most Eminent Dutch, Flemish and French Painters",
+        "evidenceIds": [
+          "ev-909845f03992d1aa055d570b"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL4474728A"
+        ],
+        "scoreFinding": 0.4458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL646156A",
+        "kind": "registry",
+        "title": "John Smith",
+        "summary": "Top work: The Generall Historie of Virginia, New England & the Summer Isles, Together With the True Travels, Adventures and Observations, and A sea Grammar",
+        "evidenceIds": [
+          "ev-a2949193c5c1fcd694bf44b6"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL646156A"
+        ],
+        "scoreFinding": 0.4358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-John_Smith",
+        "kind": "page",
+        "title": "John Smith",
+        "evidenceIds": [
+          "ev-544a24a90878b678f3eac500"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:John Smith"
+        ],
+        "scoreFinding": 0.4083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-John_Smith_explorer_",
+        "kind": "page",
+        "title": "John Smith (explorer)",
+        "evidenceIds": [
+          "ev-c612bd72384c4aa266b715fb"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:John Smith (explorer)"
+        ],
+        "scoreFinding": 0.3983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-John_Smith_Labour_Party_leader_",
+        "kind": "page",
+        "title": "John Smith (Labour Party leader)",
+        "evidenceIds": [
+          "ev-84484ac819f89baa5fa2dad3"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:John Smith (Labour Party leader)"
+        ],
+        "scoreFinding": 0.3883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-John_Smith_s_Brewery",
+        "kind": "page",
+        "title": "John Smith's Brewery",
+        "evidenceIds": [
+          "ev-c6160ae155a400f318e43c9c"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:John Smith's Brewery"
+        ],
+        "scoreFinding": 0.3783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-John_Smith_Chippewa_",
+        "kind": "page",
+        "title": "John Smith (Chippewa)",
+        "evidenceIds": [
+          "ev-502d01e8584238607070e2ea"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:John Smith (Chippewa)"
+        ],
+        "scoreFinding": 0.3683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-John_Smith_actor_",
+        "kind": "page",
+        "title": "John Smith (actor)",
+        "evidenceIds": [
+          "ev-ff0ee047ac2a01dce9baf5c4"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:John Smith (actor)"
+        ],
+        "scoreFinding": 0.35833333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-b893c906149d1b8130ebb91c",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q3182477",
+        "url": "https://www.wikidata.org/wiki/Q3182477",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "English botanist, first curator of Kew gardens (1798–1888)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c7a7515a0dc9e288a3772755",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q332377",
+        "url": "https://www.wikidata.org/wiki/Q332377",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "Labour Party leader from Scotland (1938-1994)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-bfed6b6b3e2502e634740ed9",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q6258357",
+        "url": "https://www.wikidata.org/wiki/Q6258357",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "fifth Presiding Patriarch of The Church of Jesus Christ of Latter-day Saints (1832-1911)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a60fec3232272d754f66bd41",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q6258267",
+        "url": "https://www.wikidata.org/wiki/Q6258267",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "British banker, Conservative Member of Parliament, and Lord Lieutenant of Berkshire (1923-2007)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1cc4f6c38fdf3890cf39ebe3",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q6258259",
+        "url": "https://www.wikidata.org/wiki/Q6258259",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "British army general (1754-1837)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-07e4c8015b3a9cac2b90d1e4",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q541460",
+        "url": "https://www.wikidata.org/wiki/Q541460",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "American politician; U.S. senator from Ohio (173_-1824)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d70f8af71b0d02210f6f3efe",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q991529",
+        "url": "https://www.wikidata.org/wiki/Q991529",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:05:33.128Z",
+        "evidenceType": "registry",
+        "quote": "American politician from Vermont (1789-1858)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-044834c623ca126245a161f9",
+        "provenanceUrl": "https://openlibrary.org/authors/OL177707A",
+        "url": "https://openlibrary.org/authors/OL177707A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "The general historie of Virginia, New England and the Summer Isles",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8581cea97a5b1093c3f9f933",
+        "provenanceUrl": "https://openlibrary.org/authors/OL12988612A",
+        "url": "https://openlibrary.org/authors/OL12988612A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "Talk, Thinking and Philosophy in the Primary Classroom",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d106c1eae2f9ba86575eeb63",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2642558A",
+        "url": "https://openlibrary.org/authors/OL2642558A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "John Smith Spelling Book 0",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a32cc09480f36697818d16ba",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2404636A",
+        "url": "https://openlibrary.org/authors/OL2404636A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "Lectures on the nature and end of the sacred office",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-57678c28c9b848c05675aaf1",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15752758A",
+        "url": "https://openlibrary.org/authors/OL15752758A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "Herbal Antibiotics",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e87246d1a0ad152c54449bef",
+        "provenanceUrl": "https://openlibrary.org/authors/OL9615641A",
+        "url": "https://openlibrary.org/authors/OL9615641A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "Amish Cookbook and Lifestyle",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-909845f03992d1aa055d570b",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4474728A",
+        "url": "https://openlibrary.org/authors/OL4474728A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "Catalogue Raisonné of the Works of the Most Eminent Dutch, Flemish and French Painters",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a2949193c5c1fcd694bf44b6",
+        "provenanceUrl": "https://openlibrary.org/authors/OL646156A",
+        "url": "https://openlibrary.org/authors/OL646156A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:05:35.272Z",
+        "evidenceType": "registry",
+        "quote": "The Generall Historie of Virginia, New England & the Summer Isles, Together With the True Travels, Adventures and Observations, and A sea Grammar",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-544a24a90878b678f3eac500",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/John_Smith",
+        "url": "https://en.wikipedia.org/wiki/John_Smith",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:05:32.943Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c612bd72384c4aa266b715fb",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/John_Smith_(explorer)",
+        "url": "https://en.wikipedia.org/wiki/John_Smith_(explorer)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:05:32.943Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-84484ac819f89baa5fa2dad3",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)",
+        "url": "https://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:05:32.943Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c6160ae155a400f318e43c9c",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/John_Smith%27s_Brewery",
+        "url": "https://en.wikipedia.org/wiki/John_Smith%27s_Brewery",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:05:32.943Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-502d01e8584238607070e2ea",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/John_Smith_(Chippewa)",
+        "url": "https://en.wikipedia.org/wiki/John_Smith_(Chippewa)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:05:32.943Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ff0ee047ac2a01dce9baf5c4",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/John_Smith_(actor)",
+        "url": "https://en.wikipedia.org/wiki/John_Smith_(actor)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:05:32.943Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-093d1893503a116e174453aa",
+        "provenanceUrl": "https://viaf.org/viaf/4952029",
+        "url": "https://viaf.org/viaf/4952029",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, 1580-1631",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ea0f0d4686f5f36534e28070",
+        "provenanceUrl": "https://viaf.org/viaf/9921487",
+        "url": "https://viaf.org/viaf/9921487",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, Baron Kirkhill British politician",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2f109fa6e128fcccfb4583bf",
+        "provenanceUrl": "https://viaf.org/viaf/7575484",
+        "url": "https://viaf.org/viaf/7575484",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, 1750-1836",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a17fa51a3d741c2af9a8d991",
+        "provenanceUrl": "https://viaf.org/viaf/313041903",
+        "url": "https://viaf.org/viaf/313041903",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, 1749-1831",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d3bfaab4c1bc66c5cd142040",
+        "provenanceUrl": "https://viaf.org/viaf/42025537",
+        "url": "https://viaf.org/viaf/42025537",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith Hurt, 1894-1966",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-49776fe49803883fc7ee7db1",
+        "provenanceUrl": "https://viaf.org/viaf/91832825",
+        "url": "https://viaf.org/viaf/91832825",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, 1908-1994",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-76bb33ee74d57437ec0db542",
+        "provenanceUrl": "https://viaf.org/viaf/64168972",
+        "url": "https://viaf.org/viaf/64168972",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, 1971-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-140efaf581f3ccaf7d56eeca",
+        "provenanceUrl": "https://viaf.org/viaf/100212166",
+        "url": "https://viaf.org/viaf/100212166",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:05:33.061Z",
+        "evidenceType": "registry",
+        "quote": "John Smith, 1747-1807",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "viaf",
+            "count": 8
+          },
+          {
+            "value": "wikidata",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 24
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial",
+      "viaf": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:32ddaf65cc3a"
+      ],
+      "status": "candidate",
+      "displayHint": "John Smith",
+      "hints": {
+        "org": "IBM"
+      }
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:05:32.886Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:32ddaf65cc3a",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q3182477",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q332377",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q6258357",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q6258267",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q6258259",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q541460",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q991529",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL177707A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL12988612A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2642558A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2404636A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15752758A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL9615641A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4474728A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL646156A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-John_Smith",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-John_Smith_explorer_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-John_Smith_Labour_Party_leader_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-John_Smith_s_Brewery",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "john smith",
+        "findingIds": [
+          "wd-Q3182477",
+          "wd-Q332377",
+          "wd-Q6258357",
+          "wd-Q6258267",
+          "wd-Q6258259",
+          "wd-Q541460",
+          "wd-Q991529",
+          "ol-OL177707A",
+          "ol-OL12988612A",
+          "ol-OL2642558A",
+          "ol-OL2404636A",
+          "ol-OL15752758A",
+          "ol-OL9615641A",
+          "ol-OL4474728A",
+          "ol-OL646156A",
+          "wp-en-John_Smith"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "openlibrary.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "forbiddenStripped": 1
+  }
+}

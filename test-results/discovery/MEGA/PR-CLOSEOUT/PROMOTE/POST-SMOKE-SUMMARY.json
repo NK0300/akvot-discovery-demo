@@ -1,0 +1,80 @@
+{
+  "seeds": [
+    {
+      "label": "person",
+      "seed": "John Smith",
+      "createCode": 401,
+      "sessionId": null,
+      "store": null,
+      "status": null,
+      "leak": false,
+      "getStatus": null,
+      "findings": null
+    },
+    {
+      "label": "company",
+      "seed": "Acme Corporation",
+      "createCode": 401,
+      "sessionId": null,
+      "store": null,
+      "status": null,
+      "leak": false,
+      "getStatus": null,
+      "findings": null
+    },
+    {
+      "label": "domain",
+      "seed": "example.com",
+      "createCode": 401,
+      "sessionId": null,
+      "store": null,
+      "status": null,
+      "leak": false,
+      "getStatus": null,
+      "findings": null
+    },
+    {
+      "label": "org",
+      "seed": "United Nations",
+      "createCode": 401,
+      "sessionId": null,
+      "store": null,
+      "status": null,
+      "leak": false,
+      "getStatus": null,
+      "findings": null
+    },
+    {
+      "label": "ambiguous",
+      "seed": "Alex",
+      "createCode": 401,
+      "sessionId": null,
+      "store": null,
+      "status": null,
+      "leak": false,
+      "getStatus": null,
+      "findings": null
+    },
+    {
+      "label": "nomatch",
+      "seed": "zzzznonexistentxyz12345",
+      "createCode": 401,
+      "sessionId": null,
+      "store": null,
+      "status": null,
+      "leak": false,
+      "getStatus": null,
+      "findings": null
+    }
+  ],
+  "lifecycle": {},
+  "core": {
+    "healthCode": 200,
+    "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "ok": true,
+    "lookupLeak": false,
+    "pw": 0,
+    "top": null
+  },
+  "leakage": 0
+}

@@ -1,0 +1,97 @@
+{
+  "stamp": "2026-09-20T10:13:55+03:00",
+  "stampLabel": "2026-09-20 10:13 IDT",
+  "experiment": "EXP-A2-Option-A",
+  "promote": "HOLD",
+  "preview": {
+    "dpl": "dpl_5bxMZ6qBgqVfAc2iXCcbotGpGuRo",
+    "url": "https://akvot-simple-demo-42q85em03-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/5bxMZ6qBgqVfAc2iXCcbotGpGuRo",
+    "target": null,
+    "env": {
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+    }
+  },
+  "smoke": {
+    "mean_multi_rate": 0.5222,
+    "pooled_multi_rate": 0.4744,
+    "gate": 0.15,
+    "mean_pass": true,
+    "pooled_pass": true,
+    "per_seed": [
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "sessionId": "kv1.5fb527b6b3795fc3f63cc613a93b0a0f",
+        "status": "partial",
+        "providers_map": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "partial"
+        },
+        "findings_n": 18,
+        "viaf_n": 15,
+        "providers_ge2": 15,
+        "corr_facet_n": 15,
+        "multi_n": 15,
+        "multi_rate": 0.8333
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "sessionId": "kv1.56d6f68f47d893fe453f10241874a5d8",
+        "status": "partial",
+        "providers_map": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "findings_n": 30,
+        "viaf_n": 9,
+        "providers_ge2": 10,
+        "corr_facet_n": 10,
+        "multi_n": 10,
+        "multi_rate": 0.3333
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "sessionId": "kv1.d66754c5fef6f35b0b889f3ab74f68c6",
+        "status": "partial",
+        "providers_map": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "findings_n": 30,
+        "viaf_n": 15,
+        "providers_ge2": 12,
+        "corr_facet_n": 12,
+        "multi_n": 12,
+        "multi_rate": 0.4
+      }
+    ]
+  },
+  "units": {
+    "corroboration.viaf": "23/0",
+    "providers.viaf": "27/0",
+    "adversarial.acc": "65/0",
+    "orchestrator": "113/0",
+    "prCloseout.acc": "107/0"
+  },
+  "note": "EXP-A2 Option A Preview only. No --prod. No alias retarget. Acc scrub after coalesce. Never dossier."
+}

@@ -1,0 +1,57 @@
+{
+  "fixtureId": "ADV-02-ambiguous-he-en",
+  "qSection": "Q14",
+  "invariant": [
+    "ACC-DISC-02",
+    "ACC-DISC-03",
+    "ACC-DISC-06"
+  ],
+  "intent": "Ambiguous Hebrew + English twins must stay soft; no false dossier; no forbidden QID.",
+  "seeds": [
+    {
+      "q": "כהן",
+      "locale": "he",
+      "kind": "HE_common_surname"
+    },
+    {
+      "q": "Cohen",
+      "locale": "en",
+      "kind": "EN_common_surname"
+    },
+    {
+      "q": "דוד כהן",
+      "locale": "he",
+      "kind": "HE_soft_person"
+    },
+    {
+      "q": "David Cohen",
+      "locale": "en",
+      "kind": "EN_soft_person"
+    }
+  ],
+  "poisonCandidates": [
+    {
+      "id": "wd-Q1701775",
+      "label": "Will Smith",
+      "why": [
+        "geo token NY trap — Acc attack"
+      ]
+    }
+  ],
+  "expect": {
+    "uiCore": [
+      "need_context",
+      "thin",
+      "candidates",
+      "ambiguous"
+    ],
+    "neverUi": [
+      "dossier"
+    ],
+    "leakage": 0,
+    "forbiddenQidsAbsent": [
+      "Q1701775"
+    ],
+    "notes": "Ambiguous HE/EN — UNKNOWN≠FALSE · no pretty-wrong"
+  }
+}

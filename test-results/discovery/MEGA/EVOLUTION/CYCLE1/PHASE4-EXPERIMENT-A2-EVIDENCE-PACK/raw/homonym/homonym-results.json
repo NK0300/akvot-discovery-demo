@@ -1,0 +1,729 @@
+{
+  "stamp": "2026-09-20T10:41:32+03:00",
+  "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+  "rows": [
+    {
+      "id": "H01",
+      "seed": "John Smith",
+      "hints": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US"
+      },
+      "expect": "no_false_same_entity",
+      "sessionId": "kv1.72c412309681ec206f30f38112924ee8",
+      "findings_n": 29,
+      "with_ev_n": 29,
+      "multi_n": 4,
+      "multi_rate": 0.1379,
+      "viaf_n": 10,
+      "providers_ge2": 4,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 2,
+      "relationship_counts": {
+        "same-entity": 2
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "ol-OL177707A",
+          "title": "John Smith",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL177707A",
+            "ol-OL177707A",
+            "viaf:4952029",
+            "qid:Q228024",
+            "wd-Q228024"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-4952029",
+          "title": "John Smith, 1580-1631",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL177707A",
+            "ol-OL177707A",
+            "viaf:4952029",
+            "qid:Q228024",
+            "wd-Q228024"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL2404636A",
+          "title": "John Smith",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL2404636A",
+            "ol-OL2404636A",
+            "viaf:100212166",
+            "qid:Q18546636",
+            "wd-Q18546636"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H02",
+      "seed": "John Smith",
+      "hints": {
+        "qid": "Q1701775"
+      },
+      "expect": "acc_scrub_leak0",
+      "sessionId": "kv1.34a82172c8019d1ac91e73399d696bbf",
+      "findings_n": 29,
+      "with_ev_n": 29,
+      "multi_n": 4,
+      "multi_rate": 0.1379,
+      "viaf_n": 10,
+      "providers_ge2": 4,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 2,
+      "relationship_counts": {
+        "same-entity": 2
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "ol-OL177707A",
+          "title": "John Smith",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL177707A",
+            "ol-OL177707A",
+            "viaf:4952029",
+            "qid:Q228024",
+            "wd-Q228024"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-4952029",
+          "title": "John Smith, 1580-1631",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL177707A",
+            "ol-OL177707A",
+            "viaf:4952029",
+            "qid:Q228024",
+            "wd-Q228024"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL2404636A",
+          "title": "John Smith",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL2404636A",
+            "ol-OL2404636A",
+            "viaf:100212166",
+            "qid:Q18546636",
+            "wd-Q18546636"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H03",
+      "seed": "John Smith",
+      "hints": {
+        "forceId": "wd-Q1701775"
+      },
+      "expect": "acc_scrub_leak0",
+      "sessionId": "kv1.c584d841bb897c6335bb10c1c3932ad1",
+      "findings_n": 29,
+      "with_ev_n": 29,
+      "multi_n": 4,
+      "multi_rate": 0.1379,
+      "viaf_n": 10,
+      "providers_ge2": 4,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 2,
+      "relationship_counts": {
+        "same-entity": 2
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "ol-OL177707A",
+          "title": "John Smith",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL177707A",
+            "ol-OL177707A",
+            "viaf:4952029",
+            "qid:Q228024",
+            "wd-Q228024"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-4952029",
+          "title": "John Smith, 1580-1631",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL177707A",
+            "ol-OL177707A",
+            "viaf:4952029",
+            "qid:Q228024",
+            "wd-Q228024"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL2404636A",
+          "title": "John Smith",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL2404636A",
+            "ol-OL2404636A",
+            "viaf:100212166",
+            "qid:Q18546636",
+            "wd-Q18546636"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H04",
+      "seed": "John Smith Q1701775",
+      "hints": {
+        "org": "IBM"
+      },
+      "expect": "acc_scrub_leak0",
+      "sessionId": "kv1.6e814b8da9e5100a7cb21a11be6d16ae",
+      "findings_n": 0,
+      "with_ev_n": 0,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 0,
+      "providers_ge2": 0,
+      "families_union": [],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 0,
+      "sample_multi": [],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H05",
+      "seed": "Cohen",
+      "hints": {},
+      "expect": "no_dossier_collapse",
+      "sessionId": "kv1.22cfc8b3e8c698a534548e4ac9117e95",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 2,
+      "multi_rate": 0.0667,
+      "viaf_n": 9,
+      "providers_ge2": 2,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 1,
+      "relationship_counts": {
+        "related-entity": 1
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "wd-Q76709",
+          "title": "Hermann Cohen",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q76709",
+            "wd-Q76709",
+            "viaf:12326139"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-12326139",
+          "title": "Cohén, Hermann 1842-1918",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q76709",
+            "wd-Q76709",
+            "viaf:12326139"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H06",
+      "seed": "כהן",
+      "hints": {},
+      "expect": "no_dossier_collapse",
+      "sessionId": "kv1.7ed66b88e2be24fdd023a4ddeba1a859",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 0,
+      "sample_multi": [],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H07",
+      "seed": "Alex Morgan",
+      "hints": {},
+      "expect": "homonym_keep_separate",
+      "sessionId": "kv1.2f5c2447a7edf8c0c6d46c8f1d016c7c",
+      "findings_n": 15,
+      "with_ev_n": 15,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 7,
+      "providers_ge2": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf"
+      ],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 0,
+      "sample_multi": [],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H08",
+      "seed": "Red Cross",
+      "hints": {},
+      "expect": "pretty_wrong_national_societies_ok",
+      "sessionId": "kv1.e7937b8f914eeea7812b849eb4b52019",
+      "findings_n": 22,
+      "with_ev_n": 22,
+      "multi_n": 4,
+      "multi_rate": 0.1818,
+      "viaf_n": 10,
+      "providers_ge2": 4,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 2,
+      "relationship_counts": {
+        "related-entity": 2
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "ol-OL17804A",
+          "title": "American National Red Cross",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL17804A",
+            "ol-OL17804A",
+            "viaf:122023057",
+            "qid:Q470110",
+            "wd-Q470110"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-122023057",
+          "title": "Red Cross USA",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL17804A",
+            "ol-OL17804A",
+            "viaf:122023057",
+            "qid:Q470110",
+            "wd-Q470110"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL124327A",
+          "title": "International Committee of the Red Cross",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL124327A",
+            "ol-OL124327A",
+            "viaf:160178001",
+            "qid:Q5987345",
+            "wd-Q5987345"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H09",
+      "seed": "Stripe",
+      "hints": {},
+      "expect": "stripe_ne_stripe_john",
+      "sessionId": "kv1.b028c434f65a1cf78fe59d0cfe89aa8a",
+      "findings_n": 22,
+      "with_ev_n": 22,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 1,
+      "sample_multi": [],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H10",
+      "seed": "Michael Jordan",
+      "hints": {},
+      "expect": "homonym_keep_separate",
+      "sessionId": "kv1.ad819f280d42ca1a716ab25ed32c8fff",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 10,
+      "multi_rate": 0.3333,
+      "viaf_n": 13,
+      "providers_ge2": 10,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 5,
+      "relationship_counts": {
+        "same-entity": 3,
+        "related-entity": 2
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "wd-Q41421",
+          "title": "Michael Jordan",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q41421",
+            "wd-Q41421",
+            "viaf:114945073"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-114945073",
+          "title": "Michael Jordan, 1963-",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q41421",
+            "wd-Q41421",
+            "viaf:114945073"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "wd-Q1928047",
+          "title": "Michael Jordan",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q1928047",
+            "wd-Q1928047",
+            "viaf:303086450"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H11",
+      "seed": "Smith",
+      "hints": {
+        "city": "Boston"
+      },
+      "expect": "bare_surname_no_merge",
+      "sessionId": "kv1.cab2535dfabff245ecf84eacef340db8",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "providers_ge2": 0,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 0,
+      "relationship_counts": {},
+      "contradictions_n": 3,
+      "sample_multi": [],
+      "dossier": false,
+      "pass": true
+    },
+    {
+      "id": "H12",
+      "seed": "Jordan",
+      "hints": {},
+      "expect": "bare_surname_no_merge",
+      "sessionId": "kv1.4797551aa9e3fa32530a49067ad7823f",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 4,
+      "multi_rate": 0.1333,
+      "viaf_n": 10,
+      "providers_ge2": 4,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "edges_n": 2,
+      "relationship_counts": {
+        "same-entity": 2
+      },
+      "contradictions_n": 1,
+      "sample_multi": [
+        {
+          "id": "wd-Q810",
+          "title": "Jordan",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q810",
+            "wd-Q810",
+            "viaf:125091880"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "viaf-125091880",
+          "title": "Jordan",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q810",
+            "wd-Q810",
+            "viaf:125091880"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "wikidata",
+            "viaf"
+          ]
+        },
+        {
+          "id": "ol-OL234426A",
+          "title": "Jordan B. Peterson",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "ol:OL234426A",
+            "ol-OL234426A",
+            "viaf:7566917",
+            "qid:Q6276882",
+            "wd-Q6276882"
+          ],
+          "evidence_n": 2,
+          "families": [
+            "openlibrary",
+            "viaf"
+          ]
+        }
+      ],
+      "dossier": false,
+      "pass": true
+    }
+  ]
+}

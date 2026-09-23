@@ -1,0 +1,94 @@
+{
+  "stamp": "2026-09-20T10:51:03+03:00",
+  "stampLabel": "2026-09-20 10:51 IDT",
+  "preview": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app"
+  },
+  "scope": "observational Phase-2 stub from S01/S04/S05 typed-enrich finals — no product code changes",
+  "viaf": {
+    "precision_notes": [
+      "S01: VIAF 85312226 correctly joins to Q80/OL25245A — high precision for canonical person.",
+      "S04: VIAF hits are lexical matches on 'Stripe*' (people, museums, historical) — low precision for company seed; no WKP/QID on findings.",
+      "S05: VIAF mixes national societies, Jean Pictet, Henry Dunant Institute — reasonable org recall but sparse WKP enrich."
+    ],
+    "coverage_notes": [
+      "S01 viaf_n=10 (dup-inflated by attach_keep copies of viaf-85312226).",
+      "S04 viaf_n=8 family-local only.",
+      "S05 viaf_n=14 on findings; 2 VIAF ids participate in multi-family clusters; Q7178's VIAF 145680594 not returned by Autocomplete for this seed."
+    ],
+    "collision_notes": [
+      "S01: duplicate finding rows sharing id viaf-85312226 (8 copies) — collision/duplication at graph surface after attach_keep.",
+      "S04: Adelle Stripe appears in VIAF (156206104) and OL (OL8613090A) as likely same person but no shared typed key on findings (OL lacked viaf: remote_ids in session) — missed join, not false merge.",
+      "No observed false merge across distinct QIDs in this sample (Acc leak 0)."
+    ]
+  },
+  "qid": {
+    "precision_notes": [
+      "S01: Q80 is correct person; other QIDs are talks/works titled with person name — correct as independent entities, not false person merges.",
+      "S04: no QIDs (wikidata=error).",
+      "S05: Q470110 / Q5987345 coalesce correctly; Q48438 Saint George and Q7305591 Redd Kross are semantic noise — singletons (safe)."
+    ],
+    "coverage_notes": [
+      "S01: 17 findings carry qid/wd; 10 of those multi-family.",
+      "S05: 12 findings carry qid/wd; only the two cluster QIDs multi-family.",
+      "P214 enrich present on Q80, Q470110, Q7178, Q48438, Q7305591 in session; join only when peer VIAF/OL finding exists."
+    ],
+    "collision_notes": [
+      "No qid collision (two different real-world entities sharing one QID) observed.",
+      "Related-entity flood (talks/works) dilutes multi_rate denominator without being coalesce failures."
+    ]
+  },
+  "ol": {
+    "precision_notes": [
+      "S01 OL25245A correctly Tim Berners-Lee with remote_ids → viaf+qid.",
+      "S04 OL hits are title/author string matches on Stripe* — low precision for fintech company.",
+      "S05 OL17804A / OL124327A correctly participate in Red Cross clusters when remote_ids present."
+    ],
+    "coverage_notes": [
+      "remote_ids enrich is the critical OL→viaf/qid bridge; when absent, OL stays family-local (S04 all 8 OL; S05 6 OL singletons).",
+      "OL network probe from forensics box timed out — coverage claims grounded in session entityRefs only."
+    ],
+    "collision_notes": [
+      "ol: vs ol- dual emission on same finding (both listed) — benign aliasing, coalesce accepts both forms.",
+      "No OL key collision across distinct people observed in sample."
+    ]
+  },
+  "cross_family_join_keys_observed": [
+    {
+      "key": "viaf:85312226",
+      "also": [
+        "qid:Q80",
+        "ol:OL25245A"
+      ],
+      "seed": "S01",
+      "result": "multi_family"
+    },
+    {
+      "key": "viaf:122023057",
+      "also": [
+        "qid:Q470110",
+        "ol:OL17804A"
+      ],
+      "seed": "S05",
+      "result": "multi_family"
+    },
+    {
+      "key": "viaf:160178001",
+      "also": [
+        "qid:Q5987345",
+        "ol:OL124327A"
+      ],
+      "seed": "S05",
+      "result": "multi_family"
+    },
+    {
+      "key": "viaf:145680594",
+      "also": [
+        "qid:Q7178"
+      ],
+      "seed": "S05",
+      "result": "wd_only_no_peer"
+    }
+  ]
+}

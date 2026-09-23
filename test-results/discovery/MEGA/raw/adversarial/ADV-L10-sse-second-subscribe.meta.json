@@ -1,0 +1,34 @@
+{
+  "sse1": {
+    "httpStatus": 200,
+    "contentType": "text/event-stream; charset=utf-8",
+    "events": 9,
+    "types": [
+      "meta",
+      "progress",
+      "provider",
+      "finding",
+      "facets",
+      "status",
+      "done"
+    ],
+    "ms": 3007
+  },
+  "sse2": {
+    "httpStatus": 200,
+    "contentType": "text/event-stream; charset=utf-8",
+    "events": 9,
+    "types": [
+      "meta",
+      "progress",
+      "provider",
+      "finding",
+      "facets",
+      "status",
+      "done"
+    ],
+    "ms": 2558
+  },
+  "entityLeak": 0,
+  "note": "Second subscribe on fs-regen — full Last-Event-ID durable replay remains BLOCKED_KV"
+}

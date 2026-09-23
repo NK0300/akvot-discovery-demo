@@ -1,0 +1,471 @@
+{
+  "doc": "ACC-FINDING-QUALITY-SCORECARD-דיוק",
+  "agent": "דיוק",
+  "date": "2026-09-20",
+  "stamp": "2026-09-20T09:53:31+03:00",
+  "mode": "OBSERVATION_ONLY · INTERNAL Acc score",
+  "promote": "HOLD",
+  "baselineId": "B0",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "formula": {
+    "name": "AccFindingQualityScore_v0",
+    "range": "0-100",
+    "letters": {
+      "A": ">=90",
+      "B": ">=80",
+      "C": ">=70",
+      "D": ">=60",
+      "F": "<60"
+    },
+    "hardGate": "Any Acc leak (Q1701775/wd-Q1701775) → score=0 letter=F for seed and aggregate",
+    "start": 100,
+    "emptySessions": {
+      "S09_no-match_expected": 92,
+      "unexpected_empty": 55
+    },
+    "penalties": {
+      "duplicate_rate": "rate * 25",
+      "near_dup_rate": "rate * 6 (common/ambiguous/conflict) else rate * 12",
+      "no_evidence_rate": "rate * 40",
+      "weak_rate": "rate * 15",
+      "single_source_rate": "rate * 8",
+      "contradiction_handling": "+15 if contradiction members but session.contradictions==0; +20 if S10 and contr==0",
+      "false_identity_risk": "min(24, count*12)"
+    },
+    "bonuses": {
+      "multi_source": "min(10, count*2)",
+      "session_contradiction_on_ambiguity": "+5 (S01/S02/S03/S04/S10)",
+      "domain_families": "+5 if ≥2, +8 if ≥3",
+      "cite_or_drop": "+5 if no-evidence rate==0"
+    },
+    "aggregate": "mean(focus seed scores); Acc leak any → aggregate F/0"
+  },
+  "accLeakTotal": 0,
+  "accLeakMustBeZero": true,
+  "aggregate": {
+    "score": 86.5,
+    "letter": "B",
+    "meanOfFocus": [
+      88.1,
+      84.9,
+      80.9,
+      88.6,
+      82.0,
+      82.0,
+      92,
+      93.8
+    ],
+    "focusSeeds": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S06",
+      "S07",
+      "S09",
+      "S10"
+    ]
+  },
+  "perSeed": {
+    "S01": {
+      "score": 88.1,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -8.4,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -13.5,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.7,
+          "no_evidence": 0.0,
+          "weak": 0.9,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.7
+        }
+      },
+      "findingsCount": 10,
+      "category": "person",
+      "classCounts": {
+        "weak": 9,
+        "contradiction": 7,
+        "single-source": 10,
+        "near-dup": 7
+      }
+    },
+    "S02": {
+      "score": 84.9,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [
+        "session_contradiction_present"
+      ],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -4.57,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -8.57,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": -12,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.762,
+          "no_evidence": 0.0,
+          "weak": 0.571,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.762
+        }
+      },
+      "findingsCount": 21,
+      "category": "common-name",
+      "classCounts": {
+        "contradiction": 16,
+        "single-source": 21,
+        "near-dup": 16,
+        "false-identity-risk": 1,
+        "weak": 12
+      }
+    },
+    "S03": {
+      "score": 80.9,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [
+        "session_contradiction_present"
+      ],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -2.86,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -14.29,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": -12,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.476,
+          "no_evidence": 0.0,
+          "weak": 0.952,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.476
+        }
+      },
+      "findingsCount": 21,
+      "category": "ambiguous-person",
+      "classCounts": {
+        "single-source": 21,
+        "weak": 20,
+        "near-dup": 10,
+        "false-identity-risk": 1,
+        "contradiction": 10
+      }
+    },
+    "S04": {
+      "score": 88.6,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -3.43,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 5,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.286,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.214
+        }
+      },
+      "findingsCount": 14,
+      "category": "company",
+      "classCounts": {
+        "weak": 14,
+        "single-source": 14,
+        "near-dup": 4,
+        "contradiction": 3
+      }
+    },
+    "S06": {
+      "score": 82.0,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 6,
+      "category": "domain",
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      }
+    },
+    "S07": {
+      "score": 82.0,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 1,
+      "category": "multilingual-HE",
+      "classCounts": {
+        "weak": 1,
+        "single-source": 1
+      }
+    },
+    "S09": {
+      "score": 92,
+      "letter": "A",
+      "accLeak": 0,
+      "formulaNotes": [
+        "no-match_empty_correct"
+      ],
+      "components": {
+        "empty_expected": 92
+      },
+      "findingsCount": 0,
+      "category": "no-match",
+      "classCounts": {}
+    },
+    "S10": {
+      "score": 93.8,
+      "letter": "A",
+      "accLeak": 0,
+      "formulaNotes": [
+        "session_contradiction_present"
+      ],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -3.27,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -12.95,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 5,
+        "bonus_domain_diversity": 8,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.545,
+          "no_evidence": 0.0,
+          "weak": 0.864,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.545
+        }
+      },
+      "findingsCount": 22,
+      "category": "conflicting-evidence",
+      "classCounts": {
+        "contradiction": 12,
+        "single-source": 22,
+        "near-dup": 12,
+        "weak": 19
+      }
+    },
+    "S05": {
+      "score": 82.0,
+      "letter": "B",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": 0,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 6,
+      "category": "organization",
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      }
+    },
+    "S08": {
+      "score": 55,
+      "letter": "F",
+      "accLeak": 0,
+      "formulaNotes": [
+        "unexpected_empty"
+      ],
+      "components": {
+        "empty_unexpected": -45
+      },
+      "findingsCount": 0,
+      "category": "multilingual",
+      "classCounts": {}
+    },
+    "S11": {
+      "score": 70.0,
+      "letter": "C",
+      "accLeak": 0,
+      "formulaNotes": [],
+      "components": {
+        "start": 100,
+        "penalty_duplicate": -0.0,
+        "penalty_near_dup": -0.0,
+        "penalty_no_evidence": -0.0,
+        "penalty_weak": -15.0,
+        "penalty_single_source": -8.0,
+        "penalty_contradiction_handling": 0,
+        "penalty_false_identity_risk": -12,
+        "bonus_multi_source": 0,
+        "bonus_session_contradiction": 0,
+        "bonus_domain_diversity": 0,
+        "bonus_cite_or_drop": 5,
+        "rates": {
+          "duplicate": 0.0,
+          "near_dup": 0.0,
+          "no_evidence": 0.0,
+          "weak": 1.0,
+          "single_source": 1.0,
+          "multi_source": 0.0,
+          "contradiction": 0.0
+        }
+      },
+      "findingsCount": 2,
+      "category": "wrong-person-trap",
+      "classCounts": {
+        "weak": 2,
+        "single-source": 2,
+        "false-identity-risk": 1
+      }
+    },
+    "S12": {
+      "score": 55,
+      "letter": "F",
+      "accLeak": 0,
+      "formulaNotes": [
+        "unexpected_empty"
+      ],
+      "components": {
+        "empty_unexpected": -45
+      },
+      "findingsCount": 0,
+      "category": "duplicate-source-trap",
+      "classCounts": {}
+    }
+  },
+  "focusSeeds": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S06",
+    "S07",
+    "S09",
+    "S10"
+  ],
+  "extraSeeds": [
+    "S05",
+    "S08",
+    "S11",
+    "S12"
+  ],
+  "gates": {
+    "accLeak": "PASS",
+    "observation": "PASS",
+    "promote": "HOLD"
+  },
+  "alias": "https://akvot-discovery.vercel.app",
+  "forbiddenQid": "Q1701775"
+}

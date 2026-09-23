@@ -1,0 +1,32 @@
+{
+  "phase": 6,
+  "url": "https://akvot-simple-demo.vercel.app",
+  "deploy_final": "dpl_CuDkuYakAmS133Z2EArRhgV4RXhg",
+  "deploy_ids": [
+    "dpl_3Kxj3p1cw57H4A5bo3kVSN1JLnr4",
+    "dpl_3EwBWPJQTWgkgM4VAzA4bKiAYBNB",
+    "dpl_AwthGTPEvjRZzrKFBdFvtjttZtpe",
+    "dpl_CmDPZWf2nrwrxZPDJGAydQ3qBTiG",
+    "dpl_2nAZBDLxWZevJAe6UVM6CuJB66cn",
+    "dpl_CuDkuYakAmS133Z2EArRhgV4RXhg"
+  ],
+  "ts": "2026-09-06T16:43:00Z",
+  "summary": {
+    "battery_round1": "22/27 PASS (5 FAIL, 3 critical)",
+    "final_spaced": "16/18 PASS (0 critical)",
+    "post_fix_smoke": "dani/moshe/yossi candidates clean; Einstein Q937 wiki; Herzog IMPROVE under wiki 429→google"
+  },
+  "top_fixes": [
+    "Latin/EN names via Wikidata-first + EN wiki (Obama/Einstein/Miri Regev)",
+    "Common-name soft-ambiguous: exact primary + ≥2 role siblings → candidates (משה לוי / יוסי כהן) with early short-circuit (no entity fetch)",
+    "Wikidata fallback when HE path misses (guarded against overriding disambig)",
+    "Timeout hardening: capped wiki backoff, fewer retries, skip heavy Gemini when wiki has portrait+bio, client 70s abort UX",
+    "Scrub phone digit-variants; filter [phone]/[email] junk candidate labels; candidate noise filter"
+  ],
+  "remaining_improve": [
+    "יצחק הרצוג under Wikimedia 429 still falls to google (images OK, missing QID) — need WD fallback resilience when getEntity also 429s",
+    "Latency variance under rate limit (wiki rich sometimes 2s, sometimes 30s+)",
+    "Candidate quality: occasional non-person alts for Latin→HE search bleed",
+    "דב מורן / קובי אלכסנדר intermittently candidates/google vs wiki depending on 429"
+  ]
+}

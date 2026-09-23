@@ -1,0 +1,42 @@
+[kv-release] start 2026-09-20T07:39:17+03:00
+[kv-release] Preview dpl_BAkeDgvpvqGEg53zXxScGdESvdPv · Core dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · HOLD promote
+
+=== Health ===
+[health] api.build=dpl_BAkeDgvpvqGEg53zXxScGdESvdPv store=upstash disc.ok=true steps=["WRITE:true","READ:true","UPDATE:true","DELETE:true"]
+
+=== Seeds Acc ≥3 ===
+
+--- S1 דוד כהן ---
+[POST] 201 sid=kv1.b843e42d0f2a0a91054cd7314606addd findings=19 store=upstash ms=2761
+[GET] 200 regenerated=null findings=19 ms=2275
+[GET2] 200 regenerated=null findings=19
+[SSE] ct=text/event-stream; charset=utf-8 ev=27 types=meta,progress,provider,finding,facets,status,done ms=2666
+[SSE2] ev=27 types=meta,progress,provider,finding,facets,status,done ms=2621
+[NARROW] 200 19→19 ms=2372
+[S1] PASS ok
+
+--- S2 Alex Morgan ---
+[POST] 201 sid=kv1.4cc3846873ac6a178cd8f493a892e862 findings=21 store=upstash ms=3358
+[GET] 200 regenerated=null findings=21 ms=2596
+[GET2] 200 regenerated=null findings=21
+[SSE] ct=text/event-stream; charset=utf-8 ev=29 types=meta,progress,provider,finding,facets,status,done ms=2891
+[SSE2] ev=29 types=meta,progress,provider,finding,facets,status,done ms=2744
+[NARROW] 200 21→21 ms=2770
+[S2] PASS ok
+
+--- S3 example.org ---
+[POST] 201 sid=kv1.77c01b27051e191537855aeea8d2d853 findings=3 store=upstash ms=3466
+[GET] 200 regenerated=null findings=3 ms=2640
+[GET2] 200 regenerated=null findings=3
+[SSE] ct=text/event-stream; charset=utf-8 ev=11 types=meta,progress,provider,finding,facets,status,done ms=2470
+[SSE2] ev=11 types=meta,progress,provider,finding,facets,status,done ms=2521
+[NARROW] 200 3→3 ms=2447
+[S3] PASS ok
+
+=== RB-11 rehydrate scrub ===
+[RB11] GET 200 regen=null forbiddenAbsent=false bans=
+[RB11 narrow-poison] 200 entityLeak=0? true
+
+=== ADV L1-L4 smoke ===
+[ADV-L1] PASS http=201 findings=19 el=0
+[ADV-L2] PASS http=201 findings=21 el=0

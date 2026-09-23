@@ -1,0 +1,17 @@
+{
+  "$id": "akvot/discovery/image-provenance",
+  "title": "ImageProvenance",
+  "description": "Required provenance for any image emit; never emit image without sourcePageUrl",
+  "type": "object",
+  "required": ["id", "imageUrl", "sourcePageUrl", "providerId", "retrievedAt", "robotsOk"],
+  "properties": {
+    "id": { "type": "string" },
+    "imageUrl": { "type": "string", "format": "uri" },
+    "sourcePageUrl": { "type": "string", "format": "uri" },
+    "providerId": { "type": "string" },
+    "licenseHint": { "type": "string" },
+    "retrievedAt": { "type": "string", "format": "date-time" },
+    "robotsOk": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

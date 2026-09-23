@@ -1,0 +1,84 @@
+{
+  "stamp": "2026-09-20T08:53:26+03:00",
+  "recommendation": "PROMOTE-READY",
+  "promoted": false,
+  "candidatePreview": {
+    "id": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "url": "https://akvot-simple-demo-6palh6t62-k-akvot.vercel.app"
+  },
+  "coreAliasLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "gates": [
+    {
+      "id": "G1",
+      "title": "Freeze forensics",
+      "result": "PASS"
+    },
+    {
+      "id": "G2",
+      "title": "B17 telemetry",
+      "result": "PASS"
+    },
+    {
+      "id": "G3",
+      "title": "B18 durability truth",
+      "result": "PASS"
+    },
+    {
+      "id": "G4",
+      "title": "KV health CRUD",
+      "result": "PASS"
+    },
+    {
+      "id": "G5",
+      "title": "Lifecycle",
+      "result": "PASS"
+    },
+    {
+      "id": "G6",
+      "title": "Failure injection",
+      "result": "PASS"
+    },
+    {
+      "id": "G7",
+      "title": "Acc leakage=0",
+      "result": "PASS"
+    },
+    {
+      "id": "G8",
+      "title": "Core regression",
+      "result": "PASS"
+    },
+    {
+      "id": "G9",
+      "title": "Security adversarial",
+      "result": "PASS"
+    },
+    {
+      "id": "G10",
+      "title": "Entity-agnostic",
+      "result": "PASS"
+    },
+    {
+      "id": "G11",
+      "title": "INFO\u2260ID / UNKNOWN\u2260FALSE",
+      "result": "PASS"
+    },
+    {
+      "id": "G12",
+      "title": "No secrets in evidence",
+      "result": "PASS"
+    },
+    {
+      "id": "G13",
+      "title": "npm test green",
+      "result": "PASS"
+    },
+    {
+      "id": "G14",
+      "title": "STOP before promote",
+      "result": "PASS"
+    }
+  ],
+  "passCount": 14,
+  "total": 14
+}

@@ -1,0 +1,136 @@
+{
+  "ok": true,
+  "sessionId": "kv1.1a21b37f5bd4efaae7e2d09b319f9f99",
+  "seed": "בנימין נתניהו",
+  "q": "בנימין נתניהו",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wp-en-_",
+      "kind": "page",
+      "title": "בנימין נתניהו",
+      "evidenceIds": [
+        "ev-97339b17991135197e46d290"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:בנימין נתניהו"
+      ],
+      "scoreFinding": 0.6483333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-97339b17991135197e46d290",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%91%D7%A0%D7%99%D7%9E%D7%99%D7%9F_%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%95",
+      "url": "https://en.wikipedia.org/wiki/%D7%91%D7%A0%D7%99%D7%9E%D7%99%D7%9F_%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%95",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:48.826Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "wikipedia",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "page",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "error",
+    "openlibrary": "error",
+    "wikipedia": "ok"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:323e635083a5"
+    ],
+    "status": "candidate",
+    "displayHint": "בנימין נתניהו",
+    "hints": {
+      "locale": "he"
+    }
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T06:51:48.790Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:323e635083a5",
+        "kind": "seed"
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

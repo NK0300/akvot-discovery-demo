@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "sessionId": "kv1.9a3341b733b2765c97ea62751c5b7d86",
+  "status": "failed_soft",
+  "findings": [],
+  "evidence": [],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "error",
+    "openlibrary": "ok",
+    "wikipedia": "error"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:5d357ef86db9"
+    ],
+    "status": "candidate",
+    "hints": {}
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T05:48:35.993Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:5d357ef86db9",
+        "kind": "seed"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "forbiddenStripped": 1
+}

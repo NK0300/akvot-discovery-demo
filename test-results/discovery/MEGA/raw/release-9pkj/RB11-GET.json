@@ -1,0 +1,1248 @@
+{
+  "httpStatus": 200,
+  "ms": 2155,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.3a8bee9416349922a842f14a1717cfa1",
+    "seed": "David Cohen",
+    "q": "David Cohen",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q826524",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Dutch historian (1882–1967)",
+        "evidenceIds": [
+          "ev-3e6bc206fa4f3bc0bc8447f9"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q826524"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q85408317",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "American academic (UCLA Luskin School of Public Affairs)",
+        "evidenceIds": [
+          "ev-17431ed69e931fb7e5f08d8b"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q85408317"
+        ],
+        "scoreFinding": 0.7083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q115097854",
+        "kind": "registry",
+        "title": "David Cohen",
+        "evidenceIds": [
+          "ev-1720fa2016e478365c10c383"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q115097854"
+        ],
+        "scoreFinding": 0.6983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q12405712",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Zionist activist (1894-1976)",
+        "evidenceIds": [
+          "ev-4cbcd56e1f049561c57a67ee"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q12405712"
+        ],
+        "scoreFinding": 0.6883333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q87994037",
+        "kind": "registry",
+        "title": "David J. Cohen",
+        "summary": "American legal classicist",
+        "evidenceIds": [
+          "ev-6842b44b996f8654c9f4867b"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q87994037"
+        ],
+        "scoreFinding": 0.6783333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q110179523",
+        "kind": "registry",
+        "title": "David Cohen",
+        "evidenceIds": [
+          "ev-8760e07de75efddb1ec661d1"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q110179523"
+        ],
+        "scoreFinding": 0.6683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q89747540",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "researcher (ORCID 0000-0002-3321-7375)",
+        "evidenceIds": [
+          "ev-af744fd080bea41b4306e3e2"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q89747540"
+        ],
+        "scoreFinding": 0.6583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q112183109",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Swiss mathematician",
+        "evidenceIds": [
+          "ev-77515c525ecc3f87095dff6e"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q112183109"
+        ],
+        "scoreFinding": 0.6483333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL1439353A",
+        "kind": "registry",
+        "title": "Cohen, David",
+        "summary": "Top work: Maʻaśeh avot siman le-vanim",
+        "evidenceIds": [
+          "ev-e83af285e992ecbcceb24c5e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL1439353A"
+        ],
+        "scoreFinding": 0.5858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL252636A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: The development of play",
+        "evidenceIds": [
+          "ev-eb38c9e0f9cbfc8492275ba9"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL252636A"
+        ],
+        "scoreFinding": 0.5758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL6822052A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: The Circle of Life",
+        "evidenceIds": [
+          "ev-6cd30ecf06b7daa48b88af5c"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL6822052A"
+        ],
+        "scoreFinding": 0.5658333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL4973655A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+        "evidenceIds": [
+          "ev-2ceeb07e90a5e99ca8a1eed2"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL4973655A"
+        ],
+        "scoreFinding": 0.5558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL590106A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: Lucian Freud",
+        "evidenceIds": [
+          "ev-e484bfe82421a086585a1266"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL590106A"
+        ],
+        "scoreFinding": 0.5458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL4383124A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: On predictable rule-insertion",
+        "evidenceIds": [
+          "ev-4d3c53fcbd9655bb9f331168"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL4383124A"
+        ],
+        "scoreFinding": 0.5358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL5259151A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: Le-artsam",
+        "evidenceIds": [
+          "ev-84e65862d5ef67c90ee9dafb"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL5259151A"
+        ],
+        "scoreFinding": 0.5258333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL5913540A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: The biological role of the nucleic acids",
+        "evidenceIds": [
+          "ev-b80b72e7d9ece84044777141"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL5913540A"
+        ],
+        "scoreFinding": 0.5158333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-David_Cohen",
+        "kind": "page",
+        "title": "David Cohen",
+        "evidenceIds": [
+          "ev-ba08a3f7ce6d67aeb79084b9"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:David Cohen"
+        ],
+        "scoreFinding": 0.4883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-David_Cohen_rabbi_",
+        "kind": "page",
+        "title": "David Cohen (rabbi)",
+        "evidenceIds": [
+          "ev-ea2f63e86076de3327c40854"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:David Cohen (rabbi)"
+        ],
+        "scoreFinding": 0.4783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-David_Cohen_entrepreneur_",
+        "kind": "page",
+        "title": "David Cohen (entrepreneur)",
+        "evidenceIds": [
+          "ev-214e1843dfff7e96c5acbc06"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:David Cohen (entrepreneur)"
+        ],
+        "scoreFinding": 0.4683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-David_Cohen_soldier_",
+        "kind": "page",
+        "title": "David Cohen (soldier)",
+        "evidenceIds": [
+          "ev-4d05d4d21371ee49e657b515"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:David Cohen (soldier)"
+        ],
+        "scoreFinding": 0.4583333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-David_Cohen_jockey_",
+        "kind": "page",
+        "title": "David Cohen (jockey)",
+        "evidenceIds": [
+          "ev-7b1af25f514ec62aff91c063"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:David Cohen (jockey)"
+        ],
+        "scoreFinding": 0.4483333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-David_Cohen_historian_",
+        "kind": "page",
+        "title": "David Cohen (historian)",
+        "evidenceIds": [
+          "ev-3b727024f2e7d079df5c0b5d"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:David Cohen (historian)"
+        ],
+        "scoreFinding": 0.43833333333333335,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-3e6bc206fa4f3bc0bc8447f9",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q826524",
+        "url": "https://www.wikidata.org/wiki/Q826524",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "quote": "Dutch historian (1882–1967)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-17431ed69e931fb7e5f08d8b",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q85408317",
+        "url": "https://www.wikidata.org/wiki/Q85408317",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "quote": "American academic (UCLA Luskin School of Public Affairs)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1720fa2016e478365c10c383",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q115097854",
+        "url": "https://www.wikidata.org/wiki/Q115097854",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4cbcd56e1f049561c57a67ee",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q12405712",
+        "url": "https://www.wikidata.org/wiki/Q12405712",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "quote": "Zionist activist (1894-1976)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6842b44b996f8654c9f4867b",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q87994037",
+        "url": "https://www.wikidata.org/wiki/Q87994037",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "quote": "American legal classicist",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8760e07de75efddb1ec661d1",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q110179523",
+        "url": "https://www.wikidata.org/wiki/Q110179523",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-af744fd080bea41b4306e3e2",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q89747540",
+        "url": "https://www.wikidata.org/wiki/Q89747540",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "quote": "researcher (ORCID 0000-0002-3321-7375)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-77515c525ecc3f87095dff6e",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q112183109",
+        "url": "https://www.wikidata.org/wiki/Q112183109",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:54:09.236Z",
+        "evidenceType": "registry",
+        "quote": "Swiss mathematician",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e83af285e992ecbcceb24c5e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL1439353A",
+        "url": "https://openlibrary.org/authors/OL1439353A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "Maʻaśeh avot siman le-vanim",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-eb38c9e0f9cbfc8492275ba9",
+        "provenanceUrl": "https://openlibrary.org/authors/OL252636A",
+        "url": "https://openlibrary.org/authors/OL252636A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "The development of play",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6cd30ecf06b7daa48b88af5c",
+        "provenanceUrl": "https://openlibrary.org/authors/OL6822052A",
+        "url": "https://openlibrary.org/authors/OL6822052A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "The Circle of Life",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2ceeb07e90a5e99ca8a1eed2",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4973655A",
+        "url": "https://openlibrary.org/authors/OL4973655A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e484bfe82421a086585a1266",
+        "provenanceUrl": "https://openlibrary.org/authors/OL590106A",
+        "url": "https://openlibrary.org/authors/OL590106A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "Lucian Freud",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4d3c53fcbd9655bb9f331168",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4383124A",
+        "url": "https://openlibrary.org/authors/OL4383124A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "On predictable rule-insertion",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-84e65862d5ef67c90ee9dafb",
+        "provenanceUrl": "https://openlibrary.org/authors/OL5259151A",
+        "url": "https://openlibrary.org/authors/OL5259151A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "Le-artsam",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b80b72e7d9ece84044777141",
+        "provenanceUrl": "https://openlibrary.org/authors/OL5913540A",
+        "url": "https://openlibrary.org/authors/OL5913540A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:54:09.700Z",
+        "evidenceType": "registry",
+        "quote": "The biological role of the nucleic acids",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba08a3f7ce6d67aeb79084b9",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/David_Cohen",
+        "url": "https://en.wikipedia.org/wiki/David_Cohen",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T04:54:09.291Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ea2f63e86076de3327c40854",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/David_Cohen_(rabbi)",
+        "url": "https://en.wikipedia.org/wiki/David_Cohen_(rabbi)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T04:54:09.291Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-214e1843dfff7e96c5acbc06",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/David_Cohen_(entrepreneur)",
+        "url": "https://en.wikipedia.org/wiki/David_Cohen_(entrepreneur)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T04:54:09.291Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4d05d4d21371ee49e657b515",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/David_Cohen_(soldier)",
+        "url": "https://en.wikipedia.org/wiki/David_Cohen_(soldier)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T04:54:09.291Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-7b1af25f514ec62aff91c063",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/David_Cohen_(jockey)",
+        "url": "https://en.wikipedia.org/wiki/David_Cohen_(jockey)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T04:54:09.291Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3b727024f2e7d079df5c0b5d",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/David_Cohen_(historian)",
+        "url": "https://en.wikipedia.org/wiki/David_Cohen_(historian)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T04:54:09.291Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "wikidata",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 16
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:08b80f1d7466"
+      ],
+      "status": "candidate",
+      "displayHint": "David Cohen",
+      "hints": {
+        "injectNote": "must-not-emit-forbidden-qid-as-entity"
+      }
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T04:54:08.981Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:08b80f1d7466",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q826524",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q85408317",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q115097854",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q12405712",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q87994037",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q110179523",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q89747540",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q112183109",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL1439353A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL252636A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL6822052A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4973655A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL590106A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4383124A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL5259151A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL5913540A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-David_Cohen",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-David_Cohen_rabbi_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-David_Cohen_entrepreneur_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-David_Cohen_soldier_",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "david cohen",
+        "findingIds": [
+          "wd-Q826524",
+          "wd-Q85408317",
+          "wd-Q115097854",
+          "wd-Q12405712",
+          "wd-Q110179523",
+          "wd-Q89747540",
+          "wd-Q112183109",
+          "ol-OL252636A",
+          "ol-OL6822052A",
+          "ol-OL4973655A",
+          "ol-OL590106A",
+          "ol-OL4383124A",
+          "ol-OL5259151A",
+          "ol-OL5913540A",
+          "wp-en-David_Cohen"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "openlibrary.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

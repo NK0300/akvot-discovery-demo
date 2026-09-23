@@ -1,0 +1,261 @@
+{
+  "stamp": "2026-09-20T11:37:49+03:00",
+  "stamp_label": "2026-09-20 11:37 IDT",
+  "agent": "דיוק",
+  "cycle": "CYCLE1",
+  "experiment": "EXP-C1-WEB-ORIGIN",
+  "mode": "CORPUS_READY",
+  "status": "WAITING_FOR_PREVIEW",
+  "promote": "HOLD",
+  "pass_bars": {
+    "acc_leak": 0,
+    "forbidden_q_surface": 0,
+    "same_entity_from_url": 0,
+    "same_reference_from_url_alone": 0,
+    "pretty_wrong_false_merge": 0,
+    "ssrf_block_rate": 1.0,
+    "core_alias_pw0_leak0": true
+  },
+  "forbidden_qids": [
+    "Q1701775"
+  ],
+  "poison_prefixes": [
+    "wd-Q1701775",
+    "qid:Q1701775"
+  ],
+  "categories": [
+    "poison_id_injects",
+    "homonym_url_vs_person_org",
+    "localhost_private_metadata",
+    "redirect_to_private",
+    "entity_looking_url_must_unknown"
+  ],
+  "n": 19,
+  "rows": [
+    {
+      "id": "ACC-P01",
+      "category": "poison_qid_query",
+      "seed": "https://www.example.com/page?qid=Q1701775",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "acc_checks": [
+        "leak=0",
+        "Q1701775_never_surface"
+      ]
+    },
+    {
+      "id": "ACC-P02",
+      "category": "poison_qid_path",
+      "seed": "https://www.example.com/wiki/Q1701775",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "acc_checks": [
+        "leak=0",
+        "no_qid_entityRef"
+      ]
+    },
+    {
+      "id": "ACC-P03",
+      "category": "poison_qid_seed",
+      "seed": "Q1701775",
+      "expect_safety": "N/A",
+      "expect_rel_ceiling": "no_SAME_via_poison",
+      "expect_finding": "strip_ok",
+      "acc_checks": [
+        "leak=0",
+        "forbidden_scrub"
+      ]
+    },
+    {
+      "id": "ACC-P04",
+      "category": "poison_entity_page_lookalike",
+      "seed": "https://www.wikidata.org/wiki/Q1701775",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "acc_checks": [
+        "must_UNKNOWN",
+        "FAIL_if_SAME_ENTITY_or_SAME_REFERENCE"
+      ]
+    },
+    {
+      "id": "ACC-P05",
+      "category": "poison_wd_prefix",
+      "seed": "wd-Q1701775 inject (meta/title if injectable)",
+      "expect_safety": "ALLOW_or_drop",
+      "expect_rel_ceiling": "UNKNOWN_or_CONTRADICTORY",
+      "expect_finding": "N_preferred",
+      "acc_checks": [
+        "scrub",
+        "no_wd-Q1701775_surface"
+      ]
+    },
+    {
+      "id": "ACC-H01",
+      "category": "homonym_url_brand",
+      "seed": "https://www.stripe.com",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "acc_checks": [
+        "false_merge=0"
+      ]
+    },
+    {
+      "id": "ACC-H02",
+      "category": "homonym_person",
+      "seed": "John Smith",
+      "expect_safety": "N/A",
+      "expect_rel_ceiling": "RELATED_POSSIBLE_UNKNOWN",
+      "expect_finding": "providers",
+      "acc_checks": [
+        "false_merge=0",
+        "no_SAME_ENTITY"
+      ]
+    },
+    {
+      "id": "ACC-H03",
+      "category": "homonym_org",
+      "seed": "Red Cross",
+      "expect_safety": "N/A",
+      "expect_rel_ceiling": "URL_alone_UNKNOWN",
+      "expect_finding": "providers",
+      "acc_checks": [
+        "no_domain_collapse"
+      ]
+    },
+    {
+      "id": "ACC-H04",
+      "category": "homonym_wiki_url",
+      "seed": "https://en.wikipedia.org/wiki/John_Smith",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "acc_checks": [
+        "FAIL_if_SAME_from_URL"
+      ]
+    },
+    {
+      "id": "ACC-S01",
+      "category": "ssrf_loopback",
+      "seed": "http://127.0.0.1/",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "acc_checks": [
+        "block",
+        "safe_telemetry",
+        "leak=0"
+      ]
+    },
+    {
+      "id": "ACC-S02",
+      "category": "ssrf_localhost",
+      "seed": "https://localhost/",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "acc_checks": [
+        "block",
+        "safe_telemetry"
+      ]
+    },
+    {
+      "id": "ACC-S03",
+      "category": "ssrf_private",
+      "seed": "http://192.168.1.1/",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "acc_checks": [
+        "block",
+        "safe_telemetry"
+      ]
+    },
+    {
+      "id": "ACC-S04",
+      "category": "ssrf_metadata_ip",
+      "seed": "http://169.254.169.254/",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "acc_checks": [
+        "block",
+        "safe_telemetry"
+      ]
+    },
+    {
+      "id": "ACC-S05",
+      "category": "ssrf_metadata_host",
+      "seed": "https://metadata.google.internal/",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "acc_checks": [
+        "block",
+        "safe_telemetry"
+      ]
+    },
+    {
+      "id": "ACC-R01",
+      "category": "redirect_to_private",
+      "seed": "https://example.com/redirect?url=http://127.0.0.1/",
+      "expect_safety": "ALLOW_seed_BLOCK_hop",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N_from_blocked_hop",
+      "acc_checks": [
+        "hop_revalidate",
+        "no_private_provenance"
+      ]
+    },
+    {
+      "id": "ACC-R02",
+      "category": "redirect_to_private_shortener",
+      "seed": "(Server fixture / document pattern)",
+      "expect_safety": "BLOCK_if_detectable",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "acc_checks": [
+        "no_private_leak"
+      ]
+    },
+    {
+      "id": "ACC-U01",
+      "category": "entity_page_url_unknown",
+      "seed": "https://www.wikidata.org/wiki/Q80",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "acc_checks": [
+        "FAIL_if_SAME_from_URL"
+      ]
+    },
+    {
+      "id": "ACC-U02",
+      "category": "entity_page_url_unknown",
+      "seed": "https://viaf.org/viaf/85312226",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "acc_checks": [
+        "FAIL_if_SAME_from_URL"
+      ]
+    },
+    {
+      "id": "ACC-U03",
+      "category": "domain_seed_unknown",
+      "seed": "openai.com",
+      "expect_safety": "N/A",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "acc_checks": [
+        "FAIL_if_SAME_from_domain"
+      ]
+    }
+  ],
+  "complement_qa_corpus": "06-DOMAIN-ADVERSARIAL-CORPUS-בודק-2026-09-20",
+  "live_results": null,
+  "acc_verdict": null
+}

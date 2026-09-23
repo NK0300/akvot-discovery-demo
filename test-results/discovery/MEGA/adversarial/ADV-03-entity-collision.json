@@ -1,0 +1,117 @@
+{
+  "fixtureId": "ADV-03-entity-collision",
+  "qSection": "Q15",
+  "invariant": [
+    "ACC-DISC-01",
+    "ACC-DISC-05",
+    "ACC-DISC-06"
+  ],
+  "intent": "Inject forbidden QID into findings/facets/graph/candidates; scrub must strip on all surfaces.",
+  "sessionPoison": {
+    "sessionId": "adv-collision-fixture",
+    "seed": "John Smith",
+    "q": "John Smith",
+    "status": "partial",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "findings": [
+      {
+        "id": "wd-Q1701775",
+        "title": "Poison person",
+        "summary": "Must strip",
+        "entityRefs": [
+          "Q1701775"
+        ],
+        "evidenceIds": [
+          "ev-poison"
+        ]
+      },
+      {
+        "id": "wd-Q42",
+        "title": "Safe finding",
+        "summary": "Keep",
+        "entityRefs": [
+          "Q42"
+        ],
+        "evidenceIds": [
+          "ev-ok"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-poison",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q1701775",
+        "providerId": "wikidata"
+      },
+      {
+        "id": "ev-ok",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q42",
+        "providerId": "wikidata"
+      }
+    ],
+    "facets": [
+      {
+        "key": "entity",
+        "buckets": [
+          {
+            "value": "Q1701775",
+            "count": 3
+          },
+          {
+            "value": "Q42",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "Q1701775",
+          "label": "forbidden"
+        },
+        {
+          "id": "Q42",
+          "label": "ok"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Q1701775",
+          "to": "Q42",
+          "type": "mentions"
+        }
+      ]
+    },
+    "candidates": [
+      {
+        "id": "wd-Q1701775",
+        "label": "Will Smith"
+      },
+      {
+        "id": "viaf-4952029",
+        "label": "John Smith, 1580-1631"
+      }
+    ]
+  },
+  "expect": {
+    "leakage": 0,
+    "forbiddenStrippedMin": 1,
+    "keptFindingIds": [
+      "wd-Q42"
+    ],
+    "strippedFindingIds": [
+      "wd-Q1701775"
+    ],
+    "surfaces": [
+      "findings",
+      "evidence",
+      "facets",
+      "graph",
+      "candidates",
+      "sse",
+      "narrow",
+      "regen"
+    ]
+  }
+}

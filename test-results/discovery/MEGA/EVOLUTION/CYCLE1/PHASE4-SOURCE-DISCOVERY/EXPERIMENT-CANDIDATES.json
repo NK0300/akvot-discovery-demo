@@ -1,0 +1,58 @@
+{
+  "step": 40,
+  "title": "EXPERIMENT-CANDIDATES",
+  "stamp": "2026-09-20T09:54:30+03:00",
+  "mode": "design-only",
+  "implementation": false,
+  "deploy": false,
+  "promote": "HOLD",
+  "addresses": [
+    "QD-01",
+    "QD-04",
+    "QD-05"
+  ],
+  "candidates": [
+    {
+      "id": "EXP-A",
+      "title": "VIAF independent registry",
+      "qd": [
+        "QD-01",
+        "QD-05"
+      ],
+      "primaryMetric": "multi_independent_source_rate≥0.15 on S01/S04/S05"
+    },
+    {
+      "id": "EXP-B",
+      "title": "HE locale + snippet floor",
+      "qd": [
+        "QD-05",
+        "QD-01"
+      ],
+      "primaryMetric": "he.wikipedia.org on S07 + weak_evidence_rate≤0.40"
+    },
+    {
+      "id": "EXP-C",
+      "title": "URL/role/compound resolvers",
+      "qd": [
+        "QD-04",
+        "QD-05"
+      ],
+      "primaryMetric": "≥1 grounded finding on S16 and ≥2 of S13–S15"
+    },
+    {
+      "id": "EXP-D",
+      "title": "Publication demotion",
+      "qd": [
+        "QD-05"
+      ],
+      "primaryMetric": "≥30% relative cut publication share on S01",
+      "optional": true
+    }
+  ],
+  "priority": [
+    "EXP-A",
+    "EXP-C",
+    "EXP-B",
+    "EXP-D"
+  ]
+}

@@ -1,0 +1,1363 @@
+{
+  "stamp": "2026-09-20T10:42:28+03:00",
+  "stampLabel": "2026-09-20 10:42:28 IDT",
+  "experiment": "EXP-A2-SAFE-EVIDENCE-PACK-ACC",
+  "agent": "דיוק",
+  "promote": "HOLD",
+  "preview": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app"
+  },
+  "gate": 0.15,
+  "mean_multi_rate": 0.2185,
+  "pooled_multi_rate": 0.1667,
+  "multi_gate_pass": true,
+  "acc_leak_total": 0,
+  "title_only_total": 0,
+  "s01_findings_n": 18,
+  "seeds": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.dc65fcd3c8a259894d564ceb82b4d74d",
+      "findings_n": 18,
+      "with_ev_n": 18,
+      "multi_n": 10,
+      "multi_rate": 0.5556,
+      "viaf_n": 10,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "title_only_n": 0,
+      "identity_label_counts": {
+        "same-reference": 10,
+        "same-source": 7,
+        "unknown": 1
+      },
+      "relationship_counts": {},
+      "sample_multi": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 10,
+          "title_only_key": false
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 10,
+          "title_only_key": false
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 10,
+          "title_only_key": false
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, 1955-",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 10,
+          "title_only_key": false
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 10,
+          "title_only_key": false
+        }
+      ],
+      "sample_single_family": [
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Tim Berners-Lee"
+          ],
+          "identity_label": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.da7ce7a2c075d1914c0fe7afd0e4abf1",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 0,
+      "multi_rate": 0,
+      "viaf_n": 8,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "title_only_n": 0,
+      "identity_label_counts": {
+        "same-source": 24,
+        "unknown": 6
+      },
+      "relationship_counts": {},
+      "sample_multi": [],
+      "sample_single_family": [
+        {
+          "id": "wp-en-Stripe",
+          "title": "Stripe",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Stripe"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Striped_hyena",
+          "title": "Striped hyena",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Striped hyena"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Stripe_Inc_",
+          "title": "Stripe, Inc.",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Stripe, Inc."
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Striped_polecat",
+          "title": "Striped polecat",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Striped polecat"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Striped_skunk",
+          "title": "Striped skunk",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Striped skunk"
+          ],
+          "identity_label": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.cfe58e636f22a94f039ed339a1eeb5b5",
+      "findings_n": 30,
+      "with_ev_n": 30,
+      "multi_n": 3,
+      "multi_rate": 0.1,
+      "viaf_n": 10,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak": 0,
+      "title_only_n": 0,
+      "identity_label_counts": {
+        "same-reference": 3,
+        "same-source": 21,
+        "unknown": 6
+      },
+      "relationship_counts": {},
+      "sample_multi": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057",
+            "ol:OL17804A",
+            "ol-OL17804A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 3,
+          "title_only_key": false
+        },
+        {
+          "id": "ol-OL17804A",
+          "title": "American National Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057",
+            "ol:OL17804A",
+            "ol-OL17804A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 3,
+          "title_only_key": false
+        },
+        {
+          "id": "viaf-122023057",
+          "title": "Red Cross USA",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "entityRefs": [
+            "qid:Q470110",
+            "wd-Q470110",
+            "viaf:122023057",
+            "ol:OL17804A",
+            "ol-OL17804A"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf",
+            "wikidata"
+          ],
+          "identity_label": "same-reference",
+          "evidence_n": 3,
+          "title_only_key": false
+        }
+      ],
+      "sample_single_family": [
+        {
+          "id": "wp-en-Red_Cross",
+          "title": "Red Cross",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Red Cross"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Red_Cross_parcel",
+          "title": "Red Cross parcel",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Red Cross parcel"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Red_Cross_Youth_Philippines_",
+          "title": "Red Cross Youth (Philippines)",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Red Cross Youth (Philippines)"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Red_Cross_of_Constantine",
+          "title": "Red Cross of Constantine",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Red Cross of Constantine"
+          ],
+          "identity_label": "unknown"
+        },
+        {
+          "id": "wp-en-Red_crossbill",
+          "title": "Red crossbill",
+          "providers": [
+            "wikipedia"
+          ],
+          "entityRefs": [
+            "wp:en:Red crossbill"
+          ],
+          "identity_label": "unknown"
+        }
+      ]
+    }
+  ],
+  "adversarial": {
+    "pass": true,
+    "leak_total": 0,
+    "rows": [
+      {
+        "id": "ADV-SMITH-CTX",
+        "seed": "John Smith",
+        "findings_n": 21,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "no_false_same_entity",
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 15,
+          "unknown": 6
+        }
+      },
+      {
+        "id": "ADV-INJECT-QID",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 23,
+          "unknown": 6
+        }
+      },
+      {
+        "id": "ADV-INJECT-WD",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 4,
+          "same-source": 19,
+          "unknown": 6
+        }
+      },
+      {
+        "id": "ADV-SEED-POISON",
+        "seed": "John Smith Q1701775",
+        "findings_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "identity_label_counts": {}
+      }
+    ]
+  },
+  "homonym": {
+    "n": 10,
+    "pass_n": 10,
+    "false_merge_risk_n": 0,
+    "leak_total": 0,
+    "rows": [
+      {
+        "id": "H-SAME-TITLE",
+        "category_tag": "same_title",
+        "seed": "Tim Berners-Lee",
+        "note": "exact title across registry families; merge only via typed refs",
+        "findings_n": 18,
+        "multi_n": 10,
+        "multi_rate": 0.5556,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 10,
+          "same-source": 7,
+          "unknown": 1
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, 1955-",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-SAME-PERSON",
+        "category_tag": "same_person_name",
+        "seed": "John Smith",
+        "note": "common full person name + context",
+        "findings_n": 29,
+        "multi_n": 4,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 4,
+          "same-source": 19,
+          "unknown": 6
+        },
+        "sample_multi": [
+          {
+            "id": "ol-OL177707A",
+            "title": "John Smith",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "ol:OL177707A",
+              "ol-OL177707A",
+              "viaf:4952029",
+              "qid:Q228024",
+              "wd-Q228024"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-4952029",
+            "title": "John Smith, 1580-1631",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "ol:OL177707A",
+              "ol-OL177707A",
+              "viaf:4952029",
+              "qid:Q228024",
+              "wd-Q228024"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL2404636A",
+            "title": "John Smith",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "ol:OL2404636A",
+              "ol-OL2404636A",
+              "viaf:100212166",
+              "qid:Q18546636",
+              "wd-Q18546636"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-100212166",
+            "title": "John Smith, 1747-1807",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "ol:OL2404636A",
+              "ol-OL2404636A",
+              "viaf:100212166",
+              "qid:Q18546636",
+              "wd-Q18546636"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-SAME-ORG",
+        "category_tag": "same_org",
+        "seed": "Red Cross",
+        "note": "org name shared by national societies / ICRC / IFRC",
+        "findings_n": 30,
+        "multi_n": 5,
+        "multi_rate": 0.1667,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 5,
+          "same-source": 19,
+          "unknown": 6
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q470110",
+            "title": "American Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q470110",
+              "wd-Q470110",
+              "viaf:122023057",
+              "ol:OL17804A",
+              "ol-OL17804A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL17804A",
+            "title": "American National Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q470110",
+              "wd-Q470110",
+              "viaf:122023057",
+              "ol:OL17804A",
+              "ol-OL17804A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-122023057",
+            "title": "Red Cross USA",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q470110",
+              "wd-Q470110",
+              "viaf:122023057",
+              "ol:OL17804A",
+              "ol-OL17804A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "ol:OL124327A",
+              "ol-OL124327A",
+              "viaf:160178001",
+              "qid:Q5987345",
+              "wd-Q5987345"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-160178001",
+            "title": "Red Cross. International Committee, Geneva",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "ol:OL124327A",
+              "ol-OL124327A",
+              "viaf:160178001",
+              "qid:Q5987345",
+              "wd-Q5987345"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-DOMAIN",
+        "category_tag": "same_domain_pattern",
+        "seed": "Stripe",
+        "note": "corp vs person title-prefix domain pattern",
+        "findings_n": 30,
+        "multi_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 24,
+          "unknown": 6
+        },
+        "sample_multi": [],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-TRANSLATED",
+        "category_tag": "translated_title",
+        "seed": "International Committee of the Red Cross",
+        "note": "English formal title vs common Red Cross",
+        "findings_n": 27,
+        "multi_n": 3,
+        "multi_rate": 0.1111,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 3,
+          "same-source": 20,
+          "unknown": 4
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q5987345",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q5987345",
+              "wd-Q5987345",
+              "ol:OL124327A",
+              "ol-OL124327A",
+              "viaf:160178001"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q5987345",
+              "wd-Q5987345",
+              "ol:OL124327A",
+              "ol-OL124327A",
+              "viaf:160178001"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-160178001",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q5987345",
+              "wd-Q5987345",
+              "ol:OL124327A",
+              "ol-OL124327A",
+              "viaf:160178001"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-TRANSLIT",
+        "category_tag": "transliteration",
+        "seed": "כהן",
+        "note": "Hebrew Cohen transliteration / surname ambiguity",
+        "findings_n": 16,
+        "multi_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 16
+        },
+        "sample_multi": [],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-SURNAME",
+        "category_tag": "common_surname",
+        "seed": "Cohen",
+        "note": "common surname alone",
+        "findings_n": 16,
+        "multi_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 16
+        },
+        "sample_multi": [],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-IDENT-META",
+        "category_tag": "identical_metadata",
+        "seed": "Ada Lovelace",
+        "note": "well-typed person; expect same-reference attach not same-entity Gate",
+        "findings_n": 24,
+        "multi_n": 3,
+        "multi_rate": 0.125,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 3,
+          "same-source": 15,
+          "unknown": 6
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q7259",
+            "title": "Ada Lovelace",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q7259",
+              "wd-Q7259",
+              "viaf:61632881",
+              "ol:OL776398A",
+              "ol-OL776398A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL776398A",
+            "title": "Ada Lovelace",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q7259",
+              "wd-Q7259",
+              "viaf:61632881",
+              "ol:OL776398A",
+              "ol-OL776398A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-61632881",
+            "title": "Ada Lovelace, 1815-1852",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q7259",
+              "wd-Q7259",
+              "viaf:61632881",
+              "ol:OL776398A",
+              "ol-OL776398A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-SIBLING",
+        "category_tag": "sibling_works",
+        "seed": "Michael Jordan",
+        "note": "homonym athletes/others; keep separate without shared typed id",
+        "findings_n": 30,
+        "multi_n": 10,
+        "multi_rate": 0.3333,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 10,
+          "same-source": 14,
+          "unknown": 6
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q41421",
+            "title": "Michael Jordan",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q41421",
+              "wd-Q41421",
+              "viaf:114945073"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-114945073",
+            "title": "Michael Jordan, 1963-",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q41421",
+              "wd-Q41421",
+              "viaf:114945073"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "wd-Q1928047",
+            "title": "Michael Jordan",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q1928047",
+              "wd-Q1928047",
+              "viaf:303086450"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-303086450",
+            "title": "Michael Jordan, 1972-",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q1928047",
+              "wd-Q1928047",
+              "viaf:303086450"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "wd-Q3308285",
+            "title": "Michael I. Jordan",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q3308285",
+              "wd-Q3308285",
+              "viaf:100568809"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      },
+      {
+        "id": "H-ALEX",
+        "category_tag": "same_person_name",
+        "seed": "Alex Morgan",
+        "note": "additional person-name homonym",
+        "findings_n": 28,
+        "multi_n": 2,
+        "multi_rate": 0.0714,
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "false_merge_risk": false,
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 2,
+          "same-source": 20,
+          "unknown": 6
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q233510",
+            "title": "Alex Morgan",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q233510",
+              "wd-Q233510",
+              "viaf:3387157226595985410003"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-3387157226595985410003",
+            "title": "Alex Morgan 1989-",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q233510",
+              "wd-Q233510",
+              "viaf:3387157226595985410003"
+            ],
+            "families": [
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 2,
+            "title_only_key": false
+          }
+        ],
+        "relationship_counts": {}
+      }
+    ]
+  },
+  "surfaces": {
+    "label": "S01",
+    "sid": "kv1.dc65fcd3c8a259894d564ceb82b4d74d",
+    "surfaces": {
+      "GET": {
+        "leak": 0,
+        "findings": 18
+      },
+      "NARROW": {
+        "leak": 0
+      },
+      "SSE": {
+        "leak": 0,
+        "bytes": 55687
+      }
+    }
+  },
+  "core": {
+    "alias_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "rows": [
+      {
+        "id": "core-assaf",
+        "query": "Assaf Rappaport",
+        "leak": 0,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "pass": true
+      },
+      {
+        "id": "core-cohen",
+        "query": "כהן",
+        "leak": 0,
+        "ui": "need_context",
+        "qid": null,
+        "pass": true
+      },
+      {
+        "id": "core-smith",
+        "query": "John Smith + IBM context",
+        "leak": 0,
+        "ui": "need_context",
+        "qid": null,
+        "pass": true
+      }
+    ],
+    "pass": true,
+    "leak": 0,
+    "note": "Assaf probe uses Assaf Rappaport (prior Acc method). Bare Assaf hits wiki429→need_context — not A2-safe regression."
+  },
+  "locks": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "actual": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "ok": true
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "actual": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "ok": true
+    }
+  },
+  "gates": {
+    "multi_ge_015": true,
+    "leak_eq_0": true,
+    "title_only_eq_0": true,
+    "s01_no_vacuum": true,
+    "adversarial": true,
+    "core_b0": true,
+    "false_merge_homonym": true
+  },
+  "verdict": "PASS",
+  "stamp_corrected_core": "2026-09-20T10:43:57.810547+03:00"
+}

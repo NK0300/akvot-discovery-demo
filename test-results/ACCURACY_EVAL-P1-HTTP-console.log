@@ -1,0 +1,121 @@
+ACCURACY EVAL P1-HTTP דיוק → https://akvot-simple-demo.vercel.app
+deploy: dpl_D2zvC3QvUVgz6kaSaWqnSUCoD9hU
+caseSet: ACCURACY_EVAL-v2-set-דיוק-2026-09-09.json n=34 + smokeIbm → 35
+concurrency=3 timeout=65s Origin=https://akvot-simple-demo.vercel.app
+
+→ reg-netanyahu-bare [exact/regression] GET q=נתניהו
+→ reg-bibi-netanyahu [alias/regression] GET q=ביבי נתניהו
+→ reg-zehava-galon [transliteration/regression] GET q=Zehava Galon
+← PASS reg-bibi-netanyahu 1426ms http=200 ui=dossier qid=Q43723 faces=True conf=high phase=orchestrator-v0-b
+← PASS reg-zehava-galon 1546ms http=200 ui=dossier qid=Q2630062 faces=True conf=high phase=orchestrator-v0-b
+← PASS reg-netanyahu-bare 1746ms http=200 ui=dossier qid=Q43723 faces=True conf=high phase=orchestrator-v0-b
+→ reg-angela-merkel [transliteration/regression] GET q=Angela Merkel
+→ exact-benjamin-netanyahu [exact/new] GET q=בנימין נתניהו
+→ exact-yair-lapid [exact/new] GET q=יאיר לפיד
+← PASS exact-benjamin-netanyahu 1181ms http=200 ui=dossier qid=Q43723 faces=True conf=high phase=orchestrator-v0-b
+← PASS exact-yair-lapid 1140ms http=200 ui=dossier qid=Q1396120 faces=True conf=high phase=orchestrator-v0-b
+→ exact-benny-gantz [exact/new] GET q=בני גנץ
+← PASS reg-angela-merkel 1845ms http=200 ui=dossier qid=Q567 faces=True conf=high phase=orchestrator-v0-b
+→ exact-obama-he [exact/new] GET q=ברק אובמה
+→ exact-orly-levy [exact/new] GET q=אורלי לוי
+← PASS exact-orly-levy 5044ms http=200 ui=dossier qid=Q466537 faces=True conf=high phase=orchestrator-v0-b
+→ nonmatch-nonsense-latin [non-match/new] GET q=Xzqplmnvwtr987654321asdfgh
+← PASS exact-benny-gantz 6543ms http=200 ui=dossier qid=Q16131258 faces=True conf=high phase=orchestrator-v0-b
+→ nonmatch-nonsense-he [non-match/new] GET q=קוקומלומבופלומפ123zzz
+← PASS exact-obama-he 7190ms http=200 ui=dossier qid=Q76 faces=True conf=high phase=orchestrator-v0-b
+→ ambiguous-danny-cohen [ambiguous/new] GET q=דני כהן
+← PASS ambiguous-danny-cohen 384ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b
+→ ambiguous-yossi-levy [ambiguous/new] GET q=יוסי לוי
+← PASS ambiguous-yossi-levy 333ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b
+→ unknown-fake-obscure-he [unknown/new] POST q=פלמוני אלמוניזקש
+← PASS nonmatch-nonsense-latin 5842ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b
+→ unknown-fake-obscure-en [unknown/new] POST q=Quentin Zzyzxworth Blorple
+← PASS unknown-fake-obscure-en 15568ms http=200 ui=thin qid=- faces=False conf=none phase=orchestrator-v0-b
+→ conflict-smith-microsoft-seattle [conflict/new] POST q=John Smith
+← PASS conflict-smith-microsoft-seattle 9093ms http=200 ui=candidates qid=- faces=False conf=low phase=orchestrator-v0-b
+→ conflict-smith-email [conflict/new] POST q=John Smith
+← PASS conflict-smith-email 14471ms http=200 ui=candidates qid=- faces=False conf=low phase=orchestrator-v0-b
+← PASS nonmatch-nonsense-he 45329ms http=200 ui=thin qid=- faces=False conf=none phase=orchestrator-v0-b
+→ partial-role-only [partial/new] POST q=Sarah Johnson
+→ partial-emily-chen-student [partial/new] POST q=Emily Chen
+← PASS unknown-fake-obscure-he 45380ms http=200 ui=thin qid=- faces=False conf=none phase=orchestrator-v0-b
+→ near-netenyahu-typo [near/new] GET q=Netenyahu
+← PASS near-netenyahu-typo 5837ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b
+→ near-zehava-missing-alef [near/new] GET q=זהבה גלון
+← PASS partial-role-only 8830ms http=200 ui=candidates qid=- faces=False conf=low phase=orchestrator-v0-b
+→ duplicate-michael-brown [duplicate/new] GET q=Michael Brown
+← PASS partial-emily-chen-student 9337ms http=200 ui=candidates qid=- faces=False conf=low phase=orchestrator-v0-b
+→ duplicate-john-smith-bare [duplicate/new] GET q=John Smith
+← PASS duplicate-michael-brown 5842ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b
+→ alias-lapid-bare [alias/new] GET q=לפיד
+← PASS duplicate-john-smith-bare 5833ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b
+→ alias-gantz-bare [alias/new] GET q=גנץ
+← PASS alias-lapid-bare 4118ms http=200 ui=dossier qid=Q1396120 faces=True conf=high phase=orchestrator-v0-b
+→ alias-bibi-alone [alias/new] GET q=ביבי
+← PASS alias-bibi-alone 2029ms http=200 ui=dossier qid=Q43723 faces=True conf=high phase=orchestrator-v0-b
+→ alias-obama-surname [alias/new] GET q=Obama
+← PASS alias-gantz-bare 6987ms http=200 ui=dossier qid=Q16131258 faces=True conf=high phase=orchestrator-v0-b
+→ translit-meloni-bare [transliteration/new] GET q=Meloni
+← PASS alias-obama-surname 2062ms http=200 ui=dossier qid=Q76 faces=True conf=high phase=orchestrator-v0-b
+→ translit-giorgia-meloni [transliteration/new] GET q=Giorgia Meloni
+← PASS translit-meloni-bare 3132ms http=200 ui=dossier qid=Q451791 faces=True conf=high phase=orchestrator-v0-b
+← PASS translit-giorgia-meloni 1728ms http=200 ui=dossier qid=Q451791 faces=True conf=high phase=orchestrator-v0-b
+→ translit-assaf-rappaport [transliteration/new] GET q=Assaf Rappaport
+→ translit-obama-en [transliteration/new] GET q=Barack Obama
+← PASS translit-obama-en 1795ms http=200 ui=dossier qid=Q76 faces=True conf=high phase=orchestrator-v0-b
+→ translit-yair-lapid-en [transliteration/new] GET q=Yair Lapid
+← PASS translit-yair-lapid-en 1810ms http=200 ui=dossier qid=Q1396120 faces=True conf=high phase=orchestrator-v0-b
+→ translit-zahava-gal-on [transliteration/new] GET q=Zahava Gal-On
+← FAIL/OVER-GATE translit-assaf-rappaport 5829ms http=200 ui=need_context qid=- faces=False conf=none phase=orchestrator-v0-b | uiState=need_context expected dossier; qid=None expected Q47507930; faces expected
+→ diaspora-rahm-emanuel [exact/new] GET q=Rahm Emanuel
+← PASS translit-zahava-gal-on 3198ms http=200 ui=dossier qid=Q2630062 faces=True conf=high phase=orchestrator-v0-b
+→ smoke-smith-ibm-ny [conflict/smoke] POST q=John Smith
+← PASS diaspora-rahm-emanuel 3518ms http=200 ui=dossier qid=Q298443 faces=True conf=high phase=orchestrator-v0-b
+← PASS smoke-smith-ibm-ny 13878ms http=200 ui=thin qid=- faces=False conf=none phase=orchestrator-v0-b
+← PASS near-zehava-missing-alef 45341ms http=200 ui=thin qid=- faces=False conf=none phase=orchestrator-v0-b
+
+========== SUMMARY ==========
+N=35 PASS=34 FAIL=1 pretty-wrong=0 OVER-GATE=1
+TP=19 FP=0 TN=15 FN=1
+phaseOk=True recommendation=GO
+elapsed=110.6s
+md: /workspace/akvot-quick-demo/test-results/ACCURACY_EVAL-P1-HTTP-דיוק-2026-09-09.md
+json: /workspace/akvot-quick-demo/test-results/ACCURACY_EVAL-P1-HTTP-דיוק-2026-09-09.json
+report: /workspace/akvot-quick-demo/test-results/ACCURACY_REPORT.md
+  ✓ reg-netanyahu-bare ui=dossier qid=Q43723 faces=True
+  ✓ reg-bibi-netanyahu ui=dossier qid=Q43723 faces=True
+  ✓ reg-zehava-galon ui=dossier qid=Q2630062 faces=True
+  ✓ reg-angela-merkel ui=dossier qid=Q567 faces=True
+  ✓ exact-benjamin-netanyahu ui=dossier qid=Q43723 faces=True
+  ✓ exact-yair-lapid ui=dossier qid=Q1396120 faces=True
+  ✓ exact-benny-gantz ui=dossier qid=Q16131258 faces=True
+  ✓ exact-obama-he ui=dossier qid=Q76 faces=True
+  ✓ exact-orly-levy ui=dossier qid=Q466537 faces=True
+  ✓ nonmatch-nonsense-latin ui=need_context qid=- faces=False
+  ✓ nonmatch-nonsense-he ui=thin qid=- faces=False
+  ✓ ambiguous-danny-cohen ui=need_context qid=- faces=False
+  ✓ ambiguous-yossi-levy ui=need_context qid=- faces=False
+  ✓ unknown-fake-obscure-he ui=thin qid=- faces=False
+  ✓ unknown-fake-obscure-en ui=thin qid=- faces=False
+  ✓ conflict-smith-microsoft-seattle ui=candidates qid=- faces=False
+  ✓ conflict-smith-email ui=candidates qid=- faces=False
+  ✓ partial-role-only ui=candidates qid=- faces=False
+  ✓ partial-emily-chen-student ui=candidates qid=- faces=False
+  ✓ near-netenyahu-typo ui=need_context qid=- faces=False
+  ✓ near-zehava-missing-alef ui=thin qid=- faces=False
+  ✓ duplicate-michael-brown ui=need_context qid=- faces=False
+  ✓ duplicate-john-smith-bare ui=need_context qid=- faces=False
+  ✓ alias-lapid-bare ui=dossier qid=Q1396120 faces=True
+  ✓ alias-gantz-bare ui=dossier qid=Q16131258 faces=True
+  ✓ alias-bibi-alone ui=dossier qid=Q43723 faces=True
+  ✓ alias-obama-surname ui=dossier qid=Q76 faces=True
+  ✓ translit-meloni-bare ui=dossier qid=Q451791 faces=True
+  ✓ translit-giorgia-meloni ui=dossier qid=Q451791 faces=True
+  ✗ translit-assaf-rappaport ui=need_context qid=- faces=False :: uiState=need_context expected dossier; qid=None expected Q47507930; faces expected
+  ✓ translit-obama-en ui=dossier qid=Q76 faces=True
+  ✓ translit-yair-lapid-en ui=dossier qid=Q1396120 faces=True
+  ✓ translit-zahava-gal-on ui=dossier qid=Q2630062 faces=True
+  ✓ diaspora-rahm-emanuel ui=dossier qid=Q298443 faces=True
+  ✓ smoke-smith-ibm-ny ui=thin qid=- faces=False
+=============================
+EXIT:1

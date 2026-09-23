@@ -1,0 +1,13 @@
+{
+  "stamp": "2026-09-20T09:47:15+03:00",
+  "forbidden_qid": "Q1701775",
+  "variants_scanned": [
+    "Q1701775",
+    "wd-Q1701775",
+    "wd_Q1701775"
+  ],
+  "raw_scan_hits": [],
+  "seed_leakage_sum": 0,
+  "core_leakage_sum": 0,
+  "pass": true
+}

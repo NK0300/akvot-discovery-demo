@@ -1,0 +1,71 @@
+{
+  "stamp": "2026-09-20T08:51:41+03:00",
+  "alias": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "locked": true,
+  "pw": 0,
+  "leakage": 0,
+  "verdict": "PASS",
+  "cases": [
+    {
+      "id": "CORE-Assaf",
+      "category": "core",
+      "name": "Core Assaf Rappaport",
+      "status": "PASS",
+      "http": 200,
+      "ms": 892,
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "faces": 2,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-Assaf.json",
+      "notes": "ui=dossier qid=Q47507930 faces=2 leak=0 pw=false"
+    },
+    {
+      "id": "CORE-כהן",
+      "category": "core",
+      "name": "Core כהן",
+      "status": "PASS",
+      "http": 200,
+      "ms": 980,
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-כהן.json",
+      "notes": "ui=need_context qid=null faces=0 leak=0 pw=false"
+    },
+    {
+      "id": "CORE-Smith",
+      "category": "core",
+      "name": "Core John Smith",
+      "status": "PASS",
+      "http": 200,
+      "ms": 5788,
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-Smith.json",
+      "notes": "ui=need_context qid=null faces=0 leak=0 pw=false"
+    },
+    {
+      "id": "CORE-Smith-ctx",
+      "category": "core",
+      "name": "Core John Smith+IBM",
+      "status": "PASS",
+      "http": 200,
+      "ms": 6280,
+      "ui": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-Smith-ctx.json",
+      "notes": "ui=candidates qid=null faces=0 leak=0 pw=false"
+    }
+  ],
+  "promote": "HOLD"
+}

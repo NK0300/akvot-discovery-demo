@@ -1,0 +1,59 @@
+{
+  "snap": {
+    "status": "failed_soft",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R07",
+    "seed": "https://en.wikipedia.org/wiki/John_Smith",
+    "expect": "UNKNOWN",
+    "note": "homonym wiki URL",
+    "sessionId": "kv1.89eb8c9d5b33124eee43298a18fbf7fc",
+    "status": "failed_soft",
+    "polls": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": false,
+    "reason": "wo=0 unk=0 SE=0 SR=0",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

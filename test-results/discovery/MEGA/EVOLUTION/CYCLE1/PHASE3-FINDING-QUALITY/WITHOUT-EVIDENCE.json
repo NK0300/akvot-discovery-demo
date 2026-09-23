@@ -1,0 +1,16 @@
+{
+  "step": 26,
+  "metric": "findings_without_evidence",
+  "definition": "finding with empty evidenceIds OR no resolvable evidence objects in session.evidence",
+  "r1_seeds_with_findings": {
+    "n_findings": 129,
+    "without_evidence": 0,
+    "rate": 0.0
+  },
+  "all_sessions_with_findings": {
+    "n_findings": 244,
+    "without_evidence": 0,
+    "rate": 0.0
+  },
+  "note": "Phase2 evidenceCoverage=1.0 confirmed: every finding carries ≥1 evidenceId when findings exist."
+}

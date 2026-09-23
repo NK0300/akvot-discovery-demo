@@ -1,0 +1,55 @@
+{
+  "mode": "ambiguous",
+  "label": "Assaf",
+  "qid": null,
+  "desc": "Several possible matches — add context",
+  "extract": "",
+  "photo": null,
+  "sources": [],
+  "images": [],
+  "extra_facts": [],
+  "candidates": [],
+  "ambiguous": true,
+  "thin": false,
+  "alts": [
+    "Assaf (disambiguation)",
+    "Asaf",
+    "Assaf (name)",
+    "Assaf sheep",
+    "Operation Assaf"
+  ],
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 5302,
+    "gemini": 0,
+    "enrich": 0,
+    "stageB": 0,
+    "total": 5302,
+    "wikiMeta": {
+      "wiki429": 6,
+      "wikiTimeout": 0,
+      "wikiRetries": 6
+    }
+  },
+  "uiState": "need_context",
+  "scenario": "foreign",
+  "confidence": "none",
+  "needContextFields": [
+    "country",
+    "city",
+    "org",
+    "role"
+  ],
+  "messageKey": "common_name",
+  "photoUrl": null,
+  "faces": false,
+  "needContext": true,
+  "needCandidatePick": false,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "requestId": "228c5a83-21fe-4898-902a-172d64823790",
+  "wikiMeta": {
+    "wiki429": 6,
+    "wikiTimeout": 0,
+    "wikiRetries": 6
+  }
+}

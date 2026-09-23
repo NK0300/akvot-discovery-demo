@@ -1,0 +1,36 @@
+{
+  "stamp": "2026-09-20T10:44:54+03:00",
+  "cases": [
+    {
+      "id": "FN-1",
+      "label": "unknown",
+      "title": "S04 Stripe multi=0",
+      "detail": "findings=30 viaf_n=8 · no shared viaf/qid/ol across families"
+    },
+    {
+      "id": "FN-2",
+      "label": "unknown",
+      "title": "Wikipedia-only peers without qid mint",
+      "detail": "wiki Evidence alone does not emit coalesce keys"
+    },
+    {
+      "id": "FN-3",
+      "label": "unknown",
+      "title": "VIAF without WKP enrichment",
+      "detail": "AutoSuggest lacking WKP cannot offer qid to meet WD"
+    },
+    {
+      "id": "FN-4",
+      "label": "unknown",
+      "title": "OL authors missing remote_ids",
+      "detail": "ol:KEY-only cannot join VIAF/WD clusters"
+    },
+    {
+      "id": "FN-5",
+      "label": "unknown",
+      "title": "S05 live multi_rate=0.1 < prior smoke 0.1667",
+      "detail": "partial typed coverage; still mean gate PASS; not closed by title:"
+    }
+  ],
+  "promote": "HOLD"
+}

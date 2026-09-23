@@ -1,0 +1,426 @@
+{
+  "meta": {
+    "role": "בודק",
+    "date": "2026-09-18",
+    "timeZone": "Asia/Jerusalem",
+    "target": "https://akvot-simple-demo-ko9ttarut-k-akvot.vercel.app",
+    "access": "vercel curl --scope k-akvot --deployment Preview (protection bypass)",
+    "expectBuildPrefix": "dpl_6vYRKn",
+    "baselineLocked": "dpl_6TmottkUQ3UbnHYfGNwYjeQbFJd8",
+    "measureOnly": true,
+    "aborted403": false,
+    "streak403": 0,
+    "finishedAt": "2026-09-18T06:02:01.644Z"
+  },
+  "health": {
+    "id": "O-P5",
+    "name": "health",
+    "http": 200,
+    "wallMs": 2573,
+    "uiState": null,
+    "qid": null,
+    "photo": false,
+    "faces": 0,
+    "facesRaw": null,
+    "imagesLen": null,
+    "cached": false,
+    "requestId": null,
+    "wikiMetaPresent": null,
+    "wikiMeta": null,
+    "timings": null,
+    "timingsCacheHit": null,
+    "mode": null,
+    "thin": null,
+    "build": "dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf",
+    "pass": true,
+    "notes": "build=dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf",
+    "pw": false
+  },
+  "cases": [
+    {
+      "id": "O-P5",
+      "name": "health",
+      "http": 200,
+      "wallMs": 2573,
+      "uiState": null,
+      "qid": null,
+      "photo": false,
+      "faces": 0,
+      "facesRaw": null,
+      "imagesLen": null,
+      "cached": false,
+      "requestId": null,
+      "wikiMetaPresent": null,
+      "wikiMeta": null,
+      "timings": null,
+      "timingsCacheHit": null,
+      "mode": null,
+      "thin": null,
+      "build": "dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf",
+      "pass": true,
+      "notes": "build=dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf",
+      "pw": false
+    },
+    {
+      "id": "O-P1",
+      "name": "Assaf GET COLD nocache",
+      "http": 200,
+      "wallMs": 2989,
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "photo": true,
+      "faces": 1,
+      "facesRaw": null,
+      "imagesLen": 2,
+      "cached": false,
+      "requestId": "797b5235-ec2c-4d02-b438-92a4d27cf54c",
+      "wikiMetaPresent": true,
+      "wikiMeta": {
+        "wiki429": 0,
+        "wikiTimeout": 0,
+        "wikiRetries": 0
+      },
+      "timings": {
+        "wiki": 435,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 0,
+        "total": 436,
+        "wikiMeta": {
+          "wiki429": 0,
+          "wikiTimeout": 0,
+          "wikiRetries": 0
+        }
+      },
+      "timingsCacheHit": null,
+      "mode": "wiki",
+      "thin": false,
+      "build": null,
+      "pass": true,
+      "pw": false,
+      "notes": "ui=dossier qid=Q47507930 wikiMeta=true"
+    },
+    {
+      "id": "O-P2",
+      "name": "Smith POST nested COLD",
+      "http": 200,
+      "wallMs": 10423,
+      "uiState": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": 0,
+      "facesRaw": false,
+      "imagesLen": 0,
+      "cached": false,
+      "requestId": "b636f0a7-233a-45db-a24c-2d5bb87b0014",
+      "wikiMetaPresent": true,
+      "wikiMeta": {
+        "wiki429": 6,
+        "wikiTimeout": 1,
+        "wikiRetries": 7
+      },
+      "timings": {
+        "wiki": 5500,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 2396,
+        "total": 7900,
+        "wikiMeta": {
+          "wiki429": 6,
+          "wikiTimeout": 1,
+          "wikiRetries": 7
+        }
+      },
+      "timingsCacheHit": null,
+      "mode": "candidates",
+      "thin": false,
+      "build": null,
+      "pass": true,
+      "pw": false,
+      "notes": "ui=candidates qid=null faces=false wikiMeta=true"
+    },
+    {
+      "id": "O-P3",
+      "name": "כהן GET COLD",
+      "http": 200,
+      "wallMs": 32607,
+      "uiState": "need_context",
+      "qid": null,
+      "photo": false,
+      "faces": 0,
+      "facesRaw": false,
+      "imagesLen": 0,
+      "cached": false,
+      "requestId": "717032e6-2fb7-4684-a988-c7ca12743dfb",
+      "wikiMetaPresent": true,
+      "wikiMeta": {
+        "wiki429": 23,
+        "wikiTimeout": 0,
+        "wikiRetries": 23
+      },
+      "timings": {
+        "wiki": 26697,
+        "gemini": 0,
+        "enrich": 163,
+        "stageB": 2283,
+        "total": 29525,
+        "wikiMeta": {
+          "wiki429": 23,
+          "wikiTimeout": 0,
+          "wikiRetries": 23
+        }
+      },
+      "timingsCacheHit": null,
+      "mode": "google",
+      "thin": false,
+      "build": null,
+      "pass": true,
+      "pw": false,
+      "notes": "ui=need_context faces=false wikiMeta=true"
+    },
+    {
+      "id": "O-P4",
+      "name": "Assaf COLD then WARM no-nocache",
+      "http": 200,
+      "wallMs": 2453,
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "wikiMetaPresent": true,
+      "wikiMeta": {
+        "wiki429": 0,
+        "wikiTimeout": 0,
+        "wikiRetries": 0
+      },
+      "timings": {
+        "wiki": 0,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 0,
+        "total": 1,
+        "cacheHit": true,
+        "wikiMeta": {
+          "wiki429": 0,
+          "wikiTimeout": 0,
+          "wikiRetries": 0
+        }
+      },
+      "cached": true,
+      "requestId": "ce13d631-6ad6-49f2-8d12-18ac1b1cf71a",
+      "cold": {
+        "wallMs": 3918,
+        "total": 1084,
+        "rid": "c29723c1-64b8-43db-b5ae-422ab8e2e9b2",
+        "wikiMeta": true
+      },
+      "warm": {
+        "wallMs": 2453,
+        "total": 1,
+        "rid": "ce13d631-6ad6-49f2-8d12-18ac1b1cf71a",
+        "cached": true,
+        "cacheHit": true
+      },
+      "pass": true,
+      "pw": false,
+      "notes": "HIT cached=true cacheHit=true total=1"
+    },
+    {
+      "id": "O-R1",
+      "name": "Smith POST ×5 COLD",
+      "http": 200,
+      "wikiMetaPresent": true,
+      "runs": [
+        {
+          "i": 1,
+          "http": 200,
+          "uiState": "candidates",
+          "qid": null,
+          "facesRaw": false,
+          "photo": false,
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "requestId": "0b1588ef-f28a-4b1e-8545-c5db7a558154",
+          "wallMs": 8082,
+          "pass": true,
+          "pw": false
+        },
+        {
+          "i": 2,
+          "http": 200,
+          "uiState": "candidates",
+          "qid": null,
+          "facesRaw": false,
+          "photo": false,
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 8,
+            "wikiTimeout": 1,
+            "wikiRetries": 9
+          },
+          "requestId": "b817c254-75ea-4a13-91ce-0b024376c1ab",
+          "wallMs": 10286,
+          "pass": true,
+          "pw": false
+        },
+        {
+          "i": 3,
+          "http": 200,
+          "uiState": "candidates",
+          "qid": null,
+          "facesRaw": false,
+          "photo": false,
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 7,
+            "wikiTimeout": 1,
+            "wikiRetries": 8
+          },
+          "requestId": "1de78712-496a-43a7-9473-e1224e916c96",
+          "wallMs": 8544,
+          "pass": true,
+          "pw": false
+        },
+        {
+          "i": 4,
+          "http": 200,
+          "uiState": "candidates",
+          "qid": null,
+          "facesRaw": false,
+          "photo": false,
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 7,
+            "wikiTimeout": 1,
+            "wikiRetries": 8
+          },
+          "requestId": "f31801e3-b646-4bd9-bb98-e02f6e94d957",
+          "wallMs": 8584,
+          "pass": true,
+          "pw": false
+        },
+        {
+          "i": 5,
+          "http": 200,
+          "uiState": "candidates",
+          "qid": null,
+          "facesRaw": false,
+          "photo": false,
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 9,
+            "wikiTimeout": 1,
+            "wikiRetries": 10
+          },
+          "requestId": "db5f41d7-aa4f-4969-927a-50e01140be67",
+          "wallMs": 8678,
+          "pass": true,
+          "pw": false
+        }
+      ],
+      "pass": true,
+      "pw": false,
+      "notes": "wikiMeta_each=true pw=0 passes=5/5"
+    },
+    {
+      "id": "O-R2",
+      "name": "Assaf ×3",
+      "wikiMetaPresent": true,
+      "runs": [
+        {
+          "i": 1,
+          "http": 200,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 3,
+            "wikiTimeout": 0,
+            "wikiRetries": 3
+          },
+          "requestId": "9bf636ee-e83a-4eeb-afe7-cefceb440911",
+          "wallMs": 4609,
+          "pass": true,
+          "pw": false
+        },
+        {
+          "i": 2,
+          "http": 200,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 2,
+            "wikiTimeout": 0,
+            "wikiRetries": 2
+          },
+          "requestId": "9b16941e-7004-416a-b267-9312a2b7210f",
+          "wallMs": 3523,
+          "pass": true,
+          "pw": false
+        },
+        {
+          "i": 3,
+          "http": 200,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "wikiMetaPresent": true,
+          "wikiMeta": {
+            "wiki429": 2,
+            "wikiTimeout": 0,
+            "wikiRetries": 2
+          },
+          "requestId": "0c10f88e-37b3-4475-a198-602c92c604da",
+          "wallMs": 3882,
+          "pass": true,
+          "pw": false
+        }
+      ],
+      "pass": true,
+      "pw": false,
+      "notes": "dossier_stable=true wikiMeta_each=true qids=Q47507930"
+    },
+    {
+      "id": "O-N1",
+      "name": "missing q / bad JSON",
+      "missing_q": {
+        "http": 400,
+        "bodyKeys": [
+          "error"
+        ],
+        "wikiMeta": false,
+        "uiState": null
+      },
+      "bad_json": {
+        "http": 400,
+        "bodyPreview": [
+          "error"
+        ]
+      },
+      "pass": true,
+      "pw": false,
+      "notes": "missing_q HTTP 400; bad_json HTTP 400 — soft fail documented"
+    },
+    {
+      "id": "O-N2",
+      "name": "wrong method PUT",
+      "http": 405,
+      "pass": true,
+      "documented": true,
+      "pw": false,
+      "notes": "HTTP 405 (expect 405 if supported)"
+    }
+  ],
+  "summary": {
+    "gate": "PASS",
+    "pw": 0,
+    "wikiMeta": {
+      "O-P1": true,
+      "O-P2": true,
+      "O-P3": true
+    },
+    "build": "dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf"
+  }
+}

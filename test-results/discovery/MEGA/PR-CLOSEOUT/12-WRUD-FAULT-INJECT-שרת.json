@@ -1,0 +1,10 @@
+{
+  "id": "WRUD-FAULT",
+  "stamp": "2026-09-20T08:52:56+03:00",
+  "preview": { "deploymentId": "dpl_4trZGxgN7CKKtC6Zed6SbACzF6Po", "url": "https://akvot-simple-demo-7ogfp6yun-k-akvot.vercel.app" },
+  "wrudOk": true,
+  "steps": ["HEALTH_WRUD","CREATE","GET_HIT","NARROW","SSE_SMOKE","ACC_NO_FORBIDDEN_QID"],
+  "faultInjectAvailableOnPreview": false,
+  "faults": ["store_miss","store_latency","provider_timeout","scrub_path"],
+  "units": { "failureInject": "passed=54 failed=0", "adversarial": "passed=65 failed=0", "orchestrator": "passed=113 failed=0" }
+}

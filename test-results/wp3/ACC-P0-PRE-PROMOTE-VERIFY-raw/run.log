@@ -1,0 +1,22 @@
+health.build=dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ match=true
+[F1_quiet] 1/5 ... candidates leak=false faces=0 qid=null 6054ms
+[F1_quiet] 2/5 ... candidates leak=false faces=0 qid=null 9245ms
+[F1_quiet] 3/5 ... candidates leak=false faces=0 qid=null 8572ms
+[F1_quiet] 4/5 ... candidates leak=false faces=0 qid=null 9354ms
+[F1_quiet] 5/5 ... candidates leak=false faces=0 qid=null 8409ms
+[F2_cold] 1/3 ... candidates leak=false faces=0 qid=null 8421ms
+[F2_cold] 2/3 ... candidates leak=false faces=0 qid=null 8551ms
+[F2_cold] 3/3 ... candidates leak=false faces=0 qid=null 8519ms
+[F3_warm] 1/3 ... candidates leak=false faces=0 qid=null 8431ms
+[F3_warm] 2/3 ... candidates leak=false faces=0 qid=null 8406ms
+[F3_warm] 3/3 ... candidates leak=false faces=0 qid=null 8519ms
+[F4_assaf] 1/2 ... dossier leak=false faces=2 qid=Q47507930 2246ms
+[F4_assaf] 2/2 ... dossier leak=false faces=2 qid=Q47507930 2268ms
+[F5_cohen] 1/2 ... need_context leak=false faces=0 qid=null 2430ms
+[F5_cohen] 2/2 ... need_context leak=false faces=0 qid=null 2168ms
+[F6_tc6] 1/1 ... need_context leak=false faces=0 qid=null 2224ms
+[F7_scan] files=18 hits=0 offenders=0
+
+=== Acc PRE-PROMOTE GO leakage=0 pw=0 ===
+Wrote /workspace/akvot-quick-demo/test-results/wp3/ACC-P0-PRE-PROMOTE-VERIFY-דיוק-2026-09-20.md
+Wrote /workspace/akvot-quick-demo/test-results/wp3/ACC-P0-PRE-PROMOTE-VERIFY-דיוק-2026-09-20.json

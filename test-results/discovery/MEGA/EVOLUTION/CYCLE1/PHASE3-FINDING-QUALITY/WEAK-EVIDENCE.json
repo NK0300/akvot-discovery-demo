@@ -1,0 +1,334 @@
+{
+  "step": 27,
+  "metric": "weak_evidence",
+  "definition": {
+    "thinSnippet": "all linked evidence snippets/quotes have strip-length < 20",
+    "missingUrl": "any linked evidence missing url and provenanceUrl, or no urls resolved",
+    "weak": "thinSnippet OR missingUrl (and has evidenceIds)"
+  },
+  "all_sessions_with_findings": {
+    "n_findings": 244,
+    "weak_evidence": 127,
+    "rate": 0.5205,
+    "thinSnippet_count": 127,
+    "missingUrl_count": 0,
+    "both_count": 0
+  },
+  "examples": [
+    {
+      "seedId": "S01",
+      "run": 1,
+      "findingId": "wd-Q22991023",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        7
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 1,
+      "findingId": "wd-Q22946133",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        7
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 1,
+      "findingId": "wd-Q22980417",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        7
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 1,
+      "findingId": "wd-Q19761597",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        16
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 1,
+      "findingId": "ol-OL25245A",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "openlibrary"
+      ],
+      "domains": [
+        "openlibrary.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        15
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 1,
+      "findingId": "wp-en-Tim_Berners_Lee",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "en.wikipedia.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        0
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "findingId": "wd-Q22991023",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        7
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "findingId": "wd-Q22946133",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        7
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "findingId": "wd-Q22980417",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        7
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "findingId": "wd-Q19761597",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "www.wikidata.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        16
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "findingId": "ol-OL25245A",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "openlibrary"
+      ],
+      "domains": [
+        "openlibrary.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        15
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "findingId": "wp-en-Tim_Berners_Lee",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "en.wikipedia.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        0
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 1,
+      "findingId": "ol-OL15752758A",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "openlibrary"
+      ],
+      "domains": [
+        "openlibrary.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        18
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 1,
+      "findingId": "wp-en-John_Smith",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "en.wikipedia.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        0
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 1,
+      "findingId": "wp-en-John_Smith_explorer_",
+      "noEvidence": false,
+      "weakEvidence": true,
+      "thinSnippet": true,
+      "missingUrl": false,
+      "singleSource": true,
+      "multiIndependentSource": false,
+      "families": [
+        "wikimedia"
+      ],
+      "domains": [
+        "en.wikipedia.org"
+      ],
+      "nEvidence": 1,
+      "snippetLens": [
+        0
+      ]
+    }
+  ]
+}

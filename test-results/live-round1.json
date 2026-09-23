@@ -1,0 +1,684 @@
+{
+  "when": "2026-09-05T22:54:17.332Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 16,
+  "pass": 16,
+  "fail": 0,
+  "critical": 0,
+  "latency": {
+    "p50": 26614,
+    "p95": 55939,
+    "min": 8945,
+    "max": 55939,
+    "all": [
+      8945,
+      10441,
+      11003,
+      12525,
+      12989,
+      23448,
+      25141,
+      25266,
+      26614,
+      29743,
+      38076,
+      49080,
+      52744,
+      53331,
+      54352,
+      55939
+    ]
+  },
+  "rate429": 0,
+  "results": [
+    {
+      "id": "wiki-netanyahu",
+      "cat": "wiki",
+      "q": "בנימין נתניהו",
+      "ms": 12525,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q43723 imgs=8 src=20 alts=5 photo=Y broad=true label=בנימין נתניהו"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "בנימין נתניהו",
+        "qid": "Q43723",
+        "photo": true,
+        "images": 8,
+        "sources": 20,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "ראש ממשלת ישראל ויו\"ר מפלגת הליכוד",
+        "groups": [
+          "identity",
+          "web",
+          "social"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "ויקיפדיה:דיוקן רשמי",
+          "Wikidata P18:Benjamin Netanyahu, February 2",
+          "Wikimedia Commons:P092309PS-0816 (3994561424).jp"
+        ]
+      }
+    },
+    {
+      "id": "wiki-galon",
+      "cat": "wiki",
+      "q": "זהבה גלאון",
+      "ms": 12989,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q2630062 imgs=8 src=18 alts=5 photo=Y broad=true label=זהבה גלאון"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "זהבה גלאון",
+        "qid": "Q2630062",
+        "photo": true,
+        "images": 8,
+        "sources": 18,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "פוליטיקאית ישראלית, יושבת ראש מרצ לשעבר",
+        "groups": [
+          "identity",
+          "web",
+          "social"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "ויקיפדיה העברית:תמונת דיוקן",
+          "Wikidata P18:Zahava Galon.jpg",
+          "Wikimedia Commons:Zehava Gal-On - 2.jpeg"
+        ]
+      }
+    },
+    {
+      "id": "wiki-lieberman",
+      "cat": "wiki",
+      "q": "אביגדור ליברמן",
+      "ms": 25141,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q58311 imgs=8 src=17 alts=5 photo=Y broad=true label=אביגדור ליברמן"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "אביגדור ליברמן",
+        "qid": "Q58311",
+        "photo": true,
+        "images": 8,
+        "sources": 17,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "יו\"ר מפלגת ישראל ביתנו",
+        "groups": [
+          "identity",
+          "web",
+          "social"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikidata P18:Avigdor Lieberman 2017.jpg",
+          "Wikimedia Commons:Avigdor Lieberman.jpg",
+          "Wikimedia Commons:Avigdor Lieberman on September"
+        ]
+      }
+    },
+    {
+      "id": "wiki-obama",
+      "cat": "wiki",
+      "q": "ברק אובמה",
+      "ms": 38076,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q76 imgs=8 src=20 alts=5 photo=Y broad=true label=ברק אובמה"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "ברק אובמה",
+        "qid": "Q76",
+        "photo": true,
+        "images": 8,
+        "sources": 20,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "נשיא ארצות הברית ה-44",
+        "groups": [
+          "identity",
+          "web"
+        ],
+        "imageSources": [
+          "Wikimedia Commons:Obama Portrait 2006.jpg",
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikimedia Commons:Barack Michelle.jpg",
+          "Wikidata P18:President Barack Obama.jpg"
+        ]
+      }
+    },
+    {
+      "id": "biz-gil-friedman",
+      "cat": "business",
+      "q": "גיל פרידמן",
+      "ms": 29743,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=google qid=- imgs=8 src=8 alts=6 photo=Y broad=true label=גיל פרידמן"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "google",
+        "label": "גיל פרידמן",
+        "qid": null,
+        "photo": true,
+        "images": 8,
+        "sources": 8,
+        "alts": 6,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+        "desc": "עורך דין פלילי וקצין משטרה בדימוס",
+        "groups": [
+          "web"
+        ],
+        "imageSources": [
+          "posta.co.il:תמונת דיוקן של עו\"ד גיל פרידמן",
+          "Wikimedia Commons:חטיבת יפתח - הגדוד השלישי - הכ",
+          ".il:השאלות שנותרו מפרשת רוז פיזם",
+          ".il:עו\"ד גיל פרידמן - משפטי"
+        ]
+      }
+    },
+    {
+      "id": "biz-assaf-rappaport",
+      "cat": "business",
+      "q": "Assaf Rappaport",
+      "ms": 25266,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=google qid=- imgs=8 src=3 alts=1 photo=Y broad=true label=אסף רפפורט"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "google",
+        "label": "אסף רפפורט",
+        "qid": null,
+        "photo": true,
+        "images": 8,
+        "sources": 3,
+        "alts": 1,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+        "desc": "יזם היי-טק ומנהל אבטחת מידע ישראלי, מייסד-שותף ומנכ\"ל Wiz",
+        "groups": [
+          "identity",
+          "web"
+        ],
+        "imageSources": [
+          "ויקיפדיה:אסף רפפורט – ויקיפדיה",
+          "ויקיפדיה:Assaf Rappaport - Wikipedia",
+          "ויקיפדיה:אסף רפפורט בכנס TechCrunch Dis",
+          "Wikimedia Commons:2021 - Centre Stage HM1 7792 ("
+        ]
+      }
+    },
+    {
+      "id": "biz-dov-moran",
+      "cat": "business",
+      "q": "דב מורן",
+      "ms": 11003,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q1252841 imgs=8 src=15 alts=5 photo=Y broad=true label=דב מורן"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "דב מורן",
+        "qid": "Q1252841",
+        "photo": true,
+        "images": 8,
+        "sources": 15,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "יזם, ממציא ישראלי",
+        "groups": [
+          "identity",
+          "web",
+          "social"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikimedia Commons:Dov Moran.jpg",
+          "Wikimedia Commons:EToken 6 models.jpg",
+          "Wikimedia Commons:8 GB USB flash drive with USB "
+        ]
+      }
+    },
+    {
+      "id": "amb-dani-cohen",
+      "cat": "ambiguous",
+      "q": "דני כהן",
+      "ms": 52744,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q6901804 imgs=8 src=14 alts=5 photo=Y broad=true label=דני כהן סולל"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "דני כהן סולל",
+        "qid": "Q6901804",
+        "photo": true,
+        "images": 8,
+        "sources": 14,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "תסריטאי ישראלי",
+        "groups": [
+          "identity",
+          "web"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "ויקיפדיה:דני כהן סולל – ויקיפדיה",
+          "ויקיפדיה:דני כהן (מדען מחשב) – ויקיפדיה",
+          "ויקיפדיה:Danny Cohen (computer scientis"
+        ]
+      }
+    },
+    {
+      "id": "amb-israel-israeli",
+      "cat": "ambiguous",
+      "q": "ישראל ישראלי",
+      "ms": 55939,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=google qid=- imgs=0 src=3 alts=0 photo=Y broad=false label=ישראל ישראלי"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "google",
+        "label": "ישראל ישראלי",
+        "qid": null,
+        "photo": true,
+        "images": 0,
+        "sources": 3,
+        "alts": 0,
+        "allowBroadImages": false,
+        "wikiError": "429",
+        "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+        "desc": "שם גנרי וביטוי המייצג אדם ממוצע או פלוני בישראל",
+        "groups": [
+          "identity",
+          "web"
+        ],
+        "imageSources": []
+      }
+    },
+    {
+      "id": "junk-invented",
+      "cat": "junk",
+      "q": "פלורקסימון זבולון קפצוני",
+      "ms": 10441,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=google qid=- imgs=0 src=0 alts=0 photo=N broad=false label=פלורקסימון זבולון קפצוני"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "google",
+        "label": "פלורקסימון זבולון קפצוני",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "sources": 0,
+        "alts": 0,
+        "allowBroadImages": false,
+        "wikiError": null,
+        "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+        "desc": "אין ערך בוויקיפדיה — מבוסס חיפוש ציבורי",
+        "groups": [],
+        "imageSources": []
+      }
+    },
+    {
+      "id": "junk-invented2",
+      "cat": "junk",
+      "q": "Xyzzypq Blorfnak 999",
+      "ms": 8945,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=google qid=- imgs=0 src=0 alts=0 photo=N broad=false label=Xyzzypq Blorfnak 999"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "google",
+        "label": "Xyzzypq Blorfnak 999",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "sources": 0,
+        "alts": 0,
+        "allowBroadImages": false,
+        "wikiError": null,
+        "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+        "desc": "אין ערך בוויקיפדיה — מבוסס חיפוש ציבורי",
+        "groups": [],
+        "imageSources": []
+      }
+    },
+    {
+      "id": "wiki-herzog",
+      "cat": "wiki",
+      "q": "יצחק הרצוג",
+      "ms": 26614,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q983258 imgs=8 src=20 alts=5 photo=Y broad=true label=יצחק הרצוג"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "יצחק הרצוג",
+        "qid": "Q983258",
+        "photo": true,
+        "images": 8,
+        "sources": 20,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "הנשיא ה-11 של מדינת ישראל (מכהן)",
+        "groups": [
+          "identity",
+          "social",
+          "web"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikidata P18:Israeli President Isaac Herzog",
+          "Wikimedia Commons:Isaac Herzog (12675834585).jpg",
+          "Wikimedia Commons:(Isaac Herzog speaks to the Gl"
+        ]
+      }
+    },
+    {
+      "id": "wiki-lapid",
+      "cat": "wiki",
+      "q": "יאיר לפיד",
+      "ms": 23448,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q1396120 imgs=8 src=20 alts=5 photo=Y broad=true label=יאיר לפיד"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "יאיר לפיד",
+        "qid": "Q1396120",
+        "photo": true,
+        "images": 8,
+        "sources": 20,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "ראש האופוזיציה וראש ממשלת ישראל ה-14, איש תקשורת בעברו",
+        "groups": [
+          "identity",
+          "web",
+          "social"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikidata P18:Yair Lapid (D1237-011).jpg",
+          "Wikimedia Commons:Yair Lapid (15929183667).jpg",
+          "Wikimedia Commons:Yair Lapid (15495216553).jpg"
+        ]
+      }
+    },
+    {
+      "id": "biz-kobi-alexander",
+      "cat": "business",
+      "q": "קובי אלכסנדר",
+      "ms": 49080,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q4687701 imgs=8 src=4 alts=5 photo=Y broad=true label=קובי אלכסנדר"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "קובי אלכסנדר",
+        "qid": "Q4687701",
+        "photo": true,
+        "images": 8,
+        "sources": 4,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "מייסדה של חברת קומברס",
+        "groups": [
+          "identity"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikidata P18:Kobi Alexander.JPG",
+          "ויקיפדיה:קובי אלכסנדר – ויקיפדיה",
+          "ויקיפדיה:Kobi Alexander - Wikipedia"
+        ]
+      }
+    },
+    {
+      "id": "wiki-einstein",
+      "cat": "wiki",
+      "q": "אלברט איינשטיין",
+      "ms": 53331,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=wiki+google qid=Q937 imgs=8 src=19 alts=5 photo=Y broad=true label=אלברט איינשטיין"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "wiki+google",
+        "label": "אלברט איינשטיין",
+        "qid": "Q937",
+        "photo": true,
+        "images": 8,
+        "sources": 19,
+        "alts": 5,
+        "allowBroadImages": true,
+        "wikiError": null,
+        "note": "",
+        "desc": "פיזיקאי יהודי-גרמני-אמריקאי, מגדולי המדענים בכל הזמנים",
+        "groups": [
+          "identity",
+          "social"
+        ],
+        "imageSources": [
+          "ויקיפדיה:דיוקן ראשי",
+          "Wikidata P18:Einstein 1921 by F Schmutzer -",
+          "Wikimedia Commons:Albert Einstein Head.jpg",
+          "Wikimedia Commons:Solvay conference 1927 Version"
+        ]
+      }
+    },
+    {
+      "id": "amb-moshe-cohen",
+      "cat": "ambiguous",
+      "q": "משה כהן",
+      "ms": 54352,
+      "httpStatus": 200,
+      "headers": {
+        "cache": "MISS",
+        "ct": "application/json; charset=utf-8"
+      },
+      "verdict": {
+        "pass": true,
+        "fails": [],
+        "notes": [
+          "mode=google qid=- imgs=0 src=8 alts=0 photo=Y broad=false label=משה כהן"
+        ],
+        "critical": false
+      },
+      "summary": {
+        "mode": "google",
+        "label": "משה כהן",
+        "qid": null,
+        "photo": true,
+        "images": 0,
+        "sources": 8,
+        "alts": 0,
+        "allowBroadImages": false,
+        "wikiError": "429",
+        "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+        "desc": "זמר ושחקן ישראלי בסגנון ים-תיכוני ומזרחי",
+        "groups": [
+          "identity"
+        ],
+        "imageSources": []
+      }
+    }
+  ]
+}

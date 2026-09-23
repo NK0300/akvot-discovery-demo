@@ -1,0 +1,10 @@
+{
+  "httpStatus": 200,
+  "ms": 2950,
+  "summary": {
+    "findings": 13,
+    "entityLeak": 0,
+    "bans": [],
+    "forbiddenIdentitiesVersion": "2026-09-19.1"
+  }
+}

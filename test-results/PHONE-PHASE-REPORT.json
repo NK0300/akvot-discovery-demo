@@ -1,0 +1,465 @@
+{
+  "phase": "PHONE-A",
+  "url": "https://akvot-simple-demo.vercel.app",
+  "deploy_id": "dpl_5WpWeQLGNcC7KTLTbKagkBQD5mie",
+  "deploy_ids": [
+    "dpl_3qSb5WHmqxTvpPNxpJaJ6LKNx5yR",
+    "dpl_5rVGevi2xJuDjTggTkdNyJGqWGBn",
+    "dpl_5WpWeQLGNcC7KTLTbKagkBQD5mie"
+  ],
+  "ts": "2026-09-06T22:19:19Z",
+  "ts_israel": "2026-09-07 01:19 IDT",
+  "battery": {
+    "total": 37,
+    "pass": 37,
+    "fail": 0,
+    "failIds": []
+  },
+  "buckets": {
+    "validation": {
+      "n": 4,
+      "pass": 4,
+      "modes": [
+        "http400"
+      ]
+    },
+    "fake_phone_only": {
+      "n": 10,
+      "pass": 10,
+      "modes": [
+        "google"
+      ]
+    },
+    "name_plus_phone": {
+      "n": 4,
+      "pass": 4,
+      "modes": [
+        "candidates",
+        "google"
+      ]
+    },
+    "public_institutional": {
+      "n": 8,
+      "pass": 8,
+      "modes": [
+        "candidates"
+      ]
+    },
+    "il_formats": {
+      "n": 8,
+      "pass": 8,
+      "modes": [
+        "candidates",
+        "google"
+      ]
+    },
+    "focus_deepen": {
+      "n": 1,
+      "pass": 1,
+      "modes": [
+        "google"
+      ]
+    },
+    "controls": {
+      "n": 2,
+      "pass": 2,
+      "modes": [
+        "candidates",
+        "wiki"
+      ]
+    }
+  },
+  "success_criteria": {
+    "phone_path_stable": true,
+    "no_leaks": true,
+    "no_caller_id_apps": true,
+    "clear_candidates_or_honest_thin": true,
+    "prod_live": true
+  },
+  "fixes": [
+    "Phone normalize/validate (IL mobile/landline/voip, +972, hotlines); 400 on phone-only junk",
+    "buildSearchQ: never double-append phone; phone-only bias toward public contact pages",
+    "Scrub all +972↔05x dashed/spaced variants + short hotlines in queries/labels/sources",
+    "Gemini phone bias: public pages only; ban Sync.me/Truecaller/GetContact/Eyecon hosts",
+    "phoneOnly strict signal → honest thin (לא נמצא אזכור ציבורי) instead of ThinkBI/junk SERP",
+    "Candidate filter: drop bare hosts, wiki noise on phone-only, banned caller-ID URLs",
+    "UI: phone validation + phone-only hint; placeholder 05x/+972"
+  ],
+  "remaining": [
+    "Public hotlines (1299/100/101) often return candidates for the agency — expected, not person dossier",
+    "Intermittent focus+phone may land google vs wiki under load",
+    "Rare fake numbers can still soft-hit candidates if SERP looks “solid” (.il links) — monitor"
+  ],
+  "cases_sample": [
+    {
+      "id": "bad-short",
+      "pass": true,
+      "mode": null,
+      "thin": null,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 395,
+      "note": "400 as expected"
+    },
+    {
+      "id": "bad-empty-phone-name",
+      "pass": true,
+      "mode": null,
+      "thin": null,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 368,
+      "note": "400 as expected"
+    },
+    {
+      "id": "bad-letters",
+      "pass": true,
+      "mode": null,
+      "thin": null,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 329,
+      "note": "400 as expected"
+    },
+    {
+      "id": "bad-too-long",
+      "pass": true,
+      "mode": null,
+      "thin": null,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 295,
+      "note": "400 as expected"
+    },
+    {
+      "id": "fake-mobile-only",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 2,
+      "ms": 16167,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-mobile-dashed",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 2,
+      "ms": 23122,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-mobile-spaced",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 2,
+      "ms": 25510,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-mobile2-only",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 9528,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-intl-plus",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 1,
+      "ms": 23199,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-intl-972",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 1,
+      "ms": 14101,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-land-only",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 8893,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "fake-land-digits",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 9705,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "name-phone-yossi",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 6,
+      "srcs": 0,
+      "ms": 11929,
+      "note": "candidates n=6"
+    },
+    {
+      "id": "name-phone-city",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 6,
+      "srcs": 0,
+      "ms": 7711,
+      "note": "candidates n=6"
+    },
+    {
+      "id": "name-phone-danny",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 6,
+      "srcs": 0,
+      "ms": 8396,
+      "note": "candidates n=6"
+    },
+    {
+      "id": "name-phone-org",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 16980,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "phone-city-only",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 13626,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "phone-org-only",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 15850,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "focus-phone",
+      "pass": true,
+      "mode": "google",
+      "thin": false,
+      "cands": 4,
+      "srcs": 5,
+      "ms": 25579,
+      "note": "mode=google srcs=5"
+    },
+    {
+      "id": "pub-knesset",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 5,
+      "srcs": 2,
+      "ms": 18037,
+      "note": "candidates n=5"
+    },
+    {
+      "id": "pub-knesset-name",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 7,
+      "srcs": 8,
+      "ms": 23778,
+      "note": "candidates n=7"
+    },
+    {
+      "id": "pub-mfa",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 3,
+      "srcs": 2,
+      "ms": 30822,
+      "note": "candidates n=3"
+    },
+    {
+      "id": "pub-mfa-org",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 4,
+      "srcs": 4,
+      "ms": 25293,
+      "note": "candidates n=4"
+    },
+    {
+      "id": "pub-hotline-1299",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 4,
+      "srcs": 2,
+      "ms": 36427,
+      "note": "candidates n=4"
+    },
+    {
+      "id": "pub-gov-intl",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 7,
+      "srcs": 8,
+      "ms": 26154,
+      "note": "candidates n=7"
+    },
+    {
+      "id": "pub-police-100",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 7,
+      "srcs": 8,
+      "ms": 25536,
+      "note": "candidates n=7"
+    },
+    {
+      "id": "pub-mda-101",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 5,
+      "srcs": 6,
+      "ms": 25477,
+      "note": "candidates n=5"
+    },
+    {
+      "id": "il-voip-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 9968,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "il-04-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 13314,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "il-09-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 12491,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "il-08-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 11843,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "mobile-053-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 13428,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "mobile-054-fake",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 5,
+      "srcs": 6,
+      "ms": 23894,
+      "note": "soft mode=candidates thin=false cands=5"
+    },
+    {
+      "id": "mobile-055-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 9646,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "mobile-058-fake",
+      "pass": true,
+      "mode": "google",
+      "thin": true,
+      "cands": 0,
+      "srcs": 0,
+      "ms": 8046,
+      "note": "thin/honest mode=google"
+    },
+    {
+      "id": "ctrl-bibi",
+      "pass": true,
+      "mode": "wiki",
+      "thin": false,
+      "cands": 0,
+      "srcs": 19,
+      "ms": 6268,
+      "note": "wiki"
+    },
+    {
+      "id": "ctrl-danny",
+      "pass": true,
+      "mode": "candidates",
+      "thin": false,
+      "cands": 7,
+      "srcs": 0,
+      "ms": 1318,
+      "note": "candidates n=7"
+    }
+  ]
+}

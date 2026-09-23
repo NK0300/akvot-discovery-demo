@@ -1,0 +1,43 @@
+{
+  "STATUS": "PASS",
+  "productPass": true,
+  "accessBlocked": false,
+  "health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_F7hSjsDX1vWuoFvw5vvH5wMGP2LY",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "health_build_match": true,
+  "COLD": {
+    "N": 30,
+    "uiCounts": {
+      "candidates": 30
+    },
+    "dossier_n": 0,
+    "Q1701775_n": 0,
+    "faces_true_n": 0,
+    "photo_true_n": 0,
+    "err_n": 0,
+    "p50": 8830,
+    "p95": 9211
+  },
+  "WARM": {
+    "N": 30,
+    "uiCounts": {
+      "candidates": 30
+    },
+    "dossier_n": 0,
+    "Q1701775_n": 0,
+    "faces_true_n": 0,
+    "photo_true_n": 0,
+    "err_n": 0,
+    "p50": 8911,
+    "p95": 9605
+  },
+  "out": {
+    "md": "test-results/perf/PERF-REHARNESS-SMITH-POST-dplF7hSjs-בודק-2026-09-17.md",
+    "json": "test-results/perf/PERF-REHARNESS-SMITH-POST-dplF7hSjs-בודק-2026-09-17.json",
+    "handoff": "test-results/handoff/P3-P0-REHARNESS-SMITH-בודק-2026-09-17.md"
+  }
+}

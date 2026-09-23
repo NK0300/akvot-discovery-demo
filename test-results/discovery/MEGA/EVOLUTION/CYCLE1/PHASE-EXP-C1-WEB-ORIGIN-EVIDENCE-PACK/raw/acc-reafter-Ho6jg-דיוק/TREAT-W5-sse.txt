@@ -1,0 +1,39 @@
+id: 1
+event: meta
+data: {"sessionId":"kv1.264dd878910ad4365632abf4c2ab0ab0","seed":"who.int","q":"who.int","version":2,"forbiddenIdentitiesVersion":"2026-09-19.1","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true,"note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true},"cursor":1}
+
+id: 2
+event: progress
+data: {"progress":{"done":8,"totalHint":8},"stage":"S10","cursor":2}
+
+id: 3
+event: provider
+data: {"providerId":"wikidata","state":"ok","cursor":3}
+
+id: 4
+event: provider
+data: {"providerId":"openlibrary","state":"ok","cursor":4}
+
+id: 5
+event: provider
+data: {"providerId":"wikipedia","state":"partial","cursor":5}
+
+id: 6
+event: provider
+data: {"providerId":"viaf","state":"partial","cursor":6}
+
+id: 7
+event: provider
+data: {"providerId":"web_origin","state":"ok","cursor":7}
+
+id: 8
+event: finding
+data: {"finding":{"id":"wd-Q7817","kind":"registry","title":"World Health Organization","summary":"United Nations agency concerned with international public health","evidenceIds":["ev-55c95168642f71f9d631fbfb"],"providers":["wikidata"],"facetHints":["provider:wikidata","kind:registry"],"entityRefs":["qid:Q7817","wd-Q7817","viaf:135618969","viaf:158845049"],"scoreFinding":0.7183333333333333,"ranking":{"discoveryScore":0.7183333333333333,"factors":{"authority":0.9,"corroboration":0.333,"directness":0.65,"freshness":0.9,"httpsOnly":1,"providerDiversity":1,"evidenceCount":1,"domains":["www.wikidata.org"]},"rationale":"authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"}},"evidence":[{"id":"ev-55c95168642f71f9d631fbfb","provenanceUrl":"https://www.wikidata.org/wiki/Q7817","url":"https://www.wikidata.org/wiki/Q7817","domain":"www.wikidata.org","providerId":"wikidata","retrievedAt":"2026-09-20T08:53:41.530Z","evidenceType":"registry","quote":"United Nations agency concerned with international public health","contentType":"text/html","robotsOk":true}],"forbiddenIdentitiesVersion":"2026-09-19.1","cursor":8}
+
+id: 9
+event: finding
+data: {"finding":{"id":"viaf-158800605","kind":"registry","title":"WHO International Reference Centre for Community Water Supply","summary":"type:corporate · lc:n82016180 · dnb:1087585449","evidenceIds":["ev-b1e8bea918a39e12ff7078d2"],"providers":["viaf"],"facetHints":["provider:viaf","kind:registry"],"entityRefs":["viaf:158800605"],"scoreFinding":0.6908333333333332,"ranking":{"discoveryScore":0.7008333333333332,"factors":{"authority":0.85,"corroboration":0.333,"directness":0.65,"freshness":0.9,"httpsOnly":1,"providerDiversity":1,"evidenceCount":1,"domains":["viaf.org"]},"rationale":"authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"}},"evidence":[{"id":"ev-b1e8bea918a39e12ff7078d2","provenanceUrl":"https://viaf.org/viaf/158800605","url":"https://viaf.org/viaf/158800605","domain":"viaf.org","providerId":"viaf","retrievedAt":"2026-09-20T08:53:41.432Z","evidenceType":"registry","quote":"WHO International Reference Centre for Community Water Supply","contentType":"text/html","robotsOk":true}],"forbiddenIdentitiesVersion":"2026-09-19.1","cursor":9}
+
+id: 10
+event: finding
+data: {"finding":{"id":"viaf-149984809","kind":"registry","title":"WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care","summary":"type:corporate · lc:n2010017641","evidenceIds":["ev-98dfab199ddbde68aeb17d37"],"providers":["viaf"],"facetHints":["provider:viaf","kind:registry"],"entityRefs":["viaf:149984809"],"scoreFinding":0.6808333333333332,"ranking":{"discoveryScore":0.7008333333333332,"factors":{"authority":0.85,"corroboration":0.333,"directness":0.65,"freshness":0.9,"httpsOnly":1,"providerDiversity":1,"evidenceCount":1,"domains":["viaf.org"]},"rationale":"authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity

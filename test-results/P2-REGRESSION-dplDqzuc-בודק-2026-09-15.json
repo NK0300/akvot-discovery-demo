@@ -1,0 +1,586 @@
+{
+  "when": "2026-09-15T12:01:05.426Z",
+  "whenLocal": "15.9.2026, 15:01:05 Asia/Jerusalem",
+  "agent": "בודק",
+  "suite": "P2-REGRESSION",
+  "base": "https://akvot-simple-demo-48x7gx9a6-k-akvot.vercel.app",
+  "dpl": "dpl_DqzucMKykHVssELsCi91waZ5LCmg",
+  "N": 18,
+  "PASS": 18,
+  "FAIL": 0,
+  "prettyWrong": 0,
+  "health": {
+    "pass": true,
+    "status": 200,
+    "body": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_DqzucMKykHVssELsCi91waZ5LCmg",
+      "baselineHint": "dpl_DNfPZ9"
+    },
+    "ms": 552
+  },
+  "requestId": {
+    "pass": true,
+    "note": "x-request-id header and/or JSON requestId on lookup"
+  },
+  "assafQid": {
+    "T_C1": {
+      "pass": true,
+      "qid": "Q47507930",
+      "ui": "dossier"
+    },
+    "T_C1b": {
+      "pass": true,
+      "qid": "Q47507930",
+      "ui": "dossier"
+    }
+  },
+  "cases": [
+    {
+      "id": "S-A1",
+      "section": "SAFETY",
+      "label": "דני כהן",
+      "params": {
+        "q": "דני כהן"
+      },
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false,
+        "noQid": true
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "requestId": "97e7db1f-143e-40c2-981a-dbf343317a6b",
+        "ms": 387,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "S-A2",
+      "section": "SAFETY",
+      "label": "John Smith bare",
+      "params": {
+        "q": "John Smith"
+      },
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "requestId": "61c049c8-06a0-4a5f-a4eb-b6fda25d5bcb",
+        "ms": 5688,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "S-A3",
+      "section": "SAFETY",
+      "label": "Smith+IBM+NY",
+      "params": {
+        "q": "John Smith",
+        "org": "IBM",
+        "city": "New York",
+        "country": "US"
+      },
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin",
+          "need_context",
+          "ambiguous"
+        ],
+        "faces": false,
+        "notDossierFaces": true
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "mode": "candidates",
+        "confidence": "low",
+        "requestId": "e65f9f41-87d6-4d34-ba80-8d06b875b35b",
+        "ms": 6471,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "S-A4",
+      "section": "SAFETY",
+      "label": "Smith+email",
+      "params": {
+        "q": "John Smith",
+        "email": "qa.rethink.test@example.com"
+      },
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin",
+          "need_context"
+        ],
+        "faces": false,
+        "notDossierFaces": true,
+        "noEmailLeak": true
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "mode": "candidates",
+        "confidence": "low",
+        "requestId": "0adfaa45-75c8-46ba-8a05-89eeeee902d2",
+        "ms": 7300,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "S-A5",
+      "section": "SAFETY",
+      "label": "junk HE",
+      "params": {
+        "q": "פלורקסימון זבולון קפצוני"
+      },
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "faces": false
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "mode": "google",
+        "confidence": "none",
+        "requestId": "bbb301b2-6a1a-42c5-bc8a-7c05be62d0ac",
+        "ms": 32339,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "S-A7",
+      "section": "SAFETY",
+      "label": "obscure+org",
+      "params": {
+        "q": "פלמוני אלמוניזקש",
+        "org": "מפעל בדיקה פיקטיבי"
+      },
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "faces": false
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "mode": "google",
+        "confidence": "none",
+        "requestId": "fe75431f-c1f3-44d7-9704-16c120255d51",
+        "ms": 4121,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "S-A8",
+      "section": "SAFETY",
+      "label": "כהן bare",
+      "params": {
+        "q": "כהן"
+      },
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false,
+        "neverDossier": true
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "mode": "google",
+        "confidence": "none",
+        "requestId": "a9b51422-753b-4ef6-beb0-d6351cdfa1f0",
+        "ms": 37201,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B1",
+      "section": "KEEP",
+      "label": "בנימין נתניהו",
+      "params": {
+        "q": "בנימין נתניהו"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "2b047bbc-f125-41a0-8cbb-fc905bc51beb",
+        "ms": 3031,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B3a",
+      "section": "KEEP",
+      "label": "נתניהו",
+      "params": {
+        "q": "נתניהו"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "eda7e79d-8fa7-468d-be51-a8c29ad16b86",
+        "ms": 3020,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B3b",
+      "section": "KEEP",
+      "label": "ביבי",
+      "params": {
+        "q": "ביבי"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "991be8ec-edbe-4df4-93ae-d9747a9044e0",
+        "ms": 2271,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B2",
+      "section": "KEEP",
+      "label": "אורלי לוי",
+      "params": {
+        "q": "אורלי לוי"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q466537"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q466537",
+        "faces": true,
+        "mode": "wiki",
+        "confidence": "high",
+        "requestId": "49e1df1a-a630-4d22-bc43-161bd2cc9e5c",
+        "ms": 1545,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B4a",
+      "section": "KEEP",
+      "label": "Angela Merkel",
+      "params": {
+        "q": "Angela Merkel"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q567"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q567",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "6dab756f-5e23-4756-91e1-b5a7acca4c4e",
+        "ms": 1607,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B4b",
+      "section": "KEEP",
+      "label": "Zehava Galon",
+      "params": {
+        "q": "Zehava Galon"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "69b657fa-981c-4cc4-a0e0-2ceaac9213d6",
+        "ms": 1592,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "K-B4c",
+      "section": "KEEP",
+      "label": "זהבה גלאון",
+      "params": {
+        "q": "זהבה גלאון"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "0cf22016-701b-4d47-98e1-12c98f85cdac",
+        "ms": 4307,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "T-C1",
+      "section": "P2",
+      "label": "Assaf Rappaport",
+      "params": {
+        "q": "Assaf Rappaport"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q47507930"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "ea3f7f90-0e25-4fec-a2a0-f3f44e280897",
+        "ms": 1562,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "T-C1b",
+      "section": "P2",
+      "label": "אסף רפפורט",
+      "params": {
+        "q": "אסף רפפורט"
+      },
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q47507930"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "requestId": "8797dd98-3de6-4ea0-a6ff-2ec7e3754ee1",
+        "ms": 1563,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "T-C5",
+      "section": "P2",
+      "label": "Assaf Smith",
+      "params": {
+        "q": "Assaf Smith"
+      },
+      "expected": {
+        "ui": [
+          "need_context",
+          "candidates",
+          "thin",
+          "ambiguous"
+        ],
+        "notQid": "Q47507930"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "requestId": "122edef2-7a98-48b9-bd7e-90a5e4309257",
+        "ms": 5693,
+        "err": null,
+        "build": null
+      }
+    },
+    {
+      "id": "T-C6",
+      "section": "P2",
+      "label": "John Rappaport",
+      "params": {
+        "q": "John Rappaport"
+      },
+      "expected": {
+        "ui": [
+          "need_context",
+          "candidates",
+          "thin",
+          "ambiguous"
+        ],
+        "notQid": "Q47507930"
+      },
+      "verdict": "PASS",
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "requestId": "2cb33f1d-3898-4237-b1ef-047a102d6d54",
+        "ms": 5693,
+        "err": null,
+        "build": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "stamp": "2026-09-20T10:06:46+03:00",
+  "zone": "Asia/Jerusalem",
+  "mode": "design_only",
+  "promote": false,
+  "baselineB0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "informationGainDefinition": [
+    "multi_independent_rate_or_new_hostFamily",
+    "grounded_coverage_on_empty_intent_seeds",
+    "native_language_evidence_he",
+    "constraint_satisfaction_role_context"
+  ],
+  "vanityMetricsRejected": ["findingsCount_alone", "same_family_near_dup_flood", "en_echo_of_he_seed"],
+  "candidates": [
+    {
+      "id": "EXP-B",
+      "title": "HE locale + quote floor",
+      "priority": 1,
+      "gaps": ["QD-05", "PG-04", "BS-SRC-04", "BS-SRC-08"],
+      "success": {
+        "he_wikipedia_on_S07": true,
+        "quote_len_mean_S07_wp": 40,
+        "weak_evidence_rate_max": 0.4,
+        "acc_leak": 0,
+        "S02_count_inflation_max_pct": 10
+      }
+    },
+    {
+      "id": "EXP-C",
+      "title": "URL/role/compound resolvers",
+      "priority": 2,
+      "gaps": ["QD-04", "PG-02", "BS-SRC-05", "BS-SRC-06"],
+      "success": {
+        "S16_grounded_min": 1,
+        "S13_S14_S15_hit_at_least": 2,
+        "coverage_proxy_min": 0.8,
+        "web_origin_on_S16": true,
+        "acc_leak": 0,
+        "ssrf_probes_reject_pct": 100
+      }
+    },
+    {
+      "id": "EXP-D",
+      "title": "Publication/OL-author demotion",
+      "priority": 3,
+      "stretch": true,
+      "gaps": ["QD-05"],
+      "success": {
+        "publication_share_relative_reduction_min": 0.3,
+        "acc_leak": 0
+      }
+    },
+    {
+      "id": "EXP-A",
+      "title": "VIAF + soft-label (already Preview PASS)",
+      "priority": 0,
+      "status": "PASS_HOLD_PROMOTE",
+      "gaps": ["QD-01", "PG-01", "BS-SRC-01"],
+      "measured": {
+        "mean_multi": 0.414,
+        "S01_findings": "10→1",
+        "S04_multi": 0.1364,
+        "S05_multi": 0.1053
+      }
+    }
+  ]
+}

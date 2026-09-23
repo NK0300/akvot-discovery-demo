@@ -1,0 +1,17 @@
+{
+  "label": "O-P5-health",
+  "http": 200,
+  "wallMs": 2573,
+  "curlTime": 0.383479,
+  "path": "/api/health",
+  "body": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "cliExit": 0,
+  "stderrTail": [
+    "Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback"
+  ]
+}

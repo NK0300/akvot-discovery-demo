@@ -1,0 +1,61 @@
+{
+  "id": "core-assaf",
+  "path": "/api/lookup",
+  "body": {
+    "q": "Assaf",
+    "hints": {
+      "qid": "Q47507930"
+    }
+  },
+  "leak": 0,
+  "json": {
+    "mode": "ambiguous",
+    "label": "Assaf",
+    "qid": null,
+    "desc": "Several possible matches — add context",
+    "extract": "",
+    "photo": null,
+    "sources": [],
+    "images": [],
+    "extra_facts": [],
+    "candidates": [],
+    "ambiguous": true,
+    "thin": false,
+    "alts": [],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 5501,
+      "gemini": 0,
+      "enrich": 0,
+      "stageB": 0,
+      "total": 5501,
+      "wikiMeta": {
+        "wiki429": 8,
+        "wikiTimeout": 2,
+        "wikiRetries": 10
+      }
+    },
+    "uiState": "need_context",
+    "scenario": "foreign",
+    "confidence": "none",
+    "needContextFields": [
+      "country",
+      "city",
+      "org",
+      "role"
+    ],
+    "messageKey": "common_name",
+    "photoUrl": null,
+    "faces": false,
+    "needContext": true,
+    "needCandidatePick": false,
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "requestId": "2c0dc9a0-8a3d-4f79-95ca-e0c899d75acc",
+    "wikiMeta": {
+      "wiki429": 8,
+      "wikiTimeout": 2,
+      "wikiRetries": 10
+    }
+  },
+  "stdout_head": "{\"mode\":\"ambiguous\",\"label\":\"Assaf\",\"qid\":null,\"desc\":\"Several possible matches — add context\",\"extract\":\"\",\"photo\":null,\"sources\":[],\"images\":[],\"extra_facts\":[],\"candidates\":[],\"ambiguous\":true,\"thin\":false,\"alts\":[],\"phase\":\"orchestrator-v0-b\",\"timings\":{\"wiki\":5501,\"gemini\":0,\"enrich\":0,\"stageB\":0,\"total\":5501,\"wikiMeta\":{\"wiki429\":8,\"wikiTimeout\":2,\"wikiRetries\":10}},\"uiState\":\"need_context\",\"scenario\":\"foreign\",\"confidence\":\"none\",\"needContextFields\":[\"country\",\"city\",\"org\",\"role\"],\"messageKey\":\"common_name\",\"photoUrl\":null,\"faces\":false,\"needContext\":true,\"needCandidatePick\":false,\"forbiddenIdentitiesVersion\":\"2026-09-19.1\",\"requestId\":\"2c0dc9a0-8a3d-4f79-95ca-e0c899d75acc\",\"wikiMeta\":{\"wiki429\":8,\"wikiTimeout\":2,\"wikiRetries\":10}}"
+}

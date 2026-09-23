@@ -1,0 +1,12 @@
+{
+  "finalStatus": "GREEN_PROMOTED",
+  "discoveryAlias": "https://akvot-discovery.vercel.app",
+  "discoveryDeployment": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreAlias": "https://akvot-simple-demo.vercel.app",
+  "coreDeployment": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "accLeakage": 0,
+  "corePw": 0,
+  "kvDurable": true,
+  "promoteEligible": true,
+  "timestamp": "2026-09-20T09:02:26+0300"
+}

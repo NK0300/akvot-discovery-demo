@@ -1,0 +1,98 @@
+{
+  "dpl": "dpl_4trZGxgN7CKKtC6Zed6SbACzF6Po",
+  "stamp": "2026-09-20T05:52:19.370Z",
+  "steps": [
+    {
+      "name": "HEALTH_WRUD",
+      "ok": true,
+      "detail": {
+        "storeBackend": "upstash",
+        "durable": true,
+        "promoteEligible": true,
+        "durabilityState": "durable-kv",
+        "latencyMs": 103
+      }
+    },
+    {
+      "name": "CREATE",
+      "ok": true,
+      "detail": {
+        "sessionIdPrefix": "kv1.f2d2fcda",
+        "status": "complete",
+        "store": {
+          "backend": "upstash",
+          "storeBackend": "upstash",
+          "durable": true,
+          "fallback": false,
+          "explicitFallback": false,
+          "fsRegenFallback": false,
+          "promoteEligible": true,
+          "crossInstance": "shared-kv",
+          "durabilityState": "durable-kv",
+          "kvReachable": true,
+          "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+          "ttlMs": 3600000,
+          "kvCredsPresent": true
+        }
+      }
+    },
+    {
+      "name": "GET_HIT",
+      "ok": true,
+      "detail": {
+        "hasFindings": true,
+        "store": {
+          "backend": "upstash",
+          "storeBackend": "upstash",
+          "durable": true,
+          "fallback": false,
+          "explicitFallback": false,
+          "fsRegenFallback": false,
+          "promoteEligible": true,
+          "crossInstance": "shared-kv",
+          "durabilityState": "durable-kv",
+          "kvReachable": true,
+          "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+          "ttlMs": 3600000,
+          "kvCredsPresent": true
+        }
+      }
+    },
+    {
+      "name": "NARROW",
+      "ok": true,
+      "detail": {
+        "keys": [
+          "ok",
+          "sessionId",
+          "status",
+          "findings",
+          "evidence",
+          "facets",
+          "narrow",
+          "version",
+          "forbiddenIdentitiesVersion",
+          "progress",
+          "providers",
+          "store"
+        ]
+      }
+    },
+    {
+      "name": "SSE_SMOKE",
+      "ok": true,
+      "detail": {
+        "rawLen": 1930,
+        "hasEvent": true
+      }
+    },
+    {
+      "name": "ACC_NO_FORBIDDEN_QID",
+      "ok": true,
+      "detail": {
+        "leak": false
+      }
+    }
+  ],
+  "ok": true
+}

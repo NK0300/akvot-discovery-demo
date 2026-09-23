@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "role": "בודק",
+    "date": "2026-09-20",
+    "zone": "Asia/Jerusalem UTC+3",
+    "measure_only": true,
+    "promote": false,
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "expect_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+  },
+  "health": {
+    "ms": 2548,
+    "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "expect": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "match": true,
+    "json": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "baselineHint": "dpl_DNfPZ9"
+    }
+  },
+  "assaf": {
+    "ms": 2794,
+    "ui": "dossier",
+    "qid": "Q47507930",
+    "leak": 0,
+    "pass": true
+  },
+  "cohen": {
+    "ms": 3148,
+    "ui": "need_context",
+    "qid": null,
+    "leak": 0,
+    "pass": true
+  },
+  "smith": {
+    "ms": 10155,
+    "ui": "candidates",
+    "qid": null,
+    "faces": false,
+    "leak": 0,
+    "pass": true
+  },
+  "leakage": 0,
+  "pass": true,
+  "gate": {
+    "health_build": "PASS",
+    "Assaf": "PASS",
+    "cohen": "PASS",
+    "Smith_POST_IBM_NY_US": "PASS",
+    "leakage": 0,
+    "overall": "PASS",
+    "promote": "NOT_DONE",
+    "note": "Regression-only against Acc P0 alias; Discovery Preview work did not change Core"
+  }
+}

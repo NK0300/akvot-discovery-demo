@@ -1,0 +1,1739 @@
+{
+  "ms": 2343,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.4797551aa9e3fa32530a49067ad7823f",
+    "seed": "Jordan",
+    "q": "Jordan",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q810",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "country in West Asia",
+        "evidenceIds": [
+          "ev-fb7d6232babc85269508e4dc",
+          "ev-a6a9f11b39cdbdb26f52daf6"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q810",
+          "wd-Q810",
+          "viaf:125091880"
+        ],
+        "scoreFinding": 0.8316666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-125091880",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "type:geographic · lc:n79072819 · dnb:040287505",
+        "evidenceIds": [
+          "ev-fb7d6232babc85269508e4dc",
+          "ev-a6a9f11b39cdbdb26f52daf6"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q810",
+          "wd-Q810",
+          "viaf:125091880"
+        ],
+        "scoreFinding": 0.8216666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL234426A",
+        "kind": "registry",
+        "title": "Jordan B. Peterson",
+        "summary": "Top work: 12 Rules for Life",
+        "evidenceIds": [
+          "ev-1f7cc301f6bad539db192abd",
+          "ev-a972ee4e489a4ad09b5224a2"
+        ],
+        "providers": [
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "ol:OL234426A",
+          "ol-OL234426A",
+          "viaf:7566917",
+          "qid:Q6276882",
+          "wd-Q6276882"
+        ],
+        "scoreFinding": 0.7941666666666666,
+        "ranking": {
+          "discoveryScore": 0.8141666666666666,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-7566917",
+        "kind": "registry",
+        "title": "Jordan B. Peterson, 1962-",
+        "summary": "type:personal · lc:n98080203 · dnb:1155313089",
+        "evidenceIds": [
+          "ev-1f7cc301f6bad539db192abd",
+          "ev-a972ee4e489a4ad09b5224a2"
+        ],
+        "providers": [
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "ol:OL234426A",
+          "ol-OL234426A",
+          "viaf:7566917",
+          "qid:Q6276882",
+          "wd-Q6276882"
+        ],
+        "scoreFinding": 0.7841666666666666,
+        "ranking": {
+          "discoveryScore": 0.8141666666666666,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q14021944",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "unisex given name",
+        "evidenceIds": [
+          "ev-1396383b8da8cb30c952bc61"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q14021944",
+          "wd-Q14021944"
+        ],
+        "scoreFinding": 0.6783333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q1703599",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "family name",
+        "evidenceIds": [
+          "ev-36123d3d4da3b25a85ac007a"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q1703599",
+          "wd-Q1703599"
+        ],
+        "scoreFinding": 0.6683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q313802",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "municipality of the Philippines and capital of the province of Guimaras",
+        "evidenceIds": [
+          "ev-7ef9b97645da8167c4e32729"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q313802",
+          "wd-Q313802"
+        ],
+        "scoreFinding": 0.6583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q17485430",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "name",
+        "evidenceIds": [
+          "ev-fa075c71af76669408a342b1"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q17485430",
+          "wd-Q17485430"
+        ],
+        "scoreFinding": 0.6483333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q270658",
+        "kind": "registry",
+        "title": "Jacob Jordaens",
+        "summary": "Flemish painter, draftsman and designer of prints and tapestries (1593-1678)",
+        "evidenceIds": [
+          "ev-c0b82ba7c3d2b2d575a9a209"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q270658",
+          "wd-Q270658",
+          "viaf:34465050"
+        ],
+        "scoreFinding": 0.6383333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q332494",
+        "kind": "registry",
+        "title": "Luca Giordano",
+        "summary": "Italian Baroque painter (1634–1705)",
+        "evidenceIds": [
+          "ev-c59809019eae57461e677a24"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q332494",
+          "wd-Q332494",
+          "viaf:233370534"
+        ],
+        "scoreFinding": 0.6283333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q108462973",
+        "kind": "registry",
+        "title": "Jordan",
+        "summary": "bishop of the Roman Catholic Church",
+        "evidenceIds": [
+          "ev-c784aef492e51fdc0fdb7797"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q108462973",
+          "wd-Q108462973"
+        ],
+        "scoreFinding": 0.6183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-68926311",
+        "kind": "registry",
+        "title": "Jordanus Brunus Nolanus, 1548-1600",
+        "summary": "type:personal · lc:n79090025 · dnb:118516221",
+        "evidenceIds": [
+          "ev-7deb6119e4cc9a46a1483c67"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:68926311"
+        ],
+        "scoreFinding": 0.5908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-268814081",
+        "kind": "registry",
+        "title": "Jordanes, 05..-05",
+        "summary": "type:personal · lc:n85084093 · dnb:118891472",
+        "evidenceIds": [
+          "ev-9871b61786caea01575f8bbd"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:268814081"
+        ],
+        "scoreFinding": 0.5808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-79096089",
+        "kind": "registry",
+        "title": "Jordan, Robert, 1948-2007",
+        "summary": "type:personal · lc:n95103132 · dnb:123684129",
+        "evidenceIds": [
+          "ev-bd1720f1a55e93ea4e2f024f"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:79096089"
+        ],
+        "scoreFinding": 0.5708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-313023831",
+        "kind": "registry",
+        "title": "Jordanus 13th century Nemorarius",
+        "summary": "type:personal · lc:n80139524 · dnb:11917121x",
+        "evidenceIds": [
+          "ev-ee9c5a258e6e9eea9a288b93"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:313023831"
+        ],
+        "scoreFinding": 0.5608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-133149066622665602299",
+        "kind": "registry",
+        "title": "jordánský princ <<al->>Ḥasan bin Ṭalāl, 1947-",
+        "summary": "type:personal · lc:n80099377 · dnb:113375840",
+        "evidenceIds": [
+          "ev-0a69b887fbaeb9efaeacd63d"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:133149066622665602299"
+        ],
+        "scoreFinding": 0.5508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85368254",
+        "kind": "registry",
+        "title": "Jordan, Neil, 1950-",
+        "summary": "type:personal · lc:n79138918 · dnb:119140179",
+        "evidenceIds": [
+          "ev-289a14a2209196155c5aae7c"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:85368254"
+        ],
+        "scoreFinding": 0.5408333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL54792A",
+        "kind": "registry",
+        "title": "June Jordan",
+        "summary": "Top work: His own where",
+        "evidenceIds": [
+          "ev-c72efba9f44e7e39f743eb40"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL54792A",
+          "ol-OL54792A",
+          "viaf:105601809",
+          "qid:Q6312325",
+          "wd-Q6312325"
+        ],
+        "scoreFinding": 0.49583333333333324,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2638635A",
+        "kind": "registry",
+        "title": "Bradford Dunson Jordan",
+        "summary": "Top work: Fundamentals of corporate finance",
+        "evidenceIds": [
+          "ev-3c5eeba007f4fb38485dcc48"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL2638635A",
+          "ol-OL2638635A"
+        ],
+        "scoreFinding": 0.4858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL654722A",
+        "kind": "registry",
+        "title": "Jordan.",
+        "summary": "Top work: Working with Nature",
+        "evidenceIds": [
+          "ev-9b6f272047eaa98255bb5ac6"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL654722A",
+          "ol-OL654722A"
+        ],
+        "scoreFinding": 0.4758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2428442A",
+        "kind": "registry",
+        "title": "Jordan, William George",
+        "summary": "Top work: The Majesty of Calmness",
+        "evidenceIds": [
+          "ev-5191529d3115052bf070233e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL2428442A",
+          "ol-OL2428442A",
+          "viaf:53985488",
+          "qid:Q8009801",
+          "wd-Q8009801"
+        ],
+        "scoreFinding": 0.46583333333333327,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL695329A",
+        "kind": "registry",
+        "title": "Robert S. Jordan",
+        "summary": "Top work: The International civil service",
+        "evidenceIds": [
+          "ev-1f8b1d179a734aa3862eb970"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL695329A",
+          "ol-OL695329A"
+        ],
+        "scoreFinding": 0.4558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL61483A",
+        "kind": "registry",
+        "title": "Red Jordan Arobateau",
+        "summary": "Top work: The Black biker",
+        "evidenceIds": [
+          "ev-5921cc484d39ce958a5cc91e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL61483A",
+          "ol-OL61483A"
+        ],
+        "scoreFinding": 0.4458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL166794A",
+        "kind": "registry",
+        "title": "David Starr Jordan",
+        "summary": "Top work: A manual of the vertebrate animals of the northern United States: including the district north and east of the Ozark Mountains, south of the Laurentian Hills, north of the southern boundary of Virginia, and east of the Missouri River, inclusive of marine species",
+        "evidenceIds": [
+          "ev-3ab0210750ad2ae89d5ab697"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL166794A",
+          "ol-OL166794A"
+        ],
+        "scoreFinding": 0.4358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Jordan",
+        "kind": "page",
+        "title": "Jordan",
+        "evidenceIds": [
+          "ev-39555a9af0d06a994ed34e72"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Jordan"
+        ],
+        "scoreFinding": 0.4083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan",
+        "kind": "page",
+        "title": "Michael Jordan",
+        "evidenceIds": [
+          "ev-1d46c2a2392b28ad031f3003"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan"
+        ],
+        "scoreFinding": 0.3983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Hal_Jordan",
+        "kind": "page",
+        "title": "Hal Jordan",
+        "evidenceIds": [
+          "ev-a67a68025c86a0d46c215086"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Hal Jordan"
+        ],
+        "scoreFinding": 0.3883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Jordan_Peterson",
+        "kind": "page",
+        "title": "Jordan Peterson",
+        "evidenceIds": [
+          "ev-b69703ede28b67fa1c4102ad"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Jordan Peterson"
+        ],
+        "scoreFinding": 0.3783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Jordan_Ayew",
+        "kind": "page",
+        "title": "Jordan Ayew",
+        "evidenceIds": [
+          "ev-fe5517a28093e221b6d7ecf7"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Jordan Ayew"
+        ],
+        "scoreFinding": 0.3683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Jordan_River",
+        "kind": "page",
+        "title": "Jordan River",
+        "evidenceIds": [
+          "ev-1c39c848f381bfee713f32ff"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Jordan River"
+        ],
+        "scoreFinding": 0.35833333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1396383b8da8cb30c952bc61",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q14021944",
+        "url": "https://www.wikidata.org/wiki/Q14021944",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "unisex given name",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-36123d3d4da3b25a85ac007a",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q1703599",
+        "url": "https://www.wikidata.org/wiki/Q1703599",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "family name",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-fb7d6232babc85269508e4dc",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q810",
+        "url": "https://www.wikidata.org/wiki/Q810",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "country in West Asia",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-7ef9b97645da8167c4e32729",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q313802",
+        "url": "https://www.wikidata.org/wiki/Q313802",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "municipality of the Philippines and capital of the province of Guimaras",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-fa075c71af76669408a342b1",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q17485430",
+        "url": "https://www.wikidata.org/wiki/Q17485430",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "name",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c0b82ba7c3d2b2d575a9a209",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q270658",
+        "url": "https://www.wikidata.org/wiki/Q270658",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "Flemish painter, draftsman and designer of prints and tapestries (1593-1678)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c59809019eae57461e677a24",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q332494",
+        "url": "https://www.wikidata.org/wiki/Q332494",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "Italian Baroque painter (1634–1705)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c784aef492e51fdc0fdb7797",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q108462973",
+        "url": "https://www.wikidata.org/wiki/Q108462973",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:25.164Z",
+        "evidenceType": "registry",
+        "quote": "bishop of the Roman Catholic Church",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c72efba9f44e7e39f743eb40",
+        "provenanceUrl": "https://openlibrary.org/authors/OL54792A",
+        "url": "https://openlibrary.org/authors/OL54792A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "His own where",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3c5eeba007f4fb38485dcc48",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2638635A",
+        "url": "https://openlibrary.org/authors/OL2638635A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "Fundamentals of corporate finance",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1f7cc301f6bad539db192abd",
+        "provenanceUrl": "https://openlibrary.org/authors/OL234426A",
+        "url": "https://openlibrary.org/authors/OL234426A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "12 Rules for Life",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9b6f272047eaa98255bb5ac6",
+        "provenanceUrl": "https://openlibrary.org/authors/OL654722A",
+        "url": "https://openlibrary.org/authors/OL654722A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "Working with Nature",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-5191529d3115052bf070233e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2428442A",
+        "url": "https://openlibrary.org/authors/OL2428442A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "The Majesty of Calmness",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1f8b1d179a734aa3862eb970",
+        "provenanceUrl": "https://openlibrary.org/authors/OL695329A",
+        "url": "https://openlibrary.org/authors/OL695329A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "The International civil service",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-5921cc484d39ce958a5cc91e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL61483A",
+        "url": "https://openlibrary.org/authors/OL61483A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "The Black biker",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3ab0210750ad2ae89d5ab697",
+        "provenanceUrl": "https://openlibrary.org/authors/OL166794A",
+        "url": "https://openlibrary.org/authors/OL166794A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:26.420Z",
+        "evidenceType": "registry",
+        "quote": "A manual of the vertebrate animals of the northern United States: including the district north and east of the Ozark Mountains, south of the Laurentian Hills, north of the southern boundary of Virginia, and east of the Missouri River, inclusive of marine species",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-39555a9af0d06a994ed34e72",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Jordan",
+        "url": "https://en.wikipedia.org/wiki/Jordan",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:25.195Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1d46c2a2392b28ad031f3003",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:25.195Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a67a68025c86a0d46c215086",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Hal_Jordan",
+        "url": "https://en.wikipedia.org/wiki/Hal_Jordan",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:25.195Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b69703ede28b67fa1c4102ad",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Jordan_Peterson",
+        "url": "https://en.wikipedia.org/wiki/Jordan_Peterson",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:25.195Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-fe5517a28093e221b6d7ecf7",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Jordan_Ayew",
+        "url": "https://en.wikipedia.org/wiki/Jordan_Ayew",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:25.195Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1c39c848f381bfee713f32ff",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Jordan_River",
+        "url": "https://en.wikipedia.org/wiki/Jordan_River",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:25.195Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-7deb6119e4cc9a46a1483c67",
+        "provenanceUrl": "https://viaf.org/viaf/68926311",
+        "url": "https://viaf.org/viaf/68926311",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordanus Brunus Nolanus, 1548-1600",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9871b61786caea01575f8bbd",
+        "provenanceUrl": "https://viaf.org/viaf/268814081",
+        "url": "https://viaf.org/viaf/268814081",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordanes, 05..-05",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-bd1720f1a55e93ea4e2f024f",
+        "provenanceUrl": "https://viaf.org/viaf/79096089",
+        "url": "https://viaf.org/viaf/79096089",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordan, Robert, 1948-2007",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ee9c5a258e6e9eea9a288b93",
+        "provenanceUrl": "https://viaf.org/viaf/313023831",
+        "url": "https://viaf.org/viaf/313023831",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordanus 13th century Nemorarius",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a972ee4e489a4ad09b5224a2",
+        "provenanceUrl": "https://viaf.org/viaf/7566917",
+        "url": "https://viaf.org/viaf/7566917",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordan B. Peterson, 1962-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a6a9f11b39cdbdb26f52daf6",
+        "provenanceUrl": "https://viaf.org/viaf/125091880",
+        "url": "https://viaf.org/viaf/125091880",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordan",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0a69b887fbaeb9efaeacd63d",
+        "provenanceUrl": "https://viaf.org/viaf/133149066622665602299",
+        "url": "https://viaf.org/viaf/133149066622665602299",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "jordánský princ <<al->>Ḥasan bin Ṭalāl, 1947-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-289a14a2209196155c5aae7c",
+        "provenanceUrl": "https://viaf.org/viaf/85368254",
+        "url": "https://viaf.org/viaf/85368254",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:25.112Z",
+        "evidenceType": "registry",
+        "quote": "Jordan, Neil, 1950-",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "viaf",
+            "count": 10
+          },
+          {
+            "value": "openlibrary",
+            "count": 9
+          },
+          {
+            "value": "wikidata",
+            "count": 9
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 24
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 4
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial",
+      "viaf": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:136c67657614"
+      ],
+      "status": "candidate",
+      "displayHint": "Jordan",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:41:24.917Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:136c67657614",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q14021944",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q1703599",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q810",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-125091880",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q313802",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q17485430",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q270658",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q332494",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q108462973",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL54792A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2638635A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL234426A",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-7566917",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL654722A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2428442A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL695329A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL61483A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL166794A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Jordan",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Michael_Jordan",
+          "kind": "finding"
+        }
+      ],
+      "edges": [
+        {
+          "id": "corr-0-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q810",
+          "to": "viaf-125091880",
+          "source": "wd-Q810",
+          "target": "viaf-125091880",
+          "findingIds": [
+            "wd-Q810",
+            "viaf-125091880"
+          ],
+          "families": [
+            "wikimedia",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q810",
+            "viaf:125091880"
+          ],
+          "titleSecondary": "agree",
+          "relationship": "same-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-1-0-1",
+          "kind": "corroboration",
+          "from": "ol-OL234426A",
+          "to": "viaf-7566917",
+          "source": "ol-OL234426A",
+          "target": "viaf-7566917",
+          "findingIds": [
+            "ol-OL234426A",
+            "viaf-7566917"
+          ],
+          "families": [
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "ol:OL234426A",
+            "viaf:7566917",
+            "qid:Q6276882"
+          ],
+          "titleSecondary": "agree",
+          "relationship": "same-entity",
+          "mode": "attach_keep"
+        }
+      ]
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "jordan",
+        "findingIds": [
+          "wd-Q810",
+          "viaf-125091880",
+          "wd-Q14021944",
+          "wd-Q1703599",
+          "wd-Q313802",
+          "wd-Q17485430",
+          "wd-Q108462973",
+          "wp-en-Jordan"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "viaf.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

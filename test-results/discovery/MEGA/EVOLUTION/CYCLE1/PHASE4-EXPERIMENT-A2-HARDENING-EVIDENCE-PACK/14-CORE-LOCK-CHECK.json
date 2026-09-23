@@ -1,0 +1,15 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "discovery_B0": {
+    "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "ok": true,
+    "note": "FROZEN \u2014 not retargeted"
+  },
+  "core": {
+    "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "ok": true,
+    "note": "LOCKED \u2014 pw=0 leakage=0 assumed hold"
+  },
+  "alias_touch": false,
+  "promote": "HOLD"
+}

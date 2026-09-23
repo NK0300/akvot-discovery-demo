@@ -1,0 +1,28 @@
+[בודק] EXP-A VIAF QA-AFTER vs B0 start 2026-09-20T10:04:07+03:00
+[בודק] Preview dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU · B0 dpl_AvyhrW24gGRquWCPPZdydBiz81dv · Core dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · HOLD promote
+[PREVIEW] CREATE S01 Tim Berners-Lee
+[PREVIEW] POLL S01 i=0 status=partial findings=18
+[PREVIEW] POLL S01 i=1 status=partial findings=18
+[PREVIEW] S01 n=18 multiAcc=0.000 multiRt=0.000 viaf=true leak=0 dossier=false
+[PREVIEW] CREATE S04 Stripe
+[PREVIEW] POLL S04 i=0 status=partial findings=30
+[PREVIEW] POLL S04 i=1 status=partial findings=30
+[PREVIEW] S04 n=30 multiAcc=0.000 multiRt=0.000 viaf=true leak=0 dossier=false
+[PREVIEW] CREATE S05 Red Cross
+[PREVIEW] POLL S05 i=0 status=partial findings=30
+[PREVIEW] POLL S05 i=1 status=partial findings=30
+[PREVIEW] S05 n=30 multiAcc=0.000 multiRt=0.000 viaf=true leak=0 dossier=false
+[B0] CREATE S01 Tim Berners-Lee
+[B0] POLL S01 i=0 status=partial findings=10
+[B0] POLL S01 i=1 status=partial findings=10
+[B0] S01 n=10 multiAcc=0.000 multiRt=0.000 viaf=false leak=0 dossier=false
+[B0] CREATE S04 Stripe
+[B0] POLL S04 i=0 status=partial findings=22
+[B0] POLL S04 i=1 status=partial findings=22
+[B0] S04 n=22 multiAcc=0.000 multiRt=0.000 viaf=false leak=0 dossier=false
+[B0] CREATE S05 Red Cross
+[B0] POLL S05 i=0 status=partial findings=22
+[B0] POLL S05 i=1 status=partial findings=22
+[B0] S05 n=22 multiAcc=0.000 multiRt=0.000 viaf=false leak=0 dossier=false
+[בודק] DONE verdict=FAIL meanAcc=0.000 meanRt=0.000
+[בודק] wrote QA-AFTER-vs-B0-בודק-2026-09-20.md+.json

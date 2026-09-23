@@ -1,0 +1,136 @@
+[
+  {
+    "q": "בנימין נתניהו",
+    "http": 200,
+    "ms": 1202,
+    "err": null,
+    "ui": "dossier",
+    "scn": "known",
+    "qid": "Q43723",
+    "mode": "wiki",
+    "label": "בנימין נתניהו",
+    "imgs": 2,
+    "photo": true,
+    "src": 17,
+    "messageKey": "dossier_ready",
+    "timings": {
+      "wiki": 805,
+      "gemini": 0,
+      "enrich": 0,
+      "total": 806
+    },
+    "pass": true
+  },
+  {
+    "q": "יאיר לפיד",
+    "http": 200,
+    "ms": 1069,
+    "err": null,
+    "ui": "dossier",
+    "scn": "known",
+    "qid": "Q1396120",
+    "mode": "wiki",
+    "label": "יאיר לפיד",
+    "imgs": 2,
+    "photo": true,
+    "src": 18,
+    "messageKey": "dossier_ready",
+    "timings": {
+      "wiki": 638,
+      "gemini": 0,
+      "enrich": 0,
+      "total": 639
+    },
+    "pass": true
+  },
+  {
+    "q": "גדעון סער",
+    "http": 200,
+    "ms": 6950,
+    "err": null,
+    "ui": "dossier",
+    "scn": "known",
+    "qid": "Q966349",
+    "mode": "wiki+google",
+    "label": "גדעון סער",
+    "imgs": 7,
+    "photo": true,
+    "src": 1,
+    "messageKey": "dossier_ready",
+    "timings": {
+      "wiki": 102,
+      "gemini": 0,
+      "enrich": 967,
+      "total": 6572
+    },
+    "pass": true
+  },
+  {
+    "q": "דני כהן",
+    "http": 200,
+    "ms": 31079,
+    "err": null,
+    "ui": "need_context",
+    "scn": "stranger",
+    "qid": null,
+    "mode": "ambiguous",
+    "label": "דני כהן",
+    "imgs": 0,
+    "photo": false,
+    "src": 0,
+    "messageKey": "common_name",
+    "timings": {
+      "wiki": 30741,
+      "gemini": 0,
+      "enrich": 0,
+      "total": 30746
+    },
+    "pass": true
+  },
+  {
+    "q": "נתניהו",
+    "http": 200,
+    "ms": 24913,
+    "err": null,
+    "ui": "dossier",
+    "scn": "known",
+    "qid": "Q43723",
+    "mode": "wiki",
+    "label": "בנימין נתניהו",
+    "imgs": 1,
+    "photo": true,
+    "src": 19,
+    "messageKey": "dossier_ready",
+    "timings": {
+      "wiki": 24528,
+      "gemini": 0,
+      "enrich": 0,
+      "total": 24530
+    },
+    "soft": true,
+    "pass": true
+  },
+  {
+    "q": "לפיד",
+    "http": 200,
+    "ms": 15185,
+    "err": null,
+    "ui": "need_context",
+    "scn": "stranger",
+    "qid": null,
+    "mode": "candidates",
+    "label": "לפיד",
+    "imgs": 0,
+    "photo": false,
+    "src": 0,
+    "messageKey": "common_name",
+    "timings": {
+      "wiki": 727,
+      "gemini": 8141,
+      "enrich": 0,
+      "total": 14375
+    },
+    "soft": true,
+    "pass": false
+  }
+]

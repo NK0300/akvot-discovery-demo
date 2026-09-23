@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "base": "https://akvot-simple-demo.vercel.app",
+    "at": "2026-09-08T05:39:42.024Z",
+    "n": 5,
+    "pass": 0,
+    "fail": 5,
+    "byBucket": {
+      "famous": {
+        "n": 5,
+        "pass": 0,
+        "fail": 5
+      },
+      "obscure": {
+        "n": 0,
+        "pass": 0,
+        "fail": 0
+      },
+      "nonexist": {
+        "n": 0,
+        "pass": 0,
+        "fail": 0
+      }
+    },
+    "p50": 51813,
+    "p95": 60434
+  },
+  "results": [
+    {
+      "q": "מנחם בגין",
+      "bucket": "famous",
+      "pass": false,
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON",
+      "ms": 60405
+    },
+    {
+      "q": "גדעון סער",
+      "bucket": "famous",
+      "scenario": "A",
+      "ok": true,
+      "ms": 51813,
+      "uiState": "need_context",
+      "mode": "google",
+      "phase": "orchestrator-v0-b",
+      "faces": true,
+      "sources": 5,
+      "candidates": 0,
+      "pass": false,
+      "reason": "expected_dossier_got_need_context",
+      "degraded": true
+    },
+    {
+      "q": "חיים רמון",
+      "bucket": "famous",
+      "scenario": "A",
+      "ok": true,
+      "ms": 41157,
+      "uiState": "need_context",
+      "mode": "google",
+      "phase": "orchestrator-v0-b",
+      "faces": true,
+      "sources": 3,
+      "candidates": 0,
+      "pass": false,
+      "reason": "expected_dossier_got_need_context",
+      "degraded": false
+    },
+    {
+      "q": "יאיר לפיד",
+      "bucket": "famous",
+      "scenario": "A",
+      "ok": true,
+      "ms": 49133,
+      "uiState": "need_context",
+      "mode": "google",
+      "phase": "orchestrator-v0-b",
+      "faces": false,
+      "sources": 6,
+      "candidates": 0,
+      "pass": false,
+      "reason": "expected_dossier_got_need_context",
+      "degraded": true
+    },
+    {
+      "q": "Giorgia Meloni",
+      "bucket": "famous",
+      "pass": false,
+      "reason": "ex:Unexpected token 'A', \"An error o\"... is not valid JSON",
+      "ms": 60434
+    }
+  ]
+}

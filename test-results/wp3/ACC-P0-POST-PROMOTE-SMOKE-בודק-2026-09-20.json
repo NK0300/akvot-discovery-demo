@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "checked_at": "2026-09-20T00:59:46+03:00",
+    "timezone": "Asia/Jerusalem (UTC+3)",
+    "base": "https://akvot-simple-demo.vercel.app",
+    "origin": "https://akvot-simple-demo.vercel.app",
+    "scope": "k-akvot",
+    "required_deployment": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "promote": false,
+    "core_patch": false,
+    "phase_b": false,
+    "forbidden_pattern": "Q1701775|wd-Q1701775",
+    "access_attempt": "public fetch first; scoped fallback only on 403/redirect"
+  },
+  "health": {
+    "label": "health",
+    "method": "GET",
+    "url": "https://akvot-simple-demo.vercel.app/api/health",
+    "request_body": null,
+    "ms": 405,
+    "status": 200,
+    "access": "public-fetch",
+    "headers": {
+      "cache-control": "no-store",
+      "age": "0",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sat, 19 Sep 2026 21:59:46 GMT",
+      "x-vercel-cache": "MISS",
+      "x-vercel-id": "cle1::fra1::fjxbf-1789855186261-c84b9ab4a4bf"
+    },
+    "err": null,
+    "ui": null,
+    "mode": null,
+    "uiState": null,
+    "qid": null,
+    "faces": null,
+    "candidates_count": 0,
+    "candidate_ids": [],
+    "leakage_count": 0,
+    "leakage_terms": [],
+    "candidate_leakage_count": 0,
+    "source_leakage_count": 0,
+    "raw_file": "health.json",
+    "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "build_match": true
+  },
+  "cases": [
+    {
+      "label": "assaf-get",
+      "method": "GET",
+      "url": "https://akvot-simple-demo.vercel.app/api/lookup?q=Assaf%20Rappaport",
+      "request_body": null,
+      "ms": 566,
+      "status": 200,
+      "access": "public-fetch",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "0",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 19 Sep 2026 21:59:46 GMT",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::fra1::tgkn7-1789855186616-6eee0e676f3b"
+      },
+      "err": null,
+      "ui": "dossier",
+      "mode": "wiki",
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "faces": 2,
+      "candidates_count": 0,
+      "candidate_ids": [],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "assaf-get.json"
+    },
+    {
+      "label": "cohen-get",
+      "method": "GET",
+      "url": "https://akvot-simple-demo.vercel.app/api/lookup?q=%D7%9B%D7%94%D7%9F",
+      "request_body": null,
+      "ms": 191,
+      "status": 200,
+      "access": "public-fetch",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "0",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 19 Sep 2026 21:59:47 GMT",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::fra1::fjxbf-1789855187030-51153fdc524d"
+      },
+      "err": null,
+      "ui": "need_context",
+      "mode": "candidates",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 0,
+      "candidate_ids": [],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "cohen-get.json"
+    },
+    {
+      "label": "john-smith-cold-nocache",
+      "method": "POST",
+      "url": "https://akvot-simple-demo.vercel.app/api/lookup",
+      "request_body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      },
+      "ms": 6642,
+      "status": 200,
+      "access": "public-fetch",
+      "headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 19 Sep 2026 21:59:53 GMT",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::fra1::nj9p8-1789855187222-dda0b3659be0"
+      },
+      "err": null,
+      "ui": "candidates",
+      "mode": "candidates",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 6,
+      "candidate_ids": [
+        "ol-OL177707A",
+        "viaf-4952029",
+        "viaf-7575484",
+        "viaf-313041903",
+        "viaf-42025537",
+        "viaf-9921487"
+      ],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-smith-cold-nocache.json"
+    },
+    {
+      "label": "john-smith-warm-1",
+      "method": "POST",
+      "url": "https://akvot-simple-demo.vercel.app/api/lookup",
+      "request_body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "ms": 6187,
+      "status": 200,
+      "access": "public-fetch",
+      "headers": {
+        "cache-control": "s-maxage=45, stale-while-revalidate=180",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 19 Sep 2026 21:59:59 GMT",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::fra1::4frdv-1789855193865-6dcd48dbf326"
+      },
+      "err": null,
+      "ui": "candidates",
+      "mode": "candidates",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 6,
+      "candidate_ids": [
+        "ol-OL177707A",
+        "viaf-4952029",
+        "viaf-7575484",
+        "viaf-313041903",
+        "viaf-42025537",
+        "viaf-9921487"
+      ],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-smith-warm-1.json"
+    },
+    {
+      "label": "john-smith-warm-2",
+      "method": "POST",
+      "url": "https://akvot-simple-demo.vercel.app/api/lookup",
+      "request_body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "ms": 5837,
+      "status": 200,
+      "access": "public-fetch",
+      "headers": {
+        "cache-control": "s-maxage=45, stale-while-revalidate=180",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 19 Sep 2026 22:00:05 GMT",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::fra1::vx2mm-1789855200052-2ad51f41b2c1"
+      },
+      "err": null,
+      "ui": "candidates",
+      "mode": "candidates",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 6,
+      "candidate_ids": [
+        "ol-OL177707A",
+        "viaf-4952029",
+        "viaf-7575484",
+        "viaf-313041903",
+        "viaf-42025537",
+        "viaf-9921487"
+      ],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-smith-warm-2.json"
+    },
+    {
+      "label": "john-rappaport-get",
+      "method": "GET",
+      "url": "https://akvot-simple-demo.vercel.app/api/lookup?q=John%20Rappaport",
+      "request_body": null,
+      "ms": 5692,
+      "status": 200,
+      "access": "public-fetch",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "0",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sat, 19 Sep 2026 22:00:11 GMT",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "cle1::fra1::4kmlr-1789855205887-583900ac6627"
+      },
+      "err": null,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "candidates_count": 0,
+      "candidate_ids": [],
+      "leakage_count": 0,
+      "leakage_terms": [],
+      "candidate_leakage_count": 0,
+      "source_leakage_count": 0,
+      "raw_file": "john-rappaport-get.json"
+    }
+  ],
+  "checks": {
+    "health_build": true,
+    "assaf": true,
+    "cohen": true,
+    "john_smith_3x": true,
+    "john_rappaport_optional": true
+  },
+  "leakage_count": 0,
+  "status": "PASS",
+  "abort_fail": false,
+  "notes": [
+    "Post-promote production-alias smoke only; no promote, Core, Phase B, or load executed.",
+    "Smith sequence is one nocache COLD followed by two WARM requests.",
+    "Forbidden scan covers complete response payloads and separately candidates and sources."
+  ]
+}

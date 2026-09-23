@@ -1,0 +1,96 @@
+{
+  "when": "2026-09-14T21:55:08.022Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "results": [
+    {
+      "id": "R-C2b",
+      "q": "ביבי",
+      "expect": "dossier Q43723",
+      "http": 200,
+      "ui": "dossier",
+      "qid": "Q43723",
+      "faces": true,
+      "ms": 1860
+    },
+    {
+      "id": "R-C3b",
+      "q": "Merkel",
+      "expect": "dossier Q567 or need_context (seed policy soft)",
+      "http": 200,
+      "ui": "dossier",
+      "qid": "Q567",
+      "faces": true,
+      "ms": 2997
+    },
+    {
+      "id": "R-C4b",
+      "q": "זהבה גלאון",
+      "expect": "dossier Q2630062",
+      "http": 200,
+      "ui": "dossier",
+      "qid": "Q2630062",
+      "faces": true,
+      "ms": 1692
+    },
+    {
+      "id": "R-C5",
+      "q": "Benjamin Netanyahu",
+      "expect": "dossier Q43723",
+      "http": 200,
+      "ui": "dossier",
+      "qid": "Q43723",
+      "faces": true,
+      "ms": 1101
+    },
+    {
+      "id": "R-C7",
+      "q": "Netanyahu",
+      "expect": "dossier Q43723",
+      "http": 200,
+      "ui": "dossier",
+      "qid": "Q43723",
+      "faces": true,
+      "ms": 1068
+    },
+    {
+      "id": "S-A1b",
+      "q": "משה כהן",
+      "expect": "need_context 0 faces",
+      "http": 200,
+      "ui": "need_context",
+      "qid": null,
+      "faces": false,
+      "ms": 189
+    },
+    {
+      "id": "S-A4",
+      "q": "John Smith",
+      "expect": "NOT dossier+faces",
+      "http": 200,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "ms": 3819
+    },
+    {
+      "id": "P-D8a",
+      "q": "כהן",
+      "expect": "need_context 0 faces",
+      "http": 200,
+      "ui": "need_context",
+      "qid": null,
+      "faces": false,
+      "ms": 34503
+    },
+    {
+      "id": "P-D8b",
+      "q": "לוי",
+      "expect": "need_context 0 faces",
+      "http": 200,
+      "ui": "need_context",
+      "qid": null,
+      "faces": false,
+      "ms": 24644
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "phase": 3,
+  "cycle": "CYCLE1",
+  "name": "PHASE3-FINDING-QUALITY",
+  "steps": "21-30",
+  "baselineId": "B0",
+  "stamp": "2026-09-20T09:52:07+03:00",
+  "zone": "Asia/Jerusalem",
+  "zone_label": "IDT",
+  "alias": "https://akvot-discovery.vercel.app",
+  "discoveryDpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreDplLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "mode": "analysis-only",
+  "codeChanges": false,
+  "deploy": false,
+  "promote": "HOLD",
+  "accRescan": {
+    "forbiddenQid": "Q1701775",
+    "leakageTotal": 0,
+    "pass": true
+  },
+  "overallScore": 56.1,
+  "dimensions": {
+    "Coverage": 60.0,
+    "Relevance": 68.8,
+    "Evidence": 81.8,
+    "Novelty": 71.1,
+    "Diversity": 15.0,
+    "Accuracy": 67.5,
+    "Ambiguity": 53.0,
+    "Contradiction": 25.0
+  },
+  "topQualityDefects": [
+    "QD-01",
+    "QD-02",
+    "QD-03",
+    "QD-04",
+    "QD-05"
+  ],
+  "productGaps": [
+    "PG-01",
+    "PG-02",
+    "PG-03",
+    "PG-04"
+  ],
+  "seedsClassified": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S10"
+  ],
+  "findingsClassified": 129,
+  "observation": "PASS",
+  "deliverables": [
+    "TAXONOMY.json",
+    "CLASSIFICATION-MATRIX.json",
+    "EXACT-DUPLICATES.json",
+    "NEAR-DUPLICATES.json",
+    "CONTRADICTIONS.json",
+    "WITHOUT-EVIDENCE.json",
+    "WEAK-EVIDENCE.json",
+    "SINGLE-SOURCE.json",
+    "MULTI-INDEPENDENT-SOURCE.json",
+    "FINDING-QUALITY-SCORECARD.md",
+    "FINDING-QUALITY-SCORECARD.json",
+    "QUALITY-GATES-NOTES.md",
+    "ACC-RESCAN.json",
+    "PHASE3-STATUS.json"
+  ]
+}

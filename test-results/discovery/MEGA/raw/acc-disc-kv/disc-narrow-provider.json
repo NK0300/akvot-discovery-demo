@@ -1,0 +1,462 @@
+{
+  "ok": true,
+  "sessionId": "kv1.b8b84b1fa0f89f66bf9baa4adc31f908",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "ol-OL177707A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: The general historie of Virginia, New England and the Summer Isles",
+      "evidenceIds": [
+        "ev-044834c623ca126245a161f9"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL177707A"
+      ],
+      "scoreFinding": 0.5858333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL12988612A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: Talk, Thinking and Philosophy in the Primary Classroom",
+      "evidenceIds": [
+        "ev-8581cea97a5b1093c3f9f933"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL12988612A"
+      ],
+      "scoreFinding": 0.5758333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2642558A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: John Smith Spelling Book 0",
+      "evidenceIds": [
+        "ev-d106c1eae2f9ba86575eeb63"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2642558A"
+      ],
+      "scoreFinding": 0.5658333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2404636A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: Lectures on the nature and end of the sacred office",
+      "evidenceIds": [
+        "ev-a32cc09480f36697818d16ba"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2404636A"
+      ],
+      "scoreFinding": 0.5558333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL15752758A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: Herbal Antibiotics",
+      "evidenceIds": [
+        "ev-57678c28c9b848c05675aaf1"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL15752758A"
+      ],
+      "scoreFinding": 0.5458333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL9615641A",
+      "kind": "registry",
+      "title": "John SMITH",
+      "summary": "Top work: Amish Cookbook and Lifestyle",
+      "evidenceIds": [
+        "ev-e87246d1a0ad152c54449bef"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL9615641A"
+      ],
+      "scoreFinding": 0.5358333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL4474728A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: Catalogue Raisonné of the Works of the Most Eminent Dutch, Flemish and French Painters",
+      "evidenceIds": [
+        "ev-909845f03992d1aa055d570b"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL4474728A"
+      ],
+      "scoreFinding": 0.5258333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL646156A",
+      "kind": "registry",
+      "title": "John Smith",
+      "summary": "Top work: The Generall Historie of Virginia, New England & the Summer Isles, Together With the True Travels, Adventures and Observations, and A sea Grammar",
+      "evidenceIds": [
+        "ev-a2949193c5c1fcd694bf44b6"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL646156A"
+      ],
+      "scoreFinding": 0.5158333333333333,
+      "scoreIdentity": null,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-044834c623ca126245a161f9",
+      "provenanceUrl": "https://openlibrary.org/authors/OL177707A",
+      "url": "https://openlibrary.org/authors/OL177707A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "The general historie of Virginia, New England and the Summer Isles",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8581cea97a5b1093c3f9f933",
+      "provenanceUrl": "https://openlibrary.org/authors/OL12988612A",
+      "url": "https://openlibrary.org/authors/OL12988612A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "Talk, Thinking and Philosophy in the Primary Classroom",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-d106c1eae2f9ba86575eeb63",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2642558A",
+      "url": "https://openlibrary.org/authors/OL2642558A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "John Smith Spelling Book 0",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a32cc09480f36697818d16ba",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2404636A",
+      "url": "https://openlibrary.org/authors/OL2404636A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "Lectures on the nature and end of the sacred office",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-57678c28c9b848c05675aaf1",
+      "provenanceUrl": "https://openlibrary.org/authors/OL15752758A",
+      "url": "https://openlibrary.org/authors/OL15752758A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "Herbal Antibiotics",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-e87246d1a0ad152c54449bef",
+      "provenanceUrl": "https://openlibrary.org/authors/OL9615641A",
+      "url": "https://openlibrary.org/authors/OL9615641A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "Amish Cookbook and Lifestyle",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-909845f03992d1aa055d570b",
+      "provenanceUrl": "https://openlibrary.org/authors/OL4474728A",
+      "url": "https://openlibrary.org/authors/OL4474728A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "Catalogue Raisonné of the Works of the Most Eminent Dutch, Flemish and French Painters",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a2949193c5c1fcd694bf44b6",
+      "provenanceUrl": "https://openlibrary.org/authors/OL646156A",
+      "url": "https://openlibrary.org/authors/OL646156A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T04:37:54.224Z",
+      "evidenceType": "registry",
+      "quote": "The Generall Historie of Virginia, New England & the Summer Isles, Together With the True Travels, Adventures and Observations, and A sea Grammar",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "openlibrary",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "narrow": {
+    "applied": {
+      "provider": [
+        "openlibrary"
+      ]
+    },
+    "beforeCount": 21,
+    "afterCount": 8
+  },
+  "version": 3,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "partial",
+    "wikipedia": "partial"
+  },
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

@@ -1,0 +1,40 @@
+OBS MATRIX start 2026-09-18T06:00:02.482Z target https://akvot-simple-demo-ko9ttarut-k-akvot.vercel.app
+[O-P5-health] HTTP 200 wall=2573ms curl=0.383479
+O-P5 PASS build= dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf
+[O-P1-assaf-cold] HTTP 200 wall=2989ms curl=0.804679
+[O-P2-smith-cold] HTTP 200 wall=10423ms curl=8.255084
+[O-P3-cohen-cold] HTTP 200 wall=32607ms curl=29.938403
+[O-P4a-assaf-cold] HTTP 200 wall=3918ms curl=1.495
+[O-P4b-assaf-warm] HTTP 200 wall=2453ms curl=0.242855
+[O-R1-smith-1] HTTP 200 wall=8082ms curl=5.254919
+[O-R1-smith-2] HTTP 200 wall=10286ms curl=8.22156
+[O-R1-smith-3] HTTP 200 wall=8544ms curl=6.467105
+[O-R1-smith-4] HTTP 200 wall=8584ms curl=6.366076
+[O-R1-smith-5] HTTP 200 wall=8678ms curl=6.574608
+[O-R2-assaf-1] HTTP 200 wall=4609ms curl=2.448717
+[O-R2-assaf-2] HTTP 200 wall=3523ms curl=1.29831
+[O-R2-assaf-3] HTTP 200 wall=3882ms curl=1.652301
+[O-N1a-missing-q] HTTP 400 wall=2541ms curl=0.357334
+[O-N1b-bad-json] HTTP 400 wall=2841ms curl=0.362334
+[O-N2-put] HTTP 405 wall=2613ms curl=0.339791
+
+=== SUMMARY ===
+{
+  "gate": "PASS",
+  "pw": 0,
+  "wikiMeta": {
+    "O-P1": true,
+    "O-P2": true,
+    "O-P3": true
+  },
+  "build": "dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf"
+}
+O-P5 PASS wikiMeta=null pw=false — build=dpl_6vYRKnTPL8aBg94pPStKFFVFLWGf
+O-P1 PASS wikiMeta=true pw=false — ui=dossier qid=Q47507930 wikiMeta=true
+O-P2 PASS wikiMeta=true pw=false — ui=candidates qid=null faces=false wikiMeta=true
+O-P3 PASS wikiMeta=true pw=false — ui=need_context faces=false wikiMeta=true
+O-P4 PASS wikiMeta=true pw=false — HIT cached=true cacheHit=true total=1
+O-R1 PASS wikiMeta=true pw=false — wikiMeta_each=true pw=0 passes=5/5
+O-R2 PASS wikiMeta=true pw=false — dossier_stable=true wikiMeta_each=true qids=Q47507930
+O-N1 PASS wikiMeta=undefined pw=false — missing_q HTTP 400; bad_json HTTP 400 — soft fail documented
+O-N2 PASS wikiMeta=undefined pw=false — HTTP 405 (expect 405 if supported)

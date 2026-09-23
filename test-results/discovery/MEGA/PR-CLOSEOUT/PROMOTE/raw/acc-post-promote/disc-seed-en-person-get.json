@@ -1,0 +1,1248 @@
+{
+  "ok": true,
+  "sessionId": "kv1.e7d579f313f41e056e90d0709f39d41a",
+  "seed": "Jane Doe",
+  "q": "Jane Doe",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wd-Q6799859",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "2013 single by Minami Takahashi",
+      "evidenceIds": [
+        "ev-4665a5dc80ec775622536769"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q6799859"
+      ],
+      "scoreFinding": 0.7183333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q135762101",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "2025 vocal track by Kenshi Yonezu and Hikaru Utada",
+      "evidenceIds": [
+        "ev-79c4aa1cb7a018d5e99c460d"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q135762101"
+      ],
+      "scoreFinding": 0.7083333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q136309476",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "playable character in Zenless Zone Zero",
+      "evidenceIds": [
+        "ev-7ea11b9cd3fd1e15f88f69ba"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q136309476"
+      ],
+      "scoreFinding": 0.6983333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q2692467",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "television film series (2005-2008)",
+      "evidenceIds": [
+        "ev-50d7a06e93784b411e71b074"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q2692467"
+      ],
+      "scoreFinding": 0.6883333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q338529",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "2001 television film directed by Kevin Elders",
+      "evidenceIds": [
+        "ev-8f2a9c58a8c5888ef878be3b"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q338529"
+      ],
+      "scoreFinding": 0.6783333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q3806997",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "2001 album by Converge",
+      "evidenceIds": [
+        "ev-f4c1a751ee2ad67fcbfe84d4"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q3806997"
+      ],
+      "scoreFinding": 0.6683333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q955672",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "Wikimedia disambiguation page",
+      "evidenceIds": [
+        "ev-da1c4ecc6040ba0d722c9373"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q955672"
+      ],
+      "scoreFinding": 0.6583333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q56314893",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "placeholder name for an anonymous person",
+      "evidenceIds": [
+        "ev-53cbb633094aef76fb00f912"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q56314893"
+      ],
+      "scoreFinding": 0.6483333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL639808A",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "Top work: The story of Jane Doe",
+      "evidenceIds": [
+        "ev-16d3f50882e8af5bb5280d85"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL639808A"
+      ],
+      "scoreFinding": 0.5858333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL10863847A",
+      "kind": "registry",
+      "title": "jane Doe",
+      "summary": "Top work: His New Toy",
+      "evidenceIds": [
+        "ev-bd96e05d25ae23d762367b70"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL10863847A"
+      ],
+      "scoreFinding": 0.5758333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL3030264A",
+      "kind": "registry",
+      "title": "jane doe",
+      "summary": "Top work: Christmas Planner",
+      "evidenceIds": [
+        "ev-a0f897fc0f09adddfe86ae81"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL3030264A"
+      ],
+      "scoreFinding": 0.5658333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2996040A",
+      "kind": "registry",
+      "title": "Jane Doe",
+      "summary": "Top work: MO",
+      "evidenceIds": [
+        "ev-6aca8c414cf0959b80dbf38a"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2996040A"
+      ],
+      "scoreFinding": 0.5558333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2970234A",
+      "kind": "registry",
+      "title": "Jane Doe-Doe",
+      "summary": "Top work: Thorns",
+      "evidenceIds": [
+        "ev-ad5b13c2b4d4d32fb4d20c6b"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2970234A"
+      ],
+      "scoreFinding": 0.5458333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL14084471A",
+      "kind": "registry",
+      "title": "Jane Doe Inc. Youth Conference",
+      "summary": "Top work: Leading the way",
+      "evidenceIds": [
+        "ev-1a129968ca2bf71fc0159039"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL14084471A"
+      ],
+      "scoreFinding": 0.5358333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL12953731A",
+      "kind": "registry",
+      "title": "Jane S. Doe",
+      "summary": "Top work: Stalk Her",
+      "evidenceIds": [
+        "ev-858d20f048c4a4d04ea0890c"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL12953731A"
+      ],
+      "scoreFinding": 0.5258333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2225111A",
+      "kind": "registry",
+      "title": "Doe, Jane pseud.",
+      "summary": "Top work: Crazy",
+      "evidenceIds": [
+        "ev-4de527267bbb5d909333e882"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2225111A"
+      ],
+      "scoreFinding": 0.5158333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Jane_Doe",
+      "kind": "page",
+      "title": "Jane Doe",
+      "evidenceIds": [
+        "ev-65b440364f7ad08042f0666d"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Jane Doe"
+      ],
+      "scoreFinding": 0.4883333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Jane_Doe_album_",
+      "kind": "page",
+      "title": "Jane Doe (album)",
+      "evidenceIds": [
+        "ev-a37ef3a070d3efdb85b3b4b7"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Jane Doe (album)"
+      ],
+      "scoreFinding": 0.4783333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Jane_Doe_Kenshi_Yonezu_and_Hikaru_Utada_song_",
+      "kind": "page",
+      "title": "Jane Doe (Kenshi Yonezu and Hikaru Utada song)",
+      "evidenceIds": [
+        "ev-4b45ea8b358a3e62c3b525ec"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Jane Doe (Kenshi Yonezu and Hikaru Utada song)"
+      ],
+      "scoreFinding": 0.4683333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Jane_Doe_Zenless_Zone_Zero_",
+      "kind": "page",
+      "title": "Jane Doe (Zenless Zone Zero)",
+      "evidenceIds": [
+        "ev-d84f118a4874023683c5cda4"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Jane Doe (Zenless Zone Zero)"
+      ],
+      "scoreFinding": 0.4583333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Jane_Doe_case",
+      "kind": "page",
+      "title": "Jane Doe case",
+      "evidenceIds": [
+        "ev-df0c8d32b2c800fe6330cdd5"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Jane Doe case"
+      ],
+      "scoreFinding": 0.4483333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Jane_Doe_film_series_",
+      "kind": "page",
+      "title": "Jane Doe (film series)",
+      "evidenceIds": [
+        "ev-dbac801a4d24ba1011883b45"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Jane Doe (film series)"
+      ],
+      "scoreFinding": 0.43833333333333335,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-4665a5dc80ec775622536769",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q6799859",
+      "url": "https://www.wikidata.org/wiki/Q6799859",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "2013 single by Minami Takahashi",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-79c4aa1cb7a018d5e99c460d",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q135762101",
+      "url": "https://www.wikidata.org/wiki/Q135762101",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "2025 vocal track by Kenshi Yonezu and Hikaru Utada",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-7ea11b9cd3fd1e15f88f69ba",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q136309476",
+      "url": "https://www.wikidata.org/wiki/Q136309476",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "playable character in Zenless Zone Zero",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-50d7a06e93784b411e71b074",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q2692467",
+      "url": "https://www.wikidata.org/wiki/Q2692467",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "television film series (2005-2008)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8f2a9c58a8c5888ef878be3b",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q338529",
+      "url": "https://www.wikidata.org/wiki/Q338529",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "2001 television film directed by Kevin Elders",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-f4c1a751ee2ad67fcbfe84d4",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q3806997",
+      "url": "https://www.wikidata.org/wiki/Q3806997",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "2001 album by Converge",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-da1c4ecc6040ba0d722c9373",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q955672",
+      "url": "https://www.wikidata.org/wiki/Q955672",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "Wikimedia disambiguation page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-53cbb633094aef76fb00f912",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q56314893",
+      "url": "https://www.wikidata.org/wiki/Q56314893",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:22.925Z",
+      "evidenceType": "registry",
+      "quote": "placeholder name for an anonymous person",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-16d3f50882e8af5bb5280d85",
+      "provenanceUrl": "https://openlibrary.org/authors/OL639808A",
+      "url": "https://openlibrary.org/authors/OL639808A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "The story of Jane Doe",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-bd96e05d25ae23d762367b70",
+      "provenanceUrl": "https://openlibrary.org/authors/OL10863847A",
+      "url": "https://openlibrary.org/authors/OL10863847A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "His New Toy",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a0f897fc0f09adddfe86ae81",
+      "provenanceUrl": "https://openlibrary.org/authors/OL3030264A",
+      "url": "https://openlibrary.org/authors/OL3030264A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "Christmas Planner",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-6aca8c414cf0959b80dbf38a",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2996040A",
+      "url": "https://openlibrary.org/authors/OL2996040A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "MO",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-ad5b13c2b4d4d32fb4d20c6b",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2970234A",
+      "url": "https://openlibrary.org/authors/OL2970234A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "Thorns",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-1a129968ca2bf71fc0159039",
+      "provenanceUrl": "https://openlibrary.org/authors/OL14084471A",
+      "url": "https://openlibrary.org/authors/OL14084471A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "Leading the way",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-858d20f048c4a4d04ea0890c",
+      "provenanceUrl": "https://openlibrary.org/authors/OL12953731A",
+      "url": "https://openlibrary.org/authors/OL12953731A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "Stalk Her",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-4de527267bbb5d909333e882",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2225111A",
+      "url": "https://openlibrary.org/authors/OL2225111A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:23.187Z",
+      "evidenceType": "registry",
+      "quote": "Crazy",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-65b440364f7ad08042f0666d",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Jane_Doe",
+      "url": "https://en.wikipedia.org/wiki/Jane_Doe",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:22.795Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a37ef3a070d3efdb85b3b4b7",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Jane_Doe_(album)",
+      "url": "https://en.wikipedia.org/wiki/Jane_Doe_(album)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:22.795Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-4b45ea8b358a3e62c3b525ec",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Jane_Doe_(Kenshi_Yonezu_and_Hikaru_Utada_song)",
+      "url": "https://en.wikipedia.org/wiki/Jane_Doe_(Kenshi_Yonezu_and_Hikaru_Utada_song)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:22.795Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-d84f118a4874023683c5cda4",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Jane_Doe_(Zenless_Zone_Zero)",
+      "url": "https://en.wikipedia.org/wiki/Jane_Doe_(Zenless_Zone_Zero)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:22.795Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-df0c8d32b2c800fe6330cdd5",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Jane_Doe_case",
+      "url": "https://en.wikipedia.org/wiki/Jane_Doe_case",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:22.795Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-dbac801a4d24ba1011883b45",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Jane_Doe_(film_series)",
+      "url": "https://en.wikipedia.org/wiki/Jane_Doe_(film_series)",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:22.795Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "openlibrary",
+          "count": 8
+        },
+        {
+          "value": "wikidata",
+          "count": 8
+        },
+        {
+          "value": "wikipedia",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 16
+        },
+        {
+          "value": "page",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "partial",
+    "wikipedia": "partial"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:ed37d99b1445"
+    ],
+    "status": "candidate",
+    "displayHint": "Jane Doe",
+    "hints": {
+      "locale": "en"
+    }
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T06:11:22.513Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:ed37d99b1445",
+        "kind": "seed"
+      },
+      {
+        "id": "wd-Q6799859",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q135762101",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q136309476",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q2692467",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q338529",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q3806997",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q955672",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q56314893",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL639808A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL10863847A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL3030264A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2996040A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2970234A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL14084471A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL12953731A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2225111A",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Jane_Doe",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Jane_Doe_album_",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Jane_Doe_Kenshi_Yonezu_and_Hikaru_Utada_song_",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Jane_Doe_Zenless_Zone_Zero_",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [
+    {
+      "type": "same_title_multi_domain",
+      "title": "jane doe",
+      "findingIds": [
+        "wd-Q6799859",
+        "wd-Q135762101",
+        "wd-Q136309476",
+        "wd-Q2692467",
+        "wd-Q338529",
+        "wd-Q3806997",
+        "wd-Q955672",
+        "wd-Q56314893",
+        "ol-OL639808A",
+        "ol-OL10863847A",
+        "ol-OL3030264A",
+        "ol-OL2996040A",
+        "wp-en-Jane_Doe"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "openlibrary.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    }
+  ],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/impl-ready/sse-event/v1",
+  "title": "SSE progressive event (implementation-readiness design schema)",
+  "type": "object",
+  "required": [
+    "event",
+    "data",
+    "id"
+  ],
+  "properties": {
+    "event": {
+      "enum": [
+        "meta",
+        "plan",
+        "progress",
+        "provider",
+        "finding",
+        "graph",
+        "facets",
+        "status",
+        "error",
+        "done"
+      ]
+    },
+    "id": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "description": "Acc-scrubbed payload"
+    }
+  },
+  "additionalProperties": false
+}

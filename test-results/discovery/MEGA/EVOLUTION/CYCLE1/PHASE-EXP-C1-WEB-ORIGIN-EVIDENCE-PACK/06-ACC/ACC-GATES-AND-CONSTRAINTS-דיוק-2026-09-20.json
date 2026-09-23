@@ -1,0 +1,194 @@
+{
+  "stamp": "2026-09-20T11:37:49+03:00",
+  "stamp_label": "2026-09-20 11:37 IDT",
+  "agent": "דיוק",
+  "cycle": "CYCLE1",
+  "experiment": "EXP-C1-WEB-ORIGIN",
+  "mode": "GATES_READY",
+  "status": "WAITING_FOR_PREVIEW",
+  "promote": "HOLD",
+  "no_promote": true,
+  "locks": {
+    "B0": "LOCKED",
+    "Core": "LOCKED",
+    "A2": "FROZEN",
+    "promote": "HOLD"
+  },
+  "chief_bound": {
+    "url_alone_max_label": "UNKNOWN",
+    "never_from_url_alone": [
+      "SAME-ENTITY",
+      "SAME-REFERENCE"
+    ],
+    "related_requires_extra_typed_evidence": true,
+    "web_origin_is_evidence_not_identity": true,
+    "acc_fail_if_same_entity_or_same_reference_from_url": true
+  },
+  "hard_gates": [
+    {
+      "id": "AG1",
+      "name": "leak=0",
+      "pass": "leak=0 on nested/SSE/narrow/HIT/logs/telemetry",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG2",
+      "name": "forbidden_qid_never_surface",
+      "pass": "Q1701775 and poison QIDs never surface",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG3",
+      "name": "url_alone_identity",
+      "pass": "no SAME-ENTITY/SAME-REFERENCE from URL alone",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG4",
+      "name": "pretty_wrong_false_merge=0",
+      "pass": "PW=0 · false_merge_risk_n=0",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG5",
+      "name": "core_alias_pw0_leak0",
+      "pass": "Core alias pw=0 leak=0 hold",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG6",
+      "name": "ssrf_fail_closed",
+      "pass": "block + safe telemetry · 0 findings from blocked hops",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG7",
+      "name": "title_only_coalesce=0",
+      "pass": "no title/sim coalesce keys",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG8",
+      "name": "unknown_preferred",
+      "pass": "URL-alone → UNKNOWN",
+      "live": "PENDING"
+    },
+    {
+      "id": "AG9",
+      "name": "multi_not_objective",
+      "pass": "multi metric-only",
+      "live": "N/A framing"
+    },
+    {
+      "id": "AG10",
+      "name": "locks",
+      "pass": "B0+Core+A2+HOLD",
+      "live": "DOCS"
+    }
+  ],
+  "leak_surfaces": [
+    "nested_snapshot",
+    "sse_events",
+    "narrow",
+    "hit_create",
+    "logs_raw",
+    "telemetry_safetyDecision"
+  ],
+  "gates_A_to_O": [
+    {
+      "gate": "A",
+      "name": "experiment_definition",
+      "acc_status": "DOCS_PASS"
+    },
+    {
+      "gate": "B",
+      "name": "baseline_control",
+      "acc_status": "PLAN_READY_LIVE_PENDING"
+    },
+    {
+      "gate": "C",
+      "name": "preview_dpl",
+      "acc_status": "WAITING_FOR_PREVIEW"
+    },
+    {
+      "gate": "D",
+      "name": "tests",
+      "acc_status": "WAITING"
+    },
+    {
+      "gate": "E",
+      "name": "adversarial",
+      "acc_status": "CORPUS_READY_LIVE_PENDING"
+    },
+    {
+      "gate": "F",
+      "name": "acc",
+      "acc_status": "WAITING_LIVE"
+    },
+    {
+      "gate": "G",
+      "name": "qa_smoke",
+      "acc_status": "WAITING"
+    },
+    {
+      "gate": "H",
+      "name": "comparison_metrics",
+      "acc_status": "WAITING"
+    },
+    {
+      "gate": "I",
+      "name": "representative_success",
+      "acc_status": "WAITING"
+    },
+    {
+      "gate": "J",
+      "name": "fp_rejected",
+      "acc_status": "WAITING"
+    },
+    {
+      "gate": "K",
+      "name": "unknown_fn",
+      "acc_status": "WAITING"
+    },
+    {
+      "gate": "L",
+      "name": "limitations_decision",
+      "acc_status": "HOLD"
+    },
+    {
+      "gate": "M",
+      "name": "ssrf_security",
+      "acc_status": "WAITING_LIVE"
+    },
+    {
+      "gate": "N",
+      "name": "locks_unchanged",
+      "acc_status": "HOLD_VERIFY"
+    },
+    {
+      "gate": "O",
+      "name": "promote_ask",
+      "acc_status": "NO_PROMOTE"
+    }
+  ],
+  "control": {
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "alias": "akvot-discovery.vercel.app",
+    "state": "LOCKED"
+  },
+  "treatment": {
+    "dpl": null,
+    "state": "WAITING_FOR_SERVER_STATUS",
+    "note": "Do not invent dpl; trigger Acc after STATUS-שרת / PREVIEW* / 20-PREVIEW* / raw/deploy*"
+  },
+  "core": {
+    "alias": "akvot-simple-demo.vercel.app",
+    "dpl_locked_ref": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "require_pw0_leak0": true
+  },
+  "forbidden_qids": [
+    "Q1701775"
+  ],
+  "acc_verdict": null,
+  "after_preview_artifact": null
+}

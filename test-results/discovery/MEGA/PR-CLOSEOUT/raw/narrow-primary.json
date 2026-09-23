@@ -1,0 +1,454 @@
+{
+  "ok": true,
+  "sessionId": "kv1.83b5e2a2f5be09ab95be3d9054f963cd",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wd-Q7259",
+      "kind": "registry",
+      "title": "Ada Lovelace",
+      "summary": "English mathematician (1815–1852)",
+      "evidenceIds": [
+        "ev-b85e2961ad64afd1bd8be38d"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q7259"
+      ],
+      "scoreFinding": 0.7183333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q114068528",
+      "kind": "registry",
+      "title": "Ada Lovelace",
+      "summary": "GPU microarchitecture designed by Nvidia",
+      "evidenceIds": [
+        "ev-43cebd2179a9c4bd18758224"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q114068528"
+      ],
+      "scoreFinding": 0.7083333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q87282992",
+      "kind": "registry",
+      "title": "Ada Lovelace",
+      "summary": "episode of In Our Time",
+      "evidenceIds": [
+        "ev-33dbed3a2ea90038b1a137b6"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q87282992"
+      ],
+      "scoreFinding": 0.6983333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q30128828",
+      "kind": "registry",
+      "title": "Ada Lovelace Award",
+      "summary": "award for women in computing",
+      "evidenceIds": [
+        "ev-a8b22c1b3893e2a7d53dc36a"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q30128828"
+      ],
+      "scoreFinding": 0.6883333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q3611580",
+      "kind": "registry",
+      "title": "Ada Lovelace’ algorithm for computing Bernoulli numbers",
+      "summary": "algorithm",
+      "evidenceIds": [
+        "ev-a45f3f9b2b6d51d90fda52f1"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q3611580"
+      ],
+      "scoreFinding": 0.6783333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q115052486",
+      "kind": "registry",
+      "title": "Ada Lovelace Day",
+      "summary": "2nd Tuesday in October celebrating women in STEM",
+      "evidenceIds": [
+        "ev-d1fac37e1daac62392f933b5"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q115052486"
+      ],
+      "scoreFinding": 0.6683333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q140352119",
+      "kind": "registry",
+      "title": "ADA Lovelace Center for Analytics, Data and Applications",
+      "summary": "facility in Nuremberg, Germany",
+      "evidenceIds": [
+        "ev-2f70f122b8249216ad589b77"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q140352119"
+      ],
+      "scoreFinding": 0.6583333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q66232516",
+      "kind": "registry",
+      "title": "Ada Lovelace Church of England High School",
+      "summary": "school in Ealing, UK",
+      "evidenceIds": [
+        "ev-372b8375e12984b4e4b98278"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q66232516"
+      ],
+      "scoreFinding": 0.6483333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-b85e2961ad64afd1bd8be38d",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q7259",
+      "url": "https://www.wikidata.org/wiki/Q7259",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "English mathematician (1815–1852)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-43cebd2179a9c4bd18758224",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q114068528",
+      "url": "https://www.wikidata.org/wiki/Q114068528",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "GPU microarchitecture designed by Nvidia",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-33dbed3a2ea90038b1a137b6",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q87282992",
+      "url": "https://www.wikidata.org/wiki/Q87282992",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "episode of In Our Time",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a8b22c1b3893e2a7d53dc36a",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q30128828",
+      "url": "https://www.wikidata.org/wiki/Q30128828",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "award for women in computing",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a45f3f9b2b6d51d90fda52f1",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q3611580",
+      "url": "https://www.wikidata.org/wiki/Q3611580",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "algorithm",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-d1fac37e1daac62392f933b5",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q115052486",
+      "url": "https://www.wikidata.org/wiki/Q115052486",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "2nd Tuesday in October celebrating women in STEM",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-2f70f122b8249216ad589b77",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q140352119",
+      "url": "https://www.wikidata.org/wiki/Q140352119",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "facility in Nuremberg, Germany",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-372b8375e12984b4e4b98278",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q66232516",
+      "url": "https://www.wikidata.org/wiki/Q66232516",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T05:47:46.481Z",
+      "evidenceType": "registry",
+      "quote": "school in Ealing, UK",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "wikidata",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "narrow": {
+    "applied": {
+      "provider": [
+        "wikidata"
+      ]
+    },
+    "beforeCount": 17,
+    "afterCount": 8
+  },
+  "version": 3,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "ok",
+    "wikipedia": "partial"
+  },
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

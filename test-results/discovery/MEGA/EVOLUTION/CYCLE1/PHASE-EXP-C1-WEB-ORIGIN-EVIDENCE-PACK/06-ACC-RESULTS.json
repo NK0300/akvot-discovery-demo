@@ -1,0 +1,8 @@
+{
+  "stamp": "20/09/2026, 11:40:51 IDT",
+  "treat_leak": 0,
+  "control_leak": 0,
+  "core_leak": 0,
+  "get_narrow_leak": 0,
+  "pass": true
+}

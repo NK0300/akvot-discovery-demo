@@ -1,0 +1,29 @@
+{
+  "stamp": "C1-PATCHED",
+  "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+  "seed": "https://www.who.int",
+  "sessionId": "kv1.334a43b060f81f7b08cd98456f7426f9",
+  "status": "complete",
+  "providers": {
+    "wikidata": "ok",
+    "openlibrary": "ok",
+    "wikipedia": "ok",
+    "viaf": "ok",
+    "web_origin": "ok"
+  },
+  "outcome": "PASS_BOUND",
+  "finding.relationship": "UNKNOWN",
+  "finding.facetHints.relationship": [
+    "relationship:UNKNOWN"
+  ],
+  "evidence.relationship": "UNKNOWN",
+  "facet.buckets": [
+    {
+      "key": "hint",
+      "value": "relationship:UNKNOWN",
+      "count": 1
+    }
+  ],
+  "wo_findings": 1,
+  "SAME-REFERENCE_on_wo": false
+}

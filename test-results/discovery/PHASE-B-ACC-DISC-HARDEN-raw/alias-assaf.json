@@ -1,0 +1,109 @@
+{
+  "mode": "wiki",
+  "label": "אסף רפפורט",
+  "qid": "Q47507930",
+  "birth": "1983",
+  "age": "43",
+  "place": null,
+  "desc": "יזם סדרתי ומנהל ישראלי",
+  "extract": "אסף רפפורט הוא יזם היי-טק ואיש עסקים ישראלי. מעשירי ישראל, מהנדס תוכנה במקצועו המתמחה בתחום אבטחת מידע. המייסד-שותף והמנכ\"ל של חברת אבטחת המידע Wiz שנמכרה בכ-32 מיליארד דולר לחברת גוגל בשנת 2025, ושל חברת אבטחת המידע \"אדאלום\" (Adallom), שנמכרה בכ-320 מיליון דולר למיקרוסופט בשנת 2015.",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg?utm_source=he.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+  "alts": [],
+  "email": null,
+  "phone": null,
+  "sources": [
+    {
+      "kind": "ויקיפדיה",
+      "title": "אסף רפפורט",
+      "note": "אסף רפפורט הוא יזם היי-טק ואיש עסקים ישראלי. מעשירי ישראל, מהנדס תוכנה במקצועו המתמחה בתחום אבטחת מידע. המייסד-שותף והמנכ\"ל של חברת אבטחת המ",
+      "url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%A3_%D7%A8%D7%A4%D7%A4%D7%95%D7%A8%D7%98",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg/330px-Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg?utm_source=he.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "group": "identity",
+      "conf": 0.95
+    },
+    {
+      "kind": "Wikidata",
+      "title": "Q47507930",
+      "note": "יזם סדרתי ומנהל ישראלי",
+      "url": "https://www.wikidata.org/wiki/Q47507930",
+      "group": "identity",
+      "conf": 0.95
+    },
+    {
+      "kind": "Wikipedia EN",
+      "title": "Assaf Rappaport",
+      "note": "ערך באנגלית",
+      "url": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+      "group": "identity",
+      "conf": 0.9
+    },
+    {
+      "kind": "פייסבוק",
+      "title": "assaf.rappaport",
+      "note": "Wikidata P2013",
+      "url": "https://www.facebook.com/assaf.rappaport",
+      "group": "social",
+      "conf": 0.92
+    },
+    {
+      "kind": "LinkedIn",
+      "title": "assafrappaport",
+      "note": "Wikidata P6634",
+      "url": "https://www.linkedin.com/in/assafrappaport",
+      "group": "social",
+      "conf": 0.92
+    }
+  ],
+  "images": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg?utm_source=he.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "ויקיפדיה",
+      "note": "דיוקן ראשי"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "source": "Wikidata P18",
+      "note": "Assaf Rappaport - TechCrunch Disrupt 2024 (cropped).jpg"
+    }
+  ],
+  "extra_facts": [],
+  "queries": [],
+  "scanned": 0,
+  "allowBroadImages": true,
+  "ambiguous": false,
+  "thin": false,
+  "candidates": [],
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 330,
+    "gemini": 0,
+    "enrich": 0,
+    "stageB": 0,
+    "total": 330,
+    "wikiMeta": {
+      "wiki429": 0,
+      "wikiTimeout": 0,
+      "wikiRetries": 0
+    }
+  },
+  "phonePath": false,
+  "demoCiteHost": "Wikidata",
+  "uiState": "dossier",
+  "scenario": "known",
+  "confidence": "high",
+  "needContextFields": [
+    "city",
+    "org",
+    "country",
+    "role"
+  ],
+  "messageKey": "dossier_ready",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "needCandidatePick": false,
+  "requestId": "48c68270-73cd-4f9b-b6ee-d81d5d42d2dd",
+  "wikiMeta": {
+    "wiki429": 0,
+    "wikiTimeout": 0,
+    "wikiRetries": 0
+  }
+}

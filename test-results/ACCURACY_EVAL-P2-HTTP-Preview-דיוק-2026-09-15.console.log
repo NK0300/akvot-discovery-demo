@@ -1,0 +1,94 @@
+# ACCURACY EVAL P2 HTTP Preview · 2026-09-15T12:00:50.196Z
+PREVIEW=https://akvot-simple-demo-48x7gx9a6-k-akvot.vercel.app DEPLOY=dpl_DqzucMKykHVssELsCi91waZ5LCmg CONCURRENCY=2
+CASE_SET=/workspace/akvot-quick-demo/test-results/handoff/P2-CASES-דיוק-2026-09-15.json n=18
+HEALTH /api/health → HTTP 200 ok=true build=dpl_DqzucMKykHVssELsCi91waZ5LCmg phase=orchestrator-v0-b buildOk=true (2592ms)
+PROBE /api/lookup?q=test → HTTP 200 in 8257ms · requestId_ok=true hdr=6ed9906b-6982-4f05-b7cc-58541e126ddb body=6ed9906b-6982-4f05-b7cc-58541e126ddb
+E01 E01-url-noise-ib: expect=false actual=false → PASS
+E01 E01-title-IBM: expect=true actual=true → PASS
+E01 E01-url-boston: expect=true actual=true → PASS
+[w0] → P2-S01 GET q="דני כהן"
+[w1] → P2-S02 GET q="John Smith"
+[w0] ← P2-S01 2673ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=2673 → PASS
+[w0] → P2-S03 POST q="John Smith" ctx={"org":"IBM","city":"New York"}
+[w1] ← P2-S02 8306ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8306 → PASS
+[w1] → P2-S04 POST q="John Smith" ctx={"email":"qa.rethink.test@example.com"}
+[w0] ← P2-S03 9355ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=9355 → PASS
+[w0] → P2-S05 GET q="Xzqplmnvwtr987654321asdfgh"
+[w0] ← P2-S05 8159ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8159 → PASS
+[w0] → P2-S06 POST q="פלמוני אלמוניזקש" ctx={"org":"מפעל בדיקה פיקטיבי"}
+[w1] ← P2-S04 12337ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=12337 → PASS
+[w1] → P2-S07 GET q="כהן"
+[w1] ← P2-S07 40296ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=40296 → PASS
+[w1] → P2-K01 GET q="נתניהו"
+[w0] ← P2-S06 40953ms http=200 uiState=thin,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=40953 → PASS
+[w0] → P2-K02 GET q="Zehava Galon"
+[w0] ← P2-K02 4070ms http=200 uiState=dossier,qid=Q2630062,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=4070 → PASS
+[w0] → P2-K03 GET q="Angela Merkel"
+[w1] ← P2-K01 4293ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=4293 → PASS
+[w1] → P2-K04 GET q="אורלי לוי"
+[w1] ← P2-K04 3701ms http=200 uiState=dossier,qid=Q466537,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=3701 → PASS
+[w1] → P2-A01 GET q="Assaf Rappaport"
+[w0] ← P2-K03 4554ms http=200 uiState=dossier,qid=Q567,faces=true,sources=3,confidence=high,phase=orchestrator-v0-b,ms=4554 → PASS
+[w0] → P2-A03 GET q="אסף רפפורט"
+[w1] ← P2-A01 3423ms http=200 uiState=dossier,qid=Q47507930,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=3423 → PASS
+[w1] → P2-A05 GET q="Assaf Smith"
+[w0] ← P2-A03 3505ms http=200 uiState=dossier,qid=Q47507930,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=3505 → PASS
+[w0] → P2-A06 GET q="John Rappaport"
+[w1] ← P2-A05 8076ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8076 → PASS
+[w1] → P2-E02 POST q="Emily Chen" ctx={"city":"Palo Alto","role":"student"}
+[w0] ← P2-A06 8281ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8281 → PASS
+[w0] → P2-E04 POST q="John Smith" ctx={"email":"qa.rethink.test@example.com"}
+[w1] ← P2-E02 8662ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=8662 → PASS
+[w1] → P2-L03 GET q="Assaf Rappaport"
+[w0] ← P2-E04 9558ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=9558 → PASS
+[w1] ← P2-L03 3720ms http=200 uiState=dossier,qid=Q47507930,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=3720 → PASS
+
+=== DONE ===
+{
+  "N": 18,
+  "PASS": 18,
+  "FAIL": 0,
+  "pretty_wrong": 0,
+  "safety_lock": "PASS",
+  "safety_detail": "7/7",
+  "e01_pass": true,
+  "health_build_ok": true,
+  "requestId_ok": true,
+  "recommendation": "GO",
+  "recommendation_evidence": "all 18 cases PASS · pw=0 · SAFETY=PASS · health build match · requestId ok",
+  "critical": {
+    "A01": {
+      "status": "PASS",
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "ms": 3423
+    },
+    "A03": {
+      "status": "PASS",
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "ms": 3505
+    },
+    "A05": {
+      "status": "PASS",
+      "ui": "need_context",
+      "qid": null
+    },
+    "A06": {
+      "status": "PASS",
+      "ui": "need_context",
+      "qid": null
+    },
+    "E02": {
+      "status": "PASS",
+      "ui": "candidates"
+    },
+    "L03": {
+      "status": "PASS",
+      "wall_ms": 3720,
+      "timings_total": 1191,
+      "qid": "Q47507930"
+    }
+  }
+}
+בדיקת HTTP Acc ל־P2 RC Preview (`dpl_DqzucMKykHVssELsCi91waZ5LCmg`): N=18, PASS=18, FAIL=0, pretty-wrong=0, SAFETY=PASS. Health מחזיר build=`dpl_DqzucMKykHVssELsCi91waZ5LCmg` (התאמה=כן) · requestId=PASS. Assaf A01/A03 → dossier/dossier qid=Q47507930/Q47507930 · A05/A06 ללא Q47507930 · E01=PASS · E02 ui=candidates · L03 3720ms. המלצה לשער P2 Release: **GO** — all 18 cases PASS · pw=0 · SAFETY=PASS · health build match · requestId ok. ללא שינוי קוד מוצר · ללא rewrite ל־EXPECTED · ללא promote.

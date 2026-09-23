@@ -1,0 +1,38 @@
+{
+  "mode": "LOCAL_LAYER Acc×3 WARM-poison→revalidate (alias still pre-fix — HTTP Acc BLOCKED until Preview)",
+  "units": "108/108",
+  "arch": "GLANCE PASS",
+  "probes": [
+    {
+      "i": 1,
+      "pass": false,
+      "ui": "thin",
+      "qid": null,
+      "faces": true,
+      "demoted": true,
+      "pw": false
+    },
+    {
+      "i": 2,
+      "pass": false,
+      "ui": "thin",
+      "qid": null,
+      "faces": true,
+      "demoted": true,
+      "pw": false
+    },
+    {
+      "i": 3,
+      "pass": false,
+      "ui": "thin",
+      "qid": null,
+      "faces": true,
+      "demoted": true,
+      "pw": false
+    }
+  ],
+  "pw": 0,
+  "fail": 3,
+  "verdict_local": "NO_GO",
+  "verdict_alias": "BLOCKED_WAIT_PREVIEW"
+}

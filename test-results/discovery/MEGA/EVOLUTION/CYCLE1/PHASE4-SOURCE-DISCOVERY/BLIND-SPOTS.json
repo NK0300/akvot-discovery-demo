@@ -1,0 +1,97 @@
+{
+  "step": 33,
+  "title": "BLIND-SPOTS",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "baselineId": "B0",
+  "linkedArch": [
+    "BS-PROV",
+    "BS-OBS-RANK",
+    "PG-01",
+    "PG-02",
+    "PG-04",
+    "QD-01",
+    "QD-04",
+    "QD-05"
+  ],
+  "blindSpots": [
+    {
+      "id": "BS-SRC-01",
+      "title": "No non-wikimedia independent registry (VIAF absent at runtime)",
+      "category": "missing_registry",
+      "severity": "high",
+      "evidence": "DEFAULT_PROVIDERS omits viaf; Phase2 families={wikimedia,openlibrary}; multi_independent_source_rate=0; BS-PROV",
+      "impact": "QD-01 monoculture; corroboration cannot cross authority-control systems",
+      "suggestedDirection": "Add viaf SearchProvider (design in EXPERIMENT-CANDIDATES EXP-A)"
+    },
+    {
+      "id": "BS-SRC-02",
+      "title": "No news / press / wire sources",
+      "category": "missing_news",
+      "severity": "high",
+      "evidence": "0 news domains in 244 findings; kinds only registry|page",
+      "impact": "No freshness beyond retrievedAt; events/reputation invisible",
+      "suggestedDirection": "Public news/search adapter or curated RSS allowlist (post-Cycle1 candidate)"
+    },
+    {
+      "id": "BS-SRC-03",
+      "title": "No company filings / corporate registries",
+      "category": "missing_filings",
+      "severity": "high",
+      "evidence": "S04 Stripe / S05 Red Cross / S06 openai.com lack SEC/Companies-House/NGO-registry domains; classification ownership=0 legal/public=0",
+      "impact": "Corporate seeds resolve to encyclopedia/library noise not filings",
+      "suggestedDirection": "Filings provider or structured company API (EXP design)"
+    },
+    {
+      "id": "BS-SRC-04",
+      "title": "HE/native multilingual sources unused",
+      "category": "missing_HE_sources",
+      "severity": "high",
+      "evidence": "S07 בנימין נתניהו → en.wikipedia.org + wikidata EN description; he.wikipedia.org never observed; PG-04; create locale not set",
+      "impact": "QD-05 thin HE path; EN-registry bias",
+      "suggestedDirection": "Pass locale=he for HE seeds; prefer he.wikipedia; optional Hebrew news/gov.il"
+    },
+    {
+      "id": "BS-SRC-05",
+      "title": "No open-web / origin resolver for URL & domain seeds",
+      "category": "missing_web_public",
+      "severity": "high",
+      "evidence": "web_public interface-only; S16 https://www.who.int = 0 findings; S06 openai.com only wikimedia pages",
+      "impact": "QD-04 coverage hole on URL/domain intent",
+      "suggestedDirection": "Origin fetch + title/meta extraction under urlSafety (EXP-C related)"
+    },
+    {
+      "id": "BS-SRC-06",
+      "title": "No role / alias / compound-seed resolvers",
+      "category": "missing_query_understanding",
+      "severity": "medium",
+      "evidence": "S12–S15 empty both runs (keyword/context/role/alias)",
+      "impact": "QD-04 Coverage=60 driven by proper names only",
+      "suggestedDirection": "Compound parse → entity head + constraint; secondary provider query"
+    },
+    {
+      "id": "BS-SRC-07",
+      "title": "Gov/edu authority weights without emitters",
+      "category": "authority_table_orphan",
+      "severity": "medium",
+      "evidence": "store.js DOMAIN_AUTHORITY has .gov/.gov.il/.edu but B0 never emits those domains",
+      "impact": "Ranking anticipates sources that cannot appear",
+      "suggestedDirection": "Either add gov adapters or document weights as forward-looking only"
+    },
+    {
+      "id": "BS-SRC-08",
+      "title": "Wikipedia OpenSearch returns empty quotes on B0",
+      "category": "thin_evidence_emitter",
+      "severity": "medium",
+      "evidence": "wikipedia quote_mean=0; thin_lt20_rate=1.0; contributes to weak_evidence_rate=0.52",
+      "impact": "QD-05 Evidence dilution; page kind without snippet",
+      "suggestedDirection": "Populate quote/summary from OpenSearch desc[] (already in provider code path — verify emit scrub)"
+    }
+  ],
+  "top5": [
+    "BS-SRC-01",
+    "BS-SRC-02",
+    "BS-SRC-03",
+    "BS-SRC-04",
+    "BS-SRC-05"
+  ]
+}

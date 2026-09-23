@@ -1,0 +1,31 @@
+{
+  "stamp": "2026-09-20T08:52:56+03:00",
+  "zone": "Asia/Jerusalem",
+  "deploymentId": "dpl_4trZGxgN7CKKtC6Zed6SbACzF6Po",
+  "url": "https://akvot-simple-demo-7ogfp6yun-k-akvot.vercel.app",
+  "target": null,
+  "promote": false,
+  "coreAliasUntouched": {
+    "deploymentId": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "aliases": ["akvot-simple-demo.vercel.app","akvot-simple-demo-k-akvot.vercel.app"]
+  },
+  "health": {
+    "apiHealthOk": true,
+    "discoveryHealthOk": true,
+    "storeBackend": "upstash",
+    "durable": true,
+    "promoteEligible": true,
+    "kvPingOk": true
+  },
+  "wrudOk": true,
+  "units": {
+    "sessionStore": "passed=125 failed=0",
+    "orchestrator": "passed=113 failed=0",
+    "failureInject": "passed=54 failed=0",
+    "adversarial": "passed=65 failed=0",
+    "contractIdentityP0": "5/5"
+  },
+  "openItems": ["G-SSE-UX","G-OTEL","G-FAULT-LIVE","G-PROMOTE","G-RATE"],
+  "b17": "CLOSED",
+  "b18": "CLOSED"
+}

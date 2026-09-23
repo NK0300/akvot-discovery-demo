@@ -1,0 +1,62 @@
+{
+  "doc": "14-TEST-CORPUS-NOTES-בודק",
+  "owner": "בודק",
+  "stamp": "2026-09-20T11:03:15+03:00",
+  "mode": "NOTES_ONLY",
+  "live_run": false,
+  "exp_b": false,
+  "promote": false,
+  "baseline_pointer": "../A2-EXPERIMENTAL-BASELINE.md",
+  "a2_golden_seeds": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "role": "person",
+      "measures": "rich-typed-ref cross-family coalesce control",
+      "limitation_class": null,
+      "forensics": "../PHASE4-EXPERIMENT-A2-HARDENING-EVIDENCE-PACK/FORENSICS/S01.md"
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "role": "company",
+      "measures": "authority/source coverage honesty; Pretty-Wrong vs person homonyms",
+      "limitation_class": "AUTHORITY / SOURCE COVERAGE LIMITATION",
+      "forensics": "../PHASE4-EXPERIMENT-A2-HARDENING-EVIDENCE-PACK/FORENSICS/S04.md"
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "role": "org",
+      "measures": "cross-entity / authority-granularity; partial ARC only",
+      "limitation_class": "CROSS-ENTITY / AUTHORITY-GRANULARITY LIMITATION",
+      "forensics": "../PHASE4-EXPERIMENT-A2-HARDENING-EVIDENCE-PACK/FORENSICS/S05.md"
+    }
+  ],
+  "adversarial_cited": {
+    "a2_safe_homonym": {
+      "pass": "12/12",
+      "acc_leak": 0,
+      "path": "../PHASE4-EXPERIMENT-A2-EVIDENCE-PACK/05-ADVERSARIAL-HOMONYM.md"
+    },
+    "hardening_expanded": {
+      "pass": "28/28",
+      "acc_leak": 0,
+      "false_merge_risk": 0,
+      "path": "../PHASE4-EXPERIMENT-A2-HARDENING-EVIDENCE-PACK/05-ADVERSARIAL.md"
+    }
+  },
+  "next_cycle_dimensions_notes_only": [
+    "HE-locale names",
+    "ambiguous orgs",
+    "thin-ref entities",
+    "multi-script",
+    "transliteration"
+  ],
+  "policy": {
+    "multi_is_metric_not_objective": true,
+    "truth_gt_multi": true,
+    "no_fake_S04_S05_recovery": true,
+    "do_not_mutate_frozen_a2_packs": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "when": "2026-09-08T05:45:07Z",
+  "pass": "3/5",
+  "rows": [
+    {
+      "id": "dani",
+      "pass": true,
+      "ui": "need_context",
+      "qid": null,
+      "faces": false,
+      "ms": 24055
+    },
+    {
+      "id": "moshe",
+      "pass": true,
+      "ui": "need_context",
+      "qid": null,
+      "faces": false,
+      "ms": 4806
+    },
+    {
+      "id": "bibi",
+      "pass": false,
+      "ui": "need_context",
+      "qid": null,
+      "faces": false,
+      "ms": 44476,
+      "fails": [
+        "expected dossier Q43723"
+      ]
+    },
+    {
+      "id": "saar",
+      "pass": true,
+      "ui": "dossier",
+      "qid": "Q966349",
+      "faces": true,
+      "ms": 11447
+    },
+    {
+      "id": "galon",
+      "pass": false,
+      "ui": null,
+      "qid": null,
+      "faces": false,
+      "ms": 60186,
+      "fails": [
+        "json error An error o..."
+      ]
+    }
+  ],
+  "verdict": "NO_GO_250 — cohen gate OK; A Known still broken (bibi need_context; galon JSON)"
+}

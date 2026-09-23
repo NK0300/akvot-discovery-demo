@@ -1,0 +1,635 @@
+{
+  "ok": true,
+  "sessionId": "kv1.c4010bd07fa6e8f9ce7dd86d220732e4",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9gj0ff-08a3e7",
+  "snapshot": {
+    "sessionId": "kv1.c4010bd07fa6e8f9ce7dd86d220732e4",
+    "seed": "יוסי כהן",
+    "q": "יוסי כהן",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q15725863",
+        "kind": "registry",
+        "title": "Yossi Cohen",
+        "summary": "Israeli intelligence officer, director of Mossad",
+        "evidenceIds": [
+          "ev-75e3218fe8fcad5ccd2e4ba3"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q15725863"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q33004545",
+        "kind": "registry",
+        "title": "Yossi Cohen (officer)",
+        "summary": "Israeli military personnel",
+        "evidenceIds": [
+          "ev-d488b5599d2ef9e2646d1e16"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q33004545"
+        ],
+        "scoreFinding": 0.7083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q16130461",
+        "kind": "registry",
+        "title": "Yossi Cohen",
+        "summary": "Israeli lawyer",
+        "evidenceIds": [
+          "ev-60bcf4b47f279bbc13bcc5b2"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q16130461"
+        ],
+        "scoreFinding": 0.6983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q56189590",
+        "kind": "registry",
+        "title": "יוסי כהן",
+        "summary": "Wikimedia disambiguation page",
+        "evidenceIds": [
+          "ev-88a96eb889afe736d4c4a40b"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q56189590"
+        ],
+        "scoreFinding": 0.6883333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "יוסי כהן",
+        "evidenceIds": [
+          "ev-8220a9e2c32655cdbe2b717b"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:יוסי כהן"
+        ],
+        "scoreFinding": 0.6083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "יוסי דגן",
+        "evidenceIds": [
+          "ev-0dd588c6f11eb47c1a3407cf"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:יוסי דגן"
+        ],
+        "scoreFinding": 0.5983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "יוסי דהאן",
+        "evidenceIds": [
+          "ev-f15435bac0a123d29371ba65"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:יוסי דהאן"
+        ],
+        "scoreFinding": 0.5883333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "יולי כהן",
+        "evidenceIds": [
+          "ev-2eefb093d1db890c95cc13a0"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:יולי כהן"
+        ],
+        "scoreFinding": 0.5783333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "יורם כהן",
+        "evidenceIds": [
+          "ev-cb29791f9973b65762ba1a5b"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:יורם כהן"
+        ],
+        "scoreFinding": 0.5683333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "יוסי בן ארצי",
+        "evidenceIds": [
+          "ev-c21235ac1037622d1be205aa"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:יוסי בן ארצי"
+        ],
+        "scoreFinding": 0.5583333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-75e3218fe8fcad5ccd2e4ba3",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q15725863",
+        "url": "https://www.wikidata.org/wiki/Q15725863",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:50:36.896Z",
+        "evidenceType": "registry",
+        "quote": "Israeli intelligence officer, director of Mossad",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d488b5599d2ef9e2646d1e16",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q33004545",
+        "url": "https://www.wikidata.org/wiki/Q33004545",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:50:36.896Z",
+        "evidenceType": "registry",
+        "quote": "Israeli military personnel",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-60bcf4b47f279bbc13bcc5b2",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q16130461",
+        "url": "https://www.wikidata.org/wiki/Q16130461",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:50:36.896Z",
+        "evidenceType": "registry",
+        "quote": "Israeli lawyer",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-88a96eb889afe736d4c4a40b",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q56189590",
+        "url": "https://www.wikidata.org/wiki/Q56189590",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T06:50:36.896Z",
+        "evidenceType": "registry",
+        "quote": "Wikimedia disambiguation page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8220a9e2c32655cdbe2b717b",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%9B%D7%94%D7%9F",
+        "url": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%9B%D7%94%D7%9F",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:50:36.908Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0dd588c6f11eb47c1a3407cf",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%93%D7%92%D7%9F",
+        "url": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%93%D7%92%D7%9F",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:50:36.908Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f15435bac0a123d29371ba65",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%93%D7%94%D7%90%D7%9F",
+        "url": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%93%D7%94%D7%90%D7%9F",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:50:36.908Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2eefb093d1db890c95cc13a0",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%9C%D7%99_%D7%9B%D7%94%D7%9F",
+        "url": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%9C%D7%99_%D7%9B%D7%94%D7%9F",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:50:36.908Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-cb29791f9973b65762ba1a5b",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A8%D7%9D_%D7%9B%D7%94%D7%9F",
+        "url": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A8%D7%9D_%D7%9B%D7%94%D7%9F",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:50:36.908Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c21235ac1037622d1be205aa",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%91%D7%9F_%D7%90%D7%A8%D7%A6%D7%99",
+        "url": "https://en.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%91%D7%9F_%D7%90%D7%A8%D7%A6%D7%99",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:50:36.908Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikipedia",
+            "count": 6
+          },
+          {
+            "value": "wikidata",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 6
+          },
+          {
+            "value": "registry",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:380dcfa38701"
+      ],
+      "status": "candidate",
+      "displayHint": "יוסי כהן",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T06:50:36.651Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:380dcfa38701",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q15725863",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q33004545",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q16130461",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q56189590",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "יוסי כהן",
+        "findingIds": [
+          "wd-Q56189590",
+          "wp-en-_"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

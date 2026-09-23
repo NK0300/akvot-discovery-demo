@@ -1,0 +1,93 @@
+{
+  "when": "2026-09-08T07:56:33.783Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "famous": "5/5",
+  "daniOk": true,
+  "goReady": true,
+  "rows": [
+    {
+      "id": "bibi",
+      "q": "בנימין נתניהו",
+      "kind": "famous",
+      "http": 200,
+      "ms": 1330,
+      "pass": true,
+      "fails": [],
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q43723",
+      "faces": true,
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "lapid",
+      "q": "יאיר לפיד",
+      "kind": "famous",
+      "http": 200,
+      "ms": 1100,
+      "pass": true,
+      "fails": [],
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q1396120",
+      "faces": true,
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "saar",
+      "q": "גדעון סער",
+      "kind": "famous",
+      "http": 200,
+      "ms": 892,
+      "pass": true,
+      "fails": [],
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q966349",
+      "faces": true,
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "begin",
+      "q": "מנחם בגין",
+      "kind": "famous",
+      "http": 200,
+      "ms": 821,
+      "pass": true,
+      "fails": [],
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q130873",
+      "faces": true,
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "meloni",
+      "q": "Giorgia Meloni",
+      "kind": "famous",
+      "http": 200,
+      "ms": 22451,
+      "pass": true,
+      "fails": [],
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q451791",
+      "faces": true,
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "dani",
+      "q": "דני כהן",
+      "kind": "control",
+      "http": 200,
+      "ms": 268,
+      "pass": true,
+      "fails": [],
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "phase": "orchestrator-v0-b"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "stamp": "2026-09-20T10:19:18+03:00",
+  "stampLabel": "2026-09-20 10:19 IDT",
+  "agent": "שרת",
+  "experiment": "EXP-A2-COALESCE",
+  "bound": "Bound #1 — never title-only coalesce",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "change": {
+    "file": "api/lib/discovery/store.js",
+    "summary": "coalesceKeysForFinding emits only viaf:/qid:/ol:; corroborateBySoftLabel UF skips title:; title is secondary edge annotation (titleSecondary) only",
+    "units": "api/lib/discovery/corroboration.viaf.test.mjs — title-homonym no cross-attach; same VIAF/QID still coalesce; Acc scrub path unchanged"
+  },
+  "preview": {
+    "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+    "url": "https://akvot-simple-demo-2u3mwx1k4-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+    "target": null,
+    "readyState": "READY",
+    "env": {
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "status": "UNCHANGED"
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "status": "LOCKED / UNCHANGED"
+    }
+  },
+  "unitsLocal": {
+    "corroboration.viaf": "35/0",
+    "providers.viaf": "27/0",
+    "adversarial.acc": "65/0",
+    "orchestrator": "113/0",
+    "prCloseout.acc": "107/0"
+  },
+  "smoke": {
+    "gate": 0.15,
+    "mean_multi_rate": 0,
+    "pooled_multi_rate": 0,
+    "mean_pass": false,
+    "acc_leak": 0,
+    "note": "Expected under Bound #1: providers do not yet emit cross-family typed soft-ref intersection (wikidata wd-Q* vs viaf viaf:*). Title-only inflation removed. Coverage attach_keep intact (S01 findings_n=18). Never dossier.",
+    "per_seed": [
+      { "id": "S01", "seed": "Tim Berners-Lee", "findings_n": 18, "multi_n": 0, "multi_rate": 0, "viaf_n": 8, "acc_leak": 0 },
+      { "id": "S04", "seed": "Stripe", "findings_n": 30, "multi_n": 0, "multi_rate": 0, "viaf_n": 8, "acc_leak": 0 },
+      { "id": "S05", "seed": "Red Cross", "findings_n": 30, "multi_n": 0, "multi_rate": 0, "viaf_n": 8, "acc_leak": 0 }
+    ]
+  },
+  "bounds": {
+    "1_strong_soft_ref_only": "PASS (code+units)",
+    "2_acc_scrub_after": "PASS (emit path unchanged; smoke leak=0)",
+    "3_never_dossier": "PASS",
+    "4_entity_agnostic": "PASS",
+    "5_findings_separate_homonym": "PASS (attach_keep; no Evidence/entityRefs union on title-only)",
+    "6_multi_independent_live": "NOT claimed — mean 0 pending cross-family typed ref enrichment (out of Bound #1 scope)"
+  }
+}

@@ -1,0 +1,13 @@
+# Freeze snapshot 2026-09-20T08:44:54+03:00
+## git
+no-git
+## vercel link
+{"projectId":"prj_Xm61SjyuvgYXDf7Vs0IxBXbDI5V5","orgId":"team_8KGwOU0rBV7Lxrh5xMOia7fv","projectName":"akvot-simple-demo"}## recent preview from env ls / inspect
+https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app
+https://akvot-simple-demo-p68nhr48g-k-akvot.vercel.app
+https://akvot-simple-demo-ndmmkolpg-k-akvot.vercel.app
+https://akvot-simple-demo-r96vensj6-k-akvot.vercel.app
+https://akvot-simple-demo-2wohpzqmc-k-akvot.vercel.app
+https://akvot-simple-demo-3w3p6enyh-k-akvot.vercel.app
+https://akvot-simple-demo-kppgm355g-k-akvot.vercel.app
+https://akvot-simple-demo-p5zxut9y5-k-akvot.vercel.app

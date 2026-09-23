@@ -1,0 +1,190 @@
+{
+  "doc": "06-DOMAIN-ADVERSARIAL-CORPUS-בודק-2026-09-20",
+  "owner": "בודק",
+  "stamp": "2026-09-20T11:36:00+03:00",
+  "stamp_label": "11:36 IDT",
+  "cycle": "CYCLE1",
+  "experiment": "EXP-WEB-ORIGIN (C1)",
+  "mode": "DOCS_ONLY_UNTIL_PREVIEW_DPL",
+  "promote": "HOLD",
+  "global_pass_bars": {
+    "acc_leak": 0,
+    "same_entity_from_url": 0,
+    "same_reference_from_url_alone": 0,
+    "ssrf_block_rate": 1.0,
+    "normalize": "deterministic"
+  },
+  "case_count": 18,
+  "cases": [
+    {
+      "id": "ADV-01",
+      "seed": "https://www.examp1e.com",
+      "class": "poison_lookalike_host",
+      "expect_safety": "ALLOW",
+      "expect_safety_alt": "FAIL_CLASS",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "notes": "Lookalike digit-l; never SAME-ENTITY to example.com"
+    },
+    {
+      "id": "ADV-02",
+      "seed": "https://example.com.evil.example",
+      "class": "poison_lookalike_host",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "notes": "Subdomain poison; registrableDomain ≠ example.com"
+    },
+    {
+      "id": "ADV-03",
+      "seed": "https://xn--e1awd7f.com",
+      "class": "unicode_idn_homoglyph",
+      "expect_safety": "ALLOW",
+      "expect_safety_alt": "FAIL_CLASS",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "notes": "Punycode/IDN note: lower+puny normalize; no SAME-* to Latin lookalike"
+    },
+    {
+      "id": "ADV-04",
+      "seed": "https://еxample.com",
+      "class": "unicode_idn_homoglyph",
+      "expect_safety": "ALLOW",
+      "expect_safety_alt": "FAIL_CLASS",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y/N",
+      "notes": "Cyrillic е homoglyph; must not coalesce with ASCII example.com"
+    },
+    {
+      "id": "ADV-05",
+      "seed": "javascript:alert(1)",
+      "class": "dangerous_scheme",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "dangerous_scheme"
+    },
+    {
+      "id": "ADV-06",
+      "seed": "data:text/html;base64,PHNjcmlwdD4=",
+      "class": "dangerous_scheme",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "dangerous_scheme"
+    },
+    {
+      "id": "ADV-07",
+      "seed": "file:///etc/passwd",
+      "class": "dangerous_scheme",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "file:// never fetch"
+    },
+    {
+      "id": "ADV-08",
+      "seed": "https://user:pass@example.com/",
+      "class": "credential_in_url",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "userinfo_forbidden"
+    },
+    {
+      "id": "ADV-09",
+      "seed": "https://example.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "class": "oversized_path",
+      "expect_safety": "FAIL_CLASS",
+      "expect_safety_alt": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "Path ≥2000 a-chars; fail closed; no Finding spam"
+    },
+    {
+      "id": "ADV-10",
+      "seed": "https://example.com/redirect?url=http://127.0.0.1/",
+      "class": "open_redirect_pattern",
+      "expect_safety": "ALLOW",
+      "expect_hop": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "If hop follows to private → redirect_to_blocked / redirect_to_private; BLOCK if detectable"
+    },
+    {
+      "id": "ADV-11",
+      "seed": "https://bit.ly/qa-c1-ssrf-probe",
+      "class": "redirect_to_private",
+      "expect_safety": "ALLOW",
+      "expect_hop": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "Placeholder shortener pattern; expected BLOCK if detectable on hop re-check; docs-only — no live shortener required yet"
+    },
+    {
+      "id": "ADV-12",
+      "seed": "https://127.0.0.1.nip.io/",
+      "class": "subdomain_of_blocked_dns_rebind",
+      "expect_safety": "BLOCK",
+      "expect_safety_alt": "FAIL_CLASS",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "Raw-IP / rebind class; BLOCK if private mid-hop"
+    },
+    {
+      "id": "ADV-13",
+      "seed": "https://localhost.example.com/",
+      "class": "subdomain_wording_trap",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "notes": "localhost as label mid-name ≠ *.localhost suffix trap; ceiling UNKNOWN"
+    },
+    {
+      "id": "ADV-14",
+      "seed": "https://metadata.google.internal/",
+      "class": "metadata_host",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "blocked_host"
+    },
+    {
+      "id": "ADV-15",
+      "seed": "https://[::1]/",
+      "class": "ipv6_loopback",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "Raw IPv6 colon host rejected"
+    },
+    {
+      "id": "ADV-16",
+      "seed": "ftp://example.com/",
+      "class": "non_https_scheme",
+      "expect_safety": "BLOCK",
+      "expect_safety_alt": "FAIL_CLASS",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "dangerous_scheme or scheme_not_https"
+    },
+    {
+      "id": "ADV-17",
+      "seed": "https://www.example.com/page?qid=Q1701775",
+      "class": "acc_poison_in_url",
+      "expect_safety": "ALLOW",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "Y",
+      "notes": "Acc leak=0; scrub forbidden Q-id"
+    },
+    {
+      "id": "ADV-18",
+      "seed": "https://kubernetes.default.svc/",
+      "class": "in_cluster_internal",
+      "expect_safety": "BLOCK",
+      "expect_rel_ceiling": "UNKNOWN",
+      "expect_finding": "N",
+      "notes": "K8s in-cluster blocked_host"
+    }
+  ]
+}

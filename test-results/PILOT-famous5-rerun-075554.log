@@ -1,0 +1,7 @@
+PASS bibi HTTP=200 1330ms ui=dossier mode=wiki qid=Q43723 faces=true 
+PASS lapid HTTP=200 1100ms ui=dossier mode=wiki qid=Q1396120 faces=true 
+PASS saar HTTP=200 892ms ui=dossier mode=wiki qid=Q966349 faces=true 
+PASS begin HTTP=200 821ms ui=dossier mode=wiki qid=Q130873 faces=true 
+PASS meloni HTTP=200 22451ms ui=dossier mode=wiki qid=Q451791 faces=true 
+PASS dani HTTP=200 268ms ui=need_context mode=ambiguous qid=null faces=false 
+SUMMARY {"famous":"5/5","daniOk":true,"goReady":true}

@@ -1,0 +1,5007 @@
+{
+  "S01": {
+    "seed_id": "S01",
+    "seed": "Tim Berners-Lee",
+    "source_file": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE4-EXPERIMENT-A2-COALESCE/raw/typed-enrich-smoke/S01-final.json",
+    "findings_n": 18,
+    "multi_n": 10,
+    "multi_rate": 0.5556,
+    "viaf_n": 10,
+    "gap_counts": {
+      "coalesced_ok": 10,
+      "ref_present_unsupported": 7,
+      "missing_ref": 1
+    },
+    "findings": [
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 0,
+        "finding_id": "wd-Q80",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9549999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "ol-OL25245A",
+          "viaf-85312226"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "English computer scientist (born 1955)"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 1,
+        "finding_id": "ol-OL25245A",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9449999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "viaf-85312226"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "Top work: Weaving the Web"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 2,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9349999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 3,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, 1955-",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9249999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 4,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9149999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 5,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9049999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 6,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.8949999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 7,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, Brits natuurkundige",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.8849999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 8,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, britský informatik",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.8749999999999999,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 9,
+        "finding_id": "viaf-85312226",
+        "title": "Tim Berners-Lee, britannialainen tietotekniikka-asiantuntija ja World Wide Webin keksijä",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q80",
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_refs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q80"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.8649999999999999,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 1,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 10,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 10,
+        "evidence_chain": [
+          {
+            "id": "ev-1bc4633ed032bd7d454682f1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q80",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-8b78b3cd061f3cc8d479260b",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL25245A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ded4492e49be949e449272fe",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ce87e4b18f0524a64903c21e",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ceaa76317f5993f3ddd9daf0",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-6aeb95eb2486847285c477bc",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-256520dfd012cc9f5c748809",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-15faf7baf2cf5f6111cdf54a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-ae75562849264469888e7d58",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-cc1c95dd00fec531a44ee1d7",
+            "provider": null,
+            "url": "https://viaf.org/viaf/85312226",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q80",
+          "ol-OL25245A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 10,
+        "finding_id": "wd-Q120373140",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q120373140",
+        "entityRefs": [
+          "qid:Q120373140",
+          "wd-Q120373140"
+        ],
+        "typed_refs": [
+          "qid:Q120373140",
+          "wd-Q120373140"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q120373140"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6183333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-9dae5e6e5b505dbfed817fb6",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q120373140",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "2015 edition of a biography by Claudia Martin"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 11,
+        "finding_id": "wd-Q120373262",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q120373262",
+        "entityRefs": [
+          "qid:Q120373262",
+          "wd-Q120373262"
+        ],
+        "typed_refs": [
+          "qid:Q120373262",
+          "wd-Q120373262"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q120373262"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6083333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-deec608d0782116cb1c5ca08",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q120373262",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "2015 biography by Jason Porterfield"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 12,
+        "finding_id": "wd-Q22991023",
+        "title": "Tim Berners-Lee: A Magna Carta for the web",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q22991023",
+        "entityRefs": [
+          "qid:Q22991023",
+          "wd-Q22991023"
+        ],
+        "typed_refs": [
+          "qid:Q22991023",
+          "wd-Q22991023"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q22991023"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5983333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-c7f185fbae6640484c617f83",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q22991023",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "TED2014"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 13,
+        "finding_id": "wd-Q22946133",
+        "title": "Tim Berners-Lee: The year open data went worldwide",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q22946133",
+        "entityRefs": [
+          "qid:Q22946133",
+          "wd-Q22946133"
+        ],
+        "typed_refs": [
+          "qid:Q22946133",
+          "wd-Q22946133"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q22946133"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5883333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-8314c7d5a762d02d56ed021d",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q22946133",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "TED2010"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 14,
+        "finding_id": "wd-Q22980417",
+        "title": "Tim Berners-Lee: The next web",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q22980417",
+        "entityRefs": [
+          "qid:Q22980417",
+          "wd-Q22980417"
+        ],
+        "typed_refs": [
+          "qid:Q22980417",
+          "wd-Q22980417"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q22980417"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5783333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-08cb147dee8c713927983c2b",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q22980417",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "TED2009"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 15,
+        "finding_id": "wd-Q19761597",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q19761597",
+        "entityRefs": [
+          "qid:Q19761597",
+          "wd-Q19761597"
+        ],
+        "typed_refs": [
+          "qid:Q19761597",
+          "wd-Q19761597"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q19761597"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5683333333333332,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-d571998ff143b8c65d0a81a1",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q19761597",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Wikinews article"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 16,
+        "finding_id": "wd-Q55693401",
+        "title": "Tim Berners-Lee",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q55693401",
+        "entityRefs": [
+          "qid:Q55693401",
+          "wd-Q55693401"
+        ],
+        "typed_refs": [
+          "qid:Q55693401",
+          "wd-Q55693401"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q55693401"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5583333333333332,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-29f751a2d57f2094590e70b0",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q55693401",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "article in Physics Today"
+      },
+      {
+        "seed_id": "S01",
+        "seed": "Tim Berners-Lee",
+        "finding_index": 17,
+        "finding_id": "wp-en-Tim_Berners_Lee",
+        "title": "Tim Berners-Lee",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+        "entityRefs": [
+          "wp:en:Tim Berners-Lee"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4783333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-6131f395a12acb1f40ccf423",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      }
+    ],
+    "providers_union": [
+      "openlibrary",
+      "viaf",
+      "wikidata",
+      "wikipedia"
+    ],
+    "typed_ref_inventory": {
+      "ol": 10,
+      "qid/wd": 17,
+      "viaf": 10
+    }
+  },
+  "S04": {
+    "seed_id": "S04",
+    "seed": "Stripe",
+    "source_file": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE4-EXPERIMENT-A2-COALESCE/raw/typed-enrich-smoke/S04-final.json",
+    "findings_n": 22,
+    "multi_n": 0,
+    "multi_rate": 0.0,
+    "viaf_n": 8,
+    "gap_counts": {
+      "ref_present_unsupported": 16,
+      "missing_ref": 6
+    },
+    "findings": [
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 0,
+        "finding_id": "viaf-30463651",
+        "title": "Stripe, John, 1643-1737",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/30463651",
+        "entityRefs": [
+          "viaf:30463651"
+        ],
+        "typed_refs": [
+          "viaf:30463651"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "30463651"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.7008333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3dba3cfaf0d94747227a8060",
+            "provider": null,
+            "url": "https://viaf.org/viaf/30463651",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:personal · lc:n50010528 · dnb:124157629"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 1,
+        "finding_id": "viaf-126600779",
+        "title": "Stripes",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/126600779",
+        "entityRefs": [
+          "viaf:126600779"
+        ],
+        "typed_refs": [
+          "viaf:126600779"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "126600779"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6908333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-25b75575df997e0428541335",
+            "provider": null,
+            "url": "https://viaf.org/viaf/126600779",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:no2006053242 · dnb:320011585"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 2,
+        "finding_id": "viaf-138753783",
+        "title": "Striped house museum of art Tokyo",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/138753783",
+        "entityRefs": [
+          "viaf:138753783"
+        ],
+        "typed_refs": [
+          "viaf:138753783"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "138753783"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6808333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-ef2f297d2654239f1ca17f14",
+            "provider": null,
+            "url": "https://viaf.org/viaf/138753783",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:no2007108593 · dnb:056342225"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 3,
+        "finding_id": "viaf-57307946",
+        "title": "Stripecke, Renata",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/57307946",
+        "entityRefs": [
+          "viaf:57307946"
+        ],
+        "typed_refs": [
+          "viaf:57307946"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "57307946"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6708333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-1a07987497b0c143a91105fa",
+            "provider": null,
+            "url": "https://viaf.org/viaf/57307946",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:personal · dnb:1020246995"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 4,
+        "finding_id": "viaf-156206104",
+        "title": "Stripe, Adelle, 1976-",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/156206104",
+        "entityRefs": [
+          "viaf:156206104"
+        ],
+        "typed_refs": [
+          "viaf:156206104"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "156206104"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6608333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-e07dd871f072477c5319125a",
+            "provider": null,
+            "url": "https://viaf.org/viaf/156206104",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:personal · lc:nb2010023356 · dnb:1175449962"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 5,
+        "finding_id": "viaf-124465779",
+        "title": "Striped Horse France",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/124465779",
+        "entityRefs": [
+          "viaf:124465779"
+        ],
+        "typed_refs": [
+          "viaf:124465779"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "124465779"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6508333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-ab5afc1bd4b80e6d4d79bd03",
+            "provider": null,
+            "url": "https://viaf.org/viaf/124465779",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 6,
+        "finding_id": "viaf-83910682",
+        "title": "Střípek, Jiří, asi 1545-asi 1575",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/83910682",
+        "entityRefs": [
+          "viaf:83910682"
+        ],
+        "typed_refs": [
+          "viaf:83910682"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "83910682"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6408333333333331,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-58fa1960203e386ac623ca50",
+            "provider": null,
+            "url": "https://viaf.org/viaf/83910682",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:personal"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 7,
+        "finding_id": "viaf-172149106019768490790",
+        "title": "Stripe Eroeg",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/172149106019768490790",
+        "entityRefs": [
+          "viaf:172149106019768490790"
+        ],
+        "typed_refs": [
+          "viaf:172149106019768490790"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "172149106019768490790"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6308333333333331,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-0f7997a6eb36e8b6abdd5eba",
+            "provider": null,
+            "url": "https://viaf.org/viaf/172149106019768490790",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:personal"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 8,
+        "finding_id": "ol-OL8376862A",
+        "title": "Five Stripe Books",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL8376862A",
+        "entityRefs": [
+          "ol:OL8376862A",
+          "ol-OL8376862A"
+        ],
+        "typed_refs": [
+          "ol:OL8376862A",
+          "ol-OL8376862A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL8376862A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5858333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-92cdcc43e5252f3238d5b475",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL8376862A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Sketch Book"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 9,
+        "finding_id": "ol-OL8613090A",
+        "title": "Adelle Stripe",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL8613090A",
+        "entityRefs": [
+          "ol:OL8613090A",
+          "ol-OL8613090A"
+        ],
+        "typed_refs": [
+          "ol:OL8613090A",
+          "ol-OL8613090A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL8613090A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5758333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-f223a57aafa0191f8a88ae9c",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL8613090A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Black Teeth and a Brilliant Smile"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 10,
+        "finding_id": "ol-OL13079935A",
+        "title": "Stripe",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL13079935A",
+        "entityRefs": [
+          "ol:OL13079935A",
+          "ol-OL13079935A"
+        ],
+        "typed_refs": [
+          "ol:OL13079935A",
+          "ol-OL13079935A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL13079935A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5658333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-71690f2975616e8c8ae0c510",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL13079935A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Increment Box Set"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 11,
+        "finding_id": "ol-OL10372320A",
+        "title": "STRIPE",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL10372320A",
+        "entityRefs": [
+          "ol:OL10372320A",
+          "ol-OL10372320A"
+        ],
+        "typed_refs": [
+          "ol:OL10372320A",
+          "ol-OL10372320A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL10372320A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5558333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-70eafe76a4960f8cee70eb95",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL10372320A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Black Teeth and a Brilliant Smile"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 12,
+        "finding_id": "ol-OL3492368A",
+        "title": "Stephen Stripe",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL3492368A",
+        "entityRefs": [
+          "ol:OL3492368A",
+          "ol-OL3492368A"
+        ],
+        "typed_refs": [
+          "ol:OL3492368A",
+          "ol-OL3492368A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL3492368A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5458333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-e4b27ceee54073b58012ffd2",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL3492368A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: The Journey to Paradise"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 13,
+        "finding_id": "ol-OL14670551A",
+        "title": "Stripe Journals",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL14670551A",
+        "entityRefs": [
+          "ol:OL14670551A",
+          "ol-OL14670551A"
+        ],
+        "typed_refs": [
+          "ol:OL14670551A",
+          "ol-OL14670551A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL14670551A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5358333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-4e41ef9616742d445c82996c",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL14670551A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Daily Five Minute Journal"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 14,
+        "finding_id": "ol-OL3905682A",
+        "title": "Subdued Stripe",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL3905682A",
+        "entityRefs": [
+          "ol:OL3905682A",
+          "ol-OL3905682A"
+        ],
+        "typed_refs": [
+          "ol:OL3905682A",
+          "ol-OL3905682A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL3905682A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5258333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-42a0dde0cdb4056815e23e44",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL3905682A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Small Scrapbook"
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 15,
+        "finding_id": "ol-OL15943217A",
+        "title": "Sebastian Friedrich Stripe",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL15943217A",
+        "entityRefs": [
+          "ol:OL15943217A",
+          "ol-OL15943217A"
+        ],
+        "typed_refs": [
+          "ol:OL15943217A",
+          "ol-OL15943217A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL15943217A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5158333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3770035cce8ef3eaf83b4ee5",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL15943217A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: De pilagio ..."
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 16,
+        "finding_id": "wp-en-Stripe",
+        "title": "Stripe",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Stripe",
+        "entityRefs": [
+          "wp:en:Stripe"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4883333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-1b2261a8659f20af0dafa200",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Stripe",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 17,
+        "finding_id": "wp-en-Striped_hyena",
+        "title": "Striped hyena",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Striped_hyena",
+        "entityRefs": [
+          "wp:en:Striped hyena"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4783333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-5cf126c02d884d0d0f0cbf8c",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Striped_hyena",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 18,
+        "finding_id": "wp-en-Stripe_Inc_",
+        "title": "Stripe, Inc.",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+        "entityRefs": [
+          "wp:en:Stripe, Inc."
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4683333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3d21c3bbce21b1c0f2191884",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 19,
+        "finding_id": "wp-en-Striped_polecat",
+        "title": "Striped polecat",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Striped_polecat",
+        "entityRefs": [
+          "wp:en:Striped polecat"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4583333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-bf6bbf30d4fe259eaba3bab8",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Striped_polecat",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 20,
+        "finding_id": "wp-en-Striped_skunk",
+        "title": "Striped skunk",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Striped_skunk",
+        "entityRefs": [
+          "wp:en:Striped skunk"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4483333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-16e4af35d2a9aa3f367fae87",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Striped_skunk",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S04",
+        "seed": "Stripe",
+        "finding_index": 21,
+        "finding_id": "wp-en-Stripes_film_",
+        "title": "Stripes (film)",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Stripes_(film)",
+        "entityRefs": [
+          "wp:en:Stripes (film)"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.43833333333333335,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-8e7c74de03edfd4b5052b0b6",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Stripes_(film)",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      }
+    ],
+    "providers_union": [
+      "openlibrary",
+      "viaf",
+      "wikipedia"
+    ],
+    "typed_ref_inventory": {
+      "viaf": 8,
+      "ol": 8
+    }
+  },
+  "S05": {
+    "seed_id": "S05",
+    "seed": "Red Cross",
+    "source_file": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE4-EXPERIMENT-A2-COALESCE/raw/typed-enrich-smoke/S05-final.json",
+    "findings_n": 30,
+    "multi_n": 5,
+    "multi_rate": 0.1667,
+    "viaf_n": 14,
+    "gap_counts": {
+      "coalesced_ok": 5,
+      "ref_present_unsupported": 19,
+      "missing_ref": 6
+    },
+    "findings": [
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 0,
+        "finding_id": "wd-Q470110",
+        "title": "American Red Cross",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q470110",
+        "entityRefs": [
+          "qid:Q470110",
+          "wd-Q470110",
+          "viaf:122023057",
+          "ol:OL17804A",
+          "ol-OL17804A"
+        ],
+        "typed_refs": [
+          "qid:Q470110",
+          "wd-Q470110",
+          "viaf:122023057",
+          "ol:OL17804A",
+          "ol-OL17804A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q470110"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9449999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 0.95,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 3,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 3,
+        "evidence_chain": [
+          {
+            "id": "ev-ee4c11b54b55f169c6f8cca2",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q470110",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-0c8c971f07faa83033a4109e",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL17804A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-1b136765bf75268ad3acb1ff",
+            "provider": null,
+            "url": "https://viaf.org/viaf/122023057",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "ol-OL17804A",
+          "viaf-122023057"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "National Red Cross Society in the United States"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 1,
+        "finding_id": "ol-OL17804A",
+        "title": "American National Red Cross",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q470110",
+        "entityRefs": [
+          "qid:Q470110",
+          "wd-Q470110",
+          "viaf:122023057",
+          "ol:OL17804A",
+          "ol-OL17804A"
+        ],
+        "typed_refs": [
+          "qid:Q470110",
+          "wd-Q470110",
+          "viaf:122023057",
+          "ol:OL17804A",
+          "ol-OL17804A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q470110"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9349999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 0.95,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 3,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 3,
+        "evidence_chain": [
+          {
+            "id": "ev-ee4c11b54b55f169c6f8cca2",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q470110",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-0c8c971f07faa83033a4109e",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL17804A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-1b136765bf75268ad3acb1ff",
+            "provider": null,
+            "url": "https://viaf.org/viaf/122023057",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q470110",
+          "viaf-122023057"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "Top work: The American Red cross"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 2,
+        "finding_id": "viaf-122023057",
+        "title": "Red Cross USA",
+        "kind": "registry",
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 3,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q470110",
+        "entityRefs": [
+          "qid:Q470110",
+          "wd-Q470110",
+          "viaf:122023057",
+          "ol:OL17804A",
+          "ol-OL17804A"
+        ],
+        "typed_refs": [
+          "qid:Q470110",
+          "wd-Q470110",
+          "viaf:122023057",
+          "ol:OL17804A",
+          "ol-OL17804A"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q470110"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.9249999999999998,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 1,
+          "directness": 0.95,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 3,
+          "evidenceCount": 3,
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 3,
+        "evidence_chain": [
+          {
+            "id": "ev-ee4c11b54b55f169c6f8cca2",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q470110",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-0c8c971f07faa83033a4109e",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL17804A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-1b136765bf75268ad3acb1ff",
+            "provider": null,
+            "url": "https://viaf.org/viaf/122023057",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "wd-Q470110",
+          "ol-OL17804A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:corporate · lc:n79096723 · dnb:000060453"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 3,
+        "finding_id": "ol-OL124327A",
+        "title": "International Committee of the Red Cross",
+        "kind": "registry",
+        "providers": [
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 2,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL124327A",
+        "entityRefs": [
+          "ol:OL124327A",
+          "ol-OL124327A",
+          "viaf:160178001",
+          "qid:Q5987345",
+          "wd-Q5987345"
+        ],
+        "typed_refs": [
+          "ol:OL124327A",
+          "ol-OL124327A",
+          "viaf:160178001",
+          "qid:Q5987345",
+          "wd-Q5987345"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q5987345"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.7841666666666666,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.667,
+          "directness": 0.8,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 2,
+          "evidenceCount": 2,
+          "domains": [
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 2,
+        "evidence_chain": [
+          {
+            "id": "ev-73aacea394afaa29ed6d68c5",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL124327A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-13285e3216db2f74af51ce25",
+            "provider": null,
+            "url": "https://viaf.org/viaf/160178001",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "viaf-160178001"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "Top work: ICRC annual report"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 4,
+        "finding_id": "viaf-160178001",
+        "title": "Red Cross. International Committee, Geneva",
+        "kind": "registry",
+        "providers": [
+          "openlibrary",
+          "viaf"
+        ],
+        "provider_count": 2,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL124327A",
+        "entityRefs": [
+          "ol:OL124327A",
+          "ol-OL124327A",
+          "viaf:160178001",
+          "qid:Q5987345",
+          "wd-Q5987345"
+        ],
+        "typed_refs": [
+          "ol:OL124327A",
+          "ol-OL124327A",
+          "viaf:160178001",
+          "qid:Q5987345",
+          "wd-Q5987345"
+        ],
+        "typed_ref_types": [
+          "ol",
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q5987345"
+        },
+        "relationship_decision": "coalesce_attach_keep",
+        "multi_family": true,
+        "confidence": 0.7741666666666666,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.667,
+          "directness": 0.8,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 2,
+          "evidenceCount": 2,
+          "domains": [
+            "openlibrary.org",
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 2,
+        "evidence_chain": [
+          {
+            "id": "ev-73aacea394afaa29ed6d68c5",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL124327A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          },
+          {
+            "id": "ev-13285e3216db2f74af51ce25",
+            "provider": null,
+            "url": "https://viaf.org/viaf/160178001",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [
+          "ol-OL124327A"
+        ],
+        "gap_class": "coalesced_ok",
+        "summary": "type:corporate · lc:n80158612 · dnb:000431958"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 5,
+        "finding_id": "wd-Q7178",
+        "title": "International Red Cross and Red Crescent Movement",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q7178",
+        "entityRefs": [
+          "qid:Q7178",
+          "wd-Q7178",
+          "viaf:145680594"
+        ],
+        "typed_refs": [
+          "qid:Q7178",
+          "wd-Q7178",
+          "viaf:145680594"
+        ],
+        "typed_ref_types": [
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q7178"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6683333333333332,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-92cfaa4bad3fa3427bc8a8d3",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q7178",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "international humanitarian movement"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 6,
+        "finding_id": "wd-Q48438",
+        "title": "Saint George",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q48438",
+        "entityRefs": [
+          "qid:Q48438",
+          "wd-Q48438",
+          "viaf:27862930"
+        ],
+        "typed_refs": [
+          "qid:Q48438",
+          "wd-Q48438",
+          "viaf:27862930"
+        ],
+        "typed_ref_types": [
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q48438"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6583333333333332,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-28dc3a2dd271571999554686",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q48438",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Christian saint and martyr (died 303)"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 7,
+        "finding_id": "wd-Q7305591",
+        "title": "Redd Kross",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q7305591",
+        "entityRefs": [
+          "qid:Q7305591",
+          "wd-Q7305591",
+          "viaf:191149196678574792964"
+        ],
+        "typed_refs": [
+          "qid:Q7305591",
+          "wd-Q7305591",
+          "viaf:191149196678574792964"
+        ],
+        "typed_ref_types": [
+          "qid/wd",
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q7305591"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6483333333333332,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-faabe05f0cb668583c3d825a",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q7305591",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "American alternative rock band"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 8,
+        "finding_id": "wd-Q104700248",
+        "title": "Red Cross",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q104700248",
+        "entityRefs": [
+          "qid:Q104700248",
+          "wd-Q104700248"
+        ],
+        "typed_refs": [
+          "qid:Q104700248",
+          "wd-Q104700248"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q104700248"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6383333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-98326805bf197875893b7480",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q104700248",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "subject category of the 20th Century Press Archives"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 9,
+        "finding_id": "wd-Q1968122",
+        "title": "National Red Cross and Red Crescent society",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q1968122",
+        "entityRefs": [
+          "qid:Q1968122",
+          "wd-Q1968122"
+        ],
+        "typed_refs": [
+          "qid:Q1968122",
+          "wd-Q1968122"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q1968122"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6283333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-b875339d7c0f92507b438e76",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q1968122",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "humanitarian organisation with the official status of a National Society of a country according to Geneva Conventions"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 10,
+        "finding_id": "wd-Q116059498",
+        "title": "Red Cross",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q116059498",
+        "entityRefs": [
+          "qid:Q116059498",
+          "wd-Q116059498"
+        ],
+        "typed_refs": [
+          "qid:Q116059498",
+          "wd-Q116059498"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q116059498"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6183333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-21517941a71e353af0febe4e",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q116059498",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "distinctive emblem of the International Red Cross and Red Crescent Movement and protective sign"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 11,
+        "finding_id": "wd-Q50320550",
+        "title": "Red Cross",
+        "kind": "registry",
+        "providers": [
+          "wikidata"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikidata",
+        "url_primary": "https://www.wikidata.org/wiki/Q50320550",
+        "entityRefs": [
+          "qid:Q50320550",
+          "wd-Q50320550"
+        ],
+        "typed_refs": [
+          "qid:Q50320550",
+          "wd-Q50320550"
+        ],
+        "typed_ref_types": [
+          "qid/wd"
+        ],
+        "normalized_entity": {
+          "type": "qid",
+          "id": "Q50320550"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.6083333333333333,
+        "ranking_factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-2b588e4983aaeb619f948db3",
+            "provider": null,
+            "url": "https://www.wikidata.org/wiki/Q50320550",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "painting by Judith Godwin"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 12,
+        "finding_id": "viaf-167237176",
+        "title": "Red Cross and Red Crescent",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/167237176",
+        "entityRefs": [
+          "viaf:167237176"
+        ],
+        "typed_refs": [
+          "viaf:167237176"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "167237176"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5808333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-4e71da3838a94210d282a697",
+            "provider": null,
+            "url": "https://viaf.org/viaf/167237176",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:nr91029304 · dnb:1086394402"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 13,
+        "finding_id": "viaf-151269599",
+        "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/151269599",
+        "entityRefs": [
+          "viaf:151269599"
+        ],
+        "typed_refs": [
+          "viaf:151269599"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "151269599"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5708333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3f984d8965e8f2209149bd92",
+            "provider": null,
+            "url": "https://viaf.org/viaf/151269599",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:n80093481 · dnb:004794745"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 14,
+        "finding_id": "viaf-148420048",
+        "title": "Red Cross (Great Britain)",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/148420048",
+        "entityRefs": [
+          "viaf:148420048"
+        ],
+        "typed_refs": [
+          "viaf:148420048"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "148420048"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5608333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-46cb23860f7cc48e224c41fb",
+            "provider": null,
+            "url": "https://viaf.org/viaf/148420048",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:n82078047 · dnb:951888978"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 15,
+        "finding_id": "viaf-997897",
+        "title": "Red Cross international lawyer (1914-2002) Jean Pictet",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/997897",
+        "entityRefs": [
+          "viaf:997897"
+        ],
+        "typed_refs": [
+          "viaf:997897"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "997897"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5508333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-ee4796ee86fd6f94d933d82b",
+            "provider": null,
+            "url": "https://viaf.org/viaf/997897",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:personal · lc:n84169021 · dnb:1017369038"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 16,
+        "finding_id": "viaf-312731766",
+        "title": "Red Cross, Henry Dunant Institute",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/312731766",
+        "entityRefs": [
+          "viaf:312731766"
+        ],
+        "typed_refs": [
+          "viaf:312731766"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "312731766"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5408333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3dd8cba20369d737ff3133be",
+            "provider": null,
+            "url": "https://viaf.org/viaf/312731766",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:n80132911 · dnb:004036026"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 17,
+        "finding_id": "viaf-159584209",
+        "title": "Red Cross, Deutsches Rotes Kreuz",
+        "kind": "registry",
+        "providers": [
+          "viaf"
+        ],
+        "provider_count": 1,
+        "source_primary": "viaf",
+        "url_primary": "https://viaf.org/viaf/159584209",
+        "entityRefs": [
+          "viaf:159584209"
+        ],
+        "typed_refs": [
+          "viaf:159584209"
+        ],
+        "typed_ref_types": [
+          "viaf"
+        ],
+        "normalized_entity": {
+          "type": "viaf",
+          "id": "159584209"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.5308333333333332,
+        "ranking_factors": {
+          "authority": 0.85,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "viaf.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-5cd7945080ba1259ee41ff2f",
+            "provider": null,
+            "url": "https://viaf.org/viaf/159584209",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "type:corporate · lc:n91112682 · dnb:007642520"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 18,
+        "finding_id": "ol-OL2917704A",
+        "title": "Red Cross",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL2917704A",
+        "entityRefs": [
+          "ol:OL2917704A",
+          "ol-OL2917704A"
+        ],
+        "typed_refs": [
+          "ol:OL2917704A",
+          "ol-OL2917704A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL2917704A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4858333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-49e0d67756ed1980a1094e23",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL2917704A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: XVe Conférence internationale de la Croix-Rouge, Tokio, octobre 1934"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 19,
+        "finding_id": "ol-OL10303910A",
+        "title": "American Red Cross",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL10303910A",
+        "entityRefs": [
+          "ol:OL10303910A",
+          "ol-OL10303910A"
+        ],
+        "typed_refs": [
+          "ol:OL10303910A",
+          "ol-OL10303910A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL10303910A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4758333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-af53efed094339e00e98b2a0",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL10303910A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: American Red Cross Text-Book on Home Hygiene and Care of the Sick"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 20,
+        "finding_id": "ol-OL4511273A",
+        "title": "Red Cross.",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL4511273A",
+        "entityRefs": [
+          "ol:OL4511273A",
+          "ol-OL4511273A"
+        ],
+        "typed_refs": [
+          "ol:OL4511273A",
+          "ol-OL4511273A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL4511273A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.46583333333333327,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-f142608bc15a1ce36195b33e",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL4511273A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Disaster relief handbook"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 21,
+        "finding_id": "ol-OL6290095A",
+        "title": "Red Cross. Portuguese Red Cross.",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL6290095A",
+        "entityRefs": [
+          "ol:OL6290095A",
+          "ol-OL6290095A"
+        ],
+        "typed_refs": [
+          "ol:OL6290095A",
+          "ol-OL6290095A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL6290095A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4558333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-02defb0dec3845d5c3c8e5ae",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL6290095A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: The Portuguese Red Cross Society"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 22,
+        "finding_id": "ol-OL13846643A",
+        "title": "Red Cross. Portuguese Red Cross",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL13846643A",
+        "entityRefs": [
+          "ol:OL13846643A",
+          "ol-OL13846643A"
+        ],
+        "typed_refs": [
+          "ol:OL13846643A",
+          "ol-OL13846643A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL13846643A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4458333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-dc9d51c2bf301175fa3acbca",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL13846643A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: The Portuguese Red Cross Society"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 23,
+        "finding_id": "ol-OL2343831A",
+        "title": "Red Cross. Junior Red Cross.",
+        "kind": "registry",
+        "providers": [
+          "openlibrary"
+        ],
+        "provider_count": 1,
+        "source_primary": "openlibrary",
+        "url_primary": "https://openlibrary.org/authors/OL2343831A",
+        "entityRefs": [
+          "ol:OL2343831A",
+          "ol-OL2343831A"
+        ],
+        "typed_refs": [
+          "ol:OL2343831A",
+          "ol-OL2343831A"
+        ],
+        "typed_ref_types": [
+          "ol"
+        ],
+        "normalized_entity": {
+          "type": "ol",
+          "id": "OL2343831A"
+        },
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4358333333333333,
+        "ranking_factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-941192b76d0cc6e71b137b13",
+            "provider": null,
+            "url": "https://openlibrary.org/authors/OL2343831A",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "ref_present_unsupported",
+        "summary": "Top work: Our book"
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 24,
+        "finding_id": "wp-en-Red_Cross",
+        "title": "Red Cross",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Red_Cross",
+        "entityRefs": [
+          "wp:en:Red Cross"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.4083333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-bd3835ec8708469c4d23938e",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Red_Cross",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 25,
+        "finding_id": "wp-en-Red_Cross_parcel",
+        "title": "Red Cross parcel",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+        "entityRefs": [
+          "wp:en:Red Cross parcel"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.3983333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-fb8c267bc13768462503dbb0",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 26,
+        "finding_id": "wp-en-Red_Cross_Youth_Philippines_",
+        "title": "Red Cross Youth (Philippines)",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+        "entityRefs": [
+          "wp:en:Red Cross Youth (Philippines)"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.3883333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-1e3332c5beb9a1cedc3e2233",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 27,
+        "finding_id": "wp-en-Red_Cross_of_Constantine",
+        "title": "Red Cross of Constantine",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+        "entityRefs": [
+          "wp:en:Red Cross of Constantine"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.3783333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-00dd79dec29cfd4788ec7d09",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 28,
+        "finding_id": "wp-en-Red_crossbill",
+        "title": "Red crossbill",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Red_crossbill",
+        "entityRefs": [
+          "wp:en:Red crossbill"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.3683333333333333,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3effb23f7efddf49a3a83160",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Red_crossbill",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      },
+      {
+        "seed_id": "S05",
+        "seed": "Red Cross",
+        "finding_index": 29,
+        "finding_id": "wp-en-Red_Cross_EP_",
+        "title": "Red Cross (EP)",
+        "kind": "page",
+        "providers": [
+          "wikipedia"
+        ],
+        "provider_count": 1,
+        "source_primary": "wikipedia",
+        "url_primary": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+        "entityRefs": [
+          "wp:en:Red Cross (EP)"
+        ],
+        "typed_refs": [],
+        "typed_ref_types": [],
+        "normalized_entity": null,
+        "relationship_decision": "singleton_keep",
+        "multi_family": false,
+        "confidence": 0.35833333333333334,
+        "ranking_factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "evidence_n": 1,
+        "evidence_chain": [
+          {
+            "id": "ev-3fe05e34eacda215e4718816",
+            "provider": null,
+            "url": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+            "title": null,
+            "snippet": null,
+            "refs": []
+          }
+        ],
+        "shared_typed_with_findings": [],
+        "gap_class": "missing_ref",
+        "summary": ""
+      }
+    ],
+    "providers_union": [
+      "openlibrary",
+      "viaf",
+      "wikidata",
+      "wikipedia"
+    ],
+    "typed_ref_inventory": {
+      "ol": 11,
+      "qid/wd": 12,
+      "viaf": 14
+    }
+  }
+}

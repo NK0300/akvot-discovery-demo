@@ -1,0 +1,235 @@
+{
+  "step": 35,
+  "title": "SAME-SOURCE-RECIRCULATION",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "definition": "Share of evidence that reappears across repeated runs (r1↔r2) for the same seed — Jaccard on finding ids and evidence URLs. High recirculation = stable cache of same sources (not new independent discovery).",
+  "corpus": {
+    "id_jaccard_mean_all_scored_seeds": 0.8136363636363637,
+    "url_jaccard_mean_all_scored_seeds": 0.8136363636363637,
+    "seeds_with_both_runs_nonempty": 9,
+    "perfect_recirc_id_1_0_count": 7,
+    "single_family_finding_rate": 1.0,
+    "interpretation": "Mean id/url Jaccard ≈ 0.81 across scored seeds;  most productive seeds recirculate identical WD/OL/WP URLs. Same-source recirculation is the dominant behavior — novelty comes from provider partial/error variance (S04, S08, S11) not new families."
+  },
+  "perSeed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 10,
+      "id_union": 10,
+      "providers": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S02",
+      "seed": "John Smith",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 21,
+      "id_union": 21,
+      "providers": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S03",
+      "seed": "Alex Morgan",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 21,
+      "id_union": 21,
+      "providers": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "id_jaccard": 0.6363636363636364,
+      "url_jaccard": 0.6363636363636364,
+      "id_overlap": 14,
+      "id_union": 22,
+      "providers": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 22,
+      "id_union": 22,
+      "providers": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S06",
+      "seed": "openai.com",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 7,
+      "id_union": 7,
+      "providers": [
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S07",
+      "seed": "בנימין נתניהו",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 2,
+      "id_union": 2,
+      "providers": [
+        "wikidata",
+        "wikipedia"
+      ],
+      "families": [
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S08",
+      "seed": "Tel Aviv University",
+      "id_jaccard": 0.5,
+      "url_jaccard": 0.5,
+      "id_overlap": 8,
+      "id_union": 16,
+      "providers": [
+        "openlibrary",
+        "wikidata"
+      ],
+      "families": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S09",
+      "seed": "zzzznonexistentxyz999",
+      "id_jaccard": null,
+      "url_jaccard": null,
+      "id_overlap": 0,
+      "id_union": 0,
+      "providers": [],
+      "families": []
+    },
+    {
+      "id": "S10",
+      "seed": "Francis Bacon",
+      "id_jaccard": 1.0,
+      "url_jaccard": 1.0,
+      "id_overlap": 8,
+      "id_union": 8,
+      "providers": [
+        "openlibrary"
+      ],
+      "families": [
+        "openlibrary"
+      ]
+    },
+    {
+      "id": "S11",
+      "seed": "Michael Jordan baseball",
+      "id_jaccard": 0.0,
+      "url_jaccard": 0.0,
+      "id_overlap": 0,
+      "id_union": 2,
+      "providers": [
+        "wikipedia"
+      ],
+      "families": [
+        "wikimedia"
+      ]
+    },
+    {
+      "id": "S12",
+      "seed": "Wikipedia Wikimedia Foundation",
+      "id_jaccard": null,
+      "url_jaccard": null,
+      "id_overlap": 0,
+      "id_union": 0,
+      "providers": [],
+      "families": []
+    },
+    {
+      "id": "S13",
+      "seed": "Demis Hassabis DeepMind",
+      "id_jaccard": null,
+      "url_jaccard": null,
+      "id_overlap": 0,
+      "id_union": 0,
+      "providers": [],
+      "families": []
+    },
+    {
+      "id": "S14",
+      "seed": "CEO of Microsoft",
+      "id_jaccard": null,
+      "url_jaccard": null,
+      "id_overlap": 0,
+      "id_union": 0,
+      "providers": [],
+      "families": []
+    },
+    {
+      "id": "S15",
+      "seed": "Mark Zuckerberg / Meta CEO",
+      "id_jaccard": null,
+      "url_jaccard": null,
+      "id_overlap": 0,
+      "id_union": 0,
+      "providers": [],
+      "families": []
+    },
+    {
+      "id": "S16",
+      "seed": "https://www.who.int",
+      "id_jaccard": null,
+      "url_jaccard": null,
+      "id_overlap": 0,
+      "id_union": 0,
+      "providers": [],
+      "families": []
+    }
+  ]
+}

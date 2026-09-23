@@ -1,0 +1,26 @@
+
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Fetching deployment "akvot-discovery.vercel.app" in k-akvot
+> Fetched deployment "akvot-simple-demo-6palh6t62-k-akvot.vercel.app" in k-akvot [261ms]
+
+  General
+
+    id		dpl_AvyhrW24gGRquWCPPZdydBiz81dv
+    name	akvot-simple-demo
+    target	preview
+    status	● Ready
+    url		https://akvot-simple-demo-6palh6t62-k-akvot.vercel.app
+    created	Sun Sep 20 2026 08:52:05 GMT+0300 (Israel Daylight Time) [18m ago]
+
+
+  Builds
+
+    ┌ .        [0ms]
+    ├── λ api/discovery/health (13.59KB) [fra1]
+    ├── λ api/discovery/sessions/index (37.33KB) [fra1]
+    ├── λ api/discovery/sessions/[id]/index (36.92KB) [fra1]
+    ├── λ api/discovery/sessions/[id]/events (39.83KB) [fra1]
+    ├── λ api/discovery/sessions/[id]/narrow (36.91KB) [fra1]
+    └── 29 output items hidden
+    
+

@@ -1,0 +1,30 @@
+{
+  "httpStatus": 201,
+  "findings": 22,
+  "entityLeak": 0,
+  "leak": 0,
+  "softFail": false,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "error": null,
+  "jsonKeys": [
+    "correlationId",
+    "ok",
+    "pollAfterMs",
+    "sessionId",
+    "snapshot",
+    "status",
+    "store"
+  ]
+}

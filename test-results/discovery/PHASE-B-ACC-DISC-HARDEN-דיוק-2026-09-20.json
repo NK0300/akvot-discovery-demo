@@ -1,0 +1,638 @@
+{
+  "meta": {
+    "checked_at": "2026-09-20T04:11:51+03:00",
+    "timezone": "Asia/Jerusalem (UTC+3)",
+    "phase": "B",
+    "role": "דיוק",
+    "pack": "Acc-DISC HARDEN",
+    "promote": false,
+    "prior_acc_dpl_not_carried": "dpl_BvWg9yUsibVqdrCAexSTMpwoabZ6",
+    "discovery_preview": "https://akvot-simple-demo-kppgm355g-k-akvot.vercel.app",
+    "discovery_dpl": "dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "alias_dpl_expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "alias_build_observed": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "forbidden": "Q1701775",
+    "forbiddenIdentitiesVersion_expected": "2026-09-19.1",
+    "server_evidence": "test-results/discovery/PHASE-B-SERVER-HARDEN-שרת-2026-09-20.md",
+    "endpoints": {
+      "discovery": [
+        "POST /api/discovery/sessions",
+        "GET /api/discovery/sessions/:id",
+        "GET /api/discovery/sessions/:id/events",
+        "POST /api/discovery/sessions/:id/narrow"
+      ],
+      "core": [
+        "GET|POST /api/lookup"
+      ]
+    }
+  },
+  "health": {
+    "discovery": {
+      "build": "dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+      "match": true,
+      "ms": 2389
+    },
+    "alias": {
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "match": true,
+      "ms": 2320
+    }
+  },
+  "acc_disc": {
+    "verdict": "GO",
+    "pass": true,
+    "leakage_count": 0,
+    "seeds_n": 3,
+    "seeds_posted_pass": 3,
+    "get_pass_n": 3,
+    "sse_pass": true,
+    "narrow_pass": true,
+    "cases": [
+      {
+        "label": "disc-seed-he-soft",
+        "seed": "דוד כהן",
+        "hints": {
+          "locale": "he"
+        },
+        "surface": "discovery",
+        "method": "POST",
+        "ms": 2922,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoi15PXldeTINeb15TXnyIsImgiOnsibG9jYWxlIjoiaGUifSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTE6NTguNzc5WiIsIm4iOiIyMTdjNzBiOGYwYzgifQ",
+        "status": "partial",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "regenerated": null,
+        "store": {
+          "backend": "fs-regen",
+          "durable": true,
+          "crossInstance": "regenerate-from-seed",
+          "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+          "fsDir": "/tmp/akvot-discovery-sessions",
+          "ttlMs": 3600000
+        },
+        "version": null,
+        "findings_n": 13,
+        "evidence_n": 13,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 14,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-he-soft.json",
+        "note": "HE person soft — entity-agnostic"
+      },
+      {
+        "label": "disc-seed-he-soft-get",
+        "seed": "דוד כהן",
+        "hints": {
+          "locale": "he"
+        },
+        "surface": "discovery-get",
+        "method": "GET",
+        "ms": 3387,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoi15PXldeTINeb15TXnyIsImgiOnsibG9jYWxlIjoiaGUifSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTE6NTguNzc5WiIsIm4iOiIyMTdjNzBiOGYwYzgifQ",
+        "status": "partial",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "regenerated": true,
+        "store": {
+          "backend": "fs-regen",
+          "durable": true,
+          "crossInstance": "regenerate-from-seed",
+          "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+          "fsDir": "/tmp/akvot-discovery-sessions",
+          "ttlMs": 3600000
+        },
+        "version": null,
+        "findings_n": 13,
+        "evidence_n": 13,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 14,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true,
+          "regenerated_or_hit": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-he-soft-get.json",
+        "note": "GET regen-from-seed — Acc scrub still holds (forbiddenIdentitiesVersion)"
+      },
+      {
+        "label": "disc-seed-smith-ctx",
+        "seed": "John Smith",
+        "hints": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "surface": "discovery",
+        "method": "POST",
+        "ms": 2938,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoiSm9obiBTbWl0aCIsImgiOnsib3JnIjoiSUJNIiwiY2l0eSI6Ik5ldyBZb3JrIiwiY291bnRyeSI6IlVTIn0sImwiOiJlbiIsInQiOiIyMDI2LTA5LTIwVDAxOjEyOjA1LjA3MFoiLCJuIjoiNzc2YzYwNGUzYTQ5In0",
+        "status": "partial",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "regenerated": null,
+        "store": {
+          "backend": "fs-regen",
+          "durable": true,
+          "crossInstance": "regenerate-from-seed",
+          "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+          "fsDir": "/tmp/akvot-discovery-sessions",
+          "ttlMs": 3600000
+        },
+        "version": null,
+        "findings_n": 15,
+        "evidence_n": 15,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 16,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-smith-ctx.json",
+        "note": "Smith+IBM/NY/US — NEVER Q1701775"
+      },
+      {
+        "label": "disc-seed-smith-ctx-get",
+        "seed": "John Smith",
+        "hints": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "surface": "discovery-get",
+        "method": "GET",
+        "ms": 3202,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoiSm9obiBTbWl0aCIsImgiOnsib3JnIjoiSUJNIiwiY2l0eSI6Ik5ldyBZb3JrIiwiY291bnRyeSI6IlVTIn0sImwiOiJlbiIsInQiOiIyMDI2LTA5LTIwVDAxOjEyOjA1LjA3MFoiLCJuIjoiNzc2YzYwNGUzYTQ5In0",
+        "status": "partial",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "regenerated": true,
+        "store": {
+          "backend": "fs-regen",
+          "durable": true,
+          "crossInstance": "regenerate-from-seed",
+          "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+          "fsDir": "/tmp/akvot-discovery-sessions",
+          "ttlMs": 3600000
+        },
+        "version": null,
+        "findings_n": 15,
+        "evidence_n": 15,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 16,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true,
+          "regenerated_or_hit": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-smith-ctx-get.json",
+        "note": "GET regen-from-seed — Acc scrub still holds (forbiddenIdentitiesVersion)"
+      },
+      {
+        "label": "disc-seed-org-domain",
+        "seed": "example.org",
+        "hints": {
+          "kind": "domain"
+        },
+        "surface": "discovery",
+        "method": "POST",
+        "ms": 3443,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoiZXhhbXBsZS5vcmciLCJoIjp7ImtpbmQiOiJkb21haW4ifSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTI6MTEuMTM2WiIsIm4iOiIxM2E2NTI5MWNmNTkifQ",
+        "status": "complete",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "regenerated": null,
+        "store": {
+          "backend": "fs-regen",
+          "durable": true,
+          "crossInstance": "regenerate-from-seed",
+          "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+          "fsDir": "/tmp/akvot-discovery-sessions",
+          "ttlMs": 3600000
+        },
+        "version": null,
+        "findings_n": 2,
+        "evidence_n": 2,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 3,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-org-domain.json",
+        "note": "Org/domain fixture"
+      },
+      {
+        "label": "disc-seed-org-domain-get",
+        "seed": "example.org",
+        "hints": {
+          "kind": "domain"
+        },
+        "surface": "discovery-get",
+        "method": "GET",
+        "ms": 2989,
+        "exit": 0,
+        "ok": true,
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoiZXhhbXBsZS5vcmciLCJoIjp7ImtpbmQiOiJkb21haW4ifSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTI6MTEuMTM2WiIsIm4iOiIxM2E2NTI5MWNmNTkifQ",
+        "status": "complete",
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "regenerated": true,
+        "store": {
+          "backend": "fs-regen",
+          "durable": true,
+          "crossInstance": "regenerate-from-seed",
+          "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+          "fsDir": "/tmp/akvot-discovery-sessions",
+          "ttlMs": 3600000
+        },
+        "version": null,
+        "findings_n": 2,
+        "evidence_n": 2,
+        "facets_n": 3,
+        "candidates_n": 0,
+        "graph_nodes": 3,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "session_created": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "progressive_status_valid": true,
+          "findings_scrubbed": true,
+          "facets_scrubbed": true,
+          "graph_scrubbed": true,
+          "candidates_scrubbed": true,
+          "evidence_has_provenance": true,
+          "regenerated_or_hit": true
+        },
+        "pass": true,
+        "raw_file": "disc-seed-org-domain-get.json",
+        "note": "GET regen-from-seed — Acc scrub still holds (forbiddenIdentitiesVersion)"
+      },
+      {
+        "label": "disc-sse-smith-or-primary",
+        "surface": "discovery-sse",
+        "method": "GET",
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoiSm9obiBTbWl0aCIsImgiOnsib3JnIjoiSUJNIiwiY2l0eSI6Ik5ldyBZb3JrIiwiY291bnRyeSI6IlVTIn0sImwiOiJlbiIsInQiOiIyMDI2LTA5LTIwVDAxOjEyOjA1LjA3MFoiLCJuIjoiNzc2YzYwNGUzYTQ5In0",
+        "ms": 4489,
+        "exit": 0,
+        "content_type": "text/event-stream; charset=utf-8",
+        "events_n": 22,
+        "event_names": [
+          "meta",
+          "progress",
+          "provider",
+          "provider",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "finding",
+          "facets",
+          "status",
+          "done"
+        ],
+        "finding_events_n": 15,
+        "facets_events_n": 1,
+        "id_count": 22,
+        "has_done": true,
+        "has_meta": true,
+        "forbiddenIdentitiesVersion_seen": true,
+        "leakage_count": 0,
+        "leakage": [],
+        "dossier": false,
+        "faces": 0,
+        "checks": {
+          "http_ok": true,
+          "content_type_sse": true,
+          "has_events": true,
+          "has_meta_or_progress": true,
+          "has_finding_or_status": true,
+          "no_Q1701775_any_chunk": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "ids_present": true,
+          "ids_monotonic": true
+        },
+        "pass": true,
+        "raw_file": "disc-sse-smith-or-primary.txt",
+        "note": "SSE scrub on emit — NEVER Q1701775/forbidden on any chunk"
+      },
+      {
+        "label": "disc-narrow-provider",
+        "surface": "discovery-narrow",
+        "method": "POST",
+        "sessionId": "ds1.eyJ2IjoxLCJzIjoiSm9obiBTbWl0aCIsImgiOnsib3JnIjoiSUJNIiwiY2l0eSI6Ik5ldyBZb3JrIiwiY291bnRyeSI6IlVTIn0sImwiOiJlbiIsInQiOiIyMDI2LTA5LTIwVDAxOjEyOjA1LjA3MFoiLCJuIjoiNzc2YzYwNGUzYTQ5In0",
+        "ms": 3262,
+        "exit": 0,
+        "ok": true,
+        "version": 3,
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "narrow": {
+          "applied": {
+            "provider": [
+              "openlibrary"
+            ]
+          },
+          "beforeCount": 15,
+          "afterCount": 8
+        },
+        "beforeCount": 15,
+        "afterCount": 8,
+        "findings_n": 8,
+        "dossier": false,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "checks": {
+          "http_ok": true,
+          "no_Q1701775": true,
+          "no_dossier": true,
+          "faces_zero": true,
+          "has_forbiddenIdentitiesVersion": true,
+          "narrow_applied": true
+        },
+        "pass": true,
+        "raw_file": "disc-narrow-provider.json",
+        "note": "POST narrow — Acc scrub on recompute emit"
+      },
+      {
+        "label": "preview-lookup-smith-ctx",
+        "surface": "lookup",
+        "method": "POST",
+        "ms": 5323,
+        "exit": 0,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "candidates",
+            "thin",
+            "need_context"
+          ],
+          "neverQid": "Q1701775",
+          "faces": 0
+        },
+        "raw_file": "preview-lookup-smith-ctx.json",
+        "note": "Smith+ctx on preview lookup — Acc scrub; never Q1701775"
+      }
+    ]
+  },
+  "core_alias": {
+    "verdict": "GO",
+    "pass": true,
+    "leakage_count": 0,
+    "pw": 0,
+    "cases": [
+      {
+        "label": "alias-assaf",
+        "surface": "lookup",
+        "method": "GET",
+        "ms": 2631,
+        "exit": 0,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": 2,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "qid": true,
+          "never_qid": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiExact": "dossier",
+          "qidExact": "Q47507930",
+          "neverQid": "Q1701775"
+        },
+        "raw_file": "alias-assaf.json"
+      },
+      {
+        "label": "alias-cohen",
+        "surface": "lookup",
+        "method": "GET",
+        "ms": 3017,
+        "exit": 0,
+        "ui": "need_context",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "need_context",
+            "thin",
+            "candidates"
+          ],
+          "faces": 0,
+          "neverQid": "Q1701775"
+        },
+        "raw_file": "alias-cohen.json"
+      },
+      {
+        "label": "alias-smith-post-ctx-nocache",
+        "surface": "lookup",
+        "method": "POST",
+        "ms": 8467,
+        "exit": 0,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "candidates",
+            "thin",
+            "need_context"
+          ],
+          "neverQid": "Q1701775",
+          "faces": 0
+        },
+        "raw_file": "alias-smith-post-ctx-nocache.json"
+      },
+      {
+        "label": "alias-smith-post-ctx-warm",
+        "surface": "lookup",
+        "method": "POST",
+        "ms": 9251,
+        "exit": 0,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "leakage": [],
+        "pw": 0,
+        "checks": {
+          "ui": true,
+          "never_qid": true,
+          "faces_zero": true,
+          "no_leakage": true,
+          "http_ok": true,
+          "pw_zero": true
+        },
+        "pass": true,
+        "expect": {
+          "uiIn": [
+            "candidates",
+            "thin",
+            "need_context"
+          ],
+          "neverQid": "Q1701775",
+          "faces": 0
+        },
+        "raw_file": "alias-smith-post-ctx-warm.json"
+      }
+    ]
+  },
+  "summary": {
+    "Acc-DISC": "GO",
+    "Core-alias": "GO",
+    "leakage_total": 0,
+    "pw_total": 0,
+    "sse": "PASS",
+    "narrow": "PASS",
+    "promote": "NOT DONE"
+  }
+}

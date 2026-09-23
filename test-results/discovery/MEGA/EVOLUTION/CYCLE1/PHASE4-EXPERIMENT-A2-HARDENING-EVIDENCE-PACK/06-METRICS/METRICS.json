@@ -1,0 +1,87 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "gate_mean_multi": 0.15,
+  "lanes": [
+    {
+      "lane": "B0",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "S01": 0.0,
+      "S04": 0.0,
+      "S05": 0.0,
+      "acc_leak": 0
+    },
+    {
+      "lane": "A",
+      "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "S01": 0.0,
+      "S04": 0.0,
+      "S05": 0.0,
+      "acc_leak": 0
+    },
+    {
+      "lane": "A2-bound",
+      "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+      "mean": 0.5189,
+      "median": null,
+      "min": null,
+      "max": null,
+      "S01": null,
+      "S04": null,
+      "S05": null,
+      "acc_leak": 0,
+      "caveat": "title-bridge REJECTED \u00b7 NOT promote"
+    },
+    {
+      "lane": "A2-safe",
+      "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+      "mean": 0.2074,
+      "median": 0.0667,
+      "min": 0.0,
+      "max": 0.5556,
+      "S01": 0.5556,
+      "S04": 0.0,
+      "S05": 0.0667,
+      "acc_leak": 0,
+      "distribution": [
+        0.5556,
+        0.0,
+        0.0667
+      ]
+    },
+    {
+      "lane": "A2-safe-hardening",
+      "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+      "mean": 0.2074,
+      "median": 0.0667,
+      "min": 0.0,
+      "max": 0.5556,
+      "S01": 0.5556,
+      "S04": 0.0,
+      "S05": 0.0667,
+      "acc_leak": 0,
+      "distribution": [
+        0.5556,
+        0.0,
+        0.0667
+      ],
+      "label": "no change / forensics-only"
+    }
+  ],
+  "live_forensics_reprobe": {
+    "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+    "S01": 0.5,
+    "S04": 0.0,
+    "S05": 0.0667,
+    "mean": 0.1889,
+    "note": "provider variance; S01-only prior gains remain seed-specific"
+  },
+  "s01_only_gains_label": "seed-specific (person canonical VIAF\u2229QID[\u2229OL]) \u2014 do not generalize to S04/S05"
+}

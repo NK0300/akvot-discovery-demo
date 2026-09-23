@@ -1,0 +1,1663 @@
+{
+  "baselineId": "B0",
+  "createdAt": "2026-09-20T09:52:07+03:00",
+  "sample": {
+    "policy": "GET r1 findings for seeds with n_findings>0",
+    "seedsUsed": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S10"
+    ],
+    "seedCount": 9,
+    "findingCount": 129
+  },
+  "distributionCounts": {
+    "identity-relevant": 40,
+    "corporate": 42,
+    "ownership": 0,
+    "affiliation": 2,
+    "professional": 5,
+    "geographic": 1,
+    "publication": 30,
+    "legal/public": 0,
+    "contact/public-endpoint": 0,
+    "historical": 0,
+    "relationship": 0,
+    "technical": 0,
+    "contextual": 9,
+    "other": 0
+  },
+  "distributionPercent": {
+    "identity-relevant": 31.01,
+    "corporate": 32.56,
+    "ownership": 0.0,
+    "affiliation": 1.55,
+    "professional": 3.88,
+    "geographic": 0.78,
+    "publication": 23.26,
+    "legal/public": 0.0,
+    "contact/public-endpoint": 0.0,
+    "historical": 0.0,
+    "relationship": 0.0,
+    "technical": 0.0,
+    "contextual": 6.98,
+    "other": 0.0
+  },
+  "perSeed": {
+    "S01": {
+      "seed": "Tim Berners-Lee",
+      "n": 10,
+      "counts": {
+        "identity-relevant": 1,
+        "publication": 8,
+        "contextual": 1
+      },
+      "pct": {
+        "identity-relevant": 10.0,
+        "publication": 80.0,
+        "contextual": 10.0
+      }
+    },
+    "S02": {
+      "seed": "John Smith",
+      "n": 21,
+      "counts": {
+        "identity-relevant": 8,
+        "publication": 7,
+        "contextual": 2,
+        "professional": 3,
+        "corporate": 1
+      },
+      "pct": {
+        "identity-relevant": 38.1,
+        "corporate": 4.76,
+        "professional": 14.29,
+        "publication": 33.33,
+        "contextual": 9.52
+      }
+    },
+    "S03": {
+      "seed": "Alex Morgan",
+      "n": 21,
+      "counts": {
+        "identity-relevant": 5,
+        "contextual": 6,
+        "geographic": 1,
+        "publication": 8,
+        "professional": 1
+      },
+      "pct": {
+        "identity-relevant": 23.81,
+        "professional": 4.76,
+        "geographic": 4.76,
+        "publication": 38.1,
+        "contextual": 28.57
+      }
+    },
+    "S04": {
+      "seed": "Stripe",
+      "n": 22,
+      "counts": {
+        "identity-relevant": 1,
+        "corporate": 21
+      },
+      "pct": {
+        "identity-relevant": 4.55,
+        "corporate": 95.45
+      }
+    },
+    "S05": {
+      "seed": "Red Cross",
+      "n": 22,
+      "counts": {
+        "identity-relevant": 4,
+        "corporate": 18
+      },
+      "pct": {
+        "identity-relevant": 18.18,
+        "corporate": 81.82
+      }
+    },
+    "S06": {
+      "seed": "openai.com",
+      "n": 7,
+      "counts": {
+        "identity-relevant": 6,
+        "corporate": 1
+      },
+      "pct": {
+        "identity-relevant": 85.71,
+        "corporate": 14.29
+      }
+    },
+    "S07": {
+      "seed": "בנימין נתניהו",
+      "n": 2,
+      "counts": {
+        "professional": 1,
+        "identity-relevant": 1
+      },
+      "pct": {
+        "identity-relevant": 50.0,
+        "professional": 50.0
+      }
+    },
+    "S08": {
+      "seed": "Tel Aviv University",
+      "n": 16,
+      "counts": {
+        "identity-relevant": 14,
+        "affiliation": 2
+      },
+      "pct": {
+        "identity-relevant": 87.5,
+        "affiliation": 12.5
+      }
+    },
+    "S10": {
+      "seed": "Francis Bacon",
+      "n": 8,
+      "counts": {
+        "publication": 7,
+        "corporate": 1
+      },
+      "pct": {
+        "corporate": 12.5,
+        "publication": 87.5
+      }
+    }
+  },
+  "examplesByClass": {
+    "identity-relevant": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee",
+        "classes": [
+          "identity-relevant",
+          "professional",
+          "geographic",
+          "historical"
+        ]
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith",
+        "classes": [
+          "identity-relevant",
+          "professional",
+          "geographic",
+          "historical"
+        ]
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith",
+        "classes": [
+          "identity-relevant",
+          "professional",
+          "historical"
+        ]
+      }
+    ],
+    "publication": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee",
+        "classes": [
+          "publication",
+          "historical"
+        ]
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee",
+        "classes": [
+          "publication"
+        ]
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22991023",
+        "title": "Tim Berners-Lee: A Magna Carta for the web",
+        "classes": [
+          "publication",
+          "legal/public",
+          "technical"
+        ]
+      }
+    ],
+    "contextual": [
+      {
+        "seedId": "S01",
+        "findingId": "wp-en-Tim_Berners_Lee",
+        "title": "Tim Berners-Lee",
+        "classes": [
+          "contextual"
+        ]
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wp-en-John_Smith",
+        "title": "John Smith",
+        "classes": [
+          "contextual"
+        ]
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wp-en-John_Smith_Chippewa_",
+        "title": "John Smith (Chippewa)",
+        "classes": [
+          "contextual"
+        ]
+      }
+    ],
+    "professional": [
+      {
+        "seedId": "S02",
+        "findingId": "wp-en-John_Smith_explorer_",
+        "title": "John Smith (explorer)",
+        "classes": [
+          "professional"
+        ]
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wp-en-John_Smith_Labour_Party_leader_",
+        "title": "John Smith (Labour Party leader)",
+        "classes": [
+          "professional"
+        ]
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wp-en-John_Smith_actor_",
+        "title": "John Smith (actor)",
+        "classes": [
+          "professional"
+        ]
+      }
+    ],
+    "corporate": [
+      {
+        "seedId": "S02",
+        "findingId": "wp-en-John_Smith_s_Brewery",
+        "title": "John Smith's Brewery",
+        "classes": [
+          "corporate"
+        ]
+      },
+      {
+        "seedId": "S04",
+        "findingId": "wd-Q3421342",
+        "title": "stripe",
+        "classes": [
+          "corporate",
+          "contextual"
+        ]
+      },
+      {
+        "seedId": "S04",
+        "findingId": "wd-Q127900502",
+        "title": "Stripe",
+        "classes": [
+          "corporate",
+          "contextual"
+        ]
+      }
+    ],
+    "geographic": [
+      {
+        "seedId": "S03",
+        "findingId": "wd-Q16527618",
+        "title": "Alex Morgan",
+        "classes": [
+          "geographic"
+        ]
+      }
+    ],
+    "affiliation": [
+      {
+        "seedId": "S08",
+        "findingId": "wd-Q6968183",
+        "title": "Steve Tisch School of Film and Television",
+        "classes": [
+          "corporate",
+          "affiliation",
+          "geographic"
+        ]
+      },
+      {
+        "seedId": "S08",
+        "findingId": "wd-Q16128744",
+        "title": "Cohn Institute for the History and Philosophy of Science and Ideas",
+        "classes": [
+          "affiliation",
+          "corporate",
+          "geographic"
+        ]
+      }
+    ]
+  },
+  "classifiedSample": [
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q80",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q120373140",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "publication",
+      "classes": [
+        "publication",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q120373262",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q22991023",
+      "title": "Tim Berners-Lee: A Magna Carta for the web",
+      "primaryClass": "publication",
+      "classes": [
+        "publication",
+        "legal/public",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q22946133",
+      "title": "Tim Berners-Lee: The year open data went worldwide",
+      "primaryClass": "publication",
+      "classes": [
+        "publication",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q22980417",
+      "title": "Tim Berners-Lee: The next web",
+      "primaryClass": "publication",
+      "classes": [
+        "publication",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q19761597",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wd-Q55693401",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "ol-OL25245A",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "publication",
+      "classes": [
+        "publication",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S01",
+      "findingId": "wp-en-Tim_Berners_Lee",
+      "title": "Tim Berners-Lee",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q3182477",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q332377",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q6258357",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q6258267",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "affiliation",
+        "professional",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q6258259",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q541460",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wd-Q991529",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL177707A",
+      "title": "John Smith",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL12988612A",
+      "title": "John Smith",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL2642558A",
+      "title": "John Smith",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL2404636A",
+      "title": "John Smith",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL15752758A",
+      "title": "John Smith",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL9615641A",
+      "title": "John SMITH",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL4474728A",
+      "title": "John Smith",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "ol-OL646156A",
+      "title": "John Smith",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wp-en-John_Smith",
+      "title": "John Smith",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wp-en-John_Smith_explorer_",
+      "title": "John Smith (explorer)",
+      "primaryClass": "professional",
+      "classes": [
+        "professional"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wp-en-John_Smith_Labour_Party_leader_",
+      "title": "John Smith (Labour Party leader)",
+      "primaryClass": "professional",
+      "classes": [
+        "professional"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wp-en-John_Smith_s_Brewery",
+      "title": "John Smith's Brewery",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wp-en-John_Smith_Chippewa_",
+      "title": "John Smith (Chippewa)",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S02",
+      "findingId": "wp-en-John_Smith_actor_",
+      "title": "John Smith (actor)",
+      "primaryClass": "professional",
+      "classes": [
+        "professional"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q233510",
+      "title": "Alex Morgan",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q126278685",
+      "title": "Alex Morgan",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q131542437",
+      "title": "Alex Morgan",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q43302646",
+      "title": "Alex Morgan",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q42805830",
+      "title": "Alex Morgan",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q16527618",
+      "title": "Alex Morgan",
+      "primaryClass": "geographic",
+      "classes": [
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wd-Q55603580",
+      "title": "Alex Morgan",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "professional"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL1437248A",
+      "title": "Alex Morgan",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL7414531A",
+      "title": "Alex Morgan",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL3225320A",
+      "title": "Alex, Morgan",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL11306519A",
+      "title": "Alex Morgan Lucass",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL11281210A",
+      "title": "Alex Morgan Ronard",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL15840118A",
+      "title": "Alex Morgan,John Siraj-Blatchford",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL9647235A",
+      "title": "Alex Brawl Morgan",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "ol-OL4794660A",
+      "title": "Donald S. Rowland",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wp-en-Alex_Morgan",
+      "title": "Alex Morgan",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wp-en-Alex_Morgan_Australian_footballer_",
+      "title": "Alex Morgan (Australian footballer)",
+      "primaryClass": "professional",
+      "classes": [
+        "professional"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wp-en-Alex_Morgan_runner_",
+      "title": "Alex Morgan (runner)",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wp-en-Alex_Morgan_disambiguation_",
+      "title": "Alex Morgan (disambiguation)",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wp-en-Alex_Mol_an",
+      "title": "Alex Molčan",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S03",
+      "findingId": "wp-en-Alex_Morales",
+      "title": "Alex Morales",
+      "primaryClass": "contextual",
+      "classes": [
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q7624104",
+      "title": "Stripe",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic",
+        "technical",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q3421342",
+      "title": "stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q127900502",
+      "title": "Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q117454382",
+      "title": "Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q297115",
+      "title": "Meloidae",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q469754",
+      "title": "Perca flavescens",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q842647",
+      "title": "striped bass",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wd-Q368495",
+      "title": "striped skunk",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL8376862A",
+      "title": "Five Stripe Books",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL8613090A",
+      "title": "Adelle Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL13079935A",
+      "title": "Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL10372320A",
+      "title": "STRIPE",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL3492368A",
+      "title": "Stephen Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL14670551A",
+      "title": "Stripe Journals",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL3905682A",
+      "title": "Subdued Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "ol-OL15943217A",
+      "title": "Sebastian Friedrich Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wp-en-Stripe",
+      "title": "Stripe",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wp-en-Striped_hyena",
+      "title": "Striped hyena",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wp-en-Stripe_Inc_",
+      "title": "Stripe, Inc.",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "contextual"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wp-en-Striped_polecat",
+      "title": "Striped polecat",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wp-en-Striped_skunk",
+      "title": "Striped skunk",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S04",
+      "findingId": "wp-en-Stripes_film_",
+      "title": "Stripes (film)",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q470110",
+      "title": "American Red Cross",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q7178",
+      "title": "International Red Cross and Red Crescent Movement",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q48438",
+      "title": "Saint George",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q7305591",
+      "title": "Redd Kross",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q104700248",
+      "title": "Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q1968122",
+      "title": "National Red Cross and Red Crescent society",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q116059498",
+      "title": "Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wd-Q50320550",
+      "title": "Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL17804A",
+      "title": "American National Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL124327A",
+      "title": "International Committee of the Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL2917704A",
+      "title": "Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL10303910A",
+      "title": "American Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL4511273A",
+      "title": "Red Cross.",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL6290095A",
+      "title": "Red Cross. Portuguese Red Cross.",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL13846643A",
+      "title": "Red Cross. Portuguese Red Cross",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "ol-OL2343831A",
+      "title": "Red Cross. Junior Red Cross.",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wp-en-Red_Cross",
+      "title": "Red Cross",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wp-en-Red_Cross_parcel",
+      "title": "Red Cross parcel",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wp-en-Red_Cross_Youth_Philippines_",
+      "title": "Red Cross Youth (Philippines)",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wp-en-Red_Cross_of_Constantine",
+      "title": "Red Cross of Constantine",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wp-en-Red_crossbill",
+      "title": "Red crossbill",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S05",
+      "findingId": "wp-en-Red_Cross_EP_",
+      "title": "Red Cross (EP)",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wd-Q21708200",
+      "title": "OpenAI",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wp-en-Openai_com",
+      "title": "Openai.com",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wp-en-OpenAI_Codex_AI_agent_",
+      "title": "OpenAI Codex (AI agent)",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wp-en-OpenAI_Codex_language_model_",
+      "title": "OpenAI Codex (language model)",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wp-en-OpenAI_Codex",
+      "title": "OpenAI Codex",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wp-en-OpenAI_containment_escapes",
+      "title": "OpenAI containment escapes",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S06",
+      "findingId": "wp-en-Opera_com",
+      "title": "Opera.com",
+      "primaryClass": "corporate",
+      "classes": [
+        "corporate",
+        "contact/public-endpoint",
+        "technical"
+      ]
+    },
+    {
+      "seedId": "S07",
+      "findingId": "wd-Q43723",
+      "title": "Benjamin Netanyahu",
+      "primaryClass": "professional",
+      "classes": [
+        "professional",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S07",
+      "findingId": "wp-en-_",
+      "title": "בנימין נתניהו",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q319239",
+      "title": "Tel Aviv University",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q6968183",
+      "title": "Steve Tisch School of Film and Television",
+      "primaryClass": "affiliation",
+      "classes": [
+        "corporate",
+        "affiliation",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q99290176",
+      "title": "Tel Aviv University Iby and Aladar Fleischman Faculty of Engineering",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q100998795",
+      "title": "Tel Aviv University School of Medicine",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "affiliation",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q16128744",
+      "title": "Cohn Institute for the History and Philosophy of Science and Ideas",
+      "primaryClass": "affiliation",
+      "classes": [
+        "affiliation",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q15660337",
+      "title": "The Faculty of Social Sciences at Tel Aviv University",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q113667076",
+      "title": "Tel Aviv University Awards an Honorary Degree in Philosophy to Prime Minister Golda Meir",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "professional",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "wd-Q101012618",
+      "title": "Tel-Aviv University Department of Psychology",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL12268891A",
+      "title": "TEL AVIV UNIVERSITY",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL16254718A",
+      "title": "Tel Aviv University Trust",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL15918690A",
+      "title": "Tel Aviv University Law Review",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic",
+        "legal/public"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL5523617A",
+      "title": "Tel Aviv. University Conference on Erythropoiesis",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL16158207A",
+      "title": "Student Union Tel Aviv University Students",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL11658485A",
+      "title": "Canadian Friends of Tel Aviv University",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL11482643A",
+      "title": "American Friends of Tel Aviv University",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "publication",
+        "corporate",
+        "geographic",
+        "historical"
+      ]
+    },
+    {
+      "seedId": "S08",
+      "findingId": "ol-OL9188582A",
+      "title": "Michael Keidar Ph.D.  Tel Aviv University",
+      "primaryClass": "identity-relevant",
+      "classes": [
+        "identity-relevant",
+        "corporate",
+        "geographic"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL23720A",
+      "title": "Francis Bacon",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL82840A",
+      "title": "Francis Bacon",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL2029650A",
+      "title": "Francis Bacon Library",
+      "primaryClass": "corporate",
+      "classes": [
+        "publication",
+        "corporate"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL2335032A",
+      "title": "David Francis Bacon",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL15242943A",
+      "title": "Francis Bacon",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL2432505A",
+      "title": "Francis Bacon Crocker",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL15865902A",
+      "title": "Francis Bacon",
+      "primaryClass": "publication",
+      "classes": [
+        "publication"
+      ]
+    },
+    {
+      "seedId": "S10",
+      "findingId": "ol-OL156101A",
+      "title": "Francis Bacon James",
+      "primaryClass": "publication",
+      "classes": [
+        "publication",
+        "legal/public"
+      ]
+    }
+  ]
+}

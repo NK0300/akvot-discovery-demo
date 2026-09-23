@@ -1,0 +1,147 @@
+{
+  "stamp": "2026-09-20T10:31:12+03:00",
+  "stampLabel": "2026-09-20 10:31 IDT",
+  "experiment": "EXP-A2-COALESCE",
+  "wave": "typed-softref-enrich",
+  "agent": "\u05e9\u05e8\u05ea",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "target": null,
+    "readyState": "READY",
+    "env": {
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "priorBound1Preview": {
+    "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+    "url": "https://akvot-simple-demo-2u3mwx1k4-k-akvot.vercel.app",
+    "note": "Bound #1 PASS \u00b7 mean multi=0 (no typed cross-family refs yet)"
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "status": "UNCHANGED"
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "status": "LOCKED / UNCHANGED"
+    }
+  },
+  "smoke": {
+    "mean_multi_rate": 0.2408,
+    "pooled_multi_rate": 0.2143,
+    "acc_leak": 0,
+    "s01_findings_n": 18,
+    "gate": 0.15,
+    "mean_pass": true,
+    "per_seed": [
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "findings_n": 18,
+        "multi_n": 10,
+        "multi_rate": 0.5556,
+        "viaf_n": 10,
+        "providers_ge2": 10,
+        "acc_leak": 0,
+        "families_union": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ]
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "findings_n": 22,
+        "multi_n": 0,
+        "multi_rate": 0,
+        "viaf_n": 8,
+        "providers_ge2": 0,
+        "acc_leak": 0,
+        "families_union": [
+          "openlibrary",
+          "viaf",
+          "wikipedia"
+        ]
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "findings_n": 30,
+        "multi_n": 5,
+        "multi_rate": 0.1667,
+        "viaf_n": 11,
+        "providers_ge2": 5,
+        "acc_leak": 0,
+        "families_union": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ]
+      }
+    ]
+  },
+  "units": {
+    "providers.viaf": {
+      "passed": 44,
+      "failed": 0
+    },
+    "corroboration.viaf": {
+      "passed": 43,
+      "failed": 0
+    },
+    "orchestrator": {
+      "passed": 113,
+      "failed": 0
+    },
+    "adversarial.acc": {
+      "passed": 65,
+      "failed": 0
+    },
+    "prCloseout.acc": {
+      "passed": 107,
+      "failed": 0
+    }
+  },
+  "note": "Preview only. No --prod. No alias retarget. HOLD promote.",
+  "problem": "Bound #1 removed title: coalesce; mean multi=0 because providers did not share viaf:/qid:/ol: across families",
+  "fix": {
+    "viaf": "AutoSuggest \u2192 viaf: always; WKP/qid when AutoSuggest exposes Wikidata QID",
+    "wikidata": "optional cheap wbgetentities P214 \u2192 viaf: on same finding",
+    "openlibrary": "author remote_ids \u2192 viaf: + qid:; emit ol: consistently",
+    "coalesceKeys": "accept qid: entityRefs; never title:",
+    "bounds": "Acc scrub AFTER coalesce \u00b7 never dossier \u00b7 entity-agnostic \u00b7 homonym no merge"
+  },
+  "code": [
+    "api/lib/discovery/providers.js",
+    "api/lib/discovery/store.js (coalesceKeysForFinding qid: accept)",
+    "api/lib/discovery/providers.viaf.test.mjs",
+    "api/lib/discovery/corroboration.viaf.test.mjs"
+  ],
+  "s01_sample": {
+    "id": "wd-Q80",
+    "providers": [
+      "wikidata",
+      "openlibrary",
+      "viaf"
+    ],
+    "entityRefs": [
+      "qid:Q80",
+      "wd-Q80",
+      "viaf:85312226",
+      "ol:OL25245A",
+      "ol-OL25245A"
+    ],
+    "evidence_n": 10
+  }
+}

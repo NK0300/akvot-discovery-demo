@@ -1,0 +1,1074 @@
+{
+  "meta": {
+    "role": "בודק",
+    "program": "Akvot Phase B MEGA Q–R",
+    "checkedAt": "2026-09-20T07:23:09+03:00",
+    "zone": "Asia/Jerusalem (IDT / UTC+3)",
+    "promote": "HOLD",
+    "coreAlias": {
+      "url": "https://akvot-simple-demo.vercel.app",
+      "expect": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "observed": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "pass": true
+    },
+    "hardenPreview": {
+      "url": "https://akvot-simple-demo-kppgm355g-k-akvot.vercel.app",
+      "expect": "dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+      "observed": "dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+      "pass": true,
+      "seedsPass": 3,
+      "storeBackend": "fs-regen",
+      "storeNote": "fs-regen ≠ promote SoT · KV blocked",
+      "entityAgnostic": true,
+      "leakage": 0
+    },
+    "core": {
+      "health": {
+        "ok": true,
+        "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+        "expect": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+        "httpStatus": 200,
+        "ms": 2670
+      },
+      "assaf": {
+        "ok": true,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "ms": 2805,
+        "httpStatus": 200
+      },
+      "cohen": {
+        "ok": true,
+        "ui": "need_context",
+        "ms": 3118,
+        "httpStatus": 200
+      },
+      "smith": {
+        "ok": true,
+        "ui": "candidates",
+        "faces": 0,
+        "pw": 0,
+        "ms": 8453,
+        "httpStatus": 200
+      },
+      "leakage": 0,
+      "pw": 0,
+      "pass": true
+    },
+    "seeds": [
+      {
+        "id": "S1",
+        "seed": "דוד כהן",
+        "pass": true,
+        "findings": 13,
+        "regenerated": true,
+        "store": "fs-regen",
+        "leakage": 0,
+        "sseEvents": 20,
+        "narrow": "13→13",
+        "fails": [],
+        "forbiddenIdentitiesVersion": "2026-09-19.1"
+      },
+      {
+        "id": "S2",
+        "seed": "Alex Morgan",
+        "pass": true,
+        "findings": 15,
+        "regenerated": true,
+        "store": "fs-regen",
+        "leakage": 0,
+        "sseEvents": 22,
+        "narrow": "15→15",
+        "fails": [],
+        "forbiddenIdentitiesVersion": "2026-09-19.1"
+      },
+      {
+        "id": "S3",
+        "seed": "example.org",
+        "pass": true,
+        "findings": 2,
+        "regenerated": true,
+        "store": "fs-regen",
+        "leakage": 0,
+        "sseEvents": 9,
+        "narrow": "2→2",
+        "fails": [],
+        "forbiddenIdentitiesVersion": "2026-09-19.1"
+      }
+    ],
+    "unit": {
+      "unitForbidden": {
+        "label": "forbiddenIdentities",
+        "ok": true,
+        "status": "PASS",
+        "exit": 0,
+        "detail": "1\nPASS",
+        "evidence": "test-results/discovery/MEGA/raw/adversarial/forbiddenIdentities.log"
+      },
+      "unitAdv": {
+        "label": "adversarial-acc",
+        "ok": true,
+        "status": "PASS",
+        "exit": 0,
+        "detail": "1701775\nPASS",
+        "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log"
+      },
+      "unitSession": {
+        "label": "sessionStore",
+        "ok": true,
+        "status": "PASS",
+        "exit": 0,
+        "detail": "1\nPASS",
+        "evidence": "test-results/discovery/MEGA/raw/adversarial/sessionStore.log"
+      },
+      "unitOrch": {
+        "label": "discovery-orchestrator",
+        "ok": true,
+        "status": "PASS",
+        "exit": 0,
+        "detail": "1701775\nPASS",
+        "evidence": "test-results/discovery/MEGA/raw/adversarial/discovery-orchestrator.log"
+      }
+    },
+    "advLive": [
+      {
+        "id": "ADV-L1",
+        "name": "collision-name-cohen",
+        "status": "PASS",
+        "evidence": "MEGA/raw/adversarial/ADV-L1-collision-cohen.json",
+        "detail": "http=201 findings=13 leak=0 bans=none"
+      },
+      {
+        "id": "ADV-L2",
+        "name": "ambiguous-alex-morgan",
+        "status": "PASS",
+        "evidence": "MEGA/raw/adversarial/ADV-L2-ambiguous-alex.json",
+        "detail": "http=201 findings=15 leak=0"
+      },
+      {
+        "id": "ADV-L3",
+        "name": "org-seed-example.org",
+        "status": "PASS",
+        "evidence": "MEGA/raw/adversarial/ADV-L3-org-example.json",
+        "detail": "http=201 findings=2 leak=0"
+      },
+      {
+        "id": "ADV-L4",
+        "name": "forbidden-qid-inject-seed",
+        "status": "PASS",
+        "evidence": "MEGA/raw/adversarial/ADV-L4-forbidden-qid-inject.json",
+        "detail": "http=201 entityLeak=0 rawTokens=3 bans=none",
+        "note": "RUNNOW on Preview; KV inject/rehydrate path DEFERRED"
+      }
+    ],
+    "counts": {
+      "PASS": 88,
+      "FAIL": 0,
+      "DEFERRED": 1,
+      "BLOCKED_KV": 11
+    },
+    "matrixSize": 100
+  },
+  "cases": [
+    {
+      "id": 1,
+      "category": "Q-smoke",
+      "title": "Core alias health.build == dpl_8ag…",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-health.json",
+      "notes": "build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "runnow": true
+    },
+    {
+      "id": 2,
+      "category": "Q-smoke",
+      "title": "Core Assaf → dossier/Q47507930",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-assaf.json",
+      "notes": "ui=dossier qid=Q47507930",
+      "runnow": true
+    },
+    {
+      "id": 3,
+      "category": "Q-smoke",
+      "title": "Core כהן soft (not dossier)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-cohen.json",
+      "notes": "ui=need_context",
+      "runnow": true
+    },
+    {
+      "id": 4,
+      "category": "Q-smoke",
+      "title": "Core Smith+IBM/NY/US soft",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-smith.json",
+      "notes": "ui=candidates",
+      "runnow": true
+    },
+    {
+      "id": 5,
+      "category": "Q-smoke",
+      "title": "Preview health.build == dpl_BMh…",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/preview-health.json",
+      "notes": "build=dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+      "runnow": true
+    },
+    {
+      "id": 6,
+      "category": "Q-smoke",
+      "title": "POST session S1 דוד כהן",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-david-cohen.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 7,
+      "category": "Q-smoke",
+      "title": "POST session S2 Alex Morgan",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-alex-morgan.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 8,
+      "category": "Q-smoke",
+      "title": "POST session S3 example.org",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-example-org.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 9,
+      "category": "Q-smoke",
+      "title": "≥3 Seeds create OK",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "seedsPass=3",
+      "runnow": true
+    },
+    {
+      "id": 10,
+      "category": "Q-smoke",
+      "title": "Entity-agnostic top-level keys",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "keys=createdAt,evidence,facets,findings,forbiddenIdentitiesVersion…",
+      "runnow": true
+    },
+    {
+      "id": 11,
+      "category": "Q-smoke",
+      "title": "Core leakage=0 (smoke)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/",
+      "notes": "leak=0",
+      "runnow": true
+    },
+    {
+      "id": 12,
+      "category": "Q-smoke",
+      "title": "Core pw=0 (smoke)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-smith.json",
+      "notes": "pw=0 faces=0",
+      "runnow": true
+    },
+    {
+      "id": 13,
+      "category": "Q-smoke",
+      "title": "Preview findings≥1 all seeds",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 14,
+      "category": "Q-smoke",
+      "title": "forbiddenIdentitiesVersion present",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "2026-09-19.1,2026-09-19.1,2026-09-19.1",
+      "runnow": true
+    },
+    {
+      "id": 15,
+      "category": "Q-smoke",
+      "title": "No promote / alias rewrite this run",
+      "status": "PASS",
+      "evidence": "MEGA/QR-RUN-STATUS-בודק-2026-09-20.md",
+      "notes": "HOLD promote enforced",
+      "runnow": true
+    },
+    {
+      "id": 16,
+      "category": "R-regression",
+      "title": "Core alias LOCKED dpl match",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-health.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 17,
+      "category": "R-regression",
+      "title": "Assaf KEEP regression",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-assaf.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 18,
+      "category": "R-regression",
+      "title": "כהן soft regression",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-cohen.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 19,
+      "category": "R-regression",
+      "title": "Smith soft + no Q1701775",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-smith.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 20,
+      "category": "R-regression",
+      "title": "Harden Preview dpl match",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/preview-health.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 21,
+      "category": "R-regression",
+      "title": "S1 full path PASS",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-david-cohen.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 22,
+      "category": "R-regression",
+      "title": "S2 full path PASS",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-alex-morgan.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 23,
+      "category": "R-regression",
+      "title": "S3 full path PASS",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-example-org.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 24,
+      "category": "R-regression",
+      "title": "Overall Harden recheck",
+      "status": "PASS",
+      "evidence": "MEGA/QR-PREVIEW-HARDEN-RECHECK-בודק-2026-09-20.md",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 25,
+      "category": "R-regression",
+      "title": "Overall Core smoke",
+      "status": "PASS",
+      "evidence": "MEGA/QR-CORE-ALIAS-SMOKE-בודק-2026-09-20.md",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 26,
+      "category": "R-regression",
+      "title": "Unit forbiddenIdentities",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/forbiddenIdentities.log",
+      "notes": "1\nPASS",
+      "runnow": true
+    },
+    {
+      "id": 27,
+      "category": "R-regression",
+      "title": "Unit adversarial.acc",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log",
+      "notes": "1701775\nPASS",
+      "runnow": true
+    },
+    {
+      "id": 28,
+      "category": "R-regression",
+      "title": "Unit sessionStore",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/sessionStore.log",
+      "notes": "1\nPASS",
+      "runnow": true
+    },
+    {
+      "id": 29,
+      "category": "R-regression",
+      "title": "Unit discovery orchestrator",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/discovery-orchestrator.log",
+      "notes": "1701775\nPASS",
+      "runnow": true
+    },
+    {
+      "id": 30,
+      "category": "R-regression",
+      "title": "Prior PHASE-B-HARDEN-QA not reused as sole evidence",
+      "status": "PASS",
+      "evidence": "MEGA/raw/harden/",
+      "notes": "Fresh recheck this run",
+      "runnow": true
+    },
+    {
+      "id": 31,
+      "category": "Acc",
+      "title": "Acc version 2026-09-19.1 on S1",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-david-cohen.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 32,
+      "category": "Acc",
+      "title": "Acc version on S2",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-alex-morgan.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 33,
+      "category": "Acc",
+      "title": "Acc version on S3",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/POST-example-org.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 34,
+      "category": "Acc",
+      "title": "Core Acc P0 denylist unit",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/forbiddenIdentities.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 35,
+      "category": "Acc",
+      "title": "Discovery Acc scrub unit",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 36,
+      "category": "Acc",
+      "title": "No dossier on Discovery surfaces",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 37,
+      "category": "Acc",
+      "title": "No faces on Discovery surfaces",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 38,
+      "category": "Acc",
+      "title": "Acc leakage aggregate Preview=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "hits=0",
+      "runnow": true
+    },
+    {
+      "id": 39,
+      "category": "Acc",
+      "title": "Acc on narrow responses",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 40,
+      "category": "Acc",
+      "title": "Acc on SSE stream",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 41,
+      "category": "scrub",
+      "title": "POST scrub no forbidden entity",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 42,
+      "category": "scrub",
+      "title": "GET scrub no forbidden entity",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 43,
+      "category": "scrub",
+      "title": "SSE scrub no forbidden entity",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 44,
+      "category": "scrub",
+      "title": "narrow scrub no forbidden entity",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 45,
+      "category": "scrub",
+      "title": "ADV fixture scrub unit",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 46,
+      "category": "scrub",
+      "title": "Static scrub analysis present",
+      "status": "PASS",
+      "evidence": "MEGA/SCRUB-STATIC-ANALYSIS.md",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 47,
+      "category": "scrub",
+      "title": "KV HIT Acc scrub path",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "No UPSTASH/KV env — cannot validate rehydrate HIT scrub",
+      "runnow": false
+    },
+    {
+      "id": 48,
+      "category": "scrub",
+      "title": "Cache-HIT Acc revalidation",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Requires KV SoT Preview",
+      "runnow": false
+    },
+    {
+      "id": 49,
+      "category": "scrub",
+      "title": "Poison finding inject scrub (unit)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log",
+      "notes": "ADV-03 class",
+      "runnow": true
+    },
+    {
+      "id": 50,
+      "category": "scrub",
+      "title": "Graph/facet scrub (unit)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 51,
+      "category": "SSE",
+      "title": "S1 SSE text/event-stream",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/SSE-david-cohen.txt",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 52,
+      "category": "SSE",
+      "title": "S2 SSE text/event-stream",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/SSE-alex-morgan.txt",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 53,
+      "category": "SSE",
+      "title": "S3 SSE text/event-stream",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/SSE-example-org.txt",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 54,
+      "category": "SSE",
+      "title": "SSE meta/progress/done shape S1",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/SSE-david-cohen.meta.json",
+      "notes": "types=meta,progress,provider,finding,facets,status,done",
+      "runnow": true
+    },
+    {
+      "id": 55,
+      "category": "SSE",
+      "title": "SSE event count ≥1 all seeds",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 56,
+      "category": "SSE",
+      "title": "SSE leakage=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 57,
+      "category": "SSE",
+      "title": "SSE cursor/id presence (soft)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 58,
+      "category": "SSE",
+      "title": "SSE after KV durable resume",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Resume-from-cursor needs KV SoT",
+      "runnow": false
+    },
+    {
+      "id": 59,
+      "category": "SSE",
+      "title": "SSE multi-instance fanout",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Cross-instance requires KV",
+      "runnow": false
+    },
+    {
+      "id": 60,
+      "category": "SSE",
+      "title": "SSE unit orchestrator coverage",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/discovery-orchestrator.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 61,
+      "category": "narrow",
+      "title": "S1 POST /narrow 200",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/NARROW-david-cohen.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 62,
+      "category": "narrow",
+      "title": "S2 POST /narrow 200",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/NARROW-alex-morgan.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 63,
+      "category": "narrow",
+      "title": "S3 POST /narrow 200",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/NARROW-example-org.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 64,
+      "category": "narrow",
+      "title": "narrow server recompute (version present)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 65,
+      "category": "narrow",
+      "title": "narrow afterCount ≤ beforeCount (soft)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 66,
+      "category": "narrow",
+      "title": "narrow Acc scrub",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 67,
+      "category": "narrow",
+      "title": "narrow no dossier/faces",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 68,
+      "category": "narrow",
+      "title": "narrow unit coverage",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/discovery-orchestrator.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 69,
+      "category": "narrow",
+      "title": "narrow after KV rehydrate",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Needs KV HIT session",
+      "runnow": false
+    },
+    {
+      "id": 70,
+      "category": "narrow",
+      "title": "narrow facet filter echo safe",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 71,
+      "category": "regen",
+      "title": "GET S1 regenerated observed",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/GET-david-cohen.json",
+      "notes": "regenerated=true",
+      "runnow": true
+    },
+    {
+      "id": 72,
+      "category": "regen",
+      "title": "GET S2 regenerated observed",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/GET-alex-morgan.json",
+      "notes": "regenerated=true",
+      "runnow": true
+    },
+    {
+      "id": 73,
+      "category": "regen",
+      "title": "GET S3 regenerated observed",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/GET-example-org.json",
+      "notes": "regenerated=true",
+      "runnow": true
+    },
+    {
+      "id": 74,
+      "category": "regen",
+      "title": "storeBackend documented",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "storeBackend=fs-regen",
+      "runnow": true
+    },
+    {
+      "id": 75,
+      "category": "regen",
+      "title": "storeBackend is fs-regen (expected until KV)",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "NOTE: fs-regen ≠ promote SoT",
+      "runnow": true
+    },
+    {
+      "id": 76,
+      "category": "regen",
+      "title": "fs-regen ≠ promote SoT gate",
+      "status": "PASS",
+      "evidence": "MEGA/QR-RUN-STATUS-בודק-2026-09-20.md",
+      "notes": "HOLD promote because not kv/upstash",
+      "runnow": true
+    },
+    {
+      "id": 77,
+      "category": "regen",
+      "title": "sessionStore unit",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/sessionStore.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 78,
+      "category": "regen",
+      "title": "KV durable GET HIT",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "No KV credentials",
+      "runnow": false
+    },
+    {
+      "id": 79,
+      "category": "regen",
+      "title": "Cross-instance durable without regen",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Requires KV SoT",
+      "runnow": false
+    },
+    {
+      "id": 80,
+      "category": "regen",
+      "title": "Promote gate storeBackend!=fs-regen",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Blocked until KV Preview Evidence",
+      "runnow": false
+    },
+    {
+      "id": 81,
+      "category": "leakage",
+      "title": "Core leakage=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 82,
+      "category": "leakage",
+      "title": "Preview aggregate leakage=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 83,
+      "category": "leakage",
+      "title": "ADV-L4 entityLeak=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/ADV-L4-forbidden-qid-inject.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 84,
+      "category": "leakage",
+      "title": "Deep-scan POST/GET/SSE/narrow",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 85,
+      "category": "leakage",
+      "title": "KV stored forbidden never trusted",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "KV read→Acc scrub untested live",
+      "runnow": false
+    },
+    {
+      "id": 86,
+      "category": "pw",
+      "title": "Core Smith pretty-wrong pw=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-smith.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 87,
+      "category": "pw",
+      "title": "Core Smith faces=0",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/core/core-smith.json",
+      "notes": "faces=0",
+      "runnow": true
+    },
+    {
+      "id": 88,
+      "category": "pw",
+      "title": "Discovery never dossier commit",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/harden/",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 89,
+      "category": "pw",
+      "title": "ADV-04 pretty-wrong guards unit",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/adversarial-acc.log",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 90,
+      "category": "pw",
+      "title": "Pretty-wrong after KV rehydrate",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "Deferred until KV Preview",
+      "runnow": false
+    },
+    {
+      "id": 91,
+      "category": "adversarial",
+      "title": "ADV-01 same-name fixture+unit",
+      "status": "PASS",
+      "evidence": "MEGA/adversarial/ADV-01-same-name-different-person.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 92,
+      "category": "adversarial",
+      "title": "ADV-02 ambiguous HE/EN fixture+unit",
+      "status": "PASS",
+      "evidence": "MEGA/adversarial/ADV-02-ambiguous-he-en.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 93,
+      "category": "adversarial",
+      "title": "ADV-03 entity collision fixture+unit",
+      "status": "PASS",
+      "evidence": "MEGA/adversarial/ADV-03-entity-collision.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 94,
+      "category": "adversarial",
+      "title": "ADV-04 pretty-wrong guards fixture+unit",
+      "status": "PASS",
+      "evidence": "MEGA/adversarial/ADV-04-pretty-wrong-guards.json",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": 95,
+      "category": "adversarial",
+      "title": "ADV-L1 live collision name Preview",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/ADV-L1-collision-cohen.json",
+      "notes": "RUNNOW",
+      "runnow": true
+    },
+    {
+      "id": 96,
+      "category": "adversarial",
+      "title": "ADV-L2 live ambiguous seed Preview",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/ADV-L2-ambiguous-alex.json",
+      "notes": "RUNNOW",
+      "runnow": true
+    },
+    {
+      "id": 97,
+      "category": "adversarial",
+      "title": "ADV-L3 live org seed Preview",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/ADV-L3-org-example.json",
+      "notes": "RUNNOW",
+      "runnow": true
+    },
+    {
+      "id": 98,
+      "category": "adversarial",
+      "title": "ADV-L4 forbidden QID inject seed Preview",
+      "status": "PASS",
+      "evidence": "test-results/discovery/MEGA/raw/adversarial/ADV-L4-forbidden-qid-inject.json",
+      "notes": "RUNNOW · entity commit scrub",
+      "runnow": true
+    },
+    {
+      "id": 99,
+      "category": "adversarial",
+      "title": "ADV-KV poison rehydrate scrub",
+      "status": "BLOCKED_KV",
+      "evidence": null,
+      "notes": "DEFERRED until KV Preview",
+      "runnow": false
+    },
+    {
+      "id": 100,
+      "category": "adversarial",
+      "title": "ADV-KV cross-instance collision merge ban",
+      "status": "DEFERRED",
+      "evidence": null,
+      "notes": "DEFERRED until KV Preview · RUNNOW=false",
+      "runnow": false
+    }
+  ]
+}

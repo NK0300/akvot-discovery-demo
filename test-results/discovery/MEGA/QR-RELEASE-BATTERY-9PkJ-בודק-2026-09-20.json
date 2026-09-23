@@ -1,0 +1,408 @@
+{
+  "role": "בודק",
+  "checkedAt": "2026-09-20T07:53:05+03:00",
+  "promote": "HOLD",
+  "verdict": "GREEN_FOR_CHIEF_REVIEW",
+  "greenEnoughForChiefReview": true,
+  "target": {
+    "url": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app",
+    "dpl": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2"
+  },
+  "coreAlias": {
+    "url": "https://akvot-simple-demo.vercel.app",
+    "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "locked": true
+  },
+  "storeBackend": "upstash",
+  "health": {
+    "storeBackend": "upstash",
+    "durable": true,
+    "promoteEligible": true,
+    "kvCredsPresent": true,
+    "build": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+    "discoveryHealthOk": true,
+    "discoverySteps": [
+      {
+        "step": "WRITE",
+        "ok": true,
+        "ms": 35
+      },
+      {
+        "step": "READ",
+        "ok": true,
+        "ms": 35
+      },
+      {
+        "step": "UPDATE",
+        "ok": true,
+        "ms": 67
+      },
+      {
+        "step": "DELETE",
+        "ok": true,
+        "ms": 117
+      }
+    ]
+  },
+  "counts": {
+    "PASS": 12,
+    "FAIL": 0,
+    "HOLD": 2,
+    "BLOCKED_KV": 0
+  },
+  "seeds": [
+    {
+      "id": "S1",
+      "seed": "דוד כהן",
+      "pass": true,
+      "sessionId": "kv1.3f461e8e23983da74f27491eaed2e654",
+      "findings": 19,
+      "regenerated": null,
+      "getHttp": 200,
+      "get2Http": 200,
+      "sseEvents": 27,
+      "sse2Events": 27,
+      "narrow": {
+        "ok": true,
+        "httpStatus": 200,
+        "ms": 2295,
+        "filter": {
+          "provider": [
+            "wikidata"
+          ]
+        },
+        "beforeCount": 19,
+        "afterCount": 19,
+        "leak": 0,
+        "bans": []
+      },
+      "fails": [],
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    },
+    {
+      "id": "S2",
+      "seed": "Alex Morgan",
+      "pass": true,
+      "sessionId": "kv1.e51dfb00448e6ba676e655d12efc2a5c",
+      "findings": 21,
+      "regenerated": null,
+      "getHttp": 200,
+      "get2Http": 200,
+      "sseEvents": 29,
+      "sse2Events": 29,
+      "narrow": {
+        "ok": true,
+        "httpStatus": 200,
+        "ms": 2640,
+        "filter": {
+          "provider": [
+            "openlibrary"
+          ]
+        },
+        "beforeCount": 21,
+        "afterCount": 21,
+        "leak": 0,
+        "bans": []
+      },
+      "fails": [],
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    },
+    {
+      "id": "S3",
+      "seed": "example.org",
+      "pass": true,
+      "sessionId": "kv1.15640e1f9286fbd746e8354df04b0008",
+      "findings": 3,
+      "regenerated": null,
+      "getHttp": 200,
+      "get2Http": 200,
+      "sseEvents": 11,
+      "sse2Events": 11,
+      "narrow": {
+        "ok": true,
+        "httpStatus": 200,
+        "ms": 2511,
+        "filter": {
+          "provider": [
+            "wikidata"
+          ]
+        },
+        "beforeCount": 3,
+        "afterCount": 3,
+        "leak": 0,
+        "bans": []
+      },
+      "fails": [],
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  ],
+  "core": {
+    "healthOk": true,
+    "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "assaf": {
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "ok": true
+    },
+    "cohen": {
+      "ui": "need_context",
+      "qid": null,
+      "ok": true
+    },
+    "smith": {
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "ok": true
+    },
+    "pw": 0,
+    "leakage": 0,
+    "pass": true
+  },
+  "adv": [
+    {
+      "id": "ADV-L1",
+      "ok": true,
+      "httpStatus": 201,
+      "entityLeak": 0,
+      "leak": 0,
+      "contra": 0,
+      "bans": [],
+      "findings": 19
+    },
+    {
+      "id": "ADV-L2",
+      "ok": true,
+      "httpStatus": 201,
+      "entityLeak": 0,
+      "leak": 0,
+      "contra": 0,
+      "bans": [],
+      "findings": 21
+    },
+    {
+      "id": "ADV-L3",
+      "ok": true,
+      "httpStatus": 201,
+      "entityLeak": 0,
+      "leak": 0,
+      "contra": 0,
+      "bans": [],
+      "findings": 3
+    },
+    {
+      "id": "ADV-L4",
+      "ok": true,
+      "httpStatus": 201,
+      "entityLeak": 0,
+      "leak": 0,
+      "contra": 0,
+      "bans": [],
+      "findings": 0
+    }
+  ],
+  "smithCtx": {
+    "pass": true,
+    "sessionId": "kv1.ce166b9c05aaa142474615fc538fcd32",
+    "findings": 21,
+    "regenerated": null,
+    "contraClean": true,
+    "leakTotal": 0,
+    "scanPost": {
+      "surface": 0,
+      "entity": 0,
+      "contra": [],
+      "total": 0
+    },
+    "scanGet": {
+      "surface": 0,
+      "entity": 0,
+      "contra": [],
+      "total": 0
+    },
+    "bans": []
+  },
+  "rb11": {
+    "getOk": true,
+    "forbiddenAbsent": true,
+    "regenerated": null,
+    "narrowPoisonOk": true
+  },
+  "items": [
+    {
+      "id": "RB-01",
+      "gate": "KV SoT (storeBackend=upstash|kv, not fs-regen)",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/api-health.json · discovery-health.json",
+      "notes": "storeBackend=upstash kvCredsPresent=true durable=true promoteEligible=true build=dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2"
+    },
+    {
+      "id": "RB-02",
+      "gate": "storeBackend ≠ fs-regen",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/api-health.json",
+      "notes": "observed storeBackend=upstash"
+    },
+    {
+      "id": "RB-03",
+      "gate": "Acc ≥3 Seeds + Smith+ctx (IBM/NY/US) leakage=0 incl contradictions",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/POST-*.json · GET-*.json · SMITH-CTX-SCAN.json",
+      "notes": "seedsPass=3/3 smithCtx=true entityAgnostic=true leak=0 contraClean=true"
+    },
+    {
+      "id": "RB-04",
+      "gate": "SSE works",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/SSE-*.txt",
+      "notes": "S1=27 S2=29 S3=11"
+    },
+    {
+      "id": "RB-05",
+      "gate": "durable SSE / session GET across calls (regenerated false|absent)",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/SSE2-*.meta.json · GET2-*.json",
+      "notes": "sse2=3/3 get2=3/3 regenFlags=,,"
+    },
+    {
+      "id": "RB-06",
+      "gate": "KV HIT / GET same sessionId works",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/GET-*.json",
+      "notes": "S1:http=200/regen=null S2:http=200/regen=null S3:http=200/regen=null"
+    },
+    {
+      "id": "RB-07",
+      "gate": "narrow works",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/NARROW-*.json",
+      "notes": "S1:19→19 S2:21→21 S3:3→3"
+    },
+    {
+      "id": "RB-08",
+      "gate": "leakage=0 deep scan all surfaces including contradictions",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/ · SMITH-CTX-SCAN.json",
+      "notes": "aggregateLeak=0 smithLeak=0 contraClean=true"
+    },
+    {
+      "id": "RB-09",
+      "gate": "pw=0 (Core)",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/core-smith.json",
+      "notes": "pw=0 faces=0 leak=0"
+    },
+    {
+      "id": "RB-10",
+      "gate": "Core alias regression PASS",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/core-*.json",
+      "notes": "build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 Assaf=dossier/Q47507930 כהן=need_context Smith=need_context"
+    },
+    {
+      "id": "RB-11",
+      "gate": "rehydrate scrub (GET session after POST — forbidden absent)",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/RB11-*.json",
+      "notes": "GET=200 regen=null forbiddenAbsent=true narrowPoison=true"
+    },
+    {
+      "id": "RB-12",
+      "gate": "ADV quick (empty 400 · bare כהן · John Smith bare) + L1-L4 smoke PASS",
+      "status": "PASS",
+      "evidence": "MEGA/raw/release-9pkj/ADV-*.json",
+      "notes": "quick=[ADV-empty=PASS ADV-bare-cohen=PASS ADV-john-smith-bare=PASS] L1-L4=[ADV-L1=PASS ADV-L2=PASS ADV-L3=PASS ADV-L4=PASS]"
+    },
+    {
+      "id": "RB-13",
+      "gate": "Chief GO — HOLD until Chief says GO",
+      "status": "HOLD",
+      "evidence": "MEGA/00-CONTROL-BOARD.md · HOLD",
+      "notes": "No Chief GO recorded · HOLD promote"
+    },
+    {
+      "id": "RB-14",
+      "gate": "promote ask — HOLD until Chief GO",
+      "status": "HOLD",
+      "evidence": "this checklist",
+      "notes": "HOLD promote · RB-13 waits Chief · no promote executed"
+    }
+  ],
+  "note": "CANONICAL Preview dpl_9PkJ supersedes dpl_CAVh. ADV quick (empty/bare-cohen/Smith) added post-battery. NO promote.",
+  "advQuick": [
+    {
+      "id": "ADV-empty",
+      "label": "empty seed → 400",
+      "ok": true,
+      "httpStatus": 400,
+      "findings": 0,
+      "entityLeak": 0,
+      "leak": 0,
+      "softFail": true,
+      "error": "seed required"
+    },
+    {
+      "id": "ADV-bare-cohen",
+      "label": "bare כהן",
+      "ok": true,
+      "httpStatus": 201,
+      "findings": 22,
+      "entityLeak": 0,
+      "leak": 0,
+      "softFail": false,
+      "error": null
+    },
+    {
+      "id": "ADV-john-smith-bare",
+      "label": "John Smith bare",
+      "ok": true,
+      "httpStatus": 201,
+      "findings": 21,
+      "entityLeak": 0,
+      "leak": 0,
+      "softFail": false,
+      "error": null
+    }
+  ],
+  "advQuickPass": true,
+  "checkedAtAdvQuick": "2026-09-20T07:55:44+03:00"
+}

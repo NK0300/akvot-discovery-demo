@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "title": "P2-CASES",
+    "date": "2026-09-15",
+    "baseline": "dpl_DNfPZ9oMSzqtjErqYeRtpT2t2fSu",
+    "owner": "דיוק",
+    "pretty_wrong_must": 0,
+    "assaf_expected": "dossier Q47507930",
+    "no_assaf_only_if": true,
+    "status": "FINALIZE_ALIGNED",
+    "aligned_with": "handoff/P2-BOUNDARIES-ארכיטקט-2026-09-15.md",
+    "finalized": "2026-09-15",
+    "ready": true,
+    "S03_country_US": "2026-09-15 · Chief: close Acc vs contract gap"
+  },
+  "n": 18,
+  "cases": [
+    {
+      "id": "P2-S01",
+      "category": "ambiguous",
+      "q": "דני כהן",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "P2-S02",
+      "category": "duplicate",
+      "q": "John Smith",
+      "expected_ui": [
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "P2-S03",
+      "category": "conflict",
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US"
+      },
+      "expected_ui": [
+        "candidates",
+        "thin",
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ],
+      "notes": "Align contract d-smith-ctx-p0 · country=US closes Acc soft-path gap (2026-09-15)"
+    },
+    {
+      "id": "P2-S04",
+      "category": "conflict",
+      "q": "John Smith",
+      "ctx": {
+        "email": "qa.rethink.test@example.com"
+      },
+      "expected_ui": [
+        "candidates",
+        "thin"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier",
+        "email_leak"
+      ]
+    },
+    {
+      "id": "P2-S05",
+      "category": "non-match",
+      "q": "Xzqplmnvwtr987654321asdfgh",
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "faces": 0
+    },
+    {
+      "id": "P2-S06",
+      "category": "unknown",
+      "q": "פלמוני אלמוניזקש",
+      "ctx": {
+        "org": "מפעל בדיקה פיקטיבי"
+      },
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "faces": 0
+    },
+    {
+      "id": "P2-S07",
+      "category": "conflict",
+      "q": "כהן",
+      "expected_ui": [
+        "need_context",
+        "thin"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ],
+      "notes": "Chief 2026-09-15: thin with 0 faces = OTHER safe for RC; never dossier"
+    },
+    {
+      "id": "P2-K01",
+      "category": "exact",
+      "q": "נתניהו",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q43723"
+    },
+    {
+      "id": "P2-K02",
+      "category": "transliteration",
+      "q": "Zehava Galon",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q2630062"
+    },
+    {
+      "id": "P2-K03",
+      "category": "transliteration",
+      "q": "Angela Merkel",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q567"
+    },
+    {
+      "id": "P2-K04",
+      "category": "exact",
+      "q": "אורלי לוי",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q466537"
+    },
+    {
+      "id": "P2-A01",
+      "category": "exact",
+      "q": "Assaf Rappaport",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q47507930",
+      "faces": true,
+      "notes": "PRIMARY class Latin mid-tier; live baseline already dossier"
+    },
+    {
+      "id": "P2-A03",
+      "category": "exact",
+      "q": "אסף רפפורט",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q47507930"
+    },
+    {
+      "id": "P2-A05",
+      "category": "near-miss",
+      "q": "Assaf Smith",
+      "expected_ui": [
+        "need_context",
+        "candidates",
+        "thin"
+      ],
+      "must_not": [
+        "qid:Q47507930"
+      ]
+    },
+    {
+      "id": "P2-A06",
+      "category": "conflict",
+      "q": "John Rappaport",
+      "expected_ui": [
+        "need_context",
+        "candidates",
+        "thin"
+      ],
+      "must_not": [
+        "dossier",
+        "qid:Q47507930",
+        "qid:Q105094696"
+      ],
+      "notes": "T-C6 · bare John Rappaport must NOT dossier (surname bleed / wikiExact near-miss); 2026-09-15 Affirm: not Q105094696 not Assaf"
+    },
+    {
+      "id": "P2-E02",
+      "category": "partial",
+      "q": "Emily Chen",
+      "ctx": {
+        "city": "Palo Alto",
+        "role": "student"
+      },
+      "expected_ui": [
+        "candidates",
+        "need_context"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "P2-E04",
+      "category": "conflict",
+      "q": "John Smith",
+      "ctx": {
+        "email": "qa.rethink.test@example.com"
+      },
+      "expected_ui": [
+        "candidates",
+        "thin"
+      ],
+      "faces": 0,
+      "must_not": [
+        "dossier"
+      ]
+    },
+    {
+      "id": "P2-L03",
+      "category": "latency",
+      "q": "Assaf Rappaport",
+      "expected_ui": [
+        "dossier"
+      ],
+      "qid": "Q47507930",
+      "measure_ms": true
+    }
+  ]
+}

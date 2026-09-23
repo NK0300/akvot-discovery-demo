@@ -1,0 +1,63 @@
+[acc-post-promote] start 2026-09-20T09:11:08+03:00
+[acc-post-promote] Discovery alias PROMOTED dpl_AvyhrW24gGRquWCPPZdydBiz81dv · Core LOCKED dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 · NO further promote
+[health] Core build still 8ag (not Avyhr)? true dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+[health] disc dpl_AvyhrW24gGRquWCPPZdydBiz81dv true storeBackend upstash alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 true
+[health] discovery/health {"ok":true,"backend":"upstash","storeBackend":"upstash","latencyMs":116,"correlationId":"hc-mu9f4cjm-95e466","fsRegenFallback":false,"explicitFallback":false,"promoteEligible":true,"durable":true,"fal
+[disc] POST session seed=דוד כהן
+  → pass=true status=partial findings=19 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.7b5cdcbf0c35e799c93a…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=Jane Doe
+  → pass=true status=partial findings=22 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.e7d579f313f41e056e90…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=John Smith
+  → pass=true status=partial findings=21 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.a16257ac8268b211221d…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=example.org
+  → pass=true status=complete findings=3 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.7e1c8a9009e2d34cc98a…
+  GET → pass=true regenerated=false status=complete fiv=2026-09-19.1 leak=0
+[disc] POST session seed=Microsoft
+  → pass=true status=partial findings=22 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.294f2572faee9de7c76c…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[sse] GET …/events session=kv1.a16257ac8268b211221d2198…
+  SSE → pass=true events=29 names=meta,progress,provider,finding,facets,status,done leak=0 ct=text/event-stream; charset=utf-8
+[narrow] POST …/narrow
+  NARROW → pass=true before=21 after=8 ver=3 fiv=2026-09-19.1 leak=0
+[disc] Smith+ctx via preview /api/lookup
+  → pass=true ui=candidates qid=null leak=0
+[core] alias Assaf / כהן / Smith
+  Assaf → pass=true ui=dossier qid=Q47507930
+  כהן → pass=true ui=need_context faces=0
+  Smith cold → pass=true ui=candidates qid=null pw=0
+  Smith warm → pass=true ui=candidates qid=null pw=0
+{
+  "disc": {
+    "Acc-DISC": "GO",
+    "leakage": 0,
+    "seeds": 5,
+    "storeBackend": "upstash",
+    "dossier_bindings": 0,
+    "b23_contradictions_scrub": "PASS",
+    "sse": "PASS",
+    "narrow": "PASS",
+    "promote": "NO · HOLD further",
+    "phase": "POST-PROMOTE"
+  },
+  "core": {
+    "Core-P0": "PASS",
+    "leakage": 0,
+    "pw": 0,
+    "promote": "NO · HOLD further",
+    "core_build_still_8ag": true
+  },
+  "storeBackend": "upstash",
+  "storeOk": true
+}
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/PR-CLOSEOUT/PROMOTE/ACC-POST-PROMOTE-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/PR-CLOSEOUT/PROMOTE/ACC-POST-PROMOTE-דיוק-2026-09-20.md
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/PR-CLOSEOUT/PROMOTE/ACC-POST-PROMOTE-CORE-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/PR-CLOSEOUT/PROMOTE/ACC-POST-PROMOTE-CORE-דיוק-2026-09-20.md

@@ -1,0 +1,10 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "a2_safe_hardening": "no change / forensics-only",
+  "recovery_attempted": false,
+  "code_changed": false,
+  "preview_deployed_for_hardening": false,
+  "baseline_preview": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+  "why": "Phase1 shows S04 authority gap (no P214; VIAF homonyms; OL no remote_ids) and S05 mostly correct non-collapse. Wikipedia\u2192qid real but same wikimedia hostFamily \u2014 cannot raise multi. Title bridges forbidden. No honest code path this cycle.",
+  "metrics_lane": "identical to A2-safe"
+}

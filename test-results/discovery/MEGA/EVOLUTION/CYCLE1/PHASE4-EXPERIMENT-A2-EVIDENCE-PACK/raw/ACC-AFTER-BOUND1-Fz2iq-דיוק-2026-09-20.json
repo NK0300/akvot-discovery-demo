@@ -1,0 +1,605 @@
+{
+  "doc": "ACC-AFTER-BOUND1-Fz2iq-דיוק-2026-09-20",
+  "role": "דיוק",
+  "phase": "CYCLE1-PHASE4-EXPERIMENT-A2-COALESCE",
+  "stamp": "2026-09-20T10:26:08+03:00",
+  "ended": "2026-09-20T10:27:50+03:00",
+  "promote": "HOLD",
+  "mode": "ACC_AFTER_PRIMARY_BOUND1",
+  "preview": {
+    "label": "bound1",
+    "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+    "url": "https://akvot-simple-demo-2u3mwx1k4-k-akvot.vercel.app",
+    "role": "PRIMARY_VERDICT"
+  },
+  "locks": {
+    "discoveryB0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "discoveryAlias": "https://akvot-discovery.vercel.app",
+    "b0_alias_still_avyhr": true,
+    "core": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "forbidden": [
+      "Q1701775",
+      "wd-Q1701775"
+    ]
+  },
+  "acc_redef": {
+    "unit": "FindingId_after_coalesce",
+    "multi_iff": "Evidence[] has >=2 families (wikidata|wikipedia|openlibrary|viaf|other:apex)",
+    "rate": "multi_n / findings_with_ge1_evidence_n",
+    "gate": "mean(S01,S04,S05) >= 0.15"
+  },
+  "per_seed": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.88f9c8d2c7fa37349d49a21ad7084d02",
+      "status": "partial",
+      "findings_count": 18,
+      "findings_with_ge1_evidence_n": 18,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0,
+      "viaf_findings_n": 8,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "b0_frozen_findings": 10,
+      "coverage_vs_b0": 8,
+      "sample_titles": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q22991023",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q22946133",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q22980417",
+          "title": "Tim Berners-Lee: The next web",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, 1955-",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.44393a9e6a379d9536a722cedfd97c85",
+      "status": "partial",
+      "findings_count": 30,
+      "findings_with_ge1_evidence_n": 30,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0,
+      "viaf_findings_n": 8,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "b0_frozen_findings": 14,
+      "coverage_vs_b0": 16,
+      "sample_titles": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q3421342",
+          "title": "stripe",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q127900502",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q117454382",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q297115",
+          "title": "Meloidae",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q469754",
+          "title": "Perca flavescens",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q842647",
+          "title": "striped bass",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q368495",
+          "title": "striped skunk",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-30463651",
+          "title": "Stripe, John, 1643-1737",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-126600779",
+          "title": "Stripes",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-138753783",
+          "title": "Striped house museum of art Tokyo",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-57307946",
+          "title": "Stripecke, Renata",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.6a35b79b1909a75609cfcd67f77cb06a",
+      "status": "partial",
+      "findings_count": 30,
+      "findings_with_ge1_evidence_n": 30,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0,
+      "viaf_findings_n": 8,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ],
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "b0_frozen_findings": 6,
+      "coverage_vs_b0": 24,
+      "sample_titles": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q7178",
+          "title": "International Red Cross and Red Crescent Movement",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q48438",
+          "title": "Saint George",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q7305591",
+          "title": "Redd Kross",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q1968122",
+          "title": "National Red Cross and Red Crescent society",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q116059498",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "wd-Q50320550",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "wikidata"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-160178001",
+          "title": "Red Cross. International Committee, Geneva",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-167237176",
+          "title": "Red Cross and Red Crescent",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-151269599",
+          "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        },
+        {
+          "id": "viaf-148420048",
+          "title": "Red Cross (Great Britain)",
+          "multi": false,
+          "fams": [
+            "viaf"
+          ],
+          "nEv": 1,
+          "inDenom": true
+        }
+      ]
+    }
+  ],
+  "aggregates": {
+    "mean_multi_independent_rate": 0,
+    "pooled_multi_independent_rate": 0,
+    "multi_total": 0,
+    "with_ev_total": 78,
+    "leak_total": 0,
+    "dossier_any": false,
+    "s01_findings": 18,
+    "s01_vs_b0_frozen": 8,
+    "multi_gate_pass": false,
+    "leak_pass": true,
+    "s01_coverage_pass": true,
+    "hard_pass": true,
+    "multi_threshold": 0.15
+  },
+  "adversarial": {
+    "smith_ctx": {
+      "sessionId": "kv1.14d05623e9eb92b087e9252836fe71f1",
+      "findings_count": 29,
+      "multi_independent_rate": 0,
+      "acc_leak_count": 0,
+      "b23_leak": 0,
+      "dossier_bind": false,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikidata",
+        "wikipedia"
+      ]
+    },
+    "injects": [
+      {
+        "label": "adv-inject-qid",
+        "findings_count": 29,
+        "acc_leak_count": 0,
+        "b23_leak": 0,
+        "dossier_bind": false
+      },
+      {
+        "label": "adv-inject-wd-qid",
+        "findings_count": 29,
+        "acc_leak_count": 0,
+        "b23_leak": 0,
+        "dossier_bind": false
+      },
+      {
+        "label": "adv-inject-seed-poison",
+        "findings_count": 0,
+        "acc_leak_count": 0,
+        "b23_leak": 0,
+        "dossier_bind": false
+      }
+    ],
+    "adv_leak_total": 0,
+    "adv_pretty_wrong": false,
+    "adv_pass": true
+  },
+  "core_smoke": {
+    "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "buildOk": true,
+    "assaf": {
+      "case": "assaf",
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "faces": 2,
+      "leakage": 0,
+      "leak_hits": [],
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "ms": 637,
+      "pass": true
+    },
+    "cohen": {
+      "case": "cohen",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leakage": 0,
+      "leak_hits": [],
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "ms": 817,
+      "pass": true
+    },
+    "smith_nocache": {
+      "case": "smith-nocache",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leakage": 0,
+      "leak_hits": [],
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "ms": 7335,
+      "pass": true
+    },
+    "smith_warm": {
+      "case": "smith-warm",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leakage": 0,
+      "leak_hits": [],
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "ms": 7225,
+      "pass": true
+    },
+    "core_leak": 0,
+    "core_pw": 0,
+    "core_pass": true
+  },
+  "gates": {
+    "multi_mean_ge_015": {
+      "result": "FAIL",
+      "value": 0
+    },
+    "acc_leak_eq_0": {
+      "result": "PASS",
+      "value": 0
+    },
+    "s01_no_vacuum": {
+      "result": "PASS",
+      "value": 18,
+      "b0_frozen": 10
+    },
+    "adversarial": {
+      "result": "PASS",
+      "leak": 0
+    },
+    "core": {
+      "result": "PASS"
+    },
+    "b0_alias": {
+      "result": "PASS",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+    }
+  },
+  "verdict": "FAIL",
+  "note": "Bound #1 typed-keys-only: multi=0 may be expected after title-only removal. FAIL on multi gate is OK / honest. HOLD promote."
+}

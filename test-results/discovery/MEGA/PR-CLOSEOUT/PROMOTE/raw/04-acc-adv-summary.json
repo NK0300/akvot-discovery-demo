@@ -1,0 +1,22 @@
+[
+  {
+    "id": "adv-smith",
+    "leakage": 0,
+    "terms": []
+  },
+  {
+    "id": "adv-qid",
+    "leakage": 0,
+    "terms": []
+  },
+  {
+    "id": "adv-wd",
+    "leakage": 0,
+    "terms": []
+  },
+  {
+    "id": "adv-q",
+    "leakage": 0,
+    "terms": []
+  }
+]

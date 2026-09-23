@@ -1,0 +1,17 @@
+{
+  "$id": "akvot/discovery/session",
+  "title": "DiscoverySession",
+  "type": "object",
+  "required": ["sessionId", "q", "status", "findings", "facets", "forbiddenIdentitiesVersion"],
+  "properties": {
+    "sessionId": { "type": "string" },
+    "q": { "type": "string" },
+    "status": { "type": "string", "enum": ["running", "partial", "complete", "failed_soft"] },
+    "findings": { "type": "array", "items": { "type": "string" } },
+    "facets": { "type": "object" },
+    "progress": { "type": "object" },
+    "providers": { "type": "object" },
+    "forbiddenIdentitiesVersion": { "type": "string" },
+    "forbiddenStripped": { "type": "integer", "minimum": 0 }
+  }
+}

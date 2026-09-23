@@ -1,0 +1,31 @@
+id: 1
+event: meta
+data: {"sessionId":"kv1.269a640423887c166188b4704f425d7d","seed":"Tim Berners-Lee","q":"Tim Berners-Lee","version":2,"forbiddenIdentitiesVersion":"2026-09-19.1","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true,"note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true},"cursor":1}
+
+id: 2
+event: progress
+data: {"progress":{"done":8,"totalHint":8},"stage":"S10","cursor":2}
+
+id: 3
+event: provider
+data: {"providerId":"wikidata","state":"partial","cursor":3}
+
+id: 4
+event: provider
+data: {"providerId":"openlibrary","state":"ok","cursor":4}
+
+id: 5
+event: provider
+data: {"providerId":"wikipedia","state":"ok","cursor":5}
+
+id: 6
+event: provider
+data: {"providerId":"viaf","state":"partial","cursor":6}
+
+id: 7
+event: provider
+data: {"providerId":"web_origin","state":"ok","cursor":7}
+
+id: 8
+event: finding
+data: {"finding":{"id":"wd-Q80","kind":"registry","title":"Tim Berners-Lee","summary":"English computer scientist (born 1955)","evidenceIds":["ev-1bc4633ed032bd7d454682f1","ev-8b78b3cd061f3cc8d479260b","ev-ded4492e49be949e449272fe","ev-ce87e4b18f0524a64903c21e","ev-ceaa76317f5993f3ddd9daf0","ev-6aeb95eb2486847285c477bc","ev-256520dfd012cc9f5c748809","ev-15faf7baf2cf5f6111cdf54a","ev-ae75562849264469888e7d58","ev-cc1c95dd00fec531a44ee1d7"],"providers":["wikidata","openlibrary","viaf"],"facetHints":["provider:wikidata","kind:registry","provider:openlibrary","provider:viaf","corroboration:multi_family"],"entityRefs":["qid:Q80","wd-Q80","viaf:85312226","ol:OL25245A","ol-OL25245A"],"scoreFinding":0.9549999999999998,"ranking":{"discoveryScore":0.9549999999999998,"factors":{"authority":0.9,"corroboration":1,"directness":1,"freshness":0.9,"httpsOnly":1,"providerDiversity":3,"evidenceCount":10,"domains":["www.wikidata.org","openlibrary.org","viaf.org"]},"rationale":"authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"}},"evidence":[{"id":"ev-1bc4633ed032bd7d454682f1","provenanceUrl":"https://www.wikidata.org/wiki/Q80","url":"https://www.wikidata.org/wiki/Q80","domain":"www.wikidata.org","providerId":"wikidata","retrievedAt":"2026-09-20T08:50:05.706Z","evidenceType":"registry","quote":"English computer scientist (born 1955)","contentType":"text/html","robotsOk":true},{"id":"ev-8b78b3cd061f3cc8d479260b","provenanceUrl":"https://openlibrary.org/authors/OL25245A","url":"https://openlibrary.org/authors/OL25245A","domain":"openlibrary.org","providerId":"openlibrary","retrievedAt":"2026-09-20T08:50:06.861Z","evidenceType":"registry","quote":"Weaving the Web","contentType":"text/html","robotsOk":true},{"id":"ev-ded4492e49be949e449272fe","provenanceUrl":"https://viaf.org/viaf/85312226","url":"https://viaf.org/viaf/85312226","domain":"viaf.org","providerId":"viaf","retrievedAt":"2026-09-20T08:50:05.583Z","evidenceType":"registry","quote":"Tim Berners-Lee","contentType":"text/html","robotsOk":true},{"id":"ev-ce87e4b18f0524a64903c21e","provenanceUrl":"https://viaf.org/viaf/85312226","url":"https://viaf.org/viaf/85312226","domain":"viaf.org","providerId":"viaf","retrievedAt":"2026-09-20T08:50:05.583Z","evidenceType":"registry","quote":"Tim Berners-Lee, 1955-","contentType":"text/html","robotsOk":true},{"id":"ev-ceaa76317f5993f3ddd9daf0","provenanceUrl":"https://viaf.org/viaf/85312226","url":"https://viaf.org/viaf/85312226","domain":"viaf.org","providerId":"viaf","retrievedAt":"2026-09-20T08:50:05.583Z","evidenceType":"registry","quote":"Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo","contentType":"text/html","robotsOk":true},{"id":"ev-6aeb95eb2486847285c477bc","provenanceUrl":"https://viaf.org/viaf/85312226","url":"https://viaf.org/viaf/85312226","domain":"viaf.org","providerId":"viaf","retrievedAt":"2026-09-20T08:50:05.583Z","evidenceT

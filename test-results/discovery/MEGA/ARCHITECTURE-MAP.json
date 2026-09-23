@@ -1,0 +1,231 @@
+{
+  "project": "akvot / עקבות — PROJECT A",
+  "checkout": "/workspace/akvot-quick-demo",
+  "generatedAt": "2026-09-20T07:25:00+03:00",
+  "timezone": "Asia/Jerusalem",
+  "prodAlias": {
+    "status": "LOCKED",
+    "hint": "dpl_8ag… / Acc P0 Core",
+    "promote": "HOLD — NO alias change this run"
+  },
+  "kvBlocker": {
+    "status": "BLOCKED",
+    "presentEnv": [
+      "GOOGLE_GENERATIVE_AI_API_KEY"
+    ],
+    "missingEnv": [
+      "KV_REST_API_URL",
+      "KV_REST_API_TOKEN",
+      "UPSTASH_REDIS_REST_URL",
+      "UPSTASH_REDIS_REST_TOKEN"
+    ],
+    "impact": "storeBackend=fs-regen; durable=false; promoteEligible=false; storage-GREEN blocked"
+  },
+  "layers": {
+    "core": {
+      "purpose": "Identity lookup Acc P0 — INFORMATION≠IDENTITY, forbidden QID scrub",
+      "entrypoints": [
+        "api/lookup.js",
+        "api/health.js"
+      ],
+      "libs": [
+        "api/lib/orchestrator.js",
+        "api/lib/stageB.js",
+        "api/lib/forbiddenIdentities.js",
+        "api/lib/knownIdentities.js",
+        "api/lib/obsTrust.js"
+      ],
+      "invariants": [
+        "pw=0",
+        "leakage=0",
+        "Q1701775 scrub",
+        "INFORMATION≠IDENTITY",
+        "mayCommitDossier gates"
+      ],
+      "touchThisRun": "UNTOUCHED (health.js additive discoveryStore field only)"
+    },
+    "discovery": {
+      "purpose": "Additive Discovery layer — evidence findings, not identity commit",
+      "routes": {
+        "POST /api/discovery/sessions": "api/discovery/sessions/index.js",
+        "GET /api/discovery/sessions/:id": "api/discovery/sessions/[id]/index.js",
+        "GET /api/discovery/sessions/:id/events": "api/discovery/sessions/[id]/events.js",
+        "POST /api/discovery/sessions/:id/narrow": "api/discovery/sessions/[id]/narrow.js"
+      },
+      "libs": {
+        "orchestrator": "api/lib/discovery/orchestrator.js",
+        "providers": "api/lib/discovery/providers.js",
+        "emit": "api/lib/discovery/emit.js",
+        "facets": "api/lib/discovery/facets.js",
+        "narrow": "api/lib/discovery/narrow.js",
+        "sse": "api/lib/discovery/sse.js",
+        "storeNormalize": "api/lib/discovery/store.js",
+        "sessionStore": "api/lib/discovery/sessionStore.js",
+        "index": "api/lib/discovery/index.js"
+      },
+      "providers": [
+        "wikidata (public wbsearchentities)",
+        "openlibrary (public authors search)"
+      ],
+      "accScrubPaths": [
+        "POST snapshot",
+        "GET rehydrate",
+        "SSE every chunk",
+        "narrow response",
+        "inject/HIT/regen"
+      ]
+    },
+    "storage": {
+      "module": "api/lib/discovery/sessionStore.js",
+      "selection": [
+        "vercel-kv if KV_REST_API_URL+TOKEN",
+        "upstash if UPSTASH_REDIS_REST_URL+TOKEN",
+        "else fs-regen (FALLBACK-ONLY)"
+      ],
+      "telemetry": {
+        "storeBackend": "explicit",
+        "durable": "true only for kv/upstash (FIXED 2026-09-20 — was false-confident)",
+        "fallback": "true for fs-regen",
+        "promoteEligible": "durable===true"
+      },
+      "health": "WRITE→READ→UPDATE→DELETE via healthCheck()",
+      "ttlMs": 3600000
+    },
+    "ui": {
+      "files": [
+        "index.html",
+        "discovery-ui.js"
+      ],
+      "note": "Client must not receive secrets; CSP in vercel.json"
+    },
+    "scripts": {
+      "acc_p0": "scripts/acc_p0_pre_promote_contracts.mjs",
+      "perf": "scripts/perf-harness.mjs",
+      "wp3": "scripts/wp3-l2-harness.mjs"
+    }
+  },
+  "pipelines": {
+    "discoveryCreate": [
+      "S0 mint+store",
+      "S1 softER",
+      "S2 providers parallel",
+      "S3 normalize https-only",
+      "S5 dedupe fingerprint",
+      "S6 graph stub",
+      "S8 rank+explain",
+      "contradictions",
+      "S9 status",
+      "S10 Acc scrub persist"
+    ],
+    "discoveryGet": [
+      "store.get",
+      "on miss: decodeSessionId→maybeRegenerate (fs-regen only)",
+      "emitSnapshot Acc scrub"
+    ],
+    "sse": [
+      "loadSessionRaw",
+      "buildProgressiveEvents Acc scrub",
+      "meta→progress→provider→finding→facets→status→done",
+      "Last-Event-ID resume"
+    ],
+    "narrow": [
+      "parse filters",
+      "applyNarrow",
+      "emitSnapshot scrub",
+      "persist lastNarrow+version bump"
+    ],
+    "coreLookup": [
+      "api/lookup.js — separate; Acc P0 locked"
+    ]
+  },
+  "findings": {
+    "deadCodeDuplication": [
+      "api/lib/orchestrator.js (Core) vs api/lib/discovery/orchestrator.js (Discovery) — intentional split",
+      "store.js re-exports sessionStore — boundary glue, not dead",
+      "getSessionStore deprecated Map adapter kept for tests"
+    ],
+    "hiddenFallbacks": [
+      "FIXED: getStoreInfo durable:true on fs-regen was false confidence",
+      "maybeRegenerate on GET miss — now emits explicit _regenReason + store telemetry + console.info",
+      "kv get/set catch → soft warn (no throw) — documented; healthCheck surfaces failures"
+    ],
+    "silentCatches": [
+      "sessionStore kv get/set catch warn-only (soft degrade)",
+      "fsGet catch → null",
+      "decodeSessionId catch → null",
+      "providers search catch → soft error batch"
+    ],
+    "configDrift": [
+      "api/health baselineHint dpl_DNfPZ9 vs control-board dpl_8ag… — document only, no alias change",
+      "PHASE still orchestrator-v0-b",
+      ".env.local only Gemini key"
+    ],
+    "featureFlags": "None formal; backend selection is env-driven"
+  },
+  "security": {
+    "citeOrDrop": "https only in normalizeRawHit",
+    "ssrfCore": "api/lookup.js has SSRF gate; discovery providers use fixed public hosts",
+    "accScrub": "emit.js sanitizeDiscoveryPayload on all surfaces",
+    "csp": "vercel.json Content-Security-Policy",
+    "secrets": "never in client/logs; getStoreInfo exposes kvCredsPresent boolean only"
+  },
+  "tests": {
+    "npm_test": [
+      "api/lib/orchestrator.test.mjs",
+      "api/lib/forbiddenIdentities.test.mjs",
+      "api/lib/discovery/sessionStore.test.mjs",
+      "api/lib/discovery/orchestrator.test.mjs",
+      "test-results/contract-identity-p0.mjs"
+    ]
+  },
+  "filesInventory": {
+    "api": [
+      "api/discovery/sessions/[id]/events.js",
+      "api/discovery/sessions/[id]/index.js",
+      "api/discovery/sessions/[id]/narrow.js",
+      "api/discovery/sessions/index.js",
+      "api/health.js",
+      "api/lib/discovery/emit.js",
+      "api/lib/discovery/facets.js",
+      "api/lib/discovery/index.js",
+      "api/lib/discovery/narrow.js",
+      "api/lib/discovery/orchestrator.js",
+      "api/lib/discovery/orchestrator.test.mjs",
+      "api/lib/discovery/providers.js",
+      "api/lib/discovery/sessionStore.js",
+      "api/lib/discovery/sessionStore.test.mjs",
+      "api/lib/discovery/sse.js",
+      "api/lib/discovery/store.js",
+      "api/lib/forbiddenIdentities.js",
+      "api/lib/forbiddenIdentities.test.mjs",
+      "api/lib/knownIdentities.js",
+      "api/lib/obsTrust.js",
+      "api/lib/obsTrust.test.mjs",
+      "api/lib/orchestrator.js",
+      "api/lib/orchestrator.test.mjs",
+      "api/lib/stageB.js",
+      "api/lookup.js"
+    ],
+    "scripts": [
+      "scripts/acc_p0_pre_promote_contracts.mjs",
+      "scripts/perf-harness.mjs",
+      "scripts/wp3-l2-harness.mjs"
+    ],
+    "discoveryFixtures": [
+      "discovery-fixtures/index.json",
+      "discovery-fixtures/seed-domain-org.json",
+      "discovery-fixtures/seed-person-he.json",
+      "discovery-fixtures/seed-person-latin.json"
+    ],
+    "root": [
+      "package.json",
+      "vercel.json",
+      "index.html",
+      ".gitignore",
+      "discovery-ui.js",
+      ".env.local",
+      "-w",
+      "-o"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "track": "M",
+  "title": "SSE / live UX",
+  "owner": "ממשק",
+  "date": "2026-09-20",
+  "timezone": "Asia/Jerusalem",
+  "status": "PASS_CANONICAL_PREVIEW",
+  "promote": "HOLD",
+  "coreUntouched": true,
+  "deploy": false,
+  "items": [
+    {
+      "id": "M1",
+      "name": "SSE reconnect cursor/Last-Event-ID",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M2",
+      "name": "No reconnect thrash on terminal",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M3",
+      "name": "replay-from-complete hydrate",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M4",
+      "name": "No duplicate spam / no blank",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M5",
+      "name": "partial→final UI states incl. reconnecting",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M6",
+      "name": "Findings merge by id",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M7",
+      "name": "No identity chrome",
+      "result": "pass",
+      "scope": "client"
+    },
+    {
+      "id": "M8",
+      "name": "Live Preview E2E reconnect/replay",
+      "result": "pass",
+      "scope": "preview",
+      "note": "Canonical hotfix Preview PASS on dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2: health HTTP 200 (upstash, durable=true, promoteEligible=true); POST example.org HTTP 201 → GET same session HTTP 200; first and replay SSE HTTP 200 text/event-stream with 11 frames each; narrow HTTP 200 (3→2). This supersedes dpl_CAVh for the formal gate. Promote remains HOLD; no deploy/promote.",
+      "evidence": "test-results/discovery/MEGA/MEGA-M-CANONICAL-9PkJ-VERIFY-ממשק-2026-09-20.md"
+    }
+  ],
+  "filesChanged": [
+    "discovery-ui.js",
+    "index.html",
+    "test-results/discovery/MEGA/MEGA-M-SSE-LIVE-UX-ממשק-2026-09-20.md",
+    "test-results/discovery/MEGA/MEGA-M-STATUS.json",
+    "test-results/discovery/MEGA/MEGA-M8-LIVE-PREVIEW-ממשק-2026-09-20.md",
+    "test-results/discovery/MEGA/MEGA-M-KV-PREVIEW-VERIFY-ממשק-2026-09-20.md",
+    "test-results/discovery/MEGA/MEGA-M-KV-PREVIEW-REVERIFY-ממשק-2026-09-20.md",
+    "test-results/discovery/MEGA/MEGA-M-CANONICAL-9PkJ-VERIFY-ממשק-2026-09-20.md"
+  ],
+  "evidence": "test-results/discovery/MEGA/MEGA-M-CANONICAL-9PkJ-VERIFY-ממשק-2026-09-20.md"
+}

@@ -1,0 +1,49 @@
+{
+  "mode": "ambiguous",
+  "label": "John Smith",
+  "qid": null,
+  "desc": "Several possible matches — add context",
+  "extract": "",
+  "photo": null,
+  "sources": [],
+  "images": [],
+  "extra_facts": [],
+  "candidates": [],
+  "ambiguous": true,
+  "thin": false,
+  "alts": [],
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 5499,
+    "gemini": 0,
+    "enrich": 0,
+    "stageB": 0,
+    "total": 5500,
+    "wikiMeta": {
+      "wiki429": 7,
+      "wikiTimeout": 1,
+      "wikiRetries": 8
+    }
+  },
+  "uiState": "need_context",
+  "scenario": "foreign",
+  "confidence": "none",
+  "needContextFields": [
+    "country",
+    "city",
+    "org",
+    "role"
+  ],
+  "messageKey": "common_name",
+  "photoUrl": null,
+  "faces": false,
+  "needContext": true,
+  "needCandidatePick": false,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "requestId": "0cb7c630-73c7-41e5-ba5a-4ac5ca966a50",
+  "wikiMeta": {
+    "wiki429": 7,
+    "wikiTimeout": 1,
+    "wikiRetries": 8
+  }
+}

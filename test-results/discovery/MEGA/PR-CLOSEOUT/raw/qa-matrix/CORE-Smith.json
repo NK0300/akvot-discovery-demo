@@ -1,0 +1,66 @@
+{
+  "httpStatus": 200,
+  "ms": 5788,
+  "ui": "need_context",
+  "qid": null,
+  "faces": 0,
+  "leak": 0,
+  "checks": {
+    "http_ok": true,
+    "leak_0": true,
+    "ui_ok": true,
+    "qid_ok": true,
+    "not_dossier": true,
+    "not_pw_qid": true,
+    "faces_ok": true
+  },
+  "json": {
+    "mode": "ambiguous",
+    "label": "John Smith",
+    "qid": null,
+    "desc": "Several possible matches — add context",
+    "extract": "",
+    "photo": null,
+    "sources": [],
+    "images": [],
+    "extra_facts": [],
+    "candidates": [],
+    "ambiguous": true,
+    "thin": false,
+    "alts": [],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 5499,
+      "gemini": 0,
+      "enrich": 0,
+      "stageB": 0,
+      "total": 5499,
+      "wikiMeta": {
+        "wiki429": 4,
+        "wikiTimeout": 1,
+        "wikiRetries": 5
+      }
+    },
+    "uiState": "need_context",
+    "scenario": "foreign",
+    "confidence": "none",
+    "needContextFields": [
+      "country",
+      "city",
+      "org",
+      "role"
+    ],
+    "messageKey": "common_name",
+    "photoUrl": null,
+    "faces": false,
+    "needContext": true,
+    "needCandidatePick": false,
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "requestId": "c729d57c-2726-4bbe-a593-cd4fe574b0f6",
+    "wikiMeta": {
+      "wiki429": 4,
+      "wikiTimeout": 1,
+      "wikiRetries": 5
+    }
+  }
+}

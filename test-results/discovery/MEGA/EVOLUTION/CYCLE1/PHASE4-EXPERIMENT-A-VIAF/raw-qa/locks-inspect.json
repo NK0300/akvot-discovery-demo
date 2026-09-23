@@ -1,0 +1,93 @@
+{
+  "stamp": "2026-09-20T10:04:07+03:00",
+  "coreInspect": {
+    "deploymentId": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+  },
+  "b0Inspect": {
+    "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+  },
+  "previewHealth": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "baselineHint": "dpl_DNfPZ9",
+    "discoveryStore": {
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "kvCredsPresent": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true
+    },
+    "kvPing": {
+      "ok": true,
+      "latencyMs": 46
+    }
+  },
+  "previewDiscHealth": {
+    "ok": true,
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "latencyMs": 116,
+    "correlationId": "hc-mu9h0kwy-6cd559",
+    "fsRegenFallback": false,
+    "explicitFallback": false,
+    "promoteEligible": true,
+    "durable": true,
+    "fallback": false,
+    "kvCredsPresent": true,
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "mode": "kv-shared",
+    "steps": [
+      {
+        "step": "WRITE",
+        "ok": true,
+        "ms": 33
+      },
+      {
+        "step": "READ",
+        "ok": true,
+        "ms": 33
+      },
+      {
+        "step": "UPDATE",
+        "ok": true,
+        "ms": 66
+      },
+      {
+        "step": "DELETE",
+        "ok": true,
+        "ms": 116
+      }
+    ],
+    "ttlMs": 3600000,
+    "faultInjectAvailable": false
+  },
+  "b0Health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "baselineHint": "dpl_DNfPZ9",
+    "discoveryStore": {
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "kvCredsPresent": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true
+    },
+    "kvPing": {
+      "ok": true,
+      "latencyMs": 36
+    }
+  }
+}

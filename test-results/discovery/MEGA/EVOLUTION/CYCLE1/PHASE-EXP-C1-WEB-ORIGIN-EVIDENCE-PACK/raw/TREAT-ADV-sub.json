@@ -1,0 +1,378 @@
+{
+  "ok": true,
+  "sessionId": "kv1.e3e6934d9fefa47f80252ecac791da15",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "c1-TREAT-ADV-sub",
+  "snapshot": {
+    "sessionId": "kv1.e3e6934d9fefa47f80252ecac791da15",
+    "seed": "https://en.wikipedia.org",
+    "q": "https://en.wikipedia.org",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q104843257",
+        "kind": "registry",
+        "title": "2026 in spaceflight",
+        "summary": "spaceflight-related events during the year 2026",
+        "evidenceIds": [
+          "ev-4d3faa3049b2372f5e4dbc84"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q104843257",
+          "wd-Q104843257"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-34682416",
+        "kind": "registry",
+        "title": "https://en.wikipedia.org/wiki/Philippe_Briones Philippe Briones",
+        "summary": "type:personal · lc:nb2008025404 · dnb:1181054583",
+        "evidenceIds": [
+          "ev-1b968cb75781bb7b0e80e5c6"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:34682416"
+        ],
+        "scoreFinding": 0.6908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-6396569",
+        "kind": "registry",
+        "title": "https://en.wikipedia.org/wiki/Hamilton_Goold-Adams",
+        "summary": "type:personal · lc:n85376347",
+        "evidenceIds": [
+          "ev-93b05dbd4d6ae1a80775a217"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:6396569"
+        ],
+        "scoreFinding": 0.6808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-138595047",
+        "kind": "registry",
+        "title": "https://en.wikipedia.org/wiki/Gawker_Media Gawker Media",
+        "summary": "type:corporate · lc:n2007016811 · dnb:1177154625",
+        "evidenceIds": [
+          "ev-c7b4547930a86f6a2283e93c"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:138595047"
+        ],
+        "scoreFinding": 0.6708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Https_en_wikipedia_org",
+        "kind": "page",
+        "title": "Https://en.wikipedia.org",
+        "evidenceIds": [
+          "ev-9743ea6eb9a05ab0af9ab473"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Https://en.wikipedia.org"
+        ],
+        "scoreFinding": 0.6083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-4d3faa3049b2372f5e4dbc84",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q104843257",
+        "url": "https://www.wikidata.org/wiki/Q104843257",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:38:07.918Z",
+        "evidenceType": "registry",
+        "quote": "spaceflight-related events during the year 2026",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9743ea6eb9a05ab0af9ab473",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Https://en.wikipedia.org",
+        "url": "https://en.wikipedia.org/wiki/Https://en.wikipedia.org",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:38:07.988Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1b968cb75781bb7b0e80e5c6",
+        "provenanceUrl": "https://viaf.org/viaf/34682416",
+        "url": "https://viaf.org/viaf/34682416",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:38:07.911Z",
+        "evidenceType": "registry",
+        "quote": "https://en.wikipedia.org/wiki/Philippe_Briones Philippe Briones",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-93b05dbd4d6ae1a80775a217",
+        "provenanceUrl": "https://viaf.org/viaf/6396569",
+        "url": "https://viaf.org/viaf/6396569",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:38:07.911Z",
+        "evidenceType": "registry",
+        "quote": "https://en.wikipedia.org/wiki/Hamilton_Goold-Adams",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c7b4547930a86f6a2283e93c",
+        "provenanceUrl": "https://viaf.org/viaf/138595047",
+        "url": "https://viaf.org/viaf/138595047",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:38:07.911Z",
+        "evidenceType": "registry",
+        "quote": "https://en.wikipedia.org/wiki/Gawker_Media Gawker Media",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "viaf",
+            "count": 3
+          },
+          {
+            "value": "wikidata",
+            "count": 1
+          },
+          {
+            "value": "wikipedia",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 4
+          },
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:efcb5e7c26d6"
+      ],
+      "status": "candidate",
+      "displayHint": "https://en.wikipedia.org",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:38:07.737Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:efcb5e7c26d6",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q104843257",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Https_en_wikipedia_org",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-34682416",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-6396569",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-138595047",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

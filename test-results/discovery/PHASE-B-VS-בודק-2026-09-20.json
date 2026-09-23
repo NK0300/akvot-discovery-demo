@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "role": "בודק",
+    "date": "2026-09-20",
+    "zone": "Asia/Jerusalem UTC+3",
+    "measure_only": true,
+    "promote": false,
+    "discovery": {
+      "url": "https://akvot-simple-demo-p5zxut9y5-k-akvot.vercel.app",
+      "dpl": "dpl_BvWg9yUsibVqdrCAexSTMpwoabZ6",
+      "origin": "https://akvot-simple-demo.vercel.app"
+    },
+    "core_alias": {
+      "url": "https://akvot-simple-demo.vercel.app",
+      "expect_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+    },
+    "endpoints": {
+      "create": "POST /api/discovery/sessions",
+      "get": "GET /api/discovery/sessions/:id",
+      "note": "SSE/events and /narrow not in slice; snapshot on POST for serverless"
+    }
+  },
+  "health": {
+    "discovery": {
+      "ms": 2588,
+      "json": {
+        "ok": true,
+        "phase": "orchestrator-v0-b",
+        "build": "dpl_BvWg9yUsibVqdrCAexSTMpwoabZ6",
+        "baselineHint": "dpl_DNfPZ9"
+      },
+      "build_match": true,
+      "ok": true
+    }
+  },
+  "seeds": {
+    "S1": {
+      "seed": "דוד כהן",
+      "kind": "HE person soft",
+      "post_ms": 3106,
+      "post_ok": true,
+      "sessionId": "2e693c4f-39b9-4454-a3c9-3db7a6044315",
+      "get_status": "error",
+      "get_http_note": "session not found",
+      "used_snapshot_from": "POST.snapshot",
+      "vs_pass": true,
+      "fails": [],
+      "notes": [],
+      "checks": {
+        "status": "partial",
+        "statusOk": true,
+        "findingsCount": 13,
+        "evidenceCount": 13,
+        "findingsMin": true,
+        "provenanceOk": 13,
+        "provenanceBad": 0,
+        "bannedKeys": [],
+        "hasDossierObject": false,
+        "facetsType": "array",
+        "facetsOk": true,
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "leakHits": 0,
+        "schemaFindingOk": true,
+        "sessionId": "2e693c4f-39b9-4454-a3c9-3db7a6044315",
+        "q": "דוד כהן"
+      },
+      "leak_hits": 0,
+      "leak_detail": [],
+      "sample_finding": {
+        "id": "ol-OL16182955A",
+        "kind": "registry",
+        "title": "דוד כהן",
+        "evidenceIds": [
+          "ev-e5a7e9547758831b8b92c9f0"
+        ],
+        "providers": [
+          "openlibrary"
+        ]
+      },
+      "sample_evidence": {
+        "id": "ev-e7bb59465d61376008a001d6",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q88524142",
+        "providerId": "wikidata"
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok"
+      },
+      "forbiddenIdentitiesVersion": "2026-09-19.1"
+    },
+    "S2": {
+      "seed": "Alex Morgan",
+      "kind": "Latin ambiguous",
+      "post_ms": 3148,
+      "post_ok": true,
+      "sessionId": "5f728990-4fab-45f7-a022-9d884c387400",
+      "get_status": "error",
+      "get_http_note": "session not found",
+      "used_snapshot_from": "POST.snapshot",
+      "vs_pass": true,
+      "fails": [],
+      "notes": [],
+      "checks": {
+        "status": "partial",
+        "statusOk": true,
+        "findingsCount": 15,
+        "evidenceCount": 15,
+        "findingsMin": true,
+        "provenanceOk": 15,
+        "provenanceBad": 0,
+        "bannedKeys": [],
+        "hasDossierObject": false,
+        "facetsType": "array",
+        "facetsOk": true,
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "leakHits": 0,
+        "schemaFindingOk": true,
+        "sessionId": "5f728990-4fab-45f7-a022-9d884c387400",
+        "q": "Alex Morgan"
+      },
+      "leak_hits": 0,
+      "leak_detail": [],
+      "sample_finding": {
+        "id": "ol-OL1437248A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "evidenceIds": [
+          "ev-a78fd68b67a01a8420fd50a5"
+        ],
+        "providers": [
+          "openlibrary"
+        ]
+      },
+      "sample_evidence": {
+        "id": "ev-e41cddf1eebe7889367a86cd",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q233510",
+        "providerId": "wikidata"
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "partial"
+      },
+      "forbiddenIdentitiesVersion": "2026-09-19.1"
+    },
+    "S3": {
+      "seed": "example.org",
+      "kind": "org/domain",
+      "post_ms": 2816,
+      "post_ok": true,
+      "sessionId": "49f891a4-678a-411e-b9a8-44c10adb6de3",
+      "get_status": "error",
+      "get_http_note": "session not found",
+      "used_snapshot_from": "POST.snapshot",
+      "vs_pass": true,
+      "fails": [],
+      "notes": [],
+      "checks": {
+        "status": "complete",
+        "statusOk": true,
+        "findingsCount": 2,
+        "evidenceCount": 2,
+        "findingsMin": true,
+        "provenanceOk": 2,
+        "provenanceBad": 0,
+        "bannedKeys": [],
+        "hasDossierObject": false,
+        "facetsType": "array",
+        "facetsOk": true,
+        "forbiddenIdentitiesVersion": "2026-09-19.1",
+        "leakHits": 0,
+        "schemaFindingOk": true,
+        "sessionId": "49f891a4-678a-411e-b9a8-44c10adb6de3",
+        "q": "example.org"
+      },
+      "leak_hits": 0,
+      "leak_detail": [],
+      "sample_finding": {
+        "id": "wd-Q306656",
+        "kind": "registry",
+        "title": "example.com",
+        "evidenceIds": [
+          "ev-15f62f74222c0d22f4e3c93d"
+        ],
+        "providers": [
+          "wikidata"
+        ]
+      },
+      "sample_evidence": {
+        "id": "ev-15f62f74222c0d22f4e3c93d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q306656",
+        "providerId": "wikidata"
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok"
+      },
+      "forbiddenIdentitiesVersion": "2026-09-19.1"
+    }
+  },
+  "acc_disc": {
+    "denylist_class": [
+      "Q1701775"
+    ],
+    "seed_leakage_sum": 0,
+    "raw_file_leakage_sum": 0,
+    "leakage": 0,
+    "file_leaks": [],
+    "per_seed": {
+      "S1": {
+        "leak_hits": 0,
+        "version": "2026-09-19.1"
+      },
+      "S2": {
+        "leak_hits": 0,
+        "version": "2026-09-19.1"
+      },
+      "S3": {
+        "leak_hits": 0,
+        "version": "2026-09-19.1"
+      }
+    },
+    "inject_harness": false,
+    "note": "No Discovery inject harness on live Preview; observe-only deep scan of live responses",
+    "pass": true
+  },
+  "core": {
+    "health": {
+      "ms": 2548,
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "expect": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "match": true,
+      "json": {
+        "ok": true,
+        "phase": "orchestrator-v0-b",
+        "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+        "baselineHint": "dpl_DNfPZ9"
+      }
+    },
+    "assaf": {
+      "ms": 2794,
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "leak": 0,
+      "pass": true
+    },
+    "cohen": {
+      "ms": 3148,
+      "ui": "need_context",
+      "qid": null,
+      "leak": 0,
+      "pass": true
+    },
+    "smith": {
+      "ms": 10155,
+      "ui": "candidates",
+      "qid": null,
+      "faces": false,
+      "leak": 0,
+      "pass": true
+    },
+    "leakage": 0,
+    "pass": true
+  },
+  "entity_agnostic": {
+    "same_topLevelKeys": true,
+    "same_postKeys": true,
+    "same_pipeline_fields": true,
+    "shapes": [
+      {
+        "id": "S1",
+        "shape": {
+          "hasSessionId": true,
+          "status": "partial",
+          "hasFindingsArray": true,
+          "hasEvidenceArray": true,
+          "hasFacets": true,
+          "hasProviders": true,
+          "hasForbiddenVer": true,
+          "topLevelKeys": [
+            "createdAt",
+            "evidence",
+            "facets",
+            "findings",
+            "forbiddenIdentitiesVersion",
+            "graph",
+            "progress",
+            "providers",
+            "q",
+            "seed",
+            "sessionId",
+            "softEr",
+            "stage",
+            "status"
+          ],
+          "postKeys": [
+            "ok",
+            "pollAfterMs",
+            "sessionId",
+            "snapshot",
+            "status"
+          ]
+        }
+      },
+      {
+        "id": "S2",
+        "shape": {
+          "hasSessionId": true,
+          "status": "partial",
+          "hasFindingsArray": true,
+          "hasEvidenceArray": true,
+          "hasFacets": true,
+          "hasProviders": true,
+          "hasForbiddenVer": true,
+          "topLevelKeys": [
+            "createdAt",
+            "evidence",
+            "facets",
+            "findings",
+            "forbiddenIdentitiesVersion",
+            "graph",
+            "progress",
+            "providers",
+            "q",
+            "seed",
+            "sessionId",
+            "softEr",
+            "stage",
+            "status"
+          ],
+          "postKeys": [
+            "ok",
+            "pollAfterMs",
+            "sessionId",
+            "snapshot",
+            "status"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "shape": {
+          "hasSessionId": true,
+          "status": "complete",
+          "hasFindingsArray": true,
+          "hasEvidenceArray": true,
+          "hasFacets": true,
+          "hasProviders": true,
+          "hasForbiddenVer": true,
+          "topLevelKeys": [
+            "createdAt",
+            "evidence",
+            "facets",
+            "findings",
+            "forbiddenIdentitiesVersion",
+            "graph",
+            "progress",
+            "providers",
+            "q",
+            "seed",
+            "sessionId",
+            "softEr",
+            "stage",
+            "status"
+          ],
+          "postKeys": [
+            "ok",
+            "pollAfterMs",
+            "sessionId",
+            "snapshot",
+            "status"
+          ]
+        }
+      }
+    ],
+    "pass": true,
+    "note": "Same endpoints + pipeline fields for all seeds; no seed-specific branch observed in response shape"
+  },
+  "gate": {
+    "discovery_health_build": "PASS",
+    "VS_S1": "PASS",
+    "VS_S2": "PASS",
+    "VS_S3": "PASS",
+    "VS_multi_seed": "PASS",
+    "Acc_DISC": "PASS",
+    "leakage": 0,
+    "Entity_Agnostic": "PASS",
+    "Core_regression": "PASS",
+    "Core_leakage": 0,
+    "promote": "NOT_DONE",
+    "overall": "PASS"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/impl-ready/source-family/v1",
+  "title": "SourceFamily (implementation-readiness design schema)",
+  "type": "object",
+  "required": [
+    "familyId",
+    "authorityClass",
+    "independenceClass",
+    "safetyClass",
+    "capabilities",
+    "entityTypes",
+    "inputRequirements",
+    "outputTypes",
+    "productionEligible"
+  ],
+  "properties": {
+    "familyId": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "authorityClass": {
+      "type": "string"
+    },
+    "independenceClass": {
+      "type": "string"
+    },
+    "safetyClass": {
+      "enum": [
+        "trusted_api",
+        "public_metadata",
+        "untrusted_web",
+        "credentialed"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entityTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inputRequirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "costClass": {
+      "type": "string"
+    },
+    "latencyClass": {
+      "type": "string"
+    },
+    "rateLimitClass": {
+      "type": "string"
+    },
+    "failureModes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "previewFlag": {
+      "type": "string"
+    },
+    "productionEligible": {
+      "type": "boolean"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

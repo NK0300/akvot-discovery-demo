@@ -1,0 +1,526 @@
+{
+  "meta": {
+    "date": "2026-09-19",
+    "zone": "Asia/Jerusalem UTC+3",
+    "base": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app",
+    "dpl": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+    "origin": "https://akvot-simple-demo.vercel.app",
+    "alias_frozen": true,
+    "promote": false,
+    "health_build_confirmed": true
+  },
+  "matrix": {
+    "M1": {
+      "rows": [
+        {
+          "label": "M1-1",
+          "ms": 8775,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "de9790fe-9ba9-409e-89e3-91bb99aedd01",
+          "candN": 6,
+          "raw": "M1-quiet-smith-1.json"
+        },
+        {
+          "label": "M1-2",
+          "ms": 9163,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "ce3230c2-5c86-44c6-ab17-221caa970baa",
+          "candN": 6,
+          "raw": "M1-quiet-smith-2.json"
+        },
+        {
+          "label": "M1-3",
+          "ms": 8525,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "8bac22b4-f379-42d0-9191-bd7ac94c2a31",
+          "candN": 6,
+          "raw": "M1-quiet-smith-3.json"
+        }
+      ],
+      "pass": true,
+      "leakage": 0,
+      "n": 3
+    },
+    "M2": {
+      "rows": [
+        {
+          "label": "M2-1",
+          "ms": 8659,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "59e3ed8d-9e56-4a81-be5d-5064b5f504d5",
+          "candN": 6,
+          "raw": "M2-cold-smith-1.json"
+        },
+        {
+          "label": "M2-2",
+          "ms": 8605,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "42b8fd37-b147-4cdd-978a-710277c498b3",
+          "candN": 6,
+          "raw": "M2-cold-smith-2.json"
+        },
+        {
+          "label": "M2-3",
+          "ms": 8516,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "5adb6882-9cab-4d2f-926a-07bb49dcf565",
+          "candN": 6,
+          "raw": "M2-cold-smith-3.json"
+        }
+      ],
+      "pass": true,
+      "leakage": 0,
+      "n": 3
+    },
+    "M3": {
+      "rows": [
+        {
+          "label": "M3-1",
+          "ms": 8642,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "8b38478e-a494-4750-9eb7-bbbf763159c5",
+          "candN": 6,
+          "raw": "M3-warm-smith-1.json"
+        },
+        {
+          "label": "M3-2",
+          "ms": 8089,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "7ddcea56-38b0-4182-80dc-7edfafedeb63",
+          "candN": 6,
+          "raw": "M3-warm-smith-2.json"
+        },
+        {
+          "label": "M3-3",
+          "ms": 13018,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "ambiguous",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "cb614e39-ab76-44af-a465-2690ee1d7c6a",
+          "candN": 0,
+          "raw": "M3-warm-smith-3.json"
+        }
+      ],
+      "pass": false,
+      "leakage": 0,
+      "n": 3
+    },
+    "M4": {
+      "rows": [
+        {
+          "label": "M4-1",
+          "ms": 8716,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "007d41d5-3821-4c1c-9ef8-e33211039f57",
+          "candN": 6,
+          "raw": "M4-repeat-smith-1.json"
+        },
+        {
+          "label": "M4-2",
+          "ms": 8919,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "6af4b896-ac42-491c-b9be-f1a9d101576d",
+          "candN": 6,
+          "raw": "M4-repeat-smith-2.json"
+        },
+        {
+          "label": "M4-3",
+          "ms": 8560,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "7ec55b17-2bac-4ab5-bc23-399d825fe8c4",
+          "candN": 6,
+          "raw": "M4-repeat-smith-3.json"
+        },
+        {
+          "label": "M4-4",
+          "ms": 8530,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "ol-OL177707A",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "70594efb-822f-486d-a018-4654b188b292",
+          "candN": 6,
+          "raw": "M4-repeat-smith-4.json"
+        },
+        {
+          "label": "M4-5",
+          "ms": 8275,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [
+            "wd-Q6258357",
+            "viaf-4952029",
+            "viaf-7575484"
+          ],
+          "stripped": 1,
+          "ver": "2026-09-19.1",
+          "rid": "a1c8c6bc-06d0-400c-993e-29797d1a8cc2",
+          "candN": 6,
+          "raw": "M4-repeat-smith-5.json"
+        }
+      ],
+      "pass": true,
+      "leakage": 0,
+      "n": 5
+    },
+    "M5": {
+      "pass": true,
+      "feasible": false,
+      "note": "No WD empty/429 harness on Preview; observed natural strip/empty via forbiddenStripped where present. Soft UI OK if no Q1701775.",
+      "observed": [
+        {
+          "cell": "M4-5",
+          "stripped": 1,
+          "ui": "candidates"
+        }
+      ]
+    },
+    "M6": {
+      "rows": [
+        {
+          "label": "M6-1",
+          "ms": 2838,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "wiki",
+          "qid": "Q47507930",
+          "faces": true,
+          "facesCount": 2,
+          "top": [],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "411c1ec0-dae7-42a7-8f72-4befe914fa26",
+          "candN": 0,
+          "raw": "M6-assaf-1.json"
+        }
+      ],
+      "pass": false,
+      "leakage": 0,
+      "n": 1
+    },
+    "M7": {
+      "rows": [
+        {
+          "label": "M7-1",
+          "ms": 3125,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "candidates",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "1874ef37-6645-49b2-a6fe-f9426c1c6522",
+          "candN": 0,
+          "raw": "M7-cohen-1.json"
+        }
+      ],
+      "pass": true,
+      "leakage": 0,
+      "n": 1
+    },
+    "M8": {
+      "rows": [
+        {
+          "label": "M8-1",
+          "ms": 7900,
+          "status": 200,
+          "err": null,
+          "has_Q1701775": false,
+          "leak_hits": 0,
+          "leak_detail": [],
+          "candLeak": false,
+          "dossierLeak": false,
+          "sourcesLeak": false,
+          "ui": "ambiguous",
+          "qid": null,
+          "faces": false,
+          "facesCount": 0,
+          "top": [],
+          "stripped": null,
+          "ver": "2026-09-19.1",
+          "rid": "8367fb80-e197-44f2-b8a5-fdd300e17670",
+          "candN": 0,
+          "raw": "M8-john-rappaport-1.json"
+        }
+      ],
+      "pass": true,
+      "leakage": 0,
+      "n": 1
+    }
+  },
+  "leakage_total": 0,
+  "pw": 0,
+  "stop_acc_fail": false,
+  "health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "gate": {
+    "M1": "PASS",
+    "M2": "PASS",
+    "M3": "FAIL",
+    "M4": "PASS",
+    "M5": "SKIP_OPTIONAL",
+    "M6": "FAIL",
+    "M7": "PASS",
+    "M8": "PASS",
+    "leakage_count": 0,
+    "pw": 0,
+    "Assaf": "FAIL",
+    "cohen": "PASS",
+    "TC6": "PASS",
+    "Acc_GO": "NO-GO"
+  }
+}

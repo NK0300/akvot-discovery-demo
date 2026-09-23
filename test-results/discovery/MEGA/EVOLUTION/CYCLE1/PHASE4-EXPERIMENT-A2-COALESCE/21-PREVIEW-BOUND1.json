@@ -1,0 +1,37 @@
+{
+  "stamp": "2026-09-20T10:19:18+03:00",
+  "stampLabel": "2026-09-20 10:19 IDT",
+  "experiment": "EXP-A2-COALESCE",
+  "bound": "Bound1-title-only-fix",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+    "url": "https://akvot-simple-demo-2u3mwx1k4-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+    "target": null,
+    "readyState": "READY",
+    "env": {
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "priorPreviewCanonical": {
+    "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+    "url": "https://akvot-simple-demo-h9cq1ob4m-k-akvot.vercel.app",
+    "note": "pre-Bound1 Option A (title: still coalesced)"
+  },
+  "aliasesUntouched": {
+    "discovery": { "alias": "akvot-discovery.vercel.app", "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv", "status": "UNCHANGED" },
+    "core": { "alias": "akvot-simple-demo.vercel.app", "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8", "status": "LOCKED / UNCHANGED" }
+  },
+  "smoke": {
+    "mean_multi_rate": 0,
+    "pooled_multi_rate": 0,
+    "acc_leak": 0,
+    "s01_findings_n": 18,
+    "gate": 0.15,
+    "mean_pass": false
+  },
+  "note": "Preview only. No --prod. No alias retarget. HOLD promote."
+}

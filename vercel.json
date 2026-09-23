@@ -1,0 +1,52 @@
+{
+  "regions": [
+    "fra1"
+  ],
+  "functions": {
+    "api/lookup.js": {
+      "maxDuration": 60
+    },
+    "api/discovery/health.js": {
+      "maxDuration": 15
+    },
+    "api/discovery/sessions/index.js": {
+      "maxDuration": 30
+    },
+    "api/discovery/sessions/[id]/index.js": {
+      "maxDuration": 30
+    },
+    "api/discovery/sessions/[id]/events.js": {
+      "maxDuration": 30
+    },
+    "api/discovery/sessions/[id]/narrow.js": {
+      "maxDuration": 15
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'"
+        }
+      ]
+    }
+  ]
+}

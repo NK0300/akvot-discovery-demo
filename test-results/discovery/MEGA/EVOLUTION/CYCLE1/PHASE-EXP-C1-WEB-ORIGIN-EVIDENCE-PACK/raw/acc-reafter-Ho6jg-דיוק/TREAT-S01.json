@@ -1,0 +1,5571 @@
+{
+  "create": {
+    "ok": true,
+    "sessionId": "kv1.269a640423887c166188b4704f425d7d",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "acc-c1-TREAT-S01",
+    "snapshot": {
+      "sessionId": "kv1.269a640423887c166188b4704f425d7d",
+      "seed": "Tim Berners-Lee",
+      "q": "Tim Berners-Lee",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q80",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "English computer scientist (born 1955)",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.9549999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL25245A",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "Top work: Weaving the Web",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.9449999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.9349999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, 1955-",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.9249999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.9149999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.9049999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.8949999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, Brits natuurkundige",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.8849999999999998,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, britský informatik",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.8749999999999999,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "registry",
+          "title": "Tim Berners-Lee, britannialainen tietotekniikka-asiantuntija ja World Wide Webin keksijä",
+          "summary": "type:personal · lc:no99010609 · dnb:121649091",
+          "evidenceIds": [
+            "ev-1bc4633ed032bd7d454682f1",
+            "ev-8b78b3cd061f3cc8d479260b",
+            "ev-ded4492e49be949e449272fe",
+            "ev-ce87e4b18f0524a64903c21e",
+            "ev-ceaa76317f5993f3ddd9daf0",
+            "ev-6aeb95eb2486847285c477bc",
+            "ev-256520dfd012cc9f5c748809",
+            "ev-15faf7baf2cf5f6111cdf54a",
+            "ev-ae75562849264469888e7d58",
+            "ev-cc1c95dd00fec531a44ee1d7"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q80",
+            "wd-Q80",
+            "viaf:85312226",
+            "ol:OL25245A",
+            "ol-OL25245A"
+          ],
+          "scoreFinding": 0.8649999999999999,
+          "ranking": {
+            "discoveryScore": 0.9549999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 1,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 10,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q120373140",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "2015 edition of a biography by Claudia Martin",
+          "evidenceIds": [
+            "ev-9dae5e6e5b505dbfed817fb6"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q120373140",
+            "wd-Q120373140"
+          ],
+          "scoreFinding": 0.6183333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q120373262",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "2015 biography by Jason Porterfield",
+          "evidenceIds": [
+            "ev-deec608d0782116cb1c5ca08"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q120373262",
+            "wd-Q120373262"
+          ],
+          "scoreFinding": 0.6083333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q22991023",
+          "kind": "registry",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "summary": "TED2014",
+          "evidenceIds": [
+            "ev-c7f185fbae6640484c617f83"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q22991023",
+            "wd-Q22991023"
+          ],
+          "scoreFinding": 0.5983333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q22946133",
+          "kind": "registry",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "summary": "TED2010",
+          "evidenceIds": [
+            "ev-8314c7d5a762d02d56ed021d"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q22946133",
+            "wd-Q22946133"
+          ],
+          "scoreFinding": 0.5883333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q22980417",
+          "kind": "registry",
+          "title": "Tim Berners-Lee: The next web",
+          "summary": "TED2009",
+          "evidenceIds": [
+            "ev-08cb147dee8c713927983c2b"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q22980417",
+            "wd-Q22980417"
+          ],
+          "scoreFinding": 0.5783333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q19761597",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "Wikinews article",
+          "evidenceIds": [
+            "ev-d571998ff143b8c65d0a81a1"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q19761597",
+            "wd-Q19761597"
+          ],
+          "scoreFinding": 0.5683333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q55693401",
+          "kind": "registry",
+          "title": "Tim Berners-Lee",
+          "summary": "article in Physics Today",
+          "evidenceIds": [
+            "ev-29f751a2d57f2094590e70b0"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q55693401",
+            "wd-Q55693401"
+          ],
+          "scoreFinding": 0.5583333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "kind": "page",
+          "title": "Tim Berners-Lee",
+          "evidenceIds": [
+            "ev-6131f395a12acb1f40ccf423"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Tim Berners-Lee"
+          ],
+          "scoreFinding": 0.4783333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-1bc4633ed032bd7d454682f1",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q80",
+          "url": "https://www.wikidata.org/wiki/Q80",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "English computer scientist (born 1955)",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-9dae5e6e5b505dbfed817fb6",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q120373140",
+          "url": "https://www.wikidata.org/wiki/Q120373140",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "2015 edition of a biography by Claudia Martin",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-deec608d0782116cb1c5ca08",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q120373262",
+          "url": "https://www.wikidata.org/wiki/Q120373262",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "2015 biography by Jason Porterfield",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-c7f185fbae6640484c617f83",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q22991023",
+          "url": "https://www.wikidata.org/wiki/Q22991023",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "TED2014",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-8314c7d5a762d02d56ed021d",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q22946133",
+          "url": "https://www.wikidata.org/wiki/Q22946133",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "TED2010",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-08cb147dee8c713927983c2b",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q22980417",
+          "url": "https://www.wikidata.org/wiki/Q22980417",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "TED2009",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d571998ff143b8c65d0a81a1",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q19761597",
+          "url": "https://www.wikidata.org/wiki/Q19761597",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "Wikinews article",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-29f751a2d57f2094590e70b0",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q55693401",
+          "url": "https://www.wikidata.org/wiki/Q55693401",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T08:50:05.706Z",
+          "evidenceType": "registry",
+          "quote": "article in Physics Today",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-8b78b3cd061f3cc8d479260b",
+          "provenanceUrl": "https://openlibrary.org/authors/OL25245A",
+          "url": "https://openlibrary.org/authors/OL25245A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T08:50:06.861Z",
+          "evidenceType": "registry",
+          "quote": "Weaving the Web",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6131f395a12acb1f40ccf423",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+          "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T08:50:05.460Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ded4492e49be949e449272fe",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ce87e4b18f0524a64903c21e",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, 1955-",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ceaa76317f5993f3ddd9daf0",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6aeb95eb2486847285c477bc",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-256520dfd012cc9f5c748809",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-15faf7baf2cf5f6111cdf54a",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, Brits natuurkundige",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ae75562849264469888e7d58",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, britský informatik",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-cc1c95dd00fec531a44ee1d7",
+          "provenanceUrl": "https://viaf.org/viaf/85312226",
+          "url": "https://viaf.org/viaf/85312226",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T08:50:05.583Z",
+          "evidenceType": "registry",
+          "quote": "Tim Berners-Lee, britannialainen tietotekniikka-asiantuntija ja World Wide Webin keksijä",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 17
+            },
+            {
+              "value": "openlibrary",
+              "count": 10
+            },
+            {
+              "value": "viaf",
+              "count": 10
+            },
+            {
+              "value": "wikipedia",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 17
+            },
+            {
+              "value": "page",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [
+            {
+              "value": "corroboration:multi_family",
+              "count": 10
+            }
+          ]
+        }
+      ],
+      "progress": {
+        "done": 8,
+        "totalHint": 8
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:4966fd884daa"
+        ],
+        "status": "candidate",
+        "displayHint": "Tim Berners-Lee",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T08:50:05.392Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:4966fd884daa",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q80",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL25245A",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-85312226",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q120373140",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q120373262",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q22991023",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q22946133",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q22980417",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q19761597",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q55693401",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Tim_Berners_Lee",
+            "kind": "finding"
+          }
+        ],
+        "edges": [
+          {
+            "id": "corr-0-0-1",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "ol-OL25245A",
+            "source": "wd-Q80",
+            "target": "ol-OL25245A",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-2",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-3",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-4",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-5",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-6",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-7",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-8",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-0-9",
+            "kind": "corroboration",
+            "from": "wd-Q80",
+            "to": "viaf-85312226",
+            "source": "wd-Q80",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-2",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-3",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-4",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-5",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-6",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-7",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-8",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-1-9",
+            "kind": "corroboration",
+            "from": "ol-OL25245A",
+            "to": "viaf-85312226",
+            "source": "ol-OL25245A",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-3",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-4",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-5",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-6",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-7",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-8",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-2-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-3-4",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-3-5",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-3-6",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-3-7",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-3-8",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-3-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-4-5",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-4-6",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-4-7",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-4-8",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-4-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-5-6",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-5-7",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-5-8",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-5-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-6-7",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-6-8",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-6-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-7-8",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-7-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          },
+          {
+            "id": "corr-0-8-9",
+            "kind": "corroboration",
+            "from": "viaf-85312226",
+            "to": "viaf-85312226",
+            "source": "viaf-85312226",
+            "target": "viaf-85312226",
+            "findingIds": [
+              "wd-Q80",
+              "ol-OL25245A",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226",
+              "viaf-85312226"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "coalesceKeys": [
+              "qid:Q80",
+              "viaf:85312226",
+              "ol:OL25245A"
+            ],
+            "titleSecondary": "disagree",
+            "relationship": "related-entity",
+            "mode": "attach_keep"
+          }
+        ]
+      },
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "tim berners-lee",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "wd-Q120373140",
+            "wd-Q120373262",
+            "wd-Q19761597",
+            "wd-Q55693401",
+            "wp-en-Tim_Berners_Lee"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  },
+  "final": {
+    "ok": true,
+    "sessionId": "kv1.269a640423887c166188b4704f425d7d",
+    "seed": "Tim Berners-Lee",
+    "q": "Tim Berners-Lee",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q80",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "English computer scientist (born 1955)",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.9549999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL25245A",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "Top work: Weaving the Web",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.9449999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.9349999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, 1955-",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.9249999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.9149999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.9049999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.8949999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, Brits natuurkundige",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.8849999999999998,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, britský informatik",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.8749999999999999,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-85312226",
+        "kind": "registry",
+        "title": "Tim Berners-Lee, britannialainen tietotekniikka-asiantuntija ja World Wide Webin keksijä",
+        "summary": "type:personal · lc:no99010609 · dnb:121649091",
+        "evidenceIds": [
+          "ev-1bc4633ed032bd7d454682f1",
+          "ev-8b78b3cd061f3cc8d479260b",
+          "ev-ded4492e49be949e449272fe",
+          "ev-ce87e4b18f0524a64903c21e",
+          "ev-ceaa76317f5993f3ddd9daf0",
+          "ev-6aeb95eb2486847285c477bc",
+          "ev-256520dfd012cc9f5c748809",
+          "ev-15faf7baf2cf5f6111cdf54a",
+          "ev-ae75562849264469888e7d58",
+          "ev-cc1c95dd00fec531a44ee1d7"
+        ],
+        "providers": [
+          "wikidata",
+          "openlibrary",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:openlibrary",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q80",
+          "wd-Q80",
+          "viaf:85312226",
+          "ol:OL25245A",
+          "ol-OL25245A"
+        ],
+        "scoreFinding": 0.8649999999999999,
+        "ranking": {
+          "discoveryScore": 0.9549999999999998,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 1,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 3,
+            "evidenceCount": 10,
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=1.00 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q120373140",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "2015 edition of a biography by Claudia Martin",
+        "evidenceIds": [
+          "ev-9dae5e6e5b505dbfed817fb6"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q120373140",
+          "wd-Q120373140"
+        ],
+        "scoreFinding": 0.6183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q120373262",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "2015 biography by Jason Porterfield",
+        "evidenceIds": [
+          "ev-deec608d0782116cb1c5ca08"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q120373262",
+          "wd-Q120373262"
+        ],
+        "scoreFinding": 0.6083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q22991023",
+        "kind": "registry",
+        "title": "Tim Berners-Lee: A Magna Carta for the web",
+        "summary": "TED2014",
+        "evidenceIds": [
+          "ev-c7f185fbae6640484c617f83"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q22991023",
+          "wd-Q22991023"
+        ],
+        "scoreFinding": 0.5983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q22946133",
+        "kind": "registry",
+        "title": "Tim Berners-Lee: The year open data went worldwide",
+        "summary": "TED2010",
+        "evidenceIds": [
+          "ev-8314c7d5a762d02d56ed021d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q22946133",
+          "wd-Q22946133"
+        ],
+        "scoreFinding": 0.5883333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q22980417",
+        "kind": "registry",
+        "title": "Tim Berners-Lee: The next web",
+        "summary": "TED2009",
+        "evidenceIds": [
+          "ev-08cb147dee8c713927983c2b"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q22980417",
+          "wd-Q22980417"
+        ],
+        "scoreFinding": 0.5783333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q19761597",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "Wikinews article",
+        "evidenceIds": [
+          "ev-d571998ff143b8c65d0a81a1"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q19761597",
+          "wd-Q19761597"
+        ],
+        "scoreFinding": 0.5683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q55693401",
+        "kind": "registry",
+        "title": "Tim Berners-Lee",
+        "summary": "article in Physics Today",
+        "evidenceIds": [
+          "ev-29f751a2d57f2094590e70b0"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q55693401",
+          "wd-Q55693401"
+        ],
+        "scoreFinding": 0.5583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Tim_Berners_Lee",
+        "kind": "page",
+        "title": "Tim Berners-Lee",
+        "evidenceIds": [
+          "ev-6131f395a12acb1f40ccf423"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Tim Berners-Lee"
+        ],
+        "scoreFinding": 0.4783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-1bc4633ed032bd7d454682f1",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q80",
+        "url": "https://www.wikidata.org/wiki/Q80",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "English computer scientist (born 1955)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9dae5e6e5b505dbfed817fb6",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q120373140",
+        "url": "https://www.wikidata.org/wiki/Q120373140",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "2015 edition of a biography by Claudia Martin",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-deec608d0782116cb1c5ca08",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q120373262",
+        "url": "https://www.wikidata.org/wiki/Q120373262",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "2015 biography by Jason Porterfield",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c7f185fbae6640484c617f83",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q22991023",
+        "url": "https://www.wikidata.org/wiki/Q22991023",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "TED2014",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8314c7d5a762d02d56ed021d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q22946133",
+        "url": "https://www.wikidata.org/wiki/Q22946133",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "TED2010",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-08cb147dee8c713927983c2b",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q22980417",
+        "url": "https://www.wikidata.org/wiki/Q22980417",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "TED2009",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d571998ff143b8c65d0a81a1",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q19761597",
+        "url": "https://www.wikidata.org/wiki/Q19761597",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "Wikinews article",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-29f751a2d57f2094590e70b0",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q55693401",
+        "url": "https://www.wikidata.org/wiki/Q55693401",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T08:50:05.706Z",
+        "evidenceType": "registry",
+        "quote": "article in Physics Today",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8b78b3cd061f3cc8d479260b",
+        "provenanceUrl": "https://openlibrary.org/authors/OL25245A",
+        "url": "https://openlibrary.org/authors/OL25245A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T08:50:06.861Z",
+        "evidenceType": "registry",
+        "quote": "Weaving the Web",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6131f395a12acb1f40ccf423",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+        "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T08:50:05.460Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ded4492e49be949e449272fe",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ce87e4b18f0524a64903c21e",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, 1955-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ceaa76317f5993f3ddd9daf0",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6aeb95eb2486847285c477bc",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-256520dfd012cc9f5c748809",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-15faf7baf2cf5f6111cdf54a",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, Brits natuurkundige",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ae75562849264469888e7d58",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, britský informatik",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-cc1c95dd00fec531a44ee1d7",
+        "provenanceUrl": "https://viaf.org/viaf/85312226",
+        "url": "https://viaf.org/viaf/85312226",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:50:05.583Z",
+        "evidenceType": "registry",
+        "quote": "Tim Berners-Lee, britannialainen tietotekniikka-asiantuntija ja World Wide Webin keksijä",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikidata",
+            "count": 17
+          },
+          {
+            "value": "openlibrary",
+            "count": 10
+          },
+          {
+            "value": "viaf",
+            "count": 10
+          },
+          {
+            "value": "wikipedia",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 17
+          },
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 10
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:4966fd884daa"
+      ],
+      "status": "candidate",
+      "displayHint": "Tim Berners-Lee",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:50:05.392Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:4966fd884daa",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q80",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL25245A",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-85312226",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q120373140",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q120373262",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q22991023",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q22946133",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q22980417",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q19761597",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q55693401",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "kind": "finding"
+        }
+      ],
+      "edges": [
+        {
+          "id": "corr-0-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "ol-OL25245A",
+          "source": "wd-Q80",
+          "target": "ol-OL25245A",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-2",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-3",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-4",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-5",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-6",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-7",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-8",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-0-9",
+          "kind": "corroboration",
+          "from": "wd-Q80",
+          "to": "viaf-85312226",
+          "source": "wd-Q80",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-2",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-3",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-4",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-5",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-6",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-7",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-8",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-1-9",
+          "kind": "corroboration",
+          "from": "ol-OL25245A",
+          "to": "viaf-85312226",
+          "source": "ol-OL25245A",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-3",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-4",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-5",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-6",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-7",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-8",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-2-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-3-4",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-3-5",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-3-6",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-3-7",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-3-8",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-3-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-4-5",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-4-6",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-4-7",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-4-8",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-4-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-5-6",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-5-7",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-5-8",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-5-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-6-7",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-6-8",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-6-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-7-8",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-7-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-0-8-9",
+          "kind": "corroboration",
+          "from": "viaf-85312226",
+          "to": "viaf-85312226",
+          "source": "viaf-85312226",
+          "target": "viaf-85312226",
+          "findingIds": [
+            "wd-Q80",
+            "ol-OL25245A",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226",
+            "viaf-85312226"
+          ],
+          "families": [
+            "wikimedia",
+            "openlibrary",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q80",
+            "viaf:85312226",
+            "ol:OL25245A"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        }
+      ]
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "tim berners-lee",
+        "findingIds": [
+          "wd-Q80",
+          "ol-OL25245A",
+          "viaf-85312226",
+          "wd-Q120373140",
+          "wd-Q120373262",
+          "wd-Q19761597",
+          "wd-Q55693401",
+          "wp-en-Tim_Berners_Lee"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "openlibrary.org",
+          "viaf.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  },
+  "narrow": {
+    "ok": false,
+    "error": "method not allowed"
+  },
+  "analysis": {
+    "id": "S01",
+    "seed": "Tim Berners-Lee",
+    "role": "person",
+    "status": "partial",
+    "findings_n": 18,
+    "evidence_n": 18,
+    "wo_findings_n": 0,
+    "wo_evidence_n": 0,
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "has_web_origin_provider": true,
+    "rel_hist": {},
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "acc_leak": 0,
+    "forbidden_stripped": 0,
+    "private_provenance_n": 0,
+    "wo_sample": [],
+    "wo_ev_sample": [],
+    "sessionId": "kv1.269a640423887c166188b4704f425d7d",
+    "create_ok": true,
+    "polls": 12,
+    "latencyMs": 68159,
+    "narrow_leak": 0,
+    "sse_leak": 0,
+    "sse_sampled": true,
+    "total_leak": 0
+  }
+}

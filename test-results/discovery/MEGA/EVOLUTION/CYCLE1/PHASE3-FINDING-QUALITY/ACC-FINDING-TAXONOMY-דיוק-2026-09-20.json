@@ -1,0 +1,587 @@
+{
+  "doc": "ACC-FINDING-TAXONOMY-דיוק",
+  "agent": "דיוק",
+  "date": "2026-09-20",
+  "stamp": "2026-09-20T09:54:33+03:00",
+  "mode": "OBSERVATION_ONLY",
+  "promote": "HOLD",
+  "baselineId": "B0",
+  "alias": "https://akvot-discovery.vercel.app",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "forbiddenQid": "Q1701775",
+  "forbiddenPatterns": [
+    "Q1701775",
+    "wd-Q1701775"
+  ],
+  "inputs": {
+    "primary": "PHASE2-OBSERVATION/raw/acc-דיוק/create-S*.json",
+    "fallback": "PHASE2-OBSERVATION/raw/create-S*-r1.json",
+    "corpus": "PHASE2-OBSERVATION/GOLDEN-CORPUS-v0.json",
+    "complements": "ARCH-TAXONOMY-SCHEMA-GAPS-ארכיטקט-2026-09-20.md"
+  },
+  "focusSeeds": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S06",
+    "S07",
+    "S09",
+    "S10"
+  ],
+  "extraSeeds": [
+    "S05",
+    "S08",
+    "S11",
+    "S12"
+  ],
+  "coverageNote": "≥8 seeds covering person/common/ambiguous/company/domain/HE/no-match/conflict",
+  "unit": "finding (multi-label); pairs/clusters noted for near-dup + contradiction",
+  "definitions": {
+    "duplicate": "Exact fingerprint: same norm(title)+entityRefs+summary[:100] within session (post-dedupe survivors; expect ~0).",
+    "near-dup": "Same norm(title) with different entityRefs, or summary similarity ≥0.88 across titles.",
+    "contradiction": "Member of session.contradictions[] OR same-title multi-entity cluster (INFORMATION≠IDENTITY).",
+    "no-evidence": "Empty evidenceIds / missing provenance (cite-or-drop; emit expect 0).",
+    "weak": "Quote <40 chars (or empty) OR scoreFinding < 0.55.",
+    "single-source": "providers.length≤1 AND ≤1 host-family on evidence/domains.",
+    "multi-source": "≥2 providers OR ≥2 independent host-families on the finding.",
+    "false-identity-risk": "Acc annotation: pretty-wrong smell (ambiguous top-row, context override).",
+    "forbidden-qid-leak": "Any Q1701775 / wd-Q1701775 → Acc FAIL."
+  },
+  "totalsFocus": {
+    "findingsSampled": 95,
+    "counts": {
+      "duplicate": 0,
+      "near-dup": 49,
+      "contradiction": 48,
+      "no-evidence": 0,
+      "weak": 81,
+      "single-source": 95,
+      "multi-source": 0,
+      "false-identity-risk": 2,
+      "forbidden-qid-leak": 0
+    },
+    "accLeakTotal": 0
+  },
+  "examples": {
+    "weak": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22991023",
+        "title": "Tim Berners-Lee: A Magna Carta for the web"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22946133",
+        "title": "Tim Berners-Lee: The year open data went worldwide"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q6258259",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "ol-OL2642558A",
+        "title": "John Smith"
+      }
+    ],
+    "contradiction": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q19761597",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith"
+      }
+    ],
+    "single-source": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q22991023",
+        "title": "Tim Berners-Lee: A Magna Carta for the web"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith"
+      }
+    ],
+    "near-dup": [
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q80",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373140",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q120373262",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S01",
+        "findingId": "wd-Q19761597",
+        "title": "Tim Berners-Lee"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q332377",
+        "title": "John Smith"
+      }
+    ],
+    "false-identity-risk": [
+      {
+        "seedId": "S02",
+        "findingId": "wd-Q3182477",
+        "title": "John Smith"
+      },
+      {
+        "seedId": "S03",
+        "findingId": "wd-Q233510",
+        "title": "Alex Morgan"
+      }
+    ]
+  },
+  "perSeed": {
+    "S01": {
+      "category": "person",
+      "seed": "Tim Berners-Lee",
+      "findingsCount": 10,
+      "contradictionsSessionN": 1,
+      "classCounts": {
+        "weak": 9,
+        "contradiction": 7,
+        "single-source": 10,
+        "near-dup": 7
+      },
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "tim berners-lee",
+          "findingIds": [
+            "wd-Q80",
+            "wd-Q120373140",
+            "wd-Q120373262",
+            "wd-Q19761597",
+            "wd-Q55693401",
+            "ol-OL25245A",
+            "wp-en-Tim_Berners_Lee"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ]
+    },
+    "S02": {
+      "category": "common-name",
+      "seed": "John Smith",
+      "findingsCount": 21,
+      "contradictionsSessionN": 1,
+      "classCounts": {
+        "contradiction": 16,
+        "single-source": 21,
+        "near-dup": 16,
+        "false-identity-risk": 1,
+        "weak": 12
+      },
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [
+        {
+          "findingId": "wd-Q3182477",
+          "reason": "ambiguous_flat_list_top_row_pretty_wrong_risk"
+        }
+      ],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "john smith",
+          "findingIds": [
+            "wd-Q3182477",
+            "wd-Q332377",
+            "wd-Q6258357",
+            "wd-Q6258267",
+            "wd-Q6258259",
+            "wd-Q541460",
+            "wd-Q991529",
+            "ol-OL177707A",
+            "ol-OL12988612A",
+            "ol-OL2642558A",
+            "ol-OL2404636A",
+            "ol-OL15752758A",
+            "ol-OL9615641A",
+            "ol-OL4474728A",
+            "ol-OL646156A",
+            "wp-en-John_Smith"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ]
+    },
+    "S03": {
+      "category": "ambiguous-person",
+      "seed": "Alex Morgan",
+      "findingsCount": 21,
+      "contradictionsSessionN": 1,
+      "classCounts": {
+        "single-source": 21,
+        "weak": 20,
+        "near-dup": 10,
+        "false-identity-risk": 1,
+        "contradiction": 10
+      },
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [
+        {
+          "findingId": "wd-Q233510",
+          "reason": "ambiguous_flat_list_top_row_pretty_wrong_risk"
+        }
+      ],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "alex morgan",
+          "findingIds": [
+            "wd-Q233510",
+            "wd-Q126278685",
+            "wd-Q131542437",
+            "wd-Q43302646",
+            "wd-Q42805830",
+            "wd-Q16527618",
+            "wd-Q55603580",
+            "ol-OL1437248A",
+            "ol-OL7414531A",
+            "wp-en-Alex_Morgan"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ]
+    },
+    "S04": {
+      "category": "company",
+      "seed": "Stripe",
+      "findingsCount": 14,
+      "contradictionsSessionN": 1,
+      "classCounts": {
+        "weak": 14,
+        "single-source": 14,
+        "near-dup": 4,
+        "contradiction": 3
+      },
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "stripe",
+          "findingIds": [
+            "ol-OL13079935A",
+            "ol-OL10372320A",
+            "wp-en-Stripe"
+          ],
+          "domains": [
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ]
+    },
+    "S06": {
+      "category": "domain",
+      "seed": "openai.com",
+      "findingsCount": 6,
+      "contradictionsSessionN": 0,
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      },
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    },
+    "S07": {
+      "category": "multilingual-HE",
+      "seed": "בנימין נתניהו",
+      "findingsCount": 1,
+      "contradictionsSessionN": 0,
+      "classCounts": {
+        "weak": 1,
+        "single-source": 1
+      },
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    },
+    "S09": {
+      "category": "no-match",
+      "seed": "zzzznonexistentxyz999",
+      "findingsCount": 0,
+      "contradictionsSessionN": 0,
+      "classCounts": {},
+      "domainsUnion": [],
+      "sessionNotes": [
+        "empty_findings",
+        "no-match_expected_empty_PASS"
+      ],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    },
+    "S10": {
+      "category": "conflicting-evidence",
+      "seed": "Francis Bacon",
+      "findingsCount": 22,
+      "contradictionsSessionN": 1,
+      "classCounts": {
+        "contradiction": 12,
+        "single-source": 22,
+        "near-dup": 12,
+        "weak": 19
+      },
+      "domainsUnion": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "www.wikidata.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "francis bacon",
+          "findingIds": [
+            "wd-Q154340",
+            "wd-Q37388",
+            "wd-Q5480102",
+            "wd-Q136428482",
+            "wd-Q29583002",
+            "wd-Q341032",
+            "wd-Q28052097",
+            "ol-OL23720A",
+            "ol-OL82840A",
+            "ol-OL15242943A",
+            "ol-OL15865902A",
+            "wp-en-Francis_Bacon"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ]
+    },
+    "S05": {
+      "category": "organization",
+      "seed": "Red Cross",
+      "findingsCount": 6,
+      "contradictionsSessionN": 0,
+      "classCounts": {
+        "weak": 6,
+        "single-source": 6
+      },
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    },
+    "S08": {
+      "category": "multilingual",
+      "seed": "Tel Aviv University",
+      "findingsCount": 0,
+      "contradictionsSessionN": 0,
+      "classCounts": {},
+      "domainsUnion": [],
+      "sessionNotes": [
+        "empty_findings",
+        "blind_zero_findings"
+      ],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    },
+    "S11": {
+      "category": "wrong-person-trap",
+      "seed": "Michael Jordan baseball",
+      "findingsCount": 2,
+      "contradictionsSessionN": 0,
+      "classCounts": {
+        "weak": 2,
+        "single-source": 2,
+        "false-identity-risk": 1
+      },
+      "domainsUnion": [
+        "en.wikipedia.org"
+      ],
+      "sessionNotes": [],
+      "falseIdentityRisk": [
+        {
+          "findingId": "wp-en-Michael_Jordan_basketball_",
+          "reason": "seed_baseball_but_finding_basketball"
+        }
+      ],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    },
+    "S12": {
+      "category": "duplicate-source-trap",
+      "seed": "Wikipedia Wikimedia Foundation",
+      "findingsCount": 0,
+      "contradictionsSessionN": 0,
+      "classCounts": {},
+      "domainsUnion": [],
+      "sessionNotes": [
+        "empty_findings",
+        "blind_zero_findings"
+      ],
+      "falseIdentityRisk": [],
+      "sourcePack": "acc-דיוק",
+      "contradictionObjects": []
+    }
+  },
+  "notableClusters": {
+    "S02_john_smith": {
+      "type": "same_title_multi_domain",
+      "findingIdsSample": [
+        "wd-Q3182477",
+        "wd-Q332377",
+        "ol-OL177707A",
+        "wp-en-John_Smith"
+      ],
+      "note": "16 same-title multi-entity members — near-dup + contradiction"
+    },
+    "S10_francis_bacon": {
+      "type": "same_title_multi_domain",
+      "findingIdsSample": [
+        "wd-Q154340",
+        "wd-Q37388",
+        "ol-OL23720A",
+        "wp-en-Francis_Bacon"
+      ],
+      "note": "Painter (1909–1992) vs philosopher (1561–1626); session contradiction emitted"
+    },
+    "S11_michael_jordan": {
+      "findingIds": [
+        "wp-en-Michael_Jordan_baseball_",
+        "wp-en-Michael_Jordan_basketball_"
+      ],
+      "note": "Both baseball and basketball titles present; basketball row = false-identity-risk"
+    }
+  }
+}

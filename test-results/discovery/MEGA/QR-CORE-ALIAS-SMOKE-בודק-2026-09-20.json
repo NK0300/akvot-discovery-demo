@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-09-20T07:23:09+03:00",
+  "core": {
+    "health": {
+      "ok": true,
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "expect": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "httpStatus": 200,
+      "ms": 2670
+    },
+    "assaf": {
+      "ok": true,
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "ms": 2805,
+      "httpStatus": 200
+    },
+    "cohen": {
+      "ok": true,
+      "ui": "need_context",
+      "ms": 3118,
+      "httpStatus": 200
+    },
+    "smith": {
+      "ok": true,
+      "ui": "candidates",
+      "faces": 0,
+      "pw": 0,
+      "ms": 8453,
+      "httpStatus": 200
+    },
+    "leakage": 0,
+    "pw": 0,
+    "pass": true
+  },
+  "alias": "https://akvot-simple-demo.vercel.app",
+  "expect": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "promote": "HOLD"
+}

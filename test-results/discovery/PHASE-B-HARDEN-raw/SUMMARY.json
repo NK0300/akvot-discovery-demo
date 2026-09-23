@@ -1,0 +1,124 @@
+{
+  "Alex Morgan": {
+    "post_ok": true,
+    "status": "partial",
+    "findings": 15,
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    },
+    "leak": false,
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoiQWxleCBNb3JnYW4iLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDA6NDA6MTIuOTQzWiIsIm4iOiIwNmQyZWRmMjE4NDYifQ",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "has_dossier": false,
+    "has_faces": false
+  },
+  "example.org": {
+    "post_ok": true,
+    "status": "complete",
+    "findings": 2,
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    },
+    "leak": false,
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoiZXhhbXBsZS5vcmciLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDA6NDA6MTcuMDI5WiIsIm4iOiIxNWU5OTc2MzdmMWUifQ",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "has_dossier": false,
+    "has_faces": false
+  },
+  "דוד כהן": {
+    "post_ok": true,
+    "status": "partial",
+    "findings": 13,
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    },
+    "leak": false,
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoi15PXldeTINeb15TXnyIsImgiOnt9LCJsIjoiZW4iLCJ0IjoiMjAyNi0wOS0yMFQwMDo0MDoxOS43MzlaIiwibiI6ImMxNzQ3ZTIwMjE2YSJ9",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "has_dossier": false,
+    "has_faces": false
+  },
+  "GET": {
+    "ok": true,
+    "findings": 15,
+    "status": "partial",
+    "regenerated": true,
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    },
+    "leak": false,
+    "version": "2026-09-19.1"
+  },
+  "NARROW": {
+    "ok": true,
+    "after": 8,
+    "narrow": {
+      "applied": {
+        "provider": [
+          "openlibrary"
+        ]
+      },
+      "beforeCount": 15,
+      "afterCount": 8
+    },
+    "version": 3,
+    "leak": false,
+    "has_dossier": false
+  },
+  "SSE": {
+    "content_type_sse": true,
+    "events": [
+      "meta",
+      "progress",
+      "provider",
+      "provider",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "finding",
+      "facets",
+      "status",
+      "done"
+    ],
+    "id_count": 22,
+    "has_done": true,
+    "has_finding": true,
+    "leak": false,
+    "bytes": 11069
+  },
+  "CORE": {
+    "uiState": "dossier",
+    "qid": "Q47507930"
+  }
+}

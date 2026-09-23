@@ -1,0 +1,70 @@
+{
+  "fixtureId": "ADV-04-pretty-wrong-guards",
+  "qSection": "Q16",
+  "invariant": [
+    "ACC-DISC-01",
+    "ACC-DISC-02",
+    "Core Acc P0"
+  ],
+  "intent": "Pretty-wrong = dossier+faces on wrong person. Discovery must never emit dossier/faces; Core Smith+ctx must never bind Q1701775.",
+  "coreCases": [
+    {
+      "id": "smith-ctx-p0",
+      "method": "POST",
+      "path": "/api/lookup",
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      },
+      "expect": {
+        "neverQid": "Q1701775",
+        "neverUi": "dossier",
+        "faces": false,
+        "pw": 0,
+        "leakage": 0
+      }
+    },
+    {
+      "id": "smith-email-g11",
+      "method": "POST",
+      "path": "/api/lookup",
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        },
+        "nocache": 1
+      },
+      "expect": {
+        "neverQid": "Q1701775",
+        "neverUi": "dossier",
+        "faces": false,
+        "pw": 0
+      }
+    },
+    {
+      "id": "assaf-keep",
+      "method": "GET",
+      "path": "/api/lookup?q=Assaf%20Rappaport&nocache=1",
+      "expect": {
+        "qid": "Q47507930",
+        "ui": "dossier",
+        "leakage": 0
+      }
+    }
+  ],
+  "discoveryGuards": {
+    "neverFields": [
+      "dossier",
+      "faces",
+      "photoUrl"
+    ],
+    "neverMayCommit": true,
+    "notes": "Discovery path must not call mayCommitDossier"
+  }
+}

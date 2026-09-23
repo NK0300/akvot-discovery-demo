@@ -1,0 +1,31 @@
+[harden-qa] start 2026-09-20T04:12:46+03:00 dpl=dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB
+[health] ok=true build=dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB status=200
+
+=== S1 seed=דוד כהן ===
+[POST] status=201 sid=ds1.eyJ2IjoxLCJzIjoi15PXldeTINeb15TXnyIsImgiOnt9LCJsIjoiZW4iLCJ0IjoiMjAyNi0wOS0yMFQwMToxMjo1MS4wMDFaIiwibiI6IjZiOTgxM2ViMmFhNyJ9 findings=13 ms=3391
+[GET] status=200 regenerated=true findings=13 ms=3088
+[SSE] ok=true ct=text/event-stream; charset=utf-8 events=20 types=meta,progress,provider,finding,facets,status,done
+[NARROW] status=200 filter={"provider":["wikidata"]} before=13 after=8
+[S1] PASS fails=none
+
+=== S2 seed=Alex Morgan ===
+[POST] status=201 sid=ds1.eyJ2IjoxLCJzIjoiQWxleCBNb3JnYW4iLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTM6MDUuMzExWiIsIm4iOiIxYWIzZTgxNDEzMzkifQ findings=15 ms=3640
+[GET] status=200 regenerated=true findings=15 ms=5241
+[SSE] ok=true ct=text/event-stream; charset=utf-8 events=22 types=meta,progress,provider,finding,facets,status,done
+[NARROW] status=200 filter={"provider":["openlibrary"]} before=15 after=8
+[S2] PASS fails=none
+
+=== S3 seed=example.org ===
+[POST] status=201 sid=ds1.eyJ2IjoxLCJzIjoiZXhhbXBsZS5vcmciLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTM6MTkuODg2WiIsIm4iOiI5YjUxZmYzYjlmY2UifQ findings=2 ms=2814
+[GET] status=200 regenerated=true findings=2 ms=2807
+[SSE] ok=true ct=text/event-stream; charset=utf-8 events=9 types=meta,progress,provider,finding,facets,status,done
+[NARROW] status=200 filter={"provider":["wikidata"]} before=2 after=2
+[S3] PASS fails=none
+
+=== CORE alias regression ===
+[CORE] health=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 assaf=dossier/Q47507930 cohen=need_context smith=candidates leak=0 PASS=true
+
+=== OVERALL PASS disc=true core=true leak=0 ===
+wrote /workspace/akvot-quick-demo/test-results/discovery/PHASE-B-HARDEN-QA-בודק-2026-09-20.md
+wrote /workspace/akvot-quick-demo/test-results/discovery/PHASE-B-HARDEN-QA-בודק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/PHASE-B-HARDEN-EVIDENCE-בודק-2026-09-20.md

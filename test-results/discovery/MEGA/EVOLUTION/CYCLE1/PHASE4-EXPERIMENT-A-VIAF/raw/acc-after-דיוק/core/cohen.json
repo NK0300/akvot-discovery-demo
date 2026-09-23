@@ -1,0 +1,65 @@
+{
+  "mode": "candidates",
+  "label": "כהן",
+  "qid": null,
+  "birth": null,
+  "age": null,
+  "place": null,
+  "desc": "יש כמה התאמות אפשריות — בחרו מהרשימה",
+  "extract": "",
+  "photo": null,
+  "alts": [
+    "לאונרד כהן",
+    "האחים כהן",
+    "כהן גדול",
+    "חיים כהן (משפטן)",
+    "משפחות כהן"
+  ],
+  "note": "בחרו מועמד כדי להעמיק את התיק.",
+  "email": null,
+  "phone": null,
+  "sources": [],
+  "images": [],
+  "extra_facts": [],
+  "queries": [],
+  "scanned": 0,
+  "allowBroadImages": false,
+  "ambiguous": true,
+  "thin": false,
+  "candidates": [],
+  "needCandidatePick": false,
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 617,
+    "gemini": 0,
+    "enrich": 0,
+    "stageB": 0,
+    "total": 618,
+    "wikiMeta": {
+      "wiki429": 0,
+      "wikiTimeout": 0,
+      "wikiRetries": 0
+    }
+  },
+  "phonePath": false,
+  "uiState": "need_context",
+  "scenario": "stranger",
+  "confidence": "none",
+  "needContextFields": [
+    "city",
+    "org",
+    "country",
+    "role"
+  ],
+  "messageKey": "common_name",
+  "photoUrl": null,
+  "faces": false,
+  "needContext": true,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "requestId": "d20bfdc7-ed5d-46a4-98b0-b4bbd0482558",
+  "wikiMeta": {
+    "wiki429": 0,
+    "wikiTimeout": 0,
+    "wikiRetries": 0
+  }
+}

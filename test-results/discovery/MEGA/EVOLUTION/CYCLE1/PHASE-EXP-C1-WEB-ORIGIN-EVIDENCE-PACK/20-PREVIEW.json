@@ -1,0 +1,56 @@
+{
+  "stamp": "2026-09-20T11:38:14+03:00",
+  "stampLabel": "20/09/2026, 11:38:14 IDT",
+  "experiment": "EXP-C1-WEB-ORIGIN",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_BynXm5iQ17wLzYZ4aiHiMbGFJSkx",
+    "url": "https://akvot-simple-demo-mwrxr18e1-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/BynXm5iQ17wLzYZ4aiHiMbGFJSkx",
+    "target": "preview",
+    "readyState": "READY",
+    "env": {
+      "DISCOVERY_ENABLE_WEB_ORIGIN": "1",
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "smoke": {
+    "seed": "https://www.who.int",
+    "status": "complete",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "webOriginFindings": 1,
+    "relationship": "UNKNOWN",
+    "sameEntityOrReference": false,
+    "bound": "URL-alone → UNKNOWN (never SAME-ENTITY / SAME-REFERENCE)",
+    "thinPageNote": "example.com → soft-fail weak_snippet (cite-or-drop); no throw"
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "status": "UNCHANGED"
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "status": "LOCKED / UNCHANGED"
+    }
+  },
+  "unitsLocal": {
+    "webOrigin": "96/0",
+    "providers.viaf": "44/0",
+    "corroboration.viaf": "50/0"
+  },
+  "controlVsTreatment": {
+    "control": "DISCOVERY_ENABLE_WEB_ORIGIN unset → B0 trio only",
+    "treatment": "DISCOVERY_ENABLE_WEB_ORIGIN=1 on Preview",
+    "compareVsA2": false
+  },
+  "note": "Preview only. No --prod. No alias retarget. STOP after Preview+Server evidence — Acc/QA own gates."
+}

@@ -1,0 +1,35 @@
+PASS HEALTH_WRUD {"storeBackend":"upstash","durable":true,"promoteEligible":true,"durabilityState":"durable-kv","latencyMs":103}
+PASS CREATE {"sessionIdPrefix":"kv1.f2d2fcda","status":"complete","store":{"backend":"upstash","storeBackend":"upstash","durable":tr
+PASS GET_HIT {"hasFindings":true,"store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallb
+PASS NARROW {"keys":["ok","sessionId","status","findings","evidence","facets","narrow","version","forbiddenIdentitiesVersion","progr
+PASS SSE_SMOKE {"rawLen":1930,"hasEvent":true}
+PASS ACC_NO_FORBIDDEN_QID {"leak":false}
+{
+  "ok": true,
+  "steps": [
+    [
+      "HEALTH_WRUD",
+      true
+    ],
+    [
+      "CREATE",
+      true
+    ],
+    [
+      "GET_HIT",
+      true
+    ],
+    [
+      "NARROW",
+      true
+    ],
+    [
+      "SSE_SMOKE",
+      true
+    ],
+    [
+      "ACC_NO_FORBIDDEN_QID",
+      true
+    ]
+  ]
+}

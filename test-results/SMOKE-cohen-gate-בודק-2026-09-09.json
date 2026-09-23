@@ -1,0 +1,47 @@
+{
+  "when": "2026-09-08T21:09:10.592Z",
+  "deploy": "dpl_9BJ3V9GkX96zKE7hDqGT1YfKDj1D",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "pass": "3/3",
+  "rows": [
+    {
+      "id": "bibi",
+      "q": "בנימין נתניהו",
+      "pass": true,
+      "http": 200,
+      "ms": 1395,
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q43723",
+      "faces": true,
+      "fails": [],
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "dani",
+      "q": "דני כהן",
+      "pass": true,
+      "http": 200,
+      "ms": 227,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "fails": [],
+      "phase": "orchestrator-v0-b"
+    },
+    {
+      "id": "orli",
+      "q": "אורלי לוי",
+      "pass": true,
+      "http": 200,
+      "ms": 1125,
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q466537",
+      "faces": true,
+      "fails": [],
+      "phase": "orchestrator-v0-b"
+    }
+  ]
+}

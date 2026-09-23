@@ -1,0 +1,579 @@
+{
+  "httpStatus": 200,
+  "ms": 2834,
+  "json": {
+    "ok": true,
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoiQWxleCBNb3JnYW4iLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDQ6MjM6NDMuNzIwWiIsIm4iOiJhZTFlZDI2YTczZjMifQ",
+    "seed": "Alex Morgan",
+    "q": "Alex Morgan",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "ol-OL1437248A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Top work: Sabotage Season",
+        "evidenceIds": [
+          "ev-a78fd68b67a01a8420fd50a5"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL1437248A"
+        ],
+        "scoreFinding": 1
+      },
+      {
+        "id": "ol-OL7414531A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Top work: Breakaway",
+        "evidenceIds": [
+          "ev-f1c5367fad94e3faefa4bd24"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL7414531A"
+        ],
+        "scoreFinding": 0.97
+      },
+      {
+        "id": "ol-OL3225320A",
+        "kind": "registry",
+        "title": "Alex, Morgan",
+        "summary": "Top work: Coaching Christine",
+        "evidenceIds": [
+          "ev-d07a539720f93856d02f729f"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL3225320A"
+        ],
+        "scoreFinding": 0.94
+      },
+      {
+        "id": "ol-OL11306519A",
+        "kind": "registry",
+        "title": "Alex Morgan Lucass",
+        "summary": "Top work: LITTLE MERMAID for Ages 4-12 Coloring Book",
+        "evidenceIds": [
+          "ev-94994ffd9628a1f410461350"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL11306519A"
+        ],
+        "scoreFinding": 0.91
+      },
+      {
+        "id": "ol-OL11281210A",
+        "kind": "registry",
+        "title": "Alex Morgan Ronard",
+        "summary": "Top work: CUPHEAD Coloring Book",
+        "evidenceIds": [
+          "ev-a77421460ce764d8ecb8f909"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL11281210A"
+        ],
+        "scoreFinding": 0.88
+      },
+      {
+        "id": "ol-OL15840118A",
+        "kind": "registry",
+        "title": "Alex Morgan,John Siraj-Blatchford",
+        "summary": "Top work: Using ICT in the Early Years",
+        "evidenceIds": [
+          "ev-8e0999f81110a35e1e2cf06e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15840118A"
+        ],
+        "scoreFinding": 0.85
+      },
+      {
+        "id": "ol-OL9647235A",
+        "kind": "registry",
+        "title": "Alex Brawl Morgan",
+        "summary": "Top work: Coloring Book MIRACULOUS for Ages 3-10",
+        "evidenceIds": [
+          "ev-9a849f46798767f11a5d307e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL9647235A"
+        ],
+        "scoreFinding": 0.8200000000000001
+      },
+      {
+        "id": "ol-OL4794660A",
+        "kind": "registry",
+        "title": "Donald S. Rowland",
+        "summary": "Top work: Empty saddles",
+        "evidenceIds": [
+          "ev-943161e980f1f1a57e7064a9"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL4794660A"
+        ],
+        "scoreFinding": 0.79
+      },
+      {
+        "id": "wd-Q233510",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "American soccer player",
+        "evidenceIds": [
+          "ev-e41cddf1eebe7889367a86cd"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q233510"
+        ],
+        "scoreFinding": 0.76
+      },
+      {
+        "id": "wd-Q126278685",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "journalist from the United Kingdom",
+        "evidenceIds": [
+          "ev-20658b5f6cfa9948c53401e1"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q126278685"
+        ],
+        "scoreFinding": 0.73
+      },
+      {
+        "id": "wd-Q131542437",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "English researcher",
+        "evidenceIds": [
+          "ev-48f95daac0cc9bb567d1528b"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q131542437"
+        ],
+        "scoreFinding": 0.7
+      },
+      {
+        "id": "wd-Q43302646",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Wikimedia disambiguation page",
+        "evidenceIds": [
+          "ev-368f553e4b86c4d2624c4bc0"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q43302646"
+        ],
+        "scoreFinding": 0.67
+      },
+      {
+        "id": "wd-Q42805830",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Jamaican athlete",
+        "evidenceIds": [
+          "ev-07b702ee234310e2348ea2c5"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q42805830"
+        ],
+        "scoreFinding": 0.64
+      },
+      {
+        "id": "wd-Q16527618",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "British racing driver",
+        "evidenceIds": [
+          "ev-f053d3e37feb10d0c40ef403"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q16527618"
+        ],
+        "scoreFinding": 0.61
+      },
+      {
+        "id": "wd-Q55603580",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Australian footballer",
+        "evidenceIds": [
+          "ev-592b8fc73887a676d6946532"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "wd-Q55603580"
+        ],
+        "scoreFinding": 0.5800000000000001
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-e41cddf1eebe7889367a86cd",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q233510",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "American soccer player",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-20658b5f6cfa9948c53401e1",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q126278685",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "journalist from the United Kingdom",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-48f95daac0cc9bb567d1528b",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q131542437",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "English researcher",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-368f553e4b86c4d2624c4bc0",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q43302646",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "Wikimedia disambiguation page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-07b702ee234310e2348ea2c5",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q42805830",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "Jamaican athlete",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f053d3e37feb10d0c40ef403",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q16527618",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "British racing driver",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-592b8fc73887a676d6946532",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q55603580",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T04:23:46.844Z",
+        "quote": "Australian footballer",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a78fd68b67a01a8420fd50a5",
+        "provenanceUrl": "https://openlibrary.org/authors/OL1437248A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "Sabotage Season",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f1c5367fad94e3faefa4bd24",
+        "provenanceUrl": "https://openlibrary.org/authors/OL7414531A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "Breakaway",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d07a539720f93856d02f729f",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3225320A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "Coaching Christine",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-94994ffd9628a1f410461350",
+        "provenanceUrl": "https://openlibrary.org/authors/OL11306519A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "LITTLE MERMAID for Ages 4-12 Coloring Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a77421460ce764d8ecb8f909",
+        "provenanceUrl": "https://openlibrary.org/authors/OL11281210A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "CUPHEAD Coloring Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8e0999f81110a35e1e2cf06e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15840118A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "Using ICT in the Early Years",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9a849f46798767f11a5d307e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL9647235A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "Coloring Book MIRACULOUS for Ages 3-10",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-943161e980f1f1a57e7064a9",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4794660A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T04:23:47.087Z",
+        "quote": "Empty saddles",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "wikidata",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 5,
+      "totalHint": 5
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:60705d930a9e"
+      ],
+      "status": "candidate",
+      "displayHint": "Alex Morgan",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T04:23:43.720Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:60705d930a9e",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q233510",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q126278685",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q131542437",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q43302646",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q42805830",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q16527618",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q55603580",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL1437248A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL7414531A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL3225320A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL11306519A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL11281210A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15840118A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL9647235A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4794660A",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    },
+    "regenerated": true
+  }
+}

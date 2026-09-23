@@ -1,0 +1,192 @@
+{
+  "doc": "KV-PREVIEW-VERIFY-CHIEF-2026-09-20",
+  "checked": "2026-09-20T07:37:47+03:00",
+  "tz": "Asia/Jerusalem (IDT / UTC+3)",
+  "promote": false,
+  "promote_hold": true,
+  "preview": {
+    "url": "https://akvot-simple-demo-ndmmkolpg-k-akvot.vercel.app",
+    "dpl": "dpl_BAkeDgvpvqGEg53zXxScGdESvdPv",
+    "target": null
+  },
+  "repo": "/workspace/akvot-quick-demo",
+  "access": "vercel curl --deployment dpl_BAkeDgvpvqGEg53zXxScGdESvdPv --scope k-akvot",
+  "overall": "FAIL",
+  "fail_reasons": [
+    "storage_crud",
+    "acc_scrub"
+  ],
+  "gates": {
+    "1_api_health_flags": {
+      "verdict": "PASS",
+      "build": "dpl_BAkeDgvpvqGEg53zXxScGdESvdPv",
+      "build_match": true,
+      "discoveryStore": {
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "kvCredsPresent": true,
+        "crossInstance": "shared-kv"
+      },
+      "expect": {
+        "storeBackend": "upstash",
+        "durable": true,
+        "promoteEligible": true
+      }
+    },
+    "2_storage_crud": {
+      "discovery_health": {
+        "attempted": true,
+        "result": "TIMEOUT_504",
+        "maxDuration_s": 15,
+        "log": "kv set failed { storeBackend: 'upstash', error: 'fetch failed' } ~10550ms then FUNCTION_INVOCATION_TIMEOUT"
+      },
+      "session_crud": {
+        "POST_he": {
+          "http": 201,
+          "sessionId": "kv1.9966ae48ff7149b05ec43997ed6966f1",
+          "store_declared": "upstash/shared-kv"
+        },
+        "GET_he": {
+          "http": 404,
+          "error": "session not found",
+          "store_declared": "upstash"
+        },
+        "regenerated_on_GET": null,
+        "shared_kv_path_confirmed": false,
+        "log": "kv get failed { error: 'fetch failed' } ~10500ms → session not found (memory-only write on POST; Upstash REST unreachable)"
+      },
+      "verdict": "FAIL",
+      "note": "Env UPSTASH_* present (kvCredsPresent=true) but live REST fetch fails from Preview region; durable CRUD broken. promoteEligible on /api/health is flag-only, not health-probe GREEN."
+    },
+    "3_acc_scrub": {
+      "verdict": "FAIL",
+      "seeds_n": 3,
+      "leakage_total": 1,
+      "cases": [
+        {
+          "case": "disc-seed-he-soft",
+          "ok": true,
+          "sessionId": "kv1.9966ae48ff7149b05ec43997ed6966f1",
+          "status": "partial",
+          "findings": 19,
+          "leakage": 0,
+          "leakage_terms": [],
+          "leak_paths": [],
+          "dossier": false,
+          "faces": 0,
+          "fiv": "2026-09-19.1",
+          "regenerated": false,
+          "storeBackend": "upstash",
+          "crossInstance": "shared-kv",
+          "durable_flag": true,
+          "promoteEligible_flag": true,
+          "acc_pass": true
+        },
+        {
+          "case": "disc-seed-smith-ctx",
+          "ok": true,
+          "sessionId": "kv1.fff66f902c6423909a86c53081263dda",
+          "status": "partial",
+          "findings": 21,
+          "leakage": 1,
+          "leakage_terms": [
+            "wd-Q1701775"
+          ],
+          "leak_paths": [
+            "snapshot.contradictions[0].findingIds"
+          ],
+          "dossier": false,
+          "faces": 0,
+          "fiv": "2026-09-19.1",
+          "regenerated": false,
+          "storeBackend": "upstash",
+          "crossInstance": "shared-kv",
+          "durable_flag": true,
+          "promoteEligible_flag": true,
+          "acc_pass": false
+        },
+        {
+          "case": "disc-seed-org-domain",
+          "ok": true,
+          "sessionId": "kv1.5bdda1a93745b0540b2647dcee9ddf64",
+          "status": "complete",
+          "findings": 3,
+          "leakage": 0,
+          "leakage_terms": [],
+          "leak_paths": [],
+          "dossier": false,
+          "faces": 0,
+          "fiv": "2026-09-19.1",
+          "regenerated": false,
+          "storeBackend": "upstash",
+          "crossInstance": "shared-kv",
+          "durable_flag": true,
+          "promoteEligible_flag": true,
+          "acc_pass": true
+        }
+      ],
+      "forbidden": "Q1701775 / wd-Q1701775",
+      "invariants": [
+        "ACC-DISC-01 leakage=0",
+        "ACC-DISC-02 no dossier / mayCommitDossier on Discovery emit",
+        "ACC-DISC-06 NEVER Q1701775 in ranked Discovery outputs (incl. contradictions.findingIds)"
+      ]
+    },
+    "4_core_alias_identity_p0": {
+      "alias": "https://akvot-simple-demo.vercel.app",
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "script": "test-results/contract-identity-p0.mjs (npm run test:contract)",
+      "pass": true,
+      "score": "5/5",
+      "leakage": 0,
+      "pw": 0,
+      "rows": [
+        {
+          "id": "a-netanyahu-keep",
+          "pass": true,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "faces": true
+        },
+        {
+          "id": "b-cohen-keep",
+          "pass": true,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false
+        },
+        {
+          "id": "c-smith-bare-keep",
+          "pass": true,
+          "uiState": "need_context",
+          "qid": null,
+          "faces": false
+        },
+        {
+          "id": "d-smith-ctx-p0",
+          "pass": true,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false
+        },
+        {
+          "id": "e-smith-email-g11-p0",
+          "pass": true,
+          "uiState": "candidates",
+          "qid": null,
+          "faces": false
+        }
+      ],
+      "verdict": "PASS"
+    }
+  },
+  "artifacts": {
+    "raw_dir": "test-results/discovery/MEGA/raw/kv-preview-verify",
+    "md": "test-results/discovery/MEGA/KV-PREVIEW-VERIFY-CHIEF-2026-09-20.md",
+    "json": "test-results/discovery/MEGA/KV-PREVIEW-VERIFY-CHIEF-2026-09-20.json"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "experiment": "A2-SAFE-HARDENING",
+  "mode": "forensics-only",
+  "code_changed": false,
+  "new_preview": null,
+  "baseline_a2safe": {
+    "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+    "url": "https://akvot-simple-demo-221421o5s-k-akvot.vercel.app",
+    "mean_multi": 0.2074
+  },
+  "arch_alternate_sot": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "note": "typed-enrich prior used by Arch/Acc docs \u2014 not a hardening deploy"
+  },
+  "locks": {
+    "B0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "Core": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+  }
+}

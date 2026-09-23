@@ -1,0 +1,27 @@
+{
+  "$id": "akvot/discovery/relationship",
+  "title": "Relationship",
+  "description": "Evidence-backed edge only — no edge without Evidence",
+  "type": "object",
+  "required": ["id", "type", "fromEntityId", "toEntityId", "evidenceIds"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["works_at", "owns", "mentions", "located_at", "contact_of", "other"]
+    },
+    "fromEntityId": { "type": "string" },
+    "toEntityId": { "type": "string" },
+    "evidenceIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "additionalProperties": false
+}

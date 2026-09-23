@@ -1,0 +1,39 @@
+health.build=dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ match=true
+[F1_quiet] 1/5 ... candidates leak=false faces=0 qid=null 5895ms
+[F1_quiet] 2/5 ... candidates leak=false faces=0 qid=null 8382ms
+[F1_quiet] 3/5 ... candidates leak=false faces=0 qid=null 8799ms
+[F1_quiet] 4/5 ... candidates leak=false faces=0 qid=null 8747ms
+[F1_quiet] 5/5 ... candidates leak=false faces=0 qid=null 8773ms
+[F2_cold] 1/3 ... candidates leak=false faces=0 qid=null 8226ms
+[F2_cold] 2/3 ... candidates leak=false faces=0 qid=null 8342ms
+[F2_cold] 3/3 ... candidates leak=false faces=0 qid=null 9053ms
+[F3_warm] 1/3 ... candidates leak=false faces=0 qid=null 8746ms
+[F3_warm] 2/3 ... candidates leak=false faces=0 qid=null 8471ms
+[F3_warm] 3/3 ... candidates leak=false faces=0 qid=null 8468ms
+[F4_assaf] 1/2 ... dossier leak=false faces=7 qid=Q47507930 3765ms
+[F4_assaf] 2/2 ... dossier leak=false faces=7 qid=Q47507930 2259ms
+[F5_cohen] 1/2 ... need_context leak=false faces=0 qid=null 3039ms
+[F5_cohen] 2/2 ... need_context leak=false faces=0 qid=null 2349ms
+[F6_tc6] 1/1 ... need_context leak=false faces=0 qid=null 4621ms
+[F7_scan] files=17 hits=0 offenders=0
+{
+  "F1_quiet_x5": "PASS",
+  "F2_cold_x3": "PASS",
+  "F3_warm_x3": "PASS",
+  "F4_assaf_x2": "PASS",
+  "F5_cohen_x2": "PASS",
+  "F6_john_rappaport_x1": "PASS",
+  "F7_body_scan_Q1701775": "PASS",
+  "leakage_count": 0,
+  "pw": 0,
+  "faces_smith_soft": 0,
+  "health_build_match": true,
+  "promote": false,
+  "alias_frozen": true,
+  "Acc_Gate": "GO",
+  "Chief_REVIEW": "HOLD promote · Acc Gate verdict only"
+}
+
+=== Acc Gate GO leakage=0 pw=0 ===
+Wrote /workspace/akvot-quick-demo/test-results/wp3/ACC-P0-GATE-FORMAL-דיוק-2026-09-20.md
+Wrote /workspace/akvot-quick-demo/test-results/wp3/ACC-P0-GATE-FORMAL-דיוק-2026-09-20.json

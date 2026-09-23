@@ -1,0 +1,1840 @@
+{
+  "ms": 2495,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.ad819f280d42ca1a716ab25ed32c8fff",
+    "seed": "Michael Jordan",
+    "q": "Michael Jordan",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q41421",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "American basketball player and businessman (born 1963)",
+        "evidenceIds": [
+          "ev-fcb0beff134ec9d75aa8d534",
+          "ev-ab9b798f344e31353d8489d3"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q41421",
+          "wd-Q41421",
+          "viaf:114945073"
+        ],
+        "scoreFinding": 0.8316666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-114945073",
+        "kind": "registry",
+        "title": "Michael Jordan, 1963-",
+        "summary": "type:personal · lc:n86020198 · dnb:119184486",
+        "evidenceIds": [
+          "ev-fcb0beff134ec9d75aa8d534",
+          "ev-ab9b798f344e31353d8489d3"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q41421",
+          "wd-Q41421",
+          "viaf:114945073"
+        ],
+        "scoreFinding": 0.8216666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q1928047",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "German draughtsperson, artist and comics artist",
+        "evidenceIds": [
+          "ev-1eb6f4ad2cd8a46b741ba32d",
+          "ev-a9924280b16b34f10efe048d"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q1928047",
+          "wd-Q1928047",
+          "viaf:303086450"
+        ],
+        "scoreFinding": 0.8116666666666666,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-303086450",
+        "kind": "registry",
+        "title": "Michael Jordan, 1972-",
+        "summary": "type:personal · lc:no2021111429 · dnb:1035497980",
+        "evidenceIds": [
+          "ev-1eb6f4ad2cd8a46b741ba32d",
+          "ev-a9924280b16b34f10efe048d"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q1928047",
+          "wd-Q1928047",
+          "viaf:303086450"
+        ],
+        "scoreFinding": 0.8016666666666666,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q3308285",
+        "kind": "registry",
+        "title": "Michael I. Jordan",
+        "summary": "American computer scientist, University of California, Berkeley",
+        "evidenceIds": [
+          "ev-3a33eb80d81c0d4c0d20989a",
+          "ev-ca67c8584a83f865cb7a1275"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q3308285",
+          "wd-Q3308285",
+          "viaf:100568809"
+        ],
+        "scoreFinding": 0.7916666666666666,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-100568809",
+        "kind": "registry",
+        "title": "Michael Jordan, 1956-",
+        "summary": "type:personal · lc:n87149954 · dnb:139282831",
+        "evidenceIds": [
+          "ev-3a33eb80d81c0d4c0d20989a",
+          "ev-ca67c8584a83f865cb7a1275"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q3308285",
+          "wd-Q3308285",
+          "viaf:100568809"
+        ],
+        "scoreFinding": 0.7816666666666666,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q3308007",
+        "kind": "registry",
+        "title": "Michael B. Jordan",
+        "summary": "American actor (born 1987)",
+        "evidenceIds": [
+          "ev-48294c9e561ff169faf368d7",
+          "ev-ec48dc5646bef600d8dc6556"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q3308007",
+          "wd-Q3308007",
+          "viaf:258469427"
+        ],
+        "scoreFinding": 0.7716666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-258469427",
+        "kind": "registry",
+        "title": "Michael Jordan, 1987-",
+        "summary": "type:personal · lc:no2012065564 · dnb:1025232445",
+        "evidenceIds": [
+          "ev-48294c9e561ff169faf368d7",
+          "ev-ec48dc5646bef600d8dc6556"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q3308007",
+          "wd-Q3308007",
+          "viaf:258469427"
+        ],
+        "scoreFinding": 0.7616666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q6831719",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "British mycologist, writer, and television presenter",
+        "evidenceIds": [
+          "ev-3f607196780c5f36d2993b96",
+          "ev-a5db7c3ade6df8f31b85cef3"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q6831719",
+          "wd-Q6831719",
+          "viaf:115190585"
+        ],
+        "scoreFinding": 0.7516666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-115190585",
+        "kind": "registry",
+        "title": "Michael Jordan, 1941-",
+        "summary": "type:personal · dnb:1181472954",
+        "evidenceIds": [
+          "ev-3f607196780c5f36d2993b96",
+          "ev-a5db7c3ade6df8f31b85cef3"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q6831719",
+          "wd-Q6831719",
+          "viaf:115190585"
+        ],
+        "scoreFinding": 0.7416666666666667,
+        "ranking": {
+          "discoveryScore": 0.8316666666666667,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 0.8,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 2,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=0.80 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q6831716",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "English footballer (born 1984)",
+        "evidenceIds": [
+          "ev-8be44a4dc31f75ae5dde6f60"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q6831716",
+          "wd-Q6831716"
+        ],
+        "scoreFinding": 0.6183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q126207492",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "1941--",
+        "evidenceIds": [
+          "ev-54af48ced469516b1cf41e65"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q126207492",
+          "wd-Q126207492",
+          "viaf:109383662"
+        ],
+        "scoreFinding": 0.6083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q108883102",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "main protagonist in the 1996 film Space Jam",
+        "evidenceIds": [
+          "ev-92b908eacea9241a5ad3b81a"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q108883102",
+          "wd-Q108883102"
+        ],
+        "scoreFinding": 0.5983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-31613590",
+        "kind": "registry",
+        "title": "Michael Jordansky, 1901-1990",
+        "summary": "type:personal · lc:no98071755 · dnb:1058697757",
+        "evidenceIds": [
+          "ev-a75098eb7a2e068480141855"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:31613590"
+        ],
+        "scoreFinding": 0.5708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-250707635",
+        "kind": "registry",
+        "title": "Michael Jordan Clarke",
+        "summary": "type:personal · lc:n2012036786 · dnb:1033245178",
+        "evidenceIds": [
+          "ev-236629e3ec5888476284edd5"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:250707635"
+        ],
+        "scoreFinding": 0.5608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-48577325",
+        "kind": "registry",
+        "title": "Michael Jordan, 1944-",
+        "summary": "type:personal · lc:n2001097703 · dnb:115619631",
+        "evidenceIds": [
+          "ev-34c0d5f9dc8715362c3e9ecd"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:48577325"
+        ],
+        "scoreFinding": 0.5508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2621939A",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "Top work: Encyclopedia of Gods",
+        "evidenceIds": [
+          "ev-a6ec78401f51eff71fe6560c"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL2621939A",
+          "ol-OL2621939A"
+        ],
+        "scoreFinding": 0.5058333333333332,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL3394894A",
+        "kind": "registry",
+        "title": "MICHAEL JORDAN",
+        "summary": "Top work: BUDDHA: HIS LIFE IN IMAGES",
+        "evidenceIds": [
+          "ev-e7d1c7a5605bcf2a6007e160"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL3394894A",
+          "ol-OL3394894A"
+        ],
+        "scoreFinding": 0.49583333333333324,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL6265651A",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "Top work: GREAT ABOLITION SHAM: THE TRUE STORY OF THE END OF THE BRITISH SLAVE TRADE",
+        "evidenceIds": [
+          "ev-0ed6281957c76f4cab0f7056"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL6265651A",
+          "ol-OL6265651A"
+        ],
+        "scoreFinding": 0.4858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL10499594A",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "Top work: Basiswissen Fotografie",
+        "evidenceIds": [
+          "ev-6477ad2e65a383cf4fb2940b"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL10499594A",
+          "ol-OL10499594A"
+        ],
+        "scoreFinding": 0.4758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL7539988A",
+        "kind": "registry",
+        "title": "Michael Jordan",
+        "summary": "Top work: The company of demons",
+        "evidenceIds": [
+          "ev-f2368cd1bf80d8efcee6597b"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL7539988A",
+          "ol-OL7539988A"
+        ],
+        "scoreFinding": 0.46583333333333327,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL4900636A",
+        "kind": "registry",
+        "title": "Neil Michael Jordan",
+        "summary": "Top work: The visual response of the purple shore crab, Hemigrapsus nudus, to ionizing and non-ionizing radiation",
+        "evidenceIds": [
+          "ev-c1a2b8c920938da1ea6c609d"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL4900636A",
+          "ol-OL4900636A"
+        ],
+        "scoreFinding": 0.4558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL13587809A",
+        "kind": "registry",
+        "title": "J. Michael Jordan",
+        "summary": "Top work: Worship in an Age of Anxiety",
+        "evidenceIds": [
+          "ev-9a2ea020240a3bdf8ca2d552"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL13587809A",
+          "ol-OL13587809A"
+        ],
+        "scoreFinding": 0.4458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL14086744A",
+        "kind": "registry",
+        "title": "Michael Jordan Biercuk",
+        "summary": "Top work: Local gate control in carbon nanotube quantum devices",
+        "evidenceIds": [
+          "ev-43eda5aa20660f67ddb2a668"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL14086744A",
+          "ol-OL14086744A"
+        ],
+        "scoreFinding": 0.4358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan",
+        "kind": "page",
+        "title": "Michael Jordan",
+        "evidenceIds": [
+          "ev-1d46c2a2392b28ad031f3003"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan"
+        ],
+        "scoreFinding": 0.4083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan_offensive_lineman_",
+        "kind": "page",
+        "title": "Michael Jordan (offensive lineman)",
+        "evidenceIds": [
+          "ev-b478dafd613cdfdad0da0e6f"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan (offensive lineman)"
+        ],
+        "scoreFinding": 0.3983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan_Chaos_in_the_Windy_City",
+        "kind": "page",
+        "title": "Michael Jordan: Chaos in the Windy City",
+        "evidenceIds": [
+          "ev-ee914b95718dbf9f40396e82"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan: Chaos in the Windy City"
+        ],
+        "scoreFinding": 0.3883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan_footballer_",
+        "kind": "page",
+        "title": "Michael Jordan (footballer)",
+        "evidenceIds": [
+          "ev-5ff5993203000355c07fe894"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan (footballer)"
+        ],
+        "scoreFinding": 0.3783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan_s_Steak_House",
+        "kind": "page",
+        "title": "Michael Jordan's Steak House",
+        "evidenceIds": [
+          "ev-b90c4f43950c86d007fad221"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan's Steak House"
+        ],
+        "scoreFinding": 0.3683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Michael_Jordan_to_the_Max",
+        "kind": "page",
+        "title": "Michael Jordan to the Max",
+        "evidenceIds": [
+          "ev-9dc3dc218dcc73701f2158c3"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Michael Jordan to the Max"
+        ],
+        "scoreFinding": 0.35833333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-fcb0beff134ec9d75aa8d534",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q41421",
+        "url": "https://www.wikidata.org/wiki/Q41421",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "American basketball player and businessman (born 1963)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1eb6f4ad2cd8a46b741ba32d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q1928047",
+        "url": "https://www.wikidata.org/wiki/Q1928047",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "German draughtsperson, artist and comics artist",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8be44a4dc31f75ae5dde6f60",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q6831716",
+        "url": "https://www.wikidata.org/wiki/Q6831716",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "English footballer (born 1984)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3a33eb80d81c0d4c0d20989a",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q3308285",
+        "url": "https://www.wikidata.org/wiki/Q3308285",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "American computer scientist, University of California, Berkeley",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-48294c9e561ff169faf368d7",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q3308007",
+        "url": "https://www.wikidata.org/wiki/Q3308007",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "American actor (born 1987)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3f607196780c5f36d2993b96",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q6831719",
+        "url": "https://www.wikidata.org/wiki/Q6831719",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "British mycologist, writer, and television presenter",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-54af48ced469516b1cf41e65",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q126207492",
+        "url": "https://www.wikidata.org/wiki/Q126207492",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "1941--",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-92b908eacea9241a5ad3b81a",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q108883102",
+        "url": "https://www.wikidata.org/wiki/Q108883102",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:05.146Z",
+        "evidenceType": "registry",
+        "quote": "main protagonist in the 1996 film Space Jam",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a6ec78401f51eff71fe6560c",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2621939A",
+        "url": "https://openlibrary.org/authors/OL2621939A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "Encyclopedia of Gods",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e7d1c7a5605bcf2a6007e160",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3394894A",
+        "url": "https://openlibrary.org/authors/OL3394894A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "BUDDHA: HIS LIFE IN IMAGES",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-0ed6281957c76f4cab0f7056",
+        "provenanceUrl": "https://openlibrary.org/authors/OL6265651A",
+        "url": "https://openlibrary.org/authors/OL6265651A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "GREAT ABOLITION SHAM: THE TRUE STORY OF THE END OF THE BRITISH SLAVE TRADE",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6477ad2e65a383cf4fb2940b",
+        "provenanceUrl": "https://openlibrary.org/authors/OL10499594A",
+        "url": "https://openlibrary.org/authors/OL10499594A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "Basiswissen Fotografie",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f2368cd1bf80d8efcee6597b",
+        "provenanceUrl": "https://openlibrary.org/authors/OL7539988A",
+        "url": "https://openlibrary.org/authors/OL7539988A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "The company of demons",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c1a2b8c920938da1ea6c609d",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4900636A",
+        "url": "https://openlibrary.org/authors/OL4900636A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "The visual response of the purple shore crab, Hemigrapsus nudus, to ionizing and non-ionizing radiation",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9a2ea020240a3bdf8ca2d552",
+        "provenanceUrl": "https://openlibrary.org/authors/OL13587809A",
+        "url": "https://openlibrary.org/authors/OL13587809A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "Worship in an Age of Anxiety",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-43eda5aa20660f67ddb2a668",
+        "provenanceUrl": "https://openlibrary.org/authors/OL14086744A",
+        "url": "https://openlibrary.org/authors/OL14086744A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:06.440Z",
+        "evidenceType": "registry",
+        "quote": "Local gate control in carbon nanotube quantum devices",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1d46c2a2392b28ad031f3003",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:05.181Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b478dafd613cdfdad0da0e6f",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan_(offensive_lineman)",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan_(offensive_lineman)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:05.181Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ee914b95718dbf9f40396e82",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan:_Chaos_in_the_Windy_City",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan:_Chaos_in_the_Windy_City",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:05.181Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-5ff5993203000355c07fe894",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan_(footballer)",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan_(footballer)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:05.181Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b90c4f43950c86d007fad221",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan%27s_Steak_House",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan%27s_Steak_House",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:05.181Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9dc3dc218dcc73701f2158c3",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Michael_Jordan_to_the_Max",
+        "url": "https://en.wikipedia.org/wiki/Michael_Jordan_to_the_Max",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:05.181Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ab9b798f344e31353d8489d3",
+        "provenanceUrl": "https://viaf.org/viaf/114945073",
+        "url": "https://viaf.org/viaf/114945073",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan, 1963-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a75098eb7a2e068480141855",
+        "provenanceUrl": "https://viaf.org/viaf/31613590",
+        "url": "https://viaf.org/viaf/31613590",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordansky, 1901-1990",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a5db7c3ade6df8f31b85cef3",
+        "provenanceUrl": "https://viaf.org/viaf/115190585",
+        "url": "https://viaf.org/viaf/115190585",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan, 1941-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ec48dc5646bef600d8dc6556",
+        "provenanceUrl": "https://viaf.org/viaf/258469427",
+        "url": "https://viaf.org/viaf/258469427",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan, 1987-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ca67c8584a83f865cb7a1275",
+        "provenanceUrl": "https://viaf.org/viaf/100568809",
+        "url": "https://viaf.org/viaf/100568809",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan, 1956-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a9924280b16b34f10efe048d",
+        "provenanceUrl": "https://viaf.org/viaf/303086450",
+        "url": "https://viaf.org/viaf/303086450",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan, 1972-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-236629e3ec5888476284edd5",
+        "provenanceUrl": "https://viaf.org/viaf/250707635",
+        "url": "https://viaf.org/viaf/250707635",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan Clarke",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-34c0d5f9dc8715362c3e9ecd",
+        "provenanceUrl": "https://viaf.org/viaf/48577325",
+        "url": "https://viaf.org/viaf/48577325",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:05.134Z",
+        "evidenceType": "registry",
+        "quote": "Michael Jordan, 1944-",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "viaf",
+            "count": 13
+          },
+          {
+            "value": "wikidata",
+            "count": 13
+          },
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 24
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 10
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial",
+      "viaf": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:c304ce4e1db8"
+      ],
+      "status": "candidate",
+      "displayHint": "Michael Jordan",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:41:04.926Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:c304ce4e1db8",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q41421",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-114945073",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q1928047",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-303086450",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q6831716",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q3308285",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-100568809",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q3308007",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-258469427",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q6831719",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-115190585",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q126207492",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q108883102",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2621939A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL3394894A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL6265651A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL10499594A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL7539988A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4900636A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL13587809A",
+          "kind": "finding"
+        }
+      ],
+      "edges": [
+        {
+          "id": "corr-0-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q41421",
+          "to": "viaf-114945073",
+          "source": "wd-Q41421",
+          "target": "viaf-114945073",
+          "findingIds": [
+            "wd-Q41421",
+            "viaf-114945073"
+          ],
+          "families": [
+            "wikimedia",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q41421",
+            "viaf:114945073"
+          ],
+          "titleSecondary": "agree",
+          "relationship": "same-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-1-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q1928047",
+          "to": "viaf-303086450",
+          "source": "wd-Q1928047",
+          "target": "viaf-303086450",
+          "findingIds": [
+            "wd-Q1928047",
+            "viaf-303086450"
+          ],
+          "families": [
+            "wikimedia",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q1928047",
+            "viaf:303086450"
+          ],
+          "titleSecondary": "agree",
+          "relationship": "same-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-2-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q3308285",
+          "to": "viaf-100568809",
+          "source": "wd-Q3308285",
+          "target": "viaf-100568809",
+          "findingIds": [
+            "wd-Q3308285",
+            "viaf-100568809"
+          ],
+          "families": [
+            "wikimedia",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q3308285",
+            "viaf:100568809"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-3-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q3308007",
+          "to": "viaf-258469427",
+          "source": "wd-Q3308007",
+          "target": "viaf-258469427",
+          "findingIds": [
+            "wd-Q3308007",
+            "viaf-258469427"
+          ],
+          "families": [
+            "wikimedia",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q3308007",
+            "viaf:258469427"
+          ],
+          "titleSecondary": "disagree",
+          "relationship": "related-entity",
+          "mode": "attach_keep"
+        },
+        {
+          "id": "corr-4-0-1",
+          "kind": "corroboration",
+          "from": "wd-Q6831719",
+          "to": "viaf-115190585",
+          "source": "wd-Q6831719",
+          "target": "viaf-115190585",
+          "findingIds": [
+            "wd-Q6831719",
+            "viaf-115190585"
+          ],
+          "families": [
+            "wikimedia",
+            "viaf"
+          ],
+          "coalesceKeys": [
+            "qid:Q6831719",
+            "viaf:115190585"
+          ],
+          "titleSecondary": "agree",
+          "relationship": "same-entity",
+          "mode": "attach_keep"
+        }
+      ]
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "michael jordan",
+        "findingIds": [
+          "wd-Q41421",
+          "wd-Q1928047",
+          "wd-Q6831719",
+          "wd-Q6831716",
+          "wd-Q126207492",
+          "wd-Q108883102",
+          "ol-OL2621939A",
+          "ol-OL3394894A",
+          "ol-OL6265651A",
+          "ol-OL10499594A",
+          "ol-OL7539988A",
+          "wp-en-Michael_Jordan"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "viaf.org",
+          "openlibrary.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

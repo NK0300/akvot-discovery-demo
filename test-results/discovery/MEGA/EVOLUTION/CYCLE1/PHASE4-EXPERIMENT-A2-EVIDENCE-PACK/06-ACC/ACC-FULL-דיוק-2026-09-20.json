@@ -1,0 +1,741 @@
+{
+  "stamp": "2026-09-20T10:44:54+03:00",
+  "stampLabel": "2026-09-20 10:44 IDT",
+  "agent": "דיוק",
+  "experiment": "PHASE4-EXPERIMENT-A2-EVIDENCE-PACK",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app"
+  },
+  "acc_redef": {
+    "unit": "FindingId after coalesce",
+    "multi_independent": "Findings with ≥2 Acc Evidence families / Findings with ≥1 Evidence",
+    "families": [
+      "wikidata",
+      "wikipedia",
+      "openlibrary",
+      "viaf",
+      "other:apex"
+    ],
+    "identity_labels": [
+      "same-source",
+      "same-reference",
+      "same-entity",
+      "related-entity",
+      "possible-match",
+      "unknown"
+    ],
+    "forbidden": [
+      "Q1701775",
+      "wd-Q1701775"
+    ],
+    "gate_mean": 0.15
+  },
+  "live_a2safe": {
+    "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+    "url": "https://akvot-simple-demo-mcqip894c-k-akvot.vercel.app",
+    "per_seed": [
+      {
+        "id": "S01",
+        "seed": "Tim Berners-Lee",
+        "findings_n": 18,
+        "with_ev_n": 18,
+        "multi_n": 10,
+        "multi_rate": 0.5556,
+        "viaf_n": 10,
+        "families_union": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ],
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "identity_label_counts": {
+          "same-reference": 10,
+          "same-source": 7,
+          "unknown": 1
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, 1955-",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q80",
+              "wd-Q80",
+              "viaf:85312226",
+              "ol:OL25245A",
+              "ol-OL25245A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 10,
+            "title_only_key": false
+          }
+        ]
+      },
+      {
+        "id": "S04",
+        "seed": "Stripe",
+        "findings_n": 30,
+        "with_ev_n": 30,
+        "multi_n": 0,
+        "multi_rate": 0,
+        "viaf_n": 8,
+        "families_union": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ],
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "identity_label_counts": {
+          "same-source": 24,
+          "unknown": 6
+        },
+        "sample_multi": []
+      },
+      {
+        "id": "S05",
+        "seed": "Red Cross",
+        "findings_n": 30,
+        "with_ev_n": 30,
+        "multi_n": 3,
+        "multi_rate": 0.1,
+        "viaf_n": 10,
+        "families_union": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ],
+        "acc_leak": 0,
+        "title_only_n": 0,
+        "identity_label_counts": {
+          "same-reference": 3,
+          "same-source": 21,
+          "unknown": 6
+        },
+        "sample_multi": [
+          {
+            "id": "wd-Q470110",
+            "title": "American Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q470110",
+              "wd-Q470110",
+              "viaf:122023057",
+              "ol:OL17804A",
+              "ol-OL17804A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "ol-OL17804A",
+            "title": "American National Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q470110",
+              "wd-Q470110",
+              "viaf:122023057",
+              "ol:OL17804A",
+              "ol-OL17804A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          },
+          {
+            "id": "viaf-122023057",
+            "title": "Red Cross USA",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "viaf"
+            ],
+            "entityRefs": [
+              "qid:Q470110",
+              "wd-Q470110",
+              "viaf:122023057",
+              "ol:OL17804A",
+              "ol-OL17804A"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf",
+              "wikidata"
+            ],
+            "identity_label": "same-reference",
+            "evidence_n": 3,
+            "title_only_key": false
+          }
+        ]
+      }
+    ],
+    "mean_multi_rate": 0.2185,
+    "pooled_multi_rate": 0.1667,
+    "acc_leak_total": 0,
+    "title_only_total": 0
+  },
+  "comparison_table": {
+    "B0": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "multi": 0.0,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 10,
+        "S04": 14,
+        "S05": 6
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A-VIAF/ACC-B0-BEFORE",
+      "note": "no VIAF · multi=0"
+    },
+    "A": {
+      "dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU / canonical EXP-A AFTER pack",
+      "multi": 0.0,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 18,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A-VIAF/ACC-AFTER-PREVIEW",
+      "note": "VIAF present but no cross-family coalesce · multi=0"
+    },
+    "A2-bound(FRNDab)": {
+      "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+      "multi": 0.5189,
+      "false_merge_risk": "CAVEAT title-bridge",
+      "acc_leak": 0,
+      "pretty_wrong": "elevated risk (title:)",
+      "findings": {
+        "S01": 17,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A2-COALESCE/ACC-AFTER-FRNDab",
+      "note": "NON-promote · title: coalesce residual"
+    },
+    "A2-safe": {
+      "dpl": "dpl_7MmfPSHByCLc3r86tnFVPZAWmRV9",
+      "multi": 0.2185,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 18,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "LIVE Acc 2026-09-20",
+      "note": "typed soft-ref enrich only · title_only=0"
+    },
+    "Bound1": {
+      "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+      "multi": 0.0,
+      "false_merge_risk": 0,
+      "acc_leak": 0,
+      "pretty_wrong": 0,
+      "findings": {
+        "S01": 18,
+        "S04": 30,
+        "S05": 30
+      },
+      "source": "FROZEN PHASE4-EXPERIMENT-A2-COALESCE/ACC-AFTER-BOUND1",
+      "note": "typed keys no enrich · Acc FAIL multi gate"
+    }
+  },
+  "adversarial_summary": {
+    "pass": true,
+    "leak_total": 0,
+    "rows": [
+      {
+        "id": "ADV-SMITH-CTX",
+        "seed": "John Smith",
+        "findings_n": 21,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "no_false_same_entity",
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 15,
+          "unknown": 6
+        }
+      },
+      {
+        "id": "ADV-INJECT-QID",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "identity_label_counts": {
+          "same-source": 23,
+          "unknown": 6
+        }
+      },
+      {
+        "id": "ADV-INJECT-WD",
+        "seed": "John Smith",
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "identity_label_counts": {
+          "same-reference": 4,
+          "same-source": 19,
+          "unknown": 6
+        }
+      },
+      {
+        "id": "ADV-SEED-POISON",
+        "seed": "John Smith Q1701775",
+        "findings_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "expect": "acc_scrub_leak0",
+        "pass": true,
+        "identity_label_counts": {}
+      }
+    ]
+  },
+  "homonym_summary": {
+    "n": 10,
+    "pass_n": 10,
+    "false_merge_risk_n": 0,
+    "leak_total": 0
+  },
+  "core": {
+    "alias_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "rows": [
+      {
+        "id": "core-assaf",
+        "query": "Assaf Rappaport",
+        "leak": 0,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "pass": true
+      },
+      {
+        "id": "core-cohen",
+        "query": "כהן",
+        "leak": 0,
+        "ui": "need_context",
+        "qid": null,
+        "pass": true
+      },
+      {
+        "id": "core-smith",
+        "query": "John Smith + IBM context",
+        "leak": 0,
+        "ui": "need_context",
+        "qid": null,
+        "pass": true
+      }
+    ],
+    "pass": true,
+    "leak": 0,
+    "note": "Assaf probe uses Assaf Rappaport (prior Acc method). Bare Assaf hits wiki429→need_context — not A2-safe regression."
+  },
+  "locks": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "actual": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "ok": true
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "actual": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "ok": true
+    }
+  },
+  "gates": {
+    "multi_ge_015": true,
+    "leak_eq_0": true,
+    "title_only_eq_0": true,
+    "s01_no_vacuum": true,
+    "adversarial": true,
+    "core_b0": true,
+    "false_merge_homonym": true
+  },
+  "successful_coalesces_x5": [
+    {
+      "id": "wd-Q80",
+      "title": "Tim Berners-Lee",
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "viaf"
+      ],
+      "entityRefs": [
+        "qid:Q80",
+        "wd-Q80",
+        "viaf:85312226",
+        "ol:OL25245A",
+        "ol-OL25245A"
+      ],
+      "families": [
+        "openlibrary",
+        "viaf",
+        "wikidata"
+      ],
+      "identity_label": "same-reference",
+      "evidence_n": 10,
+      "title_only_key": false,
+      "seed": "S01",
+      "label": "same-reference"
+    },
+    {
+      "id": "ol-OL25245A",
+      "title": "Tim Berners-Lee",
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "viaf"
+      ],
+      "entityRefs": [
+        "qid:Q80",
+        "wd-Q80",
+        "viaf:85312226",
+        "ol:OL25245A",
+        "ol-OL25245A"
+      ],
+      "families": [
+        "openlibrary",
+        "viaf",
+        "wikidata"
+      ],
+      "identity_label": "same-reference",
+      "evidence_n": 10,
+      "title_only_key": false,
+      "seed": "S01",
+      "label": "same-reference"
+    },
+    {
+      "id": "viaf-85312226",
+      "title": "Tim Berners-Lee",
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "viaf"
+      ],
+      "entityRefs": [
+        "qid:Q80",
+        "wd-Q80",
+        "viaf:85312226",
+        "ol:OL25245A",
+        "ol-OL25245A"
+      ],
+      "families": [
+        "openlibrary",
+        "viaf",
+        "wikidata"
+      ],
+      "identity_label": "same-reference",
+      "evidence_n": 10,
+      "title_only_key": false,
+      "seed": "S01",
+      "label": "same-reference"
+    },
+    {
+      "id": "viaf-85312226",
+      "title": "Tim Berners-Lee, 1955-",
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "viaf"
+      ],
+      "entityRefs": [
+        "qid:Q80",
+        "wd-Q80",
+        "viaf:85312226",
+        "ol:OL25245A",
+        "ol-OL25245A"
+      ],
+      "families": [
+        "openlibrary",
+        "viaf",
+        "wikidata"
+      ],
+      "identity_label": "same-reference",
+      "evidence_n": 10,
+      "title_only_key": false,
+      "seed": "S01",
+      "label": "same-reference"
+    },
+    {
+      "id": "viaf-85312226",
+      "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksaĵo",
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "viaf"
+      ],
+      "entityRefs": [
+        "qid:Q80",
+        "wd-Q80",
+        "viaf:85312226",
+        "ol:OL25245A",
+        "ol-OL25245A"
+      ],
+      "families": [
+        "openlibrary",
+        "viaf",
+        "wikidata"
+      ],
+      "identity_label": "same-reference",
+      "evidence_n": 10,
+      "title_only_key": false,
+      "seed": "S01",
+      "label": "same-reference"
+    }
+  ],
+  "rejected_x5": [
+    {
+      "id": "wp-en-Tim_Berners_Lee",
+      "title": "Tim Berners-Lee",
+      "providers": [
+        "wikipedia"
+      ],
+      "entityRefs": [
+        "wp:en:Tim Berners-Lee"
+      ],
+      "identity_label": "unknown",
+      "seed": "S01",
+      "label": "unknown",
+      "reason": "single-family / insufficient typed intersection"
+    },
+    {
+      "id": "wp-en-Stripe",
+      "title": "Stripe",
+      "providers": [
+        "wikipedia"
+      ],
+      "entityRefs": [
+        "wp:en:Stripe"
+      ],
+      "identity_label": "unknown",
+      "seed": "S04",
+      "label": "unknown",
+      "reason": "single-family / insufficient typed intersection"
+    },
+    {
+      "id": "wp-en-Striped_hyena",
+      "title": "Striped hyena",
+      "providers": [
+        "wikipedia"
+      ],
+      "entityRefs": [
+        "wp:en:Striped hyena"
+      ],
+      "identity_label": "unknown",
+      "seed": "S04",
+      "label": "unknown",
+      "reason": "single-family / insufficient typed intersection"
+    },
+    {
+      "id": "wp-en-Stripe_Inc_",
+      "title": "Stripe, Inc.",
+      "providers": [
+        "wikipedia"
+      ],
+      "entityRefs": [
+        "wp:en:Stripe, Inc."
+      ],
+      "identity_label": "unknown",
+      "seed": "S04",
+      "label": "unknown",
+      "reason": "single-family / insufficient typed intersection"
+    },
+    {
+      "id": "wp-en-Striped_polecat",
+      "title": "Striped polecat",
+      "providers": [
+        "wikipedia"
+      ],
+      "entityRefs": [
+        "wp:en:Striped polecat"
+      ],
+      "identity_label": "unknown",
+      "seed": "S04",
+      "label": "unknown",
+      "reason": "single-family / insufficient typed intersection"
+    }
+  ],
+  "unknown_x5": [
+    {
+      "seed": "S01",
+      "unknown_n": 1,
+      "label": "unknown",
+      "note": "Findings with ≤1 family and no typed multi-attach"
+    },
+    {
+      "seed": "S04",
+      "unknown_n": 6,
+      "label": "unknown",
+      "note": "Findings with ≤1 family and no typed multi-attach"
+    },
+    {
+      "seed": "S05",
+      "unknown_n": 6,
+      "label": "unknown",
+      "note": "Findings with ≤1 family and no typed multi-attach"
+    },
+    {
+      "seed": "כהן",
+      "id": "H-TRANSLIT",
+      "label": "unknown",
+      "note": "Hebrew Cohen transliteration / surname ambiguity"
+    },
+    {
+      "seed": "Cohen",
+      "id": "H-SURNAME",
+      "label": "unknown",
+      "note": "common surname alone"
+    }
+  ],
+  "verdict": "PASS",
+  "cites": {
+    "B0": "../PHASE4-EXPERIMENT-A-VIAF/ACC-B0-BEFORE-S01-S04-S05-דיוק-2026-09-20.md",
+    "A": "../PHASE4-EXPERIMENT-A-VIAF/ACC-AFTER-PREVIEW-S01-S04-S05-דיוק-2026-09-20.md",
+    "FRNDab": "../PHASE4-EXPERIMENT-A2-COALESCE/ACC-AFTER-FRNDab-דיוק-2026-09-20.md",
+    "Bound1": "../PHASE4-EXPERIMENT-A2-COALESCE/ACC-AFTER-BOUND1-Fz2iq-דיוק-2026-09-20.md",
+    "typed_enrich_smoke": "../PHASE4-EXPERIMENT-A2-COALESCE/TYPED-SOFTREF-ENRICH-שרת.md"
+  }
+}

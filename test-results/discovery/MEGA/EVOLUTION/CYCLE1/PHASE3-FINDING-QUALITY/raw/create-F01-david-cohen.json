@@ -1,0 +1,365 @@
+{
+  "ok": true,
+  "sessionId": "kv1.2ad2c1acc9fa9f10ca77dd8b4284e96f",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9gkm62-533e3a",
+  "snapshot": {
+    "sessionId": "kv1.2ad2c1acc9fa9f10ca77dd8b4284e96f",
+    "seed": "דוד כהן",
+    "q": "דוד כהן",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "ol-OL16182955A",
+        "kind": "registry",
+        "title": "דוד כהן",
+        "summary": "Top work: תרגילים ללמוד הנקוד",
+        "evidenceIds": [
+          "ev-e5a7e9547758831b8b92c9f0"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL16182955A"
+        ],
+        "scoreFinding": 0.6658333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL16199566A",
+        "kind": "registry",
+        "title": "אורי בן דוד כהן",
+        "summary": "Top work: כלים ביד כלינו",
+        "evidenceIds": [
+          "ev-4ff943536065ae18db4f4105"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL16199566A"
+        ],
+        "scoreFinding": 0.6558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15511996A",
+        "kind": "registry",
+        "title": "מאיר בן יונתן דוד כהן",
+        "summary": "Top work: ‏מילה ופדיון כהלכה :‏",
+        "evidenceIds": [
+          "ev-702dd2c600c0297b2b8681c8"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15511996A"
+        ],
+        "scoreFinding": 0.6458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL4973655A",
+        "kind": "registry",
+        "title": "David Cohen",
+        "summary": "Top work: Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+        "evidenceIds": [
+          "ev-2ceeb07e90a5e99ca8a1eed2"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL4973655A"
+        ],
+        "scoreFinding": 0.6358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15254250A",
+        "kind": "registry",
+        "title": "דוד ש. כהן",
+        "summary": "Top work: סוכת דוד",
+        "evidenceIds": [
+          "ev-a00eb45c3f58123afd2b8072"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15254250A"
+        ],
+        "scoreFinding": 0.6258333333333332,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-e5a7e9547758831b8b92c9f0",
+        "provenanceUrl": "https://openlibrary.org/authors/OL16182955A",
+        "url": "https://openlibrary.org/authors/OL16182955A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:51:52.983Z",
+        "evidenceType": "registry",
+        "quote": "תרגילים ללמוד הנקוד",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4ff943536065ae18db4f4105",
+        "provenanceUrl": "https://openlibrary.org/authors/OL16199566A",
+        "url": "https://openlibrary.org/authors/OL16199566A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:51:52.983Z",
+        "evidenceType": "registry",
+        "quote": "כלים ביד כלינו",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-702dd2c600c0297b2b8681c8",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15511996A",
+        "url": "https://openlibrary.org/authors/OL15511996A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:51:52.983Z",
+        "evidenceType": "registry",
+        "quote": "‏מילה ופדיון כהלכה :‏",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2ceeb07e90a5e99ca8a1eed2",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4973655A",
+        "url": "https://openlibrary.org/authors/OL4973655A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:51:52.983Z",
+        "evidenceType": "registry",
+        "quote": "Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a00eb45c3f58123afd2b8072",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15254250A",
+        "url": "https://openlibrary.org/authors/OL15254250A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T06:51:52.983Z",
+        "evidenceType": "registry",
+        "quote": "סוכת דוד",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "ok",
+      "wikipedia": "error"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:012d375b14a3"
+      ],
+      "status": "candidate",
+      "displayHint": "דוד כהן",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T06:51:51.482Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:012d375b14a3",
+          "kind": "seed"
+        },
+        {
+          "id": "ol-OL16182955A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL16199566A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15511996A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4973655A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15254250A",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

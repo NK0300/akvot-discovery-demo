@@ -1,0 +1,1002 @@
+{
+  "doc": "QA-FINAL-RESULT",
+  "role": "בודק",
+  "phase": "CYCLE1 · PHASE4-EXPERIMENT-A-VIAF",
+  "stamp": "2026-09-20T10:09:36+03:00",
+  "finished": "2026-09-20T10:16:30+03:00",
+  "zone": "Asia/Jerusalem",
+  "promote": "HOLD",
+  "no_promote": true,
+  "core_untouched": true,
+  "verdict": "PASS",
+  "fail_reasons": [],
+  "canonical_preview": {
+    "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "url": "https://akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+    "viaf_enabled": true,
+    "access": "vercel curl --deployment dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE --scope k-akvot"
+  },
+  "superseded": {
+    "dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "note": "H9o45 superseded by 4Rj7c — not used for FINAL"
+  },
+  "locks": {
+    "preview_build_match": true,
+    "preview_build": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "b0_alias": "https://akvot-discovery.vercel.app",
+    "b0_dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "b0_build_match": true,
+    "b0_build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "core_alias": "https://akvot-simple-demo.vercel.app",
+    "core_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "core_build_match": true,
+    "core_build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+  },
+  "seeds": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person"
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company"
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization"
+    }
+  ],
+  "family_mapping": {
+    "formula": "multi_independent_rate = share of accepted Findings whose surviving Evidence spans ≥2 distinct independent hostFamily values",
+    "families": [
+      "wikidata",
+      "wikipedia",
+      "openlibrary",
+      "viaf",
+      "other:<apex>"
+    ],
+    "independent": "wikidata ≠ wikipedia ≠ openlibrary ≠ viaf",
+    "notes": [
+      "language wikipedia mirrors = one family",
+      "providers.length alone is NOT corroboration",
+      "session-level family union is NOT the gate metric"
+    ]
+  },
+  "formula_documented": {
+    "metric": "multi_independent_rate",
+    "definition": "share of accepted Findings whose surviving Evidence spans ≥2 distinct independent hostFamily values (Acc SoT)",
+    "aggregation_gate": "mean(S01,S04,S05) ≥ 0.15",
+    "also_reported": "pooled findings multi_n / findings_n",
+    "not_used_for_gate": [
+      "session-level family union",
+      "providers.length alone",
+      "runtime wikimedia collapse (WD+WP)"
+    ]
+  },
+  "gate": {
+    "threshold": 0.15,
+    "multi_independent_mean_preview": 0.4139,
+    "multi_independent_mean_b0": 0.0,
+    "multi_independent_pooled_preview": {
+      "findings_n": 42,
+      "multi_n": 6,
+      "rate": 0.1429
+    },
+    "multi_independent_pooled_b0": {
+      "findings_n": 54,
+      "multi_n": 0,
+      "rate": 0.0
+    },
+    "multi_gate_pass": true,
+    "acc_leak_total": 0,
+    "acc_leak_pass": true,
+    "dossier_any": false,
+    "dossier_pass": true,
+    "viaf_on_preview_all": true,
+    "viaf_on_b0_any": false
+  },
+  "preview": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "label": "PREVIEW",
+      "sessionId": "kv1.a49b7c95f3d3e45aa76139fc2bc0ea53",
+      "status": "partial",
+      "findings_n": 1,
+      "multi_independent_n": 1,
+      "multi_independent_rate": 1.0,
+      "multi_provider_n": 1,
+      "viaf_findings_n": 1,
+      "viaf_present": true,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial"
+      },
+      "hostFamily_histogram": {
+        "[\"openlibrary\", \"viaf\", \"wikidata\", \"wikipedia\"]": 1
+      },
+      "acc_leak": 0,
+      "dossier": false,
+      "findings_sample": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "multi": true
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "label": "PREVIEW",
+      "sessionId": "kv1.7b663b33b0275709d2d75263824e772f",
+      "status": "partial",
+      "findings_n": 22,
+      "multi_independent_n": 3,
+      "multi_independent_rate": 0.1364,
+      "multi_provider_n": 3,
+      "viaf_findings_n": 8,
+      "viaf_present": true,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "hostFamily_histogram": {
+        "[\"openlibrary\", \"wikidata\", \"wikipedia\"]": 1,
+        "[\"openlibrary\", \"viaf\"]": 1,
+        "[\"viaf\", \"wikipedia\"]": 1,
+        "[\"wikidata\"]": 4,
+        "[\"viaf\"]": 6,
+        "[\"openlibrary\"]": 5,
+        "[\"wikipedia\"]": 4
+      },
+      "acc_leak": 0,
+      "dossier": false,
+      "findings_sample": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "openlibrary",
+            "wikidata",
+            "wikipedia"
+          ],
+          "multi": true
+        },
+        {
+          "id": "ol-OL8613090A",
+          "title": "Adelle Stripe",
+          "providers": [
+            "openlibrary",
+            "viaf"
+          ],
+          "hostFamilies": [
+            "openlibrary",
+            "viaf"
+          ],
+          "multi": true
+        },
+        {
+          "id": "viaf-126600779",
+          "title": "Stripes",
+          "providers": [
+            "wikipedia",
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf",
+            "wikipedia"
+          ],
+          "multi": true
+        },
+        {
+          "id": "wd-Q297115",
+          "title": "Meloidae",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q469754",
+          "title": "Perca flavescens",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q842647",
+          "title": "striped bass",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q368495",
+          "title": "striped skunk",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-30463651",
+          "title": "Stripe, John, 1643-1737",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-138753783",
+          "title": "Striped house museum of art Tokyo",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-57307946",
+          "title": "Stripecke, Renata",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-124465779",
+          "title": "Striped Horse France",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-83910682",
+          "title": "Střípek, Jiří, asi 1545-asi 1575",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "label": "PREVIEW",
+      "sessionId": "kv1.bae8f09f768acbe87faa68e73de8d9fc",
+      "status": "partial",
+      "findings_n": 19,
+      "multi_independent_n": 2,
+      "multi_independent_rate": 0.1053,
+      "multi_provider_n": 2,
+      "viaf_findings_n": 8,
+      "viaf_present": true,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "hostFamily_histogram": {
+        "[\"openlibrary\", \"viaf\", \"wikidata\", \"wikipedia\"]": 1,
+        "[\"viaf\", \"wikidata\"]": 1,
+        "[\"wikidata\"]": 3,
+        "[\"viaf\"]": 6,
+        "[\"openlibrary\"]": 4,
+        "[\"wikipedia\"]": 4
+      },
+      "acc_leak": 0,
+      "dossier": false,
+      "findings_sample": [
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikidata",
+            "wikipedia"
+          ],
+          "multi": true
+        },
+        {
+          "id": "viaf-167237176",
+          "title": "Red Cross and Red Crescent",
+          "providers": [
+            "wikidata",
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf",
+            "wikidata"
+          ],
+          "multi": true
+        },
+        {
+          "id": "wd-Q48438",
+          "title": "Saint George",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q7305591",
+          "title": "Redd Kross",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q1968122",
+          "title": "National Red Cross and Red Crescent society",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-160178001",
+          "title": "Red Cross. International Committee, Geneva",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-151269599",
+          "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-122023057",
+          "title": "Red Cross USA",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-997897",
+          "title": "Red Cross international lawyer (1914-2002) Jean Pictet",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-312731766",
+          "title": "Red Cross, Henry Dunant Institute",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "viaf-159584209",
+          "title": "Red Cross, Deutsches Rotes Kreuz",
+          "providers": [
+            "viaf"
+          ],
+          "hostFamilies": [
+            "viaf"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL124327A",
+          "title": "International Committee of the Red Cross",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        }
+      ]
+    }
+  ],
+  "b0": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "label": "B0",
+      "sessionId": "kv1.349dddb9f2c65539c246830e02c48b5c",
+      "status": "partial",
+      "findings_n": 10,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0.0,
+      "multi_provider_n": 0,
+      "viaf_findings_n": 0,
+      "viaf_present": false,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "hostFamily_histogram": {
+        "[\"wikidata\"]": 8,
+        "[\"openlibrary\"]": 1,
+        "[\"wikipedia\"]": 1
+      },
+      "acc_leak": 0,
+      "dossier": false,
+      "findings_sample": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q22991023",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q22946133",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q22980417",
+          "title": "Tim Berners-Lee: The next web",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikipedia"
+          ],
+          "hostFamilies": [
+            "wikipedia"
+          ],
+          "multi": false
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "label": "B0",
+      "sessionId": "kv1.bbba84ff2f90122e711d3712a4fa523f",
+      "status": "partial",
+      "findings_n": 22,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0.0,
+      "multi_provider_n": 0,
+      "viaf_findings_n": 0,
+      "viaf_present": false,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "hostFamily_histogram": {
+        "[\"wikidata\"]": 8,
+        "[\"openlibrary\"]": 8,
+        "[\"wikipedia\"]": 6
+      },
+      "acc_leak": 0,
+      "dossier": false,
+      "findings_sample": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q3421342",
+          "title": "stripe",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q127900502",
+          "title": "Stripe",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q117454382",
+          "title": "Stripe",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q297115",
+          "title": "Meloidae",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q469754",
+          "title": "Perca flavescens",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q842647",
+          "title": "striped bass",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q368495",
+          "title": "striped skunk",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL8376862A",
+          "title": "Five Stripe Books",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL8613090A",
+          "title": "Adelle Stripe",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL13079935A",
+          "title": "Stripe",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL10372320A",
+          "title": "STRIPE",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "label": "B0",
+      "sessionId": "kv1.23ceaba809534b4cc7355190f6eec171",
+      "status": "partial",
+      "findings_n": 22,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0.0,
+      "multi_provider_n": 0,
+      "viaf_findings_n": 0,
+      "viaf_present": false,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "hostFamily_histogram": {
+        "[\"wikidata\"]": 8,
+        "[\"openlibrary\"]": 8,
+        "[\"wikipedia\"]": 6
+      },
+      "acc_leak": 0,
+      "dossier": false,
+      "findings_sample": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q7178",
+          "title": "International Red Cross and Red Crescent Movement",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q48438",
+          "title": "Saint George",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q7305591",
+          "title": "Redd Kross",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q1968122",
+          "title": "National Red Cross and Red Crescent society",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q116059498",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "wd-Q50320550",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata"
+          ],
+          "hostFamilies": [
+            "wikidata"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL17804A",
+          "title": "American National Red Cross",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL124327A",
+          "title": "International Committee of the Red Cross",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL2917704A",
+          "title": "Red Cross",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        },
+        {
+          "id": "ol-OL10303910A",
+          "title": "American Red Cross",
+          "providers": [
+            "openlibrary"
+          ],
+          "hostFamilies": [
+            "openlibrary"
+          ],
+          "multi": false
+        }
+      ]
+    }
+  ],
+  "core_smoke": [
+    {
+      "label": "assaf",
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "faces": 2,
+      "leak": 0,
+      "mode": "wiki",
+      "pass": true
+    },
+    {
+      "label": "cohen",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "mode": "candidates",
+      "pass": true
+    },
+    {
+      "label": "smith-nocache",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "mode": "candidates",
+      "pass": true
+    },
+    {
+      "label": "smith-warm",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "mode": "candidates",
+      "pass": true
+    }
+  ],
+  "core_smoke_pass": true,
+  "note_vs_acc_h9o45": {
+    "acc_after_preview": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "acc_verdict": "FAIL",
+    "acc_multi_mean": 0.0,
+    "acc_rca": "VIAF adds findings but single-family Evidence / no cross-family merge",
+    "canonical_final": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "final_verdict": "PASS",
+    "final_multi_mean": 0.4139,
+    "delta_explanation": "4Rj7c includes soft-label corroboration merge; Acc Evidence hostFamily map sees multi-family Findings (S01→1×4-family; S04 3/22; S05 2/19). H9o45 lacked merge → Acc FAIL. FINAL measures CANONICAL 4Rj7c only under same Acc formula."
+  },
+  "raw_dir": "raw-qa-final/"
+}

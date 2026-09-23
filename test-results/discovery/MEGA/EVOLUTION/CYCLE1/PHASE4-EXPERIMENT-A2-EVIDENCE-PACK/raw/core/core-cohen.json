@@ -1,0 +1,65 @@
+{
+  "leak": 0,
+  "json": {
+    "mode": "google",
+    "label": "כהן",
+    "qid": null,
+    "birth": null,
+    "age": null,
+    "place": null,
+    "desc": "אין ערך בוויקיפדיה — מבוסס חיפוש ציבורי",
+    "extract": "",
+    "photo": null,
+    "alts": [],
+    "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+    "email": null,
+    "phone": null,
+    "wikiError": "429",
+    "sources": [],
+    "images": [],
+    "extra_facts": [],
+    "queries": [],
+    "scanned": 0,
+    "allowBroadImages": false,
+    "ambiguous": true,
+    "thin": false,
+    "candidates": [],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 39087,
+      "gemini": 0,
+      "enrich": 0,
+      "stageB": 1282,
+      "total": 40694,
+      "wikiMeta": {
+        "wiki429": 0,
+        "wikiTimeout": 0,
+        "wikiRetries": 0
+      }
+    },
+    "degraded": true,
+    "phonePath": false,
+    "uiState": "need_context",
+    "scenario": "stranger",
+    "confidence": "none",
+    "needContextFields": [
+      "city",
+      "org",
+      "country",
+      "role"
+    ],
+    "messageKey": "common_name",
+    "photoUrl": null,
+    "faces": false,
+    "needContext": true,
+    "needCandidatePick": false,
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "requestId": "564337ce-6a13-4fc5-9d83-b76bcafd05e1",
+    "wikiMeta": {
+      "wiki429": 0,
+      "wikiTimeout": 0,
+      "wikiRetries": 0
+    }
+  },
+  "stdout": "{\"mode\":\"google\",\"label\":\"כהן\",\"qid\":null,\"birth\":null,\"age\":null,\"place\":null,\"desc\":\"אין ערך בוויקיפדיה — מבוסס חיפוש ציבורי\",\"extract\":\"\",\"photo\":null,\"alts\":[],\"note\":\"בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.\",\"email\":null,\"phone\":null,\"wikiError\":\"429\",\"sources\":[],\"images\":[],\"extra_facts\":[],\"queries\":[],\"scanned\":0,\"allowBroadImages\":false,\"ambiguous\":true,\"thin\":false,\"candidates\":[],\"phase\":\"orchestrator-v0-b\",\"timings\":{\"wiki\":39087,\"gemini\":0,\"enrich\":0,\"stageB\":1282,\"total\":40694,\"wikiMeta\":{\"wiki429\":0,\"wikiTimeout\":0,\"wikiRetries\":0}},\"degraded\":true,\"phonePath\":false,\"uiState\":\"need_context\",\"scenario\":\"stranger\",\"confidence\":\"none\",\"needContextFields\":[\"city\",\"org\",\"country\",\"role\"],\"messageKey\":\"common_name\",\"photoUrl\":null,\"faces\":false,\"needContext\":true,\"needCandidatePick\":false,\"forbiddenIdentitiesVersion\":\"2026-09-19.1\",\"requestId\":\"564337ce-6a13-4fc5-9d83-b76bcafd05e1\",\"wikiMeta\":{\"wiki429\":0,\"wikiTimeout\":0,\"wikiRetries\":0}}"
+}

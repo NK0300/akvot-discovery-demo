@@ -1,0 +1,75 @@
+{
+  "deploy": "dpl_5N3GR8EvjjRsNcuDbDfC3g8afuNi",
+  "when": "2026-09-09T08:01:49.532Z",
+  "pass": "4/5",
+  "rows": [
+    {
+      "id": "bibi",
+      "q": "בנימין נתניהו",
+      "pass": true,
+      "http": 200,
+      "ms": 1406,
+      "ui": "dossier",
+      "mode": "wiki",
+      "qid": "Q43723",
+      "faces": true,
+      "cand": 0,
+      "fails": []
+    },
+    {
+      "id": "dani",
+      "q": "דני כהן",
+      "pass": true,
+      "http": 200,
+      "ms": 199,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "cand": 0,
+      "fails": []
+    },
+    {
+      "id": "smith_bare",
+      "q": "John Smith",
+      "pass": true,
+      "http": 200,
+      "ms": 5853,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "cand": 0,
+      "fails": []
+    },
+    {
+      "id": "smith_ctx",
+      "q": "John Smith IBM New York",
+      "pass": false,
+      "http": 200,
+      "ms": 5901,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "cand": 0,
+      "fails": [
+        "ui=need_context",
+        "empty_candidates"
+      ]
+    },
+    {
+      "id": "emily",
+      "q": "Emily Watson Melbourne nurse",
+      "pass": true,
+      "http": 200,
+      "ms": 5909,
+      "ui": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "cand": 0,
+      "fails": []
+    }
+  ]
+}

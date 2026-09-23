@@ -1,0 +1,274 @@
+{
+  "create": {
+    "ok": true,
+    "sessionId": "kv1.94bd85a0398907e9aa9672b2aaff364c",
+    "status": "complete",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "acc-reafter-Ho6jg-TREAT-ACC-P04",
+    "snapshot": {
+      "sessionId": "kv1.94bd85a0398907e9aa9672b2aaff364c",
+      "status": "complete",
+      "findings": [],
+      "evidence": [],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "web_origin",
+              "count": 2
+            },
+            {
+              "value": "wikidata",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "page",
+              "count": 1
+            },
+            {
+              "value": "registry",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [
+            {
+              "value": "corroboration:multi_family",
+              "count": 2
+            },
+            {
+              "value": "hostFamily:web_origin",
+              "count": 2
+            },
+            {
+              "value": "relationship:UNKNOWN",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "progress": {
+        "done": 8,
+        "totalHint": 8
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:c6be5f7c61d1"
+        ],
+        "status": "candidate",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T08:54:47.473Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:c6be5f7c61d1",
+            "kind": "seed"
+          },
+          {
+            "id": "wo-05dfef0cbd242a60",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      },
+      "forbiddenStripped": 1
+    }
+  },
+  "final": {
+    "sessionId": "kv1.94bd85a0398907e9aa9672b2aaff364c",
+    "status": "complete",
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "web_origin",
+            "count": 2
+          },
+          {
+            "value": "wikidata",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 1
+          },
+          {
+            "value": "registry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 2
+          },
+          {
+            "value": "hostFamily:web_origin",
+            "count": 2
+          },
+          {
+            "value": "relationship:UNKNOWN",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:c6be5f7c61d1"
+      ],
+      "status": "candidate",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:54:47.473Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:c6be5f7c61d1",
+          "kind": "seed"
+        },
+        {
+          "id": "wo-05dfef0cbd242a60",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "forbiddenStripped": 1
+  },
+  "narrow": {
+    "ok": false,
+    "error": "method not allowed"
+  },
+  "analysis": {
+    "id": "ACC-P04",
+    "seed": "https://www.wikidata.org/wiki/Q1701775",
+    "role": "poison_entity_page",
+    "expect": "UNKNOWN_leak0",
+    "status": "complete",
+    "findings_n": 0,
+    "evidence_n": 0,
+    "wo_findings_n": 0,
+    "wo_evidence_n": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "has_web_origin_provider": true,
+    "rel_hist": {},
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "se_sr_hits": [],
+    "acc_leak": 0,
+    "private_provenance_n": 0,
+    "wo_sample": [],
+    "wo_ev_sample": [],
+    "sessionId": "kv1.94bd85a0398907e9aa9672b2aaff364c",
+    "create_ok": true,
+    "polls": 0,
+    "latencyMs": 7890,
+    "narrow_leak": 0,
+    "sse_leak": 0,
+    "sse_sampled": true,
+    "hit_leak": 0,
+    "total_leak": 0
+  }
+}

@@ -1,0 +1,507 @@
+{
+  "meta": {
+    "author": "בודק",
+    "stamp": "2026-09-20T09:50:29+03:00",
+    "finished": "2026-09-20T09:52:23+03:00",
+    "timezone": "Asia/Jerusalem (UTC+3)",
+    "discovery": {
+      "alias": "https://akvot-discovery.vercel.app",
+      "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "build_ok": true
+    },
+    "core": {
+      "alias": "https://akvot-simple-demo.vercel.app",
+      "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "build_ok": true
+    },
+    "promote": "HOLD",
+    "policy": "NO CODE · NO PROMOTE · measure only"
+  },
+  "corpus": {
+    "file": "GOLDEN-CORPUS-v0-בודק-2026-09-20.json",
+    "seedCount": 12,
+    "types": [
+      "HE_person_soft",
+      "Latin_ambiguous",
+      "org_domain",
+      "empty_invalid",
+      "Smith_plus_ctx",
+      "celeb_Core_only_note",
+      "bare_surname",
+      "EN_twin"
+    ],
+    "requiredTypes": [
+      "HE_person_soft",
+      "Latin_ambiguous",
+      "org_domain",
+      "empty_invalid",
+      "Smith_plus_ctx",
+      "celeb_Core_only_note",
+      "bare_surname",
+      "EN_twin"
+    ],
+    "typeCoverageOk": true,
+    "uniqueSeeds": 12
+  },
+  "discovery_rows": [
+    {
+      "id": "B01",
+      "seed": "יוסי כהן",
+      "type": "HE_person_soft",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.c4010bd07fa6e8f9ce7dd86d220732e4",
+      "status": "partial",
+      "findings_n": 10,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 3061,
+        "get": 2427,
+        "total": 5488
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B02",
+      "seed": "Alex Morgan",
+      "type": "Latin_ambiguous",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.7fa51090f9f22cdb91d894f7931c5613",
+      "status": "partial",
+      "findings_n": 21,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 2866,
+        "get": 2719,
+        "total": 5585
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B03",
+      "seed": "example.org",
+      "type": "org_domain",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.501561a083669ed5bbdae564d7641687",
+      "status": "complete",
+      "findings_n": 3,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 4490,
+        "get": 2359,
+        "total": 6849
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B04",
+      "seed": "Red Cross",
+      "type": "org_domain",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.a54000d68a6eaf7c123d78c3f8750468",
+      "status": "partial",
+      "findings_n": 14,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 5857,
+        "get": 2277,
+        "total": 8134
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B05",
+      "seed": "",
+      "type": "empty_invalid",
+      "expected_class": "soft_discovery",
+      "create_ok": false,
+      "create_error": "seed required",
+      "create_http_inferred": 4,
+      "sessionId": null,
+      "status": "error",
+      "findings_n": 0,
+      "providers": [],
+      "providers_n": 0,
+      "latency_ms": {
+        "create": 2309,
+        "get": 0,
+        "total": 2309
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": null,
+      "durable": false
+    },
+    {
+      "id": "B06",
+      "seed": "!!!@@@",
+      "type": "empty_invalid",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.6993c0541fab961387299ad30c3fe29a",
+      "status": "complete",
+      "findings_n": 0,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 3203,
+        "get": 2217,
+        "total": 5420
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B07",
+      "seed": "John Smith",
+      "type": "Smith_plus_ctx",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.ce50cb62eae261898b9daeafbd342e46",
+      "status": "partial",
+      "findings_n": 13,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 5847,
+        "get": 2330,
+        "total": 8177
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B08",
+      "seed": "Albert Einstein",
+      "type": "celeb_Core_only_note",
+      "expected_class": "Core_regression_only",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.562faa3bd98f96341a0546fda52d0360",
+      "status": "partial",
+      "findings_n": 14,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 6182,
+        "get": 2346,
+        "total": 8528
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B09",
+      "seed": "כהן",
+      "type": "bare_surname",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.9446b663df38976445af5bc9f27c24da",
+      "status": "partial",
+      "findings_n": 22,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 3617,
+        "get": 2693,
+        "total": 6310
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B10",
+      "seed": "Cohen",
+      "type": "EN_twin",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.1ceb93776670cedf54d9cb78403da9af",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 5854,
+        "get": 2342,
+        "total": 8196
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B11",
+      "seed": "Assaf",
+      "type": "Latin_ambiguous",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.d8ce87972751d4f1e55e3fb556e622df",
+      "status": "partial",
+      "findings_n": 14,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 4379,
+        "get": 2245,
+        "total": 6624
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    },
+    {
+      "id": "B12",
+      "seed": "zzzznonexistentxyz999",
+      "type": "empty_invalid",
+      "expected_class": "soft_discovery",
+      "create_ok": true,
+      "create_error": null,
+      "create_http_inferred": 201,
+      "sessionId": "kv1.7a2589fe8fb48f98f5ba521713469a60",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "providers": [
+        "wikidata",
+        "openlibrary",
+        "wikipedia"
+      ],
+      "providers_n": 3,
+      "latency_ms": {
+        "create": 5812,
+        "get": 2239,
+        "total": 8051
+      },
+      "leakage": 0,
+      "leakage_terms": [],
+      "regenerated": false,
+      "storeBackend": "upstash",
+      "durable": true
+    }
+  ],
+  "summary": {
+    "leakage_total": 0,
+    "leakage_ok": true,
+    "findings_n_min": 0,
+    "findings_n_max": 22,
+    "findings_n_avg": 9.25,
+    "storeBackend_set": [
+      "upstash"
+    ],
+    "regenerated_any": false,
+    "providers_union": [
+      "wikidata",
+      "openlibrary",
+      "wikipedia"
+    ],
+    "dup_title_hints": [
+      {
+        "id": "B01",
+        "findings_n": 10,
+        "unique_titles": 8,
+        "dup_title_delta": 2
+      },
+      {
+        "id": "B02",
+        "findings_n": 21,
+        "unique_titles": 12,
+        "dup_title_delta": 9
+      },
+      {
+        "id": "B04",
+        "findings_n": 14,
+        "unique_titles": 11,
+        "dup_title_delta": 3
+      },
+      {
+        "id": "B07",
+        "findings_n": 13,
+        "unique_titles": 6,
+        "dup_title_delta": 7
+      },
+      {
+        "id": "B08",
+        "findings_n": 14,
+        "unique_titles": 7,
+        "dup_title_delta": 7
+      },
+      {
+        "id": "B09",
+        "findings_n": 22,
+        "unique_titles": 21,
+        "dup_title_delta": 1
+      },
+      {
+        "id": "B11",
+        "findings_n": 14,
+        "unique_titles": 11,
+        "dup_title_delta": 3
+      }
+    ],
+    "empty_invalid_behaves": true
+  },
+  "core_regression": {
+    "rows": [
+      {
+        "label": "assaf",
+        "ms": 7663,
+        "mode": "ambiguous",
+        "qid": null,
+        "pw": 0,
+        "leakage": 0,
+        "leakage_terms": [],
+        "ambiguous": true,
+        "thin": false
+      },
+      {
+        "label": "cohen-he",
+        "ms": 3866,
+        "mode": "candidates",
+        "qid": null,
+        "pw": 0,
+        "leakage": 0,
+        "leakage_terms": [],
+        "ambiguous": true,
+        "thin": false
+      },
+      {
+        "label": "smith",
+        "ms": 7771,
+        "mode": "ambiguous",
+        "qid": null,
+        "pw": 0,
+        "leakage": 0,
+        "leakage_terms": [],
+        "ambiguous": true,
+        "thin": false
+      },
+      {
+        "label": "smith-ctx",
+        "ms": 10023,
+        "mode": "candidates",
+        "qid": null,
+        "pw": 0,
+        "leakage": 0,
+        "leakage_terms": [],
+        "ambiguous": true,
+        "thin": false
+      }
+    ],
+    "pw_total": 0,
+    "leakage_total": 0,
+    "still_8ag": true,
+    "pass": true
+  },
+  "qa": {
+    "status": "PASS",
+    "checks": {
+      "disc_build_B0": true,
+      "core_build_8ag": true,
+      "leakage_0": true,
+      "type_coverage": true,
+      "seed_count_ge_8": true,
+      "core_pw_0": true,
+      "core_leak_0": true
+    }
+  }
+}

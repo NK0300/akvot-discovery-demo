@@ -1,0 +1,30 @@
+EXP-A2 measure 2026-09-20T10:12:51+03:00
+Preview dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2 https://akvot-simple-demo-h9cq1ob4m-k-akvot.vercel.app
+B0 dpl_AvyhrW24gGRquWCPPZdydBiz81dv https://akvot-discovery.vercel.app
+PREVIEW S01 Tim Berners-Lee ...
+  findings=18 multi=15/18=0.8333 viaf=15 leak=0 fams=["openlibrary","viaf","wikimedia"] edges=0
+PREVIEW S04 Stripe ...
+  findings=30 multi=10/30=0.3333 viaf=9 leak=0 fams=["openlibrary","viaf","wikimedia"] edges=0
+PREVIEW S05 Red Cross ...
+  findings=30 multi=12/30=0.4 viaf=15 leak=0 fams=["openlibrary","viaf","wikimedia"] edges=0
+B0 S01 Tim Berners-Lee ...
+  findings=10 multi=0/10=0 viaf=0 leak=0 fams=["openlibrary","wikimedia"]
+B0 S04 Stripe ...
+  findings=22 multi=0/22=0 viaf=0 leak=0 fams=["openlibrary","wikimedia"]
+B0 S05 Red Cross ...
+  findings=22 multi=0/22=0 viaf=0 leak=0 fams=["openlibrary","wikimedia"]
+
+=== SUMMARY ===
+{
+  "preview_mean": 0.5222,
+  "preview_pooled": 0.4744,
+  "b0_mean": 0,
+  "S01_findings": 18,
+  "leak": 0,
+  "pass": true,
+  "gates": {
+    "multi_independent_mean": "PASS",
+    "acc_leak": "PASS",
+    "coverage_no_vacuum": "PASS"
+  }
+}

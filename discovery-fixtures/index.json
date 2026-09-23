@@ -1,0 +1,9 @@
+{
+  "version": "phase-b-ux-2026-09-20",
+  "note": "Fixtures only — Seed illustration values, not allowlist / not special-cased in UI logic.",
+  "fixtures": [
+    { "id": "seed-person-he", "file": "seed-person-he.json", "seedKind": "person_name", "labelHe": "שם אדם (עברית)" },
+    { "id": "seed-person-latin", "file": "seed-person-latin.json", "seedKind": "person_name", "labelHe": "שם אדם (Latin)" },
+    { "id": "seed-domain-org", "file": "seed-domain-org.json", "seedKind": "domain_org", "labelHe": "דומיין / ארגון" }
+  ]
+}

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ambiguous refine — דני כהן</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#090c0a;
+    --panel:#101612;
+    --panel-2:#0c110e;
+    --line:#1e2a22;
+    --line-strong:#2a3a30;
+    --text:#d8e2d5;
+    --muted:#7f947f;
+    --accent:#9bbf7a;
+    --accent-dim:#355035;
+    --warn:#c9a227;
+    --danger:#c98a8a;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: Heebo, "Segoe UI", Tahoma, Arial, sans-serif;
+    --radius: 2px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);min-height:100dvh;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% -20%, #142018 0%, transparent 55%),
+      linear-gradient(180deg, #090c0a 0%, #0a0e0b 100%);
+  }
+  header{
+    border-bottom:1px solid var(--line);
+    padding:14px 18px;
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(9,12,10,.92);
+    backdrop-filter:blur(8px);
+    position:sticky;top:0;z-index:40;
+  }
+  header .mark{
+    width:36px;height:36px;border:1px solid var(--accent);
+    display:grid;place-items:center;font-size:11px;color:var(--accent);
+    font-family:var(--mono);flex-shrink:0;margin-top:1px;
+    letter-spacing:.04em;
+  }
+  header h1{margin:0;font-size:15px;font-weight:700;letter-spacing:.02em}
+  header .sub{margin:4px 0 0;font-size:12px;color:var(--muted);line-height:1.5;max-width:58ch}
+  header .pill{
+    display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;
+    color:var(--accent);border:1px solid var(--accent-dim);padding:3px 8px;letter-spacing:.06em;
+  }
+  main{max-width:1120px;margin:0 auto;padding:16px 18px 8px}
+  .banner{
+    border:1px solid var(--line);background:var(--panel-2);
+    padding:10px 12px;font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.55;
+  }
+  .banner strong{color:var(--accent);font-weight:600}
+  .search{display:flex;gap:8px;margin-bottom:8px}
+  .search input{
+    flex:1;background:var(--panel);border:1px solid var(--line);color:var(--text);
+    padding:13px 14px;font-size:15px;outline:none;border-radius:var(--radius);
+    font-family:var(--sans);
+  }
+  .search input::placeholder{color:#5f735f}
+  .search input:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-dim)}
+  .search button{
+    background:var(--accent);color:#0b0f0c;border:0;padding:0 20px;
+    font-weight:700;cursor:pointer;min-width:96px;border-radius:var(--radius);
+    font-family:var(--sans);font-size:14px;
+  }
+  .search button:hover{filter:brightness(1.05)}
+  .search button:disabled{opacity:.55;cursor:wait}
+  .hint{font-size:11px;color:var(--muted);margin-bottom:16px;line-height:1.45}
+  .loading{
+    border:1px solid var(--line);background:var(--panel);padding:18px 16px;
+  }
+  .loading .title{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    margin-bottom:14px;letter-spacing:.08em;display:flex;justify-content:space-between;gap:8px;
+  }
+  .loading .title .pct{color:var(--muted);letter-spacing:0}
+  .bar{
+    height:3px;background:var(--line);margin-bottom:16px;overflow:hidden;
+  }
+  .bar > i{
+    display:block;height:100%;background:var(--accent);width:0%;
+    transition:width .45s ease;
+  }
+  .loading ol{margin:0;padding:0 18px 0 0;display:grid;gap:9px}
+  .loading li{font-size:13px;color:var(--muted);line-height:1.4;display:flex;gap:8px;align-items:baseline}
+  .loading li .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--line-strong);
+    flex-shrink:0;margin-top:5px;
+  }
+  .loading li.active{color:var(--text)}
+  .loading li.active .dot{background:var(--accent);box-shadow:0 0 0 3px rgba(155,191,122,.18)}
+  .loading li.done{color:var(--accent)}
+  .loading li.done .dot{background:var(--accent)}
+  .loading li .t{font-family:var(--mono);font-size:10px;margin-right:auto;opacity:.75}
+  .layout{display:grid;grid-template-columns:minmax(260px,300px) 1fr;gap:14px;align-items:start}
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr}
+    header{padding:12px 14px}
+    main{padding:14px}
+    .search button{min-width:78px;padding:0 14px}
+  }
+  .cube,.stack{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius)}
+  .cube{position:sticky;top:72px}
+  @media (max-width:860px){.cube{position:static}}
+  .stamp{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:9px 11px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.07em;
+  }
+  .stamp .n{color:var(--muted);letter-spacing:0}
+  .sec-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px;border-top:1px solid var(--line);background:var(--panel-2);
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em;
+  }
+  .sec-head:first-of-type{border-top:0}
+  .sec-head .n{color:var(--muted)}
+  .sec-head .hintish{color:var(--muted);font-weight:400;letter-spacing:0;margin-right:6px}
+  .portrait{
+    aspect-ratio:1;background:#080b08;border-bottom:1px solid var(--line);
+    display:grid;place-items:center;overflow:hidden;
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .portrait .empty{
+    color:var(--muted);font-size:12px;padding:20px 16px;text-align:center;line-height:1.5;
+  }
+  .gallery{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(68px,1fr));
+    gap:6px;padding:10px;border-top:1px solid var(--line);
+  }
+  .gallery a{
+    display:block;aspect-ratio:1;overflow:hidden;border:1px solid var(--line);
+    background:#080b08;transition:border-color .15s;
+  }
+  .gallery a:hover{border-color:var(--accent-dim)}
+  .gallery img{width:100%;height:100%;object-fit:cover}
+  .facts{padding:10px 12px;display:grid;gap:9px}
+  .fact{display:grid;grid-template-columns:72px 1fr;gap:8px;font-size:12.5px}
+  .fact dt{color:var(--muted);font-family:var(--mono);font-size:10px;padding-top:3px;letter-spacing:.02em}
+  .fact dd{margin:0;line-height:1.45;word-break:break-word}
+  .fact .cite{
+    display:inline-block;margin-top:3px;font-family:var(--mono);font-size:10px;
+    color:var(--accent-dim);text-decoration:none;border-bottom:1px dotted var(--accent-dim);
+  }
+  .fact .cite:hover{color:var(--accent)}
+  .bio{
+    padding:12px;border-top:1px solid var(--line);font-size:12.5px;
+    line-height:1.6;color:#c2cdc0;white-space:pre-wrap;
+  }
+  .bio-label{
+    font-family:var(--mono);font-size:10px;color:var(--muted);
+    letter-spacing:.06em;margin-bottom:8px;
+  }
+  .row{
+    border-top:1px solid var(--line);padding:12px;
+    display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:start;
+  }
+  .group-block .row:first-child{border-top:0}
+  .row:hover{background:rgba(155,191,122,.03)}
+  .ico{
+    width:42px;height:42px;border:1px solid var(--line);background:#080b08;
+    display:grid;place-items:center;font-size:10px;color:var(--muted);
+    font-family:var(--mono);overflow:hidden;text-align:center;padding:2px;
+  }
+  .ico img{width:100%;height:100%;object-fit:cover}
+  .meta .who{font-size:13px;font-weight:600;margin:0 0 4px;line-height:1.35;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+  .meta .src{font-size:11px;color:var(--muted);font-family:var(--mono);word-break:break-all;line-height:1.35}
+  .meta .note{font-size:12px;margin-top:6px;line-height:1.5;color:#c2cdc0}
+  .conf{
+    font-family:var(--mono);font-size:9px;color:var(--muted);
+    border:1px solid var(--line);padding:1px 5px;letter-spacing:.04em;font-weight:500;
+  }
+  .conf.hi{color:var(--accent);border-color:var(--accent-dim)}
+  .tag-reg{
+    font-family:var(--mono);font-size:9px;color:var(--warn);
+    border:1px solid #3a3420;padding:1px 5px;letter-spacing:.03em;font-weight:500;
+  }
+  a.go{
+    color:var(--accent);font-size:11px;font-family:var(--mono);text-decoration:none;
+    border:1px solid var(--accent-dim);padding:7px 9px;align-self:center;white-space:nowrap;
+  }
+  a.go:hover{background:rgba(155,191,122,.08)}
+  .empty-state{
+    padding:36px 24px;color:var(--muted);font-size:13px;line-height:1.6;
+    border:1px dashed var(--line);background:var(--panel-2);text-align:center;
+  }
+  .empty-state .big{display:block;font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
+  .err{
+    padding:20px;color:var(--danger);font-size:13px;line-height:1.55;
+    border:1px solid #3a2424;background:#140e0e;
+  }
+  .mode{
+    margin-bottom:12px;font-size:11px;color:var(--warn);font-family:var(--mono);
+    display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;line-height:1.4;
+  }
+  .mode .chip{
+    color:var(--muted);border:1px solid var(--line);padding:2px 7px;letter-spacing:0;
+  }
+  .alts-wrap{padding:12px;border-top:1px solid var(--line)}
+  .alts-wrap .label{font-size:11px;color:var(--muted);margin:0 0 8px}
+  .alts{display:flex;flex-wrap:wrap;gap:6px}
+  .alts button{
+    background:transparent;border:1px solid var(--line);color:var(--text);
+    padding:7px 11px;font-size:12px;cursor:pointer;font-family:var(--sans);
+  }
+  .alts button:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .amb-banner{
+    border:1px solid var(--warn);background:#16140c;padding:14px 16px;margin-bottom:14px;
+  }
+  .amb-banner h2{
+    margin:0 0 6px;font-size:15px;font-weight:700;color:var(--warn);letter-spacing:.02em;
+  }
+  .amb-banner p{margin:0 0 12px;font-size:12.5px;color:var(--muted);line-height:1.5}
+  .amb-banner .alts{margin-top:2px}
+  .amb-banner .alts button{
+    border-color:#4a4020;background:rgba(201,162,39,.06);
+  }
+  .portrait.amb-muted{min-height:88px;aspect-ratio:auto;padding:18px 12px}
+  .layout.amb-layout{grid-template-columns:1fr}
+  .layout.amb-layout .cube{display:none}
+  .stack-empty{padding:28px 16px;color:var(--muted);font-size:13px;line-height:1.5;text-align:center}
+  .refine-panel{
+    border:1px solid var(--line);background:var(--panel);
+    padding:0;max-width:640px;margin:0 auto;
+  }
+  .refine-panel .rf-stamp{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:10px 14px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:10px;color:var(--warn);letter-spacing:.07em;
+    background:var(--panel-2);
+  }
+  .refine-panel .rf-stamp .n{color:var(--muted);letter-spacing:0}
+  .refine-panel .rf-body{padding:16px 16px 18px}
+  .refine-panel h2{
+    margin:0 0 8px;font-size:16px;font-weight:700;color:var(--warn);letter-spacing:.02em;line-height:1.35;
+  }
+  .refine-panel .rf-explain{
+    margin:0 0 14px;font-size:13px;color:var(--muted);line-height:1.55;
+  }
+  .refine-panel .rf-alts{margin:0 0 16px}
+  .refine-panel .rf-alts .label{font-size:11px;color:var(--muted);margin:0 0 8px}
+  .refine-panel .rf-form{display:grid;gap:10px;margin-bottom:14px}
+  .refine-panel .rf-field{display:grid;gap:5px}
+  .refine-panel .rf-field label{
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em;
+  }
+  .refine-panel .rf-field label .opt{color:var(--muted);font-weight:400;letter-spacing:0}
+  .refine-panel .rf-field input{
+    background:var(--panel-2);border:1px solid var(--line);color:var(--text);
+    padding:11px 12px;font-size:14px;outline:none;border-radius:var(--radius);
+    font-family:var(--sans);width:100%;
+  }
+  .refine-panel .rf-field input:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-dim)}
+  .refine-panel .rf-field input::placeholder{color:#5f735f}
+  .refine-panel .rf-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .refine-panel .rf-primary{
+    background:var(--accent);color:#0b0f0c;border:0;padding:11px 18px;
+    font-weight:700;cursor:pointer;border-radius:var(--radius);
+    font-family:var(--sans);font-size:14px;
+  }
+  .refine-panel .rf-primary:hover{filter:brightness(1.05)}
+  .refine-panel .rf-secondary{
+    background:transparent;border:1px solid var(--line);color:var(--text);
+    padding:10px 14px;font-size:13px;cursor:pointer;font-family:var(--sans);
+  }
+  .refine-panel .rf-secondary:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .refine-panel .rf-tips{
+    margin-top:16px;padding:12px;border:1px dashed var(--line);
+    background:var(--panel-2);font-size:12px;color:var(--muted);line-height:1.55;
+  }
+  .refine-panel .rf-tips strong{color:var(--accent);font-weight:600}
+  .refine-panel .rf-tips ul{margin:8px 0 0;padding:0 18px 0 0}
+  .refine-panel .rf-tips li{margin:4px 0}
+  footer{
+    max-width:1120px;margin:0 auto;padding:10px 18px 28px;
+    font-size:11px;color:var(--muted);line-height:1.5;
+  }
+
+body{padding:12px}
+.shot-label{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:10px;letter-spacing:.06em}
+</style></head><body>
+<div class="shot-label">SHOT · ambiguous refine — דני כהן</div>
+<header>
+  <div class="mark">AK</div>
+  <div>
+    <h1>עקבות — שולחן מבצעים</h1>
+    <p class="sub">screenshot harness</p>
+  </div>
+</header>
+<main style="max-width:1120px;margin:0 auto;padding:12px">
+  <div class="search"><input id="q" value=""/><button id="go" type="button">חפש</button></div>
+  <div id="out"></div>
+</main>
+<script>
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function modeLabel(m){
+  if(m==='wiki+google') return 'מצב: ויקיפדיה + גוגל + רישומים';
+  if(m==='wiki') return 'מצב: ויקיפדיה + Wikidata (עשיר)';
+  if(m==='ambiguous') return 'מצב: כמה התאמות — בחרו זהות';
+  if(m==='google') return 'מצב: בלי ויקיפדיה — גוגל + סריקת דפים';
+  return m||'';
+}
+const REG_KINDS=/^(VIAF|ORCID|IMDb|ISNI|LoC|GND|Open Library|OpenCorporates|Crunchbase|MusicBrainz|NLI|NLI HE|ResearchGate|DBLP|Academic Tree)$/i;
+function isRegistry(s){
+  return REG_KINDS.test(String(s.kind||'')) || /viaf\.org|orcid\.org|imdb\.com|isni\.org|loc\.gov|d-nb\.info|openlibrary\.org|opencorporates\.com|crunchbase\.com|musicbrainz\.org|nli\.org\.il|researchgate\.net|dblp\.org|academictree\.org/i.test(String(s.url||''));
+}
+function inferGroup(s){
+  if(s.group==='identity'||s.group==='social'||s.group==='web') return s.group;
+  const kind=String(s.kind||'');
+  const url=String(s.url||'');
+  if(/ויקיפדיה|wikipedia|wikidata/i.test(kind)||/wikipedia\.org|wikidata\.org/i.test(url)||isRegistry(s)) return 'identity';
+  if(/פייסבוק|אינסטגרם|טיקטוק|יוטיוב|linkedin|mastodon|^x$|spotify|אתר רשמי/i.test(kind)||/facebook\.com|instagram\.com|x\.com|twitter\.com|linkedin\.com|tiktok\.com|youtube\.com|spotify\.com/i.test(url)) return 'social';
+  return 'web';
+}
+const GROUP_META={
+  identity:{code:'01',title:'זהות',hint:'ויקי · Wikidata · רישומים'},
+  social:{code:'02',title:'רשתות',hint:'חשבונות ואתר רשמי'},
+  web:{code:'03',title:'רשת',hint:'דפים ציבוריים מחיפוש'}
+};
+function confBadge(c){
+  if(c==null||c==='') return '';
+  const n=Number(c);
+  if(!(n>0)) return '';
+  const pct=n<=1?Math.round(n*100):Math.round(n);
+  if(pct<55) return '';
+  return `<span class="conf${pct>=80?' hi':''}" title="ביטחון מקור">${pct}%</span>`;
+}
+function renderSourceRow(s){
+  const note=s.note?`<div class="note">${esc(s.note)}</div>`:'';
+  const reg=isRegistry(s)?`<span class="tag-reg">REG</span>`:'';
+  return `<div class="row">
+    <div class="ico">${s.img?`<img src="${esc(s.img)}" alt="" loading="lazy"/>`:esc((s.kind||'?').slice(0,3))}</div>
+    <div class="meta">
+      <p class="who"><span>${esc(s.kind)} · ${esc(s.title)}</span>${reg}${confBadge(s.conf)}</p>
+      <div class="src">${esc((s.url||'').replace(/^https?:\/\//,''))}</div>
+      ${note}
+    </div>
+    <a class="go" href="${esc(s.url)}" target="_blank" rel="noopener">פתח</a>
+  </div>`;
+}
+function renderGroupedSources(sources){
+  const buckets={identity:[],social:[],web:[]};
+  for(const s of sources||[]){
+    const g=inferGroup(s);
+    (buckets[g]||buckets.web).push(s);
+  }
+  // Within identity: wiki/wd first, then registries
+  buckets.identity.sort((a,b)=>{
+    const ar=isRegistry(a)?1:0, br=isRegistry(b)?1:0;
+    return ar-br;
+  });
+  const order=['identity','social','web'];
+  const parts=[];
+  for(const key of order){
+    const list=buckets[key];
+    if(!list.length) continue;
+    const meta=GROUP_META[key];
+    const regCount=key==='identity'?list.filter(isRegistry).length:0;
+    const hint=regCount?`${meta.hint} · ${regCount} רישומים`:meta.hint;
+    parts.push(`
+      <div class="sec-head"><span>${meta.code} ${meta.title}<span class="hintish">· ${hint}</span></span><span class="n">${String(list.length).padStart(2,'0')}</span></div>
+      <div class="group-block">${list.map(renderSourceRow).join('')}</div>`);
+  }
+  return parts.join('') || `<div class="stack-empty">לא נמצאו קישורים ציבוריים ברורים.</div>`;
+}
+function renderFact(k,val,cite,url){
+  const citeHtml=url
+    ?`<a class="cite" href="${esc(url)}" target="_blank" rel="noopener">${esc(cite||'מקור')}</a>`
+    :(cite?`<span class="cite" style="border:0;cursor:default">${esc(cite)}</span>`:'');
+  return `<div class="fact"><dt>${esc(k)}</dt><dd>${esc(val)}${citeHtml?'<br/>'+citeHtml:''}</dd></div>`;
+}
+function renderAlts(alts, label){
+  if(!alts?.length) return '';
+  return `<div class="alts">${alts.map(a=>`<button type="button" data-alt="${esc(a)}">${esc(a)}</button>`).join('')}</div>`;
+}
+function bindAlts(root){
+  root.querySelectorAll('[data-alt]').forEach(b=>{
+    b.onclick=()=>{ document.getElementById('q').value=b.dataset.alt; clearRefineCtx(); run(); };
+  });
+}
+
+/** Last refine context — prefill + pass on re-run */
+let lastCtx={city:'',org:'',role:'',context:''};
+function clearRefineCtx(){ lastCtx={city:'',org:'',role:'',context:''}; }
+function readRefineForm(){
+  const root=document.getElementById('out');
+  const g=(id)=>{ const el=root.querySelector('#'+id); return el?el.value.trim():''; };
+  return {
+    city:g('rf-city')||lastCtx.city||'',
+    org:g('rf-org')||lastCtx.org||'',
+    role:g('rf-role')||lastCtx.role||'',
+    context:g('rf-context')||lastCtx.context||'',
+  };
+}
+function saveRefineCtx(c){
+  lastCtx={
+    city:c.city||'',
+    org:c.org||'',
+    role:c.role||'',
+    context:c.context||'',
+  };
+}
+function ctxQuery(c){
+  const p=[];
+  if(c.city) p.push('city='+encodeURIComponent(c.city));
+  if(c.org) p.push('org='+encodeURIComponent(c.org));
+  if(c.role) p.push('role='+encodeURIComponent(c.role));
+  if(c.context) p.push('context='+encodeURIComponent(c.context));
+  return p.length?'&'+p.join('&'):'';
+}
+function hadContext(d){
+  const c=d.contextUsed||lastCtx;
+  return !!(c && (c.city||c.org||c.role||c.context));
+}
+function refineReason(d){
+  if(d.ambiguous) return 'ambiguous';
+  if(!d.sources?.length && !d.extract) return 'empty';
+  if(d.thin) return 'thin';
+  return 'thin';
+}
+function renderRefine(d, reason){
+  const out=document.getElementById('out');
+  const ctxPrefill=d.contextUsed||lastCtx;
+  const stillThin=hadContext(d) && (reason==='thin'||reason==='empty') && !d.ambiguous;
+  let title, explain, stamp;
+  if(reason==='ambiguous'){
+    title='התוצאה דקה / השם נפוץ — הוסיפו הקשר';
+    explain=`השם «${esc(d.label||'')}» מתאים לכמה אנשים, או שאין זיהוי חד־משמעי. בחרו התאמה מהרשימה או הוסיפו עיר / חברה / תפקיד וחפשו מחדש.`;
+    stamp='REFINE · AMBIGUOUS';
+  }else if(stillThin){
+    title='עדיין אין תוצאה חזקה';
+    explain=`חיפשנו עם ההקשר שסיפקתם, ועדיין אין מספיק מקורות ציבוריים ברורים ל«${esc(d.label||'')}». נסו שם מלא יותר או הקשר מדויק יותר.`;
+    stamp='REFINE · EMPTY';
+  }else{
+    title='התוצאה דקה / השם נפוץ — הוסיפו הקשר';
+    explain=`נמצאו מעט מקורות ציבוריים ל«${esc(d.label||'')}». הוסיפו עיר, חברה או תפקיד כדי לחדד את החיפוש — בלי זה לא מציגים כרטיס זהות חלול.`;
+    stamp='REFINE · THIN';
+  }
+  const tips=stillThin?`
+    <div class="rf-tips">
+      <strong>טיפים</strong>
+      <ul>
+        <li>נסו שם מלא עם שם משפחה נוסף או איות חלופי</li>
+        <li>ציינו עיר מגורים / מקום עבודה מדויק</li>
+        <li>הוסיפו שם חברה או מעסיק ידוע</li>
+        <li>אם האדם אינו ציבורי — ייתכן שאין מקורות פתוחים</li>
+      </ul>
+    </div>`:'';
+  const altsBlock=(d.alts&&d.alts.length)?`
+    <div class="rf-alts">
+      <p class="label">${reason==='ambiguous'?'התאמות אפשריות — לחצו לבחירה:':'התכוונת למישהו אחר?'}</p>
+      ${renderAlts(d.alts)}
+    </div>`:'';
+
+  out.className='';
+  out.innerHTML=`
+    <div class="mode">
+      <span>${esc(modeLabel(d.mode)||'מצב: חידוד')}</span>
+      <span class="chip">${reason==='ambiguous'?'כמה התאמות':(stillThin?'ריק':'תוצאה דקה')}</span>
+      ${d.cached?'<span class="chip">מטמון</span>':''}
+      ${d.phase?`<span class="chip">P${esc(d.phase)}</span>`:''}
+    </div>
+    <div class="refine-panel">
+      <div class="rf-stamp"><span>${stamp}</span><span class="n">OPS</span></div>
+      <div class="rf-body">
+        <h2>${title}</h2>
+        <p class="rf-explain">${explain}</p>
+        ${altsBlock}
+        ${stillThin?'':`
+        <form class="rf-form" id="rf-form" autocomplete="on">
+          <div class="rf-field">
+            <label for="rf-city">עיר</label>
+            <input id="rf-city" name="city" placeholder="למשל: תל אביב" value="${esc(ctxPrefill.city||'')}"/>
+          </div>
+          <div class="rf-field">
+            <label for="rf-org">חברה / מעסיק</label>
+            <input id="rf-org" name="org" placeholder="למשל: משרד הביטחון" value="${esc(ctxPrefill.org||'')}"/>
+          </div>
+          <div class="rf-field">
+            <label for="rf-role">תפקיד <span class="opt">(אופציונלי)</span></label>
+            <input id="rf-role" name="role" placeholder="למשל: מנהל מוצר" value="${esc(ctxPrefill.role||'')}"/>
+          </div>
+        </form>
+        <div class="rf-actions">
+          <button type="button" class="rf-primary" id="rf-go">חפש מחדש עם הקשר</button>
+          <button type="button" class="rf-secondary" id="rf-fullname">נסו שם מלא יותר</button>
+        </div>`}
+        ${stillThin?`
+        <div class="rf-actions">
+          <button type="button" class="rf-secondary" id="rf-fullname">נסו שם מלא יותר</button>
+          <button type="button" class="rf-secondary" id="rf-retry">שנו הקשר וחפשו שוב</button>
+        </div>`:''}
+        ${tips}
+      </div>
+    </div>`;
+  bindAlts(out);
+  const go=out.querySelector('#rf-go');
+  if(go) go.onclick=()=>{
+    const c=readRefineForm();
+    saveRefineCtx(c);
+    run({ctx:c});
+  };
+  const fn=out.querySelector('#rf-fullname');
+  if(fn) fn.onclick=()=>{
+    const inp=document.getElementById('q');
+    inp.focus();
+    inp.select();
+    out.querySelector('.rf-explain').textContent='ערכו את השם בשורת החיפוש למעלה (שם מלא יותר) ולחצו חפש.';
+  };
+  const retry=out.querySelector('#rf-retry');
+  if(retry) retry.onclick=()=>{
+    // Re-show form even after empty — clear "still thin" by showing form again without forcing empty path
+    const fake={...d, contextUsed:null};
+    // Keep lastCtx but render form again
+    const saved=lastCtx;
+    lastCtx={...saved}; // keep
+    // Force thin reason without hadContext by temporarily clearing lastCtx for reason check only
+    const prev=lastCtx;
+    lastCtx={city:'',org:'',role:'',context:''};
+    renderRefine({...d, contextUsed:null, thin:true}, 'thin');
+    lastCtx=prev;
+    // Prefill fields from prev
+    const city=document.getElementById('rf-city');
+    const org=document.getElementById('rf-org');
+    const role=document.getElementById('rf-role');
+    if(city) city.value=prev.city||'';
+    if(org) org.value=prev.org||'';
+    if(role) role.value=prev.role||'';
+  };
+  const form=out.querySelector('#rf-form');
+  if(form) form.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){ e.preventDefault(); go&&go.click(); }
+  });
+}
+function needsRefine(d){
+  if(d.ambiguous) return true;
+  if(d.thin) return true;
+  if(!d.sources?.length && !d.extract) return true;
+  return false;
+}
+function render(d){
+  const out=document.getElementById('out');
+  if(needsRefine(d)){
+    renderRefine(d, refineReason(d));
+    return;
+  }
+  const amb=false;
+  const baseFacts=[
+    ['שם', d.label, null, null],
+    ['תיאור', d.desc, null, null],
+    ['שנת לידה', d.birth, null, null],
+    ['גיל', d.age, null, null],
+    ['מקום', d.place, null, null],
+  ];
+  const extra=(d.extra_facts||[]).map(f=>[f.label, f.value, f.cite||null, f.url||null]);
+  const facts=[...baseFacts, ...extra].filter(([,val])=>val!=null && String(val).trim()!=='');
+
+  const imgs=(d.images||[]).filter(i=>i.url);
+  const photo=d.photo;
+  const regN=(d.sources||[]).filter(isRegistry).length;
+  const chips=[];
+  if(d.scanned!=null) chips.push(`נסרקו ${d.scanned} דפים`);
+  if(regN) chips.push(`${regN} רישומים`);
+  if(d.cached) chips.push('מטמון');
+  if(d.qid) chips.push(d.qid);
+  if(d.phase) chips.push('P'+d.phase);
+  if(d.note) chips.push(d.note);
+  if(d.contextUsed) chips.push('עם הקשר');
+
+  out.className='';
+  out.innerHTML=`
+    <div class="mode">
+      <span>${esc(modeLabel(d.mode))}</span>
+      ${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join('')}
+    </div>
+    <div class="layout">
+      <aside class="cube">
+        <div class="stamp"><span>00 זהות</span><span class="n">${esc(d.qid||'WEB')}</span></div>
+        <div class="portrait">${photo
+          ?`<img src="${esc(photo)}" alt=""/>`
+          :`<div class="empty">אין דיוקן ציבורי מאומת<br/>לא מוצגות תמונות אקראיות</div>`}</div>
+        ${imgs.length?`<div class="gallery">${imgs.slice(0,8).map(i=>`<a href="${esc(i.url)}" target="_blank" rel="noopener" title="${esc(i.source||'')} ${esc(i.note||'')}"><img src="${esc(i.url)}" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"/></a>`).join('')}</div>`:''}
+        ${facts.length?`<div class="facts">${facts.map(([k,val,cite,url])=>renderFact(k,val,cite,url)).join('')}</div>`:''}
+        ${d.extract?`<div class="bio"><div class="bio-label">תקציר · ממקורות</div>${esc(d.extract)}</div>`:''}
+      </aside>
+      <section class="stack">
+        <div class="stamp"><span>מקורות ציבוריים</span><span class="n">${String((d.sources||[]).length).padStart(2,'0')}</span></div>
+        ${renderGroupedSources(d.sources)}
+        ${d.alts?.length?`<div class="alts-wrap"><p class="label">התכוונת למישהו אחר?</p>${renderAlts(d.alts)}</div>`:''}
+      </section>
+    </div>`;
+  bindAlts(out);
+}
+const LOAD_STEPS=[
+  'ויקיפדיה + Wikidata + רישומים',
+  'חיפוש גוגל (אם צריך)',
+  'רישומים + קישורים ציבוריים',
+  'סריקת דפים + Commons'
+];
+function paintLoading(stepIdx, labelOverride){
+  const out=document.getElementById('out');
+  const pct=Math.min(100, Math.round(((stepIdx+0.35)/LOAD_STEPS.length)*100));
+  out.className='';
+  out.innerHTML=`<div class="loading">
+    <div class="title"><span>RUNNING LOOKUP</span><span class="pct">${pct}%</span></div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    <ol>${LOAD_STEPS.map((label,i)=>{
+      const cls=i<stepIdx?'done':(i===stepIdx?'active':'');
+      const tag=i<stepIdx?'✓':(i===stepIdx?'…':'');
+      const text=(i===stepIdx && labelOverride)?labelOverride:label;
+      return `<li class="${cls}"><span class="dot"></span><span>${esc(text)}</span>${tag?`<span class="t">${tag}</span>`:''}</li>`;
+    }).join('')}</ol>
+  </div>`;
+}
+function parseSSEChunk(buf, onEvent){
+  const parts=buf.split('\n\n');
+  const rest=parts.pop();
+  for(const block of parts){
+    const line=block.split('\n').find(l=>l.startsWith('data:'));
+    if(!line) continue;
+    try{ onEvent(JSON.parse(line.slice(5).trim())); }catch{}
+  }
+  return rest;
+}
+async function run(opts){
+  const q=document.getElementById('q').value.trim();
+  const btn=document.getElementById('go');
+  const out=document.getElementById('out');
+  if(!q){
+    out.className='empty-state';
+    out.innerHTML='<span class="big">EMPTY</span>כתוב שם מלא כדי להתחיל.';
+    return;
+  }
+  // Prefer explicit ctx from refine form; else hidden lastCtx if set
+  let ctx=(opts&&opts.ctx)?opts.ctx:null;
+  if(!ctx){
+    // Main search button clears refine unless user is re-running from refine
+    if(opts&&opts.keepCtx) ctx={...lastCtx};
+    else if(!(opts&&opts.fromRefine)) {
+      // Fresh main search — keep lastCtx only if form still visible with values
+      const formVisible=!!document.getElementById('rf-city');
+      if(formVisible){ ctx=readRefineForm(); saveRefineCtx(ctx); }
+      else ctx={city:'',org:'',role:'',context:''};
+    }
+  }else{
+    saveRefineCtx(ctx);
+  }
+  ctx=ctx||{city:'',org:'',role:'',context:''};
+  const cq=ctxQuery(ctx);
+  btn.disabled=true; btn.textContent='רץ…';
+  let step=0;
+  paintLoading(0);
+  const tick=setInterval(()=>{
+    if(step<LOAD_STEPS.length-1){
+      step+=1;
+      paintLoading(step);
+    }
+  }, 3800);
+  try{
+    const r=await fetch('/api/lookup?stream=1&q='+encodeURIComponent(q)+cq);
+    const ctype=(r.headers.get('content-type')||'');
+    if(ctype.includes('text/event-stream') && r.body){
+      const reader=r.body.getReader();
+      const dec=new TextDecoder();
+      let buf='';
+      let result=null;
+      while(true){
+        const {done,value}=await reader.read();
+        if(done) break;
+        buf+=dec.decode(value,{stream:true});
+        buf=parseSSEChunk(buf,(ev)=>{
+          if(ev.type==='progress'){
+            step=Math.max(step, Number(ev.step)||0);
+            paintLoading(step, ev.label);
+          }else if(ev.type==='result'){
+            result=ev.data;
+          }else if(ev.type==='error'){
+            throw new Error(ev.error||'stream error');
+          }
+        });
+      }
+      clearInterval(tick);
+      if(!result) throw new Error('לא התקבלה תוצאה מהשרת');
+      paintLoading(LOAD_STEPS.length);
+      render(result);
+    }else{
+      const d=await r.json();
+      clearInterval(tick);
+      if(!r.ok) throw new Error(d.error||r.status);
+      paintLoading(LOAD_STEPS.length);
+      render(d);
+    }
+  }catch(e){
+    clearInterval(tick);
+    try{
+      const r2=await fetch('/api/lookup?q='+encodeURIComponent(q)+cq);
+      const d2=await r2.json();
+      if(!r2.ok) throw new Error(d2.error||r2.status);
+      render(d2);
+    }catch(e2){
+      out.className='err';
+      out.textContent='שגיאה: '+(e2.message||e.message||e);
+    }
+  }finally{
+    btn.disabled=false; btn.textContent='חפש';
+  }
+}
+
+const FIXTURE = {"mode": "ambiguous", "label": "דני כהן", "qid": null, "birth": null, "age": null, "place": null, "desc": "יש כמה התאמות אפשריות — בחרו מהרשימה", "extract": "", "photo": null, "alts": ["דן כהן", "דני בריאן", "דני כהן (מדען מחשב)", "דני כהן (מנהל)", "דני כהן (מתופף)", "דני כהן (צלם)", "דני כהן סולל", "דניאל כהן"], "note": "שם נפוץ / כמה ערכים — לא מציגים דיוקן עד לבחירה.", "email": null, "phone": null, "sources": [], "images": [], "extra_facts": [], "queries": [], "scanned": 0, "allowBroadImages": false, "ambiguous": true, "thin": false, "phase": 4};
+document.getElementById('q').value = FIXTURE.label || '';
+render(FIXTURE);
+</script>
+</body></html>

@@ -1,0 +1,40 @@
+PASS ADV-01 fixture loads
+PASS ADV-01 two same-name findings
+PASS ADV-01 same title different evidenceIds
+PASS ADV-01 expect no forced merge
+PASS ADV-01 expect no dossier
+PASS ADV-01 scrub keeps both Findings
+PASS ADV-01 scrub no leakage
+PASS ADV-01 scrub no dossier field
+PASS ADV-01 scrub no faces field
+PASS ADV-02 fixture loads
+PASS ADV-02 has HE+EN seeds
+PASS ADV-02 denylist includes Q1701775
+PASS ADV-02 forbidden finding stripped
+PASS ADV-02 ok finding kept
+PASS ADV-02 leakage=0
+PASS ADV-02 no dossier
+PASS ADV-03 fixture loads
+PASS ADV-03 forbidden finding stripped
+PASS ADV-03 ok finding kept
+PASS ADV-03 evidence poison stripped
+PASS ADV-03 facet forbidden bucket stripped
+PASS ADV-03 graph node stripped
+PASS ADV-03 forbiddenStripped > 0
+PASS ADV-03 isForbiddenQid Q1701775
+PASS ADV-03 SSE scrubFindingChunk strips
+PASS ADV-03 SSE scrubFacetsChunk strips bucket
+PASS ADV-04 fixture loads
+PASS ADV-04 discovery neverFields includes dossier
+PASS ADV-04 discovery neverFields includes faces
+PASS ADV-04 neverMayCommit
+PASS ADV-04 smith-ctx expect never Q1701775
+PASS ADV-04 assaf keep Q47507930
+PASS ADV-04 emit drops dossier
+PASS ADV-04 emit drops faces
+PASS ADV-04 emit drops photoUrl
+PASS ADV-04 emit leakage=0
+
+--- MEGA adversarial Acc tests ---
+passed=36 failed=0
+

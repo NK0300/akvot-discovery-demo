@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/impl-ready/family-execution-result/v1",
+  "title": "FamilyExecutionResult (implementation-readiness design schema)",
+  "type": "object",
+  "required": [
+    "familyId",
+    "providerId",
+    "intentId",
+    "planId",
+    "status",
+    "executionTimeMs",
+    "requestsUsed"
+  ],
+  "properties": {
+    "familyId": {
+      "type": "string"
+    },
+    "providerId": {
+      "type": "string"
+    },
+    "intentId": {
+      "type": "string"
+    },
+    "planId": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "empty",
+        "error",
+        "skipped",
+        "timeout",
+        "rate_limited",
+        "blocked_url",
+        "unsafe_url",
+        "unsupported",
+        "cancelled"
+      ]
+    },
+    "failureClass": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "executionTimeMs": {
+      "type": "number"
+    },
+    "requestsUsed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,93 @@
+{
+  "doc": "ACC-MULTI-INDEPENDENT-REDEF-דיוק-2026-09-20",
+  "role": "דיוק",
+  "phase": "CYCLE1-PHASE4-EXPERIMENT-A2-COALESCE",
+  "purpose": "Redefine Acc multi_independent_rate for post soft-entity coalesce world (EXP-A2 Option A) — BEFORE Preview; observation/docs only",
+  "stamp": "2026-09-20T10:13:07+03:00",
+  "mode": "ACC_METRIC_REDEF_ONLY",
+  "preview": "WAITING_FOR_PREVIEW",
+  "promote": "HOLD",
+  "no_code": true,
+  "no_promote": true,
+  "no_invented_preview_results": true,
+  "locks": {
+    "alias": "https://akvot-discovery.vercel.app",
+    "discoveryB0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "forbidden": ["Q1701775", "wd-Q1701775"],
+    "b0_before_frozen": {
+      "path": "PHASE4-EXPERIMENT-A-VIAF/ACC-B0-BEFORE-S01-S04-S05-דיוק-2026-09-20",
+      "S01": { "multi_independent_rate": 0.0, "findings_count": 10, "acc_leak": 0 },
+      "S04": { "multi_independent_rate": 0.0, "findings_count": 14, "acc_leak": 0 },
+      "S05": { "multi_independent_rate": 0.0, "findings_count": 6, "acc_leak": 0 },
+      "agg_pooled_multi": 0.0,
+      "agg_mean_multi": 0.0,
+      "leak_total": 0
+    }
+  },
+  "exp_a_fail_context": {
+    "summary": "VIAF added parallel single-family Findings; multi_independent stayed 0",
+    "rejected_false_positive": "Counting VIAF-only sibling Findings as cross-family diversity — NOT corroboration",
+    "rejected_option": "Option B metric-only redefine (Chief/Arch)",
+    "adopted_product_path": "EXP-A2 Option A: soft-entity coalesce + multi-provider Evidence[] on one FindingId · Acc scrub · no dossier"
+  },
+  "redefinition": {
+    "unit_of_analysis": "FindingId_after_coalesce",
+    "not_unit": [
+      "parallel_sibling_findings_pre_merge",
+      "session_level_provider_presence",
+      "providers.length_alone"
+    ],
+    "multi_independent_predicate": {
+      "rule": "Finding counts as multi_independent iff Evidence[] contains >=2 distinct provider families",
+      "families": {
+        "wikidata": "host *.wikidata.org OR providerId=wikidata",
+        "wikipedia": "host *.wikipedia.org OR *.wikimedia.org (non-wikidata) OR providerId=wikipedia — language mirrors = ONE family",
+        "openlibrary": "host *.openlibrary.org OR providerId=openlibrary",
+        "viaf": "host *.viaf.org OR providerId=viaf",
+        "other": "other:<registrable_apex> — each apex is its own family bucket"
+      },
+      "independent": ["wikidata", "wikipedia", "openlibrary", "viaf", "other:<apex>"],
+      "not_independent_mirrors": [
+        "en.wikipedia.org ≡ he.wikipedia.org → wikipedia",
+        "www. stripped before family map"
+      ]
+    },
+    "rate_formula": {
+      "per_seed": "multi_independent_n / findings_with_ge1_evidence_n",
+      "denominator": "Findings with >=1 Evidence (empty-Evidence rows excluded)",
+      "numerator": "Findings satisfying multi_independent_predicate"
+    },
+    "aggregate_gate_exp_a2": {
+      "method": "mean",
+      "seeds": ["S01", "S04", "S05"],
+      "threshold": 0.15,
+      "pass_iff": "mean(rate_S01, rate_S04, rate_S05) >= 0.15",
+      "pooled_rate": "report_as_diagnostic_only_not_pass_gate"
+    }
+  },
+  "acc_hard_gates_unchanged": {
+    "acc_leak_Q1701775": 0,
+    "pretty_wrong_dossier_bind": "none — no mayCommitDossier / faces / identityScore from coalesce",
+    "acc_scrub": "after_merge — emitSnapshot/sanitize after soft-entity Evidence attach",
+    "core_b0": "LOCKED — no alias retarget — no promote"
+  },
+  "findings_count_regression_watch": {
+    "note": "Coalesce must not wipe coverage silently; report before/after findings counts on AFTER pack",
+    "S01_b0": 10,
+    "S01_prior_vacuum_smell": "unconstrained softLabel coalesce 10→1 Acc-unsafe — reject if Preview collapses similarly",
+    "S04_b0": 14,
+    "S05_b0": 6,
+    "option_a_expectation": "attach_keep — peer Findings preserved; shared multi-family Evidence[] attached"
+  },
+  "corpus": {
+    "file": "GOLDEN-CORPUS-v0.json",
+    "seeds": [
+      { "id": "S01", "seed": "Tim Berners-Lee", "category": "person" },
+      { "id": "S04", "seed": "Stripe", "category": "company" },
+      { "id": "S05", "seed": "Red Cross", "category": "organization" }
+    ]
+  },
+  "after_metrics": null,
+  "status": "WAITING_FOR_PREVIEW · Acc redef READY · HOLD promote · Core/B0 locked"
+}

@@ -1,0 +1,1442 @@
+{
+  "ms": 5188,
+  "status": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.359222a4cdbc681277e07724016a921d",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9ibxq8-36fa27",
+    "snapshot": {
+      "sessionId": "kv1.359222a4cdbc681277e07724016a921d",
+      "seed": "Ada Lovelace",
+      "q": "Ada Lovelace",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q7259",
+          "kind": "registry",
+          "title": "Ada Lovelace",
+          "summary": "English mathematician (1815–1852)",
+          "evidenceIds": [
+            "ev-b85e2961ad64afd1bd8be38d",
+            "ev-f5e2f69bed110a71fe2a839b",
+            "ev-256599d5e64b41ae3df8517b"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q7259",
+            "wd-Q7259",
+            "viaf:61632881",
+            "ol:OL776398A",
+            "ol-OL776398A"
+          ],
+          "scoreFinding": 0.9449999999999998,
+          "ranking": {
+            "discoveryScore": 0.9449999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 0.95,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 3,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=0.95 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL776398A",
+          "kind": "registry",
+          "title": "Ada Lovelace",
+          "summary": "Top work: Ada: The Enchantress of Numbers",
+          "evidenceIds": [
+            "ev-b85e2961ad64afd1bd8be38d",
+            "ev-f5e2f69bed110a71fe2a839b",
+            "ev-256599d5e64b41ae3df8517b"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q7259",
+            "wd-Q7259",
+            "viaf:61632881",
+            "ol:OL776398A",
+            "ol-OL776398A"
+          ],
+          "scoreFinding": 0.9349999999999998,
+          "ranking": {
+            "discoveryScore": 0.9449999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 0.95,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 3,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=0.95 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-61632881",
+          "kind": "registry",
+          "title": "Ada Lovelace, 1815-1852",
+          "summary": "type:personal · lc:n78030997 · dnb:119232022",
+          "evidenceIds": [
+            "ev-b85e2961ad64afd1bd8be38d",
+            "ev-f5e2f69bed110a71fe2a839b",
+            "ev-256599d5e64b41ae3df8517b"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q7259",
+            "wd-Q7259",
+            "viaf:61632881",
+            "ol:OL776398A",
+            "ol-OL776398A"
+          ],
+          "scoreFinding": 0.9249999999999998,
+          "ranking": {
+            "discoveryScore": 0.9449999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 0.95,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 3,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=0.95 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q114068528",
+          "kind": "registry",
+          "title": "Ada Lovelace",
+          "summary": "GPU microarchitecture designed by Nvidia",
+          "evidenceIds": [
+            "ev-43cebd2179a9c4bd18758224"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q114068528",
+            "wd-Q114068528"
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q87282992",
+          "kind": "registry",
+          "title": "Ada Lovelace",
+          "summary": "episode of In Our Time",
+          "evidenceIds": [
+            "ev-33dbed3a2ea90038b1a137b6"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q87282992",
+            "wd-Q87282992"
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q30128828",
+          "kind": "registry",
+          "title": "Ada Lovelace Award",
+          "summary": "award for women in computing",
+          "evidenceIds": [
+            "ev-a8b22c1b3893e2a7d53dc36a"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q30128828",
+            "wd-Q30128828"
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q3611580",
+          "kind": "registry",
+          "title": "Ada Lovelace’ algorithm for computing Bernoulli numbers",
+          "summary": "algorithm",
+          "evidenceIds": [
+            "ev-a45f3f9b2b6d51d90fda52f1"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q3611580",
+            "wd-Q3611580"
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q115052486",
+          "kind": "registry",
+          "title": "Ada Lovelace Day",
+          "summary": "2nd Tuesday in October celebrating women in STEM",
+          "evidenceIds": [
+            "ev-d1fac37e1daac62392f933b5"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q115052486",
+            "wd-Q115052486"
+          ],
+          "scoreFinding": 0.6483333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q140352119",
+          "kind": "registry",
+          "title": "ADA Lovelace Center for Analytics, Data and Applications",
+          "summary": "facility in Nuremberg, Germany",
+          "evidenceIds": [
+            "ev-2f70f122b8249216ad589b77"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q140352119",
+            "wd-Q140352119"
+          ],
+          "scoreFinding": 0.6383333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q66232516",
+          "kind": "registry",
+          "title": "Ada Lovelace Church of England High School",
+          "summary": "school in Ealing, UK",
+          "evidenceIds": [
+            "ev-372b8375e12984b4e4b98278"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q66232516",
+            "wd-Q66232516"
+          ],
+          "scoreFinding": 0.6283333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-29165569794637431000",
+          "kind": "registry",
+          "title": "Ada Lovelace Center for Digital Humanities",
+          "summary": "type:corporate · dnb:1260071790",
+          "evidenceIds": [
+            "ev-648b1cac43fae20ad8985e50"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:29165569794637431000"
+          ],
+          "scoreFinding": 0.6008333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-29165569794637431000",
+          "kind": "registry",
+          "title": "Ada Lovelace Center for Digital Humanities Freie Universität Berlin",
+          "summary": "type:corporate · dnb:1260071790",
+          "evidenceIds": [
+            "ev-e975e19f5bcccacc4784219c"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:29165569794637431000"
+          ],
+          "scoreFinding": 0.5908333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-220987835",
+          "kind": "registry",
+          "title": "Ada-Lovelace-Koordinierungsbüro",
+          "summary": "type:corporate · dnb:1018257268",
+          "evidenceIds": [
+            "ev-3ac35c922c1296d9154531ae"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:220987835"
+          ],
+          "scoreFinding": 0.5808333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-220987835",
+          "kind": "registry",
+          "title": "Ada-Lovelace-Koordinierungsbüro Johannes Gutenberg-Universität Mainz",
+          "summary": "type:corporate · dnb:1018257268",
+          "evidenceIds": [
+            "ev-fccc9c2bb055c240dc37a3d9"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:220987835"
+          ],
+          "scoreFinding": 0.5708333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-220987835",
+          "kind": "registry",
+          "title": "Ada-Lovelace-Koordinierungsbüro an der Johannes Gutenberg-Universität Mainz, Unveraenderte Form",
+          "summary": "type:corporate · dnb:1018257268",
+          "evidenceIds": [
+            "ev-d7f31416d3df395a99e18c9a"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:220987835"
+          ],
+          "scoreFinding": 0.5608333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-1835165450332427100005",
+          "kind": "registry",
+          "title": "Ada Lovelace Institute",
+          "summary": "type:corporate · dnb:1259098710",
+          "evidenceIds": [
+            "ev-aa997744fa40a41bc9c0d408"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:1835165450332427100005"
+          ],
+          "scoreFinding": 0.5508333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL8288549A",
+          "kind": "registry",
+          "title": "Ada Lovelace",
+          "summary": "Top work: Neapolitan Brothers",
+          "evidenceIds": [
+            "ev-ff904489165d213e77aa451a"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL8288549A",
+            "ol-OL8288549A"
+          ],
+          "scoreFinding": 0.5058333333333332,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL10287443A",
+          "kind": "registry",
+          "title": "Ada Heulwen-Lovelace",
+          "evidenceIds": [
+            "ev-67b995da1fa6d72ddec0f2aa"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL10287443A",
+            "ol-OL10287443A"
+          ],
+          "scoreFinding": 0.49583333333333324,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Ada_Lovelace",
+          "kind": "page",
+          "title": "Ada Lovelace",
+          "evidenceIds": [
+            "ev-15f2d2ca07b9eddb8e27e8cc"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Ada Lovelace"
+          ],
+          "scoreFinding": 0.4683333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Ada_Lovelace_microarchitecture_",
+          "kind": "page",
+          "title": "Ada Lovelace (microarchitecture)",
+          "evidenceIds": [
+            "ev-fa48d9e8fbc0d5cf35d8637b"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Ada Lovelace (microarchitecture)"
+          ],
+          "scoreFinding": 0.4583333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Ada_Lovelace_Day",
+          "kind": "page",
+          "title": "Ada Lovelace Day",
+          "evidenceIds": [
+            "ev-74f23a530e0ad398e323a0ae"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Ada Lovelace Day"
+          ],
+          "scoreFinding": 0.4483333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Ada_Lovelace_Award",
+          "kind": "page",
+          "title": "Ada Lovelace Award",
+          "evidenceIds": [
+            "ev-a4280f7d1c38f374606862b8"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Ada Lovelace Award"
+          ],
+          "scoreFinding": 0.43833333333333335,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Alan_M_Lovelace",
+          "kind": "page",
+          "title": "Alan M. Lovelace",
+          "evidenceIds": [
+            "ev-af6f4443a2b12811b25f5e07"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Alan M. Lovelace"
+          ],
+          "scoreFinding": 0.42833333333333334,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-Ava_Lovelace",
+          "kind": "page",
+          "title": "Ava Lovelace",
+          "evidenceIds": [
+            "ev-fff46c2c6f6fdb8c4cfd0c92"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:Ava Lovelace"
+          ],
+          "scoreFinding": 0.41833333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-b85e2961ad64afd1bd8be38d",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q7259",
+          "url": "https://www.wikidata.org/wiki/Q7259",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "English mathematician (1815–1852)",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-43cebd2179a9c4bd18758224",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q114068528",
+          "url": "https://www.wikidata.org/wiki/Q114068528",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "GPU microarchitecture designed by Nvidia",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-33dbed3a2ea90038b1a137b6",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q87282992",
+          "url": "https://www.wikidata.org/wiki/Q87282992",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "episode of In Our Time",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a8b22c1b3893e2a7d53dc36a",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q30128828",
+          "url": "https://www.wikidata.org/wiki/Q30128828",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "award for women in computing",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a45f3f9b2b6d51d90fda52f1",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q3611580",
+          "url": "https://www.wikidata.org/wiki/Q3611580",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "algorithm",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d1fac37e1daac62392f933b5",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q115052486",
+          "url": "https://www.wikidata.org/wiki/Q115052486",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "2nd Tuesday in October celebrating women in STEM",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2f70f122b8249216ad589b77",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q140352119",
+          "url": "https://www.wikidata.org/wiki/Q140352119",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "facility in Nuremberg, Germany",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-372b8375e12984b4e4b98278",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q66232516",
+          "url": "https://www.wikidata.org/wiki/Q66232516",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:41:06.040Z",
+          "evidenceType": "registry",
+          "quote": "school in Ealing, UK",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f5e2f69bed110a71fe2a839b",
+          "provenanceUrl": "https://openlibrary.org/authors/OL776398A",
+          "url": "https://openlibrary.org/authors/OL776398A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:41:07.141Z",
+          "evidenceType": "registry",
+          "quote": "Ada: The Enchantress of Numbers",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ff904489165d213e77aa451a",
+          "provenanceUrl": "https://openlibrary.org/authors/OL8288549A",
+          "url": "https://openlibrary.org/authors/OL8288549A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:41:07.141Z",
+          "evidenceType": "registry",
+          "quote": "Neapolitan Brothers",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-67b995da1fa6d72ddec0f2aa",
+          "provenanceUrl": "https://openlibrary.org/authors/OL10287443A",
+          "url": "https://openlibrary.org/authors/OL10287443A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:41:07.141Z",
+          "evidenceType": "registry",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-15f2d2ca07b9eddb8e27e8cc",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Ada_Lovelace",
+          "url": "https://en.wikipedia.org/wiki/Ada_Lovelace",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:41:06.077Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fa48d9e8fbc0d5cf35d8637b",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Ada_Lovelace_(microarchitecture)",
+          "url": "https://en.wikipedia.org/wiki/Ada_Lovelace_(microarchitecture)",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:41:06.077Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-74f23a530e0ad398e323a0ae",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Ada_Lovelace_Day",
+          "url": "https://en.wikipedia.org/wiki/Ada_Lovelace_Day",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:41:06.077Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a4280f7d1c38f374606862b8",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Ada_Lovelace_Award",
+          "url": "https://en.wikipedia.org/wiki/Ada_Lovelace_Award",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:41:06.077Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-af6f4443a2b12811b25f5e07",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Alan_M._Lovelace",
+          "url": "https://en.wikipedia.org/wiki/Alan_M._Lovelace",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:41:06.077Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fff46c2c6f6fdb8c4cfd0c92",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Ava_Lovelace",
+          "url": "https://en.wikipedia.org/wiki/Ava_Lovelace",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:41:06.077Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-256599d5e64b41ae3df8517b",
+          "provenanceUrl": "https://viaf.org/viaf/61632881",
+          "url": "https://viaf.org/viaf/61632881",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada Lovelace, 1815-1852",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-648b1cac43fae20ad8985e50",
+          "provenanceUrl": "https://viaf.org/viaf/29165569794637431000",
+          "url": "https://viaf.org/viaf/29165569794637431000",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada Lovelace Center for Digital Humanities",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-3ac35c922c1296d9154531ae",
+          "provenanceUrl": "https://viaf.org/viaf/220987835",
+          "url": "https://viaf.org/viaf/220987835",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada-Lovelace-Koordinierungsbüro",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-aa997744fa40a41bc9c0d408",
+          "provenanceUrl": "https://viaf.org/viaf/1835165450332427100005",
+          "url": "https://viaf.org/viaf/1835165450332427100005",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada Lovelace Institute",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fccc9c2bb055c240dc37a3d9",
+          "provenanceUrl": "https://viaf.org/viaf/220987835",
+          "url": "https://viaf.org/viaf/220987835",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada-Lovelace-Koordinierungsbüro Johannes Gutenberg-Universität Mainz",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d7f31416d3df395a99e18c9a",
+          "provenanceUrl": "https://viaf.org/viaf/220987835",
+          "url": "https://viaf.org/viaf/220987835",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada-Lovelace-Koordinierungsbüro an der Johannes Gutenberg-Universität Mainz, Unveraenderte Form",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e975e19f5bcccacc4784219c",
+          "provenanceUrl": "https://viaf.org/viaf/29165569794637431000",
+          "url": "https://viaf.org/viaf/29165569794637431000",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:41:05.980Z",
+          "evidenceType": "registry",
+          "quote": "Ada Lovelace Center for Digital Humanities Freie Universität Berlin",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 10
+            },
+            {
+              "value": "viaf",
+              "count": 9
+            },
+            {
+              "value": "wikipedia",
+              "count": 6
+            },
+            {
+              "value": "openlibrary",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 18
+            },
+            {
+              "value": "page",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [
+            {
+              "value": "corroboration:multi_family",
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "progress": {
+        "done": 7,
+        "totalHint": 7
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:177f85df57ad"
+        ],
+        "status": "candidate",
+        "displayHint": "Ada Lovelace",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T07:41:05.792Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:177f85df57ad",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q7259",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL776398A",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-61632881",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q114068528",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q87282992",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q30128828",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q3611580",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q115052486",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q140352119",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q66232516",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL8288549A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL10287443A",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Ada_Lovelace",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Ada_Lovelace_microarchitecture_",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Ada_Lovelace_Day",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Ada_Lovelace_Award",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Alan_M_Lovelace",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-Ava_Lovelace",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-29165569794637431000",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-29165569794637431000",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "ada lovelace",
+          "findingIds": [
+            "wd-Q7259",
+            "ol-OL776398A",
+            "wd-Q114068528",
+            "wd-Q87282992",
+            "ol-OL8288549A",
+            "wp-en-Ada_Lovelace"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "ada lovelace award",
+          "findingIds": [
+            "wd-Q30128828",
+            "wp-en-Ada_Lovelace_Award"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "ada lovelace day",
+          "findingIds": [
+            "wd-Q115052486",
+            "wp-en-Ada_Lovelace_Day"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  }
+}

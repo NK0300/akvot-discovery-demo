@@ -1,0 +1,11 @@
+{
+  "status": "FIX4_PASS_HOLD_PROMOTE",
+  "previewDpl": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+  "aliasFrozen": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "fix3": "GO",
+  "fix4": "PASS",
+  "pw": 0,
+  "leakage": 0,
+  "requests": 100,
+  "pack": "test-results/wp3/ACC-P0-FIX-EVIDENCE-PACK-בודק-2026-09-19.md"
+}

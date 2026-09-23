@@ -1,0 +1,1203 @@
+{
+  "stamp": "2026-09-20T07:04:01.908Z",
+  "zone": "Asia/Jerusalem",
+  "previewHost": "akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+  "b0Host": "akvot-discovery.vercel.app",
+  "dplPreview": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+  "dplB0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "previewMeanMultiIndependentRate": 0.4139,
+  "b0MeanMultiIndependentRate": 0,
+  "viafSeedsOnPreview": 3,
+  "accLeakTotal": 0,
+  "gate": {
+    "threshold": 0.15,
+    "pass": true
+  },
+  "perSeed": {
+    "S01": {
+      "previewRate": 1,
+      "b0Rate": 0,
+      "viaf": true,
+      "findingsPreview": 1,
+      "findingsB0": 10,
+      "familiesPreview": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "familiesB0": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    "S04": {
+      "previewRate": 0.1364,
+      "b0Rate": 0,
+      "viaf": true,
+      "findingsPreview": 22,
+      "findingsB0": 22,
+      "familiesPreview": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "familiesB0": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    "S05": {
+      "previewRate": 0.1053,
+      "b0Rate": 0,
+      "viaf": true,
+      "findingsPreview": 19,
+      "findingsB0": 22,
+      "familiesPreview": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "familiesB0": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    }
+  },
+  "preview": {
+    "label": "PREVIEW",
+    "host": "akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+    "seeds": {
+      "S01": {
+        "seedId": "S01",
+        "seed": "Tim Berners-Lee",
+        "status": "partial",
+        "findingsN": 1,
+        "evidenceN": 18,
+        "domains": [
+          "en.wikipedia.org",
+          "openlibrary.org",
+          "viaf.org",
+          "www.wikidata.org"
+        ],
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "providersUnion": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ],
+        "providersState": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "partial"
+        },
+        "multiIndependentN": 1,
+        "multiIndependentRate": 1,
+        "viafPresent": true,
+        "accLeak": [],
+        "topFindings": [
+          {
+            "id": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "en.wikipedia.org",
+              "viaf.org"
+            ],
+            "multiIndependent": true,
+            "evidenceN": 18
+          }
+        ],
+        "sessionId": "kv1.a9e8172b64f90216540dcc4a070eea98"
+      },
+      "S04": {
+        "seedId": "S04",
+        "seed": "Stripe",
+        "status": "partial",
+        "findingsN": 22,
+        "evidenceN": 30,
+        "domains": [
+          "en.wikipedia.org",
+          "openlibrary.org",
+          "viaf.org",
+          "www.wikidata.org"
+        ],
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "providersUnion": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ],
+        "providersState": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "multiIndependentN": 3,
+        "multiIndependentRate": 0.1364,
+        "viafPresent": true,
+        "accLeak": [],
+        "topFindings": [
+          {
+            "id": "wd-Q7624104",
+            "title": "Stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary"
+            ],
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "en.wikipedia.org"
+            ],
+            "multiIndependent": true,
+            "evidenceN": 7
+          },
+          {
+            "id": "ol-OL8613090A",
+            "title": "Adelle Stripe",
+            "providers": [
+              "openlibrary",
+              "viaf"
+            ],
+            "families": [
+              "openlibrary",
+              "viaf"
+            ],
+            "domains": [
+              "openlibrary.org",
+              "viaf.org"
+            ],
+            "multiIndependent": true,
+            "evidenceN": 2
+          },
+          {
+            "id": "viaf-126600779",
+            "title": "Stripes",
+            "providers": [
+              "wikipedia",
+              "viaf"
+            ],
+            "families": [
+              "wikimedia",
+              "viaf"
+            ],
+            "domains": [
+              "en.wikipedia.org",
+              "viaf.org"
+            ],
+            "multiIndependent": true,
+            "evidenceN": 2
+          },
+          {
+            "id": "wd-Q297115",
+            "title": "Meloidae",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q469754",
+            "title": "Perca flavescens",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q842647",
+            "title": "striped bass",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q368495",
+            "title": "striped skunk",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-30463651",
+            "title": "Stripe, John, 1643-1737",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-138753783",
+            "title": "Striped house museum of art Tokyo",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-57307946",
+            "title": "Stripecke, Renata",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-124465779",
+            "title": "Striped Horse France",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-83910682",
+            "title": "St\u0159\u00edpek, Ji\u0159\u00ed, asi 1545-asi 1575",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          }
+        ],
+        "sessionId": "kv1.c941a36a0dc90984c20e4df9a3b52a42"
+      },
+      "S05": {
+        "seedId": "S05",
+        "seed": "Red Cross",
+        "status": "partial",
+        "findingsN": 19,
+        "evidenceN": 30,
+        "domains": [
+          "en.wikipedia.org",
+          "openlibrary.org",
+          "viaf.org",
+          "www.wikidata.org"
+        ],
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "providersUnion": [
+          "openlibrary",
+          "viaf",
+          "wikidata",
+          "wikipedia"
+        ],
+        "providersState": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial",
+          "viaf": "partial"
+        },
+        "multiIndependentN": 2,
+        "multiIndependentRate": 0.1053,
+        "viafPresent": true,
+        "accLeak": [],
+        "topFindings": [
+          {
+            "id": "wd-Q104700248",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "families": [
+              "wikimedia",
+              "openlibrary",
+              "viaf"
+            ],
+            "domains": [
+              "www.wikidata.org",
+              "openlibrary.org",
+              "en.wikipedia.org",
+              "viaf.org"
+            ],
+            "multiIndependent": true,
+            "evidenceN": 11
+          },
+          {
+            "id": "viaf-167237176",
+            "title": "Red Cross and Red Crescent",
+            "providers": [
+              "wikidata",
+              "viaf"
+            ],
+            "families": [
+              "wikimedia",
+              "viaf"
+            ],
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ],
+            "multiIndependent": true,
+            "evidenceN": 2
+          },
+          {
+            "id": "wd-Q48438",
+            "title": "Saint George",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q7305591",
+            "title": "Redd Kross",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-160178001",
+            "title": "Red Cross. International Committee, Geneva",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-151269599",
+            "title": "Red Cross. Switzerland. Schweizerisches Rotes Kreuz",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-122023057",
+            "title": "Red Cross USA",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-997897",
+            "title": "Red Cross international lawyer (1914-2002) Jean Pictet",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-312731766",
+            "title": "Red Cross, Henry Dunant Institute",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "viaf-159584209",
+            "title": "Red Cross, Deutsches Rotes Kreuz",
+            "providers": [
+              "viaf"
+            ],
+            "families": [
+              "viaf"
+            ],
+            "domains": [
+              "viaf.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          }
+        ],
+        "sessionId": "kv1.5a6b4f42541e07bbde8cee6300b4e019"
+      }
+    }
+  },
+  "b0": {
+    "label": "B0",
+    "host": "akvot-discovery.vercel.app",
+    "seeds": {
+      "S01": {
+        "seedId": "S01",
+        "seed": "Tim Berners-Lee",
+        "status": "partial",
+        "findingsN": 10,
+        "evidenceN": 10,
+        "domains": [
+          "en.wikipedia.org",
+          "openlibrary.org",
+          "www.wikidata.org"
+        ],
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "providersUnion": [
+          "openlibrary",
+          "wikidata",
+          "wikipedia"
+        ],
+        "providersState": {
+          "wikidata": "partial",
+          "openlibrary": "ok",
+          "wikipedia": "ok"
+        },
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "topFindings": [
+          {
+            "id": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q22991023",
+            "title": "Tim Berners-Lee: A Magna Carta for the web",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q22946133",
+            "title": "Tim Berners-Lee: The year open data went worldwide",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q22980417",
+            "title": "Tim Berners-Lee: The next web",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q19761597",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q55693401",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wp-en-Tim_Berners_Lee",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikipedia"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "en.wikipedia.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          }
+        ],
+        "sessionId": "kv1.0cb3a043a52aeea41cb49cbd176766d4"
+      },
+      "S04": {
+        "seedId": "S04",
+        "seed": "Stripe",
+        "status": "partial",
+        "findingsN": 22,
+        "evidenceN": 22,
+        "domains": [
+          "en.wikipedia.org",
+          "openlibrary.org",
+          "www.wikidata.org"
+        ],
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "providersUnion": [
+          "openlibrary",
+          "wikidata",
+          "wikipedia"
+        ],
+        "providersState": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "topFindings": [
+          {
+            "id": "wd-Q7624104",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q3421342",
+            "title": "stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q127900502",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q117454382",
+            "title": "Stripe",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q297115",
+            "title": "Meloidae",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q469754",
+            "title": "Perca flavescens",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q842647",
+            "title": "striped bass",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q368495",
+            "title": "striped skunk",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL8376862A",
+            "title": "Five Stripe Books",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL8613090A",
+            "title": "Adelle Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL13079935A",
+            "title": "Stripe",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL10372320A",
+            "title": "STRIPE",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          }
+        ],
+        "sessionId": "kv1.e5c856bbb8b324b51eb024b19e708210"
+      },
+      "S05": {
+        "seedId": "S05",
+        "seed": "Red Cross",
+        "status": "partial",
+        "findingsN": 22,
+        "evidenceN": 22,
+        "domains": [
+          "en.wikipedia.org",
+          "openlibrary.org",
+          "www.wikidata.org"
+        ],
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "providersUnion": [
+          "openlibrary",
+          "wikidata",
+          "wikipedia"
+        ],
+        "providersState": {
+          "wikidata": "partial",
+          "openlibrary": "partial",
+          "wikipedia": "partial"
+        },
+        "multiIndependentN": 0,
+        "multiIndependentRate": 0,
+        "viafPresent": false,
+        "accLeak": [],
+        "topFindings": [
+          {
+            "id": "wd-Q470110",
+            "title": "American Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q7178",
+            "title": "International Red Cross and Red Crescent Movement",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q48438",
+            "title": "Saint George",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q7305591",
+            "title": "Redd Kross",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q104700248",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q1968122",
+            "title": "National Red Cross and Red Crescent society",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q116059498",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "wd-Q50320550",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata"
+            ],
+            "families": [
+              "wikimedia"
+            ],
+            "domains": [
+              "www.wikidata.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL17804A",
+            "title": "American National Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL124327A",
+            "title": "International Committee of the Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL2917704A",
+            "title": "Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          },
+          {
+            "id": "ol-OL10303910A",
+            "title": "American Red Cross",
+            "providers": [
+              "openlibrary"
+            ],
+            "families": [
+              "openlibrary"
+            ],
+            "domains": [
+              "openlibrary.org"
+            ],
+            "multiIndependent": false,
+            "evidenceN": 1
+          }
+        ],
+        "sessionId": "kv1.297a86f93442f4165786786ae969d39b"
+      }
+    }
+  }
+}

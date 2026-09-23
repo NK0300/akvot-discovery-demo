@@ -1,0 +1,75 @@
+{
+  "snap": {
+    "status": "partial",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "partial",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikipedia",
+            "count": 6
+          },
+          {
+            "value": "wikidata",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 6
+          },
+          {
+            "value": "registry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R06",
+    "seed": "openai.com",
+    "expect": "UNKNOWN_OR_NONE",
+    "note": "domain seed (WAF soft-fail OK)",
+    "sessionId": "kv1.e302a326ee1050e5bc52e51ae2f4cc3e",
+    "status": "partial",
+    "polls": 14,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "partial",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": true,
+    "reason": "no wo emit; zero SAME-*",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

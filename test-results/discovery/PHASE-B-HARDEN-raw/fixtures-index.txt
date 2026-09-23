@@ -1,0 +1,35 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   555  100   555    0     0   1881      0 --:--:-- --:--:-- --:--:--  1887
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 0
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline; filename="index.json"
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: application/json; charset=utf-8
+date: Sun, 20 Sep 2026 01:09:03 GMT
+etag: "5015252f3edfa6d88633e00d21eed3d3"
+last-modified: Sun, 20 Sep 2026 01:09:03 GMT
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-robots-tag: noindex
+x-vercel-cache: MISS
+x-vercel-id: cle1::6jnwp-1789866543331-b64203504517
+content-length: 555
+
+{
+  "version": "phase-b-ux-2026-09-20",
+  "note": "Fixtures only — Seed illustration values, not allowlist / not special-cased in UI logic.",
+  "fixtures": [
+    { "id": "seed-person-he", "file": "seed-person-he.json", "seedKind": "person_name", "labelHe": "שם אדם (עברית)" },
+    { "id": "seed-person-latin", "file": "seed-person-latin.json", "seedKind": "person_name", "labelHe": "שם אדם (Latin)" },
+    { "id": "seed-domain-org", "file": "seed-domain-org.json", "seedKind": "domain_org", "labelHe": "דומיין / ארגון" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "overall": "PASS",
+  "promote": "HOLD",
+  "storage": "PASS",
+  "acc": "PASS",
+  "previewUrl": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app",
+  "deploymentId": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+  "upstashDbId": "4c3b3c0b-c797-4203-8c42-dc464866876d",
+  "upstashHost": "causal-oriole-287287.upstash.io",
+  "smithSessionId": "kv1.e765dd338954a3fc801362ee1d169c0a",
+  "forbiddenQid": "Q1701775",
+  "postLeak": false,
+  "getLeak": false,
+  "discoveryHealthOk": true,
+  "constraints": {
+    "noProd": true,
+    "noAliasPromote": true,
+    "noSecretsInMd": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "stamp": "2026-09-21T21:05:04.692Z",
+  "flagOff": {
+    "hasQueryPlan": false,
+    "status": "complete",
+    "findingCount": 1
+  },
+  "flagOn": {
+    "hasQueryPlan": true,
+    "planId": "qp-c0d7ca23e62d",
+    "journalLen": 6,
+    "status": "complete",
+    "budgetExhaustedReason": null
+  },
+  "locks": {
+    "noPromote": true,
+    "a2Frozen": true,
+    "c1Frozen": true
+  }
+}

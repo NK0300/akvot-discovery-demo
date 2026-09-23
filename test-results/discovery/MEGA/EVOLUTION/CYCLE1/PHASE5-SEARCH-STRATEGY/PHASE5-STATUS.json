@@ -1,0 +1,75 @@
+{
+  "phase": "PHASE5-SEARCH-STRATEGY",
+  "cycle": "CYCLE1",
+  "steps": "41-50",
+  "stamp": "2026-09-20T10:06:46+03:00",
+  "zone": "Asia/Jerusalem",
+  "status": "DONE",
+  "mode": "analysis_design_only",
+  "promote": "HOLD",
+  "coreChanges": false,
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "discoveryB0Alias": {
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "host": "akvot-discovery.vercel.app",
+    "retarget": false,
+    "unchanged": true
+  },
+  "expAPreviewInspectOnly": {
+    "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "verdict": "PASS_mean_multi_0.414",
+    "promote": "HOLD",
+    "notes": ["S01_10_to_1_collapse", "S04_S05_per_seed_below_0.15"]
+  },
+  "executiveFinding": "No query-expansion layer today; seed→q verbatim; top IG levers are EXP-B (HE locale) and EXP-C (URL/role resolvers), not spelling/relationship fanout.",
+  "stepsCompleted": {
+    "41": "seed_to_queries_code_map",
+    "42": "query_expansion_absent",
+    "43": "aliases_absent_postmerge_only",
+    "44": "spelling_variants_absent_defer",
+    "45": "multilingual_locale_manual_only",
+    "46": "contextual_expansion_absent",
+    "47": "domain_expansion_absent",
+    "48": "organization_expansion_weak_ol_authors",
+    "49": "relationship_expansion_absent_defer",
+    "50": "expansion_noise_risks_documented"
+  },
+  "deliverables": [
+    "SEARCH-STRATEGY-MAP.md",
+    "SEARCH-STRATEGY-MAP.json",
+    "EXPANSION-NOISE-RISKS.md",
+    "EXPERIMENT-CANDIDATES.md",
+    "EXPERIMENT-CANDIDATES.json",
+    "PHASE5-STATUS.json"
+  ],
+  "topExpansionImprovements": [
+    {
+      "rank": 1,
+      "id": "EXP-B",
+      "summary": "Hebrew script → locale=he + quote floor ≥40",
+      "ig": "native_language_evidence",
+      "gaps": ["QD-05", "PG-04", "BS-SRC-04"]
+    },
+    {
+      "rank": 2,
+      "id": "EXP-C",
+      "summary": "URL origin metadata + role/compound QueryPlan",
+      "ig": "intent_coverage_grounded",
+      "gaps": ["QD-04", "PG-02", "BS-SRC-05", "BS-SRC-06"]
+    },
+    {
+      "rank": 3,
+      "id": "EXP-A_tune_hold",
+      "summary": "Keep VIAF soft-label Preview; tighten soft-match before any promote",
+      "ig": "independence_family",
+      "gaps": ["QD-01", "PG-01"]
+    }
+  ],
+  "deferredAsNoise": ["spelling_edit_distance_fanout", "relationship_graph_hops", "news_filings_crawl"],
+  "gates": {
+    "noPromote": true,
+    "noCoreTouch": true,
+    "b0AliasUnchanged": true,
+    "accLeakTarget": 0
+  }
+}

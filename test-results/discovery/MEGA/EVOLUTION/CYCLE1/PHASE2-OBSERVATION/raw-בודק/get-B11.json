@@ -1,0 +1,822 @@
+{
+  "ok": true,
+  "sessionId": "kv1.d8ce87972751d4f1e55e3fb556e622df",
+  "seed": "Assaf",
+  "q": "Assaf",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "ol-OL584261A",
+      "kind": "registry",
+      "title": "Assaf Razin",
+      "summary": "Top work: International finance and financial crises",
+      "evidenceIds": [
+        "ev-2ef70b8051dd4c7487dc323d"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL584261A"
+      ],
+      "scoreFinding": 0.6658333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL133102A",
+      "kind": "registry",
+      "title": "Simha Assaf",
+      "summary": "Top work: Be-ohole Yaʻaḳov: peraḳim me-ḥaye ha-tarbut shel ha-Yehudim bi-yeme ha-benayim.",
+      "evidenceIds": [
+        "ev-328f95bbf77a7760e60d6c1d"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL133102A"
+      ],
+      "scoreFinding": 0.6558333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL4182479A",
+      "kind": "registry",
+      "title": "Assaf Gavron",
+      "summary": "Top work: Tel Aviv Noir (Akashic Noir)",
+      "evidenceIds": [
+        "ev-d5fd8c5b30f7415648393570"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL4182479A"
+      ],
+      "scoreFinding": 0.6458333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL11747901A",
+      "kind": "registry",
+      "title": "Assaf Gavron",
+      "summary": "Top work: Auf fremdem Land",
+      "evidenceIds": [
+        "ev-4a22ae9af4b0b78c300021d4"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL11747901A"
+      ],
+      "scoreFinding": 0.6358333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL7731402A",
+      "kind": "registry",
+      "title": "Morwenna Assaf",
+      "summary": "Top work: Zills-Zagat Teaching Syllabus",
+      "evidenceIds": [
+        "ev-f770664a2e19da805eb210a3"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL7731402A"
+      ],
+      "scoreFinding": 0.6258333333333332,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL4961872A",
+      "kind": "registry",
+      "title": "David Assaf",
+      "summary": "Top work: Untold tales of the Hasidim",
+      "evidenceIds": [
+        "ev-9194f508f779aab9d33f63ad"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL4961872A"
+      ],
+      "scoreFinding": 0.6158333333333332,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL145458A",
+      "kind": "registry",
+      "title": "David Assaf",
+      "summary": "Top work: Sefer Yalḳuṭ dat ṿa-din",
+      "evidenceIds": [
+        "ev-b2307bafe1029547770d5707"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL145458A"
+      ],
+      "scoreFinding": 0.6058333333333332,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2266179A",
+      "kind": "registry",
+      "title": "Assaf, Michael",
+      "summary": "Top work: ha-Tenuʻah ha-ʻArvit be-Erets Yiśraʾel u-meḳoroteha",
+      "evidenceIds": [
+        "ev-e8879c2bca477b2bb56bb8fb"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2266179A"
+      ],
+      "scoreFinding": 0.5958333333333332,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Assaf",
+      "kind": "page",
+      "title": "Assaf",
+      "evidenceIds": [
+        "ev-3b7af892acd4443f4005fedb"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Assaf"
+      ],
+      "scoreFinding": 0.5683333333333334,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Mohammed_Assaf",
+      "kind": "page",
+      "title": "Mohammed Assaf",
+      "evidenceIds": [
+        "ev-c4aa351e46ef954d2b82c717"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Mohammed Assaf"
+      ],
+      "scoreFinding": 0.5583333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Assaf_Rappaport",
+      "kind": "page",
+      "title": "Assaf Rappaport",
+      "evidenceIds": [
+        "ev-4211c4aea8685bb4deaecb40"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Assaf Rappaport"
+      ],
+      "scoreFinding": 0.5483333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Assaf_Amir",
+      "kind": "page",
+      "title": "Assaf Amir",
+      "evidenceIds": [
+        "ev-927543f176bde6e0628b53ee"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Assaf Amir"
+      ],
+      "scoreFinding": 0.5383333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Assi_Dayan",
+      "kind": "page",
+      "title": "Assi Dayan",
+      "evidenceIds": [
+        "ev-a277eb1c908cdf2b7df07456"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Assi Dayan"
+      ],
+      "scoreFinding": 0.5283333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Assaf_Razin",
+      "kind": "page",
+      "title": "Assaf Razin",
+      "evidenceIds": [
+        "ev-78e12c2fc165405b071ef0f1"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Assaf Razin"
+      ],
+      "scoreFinding": 0.5183333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-2ef70b8051dd4c7487dc323d",
+      "provenanceUrl": "https://openlibrary.org/authors/OL584261A",
+      "url": "https://openlibrary.org/authors/OL584261A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "International finance and financial crises",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-328f95bbf77a7760e60d6c1d",
+      "provenanceUrl": "https://openlibrary.org/authors/OL133102A",
+      "url": "https://openlibrary.org/authors/OL133102A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "Be-ohole Yaʻaḳov: peraḳim me-ḥaye ha-tarbut shel ha-Yehudim bi-yeme ha-benayim.",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-d5fd8c5b30f7415648393570",
+      "provenanceUrl": "https://openlibrary.org/authors/OL4182479A",
+      "url": "https://openlibrary.org/authors/OL4182479A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "Tel Aviv Noir (Akashic Noir)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-4a22ae9af4b0b78c300021d4",
+      "provenanceUrl": "https://openlibrary.org/authors/OL11747901A",
+      "url": "https://openlibrary.org/authors/OL11747901A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "Auf fremdem Land",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-f770664a2e19da805eb210a3",
+      "provenanceUrl": "https://openlibrary.org/authors/OL7731402A",
+      "url": "https://openlibrary.org/authors/OL7731402A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "Zills-Zagat Teaching Syllabus",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-9194f508f779aab9d33f63ad",
+      "provenanceUrl": "https://openlibrary.org/authors/OL4961872A",
+      "url": "https://openlibrary.org/authors/OL4961872A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "Untold tales of the Hasidim",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-b2307bafe1029547770d5707",
+      "provenanceUrl": "https://openlibrary.org/authors/OL145458A",
+      "url": "https://openlibrary.org/authors/OL145458A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "Sefer Yalḳuṭ dat ṿa-din",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-e8879c2bca477b2bb56bb8fb",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2266179A",
+      "url": "https://openlibrary.org/authors/OL2266179A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:51:43.532Z",
+      "evidenceType": "registry",
+      "quote": "ha-Tenuʻah ha-ʻArvit be-Erets Yiśraʾel u-meḳoroteha",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3b7af892acd4443f4005fedb",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf",
+      "url": "https://en.wikipedia.org/wiki/Assaf",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:41.552Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-c4aa351e46ef954d2b82c717",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Mohammed_Assaf",
+      "url": "https://en.wikipedia.org/wiki/Mohammed_Assaf",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:41.552Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-4211c4aea8685bb4deaecb40",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+      "url": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:41.552Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-927543f176bde6e0628b53ee",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Amir",
+      "url": "https://en.wikipedia.org/wiki/Assaf_Amir",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:41.552Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a277eb1c908cdf2b7df07456",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Assi_Dayan",
+      "url": "https://en.wikipedia.org/wiki/Assi_Dayan",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:41.552Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-78e12c2fc165405b071ef0f1",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Razin",
+      "url": "https://en.wikipedia.org/wiki/Assaf_Razin",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:51:41.552Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "openlibrary",
+          "count": 8
+        },
+        {
+          "value": "wikipedia",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 8
+        },
+        {
+          "value": "page",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "error",
+    "openlibrary": "partial",
+    "wikipedia": "partial"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:ea52417a90d5"
+    ],
+    "status": "candidate",
+    "displayHint": "Assaf",
+    "hints": {}
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T06:51:41.493Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:ea52417a90d5",
+        "kind": "seed"
+      },
+      {
+        "id": "ol-OL584261A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL133102A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL4182479A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL11747901A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL7731402A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL4961872A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL145458A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2266179A",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Assaf",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Mohammed_Assaf",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Assaf_Rappaport",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Assaf_Amir",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Assi_Dayan",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Assaf_Razin",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [
+    {
+      "type": "same_title_multi_domain",
+      "title": "assaf razin",
+      "findingIds": [
+        "ol-OL584261A",
+        "wp-en-Assaf_Razin"
+      ],
+      "domains": [
+        "openlibrary.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    }
+  ],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

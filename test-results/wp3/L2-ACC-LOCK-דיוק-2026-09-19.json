@@ -1,0 +1,171 @@
+{
+  "when": "2026-09-19T22:17:31.473879+03:00",
+  "whenUtc": "2026-09-19T19:17:31.474529+00:00",
+  "zone": "Asia/Jerusalem",
+  "role": "דיוק",
+  "task": "WP3 L2 Acc LOCK",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "expectedBuild": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "health": {
+    "ok": true,
+    "phase": "orchestrator-v0-b",
+    "build": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "baselineHint": "dpl_DNfPZ9"
+  },
+  "buildMatch": true,
+  "access": "plain curl · Origin=alias · x-akvot-battery:1",
+  "deploy": false,
+  "expectedRewrite": false,
+  "PASS": true,
+  "prettyWrong": 0,
+  "pwHard": 0,
+  "verdict": "GO",
+  "accLock": "GO",
+  "l2Start": "GO",
+  "cases": [
+    {
+      "id": "Assaf Rappaport",
+      "expected": "dossier Q47507930 · faces allowed",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ms": 5733,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": null,
+        "facesPresent": false,
+        "photo": true,
+        "images": 7,
+        "mode": "wiki+google",
+        "label": "Assaf Rappaport",
+        "requestId": "ca51b249-68f5-412c-a842-e99a6dc98a6b",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 8,
+          "wikiTimeout": 0,
+          "wikiRetries": 8
+        }
+      }
+    },
+    {
+      "id": "POST John Smith + ctx IBM/NY/US",
+      "expected": "NEVER dossier · NEVER Q1701775 · faces=0 · ui∈candidates|thin|need_context",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ms": 6273,
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "faces_n": 0,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "candidates_n": 6,
+        "requestId": "15a96b7e-5896-4186-87c7-779b2de9a9e0",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 8,
+          "wikiTimeout": 1,
+          "wikiRetries": 9
+        },
+        "has_Q1701775": false
+      },
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      }
+    },
+    {
+      "id": "bare כהן",
+      "expected": "need_context|thin · NEVER dossier · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ms": 45354,
+        "ui": "thin",
+        "qid": null,
+        "faces": null,
+        "faces_n": 0,
+        "thin": true,
+        "needContext": null,
+        "images": 0,
+        "mode": "google",
+        "label": "כהן",
+        "requestId": "ec10ef2d-5d25-429a-9c6b-1cf7cc5a2733",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 0,
+          "wikiTimeout": 0,
+          "wikiRetries": 0
+        }
+      }
+    },
+    {
+      "id": "John Rappaport",
+      "expected": "not Assaf QID · not dossier preferred",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "http": 200,
+        "ms": 6018,
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "images": 0,
+        "mode": "ambiguous",
+        "label": "John Rappaport",
+        "requestId": "e12e959d-4941-4b1f-a923-411bbcbe5f88",
+        "phase": "orchestrator-v0-b",
+        "wikiMeta": {
+          "wiki429": 16,
+          "wikiTimeout": 2,
+          "wikiRetries": 18
+        }
+      }
+    }
+  ],
+  "continuousAccProtocol": {
+    "scope": [
+      "L2-A LOAD",
+      "L2-B SOAK",
+      "L2-C FAILURE"
+    ],
+    "sampleEachMilestone": [
+      "Assaf Rappaport",
+      "POST John Smith + {org:IBM,city:New York,country:US}",
+      "bare כהן"
+    ],
+    "optionalDrift": [
+      "John Rappaport"
+    ],
+    "rules": [
+      "pw=0 hard",
+      "STOP if pw>0",
+      "STOP on identity/dossier contamination",
+      "STOP on face leak (Smith/Cohen faces>0)",
+      "STOP on Assaf QID contamination of John Rappaport",
+      "NO Core/Acc/cache/UX/dpl change during L2",
+      "NO Expected rewrite"
+    ],
+    "milestoneCadence": "each L2-A/B/C milestone boundary (step change / soak checkpoint / failure inject+recover)",
+    "onPw": "STOP + report to Chief · do not continue load/soak/failure"
+  },
+  "rawDir": "test-results/wp3/l2-acc-lock-raw-2026-09-19",
+  "paths": {
+    "md": "test-results/wp3/L2-ACC-LOCK-דיוק-2026-09-19.md",
+    "json": "test-results/wp3/L2-ACC-LOCK-דיוק-2026-09-19.json"
+  }
+}

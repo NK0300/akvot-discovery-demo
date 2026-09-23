@@ -1,0 +1,194 @@
+{
+  "ok": true,
+  "sessionId": "kv1.8e1f59e6417029a0004787bbc8b21bd5",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "c1-TREAT-ADV-social",
+  "snapshot": {
+    "sessionId": "kv1.8e1f59e6417029a0004787bbc8b21bd5",
+    "seed": "https://twitter.com",
+    "q": "https://twitter.com",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wo-67980aa928b24773",
+        "kind": "page",
+        "title": "X (formerly Twitter)",
+        "summary": "X. It’s what’s happening / X — From breaking news and entertainment to sports and politics, get the full story with all the live commentary.",
+        "evidenceIds": [
+          "ev-4e198f8cc286dba31780e65c"
+        ],
+        "providers": [
+          "web_origin"
+        ],
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:SAME-REFERENCE"
+        ],
+        "entityRefs": [
+          "web_origin:x.com"
+        ],
+        "scoreFinding": 0.5433333333333333,
+        "hostFamily": "web_origin",
+        "relationship": "SAME-REFERENCE",
+        "registrableDomain": "x.com",
+        "hostname": "x.com",
+        "ranking": {
+          "discoveryScore": 0.5433333333333333,
+          "factors": {
+            "authority": 0.4,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "x.com"
+            ]
+          },
+          "rationale": "authority=0.40 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-4e198f8cc286dba31780e65c",
+        "provenanceUrl": "https://x.com/",
+        "url": "https://x.com/",
+        "domain": "x.com",
+        "providerId": "web_origin",
+        "retrievedAt": "2026-09-20T08:38:37.877Z",
+        "evidenceType": "page",
+        "quote": "X. It’s what’s happening / X · X (formerly Twitter) · From breaking news and entertainment to sports and politics, get the full story with all the live commentary.",
+        "contentType": "text/html",
+        "robotsOk": true,
+        "hostFamily": "web_origin",
+        "originalUrl": "https://twitter.com",
+        "normalizedUrl": "https://x.com/",
+        "origin": "https://x.com",
+        "hostname": "x.com",
+        "registrableDomain": "x.com",
+        "scheme": "https",
+        "path": "/",
+        "safetyDecision": {
+          "stage": "normalize",
+          "ok": true,
+          "reason": "allow"
+        },
+        "httpStatus": 200,
+        "resultClass": "ok",
+        "relationship": "SAME-REFERENCE",
+        "webOriginMeta": {
+          "title": "X. It’s what’s happening / X",
+          "siteName": "X (formerly Twitter)",
+          "description": "From breaking news and entertainment to sports and politics, get the full story with all the live commentary."
+        }
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "web_origin",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "hostFamily:web_origin",
+            "count": 1
+          },
+          {
+            "value": "relationship:SAME-REFERENCE",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "ok",
+      "wikipedia": "error",
+      "viaf": "ok",
+      "web_origin": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:f3e57dc69a26"
+      ],
+      "status": "candidate",
+      "displayHint": "https://twitter.com",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:38:37.526Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:f3e57dc69a26",
+          "kind": "seed"
+        },
+        {
+          "id": "wo-67980aa928b24773",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

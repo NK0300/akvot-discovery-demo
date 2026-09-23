@@ -1,0 +1,25 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   932  100   899  100    33   2286     83 --:--:-- --:--:-- --:--:--  2371
+HTTP/2 200 
+access-control-allow-headers: Content-Type
+access-control-allow-methods: POST, OPTIONS
+access-control-allow-origin: *
+cache-control: no-store
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: application/json; charset=utf-8
+date: Sun, 20 Sep 2026 05:49:18 GMT
+etag: W/"383-ovobZeBOSMZTPpPamounABYEzew"
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-robots-tag: noindex
+x-vercel-cache: MISS
+x-vercel-id: cle1::fra1::x8xh8-1789883357895-6b944405f3dc
+content-length: 899
+
+{"ok":true,"sessionId":"kv1.5496b081a5875d1c0b20338d3d6689da","status":"partial","findings":[],"evidence":[],"facets":[{"key":"provider","label":"Provider","buckets":[],"emptyReason":"no_evidence"},{"key":"kind","label":"Kind","buckets":[],"emptyReason":"no_evidence"},{"key":"hint","label":"Hint","buckets":[],"emptyReason":"no_evidence"}],"narrow":{"applied":{"kind":["registry"]},"beforeCount":1,"afterCount":0},"version":4,"forbiddenIdentitiesVersion":"2026-09-19.1","progress":{"done":6,"totalHint":6},"providers":{"wikidata":"error","openlibrary":"ok","wikipedia":"ok"},"store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true}}

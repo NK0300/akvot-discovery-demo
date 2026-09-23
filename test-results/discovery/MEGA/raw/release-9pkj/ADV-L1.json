@@ -1,0 +1,23 @@
+{
+  "httpStatus": 201,
+  "ms": 3431,
+  "findings": 19,
+  "entityLeak": 0,
+  "leak": 0,
+  "contra": 0,
+  "bans": [],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "checkEntityLeak": false
+}

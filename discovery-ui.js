@@ -1,0 +1,2885 @@
+/**
+ * Phase B CONTINUE + MEGA track M · Discovery Mode UI (additive vertical slice)
+ * Aligns: PHASE-B-BOUNDARIES-SSE-NARROW-STORE-ארכיטקט-2026-09-20.md
+ * MEGA-M: SSE reconnect (cursor/Last-Event-ID + backoff) · replay-from-complete
+ * · partial→final UI states · no identity chrome.
+ * GO-IMPL-UX: premium Investigation workspace · mobile nav/drawer · soft vocabulary
+ * · provenance density · narrowSource tag · Foundation plan/graph soft surface.
+ * GO-IMPL-UX plan/graph wire: defensive SSE plan+graph parsers · QueryPlan/Family/Budget
+ * paint · soft graph panel · empty/UNKNOWN polish · facet focus-trap · safe-area.
+ * Wires to POST/GET /api/discovery/sessions · prefers SSE …/events · POST …/narrow
+ * (server recompute); falls back to poll + discovery-fixtures/* progressive stages.
+ * Entity-agnostic · INFORMATION ≠ IDENTITY · no Core /api/lookup changes.
+ */
+(function () {
+  'use strict';
+
+  const FIXTURE_BASE = 'discovery-fixtures';
+  const FACET_LABEL_HE = {
+    provider: 'סוג מקור',
+    kind: 'סוג ממצא',
+    relationship: 'קשר מדווח',
+    confidence_band: 'רמת ראיות',
+    hint: 'רמז',
+  };
+  const KIND_HE = {
+    page: 'דף',
+    registry: 'רישום',
+    document: 'מסמך',
+    contact_public: 'יצירת קשר ציבורי',
+    media: 'מדיה',
+    other: 'אחר',
+  };
+  const STATUS_HE = {
+    running: 'מאתר…',
+    partial: 'חלקי',
+    complete: 'הושלם',
+    failed_soft: 'חלקי (שגיאת מקור)',
+    reconnecting: 'מתחבר מחדש…',
+  };
+  /** Product lifecycle stages (UX) — map onto SSE without breaking B0 event names. */
+  const LIFE_STAGES = [
+    { id: 'START', label: 'START', he: 'התחלה' },
+    { id: 'PLANNING', label: 'PLANNING', he: 'תכנון' },
+    { id: 'DISCOVERY', label: 'DISCOVERY', he: 'גילוי' },
+    { id: 'FINDINGS', label: 'FINDINGS', he: 'ממצאים' },
+    { id: 'EVIDENCE', label: 'EVIDENCE', he: 'ראיות' },
+    { id: 'RELATIONSHIPS', label: 'RELATIONSHIPS', he: 'קשרים' },
+    { id: 'GRAPH', label: 'GRAPH', he: 'גרף' },
+    { id: 'COMPLETE', label: 'COMPLETE', he: 'סיום' },
+  ];
+  const LIFE_ORDER = LIFE_STAGES.map((s) => s.id);
+  const SEED_PLACEHOLDERS = {
+    name: 'שם ציבורי (HE או EN)…',
+    domain: 'example.org',
+    organization: 'שם ארגון / חברה…',
+    url: 'https://…',
+    other: 'Seed ציבורי אחר…',
+  };
+  const REL_HE = {
+    'same-source': 'אותו מקור',
+    'same-reference': 'SAME-REFERENCE · typed',
+    'same-entity': 'מועמד ישות (לא commit)',
+    'related-entity': 'RELATED · קשור',
+    related: 'RELATED · קשור',
+    'possible-match': 'POSSIBLE · אפשרי',
+    possible: 'POSSIBLE · אפשרי',
+    unknown: 'UNKNOWN · לא ידוע',
+    UNKNOWN: 'UNKNOWN · לא ידוע',
+    supports: 'תומך',
+    corroboration: 'חיזוק הדדי',
+    site: 'אתר',
+    registry_note: 'הערת רישום',
+    org_name: 'שם ארגון',
+  };
+  /** Soft vocabulary classes — never treat URL-alone as identity. */
+  const REL_CLASS = {
+    'same-source': 'fact',
+    supports: 'fact',
+    corroboration: 'cand',
+    'same-reference': 'cand',
+    'same-entity': 'cand',
+    'related-entity': 'related',
+    related: 'related',
+    'possible-match': 'possible',
+    possible: 'possible',
+    unknown: 'unk',
+    UNKNOWN: 'unk',
+  };
+  const VOCAB_EN = {
+    unk: 'UNKNOWN',
+    cand: 'SAME-REFERENCE',
+    related: 'RELATED',
+    possible: 'POSSIBLE',
+    fact: 'PROVENANCE',
+  };
+  /** Cap SSE reconnect attempts (manual backoff; avoid terminal thrash). */
+  const SSE_MAX_RECONNECT = 5;
+  const SSE_BOOT_MS = 2800;
+  const SSE_BACKOFF_BASE_MS = 400;
+
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]),
+    );
+  }
+  function safeUrl(u) {
+    const s = String(u || '').trim();
+    if (!s) return '';
+    try {
+      const parsed = new URL(s, location.origin);
+      if (parsed.protocol.toLowerCase() === 'https:') return parsed.href;
+      return '';
+    } catch {
+      return '';
+    }
+  }
+  function safeHref(u) {
+    return esc(safeUrl(u) || '#');
+  }
+
+  function params() {
+    return new URLSearchParams(location.search);
+  }
+  function isDiscoveryMode() {
+    return params().get('mode') === 'discovery';
+  }
+  function forceFixture() {
+    const p = params();
+    return p.get('discoverySource') === 'fixture' || p.get('fixture') === '1';
+  }
+  function setMode(mode) {
+    const p = params();
+    if (mode === 'discovery') p.set('mode', 'discovery');
+    else p.delete('mode');
+    const q = p.toString();
+    history.replaceState(null, '', q ? `?${q}` : location.pathname);
+    applyModeChrome();
+  }
+
+  /** @type {{ findings: object[], evidence: object[], facets: object[], status: string, progress: object, providers: object, sessionId?: string, source?: string, q?: string }} */
+  let discState = emptyState();
+  let selectedFacets = {}; // key -> Set(value)
+  let discAbort = null;
+  let discTimers = [];
+  /** @type {EventSource|null} */
+  let discEventSource = null;
+  let narrowInFlight = false;
+
+  function readSeedKindFromDom() {
+    const pressed = document.querySelector('.disc-seed-type[aria-pressed="true"]');
+    if (pressed) return pressed.getAttribute('data-seed-kind') || 'name';
+    return 'name';
+  }
+
+  function emptyState() {
+    return {
+      findings: [],
+      evidence: [],
+      facets: [],
+      status: 'idle',
+      progress: { done: 0, totalHint: 0 },
+      providers: {},
+      sessionId: null,
+      source: null,
+      q: '',
+      /** 'none' | 'server' | 'client' — server means findings already narrowed by POST /narrow */
+      narrowSource: 'none',
+      /** 'sse' | 'poll' | 'fixture' | 'sse→get' | null */
+      transport: null,
+      /** SSE cursor / last event id (Arch: ordered additive; reconnect resume) */
+      cursor: null,
+      /** Session status before UI overlay `reconnecting` */
+      statusBeforeReconnect: null,
+      reconnectAttempt: 0,
+      /** Product UX lifecycle stage */
+      lifeStage: 'START',
+      graph: { nodes: [], edges: [] },
+      contradictions: [],
+      softEr: null,
+      gaps: [],
+      focusedNodeId: null,
+      selectedEdgeId: null,
+      seedKind: (typeof document !== 'undefined' && document.querySelector) ? readSeedKindFromDom() : 'name',
+      errorMessage: null,
+      /** Soft Foundation surface — scrubbed plan summary when Server emits (flag-gated). */
+      queryPlan: null,
+      serverStage: null,
+      /** Soft budget telemetry from plan.budgets / status.budgetExhaustedReason / snapshot. */
+      budgetTelemetry: null,
+      budgetExhaustedReason: null,
+      /** Soft family journal when Server emits (never invents identity). */
+      familyJournal: null,
+      /** True once an SSE/snapshot graph chunk arrived from Server (soft panel cue). */
+      graphFromServer: false,
+      /** True once an SSE `plan` event (or snapshot queryPlan) was ingested. */
+      planSseSeen: false,
+    };
+  }
+
+  /** Merge list items by id (SSE replay / reconnect — no duplicate spam). */
+  function mergeById(existing, incoming) {
+    const map = new Map();
+    (existing || []).forEach((x) => {
+      if (x && x.id != null) map.set(String(x.id), x);
+    });
+    (incoming || []).forEach((x) => {
+      if (!x || x.id == null) return;
+      const id = String(x.id);
+      map.set(id, { ...(map.get(id) || {}), ...x });
+    });
+    return [...map.values()];
+  }
+
+  /** Belt: strip identity chrome fields from any paint path. */
+  function stripIdentityChrome(target) {
+    if (!target || typeof target !== 'object') return target;
+    delete target.dossier;
+    delete target.faces;
+    delete target.photoUrl;
+    delete target.identityCommit;
+    delete target.mayCommitDossier;
+    if (Array.isArray(target.findings)) {
+      target.findings = target.findings.map((f) => {
+        if (!f || typeof f !== 'object') return f;
+        const copy = { ...f };
+        delete copy.dossier;
+        delete copy.faces;
+        delete copy.photoUrl;
+        delete copy.identityCommit;
+        return copy;
+      });
+    }
+    return target;
+  }
+
+  function closeSse() {
+    if (discEventSource) {
+      try {
+        discEventSource.close();
+      } catch (_) {}
+      discEventSource = null;
+    }
+  }
+
+  function clearDiscTimers() {
+    discTimers.forEach((t) => clearTimeout(t));
+    discTimers = [];
+    closeSse();
+  }
+
+  function forcePollTransport() {
+    return params().get('discoveryTransport') === 'poll';
+  }
+
+  function preferSseTransport() {
+    if (forcePollTransport()) return false;
+    const t = params().get('discoveryTransport');
+    if (t === 'sse') return true;
+    return typeof EventSource !== 'undefined';
+  }
+
+  function isApiSource(src) {
+    const s = String(src || '');
+    return s === 'api' || s.startsWith('api:');
+  }
+
+  function selectedFacetsPayload() {
+    const filters = {};
+    Object.entries(selectedFacets).forEach(([k, set]) => {
+      if (set && set.size) filters[k] = [...set];
+    });
+    return filters;
+  }
+
+  function shouldAttemptServerNarrow() {
+    return (
+      !!discState.sessionId &&
+      isApiSource(discState.source) &&
+      !forceFixture()
+    );
+  }
+
+  function applyModeChrome() {
+    const disc = isDiscoveryMode();
+    document.body.classList.toggle('mode-discovery', disc);
+    document.body.classList.toggle('mode-entity', !disc);
+    const entityWrap = document.getElementById('entity-search-wrap');
+    const discWrap = document.getElementById('discovery-search-wrap');
+    const entityHint = document.getElementById('search-hint');
+    const pill = document.getElementById('mode-pill');
+    const tabEnt = document.getElementById('tab-entity');
+    const tabDisc = document.getElementById('tab-discovery');
+    if (entityWrap) entityWrap.hidden = disc;
+    if (discWrap) discWrap.hidden = !disc;
+    if (entityHint) entityHint.hidden = disc;
+    if (pill) {
+      pill.textContent = disc
+        ? 'DISCOVERY · EVIDENCE · RELATIONSHIPS · NO IDENTITY'
+        : 'PUBLIC SOURCES · CITE-OR-DROP';
+    }
+    const headerSub = document.getElementById('header-sub');
+    if (headerSub) {
+      headerSub.textContent = disc
+        ? 'גילוי ציבורי · ממצאים וראיות סביב seed · לא תיק זהות'
+        : 'מקורות ציבוריים · ראיות מצוטטות · בלי ניחושים';
+    }
+    if (tabEnt) tabEnt.setAttribute('aria-selected', disc ? 'false' : 'true');
+    if (tabDisc) tabDisc.setAttribute('aria-selected', disc ? 'true' : 'false');
+    const out = document.getElementById('out');
+    if (disc && out && discState.status === 'idle') {
+      paintDiscoveryReady();
+    } else if (!disc && out && discState.status !== 'idle') {
+      // leaving discovery — restore entity ready if out was discovery
+      if (out.dataset.surface === 'discovery') {
+        out.dataset.surface = '';
+        out.className = 'empty-state';
+        out.innerHTML =
+          '<span class="big">READY</span>הזינו שם (עברית או English) ו/או טלפון/אימייל ציבורי. שם נפוץ → נבקש הקשר · מועמדים רק עם ראיות · תיק רק כשיש מקורות.';
+      }
+    } else if (disc && discState.status !== 'idle') {
+      renderDiscovery();
+    }
+  }
+
+  function paintDiscoveryReady() {
+    const out = document.getElementById('out');
+    if (!out) return;
+    out.dataset.surface = 'discovery';
+    out.className = 'empty-state';
+    out.innerHTML = `
+      <span class="big">DISCOVERY READY</span>
+      הזינו seed ציבורי למעלה — שם · דומיין · ארגון · URL · אחר.
+      <div class="disc-ready-note">התוצאה היא אוסף ממצאים וראיות סביב הקלט · <strong>לא</strong> זהות · לא תיק · לא «זה האדם».</div>
+    `;
+  }
+
+  function normalizeRel(rel) {
+    const r = String(rel || 'unknown').trim();
+    return r || 'unknown';
+  }
+
+  function hostnameOf(u) {
+    const href = safeUrl(u);
+    if (!href) return '';
+    try {
+      return new URL(href).hostname || '';
+    } catch {
+      return '';
+    }
+  }
+
+  function isUrlAloneFinding(f, evList) {
+    if (!f) return false;
+    if (f.urlAlone === true || f.hostFamily === 'web_origin') return true;
+    const kind = String(f.kind || '').toLowerCase();
+    if (kind === 'page' || kind === 'url' || kind === 'web_origin') {
+      const rel = normalizeRel(f.relationship || '');
+      if (/unknown/i.test(rel) || !f.relationship) {
+        const providers = new Set((evList || []).map((e) => e && e.providerId).filter(Boolean));
+        if (providers.size <= 1 && !(f.facetHints || []).some((h) => /typed|same-reference/i.test(String(h)))) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Soft vocabulary badge — INFORMATION ≠ IDENTITY.
+   * URL-alone never upgrades to SAME-REFERENCE / identity chrome.
+   */
+  function relBadge(rel, opts = {}) {
+    let key = normalizeRel(rel);
+    let cls = REL_CLASS[key] || REL_CLASS[key.toLowerCase()] || 'unk';
+    if (opts.urlAlone) {
+      key = 'unknown';
+      cls = 'unk url-alone';
+    }
+    const label = REL_HE[key] || REL_HE[key.toLowerCase()] || key;
+    const en = opts.urlAlone
+      ? 'UNKNOWN · URL-alone'
+      : VOCAB_EN[cls.split(' ')[0]] || cls.toUpperCase();
+    const tone = opts.urlAlone
+      ? 'URL alone ≠ identity · soft UNKNOWN'
+      : cls.includes('unk')
+        ? 'UNKNOWN soft · לא שקר · לא אישור'
+        : cls.includes('related')
+          ? 'RELATED · לא merge'
+          : cls.includes('possible')
+            ? 'POSSIBLE · signal חלקי'
+            : cls.includes('cand')
+              ? 'SAME-REFERENCE typed · לא SAME-ENTITY'
+              : 'provenance-backed · לא זהות';
+    return `<span class="disc-badge ${cls}" title="${esc(tone)}" aria-label="${esc(en)}: ${esc(label)}"><span>${esc(label)}</span></span>`;
+  }
+
+  function vocabLegend() {
+    return `<div class="disc-vocab-legend" aria-label="אוצר מילים רך">
+      <span class="lbl">VOCAB</span>
+      <span class="disc-badge unk">UNKNOWN</span>
+      <span class="disc-badge cand">SAME-REFERENCE</span>
+      <span class="disc-badge related">RELATED</span>
+      <span class="disc-badge possible">POSSIBLE</span>
+      <span class="disc-muted" style="font-size:10px">לא זהות · URL לבד ≠ identity</span>
+    </div>`;
+  }
+
+  const SERVER_STAGE_MAP = {
+    S0: 'START', S1: 'PLANNING', S2: 'PLANNING', S3: 'DISCOVERY', S4: 'DISCOVERY',
+    S5: 'FINDINGS', S6: 'GRAPH', S7: 'RELATIONSHIPS', S8: 'EVIDENCE', S9: 'RELATIONSHIPS', S10: 'COMPLETE',
+    CREATE: 'START', START: 'START', PLAN: 'PLANNING', PLANNING: 'PLANNING',
+    DISCOVER: 'DISCOVERY', DISCOVERY: 'DISCOVERY', ENRICH: 'FINDINGS', FINDINGS: 'FINDINGS',
+    EVIDENCE: 'EVIDENCE', CORROBORATE: 'RELATIONSHIPS', RELATIONSHIPS: 'RELATIONSHIPS',
+    EXPAND: 'EVIDENCE', RECONCILE: 'GRAPH', GRAPH: 'GRAPH', FINALIZE: 'COMPLETE', COMPLETE: 'COMPLETE',
+    ERROR: 'COMPLETE',
+  };
+
+  /** Map Foundation/B0 session.stage → product lifecycle id; null if unknown. */
+  function mapServerStage(raw) {
+    if (raw == null || raw === '') return null;
+    const key = String(raw).trim();
+    const up = key.toUpperCase();
+    if (LIFE_ORDER.includes(up)) return up;
+    if (SERVER_STAGE_MAP[up]) return SERVER_STAGE_MAP[up];
+    if (SERVER_STAGE_MAP[key]) return SERVER_STAGE_MAP[key];
+    return null;
+  }
+
+  function noteServerStage(raw, meta = {}) {
+    const mapped = mapServerStage(raw);
+    if (!mapped) return false;
+    discState.serverStage = raw;
+    discState.lifeStage = mapped;
+    discState.stageSource = meta.source || 'server';
+    return true;
+  }
+
+  /**
+   * Defensive QueryPlan / SSE `plan` parser.
+   * Accepts: { plan }, { queryPlan }, nested plan.plan, snapshot shapes.
+   * Never invents planId / seedClass / families — only paints what Server emits.
+   * Plan is search-intent only · identityConclusions forced false on paint.
+   */
+  function parsePlanFromSse(data) {
+    if (!data || typeof data !== 'object') return null;
+    let raw = null;
+    if (data.queryPlan && typeof data.queryPlan === 'object') raw = data.queryPlan;
+    else if (data.plan && typeof data.plan === 'object') raw = data.plan;
+    else if (data.planId || data.seedClass || data.intents || data.orderedIntents || data.families || data.sourceFamilies) {
+      raw = data;
+    }
+    if (!raw || typeof raw !== 'object') return null;
+    // Nested envelope: { plan: { planId… } } already unwrapped above; one more hop if needed
+    if (
+      !(raw.planId || raw.id || raw.seedClass || raw.intents || raw.orderedIntents || raw.families || raw.sourceFamilies || raw.budgets) &&
+      raw.plan &&
+      typeof raw.plan === 'object'
+    ) {
+      raw = raw.plan;
+    }
+    if (!raw || typeof raw !== 'object') return null;
+
+    const intentsIn = Array.isArray(raw.intents)
+      ? raw.intents
+      : Array.isArray(raw.orderedIntents)
+        ? raw.orderedIntents
+        : [];
+    const intents = intentsIn
+      .filter((i) => i && typeof i === 'object')
+      .map((i) => ({
+        intentId: i.intentId || i.intentKey || i.id || null,
+        priority: typeof i.priority === 'number' ? i.priority : null,
+        sourceFamilies: Array.isArray(i.sourceFamilies) ? i.sourceFamilies.map(String).slice(0, 12) : [],
+        reason: i.reason != null ? String(i.reason).slice(0, 200) : null,
+      }));
+
+    const families = Array.isArray(raw.families)
+      ? raw.families.map(String).slice(0, 24)
+      : Array.isArray(raw.sourceFamilies)
+        ? raw.sourceFamilies.map(String).slice(0, 24)
+        : [];
+
+    let budgets = null;
+    if (raw.budgets && typeof raw.budgets === 'object') {
+      budgets = {
+        maxProviders: raw.budgets.maxProviders,
+        maxFamilyCalls: raw.budgets.maxFamilyCalls,
+        maxRequests: raw.budgets.maxRequests,
+        maxWallMs: raw.budgets.maxWallMs,
+        maxProviderMs: raw.budgets.maxProviderMs,
+        maxSseLifetimeMs: raw.budgets.maxSseLifetimeMs,
+        maxRetries: raw.budgets.maxRetries,
+      };
+    }
+
+    const reasons = Array.isArray(raw.reasons)
+      ? raw.reasons
+          .filter((r) => r && typeof r === 'object')
+          .map((r) => ({
+            target: r.target != null ? String(r.target).slice(0, 80) : null,
+            reason: r.reason != null ? String(r.reason).slice(0, 200) : null,
+          }))
+          .slice(0, 12)
+      : [];
+
+    const stopConditions = Array.isArray(raw.stopConditions)
+      ? raw.stopConditions.map(String).slice(0, 12)
+      : [];
+
+    const planId = raw.planId || raw.id || null;
+    const seedClass = raw.seedClass || null;
+    // Soft: require at least one recognizable plan signal — else ignore (unstable events)
+    if (!planId && !seedClass && !intents.length && !families.length && !budgets) return null;
+
+    return {
+      planId: planId ? String(planId).slice(0, 64) : null,
+      seedClass: seedClass ? String(seedClass).slice(0, 48) : null,
+      seedHash: raw.seedHash != null ? String(raw.seedHash).slice(0, 32) : null,
+      intents,
+      families,
+      budgets,
+      reasons,
+      stopConditions,
+      searchIntentOnly: true,
+      identityConclusions: false,
+    };
+  }
+
+  /**
+   * Defensive SSE `graph` parser.
+   * Accepts: { graph:{nodes,edges} }, top-level nodes/edges, merge chunks.
+   */
+  function parseGraphFromSse(data) {
+    if (!data || typeof data !== 'object') return null;
+    const g = data.graph && typeof data.graph === 'object' ? data.graph : null;
+    const nodes = Array.isArray(g && g.nodes)
+      ? g.nodes
+      : Array.isArray(data.nodes)
+        ? data.nodes
+        : null;
+    const edges = Array.isArray(g && g.edges)
+      ? g.edges
+      : Array.isArray(data.edges)
+        ? data.edges
+        : null;
+    if (nodes == null && edges == null) return null;
+    return {
+      nodes: (nodes || []).filter((n) => n && n.id != null).slice(0, 200),
+      edges: (edges || [])
+        .filter((e) => e && (e.id != null || e.from != null || e.source != null))
+        .slice(0, 400),
+      meta: (g && g.meta) || data.meta || {},
+    };
+  }
+
+  /** Soft ingest budget / family journal from any SSE or snapshot payload. */
+  function ingestBudgetFamilyFromPayload(data) {
+    if (!data || typeof data !== 'object') return;
+    if (data.budgetTelemetry && typeof data.budgetTelemetry === 'object') {
+      discState.budgetTelemetry = {
+        ...(discState.budgetTelemetry || {}),
+        ...data.budgetTelemetry,
+      };
+    }
+    if (data.budgetExhaustedReason) {
+      discState.budgetExhaustedReason = String(data.budgetExhaustedReason).slice(0, 120);
+    }
+    if (
+      data.budgetTelemetry &&
+      data.budgetTelemetry.budgetExhaustedReason &&
+      !discState.budgetExhaustedReason
+    ) {
+      discState.budgetExhaustedReason = String(
+        data.budgetTelemetry.budgetExhaustedReason,
+      ).slice(0, 120);
+    }
+    if (Array.isArray(data.familyJournal)) {
+      discState.familyJournal = data.familyJournal.slice(0, 80);
+    }
+    // Mirror plan.budgets → telemetry.limits when Server has not yet sent used/remaining
+    const plan = discState.queryPlan;
+    if (plan && plan.budgets) {
+      const bt = discState.budgetTelemetry || {};
+      if (!bt.limits) {
+        discState.budgetTelemetry = { ...bt, limits: { ...plan.budgets } };
+      }
+    }
+  }
+
+  /** Apply parsed plan onto discState — soft, never identity. */
+  function applyParsedPlan(plan, meta = {}) {
+    if (!plan) return false;
+    discState.queryPlan = plan;
+    discState.planSseSeen = true;
+    ingestBudgetFamilyFromPayload({ budgets: plan.budgets, budgetTelemetry: discState.budgetTelemetry });
+    if (plan.budgets) {
+      const bt = discState.budgetTelemetry || {};
+      discState.budgetTelemetry = { ...bt, limits: { ...(bt.limits || {}), ...plan.budgets } };
+    }
+    if (meta.source) discState.stageSource = meta.source;
+    return true;
+  }
+
+  /** Merge parsed graph chunk — soft panel; marks graphFromServer. */
+  function applyParsedGraph(parsed, meta = {}) {
+    if (!parsed) return false;
+    const prev = discState.graph || { nodes: [], edges: [] };
+    discState.graph = {
+      nodes: mergeById(prev.nodes || [], parsed.nodes || []),
+      edges: mergeById(prev.edges || [], parsed.edges || []),
+      meta: { ...(prev.meta || {}), ...(parsed.meta || {}) },
+    };
+    discState.graphFromServer = true;
+    if (meta.source) discState.stageSource = meta.source;
+    return true;
+  }
+
+  function deriveLifeStage(state) {
+    const st = state.status;
+    // Prefer Foundation/B0 stage when present (flag ON emits PLAN/DISCOVER; B0 emits S1…S10)
+    const mapped = mapServerStage(state.serverStage || state.progress?.stage);
+    if (mapped) {
+      state.stageSource = state.stageSource || 'server';
+      // Terminal status still wins for COMPLETE badge
+      if ((st === 'complete' || st === 'failed_soft') && mapped !== 'COMPLETE') {
+        state.stageSource = 'server+terminal';
+        return 'COMPLETE';
+      }
+      return mapped;
+    }
+    state.stageSource = 'client';
+    if (st === 'complete' || st === 'failed_soft') return 'COMPLETE';
+    if (st === 'idle') return 'START';
+    const findingsN = (state.findings || []).length;
+    const evidenceN = (state.evidence || []).length;
+    const edgesN = ((state.graph && state.graph.edges) || []).length;
+    const nodesN = ((state.graph && state.graph.nodes) || []).length;
+    const providers = state.providers || {};
+    const anyProvider = Object.keys(providers).length > 0;
+    if (st === 'reconnecting') return state.lifeStage || 'DISCOVERY';
+    if (state.graphFromServer && nodesN > 0 && findingsN > 0) return 'GRAPH';
+    if (nodesN > 1 && edgesN > 0 && findingsN > 0) return 'GRAPH';
+    if (edgesN > 0) return 'RELATIONSHIPS';
+    if (evidenceN > 0 && findingsN > 0) return 'EVIDENCE';
+    if (findingsN > 0) return 'FINDINGS';
+    if (anyProvider) return 'DISCOVERY';
+    if (state.planSseSeen || state.queryPlan) return 'PLANNING';
+    if (st === 'running' || st === 'partial') return 'PLANNING';
+    return 'START';
+  }
+
+  function computeGaps(state) {
+    const gaps = [];
+    const providers = state.providers || {};
+    Object.entries(providers).forEach(([id, s]) => {
+      if (s === 'error') gaps.push({ kind: 'provider_error', label: `מקור ${id} נכשל (שגיאה) — לא no-match` });
+      else if (s === 'skipped') gaps.push({ kind: 'provider_skipped', label: `מקור ${id} דולג` });
+      else if (s === 'partial') gaps.push({ kind: 'provider_partial', label: `מקור ${id} חלקי` });
+      else if (s === 'pending' && (state.status === 'complete' || state.status === 'partial' || state.status === 'failed_soft')) {
+        gaps.push({ kind: 'provider_pending', label: `מקור ${id} לא הסתיים` });
+      }
+    });
+    const edges = (state.graph && state.graph.edges) || [];
+    const unkEdges = edges.filter((e) => /unknown/i.test(String(e.relationship || e.kind || '')));
+    if (unkEdges.length) {
+      gaps.push({
+        kind: 'unknown_rel',
+        label: `${unkEdges.length} קשרים מסומנים UNKNOWN — אינו שקר ואינו אישור זהות`,
+      });
+    }
+    if ((state.findings || []).length === 0 && (state.status === 'complete' || state.status === 'partial' || state.status === 'failed_soft')) {
+      gaps.push({ kind: 'no_findings', label: 'לא נאספו ממצאים — ייתכן כיסוי חלקי או seed דל · thin ≠ no-match' });
+    }
+    if (state.budgetExhaustedReason) {
+      gaps.push({
+        kind: 'budget',
+        label: `תקציב גילוי מוצה · ${state.budgetExhaustedReason} — תוצאה חלקית · לא זהות`,
+      });
+    }
+    if (
+      (state.findings || []).length > 0 &&
+      (state.findings || []).length <= 2 &&
+      (state.status === 'complete' || state.status === 'partial')
+    ) {
+      gaps.push({
+        kind: 'thin',
+        label: 'כיסוי דל (thin) — מעט ממצאים · אינו מאשר או שולל זהות',
+      });
+    }
+    const soft = state.softEr;
+    if (soft && soft.status === 'candidate') {
+      gaps.push({ kind: 'soft_er', label: 'softEntityResolve = candidate — לא עובדה, לא זהות' });
+    }
+    (state.contradictions || []).forEach((c, i) => {
+      gaps.push({ kind: 'contradiction', label: c.summary || c.note || `סתירה #${i + 1}` });
+    });
+    (state.gaps || []).forEach((g) => {
+      if (g && g.label) gaps.push(g);
+    });
+    // dedupe by label
+    const seen = new Set();
+    return gaps.filter((g) => {
+      const k = g.label;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+  }
+
+  function ensureGraph(state) {
+    const g = state.graph && typeof state.graph === 'object' ? state.graph : { nodes: [], edges: [] };
+    let nodes = Array.isArray(g.nodes) ? g.nodes.slice() : [];
+    let edges = Array.isArray(g.edges) ? g.edges.slice() : [];
+    const meta = g.meta && typeof g.meta === 'object' ? { ...g.meta } : {};
+    // Server graph wins when present (even if sparse) — soft panel, no derived laundering over it
+    if (state.graphFromServer && (nodes.length || edges.length)) {
+      return { nodes, edges, meta: { ...meta, source: 'server' } };
+    }
+    if (!nodes.length && (state.findings || []).length) {
+      nodes = [
+        { id: 'seed', kind: 'seed', label: state.q || 'seed' },
+        ...state.findings.slice(0, 24).map((f) => ({
+          id: f.id,
+          kind: 'finding',
+          label: f.title,
+        })),
+      ];
+      // Derive weak supports edges finding→seed (display only; not laundering)
+      edges = state.findings.slice(0, 24).map((f, i) => ({
+        id: `supports-${i}`,
+        kind: 'supports',
+        from: f.id,
+        to: 'seed',
+        relationship: 'supports',
+        derived: true,
+      }));
+      meta.source = 'client-derived';
+      meta.soft = true;
+    }
+    return { nodes, edges, meta };
+  }
+
+  function highValueFindings(list) {
+    const arr = (list || []).slice();
+    arr.sort((a, b) => (Number(b.scoreFinding) || 0) - (Number(a.scoreFinding) || 0));
+    return arr;
+  }
+
+  async function loadFixtureIndex() {
+    const r = await fetch(`${FIXTURE_BASE}/index.json`, { cache: 'no-store' });
+    if (!r.ok) throw new Error('fixture index missing');
+    return r.json();
+  }
+
+  async function loadFixtureFile(file) {
+    const r = await fetch(`${FIXTURE_BASE}/${file}`, { cache: 'no-store' });
+    if (!r.ok) throw new Error('fixture load failed');
+    return r.json();
+  }
+
+  /** Match fixture by query string — fixture catalog only, not entity special-case UI. */
+  async function resolveFixtureForQuery(q) {
+    const idx = await loadFixtureIndex();
+    const needle = String(q || '').trim().toLowerCase();
+    for (const entry of idx.fixtures || []) {
+      const data = await loadFixtureFile(entry.file);
+      const hints = (data.matchHints || [data.q]).map((h) => String(h).toLowerCase());
+      if (hints.includes(needle) || String(data.q || '').toLowerCase() === needle) {
+        return data;
+      }
+      if (entry.id === needle || data.fixtureId === needle) return data;
+    }
+    // seed query param override
+    const seedParam = params().get('seed');
+    if (seedParam) {
+      const entry = (idx.fixtures || []).find((f) => f.id === seedParam || f.file === seedParam);
+      if (entry) return loadFixtureFile(entry.file);
+    }
+    return null;
+  }
+
+  async function populateFixtureChips() {
+    const host = document.getElementById('disc-fixture-chips');
+    if (!host) return;
+    try {
+      const idx = await loadFixtureIndex();
+      host.innerHTML = (idx.fixtures || [])
+        .map(
+          (f) =>
+            `<button type="button" class="disc-chip" data-fixture="${esc(f.id)}" title="fixture only">${esc(f.labelHe || f.id)}</button>`,
+        )
+        .join('');
+      host.querySelectorAll('[data-fixture]').forEach((btn) => {
+        btn.onclick = async () => {
+          const id = btn.getAttribute('data-fixture');
+          const entry = (idx.fixtures || []).find((x) => x.id === id);
+          if (!entry) return;
+          const data = await loadFixtureFile(entry.file);
+          const input = document.getElementById('disc-q');
+          if (input) input.value = data.q || '';
+          startDiscovery({ forceFixture: true, fixtureData: data });
+        };
+      });
+    } catch (e) {
+      host.innerHTML = `<span class="disc-muted">פיקסצ׳רים לא זמינים (${esc(e.message)})</span>`;
+    }
+  }
+
+  function evidenceMap(list) {
+    const m = new Map();
+    (list || []).forEach((e) => m.set(e.id, e));
+    return m;
+  }
+
+  function clientFilterFindings(findings) {
+    const active = Object.entries(selectedFacets).filter(([, set]) => set && set.size);
+    if (!active.length) return findings || [];
+    return (findings || []).filter((f) => {
+      return active.every(([key, set]) => {
+        if (key === 'provider') {
+          return (f.providers || []).some((p) => set.has(p));
+        }
+        if (key === 'kind') {
+          return set.has(f.kind);
+        }
+        // relationship / confidence_band / hint via facetHints "key:value" or bare value
+        const hints = f.facetHints || [];
+        return [...set].some((v) => {
+          const prefixed = `${key}:${v}`;
+          return hints.includes(prefixed) || hints.includes(v) || hints.some((h) => h.endsWith(`:${v}`));
+        });
+      });
+    });
+  }
+
+  function filteredFindings() {
+    // Server /narrow already recomputed the set — do not double-filter
+    if (discState.narrowSource === 'server') return discState.findings || [];
+    return clientFilterFindings(discState.findings || []);
+  }
+
+  function toggleFacet(key, value) {
+    if (!selectedFacets[key]) selectedFacets[key] = new Set();
+    const set = selectedFacets[key];
+    if (set.has(value)) set.delete(value);
+    else set.add(value);
+    if (!set.size) delete selectedFacets[key];
+    applyFacetChange();
+  }
+
+  function clearFacets() {
+    selectedFacets = {};
+    applyFacetChange();
+  }
+
+  async function applyFacetChange() {
+    if (shouldAttemptServerNarrow()) {
+      const ok = await postNarrow();
+      if (ok) return;
+      // graceful degrade: client-side filter only
+      discState.narrowSource = 'client';
+    } else {
+      discState.narrowSource = Object.keys(selectedFacets).length ? 'client' : 'none';
+    }
+    renderDiscovery();
+  }
+
+  /**
+   * POST /api/discovery/sessions/:id/narrow — Arch BOUNDARIES (server recompute).
+   * Body: { filters: { [facetKey]: string[] } } — facet values only, not identity-commit.
+   * Response: Acc-scrubbed canonical session snapshot (findings+facets recomputed).
+   * Client filter is NOT authoritative when this succeeds.
+   * @returns {Promise<boolean>} true if server narrow applied
+   */
+  async function postNarrow() {
+    const sessionId = discState.sessionId;
+    if (!sessionId || narrowInFlight) return false;
+    narrowInFlight = true;
+    const prevTag = discState.source;
+    try {
+      discState.source = 'api:narrow…';
+      renderDiscovery();
+      const r = await fetch(
+        `/api/discovery/sessions/${encodeURIComponent(sessionId)}/narrow`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            // Arch BOUNDARIES: facet filters (keys → values[]); server recomputes
+            filters: selectedFacetsPayload(),
+          }),
+          signal: discAbort && discAbort.signal,
+        },
+      );
+      if (!r.ok) {
+        // 404/405/501 → not implemented yet; fall back
+        throw new Error(`narrow ${r.status}`);
+      }
+      const snap = await r.json();
+      applySnapshot(snap, {
+        source: 'api',
+        sessionId,
+        q: discState.q,
+        narrowSource: 'server',
+        transport: discState.transport || 'poll',
+      });
+      return true;
+    } catch (e) {
+      discState.source = prevTag || 'api';
+      return false;
+    } finally {
+      narrowInFlight = false;
+    }
+  }
+
+  /** Premium empty / thin / UNKNOWN soft card — never identity chrome. */
+  function renderPremiumEmpty(opts = {}) {
+    const kind = opts.kind || 'generic';
+    const title = opts.title || 'אין נתונים עדיין';
+    const body = opts.body || '';
+    const soft = opts.soft !== false;
+    const hint = opts.hint || '';
+    return `<div class="disc-empty-premium${soft ? ' soft' : ''}" data-empty="${esc(kind)}" role="status">
+      <div class="disc-empty-kicker">${esc(title)}</div>
+      ${body ? `<p class="disc-empty-body">${body}</p>` : ''}
+      ${hint ? `<div class="disc-empty-hint">${esc(hint)}</div>` : ''}
+    </div>`;
+  }
+
+  /** Soft QueryPlan / Family / Budget strip — paint only when Server emitted. */
+  function renderPlanBudgetPanel() {
+    const plan = discState.queryPlan;
+    const bt = discState.budgetTelemetry || {};
+    const limits = (bt.limits || (plan && plan.budgets) || {}) || {};
+    const used = bt.used || {};
+    const remaining = bt.remaining || {};
+    const families =
+      (plan && plan.families) ||
+      (Array.isArray(discState.familyJournal)
+        ? [...new Set(discState.familyJournal.map((j) => j && j.familyId).filter(Boolean))]
+        : []);
+    const intents = (plan && plan.intents) || [];
+    const exhausted = discState.budgetExhaustedReason || bt.budgetExhaustedReason || null;
+
+    if (!plan && !families.length && !Object.keys(limits).length && !exhausted) {
+      // Waiting soft cue during PLANNING when stream is live but plan flag OFF / not yet arrived
+      const life = discState.lifeStage || '';
+      if (
+        (life === 'PLANNING' || life === 'START' || discState.status === 'running') &&
+        !(discState.findings || []).length
+      ) {
+        return `<div class="disc-plan-panel soft-wait" aria-label="תכנון גילוי">
+          <div class="disc-plan-head"><span class="k">QUERY PLAN</span><span class="s">ממתין ל-SSE · plan ≠ זהות</span></div>
+          <p class="disc-plan-blurb">Foundation עשוי להנפיק אירוע <code>plan</code> (flag-gated). עד אז — אין המצאת תוכנית.</p>
+        </div>`;
+      }
+      return '';
+    }
+
+    const famChips = (families || [])
+      .slice(0, 12)
+      .map((f) => `<span class="disc-fam-chip">${esc(f)}</span>`)
+      .join('');
+
+    const budgetKeys = [
+      ['maxProviders', 'providers', 'providers'],
+      ['maxFamilyCalls', 'familyCalls', 'family'],
+      ['maxRequests', 'requests', 'req'],
+      ['maxWallMs', 'wallMs', 'wall'],
+    ];
+    const meters = budgetKeys
+      .map(([limKey, usedKey, label]) => {
+        const lim = limits[limKey];
+        if (lim == null || lim === '') return '';
+        const u = used[usedKey] != null ? used[usedKey] : used[limKey];
+        const rem = remaining[usedKey] != null ? remaining[usedKey] : remaining[limKey];
+        let pct = null;
+        if (typeof lim === 'number' && lim > 0 && typeof u === 'number') {
+          pct = Math.min(100, Math.round((u / lim) * 100));
+        }
+        const val =
+          u != null
+            ? `${u}/${lim}`
+            : rem != null
+              ? `≤${lim} · rem ${rem}`
+              : String(lim);
+        return `<div class="disc-budget-meter" title="${esc(limKey)}">
+          <div class="bk">${esc(label)}</div>
+          <div class="bv">${esc(val)}</div>
+          ${pct != null ? `<div class="bb" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>` : ''}
+        </div>`;
+      })
+      .filter(Boolean)
+      .join('');
+
+    const intentBits = intents
+      .slice(0, 4)
+      .map((i) => {
+        const id = i.intentId || 'intent';
+        const fams = (i.sourceFamilies || []).slice(0, 3).join(', ');
+        return `<li><span class="mono">${esc(id)}</span>${fams ? ` · <span class="disc-muted">${esc(fams)}</span>` : ''}${i.reason ? ` · ${esc(String(i.reason).slice(0, 80))}` : ''}</li>`;
+      })
+      .join('');
+
+    const seedClass = plan && plan.seedClass
+      ? `<span class="disc-source-tag disc-plan-tag" title="seedClass · soft · not identity">class:${esc(plan.seedClass)}</span>`
+      : '';
+    const planId = plan && (plan.planId || plan.id)
+      ? `<span class="disc-source-tag disc-plan-tag" title="QueryPlan id · Foundation · soft">plan:${esc(plan.planId || plan.id)}</span>`
+      : plan
+        ? `<span class="disc-source-tag disc-plan-tag">plan:ready</span>`
+        : '';
+
+    return `<div class="disc-plan-panel" aria-label="תוכנית גילוי · QueryPlan soft">
+      <div class="disc-plan-head">
+        <span class="k">QUERY PLAN · FAMILY · BUDGET</span>
+        <span class="s">search-intent only · לא זהות</span>
+        ${planId}${seedClass}
+        ${exhausted ? `<span class="disc-source-tag disc-budget-exh" title="budget exhaust · soft terminal">budget:${esc(exhausted)}</span>` : ''}
+      </div>
+      ${famChips ? `<div class="disc-fam-row" aria-label="source families">${famChips}</div>` : ''}
+      ${meters ? `<div class="disc-budget-row" aria-label="budget caps">${meters}</div>` : ''}
+      ${intentBits ? `<ol class="disc-intent-list">${intentBits}</ol>` : ''}
+      <p class="disc-plan-blurb">תוכנית / משפחה / תקציב הם איתותי חיפוש בלבד. <strong>plan ≠ identity</strong> · INFORMATION ≠ IDENTITY.</p>
+    </div>`;
+  }
+
+  function renderProgressStrip() {
+    const st = discState.status;
+    const prog = discState.progress || {};
+    const providers = discState.providers || {};
+    const done = Object.values(providers).filter((s) => s && s !== 'pending').length;
+    const total = Object.keys(providers).length || prog.totalHint || 0;
+    const findingsN = (discState.findings || []).length;
+    const label = STATUS_HE[st] || st;
+    const stClass =
+      st === 'reconnecting'
+        ? ' reconnecting'
+        : st === 'failed_soft'
+          ? ' failed'
+          : st === 'complete'
+            ? ' complete'
+            : st === 'partial'
+              ? ' partial'
+              : '';
+    const reconnectHint =
+      st === 'reconnecting' && discState.reconnectAttempt
+        ? ` <span class="disc-source-tag">#${esc(discState.reconnectAttempt)}/${SSE_MAX_RECONNECT}</span>`
+        : '';
+    const life = discState.lifeStage || deriveLifeStage(discState);
+    const lifeIdx = LIFE_ORDER.indexOf(life);
+    const stagesHtml = LIFE_STAGES.map((s, i) => {
+      let cls = 'pending';
+      let cur = '';
+      if (i < lifeIdx) cls = 'done';
+      else if (i === lifeIdx) { cls = 'active'; cur = ' aria-current="step"'; }
+      if (life === 'COMPLETE') cls = 'done';
+      if (life === 'COMPLETE' && s.id === 'COMPLETE') { cls = 'active'; cur = ' aria-current="step"'; }
+      return `<div class="disc-life-stage ${cls}" role="listitem" title="${esc(s.he)}"${cur}>${esc(s.label)}<span class="visually-hidden"> ${esc(s.he)}</span></div>`;
+    }).join('');
+    const barPct =
+      total
+        ? Math.min(100, Math.round((done / total) * 100))
+        : st === 'complete'
+          ? 100
+          : st === 'reconnecting'
+            ? 12
+            : Math.min(90, 8 + lifeIdx * 12);
+    const providerChips = Object.entries(providers)
+      .map(([id, s]) => `<span class="disc-prov ${esc(s)}">${esc(id)} · ${esc(s)}</span>`)
+      .join('');
+    const plan = discState.queryPlan;
+    const planTag =
+      plan && (plan.planId || plan.id)
+        ? `<span class="disc-source-tag disc-plan-tag" title="QueryPlan (Foundation · soft · not identity)">plan:${esc(plan.planId || plan.id)}</span>`
+        : plan
+          ? `<span class="disc-source-tag disc-plan-tag">plan:ready</span>`
+          : '';
+    const stageSrc = discState.stageSource
+      ? `<span class="disc-source-tag" title="מקור שלב lifecycle">stage:${esc(discState.stageSource)}</span>`
+      : '';
+    const budgetTag = discState.budgetExhaustedReason
+      ? `<span class="disc-source-tag disc-budget-exh" title="תקציב מוצה · soft">budget:${esc(discState.budgetExhaustedReason)}</span>`
+      : '';
+    const graphTag = discState.graphFromServer
+      ? `<span class="disc-source-tag disc-graph-tag" title="גרף משרת · soft">graph:sse</span>`
+      : '';
+    return `
+      <div id="disc-progress" class="disc-life" role="status" aria-live="polite" aria-atomic="false" data-disc-status="${esc(st)}" data-life="${esc(life)}" aria-label="התקדמות גילוי: ${esc(label)}, שלב ${esc(life)}">
+        <div class="disc-life-top">
+          <span class="disc-status${stClass}">${esc(label)}</span>${reconnectHint}
+          <span class="disc-counts">${findingsN} ממצאים · ${done}/${total || '—'} מקורות · שלב ${esc(life)}</span>
+          ${discState.source ? `<span class="disc-source-tag">${esc(discState.source)}</span>` : ''}
+          ${discState.transport ? `<span class="disc-source-tag">tx:${esc(discState.transport)}</span>` : ''}
+          ${stageSrc}
+          ${discState.narrowSource && discState.narrowSource !== 'none' ? `<span class="disc-source-tag">narrow:${esc(discState.narrowSource)}</span>` : ''}
+          ${planTag}
+          ${budgetTag}
+          ${graphTag}
+          ${narrowInFlight ? `<span class="disc-source-tag">מצמצם…</span>` : ''}
+        </div>
+        <div class="disc-life-stages" role="list" aria-label="שלבי גילוי">${stagesHtml}</div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${barPct}" aria-label="התקדמות מקורות"><i style="width:${barPct}%"></i></div>
+        <div class="disc-prov-row" aria-label="מצב מקורות">${providerChips || '<span class="disc-muted">מאתר מקורות…</span>'}</div>
+        ${renderPlanBudgetPanel()}
+        ${vocabLegend()}
+      </div>`;
+  }
+  function renderFacets() {
+    const facets = (discState.facets || []).filter((f) => (f.buckets || []).length);
+    const activeN = Object.keys(selectedFacets).length;
+    if (!facets.length) {
+      return `<aside class="disc-facets" id="disc-facets">
+        <details class="disc-facets-drawer" open>
+          <summary>מסננים <span class="chev">facets · אין עדיין</span></summary>
+          <div class="disc-facets-body"><div class="disc-facet-empty">מעדכן מסננים…</div></div>
+        </details>
+      </aside>`;
+    }
+    const groups = facets
+      .map((f) => {
+        const label = FACET_LABEL_HE[f.key] || f.label || f.key;
+        const chips = (f.buckets || [])
+          .map((b) => {
+            const on = selectedFacets[f.key] && selectedFacets[f.key].has(b.value);
+            return `<button type="button" class="disc-facet-chip${on ? ' on' : ''}" data-fkey="${esc(f.key)}" data-fval="${esc(b.value)}" aria-pressed="${on ? 'true' : 'false'}">${esc(b.value)} <span class="n">${esc(b.count)}</span></button>`;
+          })
+          .join('');
+        return `<div class="disc-facet-group" role="group" aria-label="${esc(label)}"><div class="disc-facet-label">${esc(label)}</div><div class="disc-facet-chips">${chips}</div></div>`;
+      })
+      .join('');
+    const clearBtn = activeN
+      ? `<button type="button" class="disc-facet-clear" id="disc-facet-clear">נקה מסננים</button>`
+      : '';
+    const summaryN = activeN ? `${activeN} פעילים` : 'facets';
+    return `<aside class="disc-facets" id="disc-facets" aria-label="מסנני ממצאים">
+      <details class="disc-facets-drawer"${activeN ? ' open' : ''}>
+        <summary>מסננים <span class="chev">${esc(summaryN)}</span></summary>
+        <div class="disc-facets-body">
+          <div class="stamp"><span>מסננים</span><span class="n">facets</span></div>
+          ${groups}${clearBtn}
+        </div>
+      </details>
+    </aside>`;
+  }
+  function renderFindingCard(f, evMap, opts = {}) {
+    const kind = KIND_HE[f.kind] || f.kind;
+    const score =
+      typeof f.scoreFinding === 'number'
+        ? `<span class="conf${f.scoreFinding >= 0.8 ? ' hi' : ''}">רלוונטיות ${(f.scoreFinding * 100).toFixed(0)}%</span>`
+        : typeof f.findingScore === 'number'
+          ? `<span class="conf${f.findingScore >= 0.8 ? ' hi' : ''}">רלוונטיות ${(f.findingScore * 100).toFixed(0)}%</span>`
+          : '';
+    const evIds = f.evidenceIds || f.evidenceIds || [];
+    const evList = evIds.map((id) => evMap.get(id)).filter(Boolean);
+    // also accept evidenceIds legacy
+    if (!evList.length && Array.isArray(f.evidenceIds)) {
+      f.evidenceIds.forEach((id) => {
+        const e = evMap.get(id);
+        if (e) evList.push(e);
+      });
+    }
+    const relHint = (f.facetHints || f.facetHints || []).find((h) => String(h).startsWith('relationship:'));
+    const rel = f.relationship || (relHint ? String(relHint).split(':').slice(1).join(':') : '');
+    const urlAlone = isUrlAloneFinding(f, evList);
+    const providerSet = [...new Set(evList.map((e) => e.providerId || e.provider).filter(Boolean))];
+    const providerRow = providerSet.length
+      ? `<div class="disc-prov-providers" aria-label="ספקי ראיות">${providerSet.map((p) => `<span class="disc-prov ok">${esc(p)}</span>`).join('')}</div>`
+      : '';
+    const provenance = evList
+      .map((e) => {
+        const url = e.provenanceUrl || e.url || '';
+        const href = safeHref(url);
+        const host = hostnameOf(url);
+        return `<div class="disc-ev">
+          <div class="disc-prov-meta">
+            <span class="disc-ev-k">ספק</span><span class="disc-ev-v">${esc(e.providerId || e.provider || '—')}</span>
+            ${host ? `<span class="disc-ev-k">מארח</span><span class="disc-ev-v disc-ev-host">${esc(host)}</span>` : ''}
+            <span class="disc-ev-k">URL</span><span class="disc-ev-v">${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(url)}</a>` : esc(url || '—')}</span>
+            ${e.quote ? `<span class="disc-ev-k">ציטוט</span><span class="disc-ev-v"><q>${esc(e.quote)}</q></span>` : ''}
+            <span class="disc-ev-k">נשלף</span><span class="disc-ev-v mono">${esc(e.retrievedAt || e.retrievedAt || '—')}</span>
+          </div>
+        </div>`;
+      })
+      .join('');
+    const firstUrl = evList[0] ? safeHref(evList[0].provenanceUrl || evList[0].url) : '#';
+    const open = opts.forceOpenEvidence || opts.hi ? '' : ' hidden';
+    const badge = rel || urlAlone ? relBadge(rel || 'unknown', { urlAlone }) : '';
+    return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}">
+      <div class="disc-finding-head">
+        <span class="disc-kind">${esc(kind)}</span>
+        ${score}
+        ${badge}
+      </div>
+      <h3 class="disc-finding-title">${esc(f.title)}</h3>
+      ${f.summary ? `<p class="disc-finding-sum">${esc(f.summary)}</p>` : ''}
+      <div class="disc-finding-actions">
+        <button type="button" class="disc-prov-toggle" aria-expanded="${open ? 'false' : 'true'}">למה הממצא? · ראיות</button>
+        ${firstUrl !== '#' ? `<a class="go" href="${firstUrl}" target="_blank" rel="noopener noreferrer">פתח מקור</a>` : ''}
+        <button type="button" class="disc-prov-toggle disc-focus-node" data-node="${esc(f.id)}">הצג בגרף</button>
+      </div>
+      <div class="disc-provenance"${open}>
+        <div class="disc-provenance-label">ראיות · provenance · ניתן לבדיקה · לא commit זהות</div>
+        ${providerRow}
+        ${provenance || '<div class="disc-muted">אין provenance (cite-or-drop)</div>'}
+      </div>
+    </article>`;
+  }
+  function renderExecutiveSummary(list, gaps) {
+    const providers = discState.providers || {};
+    const okN = Object.values(providers).filter((s) => s === 'ok' || s === 'partial').length;
+    const evN = (discState.evidence || []).length;
+    const edgeN = ((discState.graph && discState.graph.edges) || []).length;
+    const life = discState.lifeStage || deriveLifeStage(discState);
+    return `<section class="disc-sec" id="disc-sec-exec" aria-labelledby="disc-h-exec">
+      <div class="disc-sec-head">
+        <h2 id="disc-h-exec"><span class="code">01</span> סיכום גילוי · Executive</h2>
+        <span class="n">${esc(life)}</span>
+      </div>
+      <div class="disc-sec-body">
+        <div class="disc-exec-grid">
+          <div class="disc-metric"><div class="k">SEED</div><div class="v" style="font-size:14px;word-break:break-word">${esc(discState.q || '—')}</div><div class="s">סוג רמז: ${esc(discState.seedKind || '—')}</div></div>
+          <div class="disc-metric"><div class="k">FINDINGS</div><div class="v">${list.length}</div><div class="s">ממצאים מוצגים${Object.keys(selectedFacets).length ? ' (מסונן)' : ''}</div></div>
+          <div class="disc-metric"><div class="k">EVIDENCE</div><div class="v">${evN}</div><div class="s">${okN} מקורות פעילים</div></div>
+          <div class="disc-metric"><div class="k">GAPS</div><div class="v">${gaps.length}</div><div class="s">${edgeN} קשרי גרף</div></div>
+        </div>
+        <p class="disc-exec-blurb">אוסף מידע ציבורי סביב ה-seed. דירוג = רלוונטיות גילוי בלבד. <strong>אין טענת זהות</strong>. UNKNOWN נשאר UNKNOWN. קשרים הם מועמדים עד שנבדקו בראיות.</p>
+      </div>
+    </section>`;
+  }
+
+  function renderEvidenceSection(list, evMap) {
+    const items = [];
+    list.forEach((f) => {
+      (f.evidenceIds || []).forEach((id) => {
+        const e = evMap.get(id);
+        if (e) items.push({ finding: f, evidence: e });
+      });
+    });
+    const body = items.length
+      ? items
+          .slice(0, 40)
+          .map(({ finding, evidence: e }) => {
+            const href = safeHref(e.provenanceUrl);
+            return `<div class="disc-rel-row" tabindex="0" data-fid="${esc(finding.id)}">
+              <div>
+                <p class="t">${esc(finding.title)}</p>
+                <div class="m"><span class="disc-ev-k">${esc(e.providerId || '')}</span>
+                  ${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(e.provenanceUrl)}</a>` : esc(e.provenanceUrl || '')}
+                  ${e.quote ? `<div><q>${esc(e.quote)}</q></div>` : ''}
+                </div>
+              </div>
+              <span class="disc-badge fact">EVIDENCE</span>
+            </div>`;
+          })
+          .join('')
+      : discState.status === 'running' || discState.status === 'partial' || discState.status === 'reconnecting'
+        ? `<div class="disc-skel-block"><div class="skel-line mid"></div><div class="skel-line"></div><div class="skel-line short"></div></div>`
+        : renderPremiumEmpty({
+            kind: 'evidence',
+            title: 'אין ראיות עדיין',
+            body: 'ראיות יופיעו עם ממצאים מצוטטים · cite-or-drop. היעדר ראיה ≠ no-match.',
+            hint: 'UNKNOWN soft · לא השלמה לזהות',
+          });
+    return `<section class="disc-sec" id="disc-sec-evidence" aria-labelledby="disc-h-ev">
+      <div class="disc-sec-head"><h2 id="disc-h-ev"><span class="code">03</span> ראיות · Evidence</h2><span class="n">${items.length}</span></div>
+      <div class="disc-sec-body"><div class="disc-rel-list">${body}</div></div>
+    </section>`;
+  }
+
+  function renderRelationshipsSection(graph) {
+    const edges = graph.edges || [];
+    const nodes = new Map((graph.nodes || []).map((n) => [n.id, n]));
+    const labelOf = (id) => {
+      const n = nodes.get(id);
+      if (n && (n.label || n.title || n.name)) return n.label || n.title || n.name;
+      const f = (discState.findings || []).find((x) => x.id === id);
+      if (f) return f.title;
+      if (id === 'seed' || (n && n.kind === 'seed')) return discState.q || 'seed';
+      return id;
+    };
+    const body = edges.length
+      ? edges
+          .slice(0, 40)
+          .map((e) => {
+            const from = e.from ?? e.source;
+            const to = e.to ?? e.target;
+            const rel = e.relationship || e.kind || 'unknown';
+            const derived = e.derived ? ' <span class="disc-badge unk">view-derived</span>' : '';
+            return `<div class="disc-rel-row" tabindex="0" data-edge="${esc(e.id)}" role="button">
+              <div>
+                <p class="t">${esc(labelOf(from))} → ${esc(labelOf(to))}</p>
+                <div class="m">${esc(REL_HE[rel] || rel)}${e.coalesceKeys ? ` · keys: ${esc((e.coalesceKeys || []).slice(0, 3).join(', '))}` : ''}${derived}</div>
+              </div>
+              ${relBadge(rel)}
+            </div>`;
+          })
+          .join('')
+      : renderPremiumEmpty({
+          kind: 'relationships',
+          title: 'אין קשרים מפורשים עדיין',
+          body: 'היעדר קשר בגרף ≠ היעדר קשר בעולם — רק במשטח הנוכחי. UNKNOWN נשאר רך.',
+          hint: 'CANDIDATE ≠ FACT · לא SAME-ENTITY לזהות',
+        });
+    return `<section class="disc-sec" id="disc-sec-rel" aria-labelledby="disc-h-rel">
+      <div class="disc-sec-head"><h2 id="disc-h-rel"><span class="code">04</span> קשרים · Relationships</h2><span class="n">${edges.length}</span></div>
+      <div class="disc-sec-body">
+        <p class="disc-exec-blurb" style="margin-bottom:10px">same-reference / same-entity כאן הם <strong>מועמדים</strong> מבוססי typed soft-ref — לא SAME-ENTITY לתיק זהות. UNKNOWN נשאר רך.</p>
+        <div class="disc-rel-list">${body}</div>
+        <div id="disc-edge-detail" class="disc-edge-ev" hidden></div>
+      </div>
+    </section>`;
+  }
+
+  function renderSourcesSection() {
+    const providers = discState.providers || {};
+    const entries = Object.entries(providers);
+    const body = entries.length
+      ? entries
+          .map(([id, s]) => {
+            const n = (discState.findings || []).filter((f) => (f.providers || []).includes(id)).length;
+            return `<div class="disc-src-row">
+              <div><p class="t" style="margin:0 0 4px;font-size:13px;font-weight:600">${esc(id)}</p>
+              <div class="m" style="font-size:12px;color:var(--disc-soft)">${n} ממצאים מקושרים</div></div>
+              <span class="disc-prov ${esc(s)}">${esc(s)}</span>
+            </div>`;
+          })
+          .join('')
+      : renderPremiumEmpty({
+          kind: 'sources',
+          title: 'ממתינים למקורות',
+          body: 'סטטוס providers יופיע עם התקדמות הגילוי או אירוע plan/family.',
+          hint: 'error/partial ≠ no-match',
+        });
+    return `<section class="disc-sec" id="disc-sec-src" aria-labelledby="disc-h-src">
+      <div class="disc-sec-head"><h2 id="disc-h-src"><span class="code">05</span> מקורות · Sources</h2><span class="n">${entries.length}</span></div>
+      <div class="disc-sec-body">
+        <p class="disc-src-intro">שקיפות מקורות: סטטוס לכל provider. מספר ממצאים ≠ משפחות בלתי-תלויות. error/partial אינם no-match.</p>
+        <div class="disc-src-list">${body}</div>
+      </div>
+    </section>`;
+  }
+
+  function renderGapsSection(gaps) {
+    const body = gaps.length
+      ? gaps
+          .map(
+            (g) => `<div class="disc-gap-row" style="cursor:default" tabindex="0">
+          <div><p class="t" style="margin:0;font-size:13px">${esc(g.label)}</p>
+          <div class="m" style="font-size:11px;color:var(--muted)">${esc(g.kind || 'gap')}</div></div>
+          <span class="disc-badge unk">UNKNOWN/GAP</span>
+        </div>`,
+          )
+          .join('')
+      : renderPremiumEmpty({
+          kind: 'gaps',
+          title: 'אין פערים מדווחים כרגע',
+          body: 'היעדר סתירה ברשימה <strong>אינו</strong> הוכחת שלמות או no-match. UNKNOWN נשאר UNKNOWN.',
+          hint: 'UNKNOWN ≠ FALSE',
+        });
+    return `<section class="disc-sec" id="disc-sec-gaps" aria-labelledby="disc-h-gaps">
+      <div class="disc-sec-head"><h2 id="disc-h-gaps"><span class="code">06</span> לא ידוע / פערים · Unknown</h2><span class="n">${gaps.length}</span></div>
+      <div class="disc-sec-body">
+        <p class="disc-gap-intro">UNKNOWN ≠ FALSE · כיסוי חלקי / שגיאת מקור / קשר לא מסווג נשארים גלויים. אין השלמה אוטומטית לזהות.</p>
+        <div class="disc-gap-list">${body}</div>
+      </div>
+    </section>`;
+  }
+
+  function renderGraphPanel(graph) {
+    const nodes = graph.nodes || [];
+    const edges = graph.edges || [];
+    const focus = discState.focusedNodeId || (nodes[0] && nodes[0].id) || null;
+    const nodeLabel = (n) => {
+      if (!n) return '—';
+      if (n.label || n.title || n.name) return n.label || n.title || n.name;
+      if (n.kind === 'seed' || n.id === 'seed') return discState.q || 'seed';
+      const f = (discState.findings || []).find((x) => x.id === n.id);
+      return (f && f.title) || n.id;
+    };
+    const nodesHtml = nodes.length
+      ? nodes
+          .map((n) => {
+            const on = focus && String(n.id) === String(focus);
+            return `<button type="button" class="disc-graph-node${on ? ' on' : ''}" data-node="${esc(n.id)}">
+              <span class="nk">${esc(n.kind || n.type || 'node')}</span>${esc(nodeLabel(n))}
+            </button>`;
+          })
+          .join('')
+      : discState.graphFromServer
+        ? renderPremiumEmpty({
+            kind: 'graph-sparse',
+            title: 'גרף שרת · דליל',
+            body: 'התקבל אירוע graph מ-SSE אך ללא צמתים אחרי scrub — soft panel · לא זהות.',
+            hint: 'graph ≠ dossier',
+          })
+        : discState.lifeStage === 'GRAPH' || discState.lifeStage === 'RELATIONSHIPS'
+          ? renderPremiumEmpty({
+              kind: 'graph-wait',
+              title: 'ממתין לגרף ראיות',
+              body: 'שלב GRAPH/RELATIONSHIPS פעיל · צמתים יופיעו כש-Foundation ינפיק chunk.',
+              hint: 'soft wait · plan/graph flag-gated',
+            })
+          : renderPremiumEmpty({
+              kind: 'graph',
+              title: 'גרף יופיע עם ממצאים',
+              body: 'פאנל list+detail · לחיצה על צומת מרחיבה קשרים. אין commit זהות.',
+              hint: 'derived edges מסומנים view-derived',
+            });
+    const related = edges.filter((e) => {
+      const from = e.from ?? e.source;
+      const to = e.to ?? e.target;
+      return focus && (String(from) === String(focus) || String(to) === String(focus));
+    });
+    const focusNode = nodes.find((n) => String(n.id) === String(focus));
+    const detailEdges = related.length
+      ? related
+          .map((e) => {
+            const from = e.from ?? e.source;
+            const to = e.to ?? e.target;
+            const rel = e.relationship || e.kind || 'unknown';
+            const other = String(from) === String(focus) ? to : from;
+            const otherNode = nodes.find((n) => String(n.id) === String(other));
+            return `<div class="disc-rel-row" tabindex="0" data-edge="${esc(e.id)}">
+              <div>
+                <p class="t">${esc(nodeLabel(focusNode))} ↔ ${esc(nodeLabel(otherNode) || other)}</p>
+                <div class="m">${esc(REL_HE[rel] || rel)}${e.derived ? ' · view-derived (לא laundering)' : ''}</div>
+              </div>
+              ${relBadge(rel)}
+            </div>`;
+          })
+          .join('')
+      : renderPremiumEmpty({
+          kind: 'graph-edges',
+          title: 'אין קשתות לצומת זה',
+          body: 'בחרו צומת אחר או המתינו ל-corroboration. היעדר קשת ≠ היעדר קשר בעולם.',
+          hint: 'UNKNOWN soft',
+        });
+    const softGraph = discState.graphFromServer;
+    const derivedSoft = !softGraph && (discState.graph && discState.graph.meta && discState.graph.meta.soft);
+    return `<section class="disc-sec${softGraph ? ' disc-graph-soft' : ''}" id="disc-sec-graph" aria-labelledby="disc-h-graph" data-graph-source="${softGraph ? 'server' : derivedSoft ? 'client-derived' : 'none'}">
+      <div class="disc-sec-head"><h2 id="disc-h-graph"><span class="code">G</span> גרף ראיות · Evidence graph</h2><span class="n">${nodes.length}n · ${edges.length}e${softGraph ? ' · sse' : derivedSoft ? ' · soft' : ''}</span></div>
+      <div class="disc-sec-body">
+        <p class="disc-exec-blurb" style="margin-bottom:10px">פאנל היררכי list+detail · לחיצה על צומת מרחיבה קשרים · לחיצה על קשת מציגה ראיות. ${softGraph ? '<strong>גרף משרת (SSE)</strong> · soft · לא dossier.' : 'אין זום/פאן כבד בגרסה זו.'} גרף ≠ זהות.</p>
+        <div class="disc-graph-panel${softGraph ? ' from-server' : ''}">
+          <div class="disc-graph-nodes" role="group" aria-label="צמתי גרף">${nodesHtml}</div>
+          <div class="disc-graph-detail">
+            <h3>${esc(nodeLabel(focusNode) || 'בחרו צומת')}</h3>
+            <div class="disc-muted" style="font-size:11px;margin-bottom:8px">${esc((focusNode && (focusNode.kind || focusNode.type)) || '')}</div>
+            <div class="disc-rel-list">${detailEdges}</div>
+            <div id="disc-graph-edge-detail" class="disc-edge-ev" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+  }
+
+  function renderFindingsSection(list, evMap) {
+    const ranked = highValueFindings(list);
+    const hi = ranked.slice(0, Math.min(5, ranked.length));
+    const rest = ranked.slice(hi.length);
+    let body;
+    if (!ranked.length) {
+      const filtered = Object.keys(selectedFacets).length > 0;
+      body =
+        discState.status === 'running' || discState.status === 'partial' || discState.status === 'reconnecting'
+          ? `<div class="disc-skel-block"><div class="skel-line mid"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+             <div class="disc-skel-block"><div class="skel-line mid"></div><div class="skel-line short"></div></div>`
+          : renderPremiumEmpty({
+              kind: filtered ? 'findings-filtered' : 'findings',
+              title: filtered ? 'אין ממצאים תחת המסננים' : 'אין ממצאים להצגה',
+              body: filtered
+                ? 'נסו לנקות מסננים · הסינון אינו יוצר זהות.'
+                : discState.status === 'complete' || discState.status === 'partial' || discState.status === 'failed_soft'
+                  ? 'כיסוי דל / thin · ייתכן seed חלש או מקורות חלקיים. thin ≠ no-match · לא זהות.'
+                  : 'ממצאים יופיעו עם התקדמות הגילוי.',
+              hint: 'INFORMATION ≠ IDENTITY · UNKNOWN soft',
+            });
+    } else {
+      body =
+        hi.map((f) => renderFindingCard(f, evMap, { hi: true })).join('') +
+        (rest.length
+          ? `<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12px;color:var(--muted)">עוד ${rest.length} ממצאים</summary>${rest.map((f) => renderFindingCard(f, evMap)).join('')}</details>`
+          : '');
+    }
+    return `<section class="disc-sec" id="disc-sec-findings" aria-labelledby="disc-h-find">
+      <div class="disc-sec-head"><h2 id="disc-h-find"><span class="code">02</span> ממצאים בעלי ערך · High-value</h2><span class="n">${ranked.length}</span></div>
+      <div class="disc-sec-body">${body}</div>
+    </section>`;
+  }
+
+  function renderErrorRecovery() {
+    if (!discState.errorMessage) return '';
+    return `<div class="err" role="alert" style="margin-bottom:12px;border-radius:8px">
+      <strong>לא הצלחנו להשלים את הגילוי</strong>
+      <p style="margin:8px 0 0;color:inherit">${esc(discState.errorMessage)}</p>
+      <p style="margin:8px 0 0;font-size:12px;opacity:.85">אפשר לנסות שוב או להדגמת פיקסצ׳ר. שגיאה ≠ no-match.</p>
+      <div class="disc-retry-row">
+        <button type="button" id="disc-retry">נסה שוב</button>
+        <button type="button" class="secondary" id="disc-retry-fixture">הדגמה (פיקסצ׳ר)</button>
+      </div>
+    </div>`;
+  }
+
+  function renderDiscovery() {
+    const out = document.getElementById('out');
+    if (!out) return;
+    out.dataset.surface = 'discovery';
+    out.className = 'disc-out';
+    out.setAttribute('tabindex', '-1');
+    out.setAttribute('aria-label', 'תוצאות גילוי');
+    discState.lifeStage = deriveLifeStage(discState);
+    discState.graph = ensureGraph(discState);
+    const evMap = evidenceMap(discState.evidence);
+    const list = filteredFindings();
+    const gaps = computeGaps(discState);
+    const narrowBanner =
+      discState.narrowSource && discState.narrowSource !== 'none'
+        ? `<div class="disc-narrow-banner" role="status">תצוגה מסוננת · narrow:${esc(discState.narrowSource)} · הסינון אינו יוצר זהות ואינו מצמצם את מרחב האפשרויות ל־«זה האדם».</div>`
+        : '';
+    const mobileNav = `<nav class="disc-mobile-nav" aria-label="ניווט תוצאות">
+      <a href="#disc-progress">התקדמות</a>
+      <a href="#disc-facets">מסננים</a>
+      <a href="#disc-sec-findings">ממצאים</a>
+      <a href="#disc-sec-exec">סיכום</a>
+      <a href="#disc-sec-evidence">ראיות</a>
+      <a href="#disc-sec-rel">קשרים</a>
+      <a href="#disc-sec-graph">גרף</a>
+      <a href="#disc-sec-gaps">פערים</a>
+    </nav>`;
+    out.innerHTML = `
+      <p class="disc-workspace-label">INVESTIGATION WORKSPACE · DISCOVERY</p>
+      <div class="mode"><span>מצב: גילוי (Discovery)</span><span class="chip">INFORMATION ≠ IDENTITY</span><span class="chip">UNKNOWN ≠ FALSE</span><span class="chip">CANDIDATE ≠ FACT</span>${discState.q ? `<span class="chip">Seed: ${esc(discState.q)}</span>` : ''}</div>
+      ${renderErrorRecovery()}
+      ${renderProgressStrip()}
+      ${mobileNav}
+      ${narrowBanner}
+      <div class="disc-layout">
+        ${renderFacets()}
+        <div class="disc-main-col" aria-label="תוצאות גילוי">
+          <div class="disc-hier">
+            ${renderExecutiveSummary(list, gaps)}
+            ${renderFindingsSection(list, evMap)}
+            ${renderEvidenceSection(list, evMap)}
+            ${renderRelationshipsSection(discState.graph)}
+            ${renderGraphPanel(discState.graph)}
+            ${renderSourcesSection()}
+            ${renderGapsSection(gaps)}
+          </div>
+        </div>
+      </div>
+      <p class="disc-footer-note">אין דיוקן · אין תיק זהות · אין «זה האדם» · ראיות ניתנות לבדיקה · אין graph laundering — קשת view-derived מסומנת במפורש · URL לבד ≠ זהות.</p>
+    `;
+    bindDiscoveryResultHandlers(out);
+    // Move focus to results region once progressive content appears (a11y)
+    if (
+      discState._focusResultsOnce !== true &&
+      ((discState.findings || []).length > 0 || discState.status === 'complete' || discState.status === 'failed_soft')
+    ) {
+      discState._focusResultsOnce = true;
+      try {
+        const exec = document.getElementById('disc-sec-exec') || out;
+        if (exec && typeof exec.focus === 'function') exec.setAttribute('tabindex', '-1'), exec.focus({ preventScroll: true });
+      } catch (_) {}
+    }
+    if (discState.status === 'idle' || discState.status === 'running' && !(discState.findings || []).length) {
+      discState._focusResultsOnce = false;
+    }
+  }
+
+  function showEdgeDetail(edgeId, hostId) {
+    const host = document.getElementById(hostId);
+    if (!host) return;
+    const edges = (discState.graph && discState.graph.edges) || [];
+    const e = edges.find((x) => String(x.id) === String(edgeId));
+    if (!e) {
+      host.setAttribute('hidden', '');
+      return;
+    }
+    discState.selectedEdgeId = edgeId;
+    const rel = e.relationship || e.kind || 'unknown';
+    const evMap = evidenceMap(discState.evidence);
+    const findingIds = e.findingIds || [e.from || e.source, e.to || e.target].filter(Boolean);
+    const evBits = [];
+    findingIds.forEach((fid) => {
+      const f = (discState.findings || []).find((x) => x.id === fid);
+      if (!f) return;
+      (f.evidenceIds || []).forEach((eid) => {
+        const ev = evMap.get(eid);
+        if (ev) {
+          const href = safeHref(ev.provenanceUrl);
+          evBits.push(`<div><strong>${esc(f.title)}</strong> · <a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(ev.provenanceUrl || '')}</a>${ev.quote ? ` — <q>${esc(ev.quote)}</q>` : ''}</div>`);
+        }
+      });
+    });
+    host.innerHTML = `
+      <div><strong>קשת נבחרה</strong> · ${relBadge(rel)} · id <span class="mono">${esc(e.id)}</span></div>
+      <div style="margin-top:6px">מצב סמנטי: <strong>${esc(REL_CLASS[rel] === 'fact' ? 'provenance-backed' : REL_CLASS[rel] === 'cand' ? 'CANDIDATE (לא עובדה)' : 'UNKNOWN')}</strong> — לא זהות.</div>
+      ${e.derived ? '<div style="margin-top:6px">קשת זו נגזרה לתצוגה מ־findings→seed ואינה מחליפה edge שרת.</div>' : ''}
+      <div style="margin-top:8px">${evBits.join('') || '<span class="disc-muted">אין evidence ids מקושרים לקשת — בדקו את כרטיס הממצא.</span>'}</div>
+    `;
+    host.removeAttribute('hidden');
+  }
+
+  function bindDiscoveryResultHandlers(out) {
+    out.querySelectorAll('.disc-facet-chip').forEach((btn) => {
+      btn.onclick = () => toggleFacet(btn.getAttribute('data-fkey'), btn.getAttribute('data-fval'));
+    });
+    const clear = document.getElementById('disc-facet-clear');
+    if (clear) clear.onclick = () => clearFacets();
+    out.querySelectorAll('.disc-prov-toggle').forEach((btn) => {
+      if (btn.classList.contains('disc-focus-node')) return;
+      btn.onclick = () => {
+        const card = btn.closest('.disc-finding');
+        const panel = card && card.querySelector('.disc-provenance');
+        if (!panel) return;
+        const open = panel.hasAttribute('hidden');
+        if (open) panel.removeAttribute('hidden');
+        else panel.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+    });
+    out.querySelectorAll('[data-node]').forEach((btn) => {
+      btn.onclick = () => {
+        discState.focusedNodeId = btn.getAttribute('data-node');
+        renderDiscovery();
+        const g = document.getElementById('disc-sec-graph');
+        if (g) g.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      };
+    });
+    out.querySelectorAll('[data-edge]').forEach((el) => {
+      el.onclick = () => {
+        const id = el.getAttribute('data-edge');
+        showEdgeDetail(id, 'disc-edge-detail');
+        showEdgeDetail(id, 'disc-graph-edge-detail');
+      };
+      el.onkeydown = (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          el.click();
+        }
+      };
+    });
+    const retry = document.getElementById('disc-retry');
+    if (retry) {
+      retry.onclick = () => {
+        discState.errorMessage = null;
+        startDiscovery();
+      };
+    }
+    const retryFx = document.getElementById('disc-retry-fixture');
+    if (retryFx) {
+      retryFx.onclick = async () => {
+        discState.errorMessage = null;
+        try {
+          const idx = await loadFixtureIndex();
+          const entry = (idx.fixtures || [])[0];
+          if (!entry) return startDiscovery();
+          const data = await loadFixtureFile(entry.file);
+          const input = document.getElementById('disc-q');
+          if (input) input.value = data.q || '';
+          return startDiscovery({ forceFixture: true, fixtureData: data });
+        } catch (_) {
+          startDiscovery();
+        }
+      };
+    }
+    // Keyboard: Enter on finding opens evidence
+    out.querySelectorAll('.disc-finding').forEach((card) => {
+      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+      card.onkeydown = (ev) => {
+        if (ev.key === 'Enter') {
+          const btn = card.querySelector('.disc-prov-toggle:not(.disc-focus-node)');
+          if (btn) btn.click();
+        }
+      };
+    });
+  }
+
+  function applySnapshot(snap, meta = {}) {
+    if (!snap || typeof snap !== 'object') {
+      renderDiscovery();
+      return;
+    }
+    const merge = meta.merge === true;
+    let findings;
+    if (Array.isArray(snap.findings)) {
+      findings = merge
+        ? mergeById(discState.findings, snap.findings)
+        : snap.findings;
+    } else {
+      findings = discState.findings || [];
+    }
+    let evidence;
+    if (Array.isArray(snap.evidence)) {
+      evidence = merge
+        ? mergeById(discState.evidence, snap.evidence)
+        : snap.evidence;
+    } else {
+      evidence = discState.evidence || [];
+    }
+
+    // Never wipe a good feed with an empty non-narrow snapshot (replay / soft glitch)
+    if (
+      !merge &&
+      Array.isArray(snap.findings) &&
+      snap.findings.length === 0 &&
+      (discState.findings || []).length > 0 &&
+      meta.narrowSource !== 'server' &&
+      meta.allowEmptyFindings !== true
+    ) {
+      findings = discState.findings;
+    }
+
+    const prevStatus =
+      discState.status === 'reconnecting'
+        ? discState.statusBeforeReconnect || 'running'
+        : discState.status;
+    let nextStatus = snap.status || prevStatus || 'partial';
+    // Do not regress terminal → running on reconnect/replay paint
+    if (
+      meta.preserveTerminal !== false &&
+      isTerminalStatus(prevStatus, discState.providers) &&
+      nextStatus === 'running'
+    ) {
+      nextStatus = prevStatus;
+    }
+
+    const nextGraph =
+      snap.graph && typeof snap.graph === 'object'
+        ? {
+            nodes: Array.isArray(snap.graph.nodes) ? snap.graph.nodes : (discState.graph && discState.graph.nodes) || [],
+            edges: Array.isArray(snap.graph.edges) ? snap.graph.edges : (discState.graph && discState.graph.edges) || [],
+          }
+        : discState.graph || { nodes: [], edges: [] };
+
+    discState = {
+      findings,
+      evidence,
+      facets: Array.isArray(snap.facets) ? snap.facets : discState.facets || [],
+      status: nextStatus,
+      progress: snap.progress || discState.progress || {},
+      providers: snap.providers || discState.providers || {},
+      sessionId: snap.sessionId || meta.sessionId || discState.sessionId || null,
+      source: meta.source || discState.source,
+      q: snap.q || snap.seed || meta.q || discState.q,
+      narrowSource:
+        meta.narrowSource !== undefined
+          ? meta.narrowSource
+          : discState.narrowSource || 'none',
+      transport:
+        meta.transport !== undefined ? meta.transport : discState.transport,
+      cursor:
+        snap.cursor != null
+          ? snap.cursor
+          : meta.cursor !== undefined
+            ? meta.cursor
+            : discState.cursor,
+      statusBeforeReconnect: null,
+      reconnectAttempt: 0,
+      graph: nextGraph,
+      contradictions: Array.isArray(snap.contradictions)
+        ? snap.contradictions
+        : discState.contradictions || [],
+      softEr: snap.softEr !== undefined ? snap.softEr : discState.softEr,
+      gaps: Array.isArray(snap.gaps) ? snap.gaps : discState.gaps || [],
+      focusedNodeId: discState.focusedNodeId,
+      selectedEdgeId: discState.selectedEdgeId,
+      seedKind: discState.seedKind || 'name',
+      errorMessage: meta.errorMessage !== undefined ? meta.errorMessage : discState.errorMessage,
+      serverStage: snap.stage || snap.lifeStage || discState.serverStage || null,
+      queryPlan: snap.queryPlan || snap.plan || discState.queryPlan || null,
+      lifeStage: 'START',
+    };
+    discState.lifeStage = deriveLifeStage(discState);
+    stripIdentityChrome(discState);
+    renderDiscovery();
+  }
+
+  /** Merge append-only progressive finding (+ optional evidence) without drop. */
+  function mergeFindingChunk(finding, evidenceItems) {
+    if (!finding || !finding.id) return;
+    const list = discState.findings ? discState.findings.slice() : [];
+    const idx = list.findIndex((f) => f.id === finding.id);
+    if (idx >= 0) list[idx] = { ...list[idx], ...finding };
+    else list.push(finding);
+    discState.findings = list;
+    if (evidenceItems && evidenceItems.length) {
+      const ev = discState.evidence ? discState.evidence.slice() : [];
+      const byId = new Map(ev.map((e) => [e.id, e]));
+      evidenceItems.forEach((e) => {
+        if (!e || !e.id) return;
+        byId.set(e.id, { ...(byId.get(e.id) || {}), ...e });
+      });
+      discState.evidence = [...byId.values()];
+    }
+    // Progressive chunk resets server-narrow authority; client overlay until next /narrow
+    if (discState.narrowSource === 'server') discState.narrowSource = 'client';
+  }
+
+  function noteSseCursor(data, lastEventId) {
+    if (lastEventId) discState.cursor = lastEventId;
+    else if (data && data.cursor != null) discState.cursor = data.cursor;
+    else if (data && data.id != null && typeof data.id !== 'object') discState.cursor = data.id;
+  }
+
+  function clearReconnectOverlay() {
+    if (discState.status === 'reconnecting') {
+      discState.status = discState.statusBeforeReconnect || 'running';
+    }
+    discState.statusBeforeReconnect = null;
+    discState.reconnectAttempt = 0;
+  }
+
+  function settleTerminalStatus(explicit) {
+    clearReconnectOverlay();
+    if (explicit && isTerminalStatus(explicit, discState.providers)) {
+      discState.status = explicit;
+    } else if (!isTerminalStatus(discState.status, discState.providers)) {
+      discState.status = explicit || 'complete';
+    }
+    discState.transport = discState.transport || 'sse';
+  }
+
+  function applySsePayload(eventName, data, lastEventId) {
+    if (!data || typeof data !== 'object') return false;
+    const type = String(eventName || data.type || data.event || 'message').toLowerCase();
+    noteSseCursor(data, lastEventId);
+    // Drop reconnecting overlay as soon as real traffic resumes
+    if (discState.status === 'reconnecting' && type !== 'error') {
+      clearReconnectOverlay();
+    }
+
+    if (type === 'error' && (data.error || data.message)) {
+      // Soft provider error may carry failed_soft — settle, don't thrash
+      if (data.status === 'failed_soft' || data.status === 'partial') {
+        settleTerminalStatus(data.status);
+        renderDiscovery();
+        return true;
+      }
+      throw new Error(String(data.error || data.message));
+    }
+
+    // Server meta frame (sessionId / seed) — never treat as full snapshot wipe
+    if (type === 'meta') {
+      if (data.sessionId) discState.sessionId = data.sessionId;
+      if (data.q || data.seed) discState.q = data.q || data.seed;
+      discState.transport = 'sse';
+      stripIdentityChrome(discState);
+      renderDiscovery();
+      return false;
+    }
+
+    // Per-provider state updates
+    if (type === 'provider') {
+      const pid = data.providerId || data.id;
+      if (pid) {
+        discState.providers = { ...(discState.providers || {}), [pid]: data.state || data.status || 'ok' };
+      }
+      if (data.providers) discState.providers = { ...discState.providers, ...data.providers };
+      discState.transport = 'sse';
+      renderDiscovery();
+      return false;
+    }
+
+    // Full snapshot / session projection (named events or default message with findings[])
+    // Require findings[] or status+facets — bare sessionId (meta-shaped) must not wipe.
+    if (
+      type === 'snapshot' ||
+      type === 'session' ||
+      (type === 'message' && Array.isArray(data.findings))
+    ) {
+      if (Array.isArray(data.findings) || data.status || data.facets) {
+        applySnapshot(data, {
+          source: 'api',
+          sessionId: data.sessionId || discState.sessionId,
+          q: discState.q,
+          narrowSource: 'none',
+          transport: 'sse',
+          cursor: discState.cursor,
+          merge: metaMergeHint(data),
+        });
+        return isTerminalStatus(data.status, data.providers || discState.providers);
+      }
+    }
+
+    if (type === 'finding' || type === 'findings') {
+      const items = Array.isArray(data.findings)
+        ? data.findings
+        : data.finding
+          ? [data.finding]
+          : Array.isArray(data)
+            ? data
+            : [];
+      const evItems = Array.isArray(data.evidence)
+        ? data.evidence
+        : data.evidenceItem
+          ? [data.evidenceItem]
+          : [];
+      items.forEach((f) => mergeFindingChunk(f, evItems));
+      if (data.status && data.status !== 'reconnecting') discState.status = data.status;
+      if (data.progress) discState.progress = data.progress;
+      if (data.providers) discState.providers = data.providers;
+      if (data.stage) noteServerStage(data.stage, { source: 'server' });
+      else if (data.progress && data.progress.stage) noteServerStage(data.progress.stage, { source: 'server' });
+      else noteServerStage('FINDINGS', { source: 'sse-finding' });
+      discState.transport = 'sse';
+      stripIdentityChrome(discState);
+      renderDiscovery();
+      return isTerminalStatus(discState.status, discState.providers);
+    }
+
+    if (type === 'progress' || type === 'chunk') {
+      if (data.status && data.status !== 'reconnecting') discState.status = data.status;
+      if (data.progress) discState.progress = data.progress;
+      if (data.providers) discState.providers = data.providers;
+      if (Array.isArray(data.findings)) {
+        data.findings.forEach((f) => mergeFindingChunk(f, data.evidence || []));
+      }
+      ingestBudgetFamilyFromPayload(data);
+      // Soft plan hitchhiker on progress (some dual-run emits)
+      const hitchPlan = parsePlanFromSse(data);
+      if (hitchPlan) applyParsedPlan(hitchPlan, { source: 'sse-progress' });
+      // Foundation emits stage / lifecyclePhase on progress (S1…S10 / PLAN / DISCOVER / PLANNING…)
+      if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
+      else if (data.phase) noteServerStage(data.phase, { source: 'sse-phase' });
+      else if (data.stage) noteServerStage(data.stage, { source: 'server' });
+      else if (data.progress && data.progress.stage) noteServerStage(data.progress.stage, { source: 'server' });
+      else if (data.progress && data.progress.lifecyclePhase) {
+        noteServerStage(data.progress.lifecyclePhase, { source: 'sse-lifecycle' });
+      }
+      discState.transport = 'sse';
+      renderDiscovery();
+      return false; // progress alone never ends the stream
+    }
+
+    if (type === 'status') {
+      if (data.status) discState.status = data.status;
+      if (data.progress) discState.progress = data.progress;
+      if (data.providers) discState.providers = data.providers;
+      if (Array.isArray(data.findings)) {
+        data.findings.forEach((f) => mergeFindingChunk(f, data.evidence || []));
+      }
+      ingestBudgetFamilyFromPayload(data);
+      const hitchPlan = parsePlanFromSse(data);
+      if (hitchPlan) applyParsedPlan(hitchPlan, { source: 'sse-status' });
+      const hitchGraph = parseGraphFromSse(data);
+      if (hitchGraph) applyParsedGraph(hitchGraph, { source: 'sse-status' });
+      if (data.stage) noteServerStage(data.stage, { source: 'server' });
+      else if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
+      discState.transport = 'sse';
+      renderDiscovery();
+      // status may be terminal; wait for `done` when present, but settle if clearly terminal
+      return isTerminalStatus(data.status, data.providers || discState.providers);
+    }
+
+    if (type === 'facets') {
+      if (Array.isArray(data.facets)) discState.facets = data.facets;
+      else if (Array.isArray(data)) discState.facets = data;
+      discState.transport = 'sse';
+      renderDiscovery();
+      return false;
+    }
+
+    // GO-IMPL-500: graceful new lifecycle / graph events (compatible with B0 names)
+    if (
+      type === 'planning' ||
+      type === 'plan' ||
+      type === 'stage' ||
+      type === 'lifecycle' ||
+      type === 'discovery' ||
+      type === 'start' ||
+      type === 'meta'
+    ) {
+      if (data.status && data.status !== 'reconnecting') discState.status = data.status;
+      if (data.progress) discState.progress = data.progress;
+      if (data.providers) discState.providers = { ...discState.providers, ...data.providers };
+      ingestBudgetFamilyFromPayload(data);
+      // Soft Foundation surface — defensive parse; never invent plan; never treat as identity
+      const parsedPlan = parsePlanFromSse(data);
+      if (parsedPlan) applyParsedPlan(parsedPlan, { source: type === 'plan' ? 'sse-plan' : 'sse-event' });
+      if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
+      else if (data.stage) noteServerStage(data.stage, { source: 'server' });
+      else if (data.lifeStage) noteServerStage(data.lifeStage, { source: 'server' });
+      else if (type === 'start' || type === 'meta') noteServerStage('START', { source: 'sse-event' });
+      else if (type === 'planning' || type === 'plan') noteServerStage('PLANNING', { source: 'sse-plan' });
+      else if (type === 'discovery') noteServerStage('DISCOVERY', { source: 'sse-event' });
+      discState.transport = 'sse';
+      discState.lifeStage = deriveLifeStage(discState);
+      renderDiscovery();
+      return false;
+    }
+
+    if (type === 'evidence') {
+      const evItems = Array.isArray(data.evidence)
+        ? data.evidence
+        : data.evidenceItem
+          ? [data.evidenceItem]
+          : Array.isArray(data)
+            ? data
+            : [];
+      if (evItems.length) {
+        const ev = discState.evidence ? discState.evidence.slice() : [];
+        const byId = new Map(ev.map((e) => [e.id, e]));
+        evItems.forEach((e) => {
+          if (!e || !e.id) return;
+          byId.set(e.id, { ...(byId.get(e.id) || {}), ...e });
+        });
+        discState.evidence = [...byId.values()];
+      }
+      noteServerStage('EVIDENCE', { source: 'sse-evidence' });
+      discState.transport = 'sse';
+      renderDiscovery();
+      return false;
+    }
+
+    if (type === 'relationships' || type === 'relationship' || type === 'graph') {
+      const parsed = parseGraphFromSse(data);
+      if (parsed) {
+        applyParsedGraph(parsed, { source: type === 'graph' ? 'sse-graph' : 'sse-rel' });
+      } else if (data.graph && typeof data.graph === 'object') {
+        // Fallback soft merge if parser rejected empty-but-present envelope
+        discState.graph = {
+          nodes: Array.isArray(data.graph.nodes)
+            ? mergeById((discState.graph && discState.graph.nodes) || [], data.graph.nodes)
+            : (discState.graph && discState.graph.nodes) || [],
+          edges: Array.isArray(data.graph.edges)
+            ? mergeById((discState.graph && discState.graph.edges) || [], data.graph.edges)
+            : (discState.graph && discState.graph.edges) || [],
+        };
+        discState.graphFromServer = true;
+      }
+      ingestBudgetFamilyFromPayload(data);
+      if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
+      else if (type === 'graph') noteServerStage('GRAPH', { source: 'sse-graph' });
+      else noteServerStage('RELATIONSHIPS', { source: 'sse-rel' });
+      discState.transport = 'sse';
+      stripIdentityChrome(discState);
+      renderDiscovery();
+      return false;
+    }
+
+    if (type === 'gaps' || type === 'unknown') {
+      if (Array.isArray(data.gaps)) discState.gaps = data.gaps;
+      else if (Array.isArray(data.items)) discState.gaps = data.items;
+      discState.transport = 'sse';
+      renderDiscovery();
+      return false;
+    }
+
+    if (type === 'tombstone' && data.id) {
+      discState.findings = (discState.findings || []).filter((f) => f.id !== data.id);
+      renderDiscovery();
+      return false;
+    }
+
+    if (type === 'complete' || type === 'done' || type === 'terminal') {
+      // Arch: terminal ∈ { partial, complete, failed_soft }
+      if (Array.isArray(data.findings) && data.findings.length) {
+        applySnapshot(data, {
+          source: 'api',
+          sessionId: discState.sessionId,
+          q: discState.q,
+          narrowSource: 'none',
+          transport: 'sse',
+          cursor: discState.cursor,
+          merge: true,
+        });
+      }
+      settleTerminalStatus(data.status || null);
+      if (data.progress) discState.progress = data.progress;
+      if (data.providers) discState.providers = data.providers;
+      ingestBudgetFamilyFromPayload(data);
+      const donePlan = parsePlanFromSse(data);
+      if (donePlan) applyParsedPlan(donePlan, { source: 'sse-done' });
+      const doneGraph = parseGraphFromSse(data);
+      if (doneGraph) applyParsedGraph(doneGraph, { source: 'sse-done' });
+      if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
+      stripIdentityChrome(discState);
+      renderDiscovery();
+      return true;
+    }
+
+    return isTerminalStatus(data.status, data.providers || discState.providers);
+  }
+
+  /** Prefer merge when payload looks like additive replay fragment. */
+  function metaMergeHint(data) {
+    if (data && data.merge === true) return true;
+    // If we already have findings and payload findings overlap by id → merge-safe
+    if (
+      (discState.findings || []).length &&
+      Array.isArray(data.findings) &&
+      data.findings.some((f) => f && discState.findings.some((e) => e.id === f.id))
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Arch BOUNDARIES SSE: terminal status ∈ { partial, complete, failed_soft }.
+   * `running` keeps the stream/poll alive; anything else ends progressive intake.
+   */
+  function isTerminalStatus(st, providers) {
+    if (!st || st === 'running' || st === 'idle' || st === 'reconnecting') return false;
+    if (st === 'complete' || st === 'failed_soft') return true;
+    if (st === 'partial') {
+      // Soft-terminal when no provider still pending (budget / fan-out done)
+      if (!providers || !Object.keys(providers).length) return true;
+      return Object.values(providers).every((s) => s && s !== 'pending');
+    }
+    return false;
+  }
+
+  /**
+   * Prefer EventSource on …/events.
+   * Hardened: cursor / Last-Event-ID resume, exponential backoff reconnect,
+   * no infinite thrash after terminal, GET snapshot fallback after exhaustion.
+   * Rejects quickly on first-connect failure so caller can poll.
+   */
+  function runViaSse(sessionId, q, signal) {
+    return new Promise((resolve, reject) => {
+      if (typeof EventSource === 'undefined') {
+        reject(new Error('EventSource unsupported'));
+        return;
+      }
+
+      let settled = false;
+      let reachedTerminal = false;
+      let attempt = 0;
+      let sawEventOnThisConnect = false;
+      let everSawEvent = false;
+      let bootTimer = null;
+      let reconnectTimer = null;
+      let es = null;
+
+      const clearBoot = () => {
+        if (bootTimer) {
+          clearTimeout(bootTimer);
+          bootTimer = null;
+        }
+      };
+      const clearReconnectTimer = () => {
+        if (reconnectTimer) {
+          clearTimeout(reconnectTimer);
+          reconnectTimer = null;
+        }
+      };
+
+      const finish = (fn, arg) => {
+        if (settled) return;
+        settled = true;
+        reachedTerminal = true;
+        clearBoot();
+        clearReconnectTimer();
+        try {
+          if (signal) signal.removeEventListener('abort', onAbort);
+        } catch (_) {}
+        closeSse();
+        clearReconnectOverlay();
+        fn(arg);
+      };
+
+      const onAbort = () => finish(reject, new DOMException('Aborted', 'AbortError'));
+
+      const markReconnecting = () => {
+        if (settled || reachedTerminal) return;
+        if (discState.status !== 'reconnecting') {
+          discState.statusBeforeReconnect =
+            discState.status === 'reconnecting'
+              ? discState.statusBeforeReconnect
+              : discState.status;
+          discState.status = 'reconnecting';
+        }
+        discState.reconnectAttempt = attempt;
+        discState.transport = 'sse';
+        renderDiscovery();
+      };
+
+      const buildUrl = () => {
+        let url = `/api/discovery/sessions/${encodeURIComponent(sessionId)}/events`;
+        const qs = [];
+        if (discState.cursor != null && discState.cursor !== '') {
+          const c = String(discState.cursor);
+          qs.push(`cursor=${encodeURIComponent(c)}`);
+          qs.push(`lastEventId=${encodeURIComponent(c)}`);
+        }
+        if (qs.length) url += `?${qs.join('&')}`;
+        return url;
+      };
+
+      const fallbackGetThenSettle = async () => {
+        try {
+          const snap = await fetchSessionSnapshot(sessionId, signal);
+          if (snap) {
+            applySnapshot(snap, {
+              source: 'api',
+              sessionId,
+              q: q || discState.q,
+              narrowSource: 'none',
+              transport: 'sse→get',
+              merge: (discState.findings || []).length > 0,
+            });
+            finish(resolve, discState);
+            return;
+          }
+        } catch (_) {}
+        if (everSawEvent) finish(resolve, discState);
+        else finish(reject, new Error('SSE reconnect exhausted'));
+      };
+
+      const scheduleReconnect = (reason) => {
+        if (settled || reachedTerminal) return;
+        // Already terminal under the overlay — settle, do not thrash
+        const underlying =
+          discState.status === 'reconnecting'
+            ? discState.statusBeforeReconnect
+            : discState.status;
+        if (isTerminalStatus(underlying, discState.providers)) {
+          finish(resolve, discState);
+          return;
+        }
+        if (attempt >= SSE_MAX_RECONNECT) {
+          fallbackGetThenSettle();
+          return;
+        }
+        attempt += 1;
+        markReconnecting();
+        closeSse();
+        clearBoot();
+        const delay = Math.min(8000, SSE_BACKOFF_BASE_MS * Math.pow(2, attempt - 1));
+        reconnectTimer = setTimeout(() => connect(`reconnect:${reason || 'error'}`), delay);
+        discTimers.push(reconnectTimer);
+      };
+
+      const handle = (eventName, ev) => {
+        if (settled) return;
+        let data;
+        try {
+          data = JSON.parse(ev.data);
+        } catch {
+          return;
+        }
+        sawEventOnThisConnect = true;
+        everSawEvent = true;
+        clearBoot();
+        try {
+          const terminal = applySsePayload(eventName, data, ev.lastEventId || null);
+          if (terminal) {
+            reachedTerminal = true;
+            finish(resolve, discState);
+          }
+        } catch (e) {
+          // Soft settle if we already have a useful feed; else reject / reconnect
+          if ((discState.findings || []).length && /failed_soft|partial/i.test(String(e && e.message))) {
+            settleTerminalStatus('failed_soft');
+            renderDiscovery();
+            finish(resolve, discState);
+          } else if (everSawEvent) {
+            scheduleReconnect('payload-error');
+          } else {
+            finish(reject, e);
+          }
+        }
+      };
+
+      const attachHandlers = (source) => {
+        source.onopen = () => {
+          // open alone ≠ healthy (some stacks "open" on 404)
+        };
+        source.onmessage = (ev) => handle('message', ev);
+        [
+          'meta',
+          'snapshot',
+          'session',
+          'finding',
+          'findings',
+          'progress',
+          'provider',
+          'status',
+          'chunk',
+          'facets',
+          'complete',
+          'done',
+          'terminal',
+          'error',
+          'tombstone',
+          'start',
+          'planning',
+          'plan',
+          'stage',
+          'lifecycle',
+          'discovery',
+          'evidence',
+          'relationships',
+          'relationship',
+          'graph',
+          'gaps',
+          'unknown',
+        ].forEach((name) => {
+          source.addEventListener(name, (ev) => handle(name, ev));
+        });
+        source.onerror = () => {
+          if (settled || reachedTerminal) return;
+          const underlying =
+            discState.status === 'reconnecting'
+              ? discState.statusBeforeReconnect
+              : discState.status;
+          if (isTerminalStatus(underlying, discState.providers)) {
+            finish(resolve, discState);
+            return;
+          }
+          // Close to disable browser auto-reconnect thrash; we own backoff
+          try {
+            source.close();
+          } catch (_) {}
+          if (!sawEventOnThisConnect && attempt === 0 && !everSawEvent) {
+            // First connect failed fast → let caller poll
+            if (source.readyState === EventSource.CLOSED) {
+              finish(reject, new Error('SSE closed before data'));
+            }
+            // else bootTimer decides
+            return;
+          }
+          scheduleReconnect('onerror');
+        };
+      };
+
+      const connect = () => {
+        if (settled || reachedTerminal) return;
+        if (signal && signal.aborted) {
+          onAbort();
+          return;
+        }
+        closeSse();
+        clearBoot();
+        sawEventOnThisConnect = false;
+        const url = buildUrl();
+        try {
+          es = new EventSource(url);
+          discEventSource = es;
+        } catch (e) {
+          if (attempt === 0 && !everSawEvent) {
+            finish(reject, e);
+          } else {
+            scheduleReconnect('construct');
+          }
+          return;
+        }
+        attachHandlers(es);
+        const bootMs = attempt === 0 ? SSE_BOOT_MS : Math.min(6000, SSE_BOOT_MS + attempt * 400);
+        bootTimer = setTimeout(() => {
+          if (settled || reachedTerminal || sawEventOnThisConnect) return;
+          if (attempt === 0 && !everSawEvent) {
+            finish(reject, new Error('SSE timeout / unavailable'));
+          } else {
+            try {
+              es && es.close();
+            } catch (_) {}
+            scheduleReconnect('boot-timeout');
+          }
+        }, bootMs);
+        discTimers.push(bootTimer);
+      };
+
+      if (signal) {
+        if (signal.aborted) {
+          onAbort();
+          return;
+        }
+        signal.addEventListener('abort', onAbort);
+      }
+      connect();
+    });
+  }
+
+  /** GET Acc-scrubbed session snapshot (replay-from-complete / reconnect fallback). */
+  async function fetchSessionSnapshot(sessionId, signal) {
+    const gr = await fetch(`/api/discovery/sessions/${encodeURIComponent(sessionId)}`, {
+      signal,
+      cache: 'no-store',
+    });
+    if (!gr.ok) return null;
+    const body = await gr.json();
+    // Support { ok, ...snap } or bare snap
+    if (body && body.ok === false) return null;
+    return body;
+  }
+
+  /**
+   * Open an existing session (incl. already-complete): GET snapshot first (no blank),
+   * then optional SSE replay with merge-by-id (no duplicate spam).
+   */
+  async function hydrateSession(sessionId, opts = {}) {
+    const signal = opts.signal || (discAbort && discAbort.signal);
+    const snap = await fetchSessionSnapshot(sessionId, signal);
+    if (!snap) throw new Error('session not found');
+    applySnapshot(snap, {
+      source: 'api',
+      sessionId,
+      q: snap.q || snap.seed || opts.q || '',
+      narrowSource: 'none',
+      transport: 'get',
+    });
+    const terminal = isTerminalStatus(snap.status, snap.providers);
+    const wantReplay =
+      opts.replay === true ||
+      params().get('replay') === '1' ||
+      params().get('discoveryReplay') === '1';
+
+    if (terminal) {
+      if (wantReplay && preferSseTransport()) {
+        // Full replay from cursor 0 — merge-by-id prevents spam; GET already painted
+        const kept = discState.cursor;
+        discState.cursor = null;
+        try {
+          await runViaSse(sessionId, discState.q, signal);
+        } catch (_) {
+          discState.cursor = kept;
+          // Keep GET snapshot — never blank on replay failure
+          renderDiscovery();
+        }
+      }
+      return discState;
+    }
+
+    if (preferSseTransport()) {
+      try {
+        await runViaSse(sessionId, discState.q, signal);
+        return discState;
+      } catch (sseErr) {
+        if (signal && signal.aborted) throw sseErr;
+        closeSse();
+      }
+    }
+    await runViaPoll(sessionId, discState.q, signal, opts.pollAfter || 300);
+    return discState;
+  }
+
+  async function runViaPoll(sessionId, q, signal, pollAfter) {
+    let snap = null;
+    for (let i = 0; i < 40; i++) {
+      if (signal && signal.aborted) throw new DOMException('Aborted', 'AbortError');
+      const gr = await fetch(`/api/discovery/sessions/${encodeURIComponent(sessionId)}`, {
+        signal,
+      });
+      if (!gr.ok) throw new Error(`poll ${gr.status}`);
+      snap = await gr.json();
+      applySnapshot(snap, {
+        source: 'api',
+        sessionId,
+        q,
+        narrowSource: 'none',
+        transport: 'poll',
+      });
+      if (isTerminalStatus(snap.status, snap.providers)) break;
+      await new Promise((res) => {
+        const t = setTimeout(res, pollAfter || 300);
+        discTimers.push(t);
+      });
+    }
+    return snap;
+  }
+
+  async function runViaApi(q, hints, signal) {
+    const body = { seed: q, q, locale: 'he' };
+    if (hints && Object.keys(hints).length) body.hints = hints;
+    const r = await fetch('/api/discovery/sessions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      signal,
+    });
+    if (!r.ok) {
+      const err = await r.json().catch(() => ({}));
+      throw new Error(err.error || `API ${r.status}`);
+    }
+    const created = await r.json();
+    const sessionId = created.sessionId;
+    const pollAfter = created.pollAfterMs || 300;
+
+    // Serverless Preview may return Acc-scrubbed snapshot on POST — paint immediately
+    if (created.snapshot) {
+      applySnapshot(created.snapshot, {
+        source: 'api',
+        sessionId,
+        q,
+        narrowSource: 'none',
+        transport: preferSseTransport() ? 'sse' : 'poll',
+      });
+      if (
+        isTerminalStatus(created.snapshot.status, created.snapshot.providers) ||
+        isTerminalStatus(created.status, created.snapshot.providers)
+      ) {
+        // Terminal on create — consistent snapshot already painted (no blank).
+        // Optional SSE replay-from-complete for UX verify (?discoveryReplay=1).
+        const wantReplay =
+          params().get('discoveryReplay') === '1' || params().get('replay') === '1';
+        if (wantReplay && preferSseTransport()) {
+          discState.cursor = null;
+          try {
+            await runViaSse(sessionId, q, signal);
+          } catch (_) {
+            discState.transport = 'get';
+            renderDiscovery();
+          }
+        } else {
+          discState.transport = discState.transport || 'poll';
+          renderDiscovery();
+        }
+        return discState;
+      }
+    } else if (created.sessionId) {
+      discState.sessionId = sessionId;
+      discState.q = q;
+      discState.source = 'api';
+      discState.status = created.status || 'running';
+    }
+
+    // Prefer SSE progressive; on error/unsupported → poll
+    if (preferSseTransport()) {
+      try {
+        const viaSse = await runViaSse(sessionId, q, signal);
+        return viaSse;
+      } catch (sseErr) {
+        if (signal && signal.aborted) throw sseErr;
+        closeSse();
+        // continue to poll
+      }
+    }
+
+    return runViaPoll(sessionId, q, signal, pollAfter);
+  }
+
+  function runViaFixture(data, q) {
+    return new Promise((resolve, reject) => {
+      const byId = new Map((data.findings || []).map((f) => [f.id, f]));
+      const evidence = data.evidence || [];
+      const stages = data.stages || [];
+      const fullGraph = data.graph || null;
+      const lifeForIdx = (idx, total) => {
+        const seq = ['START', 'PLANNING', 'DISCOVERY', 'FINDINGS', 'EVIDENCE', 'RELATIONSHIPS', 'GRAPH', 'COMPLETE'];
+        if (idx >= total - 1) return 'COMPLETE';
+        return seq[Math.min(idx + 1, seq.length - 2)];
+      };
+      if (!stages.length) {
+        applySnapshot(
+          {
+            sessionId: `fix-${data.fixtureId}`,
+            q: data.q || q,
+            status: 'complete',
+            findings: data.findings || [],
+            evidence,
+            facets: [],
+            progress: { done: 1, totalHint: 1 },
+            providers: {},
+            graph: fullGraph,
+            gaps: data.gaps || [],
+            softEr: data.softEr || null,
+            contradictions: data.contradictions || [],
+            stage: 'COMPLETE',
+            forbiddenIdentitiesVersion: data.forbiddenIdentitiesVersion,
+          },
+          { source: 'fixture', q, narrowSource: 'none', transport: 'fixture' },
+        );
+        resolve();
+        return;
+      }
+      stages.forEach((stage, idx) => {
+        const t = setTimeout(() => {
+          if (discAbort && discAbort.signal.aborted) {
+            reject(new DOMException('Aborted', 'AbortError'));
+            return;
+          }
+          const findings = (stage.findingIds || []).map((id) => byId.get(id)).filter(Boolean);
+          const evIds = new Set(findings.flatMap((f) => f.evidenceIds || []));
+          const life = stage.lifeStage || lifeForIdx(idx, stages.length);
+          const includeGraph = ['RELATIONSHIPS', 'GRAPH', 'COMPLETE'].includes(life) || idx >= stages.length - 2;
+          applySnapshot(
+            {
+              sessionId: `fix-${data.fixtureId}`,
+              q: data.q || q,
+              status: stage.status,
+              findings,
+              evidence: evidence.filter((e) => evIds.has(e.id)),
+              facets: stage.facets || [],
+              progress: stage.progress || {},
+              providers: stage.providers || {},
+              graph: includeGraph ? (stage.graph || fullGraph) : undefined,
+              gaps: stage.gaps || (idx === stages.length - 1 ? data.gaps : undefined),
+              softEr: data.softEr || null,
+              contradictions: idx === stages.length - 1 ? (data.contradictions || []) : [],
+              stage: life,
+              forbiddenIdentitiesVersion: data.forbiddenIdentitiesVersion,
+            },
+            { source: `fixture:${data.fixtureId}`, q, narrowSource: 'none', transport: 'fixture' },
+          );
+          if (idx === stages.length - 1) resolve();
+        }, stage.afterMs || 0);
+        discTimers.push(t);
+      });
+    });
+  }
+
+  async function startDiscovery(opts = {}) {
+    if (!isDiscoveryMode()) return;
+    const input = document.getElementById('disc-q');
+    const sessionParam = opts.sessionId || params().get('session') || params().get('sessionId');
+    const q = String((opts.fixtureData && opts.fixtureData.q) || (input && input.value) || '').trim();
+    const out = document.getElementById('out');
+
+    function applySeedKindHint() {
+      let kind = readSeedKindFromDom();
+      if (opts.fixtureData && opts.fixtureData.seedKind) {
+        const sk = String(opts.fixtureData.seedKind);
+        if (/domain/i.test(sk)) kind = 'domain';
+        else if (/org/i.test(sk)) kind = 'organization';
+        else if (/url/i.test(sk)) kind = 'url';
+        else if (/person|name/i.test(sk)) kind = 'name';
+      } else if (q) {
+        if (/^https?:\/\//i.test(q)) kind = 'url';
+        else if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(q) && !/\s/.test(q)) kind = 'domain';
+      }
+      discState.seedKind = kind;
+      document.querySelectorAll('.disc-seed-type').forEach((b) => {
+        b.setAttribute('aria-pressed', b.getAttribute('data-seed-kind') === kind ? 'true' : 'false');
+      });
+    }
+
+    // Open existing / already-complete session — no Seed required
+    if (sessionParam && !opts.forceFixture && !opts.fixtureData) {
+      clearDiscTimers();
+      if (discAbort) try { discAbort.abort(); } catch (_) {}
+      discAbort = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      selectedFacets = {};
+      discState = emptyState();
+      applySeedKindHint();
+      discState.status = 'running';
+      discState.lifeStage = 'START';
+      discState.sessionId = String(sessionParam);
+      discState.source = 'api:hydrate';
+      renderDiscovery();
+      const go = document.getElementById('disc-go');
+      const cancel = document.getElementById('disc-cancel');
+      if (go) {
+        go.disabled = true;
+        go.textContent = 'רץ…';
+      }
+      if (cancel) cancel.classList.add('show');
+      try {
+        await hydrateSession(String(sessionParam), {
+          signal: discAbort && discAbort.signal,
+          replay: opts.replay === true,
+          q,
+        });
+        if (input && discState.q && !input.value) input.value = discState.q;
+      } catch (e) {
+        const msg = String((e && e.message) || e || '');
+        const aborted = (e && e.name === 'AbortError') || /abort/i.test(msg);
+        if (out) {
+          out.dataset.surface = 'discovery';
+          if (aborted) {
+            out.className = 'err';
+            out.innerHTML = '<span class="big">CANCELLED</span>הגילוי בוטל.';
+          } else {
+            discState.errorMessage = `שגיאה בפתיחת session: ${msg}`;
+            discState.status = 'failed_soft';
+            renderDiscovery();
+          }
+        }
+      } finally {
+        if (go) {
+          go.disabled = false;
+          go.textContent = 'גלה';
+        }
+        if (cancel) cancel.classList.remove('show');
+      }
+      return;
+    }
+
+    if (!q) {
+      if (out) {
+        out.className = 'empty-state';
+        out.dataset.surface = 'discovery';
+        out.innerHTML = '<span class="big">EMPTY</span>הזינו Seed לחיפוש גילוי.';
+      }
+      return;
+    }
+    clearDiscTimers();
+    if (discAbort) try { discAbort.abort(); } catch (_) {}
+    discAbort = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    selectedFacets = {};
+    discState = emptyState();
+    applySeedKindHint();
+    discState.status = 'running';
+    discState.lifeStage = 'START';
+    discState.stageSource = 'client';
+    discState._focusResultsOnce = false;
+    discState.q = q;
+    discState.source = '…';
+    renderDiscovery();
+
+    const go = document.getElementById('disc-go');
+    const cancel = document.getElementById('disc-cancel');
+    if (go) {
+      go.disabled = true;
+      go.textContent = 'רץ…';
+    }
+    if (cancel) cancel.classList.add('show');
+
+    const hints = {};
+    const org = document.getElementById('disc-hint-org');
+    const city = document.getElementById('disc-hint-city');
+    const site = document.getElementById('disc-hint-site');
+    if (org && org.value.trim()) hints.org = org.value.trim();
+    if (city && city.value.trim()) hints.city = city.value.trim();
+    if (site && site.value.trim()) hints.site = site.value.trim();
+
+    try {
+      const useFixture = opts.forceFixture || forceFixture() || opts.fixtureData;
+      if (useFixture) {
+        const data = opts.fixtureData || (await resolveFixtureForQuery(q));
+        if (!data) throw new Error('no matching fixture — נסו seed=seed-person-he או API');
+        await runViaFixture(data, q);
+      } else {
+        try {
+          await runViaApi(q, hints, discAbort && discAbort.signal);
+        } catch (apiErr) {
+          // Fallback to fixture path when API unavailable (static / Preview not up)
+          const data = await resolveFixtureForQuery(q);
+          if (!data) throw apiErr;
+          discState.source = 'fixture-fallback';
+          await runViaFixture(data, q);
+        }
+      }
+    } catch (e) {
+      const msg = String(e && e.message || e || '');
+      const aborted = (e && e.name === 'AbortError') || /abort/i.test(msg);
+      if (out) {
+        out.dataset.surface = 'discovery';
+        if (aborted) {
+          out.className = 'err';
+          out.innerHTML = '<span class="big">CANCELLED</span>הגילוי בוטל.';
+        } else {
+          discState.errorMessage = `שגיאה בגילוי: ${msg}`;
+          discState.status = 'failed_soft';
+          renderDiscovery();
+        }
+      }
+    } finally {
+      if (go) {
+        go.disabled = false;
+        go.textContent = 'גלה';
+      }
+      if (cancel) cancel.classList.remove('show');
+    }
+  }
+
+  function cancelDiscovery() {
+    clearDiscTimers();
+    try {
+      if (discAbort) discAbort.abort();
+    } catch (_) {}
+  }
+
+  function bindDiscoveryChrome() {
+    const entMore = document.getElementById('entity-more-toggle');
+    const entPanel = document.getElementById('entity-more');
+    if (entMore && entPanel) {
+      entMore.onclick = () => {
+        const open = entPanel.hasAttribute('hidden');
+        if (open) entPanel.removeAttribute('hidden');
+        else entPanel.setAttribute('hidden', '');
+        entMore.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+    }
+    const tabEnt = document.getElementById('tab-entity');
+    const tabDisc = document.getElementById('tab-discovery');
+    if (tabEnt) tabEnt.onclick = () => setMode('entity');
+    if (tabDisc) tabDisc.onclick = () => setMode('discovery');
+    const go = document.getElementById('disc-go');
+    const cancel = document.getElementById('disc-cancel');
+    if (go) go.onclick = () => startDiscovery();
+    if (cancel) cancel.onclick = () => cancelDiscovery();
+    const dq = document.getElementById('disc-q');
+    if (dq) {
+      dq.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') startDiscovery();
+      });
+    }
+    const hintsToggle = document.getElementById('disc-hints-toggle');
+    const hintsPanel = document.getElementById('disc-hints');
+    if (hintsToggle && hintsPanel) {
+      hintsToggle.onclick = () => {
+        const open = hintsPanel.hasAttribute('hidden');
+        if (open) hintsPanel.removeAttribute('hidden');
+        else hintsPanel.setAttribute('hidden', '');
+        hintsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+    }
+    // Seed-type chips + examples (product home)
+    document.querySelectorAll('.disc-seed-type').forEach((btn) => {
+      btn.onclick = () => {
+        const kind = btn.getAttribute('data-seed-kind') || 'name';
+        discState.seedKind = kind;
+        document.querySelectorAll('.disc-seed-type').forEach((b) => {
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        const input = document.getElementById('disc-q');
+        if (input && SEED_PLACEHOLDERS[kind]) {
+          input.placeholder = SEED_PLACEHOLDERS[kind];
+          if (kind === 'url' || kind === 'domain') input.setAttribute('dir', 'ltr');
+          else input.removeAttribute('dir');
+        }
+      };
+    });
+    document.querySelectorAll('.disc-example').forEach((btn) => {
+      btn.onclick = () => {
+        const ex = btn.getAttribute('data-example') || '';
+        const kind = btn.getAttribute('data-kind') || 'other';
+        const input = document.getElementById('disc-q');
+        if (input) input.value = ex;
+        discState.seedKind = kind;
+        document.querySelectorAll('.disc-seed-type').forEach((b) => {
+          b.setAttribute('aria-pressed', b.getAttribute('data-seed-kind') === kind ? 'true' : 'false');
+        });
+        if (SEED_PLACEHOLDERS[kind] && input) input.placeholder = SEED_PLACEHOLDERS[kind];
+      };
+    });
+
+    // Intercept Entity Mode go when somehow visible — no-op; entity handlers stay.
+    populateFixtureChips();
+    applyModeChrome();
+
+    // Deep-link: ?mode=discovery&session=<id>[&replay=1] — open complete/running session
+    if (isDiscoveryMode() && (params().get('session') || params().get('sessionId'))) {
+      startDiscovery({
+        sessionId: params().get('session') || params().get('sessionId'),
+        replay: params().get('replay') === '1' || params().get('discoveryReplay') === '1',
+      }).catch(() => {});
+    }
+
+    // Deep-link: ?mode=discovery&seed=seed-person-he auto-run optional
+    if (isDiscoveryMode() && params().get('autorun') === '1') {
+      const seed = params().get('seed');
+      if (seed) {
+        loadFixtureIndex()
+          .then(async (idx) => {
+            const entry = (idx.fixtures || []).find((f) => f.id === seed);
+            if (!entry) return;
+            const data = await loadFixtureFile(entry.file);
+            const input = document.getElementById('disc-q');
+            if (input) input.value = data.q || '';
+            return startDiscovery({ forceFixture: true, fixtureData: data });
+          })
+          .catch(() => {});
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindDiscoveryChrome);
+  } else {
+    bindDiscoveryChrome();
+  }
+
+  // Expose for Acc/QA
+  window.AkvotDiscovery = {
+    startDiscovery,
+    cancelDiscovery,
+    isDiscoveryMode,
+    setMode,
+    getState: () => discState,
+    getSelectedFacets: () => selectedFacetsPayload(),
+    postNarrow,
+    preferSseTransport,
+    hydrateSession,
+    fetchSessionSnapshot,
+    isTerminalStatus,
+    deriveLifeStage,
+    computeGaps,
+    LIFE_STAGES,
+  };
+})();

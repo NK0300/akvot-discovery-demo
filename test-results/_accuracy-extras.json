@@ -1,0 +1,74 @@
+[
+  {
+    "id": "7b-zehava-he",
+    "cat": "near-match",
+    "input": {
+      "q": "זהבה גלאון"
+    },
+    "expectedLabel": "dossier Q2630062 faces",
+    "pass": true,
+    "ms": 986,
+    "actual": {
+      "uiState": "dossier",
+      "mode": "wiki",
+      "qid": "Q2630062",
+      "faces": true,
+      "images": 2,
+      "sources": 13,
+      "scenario": "known",
+      "confidence": "high",
+      "phase": "orchestrator-v0-b",
+      "messageKey": "dossier_ready",
+      "label": "זהבה גלאון"
+    },
+    "confidence": "high"
+  },
+  {
+    "id": "7c-merkel-latin",
+    "cat": "near-match",
+    "input": {
+      "q": "Angela Merkel"
+    },
+    "expectedLabel": "dossier (wiki exact Latin celeb)",
+    "pass": false,
+    "ms": 5691,
+    "actual": {
+      "uiState": "need_context",
+      "mode": "ambiguous",
+      "qid": null,
+      "faces": false,
+      "images": 0,
+      "sources": 0,
+      "scenario": "foreign",
+      "confidence": "none",
+      "phase": "orchestrator-v0-b",
+      "messageKey": "common_name",
+      "label": "Angela Merkel"
+    },
+    "confidence": "none"
+  },
+  {
+    "id": "1c-netanyahu-bibi",
+    "cat": "exact",
+    "input": {
+      "q": "ביבי נתניהו"
+    },
+    "expectedLabel": "dossier Q43723 if nickname resolves",
+    "pass": false,
+    "ms": 45194,
+    "actual": {
+      "uiState": "thin",
+      "mode": "google",
+      "qid": null,
+      "faces": false,
+      "images": 0,
+      "sources": 0,
+      "scenario": "stranger",
+      "confidence": "none",
+      "phase": "orchestrator-v0-b",
+      "messageKey": "no_public_sources",
+      "label": "ביבי נתניהו"
+    },
+    "confidence": "none"
+  }
+]

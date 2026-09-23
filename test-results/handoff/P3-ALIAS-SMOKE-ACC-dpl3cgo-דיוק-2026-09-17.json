@@ -1,0 +1,256 @@
+{
+  "when": "2026-09-17T18:30:07.261969+03:00",
+  "whenUtc": "2026-09-17T15:30:07.261969+00:00",
+  "role": "דיוק",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "baseline": "dpl_3cgoTVkUJpHfcdos8EVY327ZUTYy",
+  "access": "plain curl (prod alias)",
+  "origin": "https://akvot-simple-demo.vercel.app",
+  "deploy": false,
+  "PASS": true,
+  "prettyWrong": 0,
+  "verdict": "GO",
+  "buildMatch": true,
+  "cases": [
+    {
+      "id": "Assaf Rappaport",
+      "expected": "dossier Q47507930",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "photo": true,
+        "photoUrl": false,
+        "images": 2,
+        "mode": "wiki",
+        "label": "אסף רפפורט",
+        "requestId": "e131c67b-9936-4025-828b-61c1f1ef4721",
+        "http": 200,
+        "ms": 833,
+        "err": null,
+        "build": null,
+        "candidates_n": 0,
+        "extract_snip": "אסף רפפורט הוא יזם היי-טק ואיש עסקים ישראלי. מעשירי ישראל, מהנדס תוכנה במקצועו ה",
+        "faces_field": null,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      }
+    },
+    {
+      "id": "John Rappaport (T-C6)",
+      "expected": "need_context|candidates|thin · qid null · not dossier · not Q105094696",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "photoUrl": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">John Rappaport</span></span>",
+        "requestId": "cce68fd0-b1c3-4be3-8557-ff2c0205dc96",
+        "http": 200,
+        "ms": 2522,
+        "err": null,
+        "build": null,
+        "candidates_n": 0,
+        "extract_snip": "John Rappaport is an American legal scholar who is currently a professor of law ",
+        "faces_field": false,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      }
+    },
+    {
+      "id": "POST John Smith nested ctx IBM/NY/US · COLD",
+      "expected": "candidates|thin|need_context · not dossier · not Q1701775 · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "photoUrl": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "requestId": "68ff8da1-7402-4801-9f24-b37b1d8a0782",
+        "http": 200,
+        "ms": 6973,
+        "err": null,
+        "build": null,
+        "candidates_n": 6,
+        "extract_snip": "",
+        "faces_field": false,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      },
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      },
+      "tag": "COLD"
+    },
+    {
+      "id": "POST John Smith nested ctx IBM/NY/US · WARM×1",
+      "expected": "candidates|thin|need_context · not dossier · not Q1701775 · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "photoUrl": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "requestId": "24bda92d-6150-487e-a1b3-41421c98879f",
+        "http": 200,
+        "ms": 7053,
+        "err": null,
+        "build": null,
+        "candidates_n": 6,
+        "extract_snip": "",
+        "faces_field": false,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      },
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "tag": "WARM×1"
+    },
+    {
+      "id": "POST John Smith nested ctx IBM/NY/US · WARM×2",
+      "expected": "candidates|thin|need_context · not dossier · not Q1701775 · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "photoUrl": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "requestId": "0c20ba50-7671-40ee-8112-c91d286a0716",
+        "http": 200,
+        "ms": 6439,
+        "err": null,
+        "build": null,
+        "candidates_n": 6,
+        "extract_snip": "",
+        "faces_field": false,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      },
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "tag": "WARM×2"
+    },
+    {
+      "id": "POST John Smith nested ctx IBM/NY/US · WARM×3",
+      "expected": "candidates|thin|need_context · not dossier · not Q1701775 · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "photoUrl": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "requestId": "b1039ade-8a91-4a0a-9f48-ed57ceb57ed0",
+        "http": 200,
+        "ms": 6430,
+        "err": null,
+        "build": null,
+        "candidates_n": 6,
+        "extract_snip": "",
+        "faces_field": false,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      },
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "tag": "WARM×3"
+    },
+    {
+      "id": "bare כהן",
+      "expected": "need_context|thin · never dossier · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "photoUrl": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "כהן",
+        "requestId": "235f2fe3-4b38-4efe-8099-e4e9e637d143",
+        "http": 200,
+        "ms": 14908,
+        "err": null,
+        "build": null,
+        "candidates_n": 0,
+        "extract_snip": "",
+        "faces_field": false,
+        "cached": null,
+        "phase": "orchestrator-v0-b"
+      }
+    }
+  ],
+  "health": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_3cgoTVkUJpHfcdos8EVY327ZUTYy",
+      "baselineHint": "dpl_DNfPZ9"
+    }
+  },
+  "smithSummary": {
+    "n": 4,
+    "pass": 4,
+    "pw": 0
+  }
+}

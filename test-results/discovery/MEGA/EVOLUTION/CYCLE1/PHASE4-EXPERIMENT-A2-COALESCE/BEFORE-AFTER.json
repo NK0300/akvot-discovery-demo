@@ -1,0 +1,2310 @@
+{
+  "stamp": "2026-09-20T10:12:51+03:00",
+  "zone": "Asia/Jerusalem",
+  "experiment": "EXP-A2-COALESCE",
+  "preview": {
+    "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+    "url": "https://akvot-simple-demo-h9cq1ob4m-k-akvot.vercel.app"
+  },
+  "b0": {
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "alias": "https://akvot-discovery.vercel.app"
+  },
+  "core": {
+    "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "alias": "https://akvot-simple-demo.vercel.app"
+  },
+  "gate": {
+    "metric": "multi_independent_rate",
+    "aggregation": "mean(S01,S04,S05)",
+    "threshold": 0.15,
+    "also_report_pooled": true
+  },
+  "before_B0": {
+    "mean_multi_independent_rate": 0,
+    "perSeed": {
+      "S01": {
+        "rate": 0,
+        "findings": 10,
+        "multi_n": 0,
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "viaf": false
+      },
+      "S04": {
+        "rate": 0,
+        "findings": 22,
+        "multi_n": 0,
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "viaf": false
+      },
+      "S05": {
+        "rate": 0,
+        "findings": 22,
+        "multi_n": 0,
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "viaf": false
+      }
+    }
+  },
+  "after_PREVIEW": {
+    "mean_multi_independent_rate": 0.5222,
+    "pooled_multi_independent_rate": 0.4744,
+    "pooled_n": "37/78",
+    "perSeed": {
+      "S01": {
+        "rate": 0.8333,
+        "findings": 18,
+        "multi_n": 15,
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "viaf": true,
+        "corroborationEdges_n": 0,
+        "facet_multi_n": 15,
+        "sample_multi": [
+          {
+            "id": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q19761597",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q55693401",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wp-en-Tim_Berners_Lee",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 15,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          }
+        ],
+        "sample_titles": [
+          {
+            "id": "wd-Q80",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "wd-Q120373140",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "wd-Q120373262",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "wd-Q19761597",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "wd-Q55693401",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "ol-OL25245A",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "wp-en-Tim_Berners_Lee",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, 1955-",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksa\u0135o",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          },
+          {
+            "id": "viaf-85312226",
+            "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 15
+          }
+        ]
+      },
+      "S04": {
+        "rate": 0.3333,
+        "findings": 30,
+        "multi_n": 10,
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "viaf": true,
+        "corroborationEdges_n": 0,
+        "facet_multi_n": 10,
+        "sample_multi": [
+          {
+            "id": "wd-Q7624104",
+            "title": "Stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q3421342",
+            "title": "stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q127900502",
+            "title": "Stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q117454382",
+            "title": "Stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "ol-OL13079935A",
+            "title": "Stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "ol-OL10372320A",
+            "title": "STRIPE",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wp-en-Stripe",
+            "title": "Stripe",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wp-en-Stripe_Inc_",
+            "title": "Stripe, Inc.",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia"
+            ],
+            "evidenceCount": 8,
+            "hostFamilies": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          }
+        ],
+        "sample_titles": [
+          {
+            "id": "wd-Q7624104",
+            "title": "Stripe",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "wd-Q3421342",
+            "title": "stripe",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "wd-Q127900502",
+            "title": "Stripe",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "wd-Q117454382",
+            "title": "Stripe",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "ol-OL13079935A",
+            "title": "Stripe",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "ol-OL10372320A",
+            "title": "STRIPE",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "wp-en-Stripe",
+            "title": "Stripe",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "wp-en-Stripe_Inc_",
+            "title": "Stripe, Inc.",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 8
+          },
+          {
+            "id": "wp-en-Stripes_film_",
+            "title": "Stripes (film)",
+            "multi": true,
+            "fams": [
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 2
+          },
+          {
+            "id": "viaf-126600779",
+            "title": "Stripes",
+            "multi": true,
+            "fams": [
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 2
+          },
+          {
+            "id": "wd-Q297115",
+            "title": "Meloidae",
+            "multi": false,
+            "fams": [
+              "wikimedia"
+            ],
+            "nEv": 1
+          },
+          {
+            "id": "wd-Q469754",
+            "title": "Perca flavescens",
+            "multi": false,
+            "fams": [
+              "wikimedia"
+            ],
+            "nEv": 1
+          }
+        ]
+      },
+      "S05": {
+        "rate": 0.4,
+        "findings": 30,
+        "multi_n": 12,
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "viaf": true,
+        "corroborationEdges_n": 0,
+        "facet_multi_n": 12,
+        "sample_multi": [
+          {
+            "id": "wd-Q104700248",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q116059498",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wd-Q50320550",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "ol-OL2917704A",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "ol-OL4511273A",
+            "title": "Red Cross.",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wp-en-Red_Cross",
+            "title": "Red Cross",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "wp-en-Red_Cross_EP_",
+            "title": "Red Cross (EP)",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          },
+          {
+            "id": "viaf-148420048",
+            "title": "Red Cross (Great Britain)",
+            "providers": [
+              "wikidata",
+              "openlibrary",
+              "wikipedia",
+              "viaf"
+            ],
+            "evidenceCount": 10,
+            "hostFamilies": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "multi_independent": true,
+            "facetMulti": true
+          }
+        ],
+        "sample_titles": [
+          {
+            "id": "wd-Q104700248",
+            "title": "Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "wd-Q116059498",
+            "title": "Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "wd-Q50320550",
+            "title": "Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "ol-OL2917704A",
+            "title": "Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "ol-OL4511273A",
+            "title": "Red Cross.",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "wp-en-Red_Cross",
+            "title": "Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "wp-en-Red_Cross_EP_",
+            "title": "Red Cross (EP)",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "viaf-148420048",
+            "title": "Red Cross (Great Britain)",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "viaf-312731766",
+            "title": "Red Cross, Henry Dunant Institute",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "viaf-159584209",
+            "title": "Red Cross, Deutsches Rotes Kreuz",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "viaf",
+              "wikimedia"
+            ],
+            "nEv": 10
+          },
+          {
+            "id": "wd-Q470110",
+            "title": "American Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 2
+          },
+          {
+            "id": "ol-OL10303910A",
+            "title": "American Red Cross",
+            "multi": true,
+            "fams": [
+              "openlibrary",
+              "wikimedia"
+            ],
+            "nEv": 2
+          }
+        ]
+      }
+    },
+    "mean_multi_independent_rate_acc_map": 0.5222,
+    "pooled_multi_independent_rate_acc_map": 0.4744
+  },
+  "delta_mean": 0.5222,
+  "accLeakTotal": 0,
+  "coverage": {
+    "S01_findings": 18,
+    "no_vacuum_collapse": true,
+    "note": "S01 must keep \u22655 findings (attach_keep; not softLabel vacuum to 1)"
+  },
+  "aliasesUntouched": true,
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "pass": true,
+  "gates": {
+    "multi_independent_mean": "PASS",
+    "acc_leak": "PASS",
+    "coverage_no_vacuum": "PASS",
+    "multi_independent_mean_acc_map": "PASS"
+  },
+  "previewRows": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.b6a6fa06203e4d3e7030cc93ef17e914",
+      "status": "partial",
+      "create_ms": 3334,
+      "findings_count": 18,
+      "evidence_count": 18,
+      "multi_independent_n": 15,
+      "multi_independent_rate": 0.8333,
+      "viaf_findings_n": 15,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "hostFamily_histogram": {
+        "openlibrary": 15,
+        "viaf": 15,
+        "wikimedia": 18
+      },
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial"
+      },
+      "acc_leak_count": 0,
+      "corroborationEdges_n": 0,
+      "facet_multi_n": 15,
+      "sample_multi": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 15,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        }
+      ],
+      "sample_titles": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, 1955-",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, angla komputosciencisto, inventinto de la Tut-Tera Teksa\u0135o",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, britischer Informatiker, Erfinder des World Wide Web",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee, Britaniko a sientista ti kompiuter, inbentor ti World Wide Web",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 15
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.aeb7995066c76b3c70324cc70011b4be",
+      "status": "partial",
+      "create_ms": 3315,
+      "findings_count": 30,
+      "evidence_count": 30,
+      "multi_independent_n": 10,
+      "multi_independent_rate": 0.3333,
+      "viaf_findings_n": 9,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "hostFamily_histogram": {
+        "openlibrary": 14,
+        "wikimedia": 17,
+        "viaf": 9
+      },
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "acc_leak_count": 0,
+      "corroborationEdges_n": 0,
+      "facet_multi_n": 10,
+      "sample_multi": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q3421342",
+          "title": "stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q127900502",
+          "title": "Stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q117454382",
+          "title": "Stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "ol-OL13079935A",
+          "title": "Stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "ol-OL10372320A",
+          "title": "STRIPE",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wp-en-Stripe",
+          "title": "Stripe",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wp-en-Stripe_Inc_",
+          "title": "Stripe, Inc.",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia"
+          ],
+          "evidenceCount": 8,
+          "hostFamilies": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        }
+      ],
+      "sample_titles": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "wd-Q3421342",
+          "title": "stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "wd-Q127900502",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "wd-Q117454382",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "ol-OL13079935A",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "ol-OL10372320A",
+          "title": "STRIPE",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "wp-en-Stripe",
+          "title": "Stripe",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "wp-en-Stripe_Inc_",
+          "title": "Stripe, Inc.",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 8
+        },
+        {
+          "id": "wp-en-Stripes_film_",
+          "title": "Stripes (film)",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 2
+        },
+        {
+          "id": "viaf-126600779",
+          "title": "Stripes",
+          "multi": true,
+          "fams": [
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 2
+        },
+        {
+          "id": "wd-Q297115",
+          "title": "Meloidae",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q469754",
+          "title": "Perca flavescens",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.85338a2e9b1edb6b25c771aca1df8bdd",
+      "status": "partial",
+      "create_ms": 3810,
+      "findings_count": 30,
+      "evidence_count": 30,
+      "multi_independent_n": 12,
+      "multi_independent_rate": 0.4,
+      "viaf_findings_n": 15,
+      "families_union": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "hostFamily_histogram": {
+        "openlibrary": 17,
+        "viaf": 15,
+        "wikimedia": 20
+      },
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial"
+      },
+      "acc_leak_count": 0,
+      "corroborationEdges_n": 0,
+      "facet_multi_n": 12,
+      "sample_multi": [
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q116059498",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wd-Q50320550",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "ol-OL2917704A",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "ol-OL4511273A",
+          "title": "Red Cross.",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wp-en-Red_Cross",
+          "title": "Red Cross",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "wp-en-Red_Cross_EP_",
+          "title": "Red Cross (EP)",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        },
+        {
+          "id": "viaf-148420048",
+          "title": "Red Cross (Great Britain)",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "wikipedia",
+            "viaf"
+          ],
+          "evidenceCount": 10,
+          "hostFamilies": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "multi_independent": true,
+          "facetMulti": true
+        }
+      ],
+      "sample_titles": [
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "wd-Q116059498",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "wd-Q50320550",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "ol-OL2917704A",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "ol-OL4511273A",
+          "title": "Red Cross.",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "wp-en-Red_Cross",
+          "title": "Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "wp-en-Red_Cross_EP_",
+          "title": "Red Cross (EP)",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "viaf-148420048",
+          "title": "Red Cross (Great Britain)",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "viaf-312731766",
+          "title": "Red Cross, Henry Dunant Institute",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "viaf-159584209",
+          "title": "Red Cross, Deutsches Rotes Kreuz",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "viaf",
+            "wikimedia"
+          ],
+          "nEv": 10
+        },
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 2
+        },
+        {
+          "id": "ol-OL10303910A",
+          "title": "American Red Cross",
+          "multi": true,
+          "fams": [
+            "openlibrary",
+            "wikimedia"
+          ],
+          "nEv": 2
+        }
+      ]
+    }
+  ],
+  "b0Rows": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.0fdd5d706521ceceabcc32deefef9473",
+      "status": "partial",
+      "create_ms": 4832,
+      "findings_count": 10,
+      "evidence_count": 10,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0,
+      "viaf_findings_n": 0,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "hostFamily_histogram": {
+        "wikimedia": 9,
+        "openlibrary": 1
+      },
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "acc_leak_count": 0,
+      "corroborationEdges_n": 0,
+      "facet_multi_n": 0,
+      "sample_multi": [],
+      "sample_titles": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q22991023",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q22946133",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q22980417",
+          "title": "Tim Berners-Lee: The next web",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "sessionId": "kv1.b4465db83d2dc38958ee973a6f8461fa",
+      "status": "partial",
+      "create_ms": 2622,
+      "findings_count": 22,
+      "evidence_count": 22,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0,
+      "viaf_findings_n": 0,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "hostFamily_histogram": {
+        "wikimedia": 14,
+        "openlibrary": 8
+      },
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "acc_leak_count": 0,
+      "corroborationEdges_n": 0,
+      "facet_multi_n": 0,
+      "sample_multi": [],
+      "sample_titles": [
+        {
+          "id": "wd-Q7624104",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q3421342",
+          "title": "stripe",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q127900502",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q117454382",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q297115",
+          "title": "Meloidae",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q469754",
+          "title": "Perca flavescens",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q842647",
+          "title": "striped bass",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q368495",
+          "title": "striped skunk",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL8376862A",
+          "title": "Five Stripe Books",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL8613090A",
+          "title": "Adelle Stripe",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL13079935A",
+          "title": "Stripe",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL10372320A",
+          "title": "STRIPE",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "sessionId": "kv1.0700d41afd81003d6f64ef51e6c069e9",
+      "status": "partial",
+      "create_ms": 4447,
+      "findings_count": 22,
+      "evidence_count": 22,
+      "multi_independent_n": 0,
+      "multi_independent_rate": 0,
+      "viaf_findings_n": 0,
+      "families_union": [
+        "openlibrary",
+        "wikimedia"
+      ],
+      "hostFamily_histogram": {
+        "wikimedia": 14,
+        "openlibrary": 8
+      },
+      "providers_session": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "acc_leak_count": 0,
+      "corroborationEdges_n": 0,
+      "facet_multi_n": 0,
+      "sample_multi": [],
+      "sample_titles": [
+        {
+          "id": "wd-Q470110",
+          "title": "American Red Cross",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q7178",
+          "title": "International Red Cross and Red Crescent Movement",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q48438",
+          "title": "Saint George",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q7305591",
+          "title": "Redd Kross",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q104700248",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q1968122",
+          "title": "National Red Cross and Red Crescent society",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q116059498",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "wd-Q50320550",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "wikimedia"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL17804A",
+          "title": "American National Red Cross",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL124327A",
+          "title": "International Committee of the Red Cross",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL2917704A",
+          "title": "Red Cross",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        },
+        {
+          "id": "ol-OL10303910A",
+          "title": "American Red Cross",
+          "multi": false,
+          "fams": [
+            "openlibrary"
+          ],
+          "nEv": 1
+        }
+      ]
+    }
+  ],
+  "acc_family_map": {
+    "note": "wikidata\u2260wikipedia\u2260openlibrary\u2260viaf (Acc EXP-A2 redef)",
+    "before_B0_mean": 0.0,
+    "after_PREVIEW_mean": 0.5222,
+    "after_PREVIEW_pooled": 0.4744,
+    "pooled_n": "37/78",
+    "perSeed_PREVIEW": {
+      "S01": {
+        "findings": 18,
+        "multi_n": 15,
+        "rate": 0.8333,
+        "hist": {
+          "wikidata": 18,
+          "viaf": 15,
+          "openlibrary": 15,
+          "wikipedia": 15
+        }
+      },
+      "S04": {
+        "findings": 30,
+        "multi_n": 10,
+        "rate": 0.3333,
+        "hist": {
+          "wikidata": 12,
+          "openlibrary": 14,
+          "wikipedia": 13,
+          "viaf": 9
+        }
+      },
+      "S05": {
+        "findings": 30,
+        "multi_n": 12,
+        "rate": 0.4,
+        "hist": {
+          "wikidata": 16,
+          "viaf": 15,
+          "openlibrary": 17,
+          "wikipedia": 14
+        }
+      }
+    },
+    "perSeed_B0": {
+      "S01": {
+        "findings": 10,
+        "multi_n": 0,
+        "rate": 0.0,
+        "hist": {
+          "wikidata": 8,
+          "openlibrary": 1,
+          "wikipedia": 1
+        }
+      },
+      "S04": {
+        "findings": 22,
+        "multi_n": 0,
+        "rate": 0.0,
+        "hist": {
+          "wikidata": 8,
+          "openlibrary": 8,
+          "wikipedia": 6
+        }
+      },
+      "S05": {
+        "findings": 22,
+        "multi_n": 0,
+        "rate": 0.0,
+        "hist": {
+          "wikidata": 8,
+          "openlibrary": 8,
+          "wikipedia": 6
+        }
+      }
+    },
+    "gate_mean_ge_0_15": true
+  },
+  "pass_acc_map": true
+}

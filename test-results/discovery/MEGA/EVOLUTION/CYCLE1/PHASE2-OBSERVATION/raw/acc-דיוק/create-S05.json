@@ -1,0 +1,407 @@
+{
+  "ok": true,
+  "sessionId": "kv1.0a5ea6f58b6ca477dd21833867945ef0",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "sess-mu9gk92t-b7c53d",
+  "snapshot": {
+    "sessionId": "kv1.0a5ea6f58b6ca477dd21833867945ef0",
+    "seed": "Red Cross",
+    "q": "Red Cross",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wp-en-Red_Cross",
+        "kind": "page",
+        "title": "Red Cross",
+        "evidenceIds": [
+          "ev-bd3835ec8708469c4d23938e"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Red Cross"
+        ],
+        "scoreFinding": 0.6483333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Red_Cross_parcel",
+        "kind": "page",
+        "title": "Red Cross parcel",
+        "evidenceIds": [
+          "ev-fb8c267bc13768462503dbb0"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Red Cross parcel"
+        ],
+        "scoreFinding": 0.6383333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Red_Cross_Youth_Philippines_",
+        "kind": "page",
+        "title": "Red Cross Youth (Philippines)",
+        "evidenceIds": [
+          "ev-1e3332c5beb9a1cedc3e2233"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Red Cross Youth (Philippines)"
+        ],
+        "scoreFinding": 0.6283333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Red_Cross_of_Constantine",
+        "kind": "page",
+        "title": "Red Cross of Constantine",
+        "evidenceIds": [
+          "ev-00dd79dec29cfd4788ec7d09"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Red Cross of Constantine"
+        ],
+        "scoreFinding": 0.6183333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Red_crossbill",
+        "kind": "page",
+        "title": "Red crossbill",
+        "evidenceIds": [
+          "ev-3effb23f7efddf49a3a83160"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Red crossbill"
+        ],
+        "scoreFinding": 0.6083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Red_Cross_EP_",
+        "kind": "page",
+        "title": "Red Cross (EP)",
+        "evidenceIds": [
+          "ev-3fe05e34eacda215e4718816"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Red Cross (EP)"
+        ],
+        "scoreFinding": 0.5983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-bd3835ec8708469c4d23938e",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross",
+        "url": "https://en.wikipedia.org/wiki/Red_Cross",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:51:34.551Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-fb8c267bc13768462503dbb0",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+        "url": "https://en.wikipedia.org/wiki/Red_Cross_parcel",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:51:34.551Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1e3332c5beb9a1cedc3e2233",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+        "url": "https://en.wikipedia.org/wiki/Red_Cross_Youth_(Philippines)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:51:34.551Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-00dd79dec29cfd4788ec7d09",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+        "url": "https://en.wikipedia.org/wiki/Red_Cross_of_Constantine",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:51:34.551Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3effb23f7efddf49a3a83160",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Red_crossbill",
+        "url": "https://en.wikipedia.org/wiki/Red_crossbill",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:51:34.551Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3fe05e34eacda215e4718816",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+        "url": "https://en.wikipedia.org/wiki/Red_Cross_(EP)",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T06:51:34.551Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 6,
+      "totalHint": 6
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "error",
+      "wikipedia": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:ac18ec394346"
+      ],
+      "status": "candidate",
+      "displayHint": "Red Cross",
+      "hints": {
+        "kind": "org"
+      }
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T06:51:34.517Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:ac18ec394346",
+          "kind": "seed"
+        },
+        {
+          "id": "wp-en-Red_Cross",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Red_Cross_parcel",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Red_Cross_Youth_Philippines_",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Red_Cross_of_Constantine",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Red_crossbill",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Red_Cross_EP_",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

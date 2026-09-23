@@ -1,0 +1,927 @@
+{
+  "meta": {
+    "id": "ACCURACY_EVAL-v2-set-דיוק-2026-09-09",
+    "version": "v2",
+    "agent": "דיוק",
+    "role": "Accuracy",
+    "protocol": "MASTER CONTROL PROTOCOL Hour 1",
+    "when": "2026-09-09T10:06:03.978485Z",
+    "whenLocal": "9.9.2026, 13:06:03 Asia/Jerusalem",
+    "purpose": "Independent case list with expected outcomes — BUILD ONLY; run after P1 (do not hit live prod yet unless quick).",
+    "rules": [
+      "public sources only",
+      "no Sync.me / Truecaller",
+      "UNKNOWN stays UNKNOWN",
+      "no lowering evidence/mayCommit thresholds",
+      "do not modify product code",
+      "do not deploy"
+    ],
+    "n": 34,
+    "nRegression": 4,
+    "nNew": 30,
+    "categories": [
+      "alias",
+      "ambiguous",
+      "conflict",
+      "duplicate",
+      "exact",
+      "near",
+      "non-match",
+      "partial",
+      "transliteration",
+      "unknown"
+    ],
+    "categoryCounts": {
+      "alias": 5,
+      "ambiguous": 2,
+      "conflict": 2,
+      "duplicate": 2,
+      "exact": 7,
+      "near": 2,
+      "non-match": 2,
+      "partial": 2,
+      "transliteration": 8,
+      "unknown": 2
+    },
+    "regressionIds": [
+      "reg-netanyahu-bare",
+      "reg-bibi-netanyahu",
+      "reg-zehava-galon",
+      "reg-angela-merkel"
+    ],
+    "schema": {
+      "case": [
+        "id",
+        "category",
+        "subset",
+        "input",
+        "expected",
+        "errorTypesIfFail",
+        "notes"
+      ],
+      "input": [
+        "q",
+        "ctx?"
+      ],
+      "expected": {
+        "uiState": "allowed uiState string[]",
+        "faces": "true|false|null (null=any / judge faces only via must_not)",
+        "qid": "exact Wikidata QID or null (omit strict check when null)",
+        "must_not": "forbidden outcomes e.g. dossier+faces, fake_dossier, email_leak, qid_when_unknown, wrong_person_dossier"
+      },
+      "runnerNote": "Treat expected.uiState as allowed[] (alias of prior uiStates). faces=null means do not require faces true/false except via must_not."
+    },
+    "priorEval": "ACCURACY_EVAL-דיוק-2026-09-09.json (N=16, PASS=12, FAIL=4)",
+    "p1Context": "FIX-P1-seed-alias — knownIdentities seeds/aliases + Latin wikiExact parity; unit green, NO deploy yet"
+  },
+  "cases": [
+    {
+      "id": "reg-netanyahu-bare",
+      "category": "exact",
+      "subset": "regression",
+      "input": {
+        "q": "נתניהו"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q43723",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "over_gate",
+        "wrong_qid",
+        "missing_faces",
+        "surname_block"
+      ],
+      "notes": "REGRESSION FAIL#1 (pre-P1): bare unique surname over-gated as common_name. After P1 seed → dossier Q43723."
+    },
+    {
+      "id": "reg-bibi-netanyahu",
+      "category": "alias",
+      "subset": "regression",
+      "input": {
+        "q": "ביבי נתניהו"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q43723",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "nickname_miss",
+        "over_gate",
+        "wrong_qid",
+        "thin_on_known"
+      ],
+      "notes": "REGRESSION FAIL#2 (pre-P1): nickname ביבי נתניהו → thin. After P1 alias → Q43723."
+    },
+    {
+      "id": "reg-zehava-galon",
+      "category": "transliteration",
+      "subset": "regression",
+      "input": {
+        "q": "Zehava Galon"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q2630062",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "transliteration_miss",
+        "over_gate",
+        "wrong_qid",
+        "latin_wiki_block"
+      ],
+      "notes": "REGRESSION FAIL#3 (pre-P1): Latin translit of זהבה גלאון blocked. After P1 latinFold seed → Q2630062."
+    },
+    {
+      "id": "reg-angela-merkel",
+      "category": "transliteration",
+      "subset": "regression",
+      "input": {
+        "q": "Angela Merkel"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q567",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "latin_wiki_block",
+        "over_gate",
+        "wrong_qid",
+        "missing_faces"
+      ],
+      "notes": "REGRESSION FAIL#4 (pre-P1): Latin wikiExact celeb → need_context. After P1 parity → Q567."
+    },
+    {
+      "id": "exact-benjamin-netanyahu",
+      "category": "exact",
+      "subset": "new",
+      "input": {
+        "q": "בנימין נתניהו"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q43723",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "missing_faces",
+        "under_commit"
+      ],
+      "notes": "Full HE famous KEEP control; previously PASS on prod."
+    },
+    {
+      "id": "exact-yair-lapid",
+      "category": "exact",
+      "subset": "new",
+      "input": {
+        "q": "יאיר לפיד"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q1396120",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "missing_faces",
+        "under_commit"
+      ],
+      "notes": "NEW: full HE exact יאיר לפיד (contrast with bare לפיד alias case)."
+    },
+    {
+      "id": "exact-benny-gantz",
+      "category": "exact",
+      "subset": "new",
+      "input": {
+        "q": "בני גנץ"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q16131258",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "missing_faces",
+        "under_commit"
+      ],
+      "notes": "NEW: full HE exact בני גנץ."
+    },
+    {
+      "id": "exact-obama-he",
+      "category": "exact",
+      "subset": "new",
+      "input": {
+        "q": "ברק אובמה"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q76",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "missing_faces",
+        "he_world_figure_miss"
+      ],
+      "notes": "NEW: Obama HE label exact; pair with EN/surname alias cases."
+    },
+    {
+      "id": "exact-orly-levy",
+      "category": "exact",
+      "subset": "new",
+      "input": {
+        "q": "אורלי לוי"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q466537",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "seed_regress",
+        "missing_faces"
+      ],
+      "notes": "NEW-to-v2-set (prior KEEP): seeded אורלי לוי must stay dossier; bare לוי alone must NEVER invent."
+    },
+    {
+      "id": "nonmatch-nonsense-latin",
+      "category": "non-match",
+      "subset": "new",
+      "input": {
+        "q": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "fabricated_qid",
+        "faces_on_garbage"
+      ],
+      "notes": "NEW category rename of garbage: pure nonsense Latin — UNKNOWN stays UNKNOWN."
+    },
+    {
+      "id": "nonmatch-nonsense-he",
+      "category": "non-match",
+      "subset": "new",
+      "input": {
+        "q": "קוקומלומבופלומפ123zzz"
+      },
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "fabricated_qid",
+        "faces_on_garbage"
+      ],
+      "notes": "NEW: HE-script nonsense (not the prior בלהבלה string) — no fabricated dossier."
+    },
+    {
+      "id": "ambiguous-danny-cohen",
+      "category": "ambiguous",
+      "subset": "new",
+      "input": {
+        "q": "דני כהן"
+      },
+      "expected": {
+        "uiState": [
+          "need_context"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "common_name_overcommit",
+        "faces_on_ambiguous"
+      ],
+      "notes": "KEEP: common HE full name — need_context, 0 faces. Never seed כהן alone."
+    },
+    {
+      "id": "ambiguous-yossi-levy",
+      "category": "ambiguous",
+      "subset": "new",
+      "input": {
+        "q": "יוסי לוי"
+      },
+      "expected": {
+        "uiState": [
+          "need_context",
+          "candidates"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "common_name_overcommit",
+        "wrong_seed_orly"
+      ],
+      "notes": "NEW: another COMMON_HE pattern; must not resolve to אורלי לוי seed."
+    },
+    {
+      "id": "unknown-fake-obscure-he",
+      "category": "unknown",
+      "subset": "new",
+      "input": {
+        "q": "פלמוני אלמוניזקש",
+        "ctx": {
+          "city": "דימונה",
+          "org": "מפעל בדיקה פיקטיבי"
+        }
+      },
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "fabricated_qid",
+        "unknown_lowered_threshold"
+      ],
+      "notes": "Fake obscure HE + ctx — UNKNOWN stays UNKNOWN; no threshold lowering."
+    },
+    {
+      "id": "unknown-fake-obscure-en",
+      "category": "unknown",
+      "subset": "new",
+      "input": {
+        "q": "Quentin Zzyzxworth Blorple",
+        "ctx": {
+          "city": "Reykjavik",
+          "org": "Nonexistent Labs LLC"
+        }
+      },
+      "expected": {
+        "uiState": [
+          "thin",
+          "need_context",
+          "candidates"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces",
+          "qid_when_unknown"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "fabricated_qid",
+        "unknown_lowered_threshold"
+      ],
+      "notes": "NEW: fake obscure Latin diaspora-ish name; candidates OK only without faces/dossier commit."
+    },
+    {
+      "id": "conflict-smith-microsoft-seattle",
+      "category": "conflict",
+      "subset": "new",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "Microsoft",
+          "city": "Seattle",
+          "country": "US"
+        }
+      },
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "over_commit_ctx",
+        "threshold_bypass"
+      ],
+      "notes": "NEW: Smith+Microsoft+Seattle — context must NOT alone unlock dossier+faces (P0 KEEP)."
+    },
+    {
+      "id": "conflict-smith-email",
+      "category": "conflict",
+      "subset": "new",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        }
+      },
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier",
+          "email_leak"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "email_as_identity",
+        "email_leak"
+      ],
+      "notes": "NEW-to-v2 conflict email trap: email≠identity; must_not leak qa.rethink.test@example.com."
+    },
+    {
+      "id": "partial-role-only",
+      "category": "partial",
+      "subset": "new",
+      "input": {
+        "q": "Sarah Johnson",
+        "ctx": {
+          "role": "product manager"
+        }
+      },
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "over_commit_partial",
+        "pretty_wrong",
+        "role_only_commit"
+      ],
+      "notes": "NEW: role-only partial context — must not over-commit dossier+faces."
+    },
+    {
+      "id": "partial-emily-chen-student",
+      "category": "partial",
+      "subset": "new",
+      "input": {
+        "q": "Emily Chen",
+        "ctx": {
+          "city": "Palo Alto",
+          "role": "student"
+        }
+      },
+      "expected": {
+        "uiState": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "over_commit_partial",
+        "pretty_wrong"
+      ],
+      "notes": "Partial city+role weak evidence — candidates/thin OK; no low-conf dossier+faces."
+    },
+    {
+      "id": "near-netenyahu-typo",
+      "category": "near",
+      "subset": "new",
+      "input": {
+        "q": "Netenyahu"
+      },
+      "expected": {
+        "uiState": [
+          "dossier",
+          "need_context",
+          "candidates",
+          "thin"
+        ],
+        "faces": null,
+        "qid": null,
+        "must_not": [
+          "wrong_person_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "pretty_wrong"
+      ],
+      "notes": "NEW near misspelling of Netanyahu (e vs a). PASS if Q43723 dossier OR safe non-commit; FAIL only on wrong-person dossier.",
+      "expectedRelaxed": {
+        "prefer": "dossier+Q43723 if fuzzy/wiki recovers",
+        "accept": "need_context|candidates|thin without faces of wrong person"
+      }
+    },
+    {
+      "id": "near-zehava-missing-alef",
+      "category": "near",
+      "subset": "new",
+      "input": {
+        "q": "זהבה גלון"
+      },
+      "expected": {
+        "uiState": [
+          "dossier",
+          "need_context",
+          "candidates",
+          "thin"
+        ],
+        "faces": null,
+        "qid": null,
+        "must_not": [
+          "wrong_person_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "wrong_qid",
+        "pretty_wrong"
+      ],
+      "notes": "NEW near HE misspelling: גלון vs גלאון. Prefer Q2630062 if recovered; never wrong celeb dossier."
+    },
+    {
+      "id": "duplicate-michael-brown",
+      "category": "duplicate",
+      "subset": "new",
+      "input": {
+        "q": "Michael Brown"
+      },
+      "expected": {
+        "uiState": [
+          "need_context",
+          "candidates"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "common_latin_overcommit",
+        "historical_homonym_commit"
+      ],
+      "notes": "NEW: highly duplicate Latin name — need_context/candidates; historical wiki alone ≠ unique dossier."
+    },
+    {
+      "id": "duplicate-john-smith-bare",
+      "category": "duplicate",
+      "subset": "new",
+      "input": {
+        "q": "John Smith"
+      },
+      "expected": {
+        "uiState": [
+          "need_context"
+        ],
+        "faces": false,
+        "qid": null,
+        "must_not": [
+          "dossier+faces",
+          "faces",
+          "fake_dossier"
+        ]
+      },
+      "errorTypesIfFail": [
+        "pretty_wrong",
+        "common_latin_overcommit"
+      ],
+      "notes": "Bare John Smith KEEP: need_context, 0 faces."
+    },
+    {
+      "id": "alias-lapid-bare",
+      "category": "alias",
+      "subset": "new",
+      "input": {
+        "q": "לפיד"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q1396120",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "unique_surname_miss",
+        "over_gate",
+        "wrong_qid"
+      ],
+      "notes": "NEW: bare לפיד unique-surname alias → Yair Lapid Q1396120 (contrast ambiguous COMMON_HE)."
+    },
+    {
+      "id": "alias-gantz-bare",
+      "category": "alias",
+      "subset": "new",
+      "input": {
+        "q": "גנץ"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q16131258",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "unique_surname_miss",
+        "over_gate",
+        "wrong_qid"
+      ],
+      "notes": "NEW: bare גנץ unique-surname alias → Benny Gantz Q16131258."
+    },
+    {
+      "id": "alias-bibi-alone",
+      "category": "alias",
+      "subset": "new",
+      "input": {
+        "q": "ביבי"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q43723",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "nickname_miss",
+        "over_gate",
+        "wrong_qid"
+      ],
+      "notes": "NEW: Hebrew nickname alone ביבי → Netanyahu Q43723 (locale-unique nickname seed)."
+    },
+    {
+      "id": "alias-obama-surname",
+      "category": "alias",
+      "subset": "new",
+      "input": {
+        "q": "Obama"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q76",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "unique_surname_miss",
+        "over_gate",
+        "wrong_qid"
+      ],
+      "notes": "NEW: EN surname alias Obama → Q76; pair with HE ברק אובמה exact."
+    },
+    {
+      "id": "translit-meloni-bare",
+      "category": "transliteration",
+      "subset": "new",
+      "input": {
+        "q": "Meloni"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q451791",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "transliteration_miss",
+        "over_gate",
+        "wrong_qid"
+      ],
+      "notes": "NEW: Meloni unique Latin surname seed → Giorgia Meloni Q451791."
+    },
+    {
+      "id": "translit-giorgia-meloni",
+      "category": "transliteration",
+      "subset": "new",
+      "input": {
+        "q": "Giorgia Meloni"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q451791",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "latin_wiki_block",
+        "wrong_qid",
+        "missing_faces"
+      ],
+      "notes": "NEW: full Latin world figure Giorgia Meloni."
+    },
+    {
+      "id": "translit-assaf-rappaport",
+      "category": "transliteration",
+      "subset": "new",
+      "input": {
+        "q": "Assaf Rappaport"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q47507930",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "transliteration_miss",
+        "mid_tier_miss",
+        "wrong_qid"
+      ],
+      "notes": "NEW: mid-tier Israeli biz Latin translit אסף רפפורט — prior KEEP wiki Q47507930 (not in P1 seed map; wikiExact path)."
+    },
+    {
+      "id": "translit-obama-en",
+      "category": "transliteration",
+      "subset": "new",
+      "input": {
+        "q": "Barack Obama"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q76",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "latin_wiki_block",
+        "wrong_qid",
+        "missing_faces"
+      ],
+      "notes": "NEW: Obama EN full — Latin wikiExact / seed parity with HE."
+    },
+    {
+      "id": "translit-yair-lapid-en",
+      "category": "transliteration",
+      "subset": "new",
+      "input": {
+        "q": "Yair Lapid"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q1396120",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "transliteration_miss",
+        "wrong_qid",
+        "missing_faces"
+      ],
+      "notes": "NEW: Latin translit of Israeli celeb יאיר לפיד."
+    },
+    {
+      "id": "translit-zahava-gal-on",
+      "category": "transliteration",
+      "subset": "new",
+      "input": {
+        "q": "Zahava Gal-On"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q2630062",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "latin_fold_miss",
+        "transliteration_miss",
+        "wrong_qid"
+      ],
+      "notes": "NEW: latinFold variant Zahava Gal-On (hyphen + z/Z) → same Q2630062 as Zehava Galon."
+    },
+    {
+      "id": "diaspora-rahm-emanuel",
+      "category": "exact",
+      "subset": "new",
+      "input": {
+        "q": "Rahm Emanuel"
+      },
+      "expected": {
+        "uiState": [
+          "dossier"
+        ],
+        "faces": true,
+        "qid": "Q298443",
+        "must_not": []
+      },
+      "errorTypesIfFail": [
+        "diaspora_miss",
+        "wrong_qid",
+        "missing_faces"
+      ],
+      "notes": "NEW diaspora: Rahm Emanuel (רם עמנואל) seeded — Jewish diaspora public figure EN."
+    }
+  ]
+}

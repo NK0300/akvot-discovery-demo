@@ -1,0 +1,80 @@
+[release-9pkj] start 2026-09-20T07:53:05+03:00
+[release-9pkj] Preview dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 · Core dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · HOLD promote
+
+=== Health ===
+[health] api.build=dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 store=upstash disc.ok=true steps=["WRITE:true","READ:true","UPDATE:true","DELETE:true"]
+
+=== Seeds Acc ≥3 ===
+
+--- S1 דוד כהן ---
+[POST] 201 sid=kv1.3f461e8e23983da74f27491eaed2e654 findings=19 store=upstash ms=2985 contraLeaks=0
+[GET] 200 regenerated=null findings=19 ms=2424 contraLeaks=0
+[GET2] 200 regenerated=null findings=19
+[SSE] ct=text/event-stream; charset=utf-8 ev=27 types=meta,progress,provider,finding,facets,status,done ms=2647
+[SSE2] ev=27 types=meta,progress,provider,finding,facets,status,done ms=2697
+[NARROW] 200 19→19 ms=2295
+[S1] PASS ok
+
+--- S2 Alex Morgan ---
+[POST] 201 sid=kv1.e51dfb00448e6ba676e655d12efc2a5c findings=21 store=upstash ms=2857 contraLeaks=0
+[GET] 200 regenerated=null findings=21 ms=2254 contraLeaks=0
+[GET2] 200 regenerated=null findings=21
+[SSE] ct=text/event-stream; charset=utf-8 ev=29 types=meta,progress,provider,finding,facets,status,done ms=2672
+[SSE2] ev=29 types=meta,progress,provider,finding,facets,status,done ms=2724
+[NARROW] 200 21→21 ms=2640
+[S2] PASS ok
+
+--- S3 example.org ---
+[POST] 201 sid=kv1.15640e1f9286fbd746e8354df04b0008 findings=3 store=upstash ms=2697 contraLeaks=0
+[GET] 200 regenerated=null findings=3 ms=2237 contraLeaks=0
+[GET2] 200 regenerated=null findings=3
+[SSE] ct=text/event-stream; charset=utf-8 ev=11 types=meta,progress,provider,finding,facets,status,done ms=2428
+[SSE2] ev=11 types=meta,progress,provider,finding,facets,status,done ms=2386
+[NARROW] 200 3→3 ms=2511
+[S3] PASS ok
+
+=== Smith+ctx B23 scrub ===
+[Smith+ctx] POST=201 GET=200 findings=21 regen=null contraClean=true leak=0 bans= PASS=true
+
+=== RB-11 rehydrate scrub ===
+[RB11] GET 200 regen=null forbiddenAbsent=true el=0 fl=0 contra=0 bans=
+[RB11 narrow-poison] 200 entityLeak=0? true
+
+=== ADV L1-L4 smoke ===
+[ADV-L1] PASS http=201 findings=19 el=0 fl=0 contra=0
+[ADV-L2] PASS http=201 findings=21 el=0 fl=0 contra=0
+[ADV-L3] PASS http=201 findings=3 el=0 fl=0 contra=0
+[ADV-L4] PASS http=201 findings=0 el=0 fl=0 contra=0
+
+=== Core alias ===
+[CORE] build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 assaf=dossier/Q47507930 cohen=need_context smith=need_context faces=0 pw=0 PASS=true
+
+========== SUMMARY ==========
+{
+  "counts": {
+    "PASS": 12,
+    "FAIL": 0,
+    "HOLD": 2,
+    "BLOCKED_KV": 0
+  },
+  "storeBackend": "upstash",
+  "verdict": "GREEN for Chief Review · HOLD promote (RB-13/14 wait Chief GO)",
+  "greenEnoughForChiefReview": true,
+  "items": [
+    "RB-01:PASS",
+    "RB-02:PASS",
+    "RB-03:PASS",
+    "RB-04:PASS",
+    "RB-05:PASS",
+    "RB-06:PASS",
+    "RB-07:PASS",
+    "RB-08:PASS",
+    "RB-09:PASS",
+    "RB-10:PASS",
+    "RB-11:PASS",
+    "RB-12:PASS",
+    "RB-13:HOLD",
+    "RB-14:HOLD"
+  ]
+}
+Wrote QR-RELEASE-BATTERY-9PkJ-בודק-2026-09-20.md/.json

@@ -1,0 +1,11 @@
+HTTP/2 302 
+cache-control: no-store, max-age=0
+content-type: text/plain
+date: Sun, 20 Sep 2026 06:53:48 GMT
+location: https://vercel.com/sso-api?url=https%3A%2F%2Fakvot-discovery.vercel.app%2Fapi%2Fhealth&nonce=3f1cfcf5896b244365d9005a4acf992d78eb32abea147c75d1058bef964a4832
+server: Vercel
+set-cookie: _vercel_sso_nonce=bba220ae0b49925ba7641d3dc61f89a367dfb31a882a0763; Max-Age=3600; Path=/; Secure; HttpOnly; SameSite=Lax
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-frame-options: DENY
+x-vercel-id: cle1::t5mfr-1789887228250-c3d84baae2c7
+

@@ -1,0 +1,33 @@
+{
+  "id": "S04",
+  "seed": "Stripe",
+  "sessionId": "kv1.d36c561e387caa238af3018756a1dcf5",
+  "status": "partial",
+  "findings_n": 30,
+  "viaf_findings": 8,
+  "providers": {
+    "wikidata": 8,
+    "viaf": 8,
+    "openlibrary": 8,
+    "wikipedia": 6
+  },
+  "hosts": {
+    "www.wikidata.org": 8,
+    "openlibrary.org": 8,
+    "en.wikipedia.org": 6,
+    "viaf.org": 8
+  },
+  "providersMap": {
+    "wikidata": "partial",
+    "openlibrary": "partial",
+    "wikipedia": "partial",
+    "viaf": "partial"
+  },
+  "families_union": [
+    "openlibrary",
+    "viaf",
+    "wikimedia"
+  ],
+  "multi_independent_finding_n": 0,
+  "multi_independent_rate": 0.0
+}

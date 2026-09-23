@@ -1,0 +1,20 @@
+{
+  "fixtureId": "ADV-06-org-seed",
+  "qSection": "Q97",
+  "runnow": true,
+  "intent": "Org/domain seed follows same Discovery path · no identity commit",
+  "seed": "example.org",
+  "expect": {
+    "dossier": false,
+    "faces": false,
+    "leakage": 0,
+    "path": "entity-agnostic"
+  },
+  "live": {
+    "id": "ADV-L3",
+    "name": "org-seed-example.org",
+    "status": "PASS",
+    "evidence": "MEGA/raw/adversarial/ADV-L3-org-example.json",
+    "detail": "http=201 findings=2 leak=0"
+  }
+}

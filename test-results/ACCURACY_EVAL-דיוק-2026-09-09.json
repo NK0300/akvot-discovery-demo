@@ -1,0 +1,799 @@
+{
+  "when": "2026-09-09T09:35:27.506Z",
+  "whenLocal": "9.9.2026, 12:35:27 Asia/Jerusalem",
+  "agent": "דיוק",
+  "role": "Accuracy",
+  "deploy": "dpl_9V8iig4PLALA4t7V7hNNQFo8Q3az",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "phaseExpected": "orchestrator-v0-b",
+  "phaseOk": true,
+  "n": 16,
+  "pass": 12,
+  "fail": 4,
+  "prettyWrong": 0,
+  "prettyWrongIds": [],
+  "primaryN": 13,
+  "primaryPass": 11,
+  "primaryFail": 2,
+  "findings": {
+    "keepOk": [
+      "בנימין נתניהו dossier Q43723",
+      "דני כהן need_context 0 faces",
+      "John Smith bare need_context",
+      "אורלי לוי seeded dossier",
+      "Smith+IBM+NY thin NOT dossier+faces",
+      "Smith+email candidates NOT dossier+faces no leak",
+      "garbage/unknown thin|need_context"
+    ],
+    "regressions": [
+      "bare נתניהו → need_context/common_name (surname-only over-gated)",
+      "Latin celeb transliteration Zehava Galon / Angela Merkel → need_context/common_name (wiki exact blocked)",
+      "ביבי נתניהו nickname → thin"
+    ],
+    "prettyWrongVerdict": "CLEAR — zero dossier+faces on conflict/email/garbage/unknown traps"
+  },
+  "rows": [
+    {
+      "id": "1-exact-netanyahu",
+      "cat": "exact",
+      "method": "GET",
+      "input": {
+        "q": "נתניהו"
+      },
+      "expectedLabel": "dossier + Q43723 + faces OK",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": false,
+      "prettyWrong": false,
+      "fails": [
+        "uiState=need_context expected dossier",
+        "qid=null expected Q43723",
+        "faces expected"
+      ],
+      "notes": [
+        "RETEST confirmed: bare נתניהו → need_context messageKey=common_name (stable, not flake). Full בנימין נתניהו PASS."
+      ],
+      "http": 200,
+      "ms": 35011,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "google",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "נתניהו"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "1b-exact-bibi-full",
+      "cat": "exact",
+      "method": "GET",
+      "input": {
+        "q": "בנימין נתניהו"
+      },
+      "expectedLabel": "dossier + Q43723 + faces OK",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5416,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q43723",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "בנימין נתניהו"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q43723@www.wikidata.org"
+    },
+    {
+      "id": "2-garbage-nonsense",
+      "cat": "garbage",
+      "method": "GET",
+      "input": {
+        "q": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "expectedLabel": "thin|need_context, NO faces/dossier fake",
+      "expected": {
+        "uiStates": [
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5734,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "2b-garbage-he",
+      "cat": "garbage",
+      "method": "GET",
+      "input": {
+        "q": "בלהבלהזומזום123xyz"
+      },
+      "expectedLabel": "thin|need_context, NO faces/fake dossier",
+      "expected": {
+        "uiStates": [
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5875,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "google",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "בלהבלהזומזום123xyz"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "3-ambiguous-danny-cohen",
+      "cat": "ambiguous",
+      "method": "GET",
+      "input": {
+        "q": "דני כהן"
+      },
+      "expectedLabel": "need_context, 0 faces",
+      "expected": {
+        "uiStates": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 190,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "דני כהן"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "4-unknown-obscure",
+      "cat": "unknown",
+      "method": "POST",
+      "input": {
+        "q": "פלמוני אלמוניזקש",
+        "ctx": {
+          "city": "דימונה",
+          "org": "מפעל בדיקה פיקטיבי"
+        }
+      },
+      "expectedLabel": "thin|need_context, UNKNOWN stays UNKNOWN",
+      "expected": {
+        "uiStates": [
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces",
+          "qid_when_unknown",
+          "faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 32451,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "google",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": false,
+        "messageKey": "no_public_sources",
+        "label": "פלמוני אלמוניזקש"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "4b-unknown-latin-obscure",
+      "cat": "unknown",
+      "method": "POST",
+      "input": {
+        "q": "Zyxwvutsrqponmlkjihgfedcba Quux",
+        "ctx": {
+          "city": "Reykjavik",
+          "org": "Nonexistent Labs LLC"
+        }
+      },
+      "expectedLabel": "thin|need_context|candidates, no fabricated dossier+faces",
+      "expected": {
+        "uiStates": [
+          "thin",
+          "need_context",
+          "candidates"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "fake_dossier",
+          "dossier+faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 15337,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": true,
+        "messageKey": "no_public_sources",
+        "label": "Zyxwvutsrqponmlkjihgfedcba Quux"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "5-conflict-smith-ibm-ny",
+      "cat": "conflict",
+      "method": "POST",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "expectedLabel": "candidates|need_context|thin, NOT dossier+faces",
+      "expected": {
+        "uiStates": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 15555,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": true,
+        "ambiguous": true,
+        "messageKey": "no_public_sources",
+        "label": "John Smith"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "5b-conflict-smith-email",
+      "cat": "conflict",
+      "method": "POST",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        }
+      },
+      "expectedLabel": "NOT dossier+faces; no email leak",
+      "expected": {
+        "uiStates": [
+          "candidates",
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "email_leak"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 9662,
+      "err": null,
+      "actual": {
+        "uiState": "candidates",
+        "mode": "candidates",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 6,
+        "candidates": 6,
+        "scenario": "identifier",
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "pick_one",
+        "label": "John Smith"
+      },
+      "confidence": "low",
+      "evidence": "ORCID:John Smith@orcid.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org"
+    },
+    {
+      "id": "6-partial-emily-chen",
+      "cat": "partial",
+      "method": "POST",
+      "input": {
+        "q": "Emily Chen",
+        "ctx": {
+          "city": "Palo Alto",
+          "role": "student"
+        }
+      },
+      "expectedLabel": "not over-commit (no low-conf dossier+faces)",
+      "expected": {
+        "uiStates": [
+          "candidates",
+          "need_context",
+          "thin",
+          "dossier"
+        ],
+        "qid": null,
+        "faces": null,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 9212,
+      "err": null,
+      "actual": {
+        "uiState": "candidates",
+        "mode": "candidates",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 5,
+        "candidates": 5,
+        "scenario": "foreign",
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "pick_one",
+        "label": "Emily Chen"
+      },
+      "confidence": "low",
+      "evidence": "ORCID:Emily Chen@orcid.org; VIAF:Emily Cheney Neville 1919-1997@viaf.org; VIAF:Emily Cheng, 1953-@viaf.org; VIAF:Emily Chenoweth@viaf.org; VIAF:Emily Cheney, 1952-@viaf.org"
+    },
+    {
+      "id": "7-near-zehava-galon",
+      "cat": "near-match",
+      "method": "GET",
+      "input": {
+        "q": "Zehava Galon"
+      },
+      "expectedLabel": "dossier OK if wiki exact (transliteration)",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": null,
+        "faces": true,
+        "must_not": []
+      },
+      "pass": false,
+      "prettyWrong": false,
+      "fails": [
+        "uiState=need_context expected dossier",
+        "faces expected"
+      ],
+      "notes": [
+        "RETEST confirmed: Latin Zehava Galon → need_context common_name. HE זהבה גלאון → dossier Q2630062 PASS (see 7b)."
+      ],
+      "http": 200,
+      "ms": 5709,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "Zehava Galon"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "8-dup-john-smith-bare",
+      "cat": "duplicate",
+      "method": "GET",
+      "input": {
+        "q": "John Smith"
+      },
+      "expectedLabel": "need_context 0 faces",
+      "expected": {
+        "uiStates": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": false,
+        "must_not": [
+          "dossier+faces",
+          "faces"
+        ]
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 5700,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "photo": false,
+        "images": 0,
+        "faces": false,
+        "sources": 0,
+        "candidates": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": true,
+        "messageKey": "common_name",
+        "label": "John Smith"
+      },
+      "confidence": "none",
+      "evidence": "none"
+    },
+    {
+      "id": "9-keep-orly-levy",
+      "cat": "regression",
+      "method": "GET",
+      "input": {
+        "q": "אורלי לוי"
+      },
+      "expectedLabel": "seeded dossier (אורלי לוי)",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": null,
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [],
+      "http": 200,
+      "ms": 4596,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki+google",
+        "qid": "Q466537",
+        "photo": true,
+        "images": 7,
+        "faces": true,
+        "sources": 1,
+        "candidates": 0,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "thin": false,
+        "ambiguous": false,
+        "messageKey": "dossier_ready",
+        "label": "אורלי לוי"
+      },
+      "confidence": "high",
+      "evidence": "Wikidata:Q466537@www.wikidata.org"
+    },
+    {
+      "id": "7b-zehava-he",
+      "cat": "near-match",
+      "method": "GET",
+      "input": {
+        "q": "זהבה גלאון"
+      },
+      "expectedLabel": "dossier Q2630062 faces",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "notes": [
+        "supplemental retest/near-match",
+        "HE exact wiki PASS; contrasts Latin Zehava FAIL"
+      ],
+      "http": 200,
+      "ms": 986,
+      "err": null,
+      "actual": {
+        "uiState": "dossier",
+        "mode": "wiki",
+        "qid": "Q2630062",
+        "faces": true,
+        "images": 2,
+        "sources": 13,
+        "scenario": "known",
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "messageKey": "dossier_ready",
+        "label": "זהבה גלאון"
+      },
+      "confidence": "high",
+      "evidence": "13 sources",
+      "supplemental": true
+    },
+    {
+      "id": "7c-merkel-latin",
+      "cat": "near-match",
+      "method": "GET",
+      "input": {
+        "q": "Angela Merkel"
+      },
+      "expectedLabel": "dossier (wiki exact Latin celeb)",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": null,
+        "faces": true,
+        "must_not": []
+      },
+      "pass": false,
+      "prettyWrong": false,
+      "fails": [
+        "uiState=need_context expected dossier; faces=false"
+      ],
+      "notes": [
+        "supplemental retest/near-match",
+        "Latin celeb over-gated to common_name after P0"
+      ],
+      "http": 200,
+      "ms": 5691,
+      "err": null,
+      "actual": {
+        "uiState": "need_context",
+        "mode": "ambiguous",
+        "qid": null,
+        "faces": false,
+        "images": 0,
+        "sources": 0,
+        "scenario": "foreign",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "messageKey": "common_name",
+        "label": "Angela Merkel"
+      },
+      "confidence": "none",
+      "evidence": "none",
+      "supplemental": true
+    },
+    {
+      "id": "1c-netanyahu-bibi",
+      "cat": "exact",
+      "method": "GET",
+      "input": {
+        "q": "ביבי נתניהו"
+      },
+      "expectedLabel": "dossier Q43723 if nickname resolves",
+      "expected": {
+        "uiStates": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": true,
+        "must_not": []
+      },
+      "pass": false,
+      "prettyWrong": false,
+      "fails": [
+        "uiState=thin expected dossier; faces=false"
+      ],
+      "notes": [
+        "supplemental retest/near-match",
+        "nickname ביבי נתניהו → thin (no dossier)"
+      ],
+      "http": 200,
+      "ms": 45194,
+      "err": null,
+      "actual": {
+        "uiState": "thin",
+        "mode": "google",
+        "qid": null,
+        "faces": false,
+        "images": 0,
+        "sources": 0,
+        "scenario": "stranger",
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "messageKey": "no_public_sources",
+        "label": "ביבי נתניהו"
+      },
+      "confidence": "none",
+      "evidence": "none",
+      "supplemental": true
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "doc": "ACC-COMPARE-B0-vs-PREVIEW-דיוק-2026-09-20",
+  "role": "דיוק",
+  "phase": "CYCLE1-PHASE4-EXPERIMENT-A-VIAF",
+  "stamp": "2026-09-20T10:05:57+03:00",
+  "promote": "HOLD",
+  "before": {
+    "source": "ACC-B0-BEFORE-S01-S04-S05-דיוק-2026-09-20.json",
+    "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "alias": "https://akvot-discovery.vercel.app",
+    "multi_independent_rate_pooled": 0,
+    "per_seed_rates": {
+      "S01": 0,
+      "S04": 0,
+      "S05": 0
+    },
+    "viaf_present": false
+  },
+  "after": {
+    "source": "ACC-AFTER-PREVIEW-S01-S04-S05-דיוק-2026-09-20.json",
+    "deploymentId": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "url": "https://akvot-simple-demo-93bc30m30-k-akvot.vercel.app",
+    "multi_independent_rate_pooled": 0,
+    "per_seed_rates": {
+      "S01": 0,
+      "S04": 0,
+      "S05": 0
+    },
+    "viaf_present": true,
+    "viaf_findings_n": 24
+  },
+  "table": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "before": {
+        "findings_count": 10,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0,
+        "viaf_findings_n": 0,
+        "acc_leak_count": 0
+      },
+      "after": {
+        "findings_count": 18,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0,
+        "viaf_findings_n": 8,
+        "acc_leak_count": 0
+      },
+      "delta_rate": 0
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "before": {
+        "findings_count": 14,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0,
+        "viaf_findings_n": 0,
+        "acc_leak_count": 0
+      },
+      "after": {
+        "findings_count": 30,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0,
+        "viaf_findings_n": 8,
+        "acc_leak_count": 0
+      },
+      "delta_rate": 0
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "before": {
+        "findings_count": 6,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0,
+        "viaf_findings_n": 0,
+        "acc_leak_count": 0
+      },
+      "after": {
+        "findings_count": 30,
+        "multi_independent_n": 0,
+        "multi_independent_rate": 0,
+        "viaf_findings_n": 8,
+        "acc_leak_count": 0
+      },
+      "delta_rate": 0
+    }
+  ],
+  "aggregate_delta": {
+    "multi_independent_rate_pooled_before": 0,
+    "multi_independent_rate_pooled_after": 0,
+    "delta": 0,
+    "threshold": 0.15,
+    "gate": "FAIL"
+  },
+  "side_gates": {
+    "acc_leak_after": 0,
+    "adversarial": "PASS",
+    "core": "PASS",
+    "b0_still_Avyhr": true
+  },
+  "rca": {
+    "root_cause": "VIAF adapter emits independent viaf-* Findings with single-family Evidence; orchestrator does not merge/corroborate cross-family Evidence onto the same FindingId. Therefore hostFamilyCount stays 1 for every Finding → multi_independent_rate=0 despite viaf present at session level.",
+    "observed": {
+      "viaf_findings_n": 24,
+      "viaf_on_all_seeds": true,
+      "findings_with_providers_ge2": 0,
+      "findings_with_hostFamilyCount_ge2": 0,
+      "session_families_include_viaf": true
+    },
+    "implication": "EXP-A flag successfully surfaces VIAF as a new independent family (session union), but Acc gate multi_independent_rate (≥2 distinct hostFamilies ON THE SAME Finding) requires cross-provider Evidence merge / identity join — not yet wired. Honest FAIL vs ≥0.15.",
+    "next": "HOLD promote. Optional follow-up (out of Acc scope): Finding join key across viaf↔wikidata↔wikipedia (e.g. VIAF↔WD external-id) before re-measure."
+  },
+  "verdict": "FAIL",
+  "promote_decision": "HOLD"
+}

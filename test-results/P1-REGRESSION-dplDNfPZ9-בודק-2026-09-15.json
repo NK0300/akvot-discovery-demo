@@ -1,0 +1,462 @@
+{
+  "when": "2026-09-15T00:56:55.860196+03:00",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "alias": "dpl_DNfPZ9oMSzqtjErqYeRtpT2t2fSu",
+  "N": 20,
+  "PASS": 20,
+  "FAIL": 0,
+  "prettyWrong": 0,
+  "cases": [
+    {
+      "id": "S-A1",
+      "q": "דני כהן",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false,
+        "no_dossier": true
+      },
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "ms": 376,
+        "http": 200,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "S-A1b",
+      "q": "משה כהן",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false,
+        "no_dossier": true
+      },
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "ms": 406,
+        "http": 200,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "S-A2",
+      "q": "John Smith",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false,
+        "no_dossier": true
+      },
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "ms": 5968,
+        "http": 200,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "S-A3",
+      "q": "John Smith",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin",
+          "need_context"
+        ],
+        "faces": false,
+        "no_dossier": true
+      },
+      "actual": {
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "ms": 15473,
+        "http": 200,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "S-A4",
+      "q": "John Smith",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin"
+        ],
+        "faces": false,
+        "no_dossier": true
+      },
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "ms": 9723,
+        "http": 200,
+        "mode": "candidates",
+        "confidence": "low",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "S-A5",
+      "q": "Xzqplmnvwtr987654321asdfgh",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "faces": false
+      },
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "ms": 5850,
+        "http": 200,
+        "mode": "ambiguous",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "S-A7",
+      "q": "פלמוני אלמוניזקש",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "faces": false
+      },
+      "actual": {
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "ms": 26412,
+        "http": 200,
+        "mode": "google",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "K-B1",
+      "q": "בנימין נתניהו",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 6964,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "K-B2",
+      "q": "אורלי לוי",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q466537"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q466537",
+        "faces": false,
+        "ms": 7462,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C1",
+      "q": "נתניהו",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 6874,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C2",
+      "q": "ביבי נתניהו",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 6959,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C2b",
+      "q": "ביבי",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 1320,
+        "http": 200,
+        "mode": "wiki",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C3",
+      "q": "Angela Merkel",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q567"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q567",
+        "faces": false,
+        "ms": 6488,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C4",
+      "q": "Zehava Galon",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q2630062",
+        "faces": false,
+        "ms": 7545,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C4b",
+      "q": "זהבה גלאון",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q2630062",
+        "faces": false,
+        "ms": 6512,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C4c",
+      "q": "Zahava Gal-On",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q2630062",
+        "faces": false,
+        "ms": 6506,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C5",
+      "q": "Benjamin Netanyahu",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 6513,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C6",
+      "q": "Bibi Netanyahu",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 7612,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "R-C7",
+      "q": "Netanyahu",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723"
+      },
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q43723",
+        "faces": false,
+        "ms": 7890,
+        "http": 200,
+        "mode": "wiki+google",
+        "confidence": "high",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    },
+    {
+      "id": "P-D2",
+      "q": "כהן",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "faces": false,
+        "no_dossier": true
+      },
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "ms": 35336,
+        "http": 200,
+        "mode": "google",
+        "confidence": "none",
+        "error": null
+      },
+      "verdict": "PASS",
+      "err": ""
+    }
+  ]
+}

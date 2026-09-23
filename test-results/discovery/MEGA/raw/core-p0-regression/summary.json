@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "case": "health",
+      "uiState": null,
+      "qid": null,
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "faces": null,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": null,
+      "requestId": null,
+      "ok": true
+    },
+    {
+      "case": "assaf",
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "build": null,
+      "faces": 8,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "05364c5f-39cf-4767-95c7-3ad706d9bc27",
+      "ok": null
+    },
+    {
+      "case": "cohen",
+      "uiState": "need_context",
+      "qid": null,
+      "build": null,
+      "faces": 0,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "c85facf4-6f18-4708-bd8a-339096f2dc58",
+      "ok": null
+    },
+    {
+      "case": "smith-nocache",
+      "uiState": "candidates",
+      "qid": null,
+      "build": null,
+      "faces": 0,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "cbe1f8c3-1e50-46b0-b6e6-1282b1467072",
+      "ok": null
+    },
+    {
+      "case": "smith-warm",
+      "uiState": "candidates",
+      "qid": null,
+      "build": null,
+      "faces": 0,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "9d5c93ce-f073-4429-a69b-17efa2839650",
+      "ok": null
+    }
+  ],
+  "leakage_total": 0,
+  "pw_total": 0,
+  "checks": {
+    "health_build_match": true,
+    "assaf_dossier_qid": true,
+    "cohen_soft": true,
+    "smith_nocache": true,
+    "smith_warm": true,
+    "leakage_0": true,
+    "pw_0": true
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,1607 @@
+{
+  "ms": 4951,
+  "status": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.8c602ccd8b9dffa0b40c9d01abcf0b10",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9ibbk0-3cdd9a",
+    "snapshot": {
+      "sessionId": "kv1.8c602ccd8b9dffa0b40c9d01abcf0b10",
+      "seed": "International Committee of the Red Cross",
+      "q": "International Committee of the Red Cross",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q5987345",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross",
+          "summary": "humanitarian institution based in Geneva, Switzerland, and a three-time Nobel Prize Laureate",
+          "evidenceIds": [
+            "ev-8c09d1ca0f716f7497e026bf",
+            "ev-73aacea394afaa29ed6d68c5",
+            "ev-7ce2c7a2ae196c4e93ae5054"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q5987345",
+            "wd-Q5987345",
+            "ol:OL124327A",
+            "ol-OL124327A",
+            "viaf:160178001"
+          ],
+          "scoreFinding": 0.9449999999999998,
+          "ranking": {
+            "discoveryScore": 0.9449999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 0.95,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 3,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=0.95 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL124327A",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross",
+          "summary": "Top work: ICRC annual report",
+          "evidenceIds": [
+            "ev-8c09d1ca0f716f7497e026bf",
+            "ev-73aacea394afaa29ed6d68c5",
+            "ev-7ce2c7a2ae196c4e93ae5054"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q5987345",
+            "wd-Q5987345",
+            "ol:OL124327A",
+            "ol-OL124327A",
+            "viaf:160178001"
+          ],
+          "scoreFinding": 0.9349999999999998,
+          "ranking": {
+            "discoveryScore": 0.9449999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 0.95,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 3,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=0.95 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-160178001",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross",
+          "summary": "type:corporate · lc:n80158612 · dnb:000431958",
+          "evidenceIds": [
+            "ev-8c09d1ca0f716f7497e026bf",
+            "ev-73aacea394afaa29ed6d68c5",
+            "ev-7ce2c7a2ae196c4e93ae5054"
+          ],
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry",
+            "provider:openlibrary",
+            "provider:viaf",
+            "corroboration:multi_family"
+          ],
+          "entityRefs": [
+            "qid:Q5987345",
+            "wd-Q5987345",
+            "ol:OL124327A",
+            "ol-OL124327A",
+            "viaf:160178001"
+          ],
+          "scoreFinding": 0.9249999999999998,
+          "ranking": {
+            "discoveryScore": 0.9449999999999998,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 1,
+              "directness": 0.95,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 3,
+              "evidenceCount": 3,
+              "domains": [
+                "www.wikidata.org",
+                "openlibrary.org",
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=1.00 directness=0.95 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q16303468",
+          "kind": "registry",
+          "title": "Archives of the International Committee of the Red Cross",
+          "summary": "organization",
+          "evidenceIds": [
+            "ev-b94b1ea275b9827f9131dc7b"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q16303468",
+            "wd-Q16303468"
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q29479487",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross building in Geneva",
+          "summary": "building",
+          "evidenceIds": [
+            "ev-f1413b4029142bda7b325d2e"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q29479487",
+            "wd-Q29479487"
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q100550218",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross (Privileges and Immunities) Order 2018",
+          "summary": "Irish Statutory Instrument S.I. No. 552/2018",
+          "evidenceIds": [
+            "ev-8ffce681a1cdf624d9d41a69"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q100550218",
+            "wd-Q100550218"
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q99499481",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross Library",
+          "summary": "Library in Geneva, Switzerland",
+          "evidenceIds": [
+            "ev-fa08110981536986576a3f4b"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q99499481",
+            "wd-Q99499481"
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q123243864",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross rules of engagement for civilian hackers",
+          "summary": "2023 rules for cyber-war conflicts",
+          "evidenceIds": [
+            "ev-aa1e20688ba76a3ce6b64576"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q123243864",
+            "wd-Q123243864"
+          ],
+          "scoreFinding": 0.6483333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q17657556",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross condemns Gaza blockade",
+          "summary": "Wikinews article",
+          "evidenceIds": [
+            "ev-be00f0c4334269886436f402"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q17657556",
+            "wd-Q17657556"
+          ],
+          "scoreFinding": 0.6383333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q59859124",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross to Open Beijing Office",
+          "summary": "article published by Congressional-Executive Commission on China",
+          "evidenceIds": [
+            "ev-b74453918b6774d1798df5ba"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "qid:Q59859124",
+            "wd-Q59859124"
+          ],
+          "scoreFinding": 0.6283333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-148420048",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross., Great Britain., British Red Cross Society",
+          "summary": "type:corporate · lc:n82078047 · dnb:951888978",
+          "evidenceIds": [
+            "ev-c01aa24cb2e634d84d93c06a"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:148420048"
+          ],
+          "scoreFinding": 0.6008333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-312731766",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross., Institut Henry-Dunant",
+          "summary": "type:corporate · lc:n80132911 · dnb:004036026",
+          "evidenceIds": [
+            "ev-35d9f1639bbf44c4a1004303"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:312731766"
+          ],
+          "scoreFinding": 0.5908333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-158822831",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross., Japan., Nihon Sekijujisha",
+          "summary": "type:corporate · lc:n81056634 · dnb:1148950680",
+          "evidenceIds": [
+            "ev-290ef86409413a0c720dbd1b"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:158822831"
+          ],
+          "scoreFinding": 0.5808333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-156893045",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross. Advisory Service on International Humanitarian Law",
+          "summary": "type:corporate · lc:no2005109145 · dnb:968147429",
+          "evidenceIds": [
+            "ev-d6959e9d89781fe91f52834e"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:156893045"
+          ],
+          "scoreFinding": 0.5708333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-122857151",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross., Poland., Polski Czerwony Krzyz",
+          "summary": "type:corporate · lc:n82233632 · dnb:952989603",
+          "evidenceIds": [
+            "ev-fc0b5bd32539a9b35c9e5645"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:122857151"
+          ],
+          "scoreFinding": 0.5608333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-141671970",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross, Service international de recherches",
+          "summary": "type:corporate · lc:n80030685 · dnb:004737350",
+          "evidenceIds": [
+            "ev-404c8fad113090a07317e1d8"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:141671970"
+          ],
+          "scoreFinding": 0.5508333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "viaf-266230073",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross. Archives",
+          "summary": "type:corporate · lc:nr96016114 · dnb:1086017935",
+          "evidenceIds": [
+            "ev-56f2a1f693dd7b782e801a31"
+          ],
+          "providers": [
+            "viaf"
+          ],
+          "facetHints": [
+            "provider:viaf",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "viaf:266230073"
+          ],
+          "scoreFinding": 0.5408333333333332,
+          "ranking": {
+            "discoveryScore": 0.7008333333333332,
+            "factors": {
+              "authority": 0.85,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "viaf.org"
+              ]
+            },
+            "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL9718049A",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross Staff",
+          "summary": "Top work: Commentary on the Third Geneva Convention",
+          "evidenceIds": [
+            "ev-c61fa652c5e48c3972d16b6a"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL9718049A",
+            "ol-OL9718049A"
+          ],
+          "scoreFinding": 0.49583333333333324,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL10950766A",
+          "kind": "registry",
+          "title": "International Committee International Committee of the Red Cross",
+          "summary": "Top work: Commentary on the Second Geneva Convention",
+          "evidenceIds": [
+            "ev-6fd129217b3b31fa669c3356"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL10950766A",
+            "ol-OL10950766A"
+          ],
+          "scoreFinding": 0.4858333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15268018A",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross. Medical Division",
+          "summary": "Top work: Documentation m©♭dicale ©  l'usage des d©♭l©♭gu©♭s",
+          "evidenceIds": [
+            "ev-b9669b549c00348510746181"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL15268018A",
+            "ol-OL15268018A"
+          ],
+          "scoreFinding": 0.4758333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL11890331A",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross. Sri Lanka",
+          "summary": "Top work: Evolving humanitarian action",
+          "evidenceIds": [
+            "ev-cf16dbb5c6902a6e547a6dd1"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL11890331A",
+            "ol-OL11890331A"
+          ],
+          "scoreFinding": 0.46583333333333327,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL12056641A",
+          "kind": "registry",
+          "title": "International Committee of the Red Cross. Advisory Service on International Humanitarian Law",
+          "summary": "Top work: International humanitarian law",
+          "evidenceIds": [
+            "ev-b60bda9efe92e19aa9bd5723"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL12056641A",
+            "ol-OL12056641A"
+          ],
+          "scoreFinding": 0.4558333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL14937872A",
+          "kind": "registry",
+          "title": "Joint Relief Commission of the International Red Cross Committee and the League of Red Cross Societies",
+          "summary": "Top work: Report of the Joint Relief Commission of the International Red Cross, 1941-1946",
+          "evidenceIds": [
+            "ev-3fb16e5091df4973eaa41951"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol:OL14937872A",
+            "ol-OL14937872A"
+          ],
+          "scoreFinding": 0.4458333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-International_Committee_of_the_Red_Cross",
+          "kind": "page",
+          "title": "International Committee of the Red Cross",
+          "evidenceIds": [
+            "ev-ccca405b2ca44bca9c275f93"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:International Committee of the Red Cross"
+          ],
+          "scoreFinding": 0.41833333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-International_Committee_of_the_Red_Cross_archives",
+          "kind": "page",
+          "title": "International Committee of the Red Cross archives",
+          "evidenceIds": [
+            "ev-90dfb2df5fc8225914b0b987"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:International Committee of the Red Cross archives"
+          ],
+          "scoreFinding": 0.4083333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-International_Committee_of_the_Red_Cross_Library",
+          "kind": "page",
+          "title": "International Committee of the Red Cross Library",
+          "evidenceIds": [
+            "ev-04a9f98e2c236baa3ecbad91"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:International Committee of the Red Cross Library"
+          ],
+          "scoreFinding": 0.3983333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-International_Committee_of_the_Red_Cross_rules_of_engagement_for_civilian_hacker",
+          "kind": "page",
+          "title": "International Committee of the Red Cross rules of engagement for civilian hackers",
+          "evidenceIds": [
+            "ev-1f79d1ced8e36a2d948bcbd6"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:International Committee of the Red Cross rules of engagement for civilian hackers"
+          ],
+          "scoreFinding": 0.3883333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-8c09d1ca0f716f7497e026bf",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q5987345",
+          "url": "https://www.wikidata.org/wiki/Q5987345",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "humanitarian institution based in Geneva, Switzerland, and a three-time Nobel Prize Laureate",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b94b1ea275b9827f9131dc7b",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q16303468",
+          "url": "https://www.wikidata.org/wiki/Q16303468",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "organization",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f1413b4029142bda7b325d2e",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q29479487",
+          "url": "https://www.wikidata.org/wiki/Q29479487",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "building",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-8ffce681a1cdf624d9d41a69",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q100550218",
+          "url": "https://www.wikidata.org/wiki/Q100550218",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "Irish Statutory Instrument S.I. No. 552/2018",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fa08110981536986576a3f4b",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q99499481",
+          "url": "https://www.wikidata.org/wiki/Q99499481",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "Library in Geneva, Switzerland",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-aa1e20688ba76a3ce6b64576",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q123243864",
+          "url": "https://www.wikidata.org/wiki/Q123243864",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "2023 rules for cyber-war conflicts",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-be00f0c4334269886436f402",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q17657556",
+          "url": "https://www.wikidata.org/wiki/Q17657556",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "Wikinews article",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b74453918b6774d1798df5ba",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q59859124",
+          "url": "https://www.wikidata.org/wiki/Q59859124",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T07:40:37.339Z",
+          "evidenceType": "registry",
+          "quote": "article published by Congressional-Executive Commission on China",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-73aacea394afaa29ed6d68c5",
+          "provenanceUrl": "https://openlibrary.org/authors/OL124327A",
+          "url": "https://openlibrary.org/authors/OL124327A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "ICRC annual report",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-c61fa652c5e48c3972d16b6a",
+          "provenanceUrl": "https://openlibrary.org/authors/OL9718049A",
+          "url": "https://openlibrary.org/authors/OL9718049A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "Commentary on the Third Geneva Convention",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6fd129217b3b31fa669c3356",
+          "provenanceUrl": "https://openlibrary.org/authors/OL10950766A",
+          "url": "https://openlibrary.org/authors/OL10950766A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "Commentary on the Second Geneva Convention",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b9669b549c00348510746181",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15268018A",
+          "url": "https://openlibrary.org/authors/OL15268018A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "Documentation m©♭dicale ©  l'usage des d©♭l©♭gu©♭s",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-cf16dbb5c6902a6e547a6dd1",
+          "provenanceUrl": "https://openlibrary.org/authors/OL11890331A",
+          "url": "https://openlibrary.org/authors/OL11890331A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "Evolving humanitarian action",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-b60bda9efe92e19aa9bd5723",
+          "provenanceUrl": "https://openlibrary.org/authors/OL12056641A",
+          "url": "https://openlibrary.org/authors/OL12056641A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "International humanitarian law",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-3fb16e5091df4973eaa41951",
+          "provenanceUrl": "https://openlibrary.org/authors/OL14937872A",
+          "url": "https://openlibrary.org/authors/OL14937872A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T07:40:38.182Z",
+          "evidenceType": "registry",
+          "quote": "Report of the Joint Relief Commission of the International Red Cross, 1941-1946",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-ccca405b2ca44bca9c275f93",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross",
+          "url": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:37.312Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-90dfb2df5fc8225914b0b987",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross_archives",
+          "url": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross_archives",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:37.312Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-04a9f98e2c236baa3ecbad91",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross_Library",
+          "url": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross_Library",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:37.312Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-1f79d1ced8e36a2d948bcbd6",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross_rules_of_engagement_for_civilian_hackers",
+          "url": "https://en.wikipedia.org/wiki/International_Committee_of_the_Red_Cross_rules_of_engagement_for_civilian_hackers",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T07:40:37.312Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7ce2c7a2ae196c4e93ae5054",
+          "provenanceUrl": "https://viaf.org/viaf/160178001",
+          "url": "https://viaf.org/viaf/160178001",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-c01aa24cb2e634d84d93c06a",
+          "provenanceUrl": "https://viaf.org/viaf/148420048",
+          "url": "https://viaf.org/viaf/148420048",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross., Great Britain., British Red Cross Society",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-35d9f1639bbf44c4a1004303",
+          "provenanceUrl": "https://viaf.org/viaf/312731766",
+          "url": "https://viaf.org/viaf/312731766",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross., Institut Henry-Dunant",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-290ef86409413a0c720dbd1b",
+          "provenanceUrl": "https://viaf.org/viaf/158822831",
+          "url": "https://viaf.org/viaf/158822831",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross., Japan., Nihon Sekijujisha",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d6959e9d89781fe91f52834e",
+          "provenanceUrl": "https://viaf.org/viaf/156893045",
+          "url": "https://viaf.org/viaf/156893045",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross. Advisory Service on International Humanitarian Law",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fc0b5bd32539a9b35c9e5645",
+          "provenanceUrl": "https://viaf.org/viaf/122857151",
+          "url": "https://viaf.org/viaf/122857151",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross., Poland., Polski Czerwony Krzyz",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-404c8fad113090a07317e1d8",
+          "provenanceUrl": "https://viaf.org/viaf/141671970",
+          "url": "https://viaf.org/viaf/141671970",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross, Service international de recherches",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-56f2a1f693dd7b782e801a31",
+          "provenanceUrl": "https://viaf.org/viaf/266230073",
+          "url": "https://viaf.org/viaf/266230073",
+          "domain": "viaf.org",
+          "providerId": "viaf",
+          "retrievedAt": "2026-09-20T07:40:37.258Z",
+          "evidenceType": "registry",
+          "quote": "International Committee of the Red Cross. Archives",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "viaf",
+              "count": 10
+            },
+            {
+              "value": "wikidata",
+              "count": 10
+            },
+            {
+              "value": "openlibrary",
+              "count": 9
+            },
+            {
+              "value": "wikipedia",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 23
+            },
+            {
+              "value": "page",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [
+            {
+              "value": "corroboration:multi_family",
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "progress": {
+        "done": 7,
+        "totalHint": 7
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:33cf594efcfc"
+        ],
+        "status": "candidate",
+        "displayHint": "International Committee of the Red Cross",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T07:40:37.056Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:33cf594efcfc",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q5987345",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL124327A",
+            "kind": "finding"
+          },
+          {
+            "id": "viaf-160178001",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q16303468",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q29479487",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q100550218",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q99499481",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q123243864",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q17657556",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q59859124",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL9718049A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL10950766A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15268018A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL11890331A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL12056641A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL14937872A",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-International_Committee_of_the_Red_Cross",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-International_Committee_of_the_Red_Cross_archives",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-International_Committee_of_the_Red_Cross_Library",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-International_Committee_of_the_Red_Cross_rules_of_engagement_for_civilian_hacker",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "international committee of the red cross",
+          "findingIds": [
+            "wd-Q5987345",
+            "ol-OL124327A",
+            "viaf-160178001",
+            "wp-en-International_Committee_of_the_Red_Cross"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "viaf.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "international committee of the red cross library",
+          "findingIds": [
+            "wd-Q99499481",
+            "wp-en-International_Committee_of_the_Red_Cross_Library"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "international committee of the red cross rules of engagement for civilian hackers",
+          "findingIds": [
+            "wd-Q123243864",
+            "wp-en-International_Committee_of_the_Red_Cross_rules_of_engagement_for_civilian_hacker"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "international committee of the red cross. advisory service on international humanitarian law",
+          "findingIds": [
+            "viaf-156893045",
+            "ol-OL12056641A"
+          ],
+          "domains": [
+            "viaf.org",
+            "openlibrary.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  }
+}

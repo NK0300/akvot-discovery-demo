@@ -1,0 +1,27 @@
+{
+  "stamp": "2026-09-20T09:59:50+03:00",
+  "experiment": "EXP-A-VIAF",
+  "promote": "HOLD",
+  "preview": {
+    "dpl": "dpl_H9o45VTQZgAFXYzgHM6Lahhb4xCU",
+    "url": "https://akvot-simple-demo-93bc30m30-k-akvot.vercel.app",
+    "target": null,
+    "flag": "DISCOVERY_ENABLE_VIAF=1",
+    "flagScope": "preview-only"
+  },
+  "aliasesUntouched": {
+    "discovery": { "alias": "akvot-discovery.vercel.app", "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv" },
+    "core": { "alias": "akvot-simple-demo.vercel.app", "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8" }
+  },
+  "units": {
+    "providers.viaf": { "passed": 27, "failed": 0 },
+    "adversarial.acc": { "passed": 65, "failed": 0 },
+    "orchestrator": { "passed": 113, "failed": 0 }
+  },
+  "smoke": {
+    "S01": { "seed": "Tim Berners-Lee", "viaf_findings": 8, "families_union": ["viaf", "wikimedia"] },
+    "S04": { "seed": "Stripe", "viaf_findings": 8, "families_union": ["openlibrary", "viaf", "wikimedia"] },
+    "S05": { "seed": "Red Cross", "viaf_findings": 8, "families_union": ["openlibrary", "viaf", "wikimedia"] }
+  },
+  "wiring": "getDefaultProviders() + DISCOVERY_ENABLE_VIAF=1 (Preview env); DEFAULT_PROVIDERS base trio unchanged"
+}

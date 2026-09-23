@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>עקבות — שולחן מבצעים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#090c0a;
+    --panel:#101612;
+    --panel-2:#0c110e;
+    --line:#1e2a22;
+    --line-strong:#2a3a30;
+    --text:#d8e2d5;
+    --muted:#7f947f;
+    --accent:#9bbf7a;
+    --accent-dim:#355035;
+    --warn:#c9a227;
+    --danger:#c98a8a;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: Heebo, "Segoe UI", Tahoma, Arial, sans-serif;
+    --radius: 2px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);min-height:100dvh;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% -20%, #142018 0%, transparent 55%),
+      linear-gradient(180deg, #090c0a 0%, #0a0e0b 100%);
+  }
+  header{
+    border-bottom:1px solid var(--line);
+    padding:14px 18px;
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(9,12,10,.92);
+    backdrop-filter:blur(8px);
+    position:sticky;top:0;z-index:40;
+  }
+  header .mark{
+    width:36px;height:36px;border:1px solid var(--accent);
+    display:grid;place-items:center;font-size:11px;color:var(--accent);
+    font-family:var(--mono);flex-shrink:0;margin-top:1px;
+    letter-spacing:.04em;
+  }
+  header h1{margin:0;font-size:15px;font-weight:700;letter-spacing:.02em}
+  header .sub{margin:4px 0 0;font-size:12px;color:var(--muted);line-height:1.5;max-width:58ch}
+  header .pill{
+    display:inline-block;margin-top:8px;font-family:var(--mono);font-size:10px;
+    color:var(--accent);border:1px solid var(--accent-dim);padding:3px 8px;letter-spacing:.06em;
+  }
+  main{max-width:1120px;margin:0 auto;padding:16px 18px 8px}
+  .banner{
+    border:1px solid var(--line);background:var(--panel-2);
+    padding:10px 12px;font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.55;
+  }
+  .banner strong{color:var(--accent);font-weight:600}
+  .search-wrap{margin-bottom:8px}
+  .search-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;margin-bottom:8px;
+  }
+  @media (max-width:860px){
+    .search-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .search-grid{grid-template-columns:1fr}
+  }
+  .search-grid .field{display:grid;gap:4px}
+  .search-grid .field label{
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em;
+  }
+  .search-grid .field label .opt{color:var(--muted);letter-spacing:0;font-weight:400}
+  .search-grid input{
+    width:100%;background:var(--panel);border:1px solid var(--line);color:var(--text);
+    padding:12px 12px;font-size:14px;outline:none;border-radius:var(--radius);
+    font-family:var(--sans);
+  }
+  .search-grid input::placeholder{color:#5f735f}
+  .search-grid input:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-dim)}
+  .search-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .search-actions button#go{
+    background:var(--accent);color:#0b0f0c;border:0;padding:12px 20px;
+    font-weight:700;cursor:pointer;min-width:96px;border-radius:var(--radius);
+    font-family:var(--sans);font-size:14px;
+  }
+  .search-actions button#go:hover{filter:brightness(1.05)}
+  .search-actions button#go:disabled{opacity:.55;cursor:wait}
+  .search-actions button#cancel{
+    background:transparent;color:var(--muted);border:1px solid var(--line);
+    padding:12px 16px;font-weight:600;cursor:pointer;border-radius:var(--radius);
+    font-family:var(--sans);font-size:13px;display:none;
+  }
+  .search-actions button#cancel:hover{border-color:var(--warn);color:var(--warn)}
+  .search-actions button#cancel.show{display:inline-block}
+  .loading .cancel-row{margin-top:14px;padding:0 0 4px}
+  .loading .cancel-row button{
+    background:transparent;color:var(--muted);border:1px solid var(--line);
+    padding:8px 14px;font-weight:600;cursor:pointer;border-radius:var(--radius);
+    font-family:var(--sans);font-size:12px;
+  }
+  .loading .cancel-row button:hover{border-color:var(--warn);color:var(--warn)}
+  .hint{font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.45}
+  .hint.warn-hint{color:var(--warn);border:1px solid #3a3420;background:#14120c;padding:8px 10px;margin-bottom:12px}
+  .cand-panel{
+    border:1px solid var(--warn);background:var(--panel);padding:0;margin-bottom:14px;
+  }
+  .cand-panel .rf-stamp{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:10px 14px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:10px;color:var(--warn);letter-spacing:.07em;
+    background:var(--panel-2);
+  }
+  .cand-panel .rf-stamp .n{color:var(--muted);letter-spacing:0}
+  .cand-panel .cand-body{padding:16px}
+  .cand-panel h2{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--warn)}
+  .cand-panel .cand-explain{margin:0 0 14px;font-size:13px;color:var(--muted);line-height:1.55}
+  .cand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+  .cand-card{
+    border:1px solid var(--line);background:var(--panel-2);padding:12px;
+    display:flex;flex-direction:column;gap:8px;min-height:140px;
+  }
+  .cand-card:hover{border-color:var(--accent-dim)}
+  .cand-card .clabel{font-size:14px;font-weight:700;line-height:1.35;margin:0}
+  .cand-card .cscore{
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.04em;
+  }
+  .cand-card ul{margin:0;padding:0 16px 0 0;font-size:12px;color:#c2cdc0;line-height:1.45}
+  .cand-card ul li{margin:3px 0}
+  .cand-card .cprev{font-size:11px;color:var(--muted);font-family:var(--mono);line-height:1.4;word-break:break-all}
+  .cand-card .cprev a{color:var(--accent);text-decoration:none}
+  .cand-card .cprev a:hover{text-decoration:underline}
+  .cand-card:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+  .cand-card .chip{display:inline-block;margin-inline-start:6px;font-size:10px;padding:1px 6px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-weight:500}
+  .cand-card button{
+    margin-top:auto;align-self:flex-start;
+    background:var(--accent);color:#0b0f0c;border:0;padding:9px 14px;
+    font-weight:700;cursor:pointer;font-family:var(--sans);font-size:13px;
+  }
+  .cand-card button:hover{filter:brightness(1.05)}
+  .skel-layout{
+    display:grid;grid-template-columns:minmax(240px,300px) 1fr;gap:14px;margin-top:14px;
+  }
+  @media (max-width:860px){.skel-layout{grid-template-columns:1fr}}
+  .skel-card{
+    border:1px solid var(--line);background:var(--panel-2);padding:12px;min-height:160px;
+  }
+  .skel-line,.skel-block{
+    background:linear-gradient(90deg,#121812 0%,#1a221a 50%,#121812 100%);
+    background-size:200% 100%;animation:skel 1.2s ease-in-out infinite;
+    border-radius:2px;
+  }
+  .skel-block{height:88px;margin-bottom:10px}
+  .skel-line{height:10px;margin:8px 0}
+  .skel-line.short{width:42%}
+  .skel-line.mid{width:68%}
+  @keyframes skel{0%{background-position:100% 0}100%{background-position:-100% 0}}
+  .loading .elapsed{
+    font-family:var(--mono);font-size:11px;color:var(--muted);margin:8px 0 0;letter-spacing:.04em;
+  }
+  .loading .wait-hint{
+    margin-top:10px;font-size:12.5px;color:#c2cdc0;line-height:1.45;
+    border:1px dashed var(--line);padding:10px 12px;background:#0c100c;
+  }
+  .loading{
+
+    border:1px solid var(--line);background:var(--panel);padding:18px 16px;
+  }
+  .loading .title{
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    margin-bottom:14px;letter-spacing:.08em;display:flex;justify-content:space-between;gap:8px;
+  }
+  .loading .title .pct{color:var(--muted);letter-spacing:0}
+  .bar{
+    height:3px;background:var(--line);margin-bottom:16px;overflow:hidden;
+  }
+  .bar > i{
+    display:block;height:100%;background:var(--accent);width:0%;
+    transition:width .45s ease;
+  }
+  .loading ol{margin:0;padding:0 18px 0 0;display:grid;gap:9px}
+  .loading li{font-size:13px;color:var(--muted);line-height:1.4;display:flex;gap:8px;align-items:baseline}
+  .loading li .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--line-strong);
+    flex-shrink:0;margin-top:5px;
+  }
+  .loading li.active{color:var(--text)}
+  .loading li.active .dot{background:var(--accent);box-shadow:0 0 0 3px rgba(155,191,122,.18)}
+  .loading li.done{color:var(--accent)}
+  .loading li.done .dot{background:var(--accent)}
+  .loading li .t{font-family:var(--mono);font-size:10px;margin-right:auto;opacity:.75}
+  .layout{display:grid;grid-template-columns:minmax(260px,300px) 1fr;gap:14px;align-items:start}
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr}
+    header{padding:12px 14px}
+    main{padding:14px}
+    .search-actions button#go{min-width:78px;padding:12px 14px}
+  }
+  .cube,.stack{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius)}
+  .cube{position:sticky;top:72px}
+  @media (max-width:860px){.cube{position:static}}
+  .stamp{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:9px 11px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.07em;
+  }
+  .stamp .n{color:var(--muted);letter-spacing:0}
+  .sec-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px;border-top:1px solid var(--line);background:var(--panel-2);
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em;
+  }
+  .sec-head:first-of-type{border-top:0}
+  .sec-head .n{color:var(--muted)}
+  .sec-head .hintish{color:var(--muted);font-weight:400;letter-spacing:0;margin-right:6px}
+  .portrait{
+    aspect-ratio:1;background:#080b08;border-bottom:1px solid var(--line);
+    display:grid;place-items:center;overflow:hidden;
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .portrait .empty{
+    color:var(--muted);font-size:12px;padding:20px 16px;text-align:center;line-height:1.5;
+  }
+  .gallery{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(68px,1fr));
+    gap:6px;padding:10px;border-top:1px solid var(--line);
+  }
+  .gallery a{
+    display:block;aspect-ratio:1;overflow:hidden;border:1px solid var(--line);
+    background:#080b08;transition:border-color .15s;
+  }
+  .gallery a:hover{border-color:var(--accent-dim)}
+  .gallery img{width:100%;height:100%;object-fit:cover}
+  .facts{padding:10px 12px;display:grid;gap:9px}
+  .fact{display:grid;grid-template-columns:72px 1fr;gap:8px;font-size:12.5px}
+  .fact dt{color:var(--muted);font-family:var(--mono);font-size:10px;padding-top:3px;letter-spacing:.02em}
+  .fact dd{margin:0;line-height:1.45;word-break:break-word}
+  .fact .cite{
+    display:inline-block;margin-top:3px;font-family:var(--mono);font-size:10px;
+    color:var(--accent-dim);text-decoration:none;border-bottom:1px dotted var(--accent-dim);
+  }
+  .fact .cite:hover{color:var(--accent)}
+  .bio{
+    padding:12px;border-top:1px solid var(--line);font-size:12.5px;
+    line-height:1.6;color:#c2cdc0;white-space:pre-wrap;
+  }
+  .bio-label{
+    font-family:var(--mono);font-size:10px;color:var(--muted);
+    letter-spacing:.06em;margin-bottom:8px;
+  }
+  .row{
+    border-top:1px solid var(--line);padding:12px;
+    display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:start;
+  }
+  .group-block .row:first-child{border-top:0}
+  .row:hover{background:rgba(155,191,122,.03)}
+  .ico{
+    width:42px;height:42px;border:1px solid var(--line);background:#080b08;
+    display:grid;place-items:center;font-size:10px;color:var(--muted);
+    font-family:var(--mono);overflow:hidden;text-align:center;padding:2px;
+  }
+  .ico img{width:100%;height:100%;object-fit:cover}
+  .meta .who{font-size:13px;font-weight:600;margin:0 0 4px;line-height:1.35;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+  .meta .src{font-size:11px;color:var(--muted);font-family:var(--mono);word-break:break-all;line-height:1.35}
+  .meta .note{font-size:12px;margin-top:6px;line-height:1.5;color:#c2cdc0}
+  .conf{
+    font-family:var(--mono);font-size:9px;color:var(--muted);
+    border:1px solid var(--line);padding:1px 5px;letter-spacing:.04em;font-weight:500;
+  }
+  .conf.hi{color:var(--accent);border-color:var(--accent-dim)}
+  .tag-reg{
+    font-family:var(--mono);font-size:9px;color:var(--warn);
+    border:1px solid #3a3420;padding:1px 5px;letter-spacing:.03em;font-weight:500;
+  }
+  a.go{
+    color:var(--accent);font-size:11px;font-family:var(--mono);text-decoration:none;
+    border:1px solid var(--accent-dim);padding:7px 9px;align-self:center;white-space:nowrap;
+  }
+  a.go:hover{background:rgba(155,191,122,.08)}
+  .empty-state{
+    padding:36px 24px;color:var(--muted);font-size:13px;line-height:1.6;
+    border:1px dashed var(--line);background:var(--panel-2);text-align:center;
+  }
+  .empty-state .big{display:block;font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
+  .err{
+    padding:20px;color:var(--danger);font-size:13px;line-height:1.55;
+    border:1px solid #3a2424;background:#140e0e;
+  }
+  .mode{
+    margin-bottom:12px;font-size:11px;color:var(--warn);font-family:var(--mono);
+    display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;line-height:1.4;
+  }
+  .mode .chip{
+    color:var(--muted);border:1px solid var(--line);padding:2px 7px;letter-spacing:0;
+  }
+  .alts-wrap{padding:12px;border-top:1px solid var(--line)}
+  .alts-wrap .label{font-size:11px;color:var(--muted);margin:0 0 8px}
+  .alts{display:flex;flex-wrap:wrap;gap:6px}
+  .alts button{
+    background:transparent;border:1px solid var(--line);color:var(--text);
+    padding:7px 11px;font-size:12px;cursor:pointer;font-family:var(--sans);
+  }
+  .alts button:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .amb-banner{
+    border:1px solid var(--warn);background:#16140c;padding:14px 16px;margin-bottom:14px;
+  }
+  .amb-banner h2{
+    margin:0 0 6px;font-size:15px;font-weight:700;color:var(--warn);letter-spacing:.02em;
+  }
+  .amb-banner p{margin:0 0 12px;font-size:12.5px;color:var(--muted);line-height:1.5}
+  .amb-banner .alts{margin-top:2px}
+  .amb-banner .alts button{
+    border-color:#4a4020;background:rgba(201,162,39,.06);
+  }
+  .portrait.amb-muted{min-height:88px;aspect-ratio:auto;padding:18px 12px}
+  .layout.amb-layout{grid-template-columns:1fr}
+  .layout.amb-layout .cube{display:none}
+  .stack-empty{padding:28px 16px;color:var(--muted);font-size:13px;line-height:1.5;text-align:center}
+  .refine-panel{
+    border:1px solid var(--line);background:var(--panel);
+    padding:0;max-width:640px;margin:0 auto;
+  }
+  .refine-panel .rf-stamp{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:10px 14px;border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:10px;color:var(--warn);letter-spacing:.07em;
+    background:var(--panel-2);
+  }
+  .refine-panel .rf-stamp .n{color:var(--muted);letter-spacing:0}
+  .refine-panel .rf-body{padding:16px 16px 18px}
+  .refine-panel h2{
+    margin:0 0 8px;font-size:16px;font-weight:700;color:var(--warn);letter-spacing:.02em;line-height:1.35;
+  }
+  .refine-panel .rf-explain{
+    margin:0 0 14px;font-size:13px;color:var(--muted);line-height:1.55;
+  }
+  .refine-panel .rf-alts{margin:0 0 16px}
+  .refine-panel .rf-alts .label{font-size:11px;color:var(--muted);margin:0 0 8px}
+  .refine-panel .rf-form{display:grid;gap:10px;margin-bottom:14px}
+  .refine-panel .rf-field{display:grid;gap:5px}
+  .refine-panel .rf-field label{
+    font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em;
+  }
+  .refine-panel .rf-field label .opt{color:var(--muted);font-weight:400;letter-spacing:0}
+  .refine-panel .rf-field input{
+    background:var(--panel-2);border:1px solid var(--line);color:var(--text);
+    padding:11px 12px;font-size:14px;outline:none;border-radius:var(--radius);
+    font-family:var(--sans);width:100%;
+  }
+  .refine-panel .rf-field input:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-dim)}
+  .refine-panel .rf-field input::placeholder{color:#5f735f}
+  .refine-panel .rf-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .refine-panel .rf-primary{
+    background:var(--accent);color:#0b0f0c;border:0;padding:11px 18px;
+    font-weight:700;cursor:pointer;border-radius:var(--radius);
+    font-family:var(--sans);font-size:14px;
+  }
+  .refine-panel .rf-primary:hover{filter:brightness(1.05)}
+  .refine-panel .rf-secondary{
+    background:transparent;border:1px solid var(--line);color:var(--text);
+    padding:10px 14px;font-size:13px;cursor:pointer;font-family:var(--sans);
+  }
+  .refine-panel .rf-secondary:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .refine-panel .rf-tips{
+    margin-top:16px;padding:12px;border:1px dashed var(--line);
+    background:var(--panel-2);font-size:12px;color:var(--muted);line-height:1.55;
+  }
+  .refine-panel .rf-tips strong{color:var(--accent);font-weight:600}
+  .refine-panel .rf-tips ul{margin:8px 0 0;padding:0 18px 0 0}
+  .refine-panel .rf-tips li{margin:4px 0}
+
+  /* —— Discovery Mode (Phase B additive) —— */
+  .mode-tabs{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+  .mode-tabs button{
+    background:transparent;border:1px solid var(--line);color:var(--muted);
+    padding:6px 12px;font-size:12px;cursor:pointer;font-family:var(--sans);
+    border-radius:var(--radius);
+  }
+  .mode-tabs button[aria-selected="true"]{
+    color:var(--accent);border-color:var(--accent-dim);background:rgba(155,191,122,.08);
+  }
+  .mode-tabs button:hover{border-color:var(--accent-dim);color:var(--accent)}
+  body.mode-discovery .banner-entity{display:none}
+  body.mode-entity .banner-discovery{display:none}
+  .banner-discovery strong{color:var(--accent)}
+  #discovery-search-wrap .disc-q-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:stretch;margin-bottom:8px}
+  @media (max-width:560px){
+    #discovery-search-wrap .disc-q-row{grid-template-columns:1fr}
+  }
+  #discovery-search-wrap #disc-q{
+    width:100%;background:var(--panel);border:1px solid var(--line);color:var(--text);
+    padding:12px;font-size:15px;outline:none;border-radius:var(--radius);font-family:var(--sans);
+  }
+  #discovery-search-wrap #disc-q:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent-dim)}
+  #discovery-search-wrap #disc-go{
+    background:var(--accent);color:#0b0f0c;border:0;padding:12px 20px;font-weight:700;
+    cursor:pointer;border-radius:var(--radius);font-family:var(--sans);font-size:14px;min-width:96px;
+  }
+  #discovery-search-wrap #disc-go:disabled{opacity:.55;cursor:wait}
+  #discovery-search-wrap #disc-cancel{
+    background:transparent;color:var(--muted);border:1px solid var(--line);
+    padding:12px 16px;font-weight:600;cursor:pointer;border-radius:var(--radius);
+    font-family:var(--sans);font-size:13px;display:none;
+  }
+  #discovery-search-wrap #disc-cancel.show{display:inline-block}
+  #discovery-search-wrap #disc-cancel:hover{border-color:var(--warn);color:var(--warn)}
+  .disc-hints-toggle{
+    background:transparent;border:0;color:var(--accent);font-size:12px;cursor:pointer;
+    font-family:var(--sans);padding:4px 0;margin-bottom:6px;text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .disc-hints{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+  @media (max-width:560px){.disc-hints{grid-template-columns:1fr}}
+  .disc-hints .field{display:grid;gap:4px}
+  .disc-hints label{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em}
+  .disc-hints input{
+    background:var(--panel);border:1px solid var(--line);color:var(--text);
+    padding:10px 12px;font-size:13px;outline:none;border-radius:var(--radius);font-family:var(--sans);width:100%;
+  }
+  .disc-fixture-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 4px}
+  .disc-fixture-row .lbl{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.04em;margin-inline-end:4px}
+  .disc-chip{
+    background:transparent;border:1px dashed var(--line);color:var(--text);
+    padding:5px 10px;font-size:11px;cursor:pointer;font-family:var(--sans);
+  }
+  .disc-chip:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .disc-muted{color:var(--muted);font-size:12px}
+  .disc-ready-note{margin-top:10px;font-size:12px;color:var(--muted)}
+  .disc-out{margin-top:4px}
+  .disc-progress{
+    border:1px solid var(--line);background:var(--panel);padding:12px 14px;margin-bottom:12px;
+  }
+  .disc-progress-top{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:10px;
+    font-family:var(--mono);font-size:11px}
+  .disc-status{color:var(--accent);letter-spacing:.06em}
+  .disc-status.reconnecting{color:var(--warn,#c9a227)}
+  .disc-status.complete{color:var(--accent)}
+  .disc-status.failed{color:var(--danger)}
+  .disc-progress[data-disc-status="reconnecting"]{border-color:rgba(201,162,39,.45)}
+  .disc-counts{color:var(--muted)}
+  .disc-source-tag{border:1px solid var(--line);padding:2px 7px;color:var(--muted);font-size:10px}
+  .disc-prov-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .disc-prov{
+    font-family:var(--mono);font-size:10px;border:1px solid var(--line);padding:2px 7px;color:var(--muted);
+  }
+  .disc-prov.ok,.disc-prov.partial{color:var(--accent);border-color:var(--accent-dim)}
+  .disc-prov.error{color:var(--danger);border-color:#3a2424}
+  .disc-layout{display:grid;grid-template-columns:minmax(200px,240px) 1fr;gap:12px;align-items:start}
+  @media (max-width:860px){.disc-layout{grid-template-columns:1fr}}
+  .disc-facets{border:1px solid var(--line);background:var(--panel);position:sticky;top:72px}
+  @media (max-width:860px){.disc-facets{position:static}}
+  .disc-facet-group{padding:10px 12px;border-top:1px solid var(--line)}
+  .disc-facet-group:first-of-type{border-top:0}
+  .disc-facet-label{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em;margin-bottom:8px}
+  .disc-facet-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .disc-facet-chip{
+    background:var(--panel-2);border:1px solid var(--line);color:var(--text);
+    padding:5px 9px;font-size:11px;cursor:pointer;font-family:var(--sans);
+  }
+  .disc-facet-chip .n{color:var(--muted);font-family:var(--mono);font-size:10px;margin-inline-start:4px}
+  .disc-facet-chip.on{border-color:var(--accent);color:var(--accent);background:rgba(155,191,122,.08)}
+  .disc-facet-chip:focus{outline:2px solid var(--accent);outline-offset:2px}
+  .disc-facet-clear{
+    margin:8px 12px 12px;background:transparent;border:1px solid var(--line);color:var(--muted);
+    padding:7px 10px;font-size:12px;cursor:pointer;font-family:var(--sans);width:calc(100% - 24px);
+  }
+  .disc-facet-empty{padding:14px;font-size:12px;color:var(--muted)}
+  .disc-feed{border:1px solid var(--line);background:var(--panel)}
+  .disc-finding{padding:14px 14px 12px;border-top:1px solid var(--line)}
+  .disc-finding:first-of-type{border-top:0}
+  .disc-finding:hover{background:rgba(155,191,122,.03)}
+  .disc-finding-head{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+  .disc-kind{
+    font-family:var(--mono);font-size:10px;color:var(--accent);border:1px solid var(--accent-dim);
+    padding:2px 7px;letter-spacing:.04em;
+  }
+  .disc-finding-title{margin:0 0 6px;font-size:15px;font-weight:700;line-height:1.35}
+  .disc-finding-sum{margin:0 0 10px;font-size:13px;color:#c2cdc0;line-height:1.5}
+  .disc-finding-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .disc-prov-toggle{
+    background:transparent;border:1px solid var(--line);color:var(--text);
+    padding:7px 11px;font-size:12px;cursor:pointer;font-family:var(--sans);
+  }
+  .disc-prov-toggle:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .disc-prov-toggle:focus{outline:2px solid var(--accent);outline-offset:2px}
+  .disc-provenance{
+    margin-top:12px;padding:12px;border:1px dashed var(--line);background:var(--panel-2);
+  }
+  .disc-provenance-label{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.06em;margin-bottom:10px}
+  .disc-ev{font-size:12px;line-height:1.55;margin-bottom:10px;color:#c2cdc0}
+  .disc-ev:last-child{margin-bottom:0}
+  .disc-ev-k{font-family:var(--mono);font-size:10px;color:var(--muted);margin-inline-end:6px}
+  .disc-ev-link{color:var(--accent);word-break:break-all}
+  .disc-ev .mono{font-family:var(--mono);font-size:10px;color:var(--muted)}
+  .disc-skel{padding:16px}
+  .disc-footer-note{margin:12px 0 0;font-size:11px;color:var(--muted);line-height:1.45}
+
+  footer{
+    max-width:1120px;margin:0 auto;padding:10px 18px 28px;
+    font-size:11px;color:var(--muted);line-height:1.5;
+  }
+</style>
+</head>
+<body class="mode-entity">
+<header>
+  <div class="mark">AK</div>
+  <div>
+    <h1>עקבות — שולחן מבצעים</h1>
+    <p class="sub">חיפוש זהות ציבורית ממקורות פתוחים · ויקיפדיה · Wikidata · רישומים (VIAF/ORCID/IMDb…) · גוגל · Commons</p>
+    <span class="pill" id="mode-pill">PUBLIC SOURCES · CITE-OR-DROP · uiState · ORCHESTRATOR-V0</span>
+    <div class="mode-tabs" role="tablist" aria-label="מצב ממשק">
+      <button type="button" id="tab-entity" role="tab" aria-selected="true">מצב ישות</button>
+      <button type="button" id="tab-discovery" role="tab" aria-selected="false">מצב גילוי</button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="banner banner-entity">תמונות רק כשיש זהות ברורה. <strong>לא ממציאים</strong> עובדות או דיוקנאות. שם + הקשר (טלפון/אימייל/ארגון/עיר) · טלפון/אימייל רק כטריגר לחיפוש ציבורי בגוגל (לא Sync.me/Truecaller).</div>
+  <div class="banner banner-discovery">מצב גילוי · ממצאים ציבוריים עם provenance · <strong>INFORMATION ≠ IDENTITY</strong> · אין דיוקן / תיק זהות / «זה האדם». Preview בלבד.</div>
+  <div class="search-wrap" id="entity-search-wrap">
+    <div class="search-grid">
+      <div class="field">
+        <label for="q">שם</label>
+        <input id="q" placeholder="שם מלא / Full name (HE or EN)…" autocomplete="off" autofocus/>
+      </div>
+      <div class="field">
+        <label for="phone">טלפון <span class="opt">(ציבורי)</span></label>
+        <input id="phone" type="tel" placeholder="05x / 03-… / +972…" autocomplete="off" inputmode="tel" dir="ltr"/>
+      </div>
+      <div class="field">
+        <label for="email">אימייל <span class="opt">(ציבורי)</span></label>
+        <input id="email" type="email" placeholder="name@example.com" autocomplete="off" dir="ltr"/>
+      </div>
+      <div class="field">
+        <label for="org">ארגון / חברה</label>
+        <input id="org" placeholder="מעסיק / חברה" autocomplete="off"/>
+      </div>
+      <div class="field">
+        <label for="city">עיר</label>
+        <input id="city" placeholder="עיר / אזור" autocomplete="off"/>
+      </div>
+      <div class="field">
+        <label for="country">מדינה <span class="opt">(לזרים)</span></label>
+        <input id="country" placeholder="Israel / Germany / US…" autocomplete="off" dir="ltr"/>
+      </div>
+      <div class="field">
+        <label for="role">תפקיד <span class="opt">(אופציונלי)</span></label>
+        <input id="role" placeholder="תפקיד" autocomplete="off"/>
+      </div>
+    </div>
+    <div class="search-actions">
+      <button id="go" type="button">חפש</button>
+      <button id="cancel" type="button" aria-label="בטל חיפוש">בטל</button>
+      <span class="hint" style="margin:0">שם או טלפון או אימייל · טלפון = חיפוש דף ציבורי בלבד (לא Truecaller)</span>
+    </div>
+  </div>
+
+  <div id="discovery-search-wrap" class="search-wrap" hidden>
+    <label for="disc-q" class="disc-muted" style="display:block;margin-bottom:6px;font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.05em">מה אתם מחפשים?</label>
+    <div class="disc-q-row">
+      <input id="disc-q" placeholder="Seed: שם / דומיין / ארגון / מזהה…" autocomplete="off"/>
+      <button id="disc-go" type="button">גלה</button>
+      <button id="disc-cancel" type="button" aria-label="בטל גילוי">בטל</button>
+    </div>
+    <button type="button" class="disc-hints-toggle" id="disc-hints-toggle" aria-expanded="false">הוסף הקשר (אופציונלי)</button>
+    <div class="disc-hints" id="disc-hints" hidden>
+      <div class="field"><label for="disc-hint-org">ארגון</label><input id="disc-hint-org" placeholder="ארגון / חברה"/></div>
+      <div class="field"><label for="disc-hint-city">עיר</label><input id="disc-hint-city" placeholder="עיר / אזור"/></div>
+      <div class="field"><label for="disc-hint-site">אתר</label><input id="disc-hint-site" placeholder="example.org" dir="ltr"/></div>
+    </div>
+    <div class="disc-fixture-row">
+      <span class="lbl">פיקסצ׳רים (הדגמה בלבד)</span>
+      <span id="disc-fixture-chips"></span>
+    </div>
+    <p class="hint" style="margin-top:6px">?mode=discovery · API: POST /api/discovery/sessions · ?session=&lt;id&gt;[&amp;replay=1] לפתיחת session קיים · ?discoveryTransport=sse|poll · ?discoverySource=fixture · נפילה לפיקסצ׳ר אם ה-API לא זמין</p>
+  </div>
+
+  <div id="search-hint" class="hint">שם נפוץ → הקשר מוקדם · מועמדים עם ראיות · תיק ממקורות ציבוריים</div>
+  <div id="out" class="empty-state">
+    <span class="big">READY</span>
+    הזינו שם (עברית או English) ו/או טלפון/אימייל ציבורי. שם נפוץ → נבקש הקשר · מועמדים רק עם ראיות · תיק רק כשיש מקורות. טלפון = דפים פומביים בלבד (לא Truecaller).
+  </div>
+</main>
+<footer>מקורות פומביים בלבד · אין סיסמאות · אין פריצה · תמונות ממקור ציבורי מאומת בלבד</footer>
+<script>
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+/** Allowlist https only for href/src — reject http/javascript:/data:/tel: etc. */
+function safeUrl(u){
+  const s=String(u||'').trim();
+  if(!s) return '';
+  try{
+    const parsed=new URL(s, location.origin);
+    if(parsed.protocol.toLowerCase()==='https:') return parsed.href;
+    return '';
+  }catch{ return ''; }
+}
+function safeHref(u){ return esc(safeUrl(u) || '#'); }
+function safeSrc(u){ return esc(safeUrl(u) || ''); }
+function modeLabel(m){
+  if(m==='need_context') return 'מצב: חסרה הקשר';
+  if(m==='candidates') return 'מצב: בחרו אדם';
+  if(m==='dossier') return 'מצב: תיק ממקורות ציבוריים';
+  if(m==='thin') return 'מצב: אין מספיק מקורות';
+  if(m==='wiki+google') return 'מצב: ויקיפדיה + גוגל + רישומים';
+  if(m==='wiki') return 'מצב: ויקיפדיה + Wikidata (עשיר)';
+  if(m==='ambiguous') return 'מצב: כמה התאמות — בחרו זהות';
+  if(m==='google') return 'מצב: בלי ויקיפדיה — גוגל + סריקת דפים';
+  return m||'';
+}
+function resolveUiState(d){
+  if(d&&d.uiState) return d.uiState;
+  if(d&&(d.needContext||d.messageKey==='common_name')) return 'need_context';
+  if(d&&(d.needCandidatePick||d.mode==='candidates')) return 'candidates';
+  if(d&&d.thin) return 'thin';
+  if(d&&d.ambiguous&&!(d.candidates&&d.candidates.length>=2)) return 'need_context';
+  if(d&&!d.sources?.length&&!d.extract) return 'thin';
+  return 'dossier';
+}
+function scenarioLabel(s){
+  if(s==='known') return 'ידוע';
+  if(s==='stranger') return 'לא־מפורסם';
+  if(s==='identifier') return 'מזהה';
+  if(s==='foreign') return 'זר';
+  return '';
+}
+const REG_KINDS=/^(VIAF|ORCID|IMDb|ISNI|LoC|GND|Open Library|OpenCorporates|Crunchbase|MusicBrainz|NLI|NLI HE|ResearchGate|DBLP|Academic Tree)$/i;
+function isRegistry(s){
+  return REG_KINDS.test(String(s.kind||'')) || /viaf\.org|orcid\.org|imdb\.com|isni\.org|loc\.gov|d-nb\.info|openlibrary\.org|opencorporates\.com|crunchbase\.com|musicbrainz\.org|nli\.org\.il|researchgate\.net|dblp\.org|academictree\.org/i.test(String(s.url||''));
+}
+function inferGroup(s){
+  if(s.group==='identity'||s.group==='social'||s.group==='web') return s.group;
+  const kind=String(s.kind||'');
+  const url=String(s.url||'');
+  if(/ויקיפדיה|wikipedia|wikidata/i.test(kind)||/wikipedia\.org|wikidata\.org/i.test(url)||isRegistry(s)) return 'identity';
+  if(/פייסבוק|אינסטגרם|טיקטוק|יוטיוב|linkedin|mastodon|^x$|spotify|אתר רשמי/i.test(kind)||/facebook\.com|instagram\.com|x\.com|twitter\.com|linkedin\.com|tiktok\.com|youtube\.com|spotify\.com/i.test(url)) return 'social';
+  return 'web';
+}
+const GROUP_META={
+  identity:{code:'01',title:'זהות',hint:'ויקי · Wikidata · רישומים'},
+  social:{code:'02',title:'רשתות',hint:'חשבונות ואתר רשמי'},
+  web:{code:'03',title:'רשת',hint:'דפים ציבוריים מחיפוש'}
+};
+function confBadge(c){
+  if(c==null||c==='') return '';
+  const n=Number(c);
+  if(!(n>0)) return '';
+  const pct=n<=1?Math.round(n*100):Math.round(n);
+  if(pct<55) return '';
+  return `<span class="conf${pct>=80?' hi':''}" title="ביטחון מקור">${pct}%</span>`;
+}
+function renderSourceRow(s){
+  const note=s.note?`<div class="note">${esc(s.note)}</div>`:'';
+  const reg=isRegistry(s)?`<span class="tag-reg">REG</span>`:'';
+  const href=safeUrl(s.url);
+  const imgSrc=s.img?safeSrc(s.img):'';
+  return `<div class="row">
+    <div class="ico">${imgSrc?`<img src="${imgSrc}" alt="" loading="lazy"/>`:esc((s.kind||'?').slice(0,3))}</div>
+    <div class="meta">
+      <p class="who"><span>${esc(s.kind)} · ${esc(s.title)}</span>${reg}${confBadge(s.conf)}</p>
+      <div class="src">${esc((href||s.url||'').replace(/^https?:\/\//,''))}</div>
+      ${note}
+    </div>
+    ${href?`<a class="go" href="${esc(href)}" target="_blank" rel="noopener noreferrer">פתח</a>`:`<span class="go" style="opacity:.4">—</span>`}
+  </div>`;
+}
+function renderGroupedSources(sources){
+  const buckets={identity:[],social:[],web:[]};
+  for(const s of sources||[]){
+    const g=inferGroup(s);
+    (buckets[g]||buckets.web).push(s);
+  }
+  // Within identity: wiki/wd first, then registries
+  buckets.identity.sort((a,b)=>{
+    const ar=isRegistry(a)?1:0, br=isRegistry(b)?1:0;
+    return ar-br;
+  });
+  const order=['identity','social','web'];
+  const parts=[];
+  for(const key of order){
+    const list=buckets[key];
+    if(!list.length) continue;
+    const meta=GROUP_META[key];
+    const regCount=key==='identity'?list.filter(isRegistry).length:0;
+    const hint=regCount?`${meta.hint} · ${regCount} רישומים`:meta.hint;
+    parts.push(`
+      <div class="sec-head"><span>${meta.code} ${meta.title}<span class="hintish">· ${hint}</span></span><span class="n">${String(list.length).padStart(2,'0')}</span></div>
+      <div class="group-block">${list.map(renderSourceRow).join('')}</div>`);
+  }
+  return parts.join('') || `<div class="stack-empty">לא נמצאו קישורים ציבוריים ברורים.</div>`;
+}
+function renderFact(k,val,cite,url){
+  const href=safeUrl(url);
+  const citeHtml=href
+    ?`<a class="cite" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(cite||'מקור')}</a>`
+    :(cite?`<span class="cite" style="border:0;cursor:default">${esc(cite)}</span>`:'');
+  return `<div class="fact"><dt>${esc(k)}</dt><dd>${esc(val)}${citeHtml?'<br/>'+citeHtml:''}</dd></div>`;
+}
+function renderAlts(alts, label){
+  if(!alts?.length) return '';
+  return `<div class="alts">${alts.map(a=>`<button type="button" data-alt="${esc(a)}">${esc(a)}</button>`).join('')}</div>`;
+}
+function bindAlts(root){
+  root.querySelectorAll('[data-alt]').forEach(b=>{
+    b.onclick=()=>{ document.getElementById('q').value=b.dataset.alt; clearRefineCtx(); run(); };
+  });
+}
+
+/** Last refine / home context — prefill + pass on re-run */
+let lastCtx={city:'',org:'',role:'',country:'',context:'',phone:'',email:'',focus:''};
+function clearRefineCtx(){ lastCtx={city:'',org:'',role:'',country:'',context:'',phone:'',email:'',focus:''}; }
+function readHomeFields(){
+  const g=(id)=>{ const el=document.getElementById(id); return el?el.value.trim():''; };
+  return {
+    q:g('q'),
+    phone:g('phone'),
+    email:g('email'),
+    org:g('org'),
+    city:g('city'),
+    country:g('country'),
+    role:g('role'),
+  };
+}
+function readRefineForm(){
+  const root=document.getElementById('out');
+  const g=(id)=>{ const el=root.querySelector('#'+id); return el?el.value.trim():''; };
+  const home=readHomeFields();
+  return {
+    city:g('rf-city')||home.city||lastCtx.city||'',
+    org:g('rf-org')||home.org||lastCtx.org||'',
+    role:g('rf-role')||home.role||lastCtx.role||'',
+    country:g('rf-country')||home.country||lastCtx.country||'',
+    context:g('rf-context')||lastCtx.context||'',
+    phone:home.phone||lastCtx.phone||'',
+    email:home.email||lastCtx.email||'',
+    focus:lastCtx.focus||'',
+  };
+}
+function saveRefineCtx(c){
+  lastCtx={
+    city:c.city||'',
+    org:c.org||'',
+    role:c.role||'',
+    country:c.country||'',
+    context:c.context||'',
+    phone:c.phone||'',
+    email:c.email||'',
+    focus:c.focus||'',
+  };
+}
+function ctxQuery(c, opts){
+  const omitIds=!!(opts&&opts.omitIds);
+  const p=[];
+  if(c.city) p.push('city='+encodeURIComponent(c.city));
+  if(c.org) p.push('org='+encodeURIComponent(c.org));
+  if(c.role) p.push('role='+encodeURIComponent(c.role));
+  if(c.country) p.push('country='+encodeURIComponent(c.country));
+  if(c.context) p.push('context='+encodeURIComponent(c.context));
+  if(!omitIds){
+    if(c.phone) p.push('phone='+encodeURIComponent(c.phone));
+    if(c.email) p.push('email='+encodeURIComponent(c.email));
+  }
+  if(c.focus) p.push('focus='+encodeURIComponent(c.focus));
+  return p.length?'&'+p.join('&'):'';
+}
+function hadContext(d){
+  const c=d.contextUsed||lastCtx;
+  return !!(c && (c.city||c.org||c.role||c.country||c.context||c.phone||c.email||c.focus));
+}
+function digitsPhone(s){return String(s||'').replace(/\D/g,'')}
+function phoneLooksValid(raw){
+  const p=String(raw||'').trim();
+  if(!p) return false;
+  const d=digitsPhone(p);
+  if(/^(100|101|102|103|104|105|106|107|110|118|1299|1255|1647)$/.test(d)) return true;
+  if(d.length<7 || d.length>15) return false;
+  // IL mobile 05xxxxxxxxx / landline / +972
+  if(/^05\d{8}$/.test(d)) return true;
+  if(/^0([2-4]|8|9)\d{7}$/.test(d)) return true;
+  if(/^07[2-9]\d{7}$/.test(d)) return true;
+  if(/^972\d{8,10}$/.test(d)) return true;
+  if(d.length>=8) return true;
+  return false;
+}
+function validateSearch(home){
+  const hint=document.getElementById('search-hint');
+  const hasName=!!(home.q||'').trim();
+  const hasPhone=!!(home.phone||'').trim();
+  const hasEmail=!!(home.email||'').trim();
+  const hasExtra=hasPhone||hasEmail||!!(home.org||'').trim()||!!(home.city||'').trim()||!!(home.country||'').trim()||!!(home.role||'').trim();
+  if(!hasName && !hasPhone && !hasEmail){
+    hint.className='hint warn-hint';
+    hint.textContent='נדרש לפחות שם, טלפון או אימייל.';
+    return {ok:false};
+  }
+  if(hasPhone && !phoneLooksValid(home.phone)){
+    hint.className='hint warn-hint';
+    hint.textContent='טלפון לא נראה תקין — נסו 05x-xxxxxxx, קווי 0x-xxxxxxx, או +972…';
+    if(!hasName && !hasEmail) return {ok:false, badPhone:true};
+  }
+  const tokens=(home.q||'').trim().split(/\s+/).filter(Boolean);
+  const commonish=hasName && !hasExtra && tokens.length<=2;
+  const phoneOnly=hasPhone && !hasName && !hasEmail;
+  if(phoneOnly){
+    hint.className='hint warn-hint';
+    hint.textContent='חיפוש לפי טלפון בלבד: רק דפים ציבוריים שמזכירים את המספר. לרוב דל בלי שם/ארגון.';
+  }else if(commonish){
+    hint.className='hint warn-hint';
+    hint.textContent=/[A-Za-z]/.test(home.q||'') && ((home.q||'').replace(/[^A-Za-z\u0590-\u05ff]/g,'').match(/[A-Za-z]/g)||[]).length/Math.max(1,((home.q||'').replace(/[^A-Za-z\u0590-\u05ff]/g,'').match(/[A-Za-z\u0590-\u05ff]/g)||[]).length) >= 0.7
+      ? 'English/common name alone may return several candidates — add phone/email/org/city if you can.'
+      : 'שם בלבד (במיוחד שם נפוץ) עלול להחזיר כמה מועמדים — עדיף להוסיף טלפון/אימייל/ארגון/עיר.';
+  }else{
+    hint.className='hint';
+    hint.textContent='שם נפוץ → הקשר מוקדם · מועמדים עם ראיות · תיק ממקורות ציבוריים';
+  }
+  return {ok:true, commonish, phoneOnly};
+}
+function refineReason(d){
+  if(d.ambiguous) return 'ambiguous';
+  if(!d.sources?.length && !d.extract) return 'empty';
+  if(d.thin) return 'thin';
+  return 'thin';
+}
+function renderRefine(d, reason){
+  const out=document.getElementById('out');
+  const ctxPrefill=d.contextUsed||lastCtx;
+  const stillThin=hadContext(d) && (reason==='thin'||reason==='empty') && !d.ambiguous;
+  let title, explain, stamp;
+  if(reason==='ambiguous'){
+    title='חסרה הקשר או שאין מספיק מקורות';
+    explain=`השם «${esc(d.label||'')}» מתאים לכמה אנשים, או שאין זיהוי חד־משמעי. בחרו התאמה מהרשימה או הוסיפו עיר / חברה / תפקיד וחפשו מחדש.`;
+    stamp='REFINE · AMBIGUOUS';
+  }else if(stillThin){
+    title='לא מצאנו מספיק מקורות פומביים';
+    explain=`חיפשנו עם ההקשר שסיפקתם, ועדיין אין מספיק מקורות ציבוריים ברורים ל«${esc(d.label||'')}». נסו שם מלא יותר או הקשר מדויק יותר.`;
+    stamp='REFINE · EMPTY';
+  }else{
+    title='חסרה הקשר או שאין מספיק מקורות';
+    explain=`נמצאו מעט מקורות ציבוריים ל«${esc(d.label||'')}». הוסיפו עיר, חברה או תפקיד כדי לחדד את החיפוש — בלי זה לא מציגים כרטיס זהות חלול.`;
+    stamp='REFINE · THIN';
+  }
+  const tips=stillThin?`
+    <div class="rf-tips">
+      <strong>טיפים</strong>
+      <ul>
+        <li>נסו שם מלא עם שם משפחה נוסף או איות חלופי</li>
+        <li>ציינו עיר מגורים / מקום עבודה מדויק</li>
+        <li>הוסיפו שם חברה או מעסיק ידוע</li>
+        <li>אם האדם אינו ציבורי — ייתכן שאין מקורות פתוחים</li>
+      </ul>
+    </div>`:'';
+  const altsBlock=(d.alts&&d.alts.length)?`
+    <div class="rf-alts">
+      <p class="label">${reason==='ambiguous'?'התאמות אפשריות — לחצו לבחירה:':'התכוונת למישהו אחר?'}</p>
+      ${renderAlts(d.alts)}
+    </div>`:'';
+
+  out.className='';
+  out.innerHTML=`
+    <div class="mode">
+      <span>${esc(modeLabel(d.mode)||'מצב: חידוד')}</span>
+      <span class="chip">${reason==='ambiguous'?'כמה התאמות':(stillThin?'ריק':'תוצאה דקה')}</span>
+      ${d.cached?'<span class="chip">מטמון</span>':''}
+      ${d.phase?`<span class="chip">P${esc(d.phase)}</span>`:''}
+    </div>
+    <div class="refine-panel">
+      <div class="rf-stamp"><span>${stamp}</span><span class="n">OPS</span></div>
+      <div class="rf-body">
+        <h2>${title}</h2>
+        <p class="rf-explain">${explain}</p>
+        ${altsBlock}
+        ${stillThin?'':`
+        <form class="rf-form" id="rf-form" autocomplete="on">
+          <div class="rf-field">
+            <label for="rf-city">עיר</label>
+            <input id="rf-city" name="city" placeholder="למשל: תל אביב" value="${esc(ctxPrefill.city||'')}"/>
+          </div>
+          <div class="rf-field">
+            <label for="rf-org">חברה / מעסיק</label>
+            <input id="rf-org" name="org" placeholder="למשל: משרד הביטחון" value="${esc(ctxPrefill.org||'')}"/>
+          </div>
+          <div class="rf-field">
+            <label for="rf-country">מדינה</label>
+            <input id="rf-country" name="country" placeholder="Israel / Germany / US…" value="${esc(ctxPrefill.country||'')}" dir="ltr"/>
+          </div>
+          <div class="rf-field">
+            <label for="rf-role">תפקיד <span class="opt">(אופציונלי)</span></label>
+            <input id="rf-role" name="role" placeholder="למשל: מנהל מוצר" value="${esc(ctxPrefill.role||'')}"/>
+          </div>
+        </form>
+        <div class="rf-actions">
+          <button type="button" class="rf-primary" id="rf-go">חפש מחדש עם הקשר</button>
+          <button type="button" class="rf-secondary" id="rf-fullname">נסו שם מלא יותר</button>
+        </div>`}
+        ${stillThin?`
+        <div class="rf-actions">
+          <button type="button" class="rf-secondary" id="rf-fullname">נסו שם מלא יותר</button>
+          <button type="button" class="rf-secondary" id="rf-retry">שנו הקשר וחפשו שוב</button>
+        </div>`:''}
+        ${tips}
+      </div>
+    </div>`;
+  bindAlts(out);
+  const go=out.querySelector('#rf-go');
+  if(go) go.onclick=()=>{
+    const c=readRefineForm();
+    saveRefineCtx(c);
+    run({ctx:c});
+  };
+  const fn=out.querySelector('#rf-fullname');
+  if(fn) fn.onclick=()=>{
+    const inp=document.getElementById('q');
+    inp.focus();
+    inp.select();
+    out.querySelector('.rf-explain').textContent='ערכו את השם בשורת החיפוש למעלה (שם מלא יותר) ולחצו חפש.';
+  };
+  const retry=out.querySelector('#rf-retry');
+  if(retry) retry.onclick=()=>{
+    // Re-show form even after empty — clear "still thin" by showing form again without forcing empty path
+    const fake={...d, contextUsed:null};
+    // Keep lastCtx but render form again
+    const saved=lastCtx;
+    lastCtx={...saved}; // keep
+    // Force thin reason without hadContext by temporarily clearing lastCtx for reason check only
+    const prev=lastCtx;
+    lastCtx={city:'',org:'',role:'',context:''};
+    renderRefine({...d, contextUsed:null, thin:true}, 'thin');
+    lastCtx=prev;
+    // Prefill fields from prev
+    const city=document.getElementById('rf-city');
+    const org=document.getElementById('rf-org');
+    const role=document.getElementById('rf-role');
+    if(city) city.value=prev.city||'';
+    if(org) org.value=prev.org||'';
+    if(role) role.value=prev.role||'';
+  };
+  const form=out.querySelector('#rf-form');
+  if(form) form.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){ e.preventDefault(); go&&go.click(); }
+  });
+}
+function needsRefine(d){
+  if(d.needCandidatePick || d.mode==='candidates') return false; // handled by candidates UI
+  if(d.ambiguous && !(d.candidates&&d.candidates.length>=2)) return true;
+  if(d.thin) return true;
+  if(!d.sources?.length && !d.extract) return true;
+  return false;
+}
+function renderNeedContext(d){
+  const out=document.getElementById('out');
+  const ctxPrefill=d.contextUsed||lastCtx;
+  const fields=d.needContextFields||['city','org','country','role'];
+  const foreign=d.scenario==='foreign'||fields[0]==='country';
+  const title=d.messageKey==='common_name'
+    ? 'כדי למצוא את האדם הנכון — חסרה הקשר'
+    : 'חסרה הקשר להמשך החיפוש';
+  const explain=foreign
+    ? `השם «${esc(d.label||'')}» נפוץ או לא חד־משמעי. הוסיפו מדינה / עיר / ארגון ונחדד ממקורות ציבוריים בלבד.`
+    : `השם «${esc(d.label||'')}» מתאים לכמה אנשים. הוסיפו עיר, חברה או מדינה — בלי זה לא מציגים תיק או מועמדים בלי ראיות.`;
+  const fieldHtml=(id,label,ph,dir)=>{
+    if(!fields.includes(id.replace('rf-','')) && id!=='rf-city') {
+      // still show all primary fields; order by needContextFields preference visually via country first when foreign
+    }
+    return `<div class="rf-field">
+      <label for="${id}">${label}</label>
+      <input id="${id}" name="${id.replace('rf-','')}" placeholder="${ph}" value="${esc(ctxPrefill[id.replace('rf-','')]||'')}"${dir?` dir="${dir}"`:''}/>
+    </div>`;
+  };
+  const ordered = foreign
+    ? fieldHtml('rf-country','מדינה','Germany / US / Brazil…','ltr')
+      + fieldHtml('rf-city','עיר','City / region')
+      + fieldHtml('rf-org','חברה / מעסיק','Company / employer')
+      + fieldHtml('rf-role','תפקיד <span class="opt">(אופציונלי)</span>','Role')
+    : fieldHtml('rf-city','עיר','למשל: תל אביב')
+      + fieldHtml('rf-org','חברה / מעסיק','למשל: משרד הביטחון')
+      + fieldHtml('rf-country','מדינה <span class="opt">(אופציונלי)</span>','Israel / …','ltr')
+      + fieldHtml('rf-role','תפקיד <span class="opt">(אופציונלי)</span>','למשל: מנהל מוצר');
+  const scen=scenarioLabel(d.scenario);
+  out.className='';
+  out.innerHTML=`
+    <div class="mode">
+      <span>${esc(modeLabel('need_context'))}</span>
+      ${scen?`<span class="chip">${esc(scen)}</span>`:''}
+      <span class="chip">הקשר מוקדם</span>
+      ${d.phase?`<span class="chip">${esc(d.phase)}</span>`:''}
+    </div>
+    <div class="refine-panel">
+      <div class="rf-stamp"><span>NEED CONTEXT</span><span class="n">UX</span></div>
+      <div class="rf-body">
+        <h2>${title}</h2>
+        <p class="rf-explain">${explain}</p>
+        <form class="rf-form" id="rf-form" autocomplete="on">${ordered}</form>
+        <div class="rf-actions">
+          <button type="button" class="rf-primary" id="rf-go">חדדו וחפשו</button>
+          <button type="button" class="rf-secondary" id="rf-fullname">שם מלא יותר</button>
+        </div>
+        <div class="rf-tips"><strong>למה?</strong>
+          <ul>
+            <li>שמות נפוצים (כהן, לוי…) בלי עיר/ארגון — לא מציגים דיוקן ולא תיק</li>
+            <li>בלי הקשר — אין מועמדים בלי מקורות ציבוריים</li>
+            <li>מקורות פתוחים בלבד (לא Truecaller / Sync.me)</li>
+          </ul>
+        </div>
+      </div>
+    </div>`;
+  const go=out.querySelector('#rf-go');
+  if(go) go.onclick=()=>{ const c=readRefineForm(); saveRefineCtx(c); run({ctx:c}); };
+  const fn=out.querySelector('#rf-fullname');
+  if(fn) fn.onclick=()=>{ const inp=document.getElementById('q'); if(inp){ inp.focus(); inp.select&&inp.select(); } };
+}
+
+function renderCandidates(d){
+  const out=document.getElementById('out');
+  const list=(d.candidates||[]).slice(0,7);
+  if(!list.length){
+    renderNeedContext({...d, uiState:'need_context', messageKey:d.messageKey||'common_name'});
+    return;
+  }
+  const cards=list.map((c)=>{
+    const whys=(c.why||[]).filter(w=>w&&!/התאמה מחיפוש ציבורי|public search match/i.test(w)).slice(0,3);
+    const why=whys.map(w=>`<li>${esc(w)}</li>`).join('')||'<li>מקורות ציבוריים מצביעים על התאמה</li>';
+    const prev=(c.sourcesPreview||[]).slice(0,2).map(s=>{
+      const hu=safeUrl(s.url);
+      const label=esc((s.kind||'')+' · '+(s.title||s.url||'').slice(0,60));
+      return hu?`<a href="${esc(hu)}" target="_blank" rel="noopener noreferrer">${label}</a>`:label;
+    }).join('<br/>');
+    const locale=c.localeHint?`<span class="chip">${esc(c.localeHint)}</span>`:'';
+    return `<div class="cand-card" data-cand="${esc(c.label)}" role="listitem">
+      <p class="clabel">${esc(c.label)} ${locale}</p>
+      <ul>${why}</ul>
+      ${prev?`<div class="cprev">${prev}</div>`:''}
+      <button type="button" data-approve="${esc(c.label)}">בחר כמועמד להמשך</button>
+    </div>`;
+  }).join('');
+  const scen=scenarioLabel(d.scenario);
+  out.className='';
+  out.innerHTML=`
+    <div class="mode">
+      <span>${esc(modeLabel('candidates'))}</span>
+      <span class="chip">${list.length} אפשרויות</span>
+      ${scen?`<span class="chip">${esc(scen)}</span>`:''}
+      ${d.cached?'<span class="chip">מטמון</span>':''}
+    </div>
+    <div class="cand-panel">
+      <div class="rf-stamp"><span>בחרו אדם</span><span class="n">UX</span></div>
+      <div class="cand-body">
+        <h2>למי התכוונתם?</h2>
+        <p class="cand-explain">הנה אנשים עם ראיות ממקורות ציבוריים. בחרו אחד כדי לבנות תיק ממוקד — בלי ניחוש ובלי מאגרי caller-ID.</p>
+        <div class="cand-grid" role="list">${cards}</div>
+        <div class="rf-actions" style="margin-top:16px">
+          <button type="button" class="rf-secondary" id="cand-context">זה לא ברשימה — הוסיפו הקשר</button>
+        </div>
+      </div>
+    </div>`;
+  out.querySelectorAll('[data-approve]').forEach(btn=>{
+    btn.onclick=()=>{
+      const label=btn.getAttribute('data-approve')||'';
+      if(!label) return;
+      const qEl=document.getElementById('q');
+      if(qEl && !qEl.value.trim()) qEl.value=label;
+      const home=readHomeFields();
+      const ctx={
+        city:home.city||lastCtx.city||'',
+        org:home.org||lastCtx.org||'',
+        role:home.role||lastCtx.role||'',
+        country:home.country||lastCtx.country||'',
+        context:lastCtx.context||'',
+        phone:home.phone||lastCtx.phone||'',
+        email:home.email||lastCtx.email||'',
+        focus:label,
+      };
+      saveRefineCtx(ctx);
+      run({ctx, fromApprove:true});
+    };
+  });
+  const more=out.querySelector('#cand-context');
+  if(more) more.onclick=()=>renderNeedContext({...d, uiState:'need_context', messageKey:'common_name'});
+}
+function render(d){
+  const out=document.getElementById('out');
+  let ui=resolveUiState(d);
+  // Client safety: ONLY override when server did not pick a clear uiState.
+  // Never force need_context over explicit dossier (celebs under wiki 429).
+  if(!d.uiState && (d.needContext||d.messageKey==='common_name') && ui!=='candidates' && ui!=='dossier'){
+    ui='need_context';
+  }
+  if(ui==='need_context'){
+    // Belt: strip any leaked faces before rendering context screen
+    d={...d, photo:null, images:[], candidates:[]};
+    renderNeedContext(d);
+    return;
+  }
+  if(ui==='candidates'){
+    renderCandidates(d);
+    return;
+  }
+  if(ui==='thin' || needsRefine(d)){
+    renderRefine(d, refineReason(d));
+    return;
+  }
+  // dossier — strip faces only when confidence is explicitly none
+  if(d&&d.confidence==='none'){ d={...d, photo:null, images:[]}; }
+  const amb=false;
+  const demCite=d.qid?'Wikidata':(d.demoCiteHost||null);
+  const demUrl=d.qid?('https://www.wikidata.org/wiki/'+d.qid):(d.demoCite||null);
+  // cite-or-drop: birth/age/place only render a cite when server attached one
+  const baseFacts=[
+    ['שם', d.label, null, null],
+    ['תיאור', d.desc, null, null],
+    ['שנת לידה', d.birth, d.birth?demCite:null, d.birth?demUrl:null],
+    ['גיל', d.age, d.age?demCite:null, d.age?demUrl:null],
+    ['מקום', d.place, d.place?demCite:null, d.place?demUrl:null],
+  ];
+  const extra=(d.extra_facts||[]).map(f=>[f.label, f.value, f.cite||null, f.url||null]);
+  const facts=[...baseFacts, ...extra].filter(([,val])=>val!=null && String(val).trim()!=='');
+
+  const imgs=(d.images||[]).filter(i=>i.url && safeUrl(i.url));
+  const photo=safeUrl(d.photo)||null;
+  const regN=(d.sources||[]).filter(isRegistry).length;
+  const chips=[];
+  const scen=scenarioLabel(d.scenario);
+  if(scen) chips.push(scen);
+  if(d.confidence&&d.confidence!=='none') chips.push('ביטחון: '+(d.confidence==='high'?'גבוה':d.confidence==='medium'?'בינוני':'נמוך'));
+  if(regN) chips.push(`${regN} רישומים`);
+  if(d.cached) chips.push('מטמון');
+  if(d.timings&&d.timings.total!=null) chips.push((d.timings.total/1000).toFixed(1)+'ש׳');
+  if(d.degraded) chips.push('מקוצר');
+  if(d.contextUsed&&(d.contextUsed.city||d.contextUsed.org||d.contextUsed.country)) chips.push('עם הקשר');
+  if(d.contextUsed&&d.contextUsed.focus) chips.push('בחירה מאושרת');
+
+  out.className='';
+  out.innerHTML=`
+    <div class="mode">
+      <span>${esc(modeLabel('dossier'))}</span>
+      ${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join('')}
+    </div>
+    <div class="layout">
+      <aside class="cube">
+        <div class="stamp"><span>00 זהות</span><span class="n">${esc(d.qid||'WEB')}</span></div>
+        <div class="portrait">${(() => { const ps=safeSrc(photo); return ps?`<img src="${ps}" alt=""/>`:`<div class="empty">אין דיוקן ציבורי מאומת<br/>לא מוצגות תמונות אקראיות</div>`; })()}</div>
+        ${imgs.length?`<div class="gallery">${imgs.slice(0,8).map(i=>{ const hu=safeUrl(i.url); const su=safeSrc(i.url); if(!hu||!su) return ''; return `<a href="${esc(hu)}" target="_blank" rel="noopener noreferrer" title="${esc(i.source||'')} ${esc(i.note||'')}"><img src="${su}" alt="" loading="lazy" onerror="this.parentNode.style.display='none'"/></a>`; }).join('')}</div>`:''}
+        ${facts.length?`<div class="facts">${facts.map(([k,val,cite,url])=>renderFact(k,val,cite,url)).join('')}</div>`:''}
+        ${d.extract?`<div class="bio"><div class="bio-label">תקציר · ממקורות</div>${esc(d.extract)}</div>`:''}
+      </aside>
+      <section class="stack">
+        <div class="stamp"><span>מקורות ציבוריים</span><span class="n">${String((d.sources||[]).length).padStart(2,'0')}</span></div>
+        ${renderGroupedSources(d.sources)}
+        ${d.alts?.length?`<div class="alts-wrap"><p class="label">התכוונת למישהו אחר?</p>${renderAlts(d.alts)}</div>`:''}
+      </section>
+    </div>`;
+  bindAlts(out);
+}
+const LOAD_STEPS_DEFAULT=['בודקים מקורות פתוחים…','מאתרים זהות ציבורית…','אוספים ראיות…','מסדרים תוצאה…'];
+const LOAD_STEPS_FOREIGN=['בודקים אם השם חד־משמעי…','מחפשים מקורות פתוחים בעולם…','אוספים ראיות (בלי ניחוש)…','מכינים בחירה או בקשת הקשר…'];
+const LOAD_STEPS_CTX=['משתמשים בהקשר שסיפקתם…','מצליבים מקורות ציבוריים…','אוספים ראיות…','מסדרים תוצאה…'];
+let LOAD_STEPS=LOAD_STEPS_DEFAULT.slice();
+let activeAbort=null;
+let userCancelled=false;
+let loadStartedAt=0;
+let loadPath='default'; // default | foreign | ctx
+function setCancelVisible(on){
+  const c=document.getElementById('cancel');
+  if(c) c.classList.toggle('show', !!on);
+}
+function pickLoadPath(home, ctx){
+  const q=(home&&home.q)||'';
+  const hasCtx=!!(ctx&&(ctx.city||ctx.org||ctx.country||ctx.role||ctx.focus));
+  const letters=q.replace(/[^A-Za-z\u0590-\u05FF]/g,'');
+  const latinN=(letters.match(/[A-Za-z]/g)||[]).length;
+  const latin=letters.length && (latinN/letters.length)>=0.7;
+  if(hasCtx) return 'ctx';
+  if(latin) return 'foreign';
+  const tokens=q.trim().split(/\s+/).filter(Boolean);
+  if(tokens.length<=2 && !(ctx&&(ctx.phone||ctx.email))) return 'foreign';
+  return 'default';
+}
+function waitHint(elapsedSec, path){
+  if(elapsedSec<8) return '';
+  if(path==='foreign'||path==='ctx'){
+    if(elapsedSec>=20) return 'חיפוש זר/נפוץ לוקח יותר זמן — אוספים רק מקורות ציבוריים, בלי לנחש זהות.';
+    return 'שם נפוץ או לועזי — זה יכול לקחת כמה שניות נוספות. אפשר לבטל ולהוסיף מדינה/ארגון.';
+  }
+  if(elapsedSec>=15) return 'עדיין מחפשים במקורות פתוחים… אפשר לבטל בכל רגע.';
+  return '';
+}
+function paintLoading(stepIdx, labelOverride){
+  const out=document.getElementById('out');
+  const steps=LOAD_STEPS;
+  const pct=Math.min(96, Math.round(((stepIdx+0.35)/steps.length)*100));
+  const elapsed=loadStartedAt?Math.max(0, Math.floor((Date.now()-loadStartedAt)/1000)):0;
+  const hint=waitHint(elapsed, loadPath);
+  out.className='';
+  out.innerHTML=`<div class="loading" role="status" aria-live="polite">
+    <div class="title"><span>מחפשים…</span><span class="pct">${pct}%</span></div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    <p class="elapsed">${elapsed}ש׳ חלפו · מקורות ציבוריים בלבד</p>
+    <ol>${steps.map((label,i)=>{
+      const cls=i<stepIdx?'done':(i===stepIdx?'active':'');
+      const tag=i<stepIdx?'✓':(i===stepIdx?'…':'');
+      const text=(i===stepIdx && labelOverride)?labelOverride:label;
+      return `<li class="${cls}"><span class="dot"></span><span>${esc(text)}</span>${tag?`<span class="t">${tag}</span>`:''}</li>`;
+    }).join('')}</ol>
+    ${hint?`<div class="wait-hint">${esc(hint)}</div>`:''}
+    <div class="skel-layout" aria-hidden="true">
+      <div class="skel-card"><div class="skel-block"></div><div class="skel-line mid"></div><div class="skel-line short"></div><div class="skel-line"></div></div>
+      <div class="skel-card"><div class="skel-line mid"></div><div class="skel-line"></div><div class="skel-line"></div><div class="skel-line short"></div><div class="skel-line"></div></div>
+    </div>
+    <div class="cancel-row"><button type="button" id="cancel-inline">בטל חיפוש</button></div>
+  </div>`;
+  const inline=document.getElementById('cancel-inline');
+  if(inline) inline.onclick=()=>cancelActiveSearch();
+}
+function parseSSEChunk(buf, onEvent){
+  const parts=buf.split('\n\n');
+  const rest=parts.pop();
+  for(const block of parts){
+    const line=block.split('\n').find(l=>l.startsWith('data:'));
+    if(!line) continue;
+    try{ onEvent(JSON.parse(line.slice(5).trim())); }catch{}
+  }
+  return rest;
+}
+async function run(opts){
+  const home=readHomeFields();
+  const btn=document.getElementById('go');
+  const out=document.getElementById('out');
+  const v=validateSearch(home);
+  if(!v.ok){
+    out.className='empty-state';
+    out.innerHTML='<span class="big">EMPTY</span>נדרש שם או טלפון או אימייל.';
+    return;
+  }
+  let ctx=(opts&&opts.ctx)?opts.ctx:null;
+  if(!ctx){
+    if(opts&&opts.keepCtx) ctx={...lastCtx};
+    else if(opts&&opts.fromApprove) ctx={...lastCtx};
+    else if(!(opts&&opts.fromRefine)) {
+      const formVisible=!!document.getElementById('rf-city');
+      if(formVisible){ ctx=readRefineForm(); saveRefineCtx(ctx); }
+      else {
+        ctx={
+          city:home.city||'',
+          org:home.org||'',
+          role:home.role||'',
+          country:home.country||'',
+          context:'',
+          phone:home.phone||'',
+          email:home.email||'',
+          focus:'',
+        };
+        saveRefineCtx(ctx);
+      }
+    }
+  }else{
+    saveRefineCtx(ctx);
+  }
+  ctx=ctx||{city:'',org:'',role:'',country:'',context:'',phone:'',email:'',focus:''};
+  // Merge latest home identifiers unless approving with explicit ctx
+  if(!(opts&&opts.fromApprove)){
+    ctx.phone=ctx.phone||home.phone||'';
+    ctx.email=ctx.email||home.email||'';
+    ctx.org=ctx.org||home.org||'';
+    ctx.city=ctx.city||home.city||'';
+    ctx.country=ctx.country||home.country||'';
+    ctx.role=ctx.role||home.role||'';
+  }
+  const q=home.q || ctx.focus || '';
+  const hasIds=!!(ctx.phone||ctx.email);
+  btn.disabled=true; btn.textContent='רץ…';
+  userCancelled=false;
+  let step=0;
+  loadStartedAt=Date.now();
+  loadPath=pickLoadPath(home, ctx);
+  LOAD_STEPS=(loadPath==='ctx'?LOAD_STEPS_CTX:loadPath==='foreign'?LOAD_STEPS_FOREIGN:LOAD_STEPS_DEFAULT).slice();
+  const firstLabel=ctx.focus?'מעמיקים לפי הבחירה שלכם…':(loadPath==='ctx'?'מחפשים עם ההקשר שסיפקתם…':(loadPath==='foreign'?'בודקים אם השם חד־משמעי…':undefined));
+  paintLoading(0, firstLabel);
+  setCancelVisible(true);
+  const tick=setInterval(()=>{
+    // refresh elapsed + advance step slowly
+    if(step<LOAD_STEPS.length-1){
+      step+=1;
+    }
+    paintLoading(step);
+  }, 2800);
+  const ac=typeof AbortController!=='undefined'?new AbortController():null;
+  activeAbort=ac;
+  const kill=ac?setTimeout(()=>{try{ac.abort();}catch(e){}}, 70000):null;
+  try{
+    // POST when phone/email present — keep identifiers out of the URL/query string.
+    // Name-only (no phone/email): GET with non-sensitive ctx in query is fine.
+    let r;
+    if(hasIds){
+      const body={q, stream:1};
+      if(ctx.city) body.city=ctx.city;
+      if(ctx.org) body.org=ctx.org;
+      if(ctx.role) body.role=ctx.role;
+      if(ctx.country) body.country=ctx.country;
+      if(ctx.context) body.context=ctx.context;
+      if(ctx.phone) body.phone=ctx.phone;
+      if(ctx.email) body.email=ctx.email;
+      if(ctx.focus) body.focus=ctx.focus;
+      const opts={method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)};
+      if(ac) opts.signal=ac.signal;
+      r=await fetch('/api/lookup', opts);
+    }else{
+      const cq=ctxQuery(ctx,{omitIds:true});
+      const qs='stream=1&q='+encodeURIComponent(q)+cq;
+      r=await fetch('/api/lookup?'+qs, ac?{signal:ac.signal}:undefined);
+    }
+    const ctype=(r.headers.get('content-type')||'');
+    if(ctype.includes('text/event-stream') && r.body){
+      const reader=r.body.getReader();
+      const dec=new TextDecoder();
+      let buf='';
+      let result=null;
+      while(true){
+        const {done,value}=await reader.read();
+        if(done) break;
+        buf+=dec.decode(value,{stream:true});
+        buf=parseSSEChunk(buf,(ev)=>{
+          if(ev.type==='progress'){
+            step=Math.max(step, Number(ev.step)||0);
+            paintLoading(step, ev.label);
+          }else if(ev.type==='result'){
+            result=ev.data;
+          }else if(ev.type==='error'){
+            throw new Error(ev.error||'stream error');
+          }
+        });
+      }
+      clearInterval(tick);
+      if(!result) throw new Error('לא התקבלה תוצאה מהשרת');
+      paintLoading(LOAD_STEPS.length);
+      render(result);
+    }else{
+      const d=await r.json();
+      clearInterval(tick);
+      if(!r.ok) throw new Error(d.error||r.status);
+      paintLoading(LOAD_STEPS.length);
+      render(d);
+    }
+  }catch(e){
+    clearInterval(tick);
+    const msg=String(e&&e.message||e||'');
+    const aborted=userCancelled || (e&&e.name==='AbortError') || /aborted|The user aborted|AbortError/i.test(msg);
+    const timed=/timeout|TimeoutError|FUNCTION_INVOCATION/i.test(msg);
+    // Never auto-retry full non-SSE lookup on stream failure (avoids double Gemini).
+    // Prefer no retry; only surface error / cancel state.
+    out.className='err';
+    if(aborted && userCancelled){
+      out.innerHTML='<span class="big">CANCELLED</span>החיפוש בוטל.';
+    }else if(aborted || timed){
+      out.textContent='החיפוש ארך יותר מדי או נקטע — נסו שוב, או הוסיפו עיר/ארגון לצמצום.';
+    }else{
+      out.textContent='שגיאה: '+msg;
+    }
+  }finally{
+    if(kill) clearTimeout(kill);
+    activeAbort=null;
+    setCancelVisible(false);
+    btn.disabled=false; btn.textContent='חפש';
+  }
+}
+function cancelActiveSearch(){
+  userCancelled=true;
+  try{ if(activeAbort) activeAbort.abort(); }catch(e){}
+}
+function startFreshSearch(){
+  clearRefineCtx();
+  run();
+}
+document.getElementById('go').onclick=()=>startFreshSearch();
+const cancelBtn=document.getElementById('cancel');
+if(cancelBtn) cancelBtn.onclick=()=>cancelActiveSearch();
+['q','phone','email','org','city','role'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('keydown',e=>{ if(e.key==='Enter'){ startFreshSearch(); } });
+});
+</script>
+<script src="discovery-ui.js" defer></script>
+</body>
+</html>

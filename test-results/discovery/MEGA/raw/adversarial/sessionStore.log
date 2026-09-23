@@ -1,0 +1,82 @@
+PASS backend is known
+PASS storeBackend alias matches backend
+PASS ttlMs present
+PASS fs-regen durable === false (no false confidence)
+PASS fs-regen fallback === true
+PASS fs-regen promoteEligible === false
+PASS fs-regen kvCredsPresent === false
+PASS fs-regen crossInstance is regenerate-from-seed
+PASS fs-regen note mentions FALLBACK-ONLY
+PASS mintSessionId non-empty
+PASS decode recovers seed
+PASS decode malformed returns null
+PASS decode empty returns null
+PASS decode trash ds1 returns null
+PASS missing key returns null
+PASS nonsense id get null
+PASS ensureSessionVersion sets version 1
+PASS ensureSessionVersion bump → 2
+[discovery.store.telemetry] {
+  op: 'health',
+  storeBackend: 'fs-regen',
+  latencyMs: 3,
+  ok: true,
+  correlationId: 'test-hc-mega',
+  promoteEligible: false,
+  explicitFallback: true
+}
+PASS healthCheck ok
+PASS health has storeBackend
+PASS health steps include WRITE
+PASS health steps include READ
+PASS health steps include UPDATE
+PASS health steps include DELETE
+PASS health correlationId echoed
+PASS health promoteEligible matches info
+PASS health durable matches info
+PASS health mode fs-regen-local
+PASS health no live redis required
+PASS roundtrip get
+PASS after delete get null
+PASS conditionalSet 409 on stale expectedVersion
+PASS no token-like keys in store info
+PASS kvCredsPresent is boolean not secret
+PASS SKIP live Redis: env absent (documented)
+INFO live Redis tests skipped — KV/UPSTASH env absent (BLOCKER for promote)
+PASS explicitFallback === fallback
+PASS fsRegenFallback === (backend===fs-regen)
+PASS fs-regen explicitFallback true
+PASS fs-regen fsRegenFallback true
+PASS health has backend field
+PASS health has latencyMs
+PASS health fsRegenFallback bool
+PASS health explicitFallback bool
+PASS health fsRegenFallback true
+PASS health promoteEligible false
+[discovery.store.telemetry] {
+  op: 'test',
+  storeBackend: 'fs-regen',
+  latencyMs: 1,
+  ok: true,
+  correlationId: 'c1',
+  promoteEligible: false,
+  explicitFallback: true
+}
+PASS telemetry has storeBackend
+PASS telemetry no token
+PASS faultInject disabled without env
+PASS resolveFault null when gated off
+PASS faultInject enabled with env
+PASS resolveFault store_miss
+PASS resolveFault provider_timeout
+PASS resolveFault scrub_path
+PASS resolveFault unknown null
+PASS shouldForceStoreMiss
+PASS scrubPath inject has forbidden QID
+PASS faultTelemetry gatedBy present
+PASS faultInject restored
+
+--- sessionStore tests ---
+storeBackend=fs-regen durable=false fallback=true promoteEligible=false
+passed=58 failed=0
+

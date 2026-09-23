@@ -1,0 +1,1513 @@
+{
+  "version": 1,
+  "created": "2026-09-08",
+  "mission": "8h-250",
+  "count": 250,
+  "mix": {
+    "famous": 71,
+    "obscure": 120,
+    "nonexist": 59
+  },
+  "cases": [
+    {
+      "q": "Aisha Rahman Lagos",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 41 City10",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "מנחם בגין",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "גדעון סער",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 27 עיר6",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "יוסי כהן חיפה הייטק",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 31 עיר10",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 47 City1",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "חיים רמון",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 52 City6",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 34 עיר13",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 32 עיר11",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "יאיר לפיד",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Sarah Miller Stanford CS",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Giorgia Meloni",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 27 City11",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "שמעון פרס",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 51 עיר10",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Emily Watson Melbourne nurse",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "מרב מיכאלי",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Mark Zuckerberg",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Chen Wei Shanghai engineer",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Nullius Nomen Void",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "יואב גלנט",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "מישהו_בדוי_למערכת",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "מיכל שפירא רעננה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 38 City7",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 33 City2",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "ציפי לבני",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "פלצמקרוניוס זרבוטן",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Test Person 59 City13",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 36 עיר15",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 45 City14",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "נפתלי בנט",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 40 עיר19",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 28 עיר7",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 25 City9",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אהוד ברק",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "הרצל בוקר",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "טסט_לא_קיים_אבג",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "עידו פרידמן כרמיאל",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 57 City11",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "איתי מזרחי באר שבע",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 31 City0",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "יצחק רבין",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "איש_לא_קיים_טסט",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "אדם בדיקה 58 עיר17",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Fictional McFakeFace",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Xi Jinping",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Barack Obama",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "גדי איזנקוט",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 39 עיר18",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 37 עיר16",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "הדר אמסלם מודיעין",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 56 עיר15",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Joe Biden",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "רועי דהן אשדוד",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Tim Cook",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Donald Trump",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 44 עיר3",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אורי סגל רמת גן",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 21 עיר0",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Vladimir Putin",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "עופר שלח",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Maria Garcia Barcelona architect",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "ליאור חן כפר סבא",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אורלי לוי",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 50 עיר9",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Angela Merkel",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 52 עיר11",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 58 City12",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Olaf Scholz",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 55 עיר14",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Boris Johnson",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 60 City14",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 39 City8",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "מיקי זוהר",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 43 עיר2",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 51 City5",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "עמית ברק נתניה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Rishi Sunak",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "מירי רגב",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 57 עיר16",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 24 City8",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "שירה גולן חולון",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "בני גנץ",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 22 עיר1",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 48 City2",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Qwerty Asdfgh Lkjh",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Ahmed Hassan Cairo journalist",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Emmanuel Macron",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Isaac Herzog",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "איציק שמולי",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "יואב טל אשקלון",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "תמר זנדברג",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 47 עיר6",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Completely Invented Persona ZX9",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Keir Starmer",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 48 עיר7",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "עמיר פרץ",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Yuki Tanaka Tokyo designer",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Jacinda Ardern",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 44 City13",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "בנימין נתניהו",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אריאל שרון",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אביגדור ליברמן",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 25 עיר4",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 35 City4",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 46 עיר5",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "גולדה מאיר",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "איילת שקד",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Dummy Human Placeholder X",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "שמעון שבס",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 23 City7",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 30 עיר9",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Elon Musk",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Elena Petrova Moscow teacher",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Justin Trudeau",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Phantom Lookup Target 77",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "אדם בדיקה 33 עיר12",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 34 City3",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "בצלאל סמוטריץ",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Greta Thunberg",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "נועה אברהם ירושלים מורה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 32 City1",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 40 City9",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Taylor Swift",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "גל עדן פתח תקווה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 24 עיר3",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 26 עיר5",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Cristiano Ronaldo",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "נטע בלום קריית אונו",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "תום פרץ ראשון לציון",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "זר בדוי טסט מערכת",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Test Person 50 City4",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Lionel Messi",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 55 City9",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 49 עיר8",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Xyzzy Qorptanblix 99999",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "אדם בדיקה 53 עיר12",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 41 עיר0",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Lars Andersen Oslo",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "יצחק הרצוג",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "דנה כץ נהריה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Ghost Profile NeverReal",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pedro Sanchez",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 29 City13",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 38 עיר17",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Omar Khalil Dubai",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Anna Kowalski Warsaw doctor",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 53 City7",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 37 City6",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 21 City5",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אהוד אולמרט",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 35 עיר14",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "מאיה רוזן הרצליה",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 46 City0",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 42 City11",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 56 City10",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 60 עיר19",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 28 City12",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "בדיקה_בדיוני_אדם_000",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "רם עמנואל",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Serena Williams",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Aaa Bbb Ccc FakePerson2026",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Johnnnn Smiithh Fake",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Hans Mueller Munich",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "שלמה קרעי",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 59 עיר18",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Sophie Dubois Lyon",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Fake Israeli Name Qwfp",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Test Person 26 City10",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Volodymyr Zelenskyy",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Fatima Al Zahra Amman",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "משה דיין",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "דוד בן-גוריון",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Daniel Cohen IBM Haifa",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Nguyen Van An Hanoi",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 43 City12",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "יולי אדלשטיין",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "לאדם_שאינו_קיים_12345",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "James O'Brien Dublin",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Benjamin Netanyahu",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "John Smith London teacher",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Bill Gates",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 22 City6",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "רם בן ברק",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Carlos Rivera Mexico City",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "גילעד ארדן",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "שי לוינשטיין רחובות",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 49 City3",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "איתמר בן גביר",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Recep Tayyip Erdogan",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "זהבה גלאון",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Narendra Modi",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 30 City14",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Priya Sharma Bangalore",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Malala Yousafzai",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "אדם בדיקה 54 עיר13",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 29 עיר8",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "רונית אביב אילת",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Roger Federer",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "NoSuchPerson AkvotTest",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Zzyzx McNonexistent",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "אדם בדיקה 42 עיר1",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "ניצן הורוביץ",
+      "bucket": "famous",
+      "scenario": "A",
+      "expect": "dossier_or_candidates"
+    },
+    {
+      "q": "Test Person 54 City8",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "דני לוי תל אביב עורך דין",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Test Person 36 City5",
+      "bucket": "obscure",
+      "scenario": "D",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 45 עיר4",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "אדם בדיקה 23 עיר2",
+      "bucket": "obscure",
+      "scenario": "B",
+      "expect": "need_context_or_candidates_or_thin"
+    },
+    {
+      "q": "Pad Case 211",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 212",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 213",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 214",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 215",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 216",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 217",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 218",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 219",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 220",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 221",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 222",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 223",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 224",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 225",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 226",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 227",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 228",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 229",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 230",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 231",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 232",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 233",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 234",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 235",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 236",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 237",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 238",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 239",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 240",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 241",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 242",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 243",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 244",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 245",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 246",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 247",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 248",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    },
+    {
+      "q": "Pad Case 249",
+      "bucket": "nonexist",
+      "scenario": "B",
+      "expect": "thin_or_need_context_no_false_faces"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "wp3-l2-metrics/v1",
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "version": "wp3-l2-1.1.0"
+  },
+  "mode": "L2-C",
+  "stream": "L2-C",
+  "constraint": "MEASURE ONLY — CLIENT_STRESS probes only — no Core / no dpl / no injected dep faults",
+  "runId": "1a2035bd",
+  "tag": "L2C-miss-storm",
+  "started": "2026-09-19T19:46:35.069Z",
+  "finished": "2026-09-19T19:46:44.321Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 20,
+  "fingerprintRef": "test-results/wp3/L2-FINGERPRINT-FROZEN-שרת-2026-09-19.json",
+  "fingerprint": {
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "dpl": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "frozenAt": "2026-09-19T19:12:20+00:00",
+    "missing": false
+  },
+  "locks": {
+    "noCore": true,
+    "noAccChange": true,
+    "noSmithCohenChange": true,
+    "noCacheSemantics": true,
+    "noUx": true,
+    "noDpl": true,
+    "clientStressOnly": true
+  },
+  "stopRules": {
+    "abortOnPw": true,
+    "note": "pw>0 → abort immediately; report to Chief"
+  },
+  "probes": [
+    {
+      "id": "miss-storm",
+      "label": "CLIENT_STRESS rapid-fire same Smith key (COLD/nocache)",
+      "kind": "CLIENT_STRESS",
+      "note": "Observe miss storm / wikiMeta under repeated COLD Smith POST — no server fault injection",
+      "concurrency": 20,
+      "agg": {
+        "n": 20,
+        "wall": {
+          "n": 20,
+          "min": 3856,
+          "max": 9249,
+          "mean": 6836,
+          "p50": 6693,
+          "p90": 9058,
+          "p95": 9112,
+          "p99": 9249
+        },
+        "wiki": {
+          "n": 20,
+          "min": 2690,
+          "max": 5503,
+          "mean": 5150,
+          "p50": 5501,
+          "p90": 5502,
+          "p95": 5502,
+          "p99": 5503
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 20
+        },
+        "uiCounts": {
+          "candidates": 20
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 20,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 99,
+          "wikiTimeout_sum": 31,
+          "wikiRetries_sum": 130,
+          "samplesWith429": 15,
+          "samplesWithWikiTimeout": 17
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 2.162,
+        "wallClockMs": 9250
+      },
+      "sampleCount": 20
+    }
+  ],
+  "stop": {
+    "aborted": false,
+    "reason": null,
+    "pwEvents": []
+  }
+}

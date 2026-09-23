@@ -1,0 +1,306 @@
+{
+  "httpStatus": 200,
+  "ms": 3084,
+  "filter": {
+    "provider": [
+      "openlibrary"
+    ]
+  },
+  "json": {
+    "ok": true,
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoiQWxleCBNb3JnYW4iLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTM6MDUuMzExWiIsIm4iOiIxYWIzZTgxNDEzMzkifQ",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "ol-OL1437248A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Top work: Sabotage Season",
+        "evidenceIds": [
+          "ev-a78fd68b67a01a8420fd50a5"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL1437248A"
+        ],
+        "scoreFinding": 1
+      },
+      {
+        "id": "ol-OL7414531A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Top work: Breakaway",
+        "evidenceIds": [
+          "ev-f1c5367fad94e3faefa4bd24"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL7414531A"
+        ],
+        "scoreFinding": 0.97
+      },
+      {
+        "id": "ol-OL3225320A",
+        "kind": "registry",
+        "title": "Alex, Morgan",
+        "summary": "Top work: Coaching Christine",
+        "evidenceIds": [
+          "ev-d07a539720f93856d02f729f"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL3225320A"
+        ],
+        "scoreFinding": 0.94
+      },
+      {
+        "id": "ol-OL11306519A",
+        "kind": "registry",
+        "title": "Alex Morgan Lucass",
+        "summary": "Top work: LITTLE MERMAID for Ages 4-12 Coloring Book",
+        "evidenceIds": [
+          "ev-94994ffd9628a1f410461350"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL11306519A"
+        ],
+        "scoreFinding": 0.91
+      },
+      {
+        "id": "ol-OL11281210A",
+        "kind": "registry",
+        "title": "Alex Morgan Ronard",
+        "summary": "Top work: CUPHEAD Coloring Book",
+        "evidenceIds": [
+          "ev-a77421460ce764d8ecb8f909"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL11281210A"
+        ],
+        "scoreFinding": 0.88
+      },
+      {
+        "id": "ol-OL15840118A",
+        "kind": "registry",
+        "title": "Alex Morgan,John Siraj-Blatchford",
+        "summary": "Top work: Using ICT in the Early Years",
+        "evidenceIds": [
+          "ev-8e0999f81110a35e1e2cf06e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL15840118A"
+        ],
+        "scoreFinding": 0.85
+      },
+      {
+        "id": "ol-OL9647235A",
+        "kind": "registry",
+        "title": "Alex Brawl Morgan",
+        "summary": "Top work: Coloring Book MIRACULOUS for Ages 3-10",
+        "evidenceIds": [
+          "ev-9a849f46798767f11a5d307e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL9647235A"
+        ],
+        "scoreFinding": 0.8200000000000001
+      },
+      {
+        "id": "ol-OL4794660A",
+        "kind": "registry",
+        "title": "Donald S. Rowland",
+        "summary": "Top work: Empty saddles",
+        "evidenceIds": [
+          "ev-943161e980f1f1a57e7064a9"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol-OL4794660A"
+        ],
+        "scoreFinding": 0.79
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-a78fd68b67a01a8420fd50a5",
+        "provenanceUrl": "https://openlibrary.org/authors/OL1437248A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "Sabotage Season",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f1c5367fad94e3faefa4bd24",
+        "provenanceUrl": "https://openlibrary.org/authors/OL7414531A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "Breakaway",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d07a539720f93856d02f729f",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3225320A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "Coaching Christine",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-94994ffd9628a1f410461350",
+        "provenanceUrl": "https://openlibrary.org/authors/OL11306519A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "LITTLE MERMAID for Ages 4-12 Coloring Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a77421460ce764d8ecb8f909",
+        "provenanceUrl": "https://openlibrary.org/authors/OL11281210A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "CUPHEAD Coloring Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8e0999f81110a35e1e2cf06e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15840118A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "Using ICT in the Early Years",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9a849f46798767f11a5d307e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL9647235A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "Coloring Book MIRACULOUS for Ages 3-10",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-943161e980f1f1a57e7064a9",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4794660A",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T01:13:17.572Z",
+        "quote": "Empty saddles",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "narrow": {
+      "applied": {
+        "provider": [
+          "openlibrary"
+        ]
+      },
+      "beforeCount": 15,
+      "afterCount": 8
+    },
+    "version": 3,
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "progress": {
+      "done": 5,
+      "totalHint": 5
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "partial"
+    },
+    "store": {
+      "backend": "fs-regen",
+      "durable": true,
+      "crossInstance": "regenerate-from-seed",
+      "note": "No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.",
+      "fsDir": "/tmp/akvot-discovery-sessions",
+      "ttlMs": 3600000
+    }
+  },
+  "text": "{\"ok\":true,\"sessionId\":\"ds1.eyJ2IjoxLCJzIjoiQWxleCBNb3JnYW4iLCJoIjp7fSwibCI6ImVuIiwidCI6IjIwMjYtMDktMjBUMDE6MTM6MDUuMzExWiIsIm4iOiIxYWIzZTgxNDEzMzkifQ\",\"status\":\"partial\",\"findings\":[{\"id\":\"ol-OL1437248A\",\"kind\":\"registry\",\"title\":\"Alex Morgan\",\"summary\":\"Top work: Sabotage Season\",\"evidenceIds\":[\"ev-a78fd68b67a01a8420fd50a5\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL1437248A\"],\"scoreFinding\":1},{\"id\":\"ol-OL7414531A\",\"kind\":\"registry\",\"title\":\"Alex Morgan\",\"summary\":\"Top work: Breakaway\",\"evidenceIds\":[\"ev-f1c5367fad94e3faefa4bd24\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL7414531A\"],\"scoreFinding\":0.97},{\"id\":\"ol-OL3225320A\",\"kind\":\"registry\",\"title\":\"Alex, Morgan\",\"summary\":\"Top work: Coaching Christine\",\"evidenceIds\":[\"ev-d07a539720f93856d02f729f\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL3225320A\"],\"scoreFinding\":0.94},{\"id\":\"ol-OL11306519A\",\"kind\":\"registry\",\"title\":\"Alex Morgan Lucass\",\"summary\":\"Top work: LITTLE MERMAID for Ages 4-12 Coloring Book\",\"evidenceIds\":[\"ev-94994ffd9628a1f410461350\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL11306519A\"],\"scoreFinding\":0.91},{\"id\":\"ol-OL11281210A\",\"kind\":\"registry\",\"title\":\"Alex Morgan Ronard\",\"summary\":\"Top work: CUPHEAD Coloring Book\",\"evidenceIds\":[\"ev-a77421460ce764d8ecb8f909\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL11281210A\"],\"scoreFinding\":0.88},{\"id\":\"ol-OL15840118A\",\"kind\":\"registry\",\"title\":\"Alex Morgan,John Siraj-Blatchford\",\"summary\":\"Top work: Using ICT in the Early Years\",\"evidenceIds\":[\"ev-8e0999f81110a35e1e2cf06e\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL15840118A\"],\"scoreFinding\":0.85},{\"id\":\"ol-OL9647235A\",\"kind\":\"registry\",\"title\":\"Alex Brawl Morgan\",\"summary\":\"Top work: Coloring Book MIRACULOUS for Ages 3-10\",\"evidenceIds\":[\"ev-9a849f46798767f11a5d307e\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL9647235A\"],\"scoreFinding\":0.8200000000000001},{\"id\":\"ol-OL4794660A\",\"kind\":\"registry\",\"title\":\"Donald S. Rowland\",\"summary\":\"Top work: Empty saddles\",\"evidenceIds\":[\"ev-943161e980f1f1a57e7064a9\"],\"providers\":[\"openlibrary\"],\"facetHints\":[\"provider:openlibrary\",\"kind:registry\"],\"entityRefs\":[\"ol-OL4794660A\"],\"scoreFinding\":0.79}],\"evidence\":[{\"id\":\"ev-a78fd68b67a01a8420fd50a5\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL1437248A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"Sabotage Season\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-f1c5367fad94e3faefa4bd24\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL7414531A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"Breakaway\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-d07a539720f93856d02f729f\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL3225320A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"Coaching Christine\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-94994ffd9628a1f410461350\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL11306519A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"LITTLE MERMAID for Ages 4-12 Coloring Book\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-a77421460ce764d8ecb8f909\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL11281210A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"CUPHEAD Coloring Book\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-8e0999f81110a35e1e2cf06e\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL15840118A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"Using ICT in the Early Years\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-9a849f46798767f11a5d307e\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL9647235A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"Coloring Book MIRACULOUS for Ages 3-10\",\"contentType\":\"text/html\",\"robotsOk\":true},{\"id\":\"ev-943161e980f1f1a57e7064a9\",\"provenanceUrl\":\"https://openlibrary.org/authors/OL4794660A\",\"providerId\":\"openlibrary\",\"retrievedAt\":\"2026-09-20T01:13:17.572Z\",\"quote\":\"Empty saddles\",\"contentType\":\"text/html\",\"robotsOk\":true}],\"facets\":[{\"key\":\"provider\",\"label\":\"Provider\",\"buckets\":[{\"value\":\"openlibrary\",\"count\":8}]},{\"key\":\"kind\",\"label\":\"Kind\",\"buckets\":[{\"value\":\"registry\",\"count\":8}]},{\"key\":\"hint\",\"label\":\"Hint\",\"buckets\":[],\"emptyReason\":\"no_evidence\"}],\"narrow\":{\"applied\":{\"provider\":[\"openlibrary\"]},\"beforeCount\":15,\"afterCount\":8},\"version\":3,\"forbiddenIdentitiesVersion\":\"2026-09-19.1\",\"progress\":{\"done\":5,\"totalHint\":5},\"providers\":{\"wikidata\":\"ok\",\"openlibrary\":\"partial\"},\"store\":{\"backend\":\"fs-regen\",\"durable\":true,\"crossInstance\":\"regenerate-from-seed\",\"note\":\"No KV env vars — using /tmp cache + durable seed-encoded sessionId for Preview. Cross-instance GET regenerates from seed embedded in id.\",\"fsDir\":\"/tmp/akvot-discovery-sessions\",\"ttlMs\":3600000}}"
+}

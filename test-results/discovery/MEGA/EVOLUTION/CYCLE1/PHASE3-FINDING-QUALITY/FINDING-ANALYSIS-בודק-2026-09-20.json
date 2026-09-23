@@ -1,0 +1,1806 @@
+{
+  "stamp": "2026-09-20T09:53:15+03:00",
+  "timezone": "Asia/Jerusalem (UTC+3)",
+  "author": "בודק",
+  "baselineId": "B0",
+  "discoveryAlias": "https://akvot-discovery.vercel.app",
+  "discoveryDeploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "promote": "HOLD",
+  "mode": "NO CODE · NO PROMOTE · observation only · B0 only",
+  "forbiddenAcc": [
+    "Q1701775",
+    "wd-Q1701775",
+    "wd_Q1701775"
+  ],
+  "classificationRules": {
+    "duplicate": "finding.id appears >1 in session (id-collision) OR identical (normTitle, evidenceIds) multi-row",
+    "near-dup": "≥2 findings share normalized title (INFORMATION≠IDENTITY label collision); may overlap contradiction",
+    "contradiction": "finding.id listed in session.contradictions[].findingIds (typically same_title_multi_domain)",
+    "no-evidence": "empty evidenceIds OR none resolve in evidence[] OR no provenanceUrl/url on resolved evidence",
+    "weak-evidence": "no/thin quote (<25 chars) OR scoreFinding<0.55 OR shallow_registry (kind=registry, 1 evidence, score<0.60); NOT auto from single-provider alone",
+    "single-source": "providers unique count <2 AND domains unique count <2",
+    "multi-source": "providers unique ≥2 OR domains unique ≥2 on the finding"
+  },
+  "perSeed": [
+    {
+      "id": "FQ01",
+      "label": "דוד כהן",
+      "type": "HE_person_soft",
+      "source": "fresh",
+      "seedObserved": "דוד כהן",
+      "status": "partial",
+      "sessionId": "kv1.2ad2c1acc9fa9f10ca77dd8b4284e96f",
+      "nFindings": 5,
+      "nEvidence": 5,
+      "nContradictions": 0,
+      "counts": {
+        "weak-evidence": 4,
+        "single-source": 5
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.0,
+        "contradiction": 0.0,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.8,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "kinds": {
+        "registry": 5
+      },
+      "providers": {
+        "openlibrary": 5
+      },
+      "domains": {
+        "openlibrary.org": 5
+      },
+      "uniqProviders": [
+        "openlibrary"
+      ],
+      "uniqDomains": [
+        "openlibrary.org"
+      ],
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "forbiddenStripped": null,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "nearDupClusters": {},
+      "idCollisions": {},
+      "contradictions": [],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error"
+      },
+      "findingFlags": [
+        {
+          "id": "ol-OL16182955A",
+          "title": "דוד כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6658333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=19"
+          ],
+          "quoteMaxLen": 19,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL16199566A",
+          "title": "אורי בן דוד כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6558333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=14"
+          ],
+          "quoteMaxLen": 14,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15511996A",
+          "title": "מאיר בן יונתן דוד כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6458333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=21"
+          ],
+          "quoteMaxLen": 21,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL4973655A",
+          "title": "David Cohen",
+          "kind": "registry",
+          "flags": [
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6358333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 52,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15254250A",
+          "title": "דוד ש. כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6258333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=8"
+          ],
+          "quoteMaxLen": 8,
+          "idCollisionCount": 1
+        }
+      ]
+    },
+    {
+      "id": "FQ02",
+      "label": "Alex Morgan",
+      "type": "Latin_ambiguous",
+      "source": "phase2-reuse-B02",
+      "seedObserved": "Alex Morgan",
+      "status": "partial",
+      "sessionId": "kv1.7fa51090f9f22cdb91d894f7931c5613",
+      "nFindings": 21,
+      "nEvidence": 21,
+      "nContradictions": 1,
+      "counts": {
+        "near-dup": 10,
+        "contradiction": 10,
+        "weak-evidence": 19,
+        "single-source": 21
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.4762,
+        "contradiction": 0.4762,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.9048,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "kinds": {
+        "registry": 15,
+        "page": 6
+      },
+      "providers": {
+        "wikidata": 7,
+        "openlibrary": 8,
+        "wikipedia": 6
+      },
+      "domains": {
+        "wikidata.org": 7,
+        "openlibrary.org": 8,
+        "en.wikipedia.org": 6
+      },
+      "uniqProviders": [
+        "openlibrary",
+        "wikidata",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "openlibrary.org",
+        "wikidata.org"
+      ],
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "forbiddenStripped": null,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "nearDupClusters": {
+        "alex morgan": [
+          "wd-Q233510",
+          "wd-Q126278685",
+          "wd-Q131542437",
+          "wd-Q43302646",
+          "wd-Q42805830",
+          "wd-Q16527618",
+          "wd-Q55603580",
+          "ol-OL1437248A",
+          "ol-OL7414531A",
+          "wp-en-Alex_Morgan"
+        ]
+      },
+      "idCollisions": {},
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "alex morgan",
+          "findingIds": [
+            "wd-Q233510",
+            "wd-Q126278685",
+            "wd-Q131542437",
+            "wd-Q43302646",
+            "wd-Q42805830",
+            "wd-Q16527618",
+            "wd-Q55603580",
+            "ol-OL1437248A",
+            "ol-OL7414531A",
+            "wp-en-Alex_Morgan"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "providersStatus": {
+        "wikidata": "ok",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "findingFlags": [
+        {
+          "id": "wd-Q233510",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.7183333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=22"
+          ],
+          "quoteMaxLen": 22,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q126278685",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.7083333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 34,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q131542437",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.6983333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=18"
+          ],
+          "quoteMaxLen": 18,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q43302646",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 29,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q42805830",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=16"
+          ],
+          "quoteMaxLen": 16,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q16527618",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=21"
+          ],
+          "quoteMaxLen": 21,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q55603580",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=21"
+          ],
+          "quoteMaxLen": 21,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL1437248A",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5958333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=15",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 15,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL7414531A",
+          "title": "Alex Morgan",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5858333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=9",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 9,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL3225320A",
+          "title": "Alex, Morgan",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5758333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=18",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 18,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL11306519A",
+          "title": "Alex Morgan Lucass",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5658333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 42,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL11281210A",
+          "title": "Alex Morgan Ronard",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5558333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=21",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 21,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15840118A",
+          "title": "Alex Morgan,John Siraj-Blatchford",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5458333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "low_score=0.546",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 28,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL9647235A",
+          "title": "Alex Brawl Morgan",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5358333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "low_score=0.536",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 38,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL4794660A",
+          "title": "Donald S. Rowland",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5258333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=13",
+            "low_score=0.526",
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 13,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Alex_Morgan",
+          "title": "Alex Morgan",
+          "kind": "page",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.4983333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.498"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Alex_Morgan_Australian_footballer_",
+          "title": "Alex Morgan (Australian footballer)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.4883333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.488"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Alex_Morgan_runner_",
+          "title": "Alex Morgan (runner)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.4783333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.478"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Alex_Morgan_disambiguation_",
+          "title": "Alex Morgan (disambiguation)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.4683333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.468"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Alex_Mol_an",
+          "title": "Alex Molčan",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.4583333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.458"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Alex_Morales",
+          "title": "Alex Morales",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.4483333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.448"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        }
+      ]
+    },
+    {
+      "id": "FQ03",
+      "label": "example.org",
+      "type": "org_domain",
+      "source": "phase2-reuse-B03",
+      "seedObserved": "example.org",
+      "status": "complete",
+      "sessionId": "kv1.501561a083669ed5bbdae564d7641687",
+      "nFindings": 3,
+      "nEvidence": 3,
+      "nContradictions": 0,
+      "counts": {
+        "single-source": 3,
+        "weak-evidence": 2
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.0,
+        "contradiction": 0.0,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.6667,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "kinds": {
+        "registry": 2,
+        "page": 1
+      },
+      "providers": {
+        "wikidata": 2,
+        "wikipedia": 1
+      },
+      "domains": {
+        "wikidata.org": 2,
+        "en.wikipedia.org": 1
+      },
+      "uniqProviders": [
+        "wikidata",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "wikidata.org"
+      ],
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "forbiddenStripped": null,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "nearDupClusters": {},
+      "idCollisions": {},
+      "contradictions": [],
+      "providersStatus": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "findingFlags": [
+        {
+          "id": "wd-Q306656",
+          "title": "example.com",
+          "kind": "registry",
+          "flags": [
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.7183333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 92,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wd-Q908643",
+          "title": ".example",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "domains": [
+            "wikidata.org"
+          ],
+          "scoreFinding": 0.7083333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=11"
+          ],
+          "quoteMaxLen": 11,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-Example_org",
+          "title": "Example.org",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.6283333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        }
+      ]
+    },
+    {
+      "id": "FQ04",
+      "label": "John Smith+IBM/NY/US",
+      "type": "Smith_plus_ctx",
+      "source": "fresh-with-hints",
+      "hints": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US"
+      },
+      "hintsPresentInRequestArtifacts": true,
+      "IBM_string_in_payload": true,
+      "forbiddenStripped": null,
+      "seedObserved": "John Smith",
+      "status": "partial",
+      "sessionId": "kv1.7291c35503783a88bb291e82833d8c80",
+      "nFindings": 14,
+      "nEvidence": 14,
+      "nContradictions": 1,
+      "counts": {
+        "near-dup": 9,
+        "contradiction": 9,
+        "single-source": 14,
+        "weak-evidence": 8
+      },
+      "rates": {
+        "duplicate": 0.0,
+        "near-dup": 0.6429,
+        "contradiction": 0.6429,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.5714,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "kinds": {
+        "registry": 8,
+        "page": 6
+      },
+      "providers": {
+        "openlibrary": 8,
+        "wikipedia": 6
+      },
+      "domains": {
+        "openlibrary.org": 8,
+        "en.wikipedia.org": 6
+      },
+      "uniqProviders": [
+        "openlibrary",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "openlibrary.org"
+      ],
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "nearDupClusters": {
+        "john smith": [
+          "ol-OL177707A",
+          "ol-OL12988612A",
+          "ol-OL2642558A",
+          "ol-OL2404636A",
+          "ol-OL15752758A",
+          "ol-OL9615641A",
+          "ol-OL4474728A",
+          "ol-OL646156A",
+          "wp-en-John_Smith"
+        ]
+      },
+      "idCollisions": {},
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "john smith",
+          "findingIds": [
+            "ol-OL177707A",
+            "ol-OL12988612A",
+            "ol-OL2642558A",
+            "ol-OL2404636A",
+            "ol-OL15752758A",
+            "ol-OL9615641A",
+            "ol-OL4474728A",
+            "ol-OL646156A",
+            "wp-en-John_Smith"
+          ],
+          "domains": [
+            "openlibrary.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "findingFlags": [
+        {
+          "id": "ol-OL177707A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6658333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 66,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL12988612A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6558333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 54,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL2642558A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6458333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 26,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL2404636A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6358333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 51,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15752758A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6258333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=18"
+          ],
+          "quoteMaxLen": 18,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL9615641A",
+          "title": "John SMITH",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6158333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 28,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL4474728A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6058333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 86,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL646156A",
+          "title": "John Smith",
+          "kind": "registry",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5958333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 145,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-John_Smith",
+          "title": "John Smith",
+          "kind": "page",
+          "flags": [
+            "near-dup",
+            "contradiction",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5683333333333334,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-John_Smith_explorer_",
+          "title": "John Smith (explorer)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5583333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-John_Smith_Labour_Party_leader_",
+          "title": "John Smith (Labour Party leader)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5483333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.548"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-John_Smith_s_Brewery",
+          "title": "John Smith's Brewery",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5383333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.538"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-John_Smith_Chippewa_",
+          "title": "John Smith (Chippewa)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5283333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.528"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-John_Smith_actor_",
+          "title": "John Smith (actor)",
+          "kind": "page",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5183333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.518"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 1
+        }
+      ]
+    },
+    {
+      "id": "FQ05",
+      "label": "כהן",
+      "type": "bare_surname",
+      "source": "fresh",
+      "seedObserved": "כהן",
+      "status": "partial",
+      "sessionId": "kv1.174ee069c73bd91143fbf3063c26b317",
+      "nFindings": 14,
+      "nEvidence": 14,
+      "nContradictions": 0,
+      "counts": {
+        "weak-evidence": 11,
+        "single-source": 14,
+        "duplicate": 6
+      },
+      "rates": {
+        "duplicate": 0.4286,
+        "near-dup": 0.0,
+        "contradiction": 0.0,
+        "no-evidence": 0.0,
+        "weak-evidence": 0.7857,
+        "single-source": 1.0,
+        "multi-source": 0.0
+      },
+      "kinds": {
+        "registry": 8,
+        "page": 6
+      },
+      "providers": {
+        "openlibrary": 8,
+        "wikipedia": 6
+      },
+      "domains": {
+        "openlibrary.org": 8,
+        "en.wikipedia.org": 6
+      },
+      "uniqProviders": [
+        "openlibrary",
+        "wikipedia"
+      ],
+      "uniqDomains": [
+        "en.wikipedia.org",
+        "openlibrary.org"
+      ],
+      "coverage": 1.0,
+      "provCompleteness": 1.0,
+      "accLeakTotal": 0,
+      "forbiddenStripped": null,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "nearDupClusters": {},
+      "idCollisions": {
+        "wp-en-_": 6
+      },
+      "contradictions": [],
+      "providersStatus": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "findingFlags": [
+        {
+          "id": "ol-OL133038A",
+          "title": "Israel Cohen",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6658333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=19"
+          ],
+          "quoteMaxLen": 19,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL4973655A",
+          "title": "David Cohen",
+          "kind": "registry",
+          "flags": [
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6558333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 52,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL16098624A",
+          "title": "זמיר בן אליעזר כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6458333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=13"
+          ],
+          "quoteMaxLen": 13,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL1801847A",
+          "title": "Sholom Jacob Kahn",
+          "kind": "registry",
+          "flags": [
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6358333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 31,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL5263297A",
+          "title": "Ṭoviyah Kohen",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6258333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=11"
+          ],
+          "quoteMaxLen": 11,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15941596A",
+          "title": "שירלי כהן",
+          "kind": "registry",
+          "flags": [
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6158333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [],
+          "quoteMaxLen": 38,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15386735A",
+          "title": "ש. כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.6058333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "thin_quote_max=16"
+          ],
+          "quoteMaxLen": 16,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "ol-OL15507527A",
+          "title": "אידוב כהן",
+          "kind": "registry",
+          "flags": [
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "domains": [
+            "openlibrary.org"
+          ],
+          "scoreFinding": 0.5958333333333332,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "shallow_registry"
+          ],
+          "quoteMaxLen": 29,
+          "idCollisionCount": 1
+        },
+        {
+          "id": "wp-en-_",
+          "title": "כהן גדול",
+          "kind": "page",
+          "flags": [
+            "duplicate",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5683333333333334,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 6
+        },
+        {
+          "id": "wp-en-_",
+          "title": "כהן@מושון",
+          "kind": "page",
+          "flags": [
+            "duplicate",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5583333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 6
+        },
+        {
+          "id": "wp-en-_",
+          "title": "כהנא",
+          "kind": "page",
+          "flags": [
+            "duplicate",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5483333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.548"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 6
+        },
+        {
+          "id": "wp-en-_",
+          "title": "כהניזם",
+          "kind": "page",
+          "flags": [
+            "duplicate",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5383333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.538"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 6
+        },
+        {
+          "id": "wp-en-_",
+          "title": "כאן",
+          "kind": "page",
+          "flags": [
+            "duplicate",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5283333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.528"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 6
+        },
+        {
+          "id": "wp-en-_",
+          "title": "כן",
+          "kind": "page",
+          "flags": [
+            "duplicate",
+            "weak-evidence",
+            "single-source"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "domains": [
+            "en.wikipedia.org"
+          ],
+          "scoreFinding": 0.5183333333333333,
+          "nEvidence": 1,
+          "provComplete": true,
+          "weakReasons": [
+            "no_quote",
+            "low_score=0.518"
+          ],
+          "quoteMaxLen": 0,
+          "idCollisionCount": 6
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "nSeeds": 5,
+    "nFindingsTotal": 57,
+    "counts": {
+      "weak-evidence": 44,
+      "single-source": 57,
+      "near-dup": 19,
+      "contradiction": 19,
+      "duplicate": 6
+    },
+    "rates": {
+      "duplicate": 0.1053,
+      "near-dup": 0.3333,
+      "contradiction": 0.3333,
+      "no-evidence": 0.0,
+      "weak-evidence": 0.7719,
+      "single-source": 1.0,
+      "multi-source": 0.0
+    },
+    "meanRates": {
+      "duplicate": 0.0857,
+      "near-dup": 0.2238,
+      "contradiction": 0.2238,
+      "no-evidence": 0.0,
+      "weak-evidence": 0.7457,
+      "single-source": 1.0,
+      "multi-source": 0.0
+    },
+    "kinds": {
+      "registry": 38,
+      "page": 19
+    },
+    "providers": {
+      "openlibrary": 29,
+      "wikidata": 9,
+      "wikipedia": 19
+    },
+    "domains": {
+      "openlibrary.org": 29,
+      "wikidata.org": 9,
+      "en.wikipedia.org": 19
+    },
+    "accLeakageTotal": 0,
+    "meanFindings": 11.4,
+    "meanCoverage": 1.0,
+    "meanProvCompleteness": 1.0,
+    "providerDiversityCount": 3,
+    "domainDiversityCount": 3,
+    "uniqProvidersUnion": [
+      "openlibrary",
+      "wikidata",
+      "wikipedia"
+    ],
+    "uniqDomainsUnion": [
+      "en.wikipedia.org",
+      "openlibrary.org",
+      "wikidata.org"
+    ]
+  }
+}

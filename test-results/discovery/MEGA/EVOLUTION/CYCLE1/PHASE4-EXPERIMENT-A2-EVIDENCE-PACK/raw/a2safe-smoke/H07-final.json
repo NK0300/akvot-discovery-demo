@@ -1,0 +1,880 @@
+{
+  "ms": 2394,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.2f5c2447a7edf8c0c6d46c8f1d016c7c",
+    "seed": "Alex Morgan",
+    "q": "Alex Morgan",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "viaf-3387157226595985410003",
+        "kind": "registry",
+        "title": "Alex Morgan 1989-",
+        "summary": "type:personal · lc:n2013006754",
+        "evidenceIds": [
+          "ev-a737974e1ce35cb5c0e39b22"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:3387157226595985410003"
+        ],
+        "scoreFinding": 0.7008333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-23701347",
+        "kind": "registry",
+        "title": "Alex Morgans, 1935-",
+        "summary": "type:personal · lc:n88206770",
+        "evidenceIds": [
+          "ev-ed6996248aa6267a07ec03f2"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:23701347"
+        ],
+        "scoreFinding": 0.6908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-313498477",
+        "kind": "registry",
+        "title": "Alex Morgan, 1963-",
+        "summary": "type:personal · lc:no2015008157",
+        "evidenceIds": [
+          "ev-9328d780946e1153fe0ec1a6"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:313498477"
+        ],
+        "scoreFinding": 0.6808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-10177409364403192844",
+        "kind": "registry",
+        "title": "Alex Morgan 1979-",
+        "summary": "type:personal",
+        "evidenceIds": [
+          "ev-b4da12df50d92b7d510d2fb8"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:10177409364403192844"
+        ],
+        "scoreFinding": 0.6708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-316796239",
+        "kind": "registry",
+        "title": "Alex. Morgan, 1860-1946",
+        "summary": "type:personal · lc:no2015093717",
+        "evidenceIds": [
+          "ev-17c4609b03cef469aafb558f"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:316796239"
+        ],
+        "scoreFinding": 0.6608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-42169818204720171084",
+        "kind": "registry",
+        "title": "Alex Morgan, (Engineer)",
+        "summary": "type:personal · lc:no2023114730",
+        "evidenceIds": [
+          "ev-35746ea3fa7330758fa594ce"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:42169818204720171084"
+        ],
+        "scoreFinding": 0.6508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-296044393",
+        "kind": "registry",
+        "title": "Alex Morgan, (Musician)",
+        "summary": "type:personal · lc:no2013001349",
+        "evidenceIds": [
+          "ev-38242a48b917e43698ac6306"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:296044393"
+        ],
+        "scoreFinding": 0.6408333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL1437248A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Top work: Sabotage Season",
+        "evidenceIds": [
+          "ev-a78fd68b67a01a8420fd50a5"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL1437248A",
+          "ol-OL1437248A"
+        ],
+        "scoreFinding": 0.5958333333333332,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL7414531A",
+        "kind": "registry",
+        "title": "Alex Morgan",
+        "summary": "Top work: Breakaway",
+        "evidenceIds": [
+          "ev-f1c5367fad94e3faefa4bd24"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL7414531A",
+          "ol-OL7414531A"
+        ],
+        "scoreFinding": 0.5858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL3225320A",
+        "kind": "registry",
+        "title": "Alex, Morgan",
+        "summary": "Top work: Coaching Christine",
+        "evidenceIds": [
+          "ev-d07a539720f93856d02f729f"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL3225320A",
+          "ol-OL3225320A"
+        ],
+        "scoreFinding": 0.5758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL11306519A",
+        "kind": "registry",
+        "title": "Alex Morgan Lucass",
+        "summary": "Top work: LITTLE MERMAID for Ages 4-12 Coloring Book",
+        "evidenceIds": [
+          "ev-94994ffd9628a1f410461350"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL11306519A",
+          "ol-OL11306519A"
+        ],
+        "scoreFinding": 0.5658333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL11281210A",
+        "kind": "registry",
+        "title": "Alex Morgan Ronard",
+        "summary": "Top work: CUPHEAD Coloring Book",
+        "evidenceIds": [
+          "ev-a77421460ce764d8ecb8f909"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL11281210A",
+          "ol-OL11281210A"
+        ],
+        "scoreFinding": 0.5558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL15840118A",
+        "kind": "registry",
+        "title": "Alex Morgan,John Siraj-Blatchford",
+        "summary": "Top work: Using ICT in the Early Years",
+        "evidenceIds": [
+          "ev-8e0999f81110a35e1e2cf06e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL15840118A",
+          "ol-OL15840118A"
+        ],
+        "scoreFinding": 0.5458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL9647235A",
+        "kind": "registry",
+        "title": "Alex Brawl Morgan",
+        "summary": "Top work: Coloring Book MIRACULOUS for Ages 3-10",
+        "evidenceIds": [
+          "ev-9a849f46798767f11a5d307e"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL9647235A",
+          "ol-OL9647235A"
+        ],
+        "scoreFinding": 0.5358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL4794660A",
+        "kind": "registry",
+        "title": "Donald S. Rowland",
+        "summary": "Top work: Empty saddles",
+        "evidenceIds": [
+          "ev-943161e980f1f1a57e7064a9"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL4794660A",
+          "ol-OL4794660A"
+        ],
+        "scoreFinding": 0.5258333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-a78fd68b67a01a8420fd50a5",
+        "provenanceUrl": "https://openlibrary.org/authors/OL1437248A",
+        "url": "https://openlibrary.org/authors/OL1437248A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "Sabotage Season",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-f1c5367fad94e3faefa4bd24",
+        "provenanceUrl": "https://openlibrary.org/authors/OL7414531A",
+        "url": "https://openlibrary.org/authors/OL7414531A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "Breakaway",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d07a539720f93856d02f729f",
+        "provenanceUrl": "https://openlibrary.org/authors/OL3225320A",
+        "url": "https://openlibrary.org/authors/OL3225320A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "Coaching Christine",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-94994ffd9628a1f410461350",
+        "provenanceUrl": "https://openlibrary.org/authors/OL11306519A",
+        "url": "https://openlibrary.org/authors/OL11306519A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "LITTLE MERMAID for Ages 4-12 Coloring Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a77421460ce764d8ecb8f909",
+        "provenanceUrl": "https://openlibrary.org/authors/OL11281210A",
+        "url": "https://openlibrary.org/authors/OL11281210A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "CUPHEAD Coloring Book",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-8e0999f81110a35e1e2cf06e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL15840118A",
+        "url": "https://openlibrary.org/authors/OL15840118A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "Using ICT in the Early Years",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9a849f46798767f11a5d307e",
+        "provenanceUrl": "https://openlibrary.org/authors/OL9647235A",
+        "url": "https://openlibrary.org/authors/OL9647235A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "Coloring Book MIRACULOUS for Ages 3-10",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-943161e980f1f1a57e7064a9",
+        "provenanceUrl": "https://openlibrary.org/authors/OL4794660A",
+        "url": "https://openlibrary.org/authors/OL4794660A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:40:36.649Z",
+        "evidenceType": "registry",
+        "quote": "Empty saddles",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a737974e1ce35cb5c0e39b22",
+        "provenanceUrl": "https://viaf.org/viaf/3387157226595985410003",
+        "url": "https://viaf.org/viaf/3387157226595985410003",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex Morgan 1989-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ed6996248aa6267a07ec03f2",
+        "provenanceUrl": "https://viaf.org/viaf/23701347",
+        "url": "https://viaf.org/viaf/23701347",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex Morgans, 1935-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9328d780946e1153fe0ec1a6",
+        "provenanceUrl": "https://viaf.org/viaf/313498477",
+        "url": "https://viaf.org/viaf/313498477",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex Morgan, 1963-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b4da12df50d92b7d510d2fb8",
+        "provenanceUrl": "https://viaf.org/viaf/10177409364403192844",
+        "url": "https://viaf.org/viaf/10177409364403192844",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex Morgan 1979-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-17c4609b03cef469aafb558f",
+        "provenanceUrl": "https://viaf.org/viaf/316796239",
+        "url": "https://viaf.org/viaf/316796239",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex. Morgan, 1860-1946",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-35746ea3fa7330758fa594ce",
+        "provenanceUrl": "https://viaf.org/viaf/42169818204720171084",
+        "url": "https://viaf.org/viaf/42169818204720171084",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex Morgan, (Engineer)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-38242a48b917e43698ac6306",
+        "provenanceUrl": "https://viaf.org/viaf/296044393",
+        "url": "https://viaf.org/viaf/296044393",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:40:36.261Z",
+        "evidenceType": "registry",
+        "quote": "Alex Morgan, (Musician)",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "viaf",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "partial",
+      "wikipedia": "error",
+      "viaf": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:60705d930a9e"
+      ],
+      "status": "candidate",
+      "displayHint": "Alex Morgan",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:40:36.060Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:60705d930a9e",
+          "kind": "seed"
+        },
+        {
+          "id": "ol-OL1437248A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL7414531A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL3225320A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL11306519A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL11281210A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL15840118A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL9647235A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL4794660A",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-3387157226595985410003",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-23701347",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-313498477",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-10177409364403192844",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-316796239",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-42169818204720171084",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-296044393",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

@@ -1,0 +1,51 @@
+# ACCURACY EVAL P2 HTTP Preview · 2026-09-15T14:51:35.264Z
+PREVIEW=https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app DEPLOY=dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk CONCURRENCY=2
+CASE_SET=/workspace/akvot-quick-demo/test-results/handoff/P2-CASES-דיוק-2026-09-15.json n=18
+HEALTH /api/health → HTTP 200 ok=true build=dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk phase=orchestrator-v0-b buildOk=true (2902ms)
+PROBE /api/lookup?q=test → HTTP 200 in 8237ms · requestId_ok=true hdr=a79f828f-bed4-41e0-b74b-56543b8e3d89 body=a79f828f-bed4-41e0-b74b-56543b8e3d89
+E01 E01-url-noise-ib: expect=false actual=false → PASS
+E01 E01-title-IBM: expect=true actual=true → PASS
+E01 E01-url-boston: expect=true actual=true → PASS
+[w0] → P2-S01 GET q="דני כהן"
+[w1] → P2-S02 GET q="John Smith"
+[w0] ← P2-S01 3046ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=3046 → PASS
+[w0] → P2-S03 POST q="John Smith" ctx={"org":"IBM","city":"New York","country":"US"}
+[w1] ← P2-S02 8090ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8090 → PASS
+[w1] → P2-S04 POST q="John Smith" ctx={"email":"qa.rethink.test@example.com"}
+[w0] ← P2-S03 8515ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=8515 → PASS
+[w0] → P2-S05 GET q="Xzqplmnvwtr987654321asdfgh"
+[w1] ← P2-S04 10693ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=10693 → PASS
+[w1] → P2-S06 POST q="פלמוני אלמוניזקש" ctx={"org":"מפעל בדיקה פיקטיבי"}
+[w0] ← P2-S05 8862ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8862 → PASS
+[w0] → P2-S07 GET q="כהן"
+[w0] ← P2-S07 48164ms http=200 uiState=thin,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=48164 → FAIL :: uiState=thin expected need_context
+[w0] → P2-K01 GET q="נתניהו"
+[w1] ← P2-S06 50991ms http=200 uiState=thin,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=50991 → PASS
+[w1] → P2-K02 GET q="Zehava Galon"
+[w0] ← P2-K01 5803ms http=200 uiState=dossier,qid=Q43723,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=5803 → PASS
+[w0] → P2-K03 GET q="Angela Merkel"
+[w1] ← P2-K02 5104ms http=200 uiState=dossier,qid=Q2630062,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=5104 → PASS
+[w1] → P2-K04 GET q="אורלי לוי"
+[w1] ← P2-K04 4608ms http=200 uiState=dossier,qid=Q466537,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=4608 → PASS
+[w1] → P2-A01 GET q="Assaf Rappaport"
+[w0] ← P2-K03 5733ms http=200 uiState=dossier,qid=Q567,faces=true,sources=3,confidence=high,phase=orchestrator-v0-b,ms=5733 → PASS
+[w0] → P2-A03 GET q="אסף רפפורט"
+[w1] ← P2-A01 4516ms http=200 uiState=dossier,qid=Q47507930,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=4516 → PASS
+[w1] → P2-A05 GET q="Assaf Smith"
+[w0] ← P2-A03 3898ms http=200 uiState=dossier,qid=Q47507930,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=3898 → PASS
+[w0] → P2-A06 GET q="John Rappaport"
+[w1] ← P2-A05 8335ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8335 → PASS
+[w1] → P2-E02 POST q="Emily Chen" ctx={"city":"Palo Alto","role":"student"}
+[w0] ← P2-A06 8416ms http=200 uiState=need_context,qid=-,faces=false,sources=0,confidence=none,phase=orchestrator-v0-b,ms=8416 → PASS
+[w0] → P2-E04 POST q="John Smith" ctx={"email":"qa.rethink.test@example.com"}
+[w1] ← P2-E02 9874ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=9874 → PASS
+[w1] → P2-L03 GET q="Assaf Rappaport"
+[w0] ← P2-E04 10057ms http=200 uiState=candidates,qid=-,faces=false,sources=6,confidence=low,phase=orchestrator-v0-b,ms=10057 → PASS
+[w1] ← P2-L03 4400ms http=200 uiState=dossier,qid=Q47507930,faces=true,sources=1,confidence=high,phase=orchestrator-v0-b,ms=4400 → PASS
+[smoke] → POST nested S03 run 1
+[smoke] ← run 1 PASS ui=candidates qid=- faces=false ms=10159
+[smoke] → POST nested S03 run 2
+[smoke] ← run 2 PASS ui=candidates qid=- faces=false ms=8741
+[smoke] → POST nested S03 run 3
+[smoke] ← run 3 PASS ui=candidates qid=- faces=false ms=9379
+SMOKE POST×3 allPass=true pw=0

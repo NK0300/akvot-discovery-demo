@@ -1,0 +1,13 @@
+{
+  "httpStatus": 400,
+  "findings": 0,
+  "entityLeak": 0,
+  "leak": 0,
+  "softFail": true,
+  "store": null,
+  "error": "seed required",
+  "jsonKeys": [
+    "error",
+    "ok"
+  ]
+}

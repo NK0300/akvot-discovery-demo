@@ -1,0 +1,67 @@
+{
+  "mode": "google",
+  "label": "כהן",
+  "qid": null,
+  "birth": null,
+  "age": null,
+  "place": null,
+  "desc": "אין ערך בוויקיפדיה — מבוסס חיפוש ציבורי",
+  "extract": "",
+  "photo": null,
+  "alts": [
+    "כהן",
+    "לאונרד כהן",
+    "האחים כהן",
+    "כהן גדול",
+    "חיים כהן (משפטן)",
+    "משפחות כהן"
+  ],
+  "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+  "email": null,
+  "phone": null,
+  "wikiError": "429",
+  "sources": [],
+  "images": [],
+  "extra_facts": [],
+  "queries": [],
+  "scanned": 3,
+  "allowBroadImages": false,
+  "ambiguous": true,
+  "thin": false,
+  "candidates": [],
+  "phase": "orchestrator-v0-b",
+  "timings": {
+    "wiki": 15771,
+    "gemini": 0,
+    "enrich": 147,
+    "stageB": 1052,
+    "total": 17392,
+    "wikiMeta": {
+      "wiki429": 9,
+      "wikiTimeout": 0,
+      "wikiRetries": 9
+    }
+  },
+  "phonePath": false,
+  "uiState": "need_context",
+  "scenario": "stranger",
+  "confidence": "none",
+  "needContextFields": [
+    "city",
+    "org",
+    "country",
+    "role"
+  ],
+  "messageKey": "common_name",
+  "photoUrl": null,
+  "faces": false,
+  "needContext": true,
+  "needCandidatePick": false,
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "requestId": "9183bd79-9be4-4864-95f2-c4d27960c85d",
+  "wikiMeta": {
+    "wiki429": 9,
+    "wikiTimeout": 0,
+    "wikiRetries": 9
+  }
+}

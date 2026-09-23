@@ -1,0 +1,32 @@
+{
+  "$id": "akvot/discovery/entity",
+  "title": "Entity",
+  "description": "Soft discovery entity — NOT identity commit; no faces; confidence is soft only",
+  "type": "object",
+  "required": ["id", "kind", "displayName", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "kind": { "type": "string", "enum": ["person", "org", "place", "other"] },
+    "displayName": { "type": "string" },
+    "softRefs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Soft external refs only; not identity commit"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Soft only — not identity commit score"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["candidate", "corroborated", "unknown"]
+    }
+  },
+  "additionalProperties": false
+}

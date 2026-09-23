@@ -1,0 +1,1 @@
+{"error":{"message":"Protected deployment","code":"401"},"protection":{"auto_vercel_auth_redirect":true,"password_enabled":false,"vercel_auth_enabled":true,"vercel_auth_callback":"https:\/\/vercel.com\/sso-api?url=https%3A%2F%2Fakvot-simple-demo-3w3p6enyh-k-akvot.vercel.app%2Fapi%2Fdiscovery%2Fsessions&nonce=a4f8aa98e9e8a5207342a0d59f6b546ee4273178ad4f46007f366296479f93c4"}}

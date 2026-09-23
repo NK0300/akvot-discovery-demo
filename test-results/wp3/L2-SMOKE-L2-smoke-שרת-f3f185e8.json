@@ -1,0 +1,163 @@
+{
+  "schema": "wp3-l2-metrics/v1",
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "version": "wp3-l2-1.1.0"
+  },
+  "mode": "L2-A-smoke",
+  "stream": "L2-A",
+  "constraint": "MEASURE ONLY — CLIENT_STRESS probes only — no Core / no dpl / no injected dep faults",
+  "runId": "f3f185e8",
+  "tag": "L2-smoke-שרת",
+  "started": "2026-09-19T19:14:01.921Z",
+  "finished": "2026-09-19T19:14:02.878Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 2,
+  "fingerprintRef": "test-results/wp3/L2-FINGERPRINT-FROZEN-שרת-2026-09-19.json",
+  "fingerprint": {
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "dpl": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "frozenAt": "2026-09-19T19:12:20+00:00",
+    "missing": false
+  },
+  "locks": {
+    "noCore": true,
+    "noAccChange": true,
+    "noSmithCohenChange": true,
+    "noCacheSemantics": true,
+    "noUx": true,
+    "noDpl": true,
+    "clientStressOnly": true
+  },
+  "stopRules": {
+    "abortOnPw": true,
+    "note": "pw>0 → abort immediately; report to Chief"
+  },
+  "steps": [
+    {
+      "stream": "L2-A",
+      "step": "low",
+      "concurrency": 2,
+      "caseId": "A-assaf-get",
+      "mix": "COLD",
+      "nRequested": 2,
+      "agg": {
+        "n": 2,
+        "wall": {
+          "n": 2,
+          "min": 862,
+          "max": 954,
+          "mean": 908,
+          "p50": 862,
+          "p90": 954,
+          "p95": 954,
+          "p99": 954
+        },
+        "wiki": {
+          "n": 2,
+          "min": 375,
+          "max": 432,
+          "mean": 404,
+          "p50": 375,
+          "p90": 432,
+          "p95": 432,
+          "p99": 432
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 2
+        },
+        "uiCounts": {
+          "dossier": 2
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 2,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 0,
+          "wikiTimeout_sum": 0,
+          "wikiRetries_sum": 0,
+          "samplesWith429": 0,
+          "samplesWithWikiTimeout": 0
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 2.094,
+        "wallClockMs": 955
+      },
+      "samples": [
+        {
+          "i": 1,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 2,
+          "wallMs": 862,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "0241d6f6-b283-4c1b-b7ec-b28f9cbfb0bb",
+          "timings": {
+            "wiki": 375,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 376
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:14:02.846Z"
+        },
+        {
+          "i": 0,
+          "mode": "COLD",
+          "caseId": "A-assaf-get",
+          "concurrency": 2,
+          "wallMs": 954,
+          "status": 200,
+          "err": null,
+          "timedOut": false,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "faces": true,
+          "photo": true,
+          "cached": false,
+          "requestId": "1b0102cf-7777-4318-83d3-73c084a30d92",
+          "timings": {
+            "wiki": 432,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 433
+          },
+          "wikiMeta": {
+            "wiki429": 0,
+            "wikiTimeout": 0,
+            "wikiRetries": 0
+          },
+          "prettyWrong": false,
+          "prettyWrongReason": null,
+          "at": "2026-09-19T19:14:02.878Z"
+        }
+      ]
+    }
+  ],
+  "stop": {
+    "aborted": false,
+    "reason": null,
+    "pwEvents": []
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "stamp": "2026-09-20T12:21:00+03:00",
+  "note": "Trade-offs only. No winner ranking.",
+  "live": {
+    "B0": ["wikidata", "wikipedia", "openlibrary"],
+    "A2_experimental": ["viaf"],
+    "C1_experimental": ["web_origin"]
+  },
+  "candidates": [
+    {
+      "id": "SEC_EDGAR",
+      "family": "filings",
+      "unlocks": "US public corp legal Evidence / CIK",
+      "entity_types": ["us_public_company"],
+      "independence": "high_new_family",
+      "evidence_quality": "very_high_legal",
+      "fp_risk": "name_to_CIK_ambiguity_brand_ne_legal",
+      "ops_cost": "free_fair_access_user_agent",
+      "rate_limits": "strict_SEC",
+      "relationship_semantics": "filing_issuer_ref_not_brand_identity"
+    },
+    {
+      "id": "COMPANY_REGISTRIES",
+      "family": "gov_registry",
+      "unlocks": "jurisdiction legal entity numbers",
+      "entity_types": ["org_legal"],
+      "independence": "high",
+      "evidence_quality": "high_when_jurisdiction_matches",
+      "fp_risk": "brand_ne_legal_cross_jurisdiction",
+      "ops_cost": "often_free_some_paid_OUT",
+      "rate_limits": "per_registry",
+      "relationship_semantics": "preserve_S05_granularity"
+    },
+    {
+      "id": "NEWS_PUBLIC",
+      "family": "news",
+      "unlocks": "freshness_reputation",
+      "entity_types": ["person", "org"],
+      "independence": "medium_new_family",
+      "evidence_quality": "low_medium_journalistic",
+      "fp_risk": "homonyms_outlet_bias",
+      "ops_cost": "RSS_ok_commercial_OUT",
+      "rate_limits": "outlet_specific",
+      "relationship_semantics": "mention_ne_SAME_REFERENCE"
+    },
+    {
+      "id": "SCHOLARLY",
+      "family": "scholarly",
+      "unlocks": "ORCID_DOI_affiliations",
+      "entity_types": ["academic_person", "document"],
+      "independence": "medium_high",
+      "evidence_quality": "high_for_academics",
+      "fp_risk": "name_ambiguity",
+      "ops_cost": "free_public_APIs",
+      "rate_limits": "polite_pool",
+      "relationship_semantics": "typed_ORCID_DOI_future_soft_refs_gated"
+    },
+    {
+      "id": "HE_LOCALE",
+      "family": "wikimedia",
+      "unlocks": "HE_fidelity_snippets",
+      "entity_types": ["he_person", "he_org"],
+      "independence": "low_same_family",
+      "evidence_quality": "improves_with_quote_floor",
+      "fp_risk": "transliteration_EN_flood",
+      "ops_cost": "low",
+      "rate_limits": "mediawiki",
+      "relationship_semantics": "language_ne_identity"
+    },
+    {
+      "id": "QUERYPLAN",
+      "family": "architecture_not_source",
+      "unlocks": "intent_routing_S12_S15_URL_path",
+      "entity_types": ["all_via_routing"],
+      "independence": "indirect",
+      "evidence_quality": "depends_on_downstream",
+      "fp_risk": "parse_errors_celebrity_default",
+      "ops_cost": "engineering_complexity_fanout_caps",
+      "rate_limits": "must_cap_multi_query",
+      "relationship_semantics": "must_preserve_Bound_no_invented_SAME"
+    }
+  ]
+}

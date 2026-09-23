@@ -1,0 +1,99 @@
+{
+  "schema": "wp3-l2-metrics/v1",
+  "harness": {
+    "path": "scripts/wp3-l2-harness.mjs",
+    "version": "wp3-l2-1.1.0"
+  },
+  "mode": "L2-C",
+  "stream": "L2-C",
+  "constraint": "MEASURE ONLY — CLIENT_STRESS probes only — no Core / no dpl / no injected dep faults",
+  "runId": "161364ea",
+  "tag": "L2C-cohen-load",
+  "started": "2026-09-19T19:46:56.372Z",
+  "finished": "2026-09-19T19:48:02.318Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 15,
+  "fingerprintRef": "test-results/wp3/L2-FINGERPRINT-FROZEN-שרת-2026-09-19.json",
+  "fingerprint": {
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "dpl": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+    "frozenAt": "2026-09-19T19:12:20+00:00",
+    "missing": false
+  },
+  "locks": {
+    "noCore": true,
+    "noAccChange": true,
+    "noSmithCohenChange": true,
+    "noCacheSemantics": true,
+    "noUx": true,
+    "noDpl": true,
+    "clientStressOnly": true
+  },
+  "stopRules": {
+    "abortOnPw": true,
+    "note": "pw>0 → abort immediately; report to Chief"
+  },
+  "probes": [
+    {
+      "id": "cohen-load",
+      "label": "CLIENT_STRESS Cohen GET under High concurrency (wiki tail)",
+      "kind": "CLIENT_STRESS",
+      "note": "Client-observable wiki tail only — no dep disable",
+      "concurrency": 10,
+      "agg": {
+        "n": 15,
+        "wall": {
+          "n": 15,
+          "min": 18253,
+          "max": 40182,
+          "mean": 31630,
+          "p50": 33232,
+          "p90": 39596,
+          "p95": 40182,
+          "p99": 40182
+        },
+        "wiki": {
+          "n": 15,
+          "min": 16996,
+          "max": 38618,
+          "mean": 30075,
+          "p50": 31479,
+          "p90": 38615,
+          "p95": 38618,
+          "p99": 38618
+        },
+        "errorN": 0,
+        "errorPct": 0,
+        "timeoutN": 0,
+        "timeoutPct": 0,
+        "statusDist": {
+          "200": 15
+        },
+        "uiCounts": {
+          "need_context": 15
+        },
+        "cache": {
+          "hit": 0,
+          "miss": 15,
+          "hitRatio": 0
+        },
+        "wikiMetaAgg": {
+          "wiki429_sum": 403,
+          "wikiTimeout_sum": 4,
+          "wikiRetries_sum": 407,
+          "samplesWith429": 14,
+          "samplesWithWikiTimeout": 4
+        },
+        "prettyWrongN": 0,
+        "throughputRps": 0.227,
+        "wallClockMs": 65943
+      },
+      "sampleCount": 15
+    }
+  ],
+  "stop": {
+    "aborted": false,
+    "reason": null,
+    "pwEvents": []
+  }
+}

@@ -1,0 +1,75 @@
+[
+  {
+    "from": "RETHINK-qa-raw-2026-09-08.json",
+    "q": "בנימין נתניהו",
+    "phase": "speed-b",
+    "ui": "dossier",
+    "qid": "Q43723",
+    "mode": "wiki",
+    "ms": 2170,
+    "pass": true,
+    "fails": []
+  },
+  {
+    "from": "SMOKE-12gate-orchestrator-v0-2026-09-08.json",
+    "q": "G1-bibi",
+    "phase": "orchestrator-v0",
+    "ui": "dossier",
+    "scn": "stranger",
+    "qid": null,
+    "mode": "google",
+    "ms": 13764,
+    "pass": false,
+    "fails": [
+      "SAFETY fail"
+    ]
+  },
+  {
+    "from": "SMOKE-A-retest-2026-09-08.json",
+    "q": "G1-bibi",
+    "phase": "orchestrator-v0",
+    "ui": "dossier",
+    "scn": "stranger",
+    "qid": null,
+    "mode": "google",
+    "ms": 11692,
+    "pass": null
+  },
+  {
+    "from": "en-phase-raw.json",
+    "q": "Benjamin Netanyahu",
+    "qid": "Q43723",
+    "mode": "wiki",
+    "ms": 52944,
+    "pass": true,
+    "fails": []
+  },
+  {
+    "from": "en-phase-raw.json",
+    "q": "בנימין נתניהו",
+    "qid": "Q43723",
+    "mode": "wiki",
+    "ms": 6804,
+    "pass": true,
+    "fails": []
+  },
+  {
+    "from": "phase6-retest.json",
+    "q": "בנימין נתניהו",
+    "phase": 6,
+    "qid": "Q43723",
+    "mode": "wiki",
+    "ms": 59714,
+    "pass": true,
+    "fails": []
+  },
+  {
+    "from": "phone-phase-raw.json",
+    "q": "ctrl-bibi",
+    "phase": "phone-a",
+    "qid": null,
+    "mode": "wiki",
+    "ms": 6268,
+    "pass": true
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "phase": 4,
+  "cycle": "CYCLE1",
+  "name": "PHASE4-SOURCE-DISCOVERY",
+  "steps": "31-40",
+  "baselineId": "B0",
+  "stamp": "2026-09-20T09:55:30+03:00",
+  "zone": "Asia/Jerusalem",
+  "zone_label": "IDT",
+  "alias": "https://akvot-discovery.vercel.app",
+  "discoveryDpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreDplLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "mode": "analysis-only",
+  "codeChanges": false,
+  "deploy": false,
+  "promote": "HOLD",
+  "trivialScriptsOnlyUnderTestResults": true,
+  "accRescan": {
+    "forbiddenQid": "Q1701775",
+    "leakageTotal": 0,
+    "pass": true,
+    "scope": "create/get session payloads"
+  },
+  "stepsCompleted": {
+    "31_SOURCE-TYPE-MAP": true,
+    "32_PER-SEED-SOURCE-DIVERSITY": true,
+    "33_BLIND-SPOTS": true,
+    "34_PROVIDER-BIAS": true,
+    "35_SAME-SOURCE-RECIRCULATION": true,
+    "36_VALUE-VOLUME": true,
+    "37_RELIABILITY-NOTES": true,
+    "38_FRESHNESS": true,
+    "39_SOURCE-QUALITY-MODEL": true,
+    "40_STATUS_AND_EXPERIMENTS": true
+  },
+  "top5BlindSpots": [
+    "BS-SRC-01",
+    "BS-SRC-02",
+    "BS-SRC-03",
+    "BS-SRC-04",
+    "BS-SRC-05"
+  ],
+  "experimentCandidates": [
+    "EXP-A",
+    "EXP-B",
+    "EXP-C",
+    "EXP-D"
+  ],
+  "keyFindings": {
+    "liveProviders": [
+      "wikidata",
+      "openlibrary",
+      "wikipedia"
+    ],
+    "observedFamilies": [
+      "wikimedia",
+      "openlibrary"
+    ],
+    "multiIndependentSourceRate": 0.0,
+    "recirculationIdJaccardMean": 0.8136,
+    "domainsObserved": [
+      "openlibrary.org",
+      "www.wikidata.org",
+      "en.wikipedia.org"
+    ],
+    "heWikipediaObserved": false,
+    "viafLive": false,
+    "webPublicLive": false
+  },
+  "observation": "PASS",
+  "deliverables": [
+    "SOURCE-TYPE-MAP.json",
+    "PER-SEED-SOURCE-DIVERSITY.json",
+    "BLIND-SPOTS.json",
+    "BLIND-SPOTS.md",
+    "PROVIDER-BIAS.json",
+    "SAME-SOURCE-RECIRCULATION.json",
+    "VALUE-VOLUME.json",
+    "RELIABILITY-NOTES.json",
+    "RELIABILITY-NOTES.md",
+    "FRESHNESS.json",
+    "SOURCE-QUALITY-MODEL.md",
+    "EXPERIMENT-CANDIDATES.md",
+    "EXPERIMENT-CANDIDATES.json",
+    "ACC-RESCAN.json",
+    "PHASE4-STATUS.json",
+    "raw/source-analysis.json"
+  ],
+  "peerDocsAlsoPresent": [
+    "ARCH-SOURCE-INVENTORY-BIAS-ארכיטקט-2026-09-20.md",
+    "SERVER-PROVIDER-INVENTORY-שרת-2026-09-20.md",
+    "SERVER-PROVIDER-INVENTORY-שרת-2026-09-20.json",
+    "PHASE4-UX-SOURCE-DIVERSITY-SURFACE-ממשק-2026-09-20.md"
+  ]
+}

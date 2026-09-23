@@ -1,0 +1,52 @@
+[acc-disc-b23] start 2026-09-20T07:48:50+03:00
+[acc-disc-b23] preview dpl_CAVh2rDSNDFfjrGzw8EJWJNmPN4e · alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 · HOLD promote · B23 contradictions scrub
+[health] disc dpl_CAVh2rDSNDFfjrGzw8EJWJNmPN4e true storeBackend upstash alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 true
+[health] discovery/health {"ok":true,"backend":"upstash","storeBackend":"upstash","latencyMs":117,"correlationId":"hc-mu9c6iak-e01437","fsRegenFallback":false,"explicitFallback":false,"promoteEligible":true,"durable":true,"fal
+[disc] POST session seed=דוד כהן
+  → pass=true status=partial findings=19 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.f22cad7f4f08ba294347…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=John Smith
+  → pass=true status=partial findings=21 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.9176534f44310b0236b7…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=example.org
+  → pass=true status=complete findings=3 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.df75eaaa1bdf24195a5a…
+  GET → pass=true regenerated=false status=complete fiv=2026-09-19.1 leak=0
+[sse] GET …/events session=kv1.9176534f44310b0236b74b7f…
+  SSE → pass=true events=29 names=meta,progress,provider,finding,facets,status,done leak=0 ct=text/event-stream; charset=utf-8
+[narrow] POST …/narrow
+  NARROW → pass=true before=21 after=8 ver=3 fiv=2026-09-19.1 leak=0
+[disc] Smith+ctx via preview /api/lookup
+  → pass=true ui=candidates qid=null leak=0
+[core] alias Assaf / כהן / Smith
+  Assaf → pass=true ui=dossier qid=Q47507930
+  כהן → pass=true ui=need_context faces=0
+  Smith cold → pass=true ui=candidates qid=null pw=0
+  Smith warm → pass=true ui=thin qid=null pw=0
+{
+  "disc": {
+    "Acc-DISC": "GO",
+    "leakage": 0,
+    "seeds": 3,
+    "storeBackend": "upstash",
+    "dossier_bindings": 0,
+    "b23_contradictions_scrub": "PASS",
+    "sse": "PASS",
+    "narrow": "PASS",
+    "promote": "HOLD"
+  },
+  "core": {
+    "Core-P0": "PASS",
+    "leakage": 0,
+    "pw": 0,
+    "promote": "HOLD"
+  },
+  "storeBackend": "upstash",
+  "storeOk": true
+}
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-DISC-B23-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-DISC-B23-דיוק-2026-09-20.md
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-CORE-P0-B23-GATE-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-CORE-P0-B23-GATE-דיוק-2026-09-20.md

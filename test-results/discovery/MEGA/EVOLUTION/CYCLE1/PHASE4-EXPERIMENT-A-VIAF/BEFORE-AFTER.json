@@ -1,0 +1,87 @@
+{
+  "stamp": "2026-09-20T10:04:15+03:00",
+  "zone": "Asia/Jerusalem",
+  "experiment": "EXP-A-VIAF",
+  "gate": {
+    "metric": "multi_independent_rate",
+    "threshold": 0.15,
+    "aggregation": "mean(S01,S04,S05)"
+  },
+  "before_B0": {
+    "host": "akvot-discovery.vercel.app",
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "mean_multi_independent_rate": 0,
+    "perSeed": {
+      "S01": {
+        "rate": 0,
+        "findings": 10,
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "viaf": false
+      },
+      "S04": {
+        "rate": 0,
+        "findings": 22,
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "viaf": false
+      },
+      "S05": {
+        "rate": 0,
+        "findings": 22,
+        "families": [
+          "openlibrary",
+          "wikimedia"
+        ],
+        "viaf": false
+      }
+    }
+  },
+  "after_PREVIEW": {
+    "host": "akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+    "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "mean_multi_independent_rate": 0.4139,
+    "viafSeeds": 3,
+    "perSeed": {
+      "S01": {
+        "rate": 1,
+        "findings": 1,
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "viaf": true
+      },
+      "S04": {
+        "rate": 0.1364,
+        "findings": 22,
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "viaf": true
+      },
+      "S05": {
+        "rate": 0.1053,
+        "findings": 19,
+        "families": [
+          "openlibrary",
+          "viaf",
+          "wikimedia"
+        ],
+        "viaf": true
+      }
+    }
+  },
+  "delta_mean": 0.4139,
+  "accLeakTotal": 0,
+  "aliasesUntouched": true,
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "pass": true
+}

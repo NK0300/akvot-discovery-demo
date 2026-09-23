@@ -1,0 +1,70 @@
+{
+  "label": "O-P3-cohen-cold",
+  "http": 200,
+  "wallMs": 32607,
+  "curlTime": 29.938403,
+  "path": "/api/lookup?q=%D7%9B%D7%94%D7%9F&nocache=1",
+  "body": {
+    "mode": "google",
+    "label": "כהן",
+    "qid": null,
+    "birth": null,
+    "age": null,
+    "place": null,
+    "desc": "אין ערך בוויקיפדיה — מבוסס חיפוש ציבורי",
+    "extract": "",
+    "photo": null,
+    "alts": [],
+    "note": "בלי ויקיפדיה: כרטיס מבוסס חיפוש + סריקת דפים ציבוריים.",
+    "email": null,
+    "phone": null,
+    "wikiError": "429",
+    "sources": [],
+    "images": [],
+    "extra_facts": [],
+    "queries": [],
+    "scanned": 3,
+    "allowBroadImages": false,
+    "ambiguous": true,
+    "thin": false,
+    "candidates": [],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 26697,
+      "gemini": 0,
+      "enrich": 163,
+      "stageB": 2283,
+      "total": 29525,
+      "wikiMeta": {
+        "wiki429": 23,
+        "wikiTimeout": 0,
+        "wikiRetries": 23
+      }
+    },
+    "phonePath": false,
+    "uiState": "need_context",
+    "scenario": "stranger",
+    "confidence": "none",
+    "needContextFields": [
+      "city",
+      "org",
+      "country",
+      "role"
+    ],
+    "messageKey": "common_name",
+    "photoUrl": null,
+    "faces": false,
+    "needContext": true,
+    "needCandidatePick": false,
+    "requestId": "717032e6-2fb7-4684-a988-c7ca12743dfb",
+    "wikiMeta": {
+      "wiki429": 23,
+      "wikiTimeout": 0,
+      "wikiRetries": 23
+    }
+  },
+  "cliExit": 0,
+  "stderrTail": [
+    "Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback"
+  ]
+}

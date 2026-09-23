@@ -1,0 +1,37 @@
+{
+  "track": "GO-IMPL-UX",
+  "agent": "ממשק",
+  "stamp": "2026-09-22T00:07:38+03:00",
+  "zone": "Asia/Jerusalem",
+  "status": "SHIPPED_IN_TREE",
+  "promote": false,
+  "deploy": false,
+  "files": ["discovery-ui.js", "index.html"],
+  "locks": {
+    "coreLookupUntouched": true,
+    "a2c1Frozen": true,
+    "informationNeIdentity": true,
+    "urlAloneNoIdentity": true,
+    "unknownSoft": true,
+    "entityAgnostic": true
+  },
+  "increments": [
+    "premium-chrome",
+    "mobile-nav-44px",
+    "facet-drawer",
+    "vocab-soft-badges",
+    "provenance-hostname-density",
+    "sse-state-polish",
+    "narrow-banner",
+    "a11y-focus-reduced-motion",
+    "soft-queryPlan-tag"
+  ],
+  "demo": [
+    "?mode=discovery",
+    "?mode=discovery&discoverySource=fixture&seed=seed-person-he&autorun=1",
+    "?mode=discovery&fixture=1&seed=seed-domain-org&autorun=1",
+    "?mode=discovery&discoverySource=fixture&seed=seed-person-latin&autorun=1"
+  ],
+  "waitingOn": ["Foundation SSE plan events", "Foundation SSE graph density"],
+  "evidence": "UX-PREMIUM-MOBILE-ממשק-2026-09-22.md"
+}

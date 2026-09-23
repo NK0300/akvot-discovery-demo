@@ -1,0 +1,37 @@
+…5/55 pass=5
+…10/55 pass=10
+…15/55 pass=15
+…20/55 pass=20
+…25/55 pass=25
+…30/55 pass=30
+…35/55 pass=35
+…40/55 pass=40
+…45/55 pass=45
+…50/55 pass=50
+…55/55 pass=55
+{
+  "base": "https://akvot-simple-demo.vercel.app",
+  "deployHint": "dpl_CHsC8R2jLVxvkYCkGpFiZgTifjgU",
+  "at": "2026-09-08T08:26:38.607Z",
+  "n": 55,
+  "pass": 55,
+  "fail": 0,
+  "byKind": {
+    "product": {
+      "n": 8,
+      "pass": 8,
+      "fail": 0
+    },
+    "infra": {
+      "n": 46,
+      "pass": 46,
+      "fail": 0
+    },
+    "control": {
+      "n": 1,
+      "pass": 1,
+      "fail": 0
+    }
+  }
+}
+EXIT:0

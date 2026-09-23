@@ -1,0 +1,123 @@
+{
+  "version": "v0",
+  "baselineId": "B0",
+  "createdAt": "2026-09-20T09:46:00+03:00",
+  "purpose": "Discovery quality observation corpus — Cycle1 Phase2",
+  "alias": "https://akvot-discovery.vercel.app",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "seedCount": 16,
+  "seeds": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "category": "person",
+      "intent": "well-known person with strong public footprint",
+      "notes": "Expect high evidence coverage from WD/WP; authority signal strong"
+    },
+    {
+      "id": "S02",
+      "seed": "John Smith",
+      "category": "common-name",
+      "intent": "extremely common English name — disambiguation stress",
+      "notes": "Phase1 baseline seed; Acc forbidden Q1701775 must never appear"
+    },
+    {
+      "id": "S03",
+      "seed": "Alex Morgan",
+      "category": "ambiguous-person",
+      "intent": "multiple plausible people (athlete vs others)",
+      "notes": "Should surface multi-candidate ambiguity without collapsing to one"
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "category": "company",
+      "intent": "well-known company brand (also common noun)",
+      "notes": "Brand vs common-word collision; expect company-primary findings"
+    },
+    {
+      "id": "S05",
+      "seed": "Red Cross",
+      "category": "organization",
+      "intent": "international NGO / humanitarian org",
+      "notes": "Org entity; may collide with national societies"
+    },
+    {
+      "id": "S06",
+      "seed": "openai.com",
+      "category": "domain",
+      "intent": "canonical company domain seed",
+      "notes": "Domain→org resolution path"
+    },
+    {
+      "id": "S07",
+      "seed": "בנימין נתניהו",
+      "category": "multilingual",
+      "intent": "Hebrew person name (HE)",
+      "notes": "HE script; bilingual evidence expected if providers support"
+    },
+    {
+      "id": "S08",
+      "seed": "Tel Aviv University",
+      "category": "multilingual",
+      "intent": "EN label for Israeli institution (EN/HE footprint)",
+      "notes": "EN seed with strong HE-locale entity"
+    },
+    {
+      "id": "S09",
+      "seed": "zzzznonexistentxyz999",
+      "category": "no-match",
+      "intent": "should yield zero or soft-fail findings",
+      "notes": "Phase1 baseline nomatch; expect findings≈0"
+    },
+    {
+      "id": "S10",
+      "seed": "Francis Bacon",
+      "category": "conflicting-evidence",
+      "intent": "philosopher vs painter — conflicting identity evidence",
+      "notes": "Classic name collision across eras/domains"
+    },
+    {
+      "id": "S11",
+      "seed": "Michael Jordan baseball",
+      "category": "wrong-person-trap",
+      "intent": "context pushes baseball; default trap is basketball GOAT",
+      "notes": "Wrong-person / context override trap"
+    },
+    {
+      "id": "S12",
+      "seed": "Wikipedia Wikimedia Foundation",
+      "category": "duplicate-source-trap",
+      "intent": "closely related org/project names that share source graphs",
+      "notes": "Risk of duplicate near-identical findings from same domain family"
+    },
+    {
+      "id": "S13",
+      "seed": "Demis Hassabis DeepMind",
+      "category": "high-value-sparse",
+      "intent": "high-value person+org keyword sparse cue",
+      "notes": "Sparse but high-signal compound seed"
+    },
+    {
+      "id": "S14",
+      "seed": "CEO of Microsoft",
+      "category": "keyword-context",
+      "intent": "role/title keyword context without proper name",
+      "notes": "Should resolve via context, not bare name match"
+    },
+    {
+      "id": "S15",
+      "seed": "Mark Zuckerberg / Meta CEO",
+      "category": "alias-like",
+      "intent": "alias punctuation and role suffix",
+      "notes": "Slash/alias formatting robustness"
+    },
+    {
+      "id": "S16",
+      "seed": "https://www.who.int",
+      "category": "website",
+      "intent": "full URL website seed → org resolution",
+      "notes": "URL normalization + org mapping"
+    }
+  ]
+}

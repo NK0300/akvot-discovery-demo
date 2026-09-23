@@ -1,0 +1,506 @@
+{
+  "title": "01-SOURCE-CAPABILITY-MATRIX",
+  "stamp": "2026-09-20T11:00:19+03:00",
+  "zone": "Asia/Jerusalem (IDT / UTC+3)",
+  "mode": "analysis-only · NO CODE · NO DEPLOY · NO PROMOTE · NO EXP-B impl",
+  "locks": {
+    "B0": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "Core": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED",
+    "A2": "experimental baseline frozen · NO promote"
+  },
+  "statusLegend": {
+    "live": "Observed on B0 and/or production DEFAULT_PROVIDERS",
+    "live_experimental_preview_only": "Present on A2 Preview with flag; NOT on B0",
+    "candidate_partially_wired": "Code path exists but not reliably used on measured corpora",
+    "candidate": "Not implemented / not emitting",
+    "candidate_deferred_interface_only": "Named in packs; no crawler; deferred"
+  },
+  "sources": [
+    {
+      "source": "Wikidata",
+      "providerId": "wikidata",
+      "status": "live",
+      "liveOn": [
+        "B0",
+        "A2-experimental-Preview"
+      ],
+      "hostFamily": "wikimedia",
+      "hosts": [
+        "www.wikidata.org"
+      ],
+      "dataTypes": [
+        "registry entity labels",
+        "QID",
+        "descriptions",
+        "optional P214/WKP crosswalks when enrich"
+      ],
+      "identifierTypes": [
+        "qid:",
+        "wd-Q*",
+        "P214→viaf when enrich"
+      ],
+      "authorityStrength": "high (structured KG registry; prestige DOMAIN_AUTHORITY 0.9)",
+      "coverage": "strong for notable persons/orgs/docs; weak for URL/role/compound seeds; corporate brands often thin on authority IDs (S04 P214=[])",
+      "freshness": "registry currency; runtime freshness factor≈0.9 from retrievedAt not source mtime",
+      "cost": "free public API; authMode=none",
+      "rateLimit": "wbsearchentities limit=8/query; provider budgetMs; public fair-use",
+      "failureModes": [
+        "partial at hit cap",
+        "error on some seeds (S10)",
+        "homonym QIDs",
+        "work/talk QIDs as publication noise"
+      ],
+      "privacySafety": "public-only; Acc scrub of forbidden identity tokens",
+      "independenceSemantics": "SAME family as Wikipedia (wikimedia). WD+WP ≠ multi-independent.",
+      "notes": "B0 live-seen; enrich path needed for cross-family typed keys"
+    },
+    {
+      "source": "Wikipedia OpenSearch",
+      "providerId": "wikipedia",
+      "status": "live",
+      "liveOn": [
+        "B0",
+        "A2-experimental-Preview"
+      ],
+      "hostFamily": "wikimedia",
+      "hosts": [
+        "en.wikipedia.org (default)",
+        "he.wikipedia.org (iff locale=he)"
+      ],
+      "dataTypes": [
+        "encyclopedia page titles",
+        "OpenSearch snippets (often empty on B0)"
+      ],
+      "identifierTypes": [
+        "page title/URL; rarely mints qid:/viaf:/ol: for coalesce"
+      ],
+      "authorityStrength": "medium-high prestige (EN 0.7); HE host defaults to 0.4 if missing from DOMAIN_AUTHORITY",
+      "coverage": "good for notable names; HE path underused without locale=he; under-keyed for A2 coalesce",
+      "freshness": "page revisions exist but not consumed; factor≈0.9 retrievedAt",
+      "cost": "free public MediaWiki API",
+      "rateLimit": "OpenSearch limit=6; robots=respect",
+      "failureModes": [
+        "quote_mean≈0 / thin=100% on B0",
+        "EN bias for HE seeds",
+        "false-friend OpenSearch titles",
+        "error on S10"
+      ],
+      "privacySafety": "public-only",
+      "independenceSemantics": "wikimedia — does NOT count as independent of Wikidata",
+      "notes": "Adapter live; he.wikipedia observed in some live samples when locale set, not on Phase2 S07 measure"
+    },
+    {
+      "source": "Open Library",
+      "providerId": "openlibrary",
+      "status": "live",
+      "liveOn": [
+        "B0",
+        "A2-experimental-Preview"
+      ],
+      "hostFamily": "openlibrary",
+      "hosts": [
+        "openlibrary.org"
+      ],
+      "dataTypes": [
+        "library author registry",
+        "bibliographic noise (works-about-person)"
+      ],
+      "identifierTypes": [
+        "ol:",
+        "OL*A",
+        "remote_ids when enrich"
+      ],
+      "authorityStrength": "medium (DOMAIN_AUTHORITY 0.75); bibliographic not corporate legal",
+      "coverage": "authors/person-like; weak for companies/URLs; high volume",
+      "freshness": "catalog currency; retrievedAt proxy",
+      "cost": "free public API",
+      "rateLimit": "authors search limit=8",
+      "failureModes": [
+        "publication/author noise (QD-05)",
+        "missing remote_ids → FN for coalesce",
+        "sole survivor when WD/WP error"
+      ],
+      "privacySafety": "public-only",
+      "independenceSemantics": "independent of wikimedia; B0 multi still 0 because Evidence not co-attached on Finding until A2-safe Preview",
+      "notes": "Highest volume provider on B0 (98/244)"
+    },
+    {
+      "source": "VIAF",
+      "providerId": "viaf",
+      "status": "live_experimental_preview_only",
+      "liveOn": [
+        "A2-experimental-Preview (DISCOVERY_ENABLE_VIAF=1)"
+      ],
+      "notLiveOn": [
+        "B0 production DEFAULT_PROVIDERS"
+      ],
+      "hostFamily": "viaf",
+      "hosts": [
+        "viaf.org"
+      ],
+      "dataTypes": [
+        "authority control crosswalk",
+        "personal/corporate/geographic nametype AutoSuggest"
+      ],
+      "identifierTypes": [
+        "viaf:",
+        "WKP links when present"
+      ],
+      "authorityStrength": "high for persons with library authority; weak/mismatched for modern corps without WKP (S04)",
+      "coverage": "rich for canonical persons (S01); person-homonyms for brand names; org granularity issues (S05 ICRC≠Movement)",
+      "freshness": "authority file currency",
+      "cost": "free public AutoSuggest/SRU",
+      "rateLimit": "AutoSuggest limit=8; nametype filter",
+      "failureModes": [
+        "person VIAF hits for corp seeds",
+        "no WKP → no typed triangle",
+        "titleSecondary disagree → related-entity",
+        "force-merge forbidden"
+      ],
+      "privacySafety": "public-only; Acc adversarial 28/28 on hardening",
+      "independenceSemantics": "DISTINCT family from wikimedia/openlibrary — required for A2-safe multi-independent attach",
+      "notes": "FROZEN as A2 experimental baseline; NOT promoted to B0; do not invent as B0-live"
+    },
+    {
+      "source": "Hebrew Wikipedia (locale-driven)",
+      "providerId": "wikipedia (locale=he)",
+      "status": "candidate_partially_wired",
+      "liveOn": [
+        "adapter exists; typically unused without locale=he"
+      ],
+      "hostFamily": "wikimedia",
+      "hosts": [
+        "he.wikipedia.org"
+      ],
+      "dataTypes": [
+        "HE encyclopedia pages"
+      ],
+      "identifierTypes": [
+        "page URL/title"
+      ],
+      "authorityStrength": "medium; DOMAIN_AUTHORITY miss → default 0.4 today",
+      "coverage": "HE person/org seeds (S07)",
+      "freshness": "wiki revision",
+      "cost": "free",
+      "rateLimit": "same OpenSearch",
+      "failureModes": [
+        "still same wikimedia family",
+        "thin snippets",
+        "transliteration gaps"
+      ],
+      "privacySafety": "public-only",
+      "independenceSemantics": "NOT independent of EN wiki / Wikidata",
+      "notes": "Candidate experiment EXP-HE-LOCALE; closes language fidelity not QD-01"
+    },
+    {
+      "source": "URL / domain origin metadata",
+      "providerId": "web_origin (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "web_origin (proposed)",
+      "hosts": [
+        "seed origin host under urlSafety allowlist"
+      ],
+      "dataTypes": [
+        "page title",
+        "og:site_name",
+        "HTTPS origin metadata — NO open crawl"
+      ],
+      "identifierTypes": [
+        "hostname",
+        "canonical URL"
+      ],
+      "authorityStrength": "variable (site-declared); groundedness gate required",
+      "coverage": "S06/S16 URL/domain seeds currently empty/thin",
+      "freshness": "live fetch of origin",
+      "cost": "egress + host ToS; public HTTPS only",
+      "rateLimit": "strict per-session; urlSafety SSRF deny",
+      "failureModes": [
+        "SSRF",
+        "empty og tags",
+        "vanity count if uncapped",
+        "private IP probes"
+      ],
+      "privacySafety": "MUST reuse urlSafety; https-only; no private/link-local/metadata",
+      "independenceSemantics": "NEW family ≠ wikimedia/openlibrary/viaf — true public-web discovery lever",
+      "notes": "web_public full crawler remains OUT; origin metadata only"
+    },
+    {
+      "source": "Company filings / SEC EDGAR (public)",
+      "providerId": "sec_edgar (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "filings",
+      "hosts": [
+        "www.sec.gov / data.sec.gov"
+      ],
+      "dataTypes": [
+        "10-K/8-K filings",
+        "CIK",
+        "company legal names"
+      ],
+      "identifierTypes": [
+        "CIK",
+        "ticker",
+        "accession"
+      ],
+      "authorityStrength": "very high for US public companies (legal)",
+      "coverage": "S04-like corps with US filings; not NGOs/persons",
+      "freshness": "filing dates (true source currency)",
+      "cost": "free public SEC fair-access; User-Agent required",
+      "rateLimit": "SEC fair access policy (strict)",
+      "failureModes": [
+        "name→CIK ambiguity",
+        "non-US corps miss",
+        "rate-limit bans",
+        "legal-name ≠ brand"
+      ],
+      "privacySafety": "public filings only; no non-public data",
+      "independenceSemantics": "NEW family filings — addresses S04 AUTHORITY COVERAGE limitation",
+      "notes": "Prefer over inventing P214; public/legal"
+    },
+    {
+      "source": "National / company registries (public)",
+      "providerId": "company_registry (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "gov_registry",
+      "hosts": [
+        "e.g. Companies House (UK), data.gov.il open datasets — only if ToS/API public"
+      ],
+      "dataTypes": [
+        "legal entity name",
+        "company number",
+        "status"
+      ],
+      "identifierTypes": [
+        "company_number",
+        "jurisdiction code"
+      ],
+      "authorityStrength": "high legal authority when jurisdiction matches",
+      "coverage": "orgs with registrable footprint; jurisdiction-specific",
+      "freshness": "registry update lag",
+      "cost": "often free open data; some paid — OUT if paid/TOS blocks",
+      "rateLimit": "per-registry",
+      "failureModes": [
+        "jurisdiction miss",
+        "brand≠legal name",
+        "scraping bans",
+        "HE/IL coverage uneven"
+      ],
+      "privacySafety": "public registry only; no private directors PII beyond public record intent",
+      "independenceSemantics": "gov_registry family; DOMAIN_AUTHORITY already anticipates *.gov/*.gov.il but no emitter today",
+      "notes": "Authority table orphan (BS-SRC-07) until emitter exists"
+    },
+    {
+      "source": "News / press wires (public RSS or open APIs)",
+      "providerId": "news_public (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "news",
+      "hosts": [
+        "public RSS / open news APIs only — no paywall scrape"
+      ],
+      "dataTypes": [
+        "headlines",
+        "datelines",
+        "named entities in copy"
+      ],
+      "identifierTypes": [
+        "article URL",
+        "outlet domain"
+      ],
+      "authorityStrength": "low–medium (journalistic; not legal identity)",
+      "coverage": "fresh events/reputation; HE news for locale",
+      "freshness": "high (core value)",
+      "cost": "free RSS; commercial APIs OUT unless licensed",
+      "rateLimit": "outlet-specific",
+      "failureModes": [
+        "FP name collisions",
+        "paywall",
+        "bias/outlet monoculture",
+        "stale mirrors"
+      ],
+      "privacySafety": "public articles only; Acc scrub",
+      "independenceSemantics": "NEW news family — freshness & corroboration, not authority-of-record",
+      "notes": "Do not treat as identity proof"
+    },
+    {
+      "source": "Scholarly / ORCID / Crossref (public)",
+      "providerId": "scholarly (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "scholarly",
+      "hosts": [
+        "orcid.org",
+        "api.crossref.org"
+      ],
+      "dataTypes": [
+        "researcher profiles",
+        "DOI metadata",
+        "affiliations"
+      ],
+      "identifierTypes": [
+        "ORCID",
+        "DOI"
+      ],
+      "authorityStrength": "high for academics; weak for corps/celebrities",
+      "coverage": "scholarly persons/docs; complements OL",
+      "freshness": "publication dates available",
+      "cost": "free public APIs",
+      "rateLimit": "polite pool",
+      "failureModes": [
+        "name ambiguity",
+        "non-scholar seeds empty",
+        "affiliation noise"
+      ],
+      "privacySafety": "public scholarly metadata",
+      "independenceSemantics": "scholarly ≠ openlibrary (despite bibliographic adjacency) if hosts distinct",
+      "notes": "Useful for person/doc entity types"
+    },
+    {
+      "source": "Government / official portals",
+      "providerId": "gov_portal (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "gov",
+      "hosts": [
+        "*.gov",
+        "*.gov.il"
+      ],
+      "dataTypes": [
+        "official pages",
+        "press releases",
+        "org charts"
+      ],
+      "identifierTypes": [
+        "gov URL",
+        "agency codes"
+      ],
+      "authorityStrength": "high official; DOMAIN_AUTHORITY 0.85 coded but unused",
+      "coverage": "gov orgs, HE public figures official pages",
+      "freshness": "variable",
+      "cost": "free public web; allowlisted fetch only",
+      "rateLimit": "site-specific",
+      "failureModes": [
+        "allowlist maintenance",
+        "SSRF",
+        "thin pages",
+        "political content sensitivity"
+      ],
+      "privacySafety": "public gov pages; no citizen PII databases",
+      "independenceSemantics": "gov family — distinct; table orphan until emitter",
+      "notes": "BS-SRC-07"
+    },
+    {
+      "source": "Web archives (Wayback CDX public)",
+      "providerId": "web_archive (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "archives",
+      "hosts": [
+        "web.archive.org"
+      ],
+      "dataTypes": [
+        "historical snapshots",
+        "first/last capture"
+      ],
+      "identifierTypes": [
+        "archive URL",
+        "timestamp"
+      ],
+      "authorityStrength": "medium historical evidence; not identity authority",
+      "coverage": "historical entity / domain longevity",
+      "freshness": "historical by design",
+      "cost": "free public CDX",
+      "rateLimit": "IA polite use",
+      "failureModes": [
+        "holes in capture",
+        "slow",
+        "robots",
+        "over-claim longevity→identity"
+      ],
+      "privacySafety": "public captures only",
+      "independenceSemantics": "archives family — evidence of history not same-entity",
+      "notes": "Supports historical entity type gap"
+    },
+    {
+      "source": "Public domain WHOIS / RDAP",
+      "providerId": "rdap_public (proposed)",
+      "status": "candidate",
+      "liveOn": [],
+      "hostFamily": "web_origin",
+      "hosts": [
+        "RDAP registries"
+      ],
+      "dataTypes": [
+        "registrar",
+        "nameservers",
+        "registration events (public fields only)"
+      ],
+      "identifierTypes": [
+        "domain",
+        "handle if public"
+      ],
+      "authorityStrength": "medium for domain ownership signals; redaction common",
+      "coverage": "domain seeds S06",
+      "freshness": "registry events",
+      "cost": "free RDAP",
+      "rateLimit": "registry limits",
+      "failureModes": [
+        "GDPR redaction",
+        "privacy services",
+        "stale",
+        "whois scrape ToS — prefer RDAP"
+      ],
+      "privacySafety": "public RDAP fields only; no non-public WHOIS harvest",
+      "independenceSemantics": "pairs with web_origin; not a person authority",
+      "notes": "Legal/public only via RDAP"
+    },
+    {
+      "source": "web_public open crawler",
+      "providerId": "web_public",
+      "status": "candidate_deferred_interface_only",
+      "liveOn": [],
+      "hostFamily": "web",
+      "hosts": [
+        "open web"
+      ],
+      "dataTypes": [
+        "arbitrary pages"
+      ],
+      "identifierTypes": [
+        "URL"
+      ],
+      "authorityStrength": "uncontrolled",
+      "coverage": "max surface — high FP risk",
+      "freshness": "live",
+      "cost": "high egress/ops",
+      "rateLimit": "complex",
+      "failureModes": [
+        "SSRF",
+        "malware hosts",
+        "ToS",
+        "Acc leakage surface",
+        "vanity flood"
+      ],
+      "privacySafety": "Acc+Security co-bound; currently interface-only Phase A freeze",
+      "independenceSemantics": "would be independent but OUT until Chief+Security GO",
+      "notes": "NOT recommended as next experiment; prefer origin-only"
+    }
+  ],
+  "liveSummary": {
+    "B0": [
+      "wikidata",
+      "wikipedia",
+      "openlibrary"
+    ],
+    "A2_experimental_Preview": [
+      "wikidata",
+      "wikipedia",
+      "openlibrary",
+      "viaf (DISCOVERY_ENABLE_VIAF=1)"
+    ],
+    "notLiveInvented": false
+  }
+}

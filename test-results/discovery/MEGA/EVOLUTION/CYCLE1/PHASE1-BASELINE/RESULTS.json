@@ -1,0 +1,78 @@
+{
+  "overall": "PASS",
+  "stamp": "2026-09-20T09:47:15+03:00",
+  "paths": {
+    "primary": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE",
+    "freeze_json": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE/FREEZE.json",
+    "freeze_md": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE/FREEZE.md",
+    "evidence_pack": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE/BASELINE-EVIDENCE-PACK.md",
+    "metrics": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE/METRICS-BOOTSTRAP.json",
+    "raw": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE/raw"
+  },
+  "ids": {
+    "discovery": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "core": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+  },
+  "table": [
+    {
+      "step": 1,
+      "name": "01 Discovery dpl exact",
+      "result": "PASS",
+      "detail": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+    },
+    {
+      "step": 2,
+      "name": "02 Core dpl locked 8ag",
+      "result": "PASS",
+      "detail": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+    },
+    {
+      "step": 3,
+      "name": "03 Discovery aliases mapped",
+      "result": "PASS",
+      "detail": "akvot-discovery.vercel.app \u2192 Avyhr"
+    },
+    {
+      "step": 4,
+      "name": "04 No alias/promote mutations",
+      "result": "PASS",
+      "detail": "evidence-only"
+    },
+    {
+      "step": 5,
+      "name": "05 KV durable/promoteEligible/kvReachable",
+      "result": "PASS",
+      "detail": "backend=upstash"
+    },
+    {
+      "step": 6,
+      "name": "06 Config fingerprint no secrets",
+      "result": "PASS",
+      "detail": "env names only"
+    },
+    {
+      "step": 7,
+      "name": "07 Discovery full smoke (\u22653 seeds + SSE)",
+      "result": "PASS",
+      "detail": "n=4 leak=0"
+    },
+    {
+      "step": 8,
+      "name": "08 Core regression pw=0 leakage=0",
+      "result": "PASS",
+      "detail": "pw=0 leak=0"
+    },
+    {
+      "step": 9,
+      "name": "09 Acc regression leakage=0",
+      "result": "PASS",
+      "detail": "Q1701775 variants"
+    },
+    {
+      "step": 10,
+      "name": "10 Evidence pack written",
+      "result": "PASS",
+      "detail": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/PHASE1-BASELINE"
+    }
+  ]
+}

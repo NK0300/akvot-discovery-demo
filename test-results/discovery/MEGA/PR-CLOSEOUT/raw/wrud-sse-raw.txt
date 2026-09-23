@@ -1,0 +1,37 @@
+id: 1
+event: meta
+data: {"sessionId":"kv1.f2d2fcda06296cef5665639f77167767","seed":"WRUD Closeout Entity Demo","q":"WRUD Closeout Entity Demo","version":3,"forbiddenIdentitiesVersion":"2026-09-19.1","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true,"note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true},"cursor":1}
+
+id: 2
+event: progress
+data: {"progress":{"done":6,"totalHint":6},"stage":"S10","cursor":2}
+
+id: 3
+event: provider
+data: {"providerId":"wikidata","state":"ok","cursor":3}
+
+id: 4
+event: provider
+data: {"providerId":"openlibrary","state":"ok","cursor":4}
+
+id: 5
+event: provider
+data: {"providerId":"wikipedia","state":"ok","cursor":5}
+
+id: 6
+event: facets
+data: {"facets":[{"key":"provider","label":"Provider","buckets":[],"emptyReason":"no_evidence"},{"key":"kind","label":"Kind","buckets":[],"emptyReason":"no_evidence"},{"key":"hint","label":"Hint","buckets":[],"emptyReason":"no_evidence"}],"cursor":6}
+
+id: 7
+event: status
+data: {"status":"complete","findingCount":0,"forbiddenStripped":0,"forbiddenIdentitiesVersion":"2026-09-19.1","version":3,"cursor":7}
+
+id: 8
+event: done
+data: {"status":"complete","sessionId":"kv1.f2d2fcda06296cef5665639f77167767","findingCount":0,"forbiddenIdentitiesVersion":"2026-09-19.1","version":3,"cursor":8}
+
+
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1527    0  1527    0     0   2884      0 --:--:-- --:--:-- --:--:--  2886

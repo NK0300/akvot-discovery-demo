@@ -1,0 +1,394 @@
+{
+  "stamp": "2026-09-20",
+  "alias": "https://akvot-discovery.vercel.app",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "method": "vercel curl --deployment dpl_Avyhr… --scope k-akvot",
+  "live_seed_samples": [
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "request_locale": "en(default)",
+      "session_locale": null,
+      "status": "partial",
+      "provider_states": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "n_findings": 10,
+      "n_evidence": 10,
+      "providers_on_findings": {
+        "wikidata": 8,
+        "openlibrary": 1,
+        "wikipedia": 1
+      },
+      "kinds": {
+        "registry": 9,
+        "page": 1
+      },
+      "domains": {
+        "www.wikidata.org": 8,
+        "openlibrary.org": 1,
+        "en.wikipedia.org": 1
+      },
+      "he_title_n": 0,
+      "he_quote_n": 0,
+      "he_host_n": 0,
+      "en_wikipedia_n": 1,
+      "he_wikipedia_n": 0,
+      "sample_titles": [
+        "Tim Berners-Lee",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee: A Magna Carta for the web",
+        "Tim Berners-Lee: The year open data went worldwide",
+        "Tim Berners-Lee: The next web",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee",
+        "Tim Berners-Lee"
+      ],
+      "sample_urls": [
+        "https://www.wikidata.org/wiki/Q80",
+        "https://www.wikidata.org/wiki/Q120373140",
+        "https://www.wikidata.org/wiki/Q120373262",
+        "https://www.wikidata.org/wiki/Q22991023",
+        "https://www.wikidata.org/wiki/Q22946133",
+        "https://www.wikidata.org/wiki/Q22980417",
+        "https://www.wikidata.org/wiki/Q19761597",
+        "https://www.wikidata.org/wiki/Q55693401",
+        "https://openlibrary.org/authors/OL25245A",
+        "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+      ],
+      "sample_quotes": [
+        "English computer scientist (born 1955)",
+        "2015 edition of a biography by Claudia Martin",
+        "2015 biography by Jason Porterfield",
+        "TED2014",
+        "TED2010",
+        "TED2009"
+      ]
+    },
+    {
+      "id": "S02",
+      "seed": "John Smith",
+      "request_locale": "en(default)",
+      "session_locale": null,
+      "status": "partial",
+      "provider_states": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "n_findings": 21,
+      "n_evidence": 21,
+      "providers_on_findings": {
+        "wikidata": 7,
+        "openlibrary": 8,
+        "wikipedia": 6
+      },
+      "kinds": {
+        "registry": 15,
+        "page": 6
+      },
+      "domains": {
+        "www.wikidata.org": 7,
+        "openlibrary.org": 8,
+        "en.wikipedia.org": 6
+      },
+      "he_title_n": 0,
+      "he_quote_n": 0,
+      "he_host_n": 0,
+      "en_wikipedia_n": 6,
+      "he_wikipedia_n": 0,
+      "sample_titles": [
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith",
+        "John Smith"
+      ],
+      "sample_urls": [
+        "https://www.wikidata.org/wiki/Q3182477",
+        "https://www.wikidata.org/wiki/Q332377",
+        "https://www.wikidata.org/wiki/Q6258357",
+        "https://www.wikidata.org/wiki/Q6258267",
+        "https://www.wikidata.org/wiki/Q6258259",
+        "https://www.wikidata.org/wiki/Q541460",
+        "https://www.wikidata.org/wiki/Q991529",
+        "https://openlibrary.org/authors/OL177707A",
+        "https://openlibrary.org/authors/OL12988612A",
+        "https://openlibrary.org/authors/OL2642558A"
+      ],
+      "sample_quotes": [
+        "English botanist, first curator of Kew gardens (1798–1888)",
+        "Labour Party leader from Scotland (1938-1994)",
+        "fifth Presiding Patriarch of The Church of Jesus Christ of Latter-day Saints (18",
+        "British banker, Conservative Member of Parliament, and Lord Lieutenant of Berksh",
+        "British army general (1754-1837)",
+        "American politician; U.S. senator from Ohio (173_-1824)"
+      ]
+    },
+    {
+      "id": "S07",
+      "seed": "בנימין נתניהו",
+      "request_locale": "he",
+      "session_locale": null,
+      "status": "complete",
+      "provider_states": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "n_findings": 2,
+      "n_evidence": 2,
+      "providers_on_findings": {
+        "wikidata": 1,
+        "wikipedia": 1
+      },
+      "kinds": {
+        "registry": 1,
+        "page": 1
+      },
+      "domains": {
+        "www.wikidata.org": 1,
+        "he.wikipedia.org": 1
+      },
+      "he_title_n": 2,
+      "he_quote_n": 1,
+      "he_host_n": 1,
+      "en_wikipedia_n": 0,
+      "he_wikipedia_n": 1,
+      "sample_titles": [
+        "בנימין נתניהו",
+        "בנימין נתניהו"
+      ],
+      "sample_urls": [
+        "https://www.wikidata.org/wiki/Q43723",
+        "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%99%D7%9E%D7%99%D7%9F_%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%95"
+      ],
+      "sample_quotes": [
+        "ראש ממשלת ישראל ויו\"ר מפלגת הליכוד",
+        ""
+      ]
+    },
+    {
+      "id": "B01",
+      "seed": "יוסי כהן",
+      "request_locale": "he",
+      "session_locale": null,
+      "status": "partial",
+      "provider_states": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial"
+      },
+      "n_findings": 10,
+      "n_evidence": 10,
+      "providers_on_findings": {
+        "wikidata": 4,
+        "wikipedia": 6
+      },
+      "kinds": {
+        "registry": 4,
+        "page": 6
+      },
+      "domains": {
+        "www.wikidata.org": 4,
+        "he.wikipedia.org": 6
+      },
+      "he_title_n": 10,
+      "he_quote_n": 4,
+      "he_host_n": 6,
+      "en_wikipedia_n": 0,
+      "he_wikipedia_n": 6,
+      "sample_titles": [
+        "יוסי כהן",
+        "יוסי כהן",
+        "יוסי כהן",
+        "יוסי כהן",
+        "יוסי כהן",
+        "יוסי כהן (עורך דין)",
+        "יוסי כהן (קצין)",
+        "יוסי כהן (פירושונים)",
+        "יורם כהן",
+        "יוסי דגן"
+      ],
+      "sample_urls": [
+        "https://www.wikidata.org/wiki/Q15725863",
+        "https://www.wikidata.org/wiki/Q33004545",
+        "https://www.wikidata.org/wiki/Q16130461",
+        "https://www.wikidata.org/wiki/Q56189590",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%9B%D7%94%D7%9F",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%9B%D7%94%D7%9F_(%D7%A2%D7%95%D7%A8%D7%9A_%D7%93%D7%99%D7%9F)",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%9B%D7%94%D7%9F_(%D7%A7%D7%A6%D7%99%D7%9F)",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%9B%D7%94%D7%9F_(%D7%A4%D7%99%D7%A8%D7%95%D7%A9%D7%95%D7%A0%D7%99%D7%9D)",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A8%D7%9D_%D7%9B%D7%94%D7%9F",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%99_%D7%93%D7%92%D7%9F"
+      ],
+      "sample_quotes": [
+        "איש מודיעין וביטחון ישראלי, ראש המוסד ה-12",
+        "איש צבא ישראלי, קצין בדרגת אלוף-משנה.",
+        "עורך דין ישראלי",
+        "דף פירושונים",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "S04",
+      "seed": "Stripe",
+      "request_locale": "en(default)",
+      "session_locale": null,
+      "status": "partial",
+      "provider_states": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "n_findings": 22,
+      "n_evidence": 22,
+      "providers_on_findings": {
+        "wikidata": 8,
+        "openlibrary": 8,
+        "wikipedia": 6
+      },
+      "kinds": {
+        "registry": 16,
+        "page": 6
+      },
+      "domains": {
+        "www.wikidata.org": 8,
+        "openlibrary.org": 8,
+        "en.wikipedia.org": 6
+      },
+      "he_title_n": 0,
+      "he_quote_n": 0,
+      "he_host_n": 0,
+      "en_wikipedia_n": 6,
+      "he_wikipedia_n": 0,
+      "sample_titles": [
+        "Stripe",
+        "stripe",
+        "Stripe",
+        "Stripe",
+        "Meloidae",
+        "Perca flavescens",
+        "striped bass",
+        "striped skunk",
+        "Five Stripe Books",
+        "Adelle Stripe"
+      ],
+      "sample_urls": [
+        "https://www.wikidata.org/wiki/Q7624104",
+        "https://www.wikidata.org/wiki/Q3421342",
+        "https://www.wikidata.org/wiki/Q127900502",
+        "https://www.wikidata.org/wiki/Q117454382",
+        "https://www.wikidata.org/wiki/Q297115",
+        "https://www.wikidata.org/wiki/Q469754",
+        "https://www.wikidata.org/wiki/Q842647",
+        "https://www.wikidata.org/wiki/Q368495",
+        "https://openlibrary.org/authors/OL8376862A",
+        "https://openlibrary.org/authors/OL8613090A"
+      ],
+      "sample_quotes": [
+        "Irish-American payment technology company",
+        "long, narrow band of color, often in alternating sets",
+        "fictional character in the Gremlins franchise",
+        "South African progamer",
+        "family of beetles",
+        "species of fish"
+      ]
+    }
+  ],
+  "aggregate_providers_live": {
+    "wikidata": 28,
+    "openlibrary": 17,
+    "wikipedia": 20
+  },
+  "aggregate_domains_live": {
+    "www.wikidata.org": 28,
+    "openlibrary.org": 17,
+    "en.wikipedia.org": 13,
+    "he.wikipedia.org": 7
+  },
+  "aggregate_kinds_live": {
+    "registry": 45,
+    "page": 20
+  },
+  "hosts_by_provider_live": {
+    "wikidata": {
+      "www.wikidata.org": 28
+    },
+    "openlibrary": {
+      "openlibrary.org": 17
+    },
+    "wikipedia": {
+      "en.wikipedia.org": 13,
+      "he.wikipedia.org": 7
+    }
+  },
+  "he_gap_signals": {
+    "note": "locale=he requests; wikipedia provider selects he.wikipedia.org host when locale starts with he",
+    "seeds": [
+      {
+        "id": "S07",
+        "n_findings": 2,
+        "domains": {
+          "www.wikidata.org": 1,
+          "he.wikipedia.org": 1
+        },
+        "he_title_n": 2,
+        "he_quote_n": 1,
+        "he_wikipedia_n": 1,
+        "en_wikipedia_n": 0,
+        "providers": {
+          "wikidata": 1,
+          "wikipedia": 1
+        },
+        "titles": [
+          "בנימין נתניהו",
+          "בנימין נתניהו"
+        ]
+      },
+      {
+        "id": "B01",
+        "n_findings": 10,
+        "domains": {
+          "www.wikidata.org": 4,
+          "he.wikipedia.org": 6
+        },
+        "he_title_n": 10,
+        "he_quote_n": 4,
+        "he_wikipedia_n": 6,
+        "en_wikipedia_n": 0,
+        "providers": {
+          "wikidata": 4,
+          "wikipedia": 6
+        },
+        "titles": [
+          "יוסי כהן",
+          "יוסי כהן",
+          "יוסי כהן",
+          "יוסי כהן",
+          "יוסי כהן",
+          "יוסי כהן (עורך דין)",
+          "יוסי כהן (קצין)",
+          "יוסי כהן (פירושונים)",
+          "יורם כהן",
+          "יוסי דגן"
+        ]
+      }
+    ]
+  },
+  "prior_phase4_raw_source_analysis_providers": {
+    "openlibrary": 98,
+    "wikidata": 80,
+    "wikipedia": 66
+  }
+}

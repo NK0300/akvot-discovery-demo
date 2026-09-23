@@ -1,0 +1,28 @@
+{
+  "stamp": "2026-09-20T08:51:41+03:00",
+  "recommendation": "PROMOTE-READY",
+  "hard_fails": [],
+  "soft": [
+    {
+      "id": "B17",
+      "category": "observability",
+      "name": "Store telemetry taxonomy (outcome/failureClass/retryCount) incomplete vs mandate",
+      "notes": "Soft OK — owned by Server; not a QA matrix HTTP FAIL",
+      "owner": "Server",
+      "severity": "soft"
+    },
+    {
+      "id": "B18",
+      "category": "observability",
+      "name": "B18 production-readiness observability gaps (if any remaining)",
+      "notes": "Soft OK — owned by Server; track in FINAL-REPORT",
+      "owner": "Server",
+      "severity": "soft"
+    }
+  ],
+  "hold": [
+    "RB-13",
+    "RB-14"
+  ],
+  "promote": "HOLD"
+}

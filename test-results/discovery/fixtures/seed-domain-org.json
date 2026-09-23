@@ -1,0 +1,137 @@
+{
+  "fixtureId": "seed-domain-org",
+  "seedKind": "domain_org",
+  "q": "example.org",
+  "matchHints": ["example.org", "Example Organization", "example organization"],
+  "locale": "en",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "evidence": [
+    {
+      "id": "ev-org-1",
+      "provenanceUrl": "https://www.example.org/",
+      "providerId": "web_public",
+      "retrievedAt": "2026-09-20T00:20:00.000Z",
+      "quote": "Example Domain — public landing page used for documentation",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-org-2",
+      "provenanceUrl": "https://www.iana.org/domains/reserved",
+      "providerId": "web_public",
+      "retrievedAt": "2026-09-20T00:20:01.000Z",
+      "quote": "example.org is a reserved documentation domain (IANA)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-org-3",
+      "provenanceUrl": "https://www.wikidata.org/w/index.php?search=example.org&title=Special%3ASearch",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T00:20:02.000Z",
+      "quote": "Public Wikidata search for domain/org seed",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-org-4",
+      "provenanceUrl": "https://openlibrary.org/search?q=Example+Organization",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T00:20:03.000Z",
+      "quote": "Document/org expansion fixture — public catalog hit",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-org-1",
+      "kind": "page",
+      "title": "Site landing (example.org)",
+      "summary": "Public site page for domain seed. Not an identity dossier.",
+      "evidenceIds": ["ev-org-1"],
+      "providers": ["web_public"],
+      "facetHints": ["provider:web_public", "kind:page", "relationship:site"],
+      "entityRefs": [],
+      "scoreFinding": 0.95
+    },
+    {
+      "id": "f-org-2",
+      "kind": "document",
+      "title": "IANA reserved domains note",
+      "summary": "Supporting public document about the domain class.",
+      "evidenceIds": ["ev-org-2"],
+      "providers": ["web_public"],
+      "facetHints": ["provider:web_public", "kind:document", "relationship:registry_note"],
+      "entityRefs": [],
+      "scoreFinding": 0.9
+    },
+    {
+      "id": "f-org-3",
+      "kind": "registry",
+      "title": "Wikidata search (org/domain)",
+      "summary": "Registry finding for organization/domain expansion.",
+      "evidenceIds": ["ev-org-3"],
+      "providers": ["wikidata"],
+      "facetHints": ["provider:wikidata", "kind:registry", "confidence_band:medium"],
+      "entityRefs": [],
+      "scoreFinding": 0.75
+    },
+    {
+      "id": "f-org-4",
+      "kind": "document",
+      "title": "Open Library catalog mention",
+      "summary": "Document-kind finding linked to org-name string.",
+      "evidenceIds": ["ev-org-4"],
+      "providers": ["openlibrary"],
+      "facetHints": ["provider:openlibrary", "kind:document", "relationship:org_name"],
+      "entityRefs": [],
+      "scoreFinding": 0.62
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": { "done": 0, "totalHint": 4, "findingsN": 0 },
+      "providers": { "web_public": "pending", "wikidata": "pending", "openlibrary": "pending" },
+      "findingIds": [],
+      "facets": []
+    },
+    {
+      "afterMs": 350,
+      "status": "partial",
+      "progress": { "done": 1, "totalHint": 4, "findingsN": 1 },
+      "providers": { "web_public": "ok", "wikidata": "pending", "openlibrary": "pending" },
+      "findingIds": ["f-org-1"],
+      "facets": [
+        { "key": "provider", "label": "Provider", "buckets": [{ "value": "web_public", "count": 1 }] },
+        { "key": "kind", "label": "Kind", "buckets": [{ "value": "page", "count": 1 }] }
+      ]
+    },
+    {
+      "afterMs": 750,
+      "status": "partial",
+      "progress": { "done": 2, "totalHint": 4, "findingsN": 2 },
+      "providers": { "web_public": "ok", "wikidata": "pending", "openlibrary": "pending" },
+      "findingIds": ["f-org-1", "f-org-2"],
+      "facets": [
+        { "key": "provider", "label": "Provider", "buckets": [{ "value": "web_public", "count": 2 }] },
+        { "key": "kind", "label": "Kind", "buckets": [{ "value": "page", "count": 1 }, { "value": "document", "count": 1 }] }
+      ]
+    },
+    {
+      "afterMs": 1200,
+      "status": "complete",
+      "progress": { "done": 4, "totalHint": 4, "findingsN": 4 },
+      "providers": { "web_public": "ok", "wikidata": "ok", "openlibrary": "ok" },
+      "findingIds": ["f-org-1", "f-org-2", "f-org-3", "f-org-4"],
+      "facets": [
+        { "key": "provider", "label": "Provider", "buckets": [{ "value": "web_public", "count": 2 }, { "value": "wikidata", "count": 1 }, { "value": "openlibrary", "count": 1 }] },
+        { "key": "kind", "label": "Kind", "buckets": [{ "value": "page", "count": 1 }, { "value": "document", "count": 2 }, { "value": "registry", "count": 1 }] },
+        { "key": "relationship", "label": "Relationship", "buckets": [{ "value": "site", "count": 1 }, { "value": "registry_note", "count": 1 }, { "value": "org_name", "count": 1 }] },
+        { "key": "confidence_band", "label": "Confidence band", "buckets": [{ "value": "medium", "count": 1 }] }
+      ]
+    }
+  ]
+}

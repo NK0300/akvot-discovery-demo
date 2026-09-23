@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "phase": "orchestrator-v0-b",
+  "build": "dpl_CcGehfMHgGXFapeqRnK1L7rmncp8",
+  "baselineHint": "dpl_DNfPZ9",
+  "discoveryStore": {
+    "storeBackend": "fs-regen",
+    "durable": false,
+    "fallback": true,
+    "explicitFallback": true,
+    "fsRegenFallback": true,
+    "promoteEligible": false,
+    "kvCredsPresent": false,
+    "crossInstance": "regenerate-from-seed"
+  }
+}

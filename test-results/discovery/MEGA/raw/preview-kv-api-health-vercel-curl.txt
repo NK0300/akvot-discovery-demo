@@ -1,0 +1,5 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   308  100   308    0     0   1084      0 --:--:-- --:--:-- --:--:--  1088
+{"ok":true,"phase":"orchestrator-v0-b","build":"dpl_BAkeDgvpvqGEg53zXxScGdESvdPv","baselineHint":"dpl_DNfPZ9","discoveryStore":{"storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"kvCredsPresent":true,"crossInstance":"shared-kv"}}

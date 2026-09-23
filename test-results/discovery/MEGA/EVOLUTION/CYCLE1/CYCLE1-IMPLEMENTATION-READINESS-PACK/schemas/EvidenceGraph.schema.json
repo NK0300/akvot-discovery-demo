@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/impl-ready/evidence-graph/v1",
+  "title": "EvidenceGraph (implementation-readiness design schema)",
+  "description": "Not a dossier. No implicit edges. same-entity forbidden under experimental lanes at runtime.",
+  "type": "object",
+  "required": [
+    "graphSchemaVersion",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "graphSchemaVersion": {
+      "type": "string"
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "planId": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "seed",
+              "finding",
+              "evidence",
+              "reference",
+              "url",
+              "domain",
+              "document",
+              "organization",
+              "person",
+              "source"
+            ]
+          },
+          "attrs": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "from",
+          "to",
+          "provenance"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "supports",
+              "derived-from",
+              "same-reference",
+              "same-entity",
+              "related-entity",
+              "possible-match",
+              "contradicts",
+              "unknown"
+            ]
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "signalSummary"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

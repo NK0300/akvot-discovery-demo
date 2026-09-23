@@ -1,0 +1,27 @@
+{
+  "status": "READY_CHIEF_REVIEW",
+  "promote": false,
+  "alias_frozen": "dpl_7vAA…",
+  "preview_dpl": "dpl_5UFysCAY6zFeREfmHmUwYMqQidUQ",
+  "preview_url": "https://akvot-simple-demo-4ij5qy655-k-akvot.vercel.app",
+  "denylist_version": "2026-09-19.1",
+  "forbidden_qids": [
+    "Q1701775"
+  ],
+  "change": "api/lib/forbiddenIdentities.js + scrub in attachOrchestratorFields/revalidateDomainSafePayload",
+  "rca": "F-L2-ACC-001 Stage-B WD+NY → candidates#1; scrub closes Acc contract gap",
+  "pw": 0,
+  "leakage": 0,
+  "fix3": "PASS",
+  "fix4": {
+    "status": "PASS",
+    "requests": "100/100",
+    "err": 0,
+    "timeouts": 0
+  },
+  "units": {
+    "orchestrator": 128,
+    "forbiddenIdentities": 39,
+    "contract_p0": 5
+  }
+}

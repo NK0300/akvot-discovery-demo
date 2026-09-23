@@ -1,0 +1,36 @@
+בודק QA-AFTER-vs-B0 2026-09-20T10:18:05+03:00
+Preview dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2 https://akvot-simple-demo-h9cq1ob4m-k-akvot.vercel.app
+B0 dpl_AvyhrW24gGRquWCPPZdydBiz81dv https://akvot-discovery.vercel.app
+Core LOCKED dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+HOLD promote
+PREVIEW S01 Tim Berners-Lee ...
+  findings=18 withEv=18 multi=15/18=0.8333 viaf=15 leak=0 fams=["openlibrary","viaf","wikidata","wikipedia"]
+PREVIEW S04 Stripe ...
+  findings=22 withEv=22 multi=2/22=0.0909 viaf=9 leak=0 fams=["viaf","wikidata","wikipedia"]
+PREVIEW S05 Red Cross ...
+  findings=30 withEv=30 multi=12/30=0.4 viaf=15 leak=0 fams=["openlibrary","viaf","wikidata","wikipedia"]
+B0 S01 Tim Berners-Lee ...
+  findings=9 withEv=9 multi=0/9=0 viaf=0 leak=0 fams=["wikidata","wikipedia"]
+B0 S04 Stripe ...
+  findings=22 withEv=22 multi=0/22=0 viaf=0 leak=0 fams=["openlibrary","wikidata","wikipedia"]
+B0 S05 Red Cross ...
+  findings=22 withEv=22 multi=0/22=0 viaf=0 leak=0 fams=["openlibrary","wikidata","wikipedia"]
+
+=== בודק SUMMARY ===
+{
+  "overall": "PASS",
+  "preview_mean": 0.4414,
+  "preview_pooled": 0.4143,
+  "b0_live_mean": 0,
+  "S01_preview": 18,
+  "S01_b0_frozen": 10,
+  "leak": 0,
+  "gates": {
+    "multi_independent_mean": "PASS",
+    "multi_mean_value": 0.4414,
+    "threshold": 0.15,
+    "acc_leak": "PASS",
+    "coverage_no_vacuum": "PASS"
+  },
+  "promote": "HOLD"
+}

@@ -1,0 +1,50 @@
+{
+  "stamp": "2026-09-20T12:21:00+03:00",
+  "integrated_baseline": ["B0_PRODUCTION", "A2_SAFE_EXPERIMENTAL", "C1_PATCHED_EXPERIMENTAL"],
+  "production": {
+    "discovery_b0": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "alias": "https://akvot-discovery.vercel.app",
+      "providers": ["wikidata", "wikipedia", "openlibrary"],
+      "multi_independent": 0.0,
+      "web_origin": "OFF"
+    },
+    "core": {
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "alias": "https://akvot-simple-demo.vercel.app",
+      "pw": 0,
+      "leak": 0
+    }
+  },
+  "experimental": {
+    "a2_safe": {
+      "status": "FROZEN_EXPERIMENTAL",
+      "flag": "DISCOVERY_ENABLE_VIAF=1",
+      "preview_dpl_historical": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+      "mean_multi": 0.21,
+      "s01_multi": 0.56,
+      "s04_multi": 0,
+      "s05_multi": 0.07,
+      "acc_leak": 0,
+      "adversarial_hardening": "28/28"
+    },
+    "c1_patched": {
+      "status": "APPROVED_EXPERIMENTAL_CLOSED_FROZEN_NOT_PROMOTED",
+      "flag": "DISCOVERY_ENABLE_WEB_ORIGIN=1",
+      "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+      "s16_wo": 1,
+      "relationship_url_alone": "UNKNOWN",
+      "rel12": "12/12",
+      "acc_leak": 0,
+      "units": "96/0"
+    }
+  },
+  "rejected": ["A2_BOUND_TITLE_BRIDGE"],
+  "historical_fail_keep": {
+    "c1_prepatch": {
+      "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+      "failure": "URL_ALONE_SAME_REFERENCE"
+    }
+  },
+  "promote": "HOLD"
+}

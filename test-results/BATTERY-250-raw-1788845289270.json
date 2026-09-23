@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "base": "https://akvot-simple-demo.vercel.app",
+    "at": "2026-09-08T05:28:42.753Z",
+    "n": 2,
+    "pass": 2,
+    "fail": 0,
+    "byBucket": {
+      "famous": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0
+      },
+      "obscure": {
+        "n": 0,
+        "pass": 0,
+        "fail": 0
+      },
+      "nonexist": {
+        "n": 0,
+        "pass": 0,
+        "fail": 0
+      }
+    },
+    "p50": 17159,
+    "p95": 17159
+  },
+  "results": [
+    {
+      "q": "מנחם בגין",
+      "bucket": "famous",
+      "scenario": "A",
+      "ok": true,
+      "ms": 16322,
+      "uiState": "dossier",
+      "mode": "google",
+      "phase": "orchestrator-v0-b",
+      "faces": true,
+      "sources": 4,
+      "candidates": 0,
+      "pass": true,
+      "reason": "ok",
+      "degraded": false
+    },
+    {
+      "q": "גדעון סער",
+      "bucket": "famous",
+      "scenario": "A",
+      "ok": true,
+      "ms": 17159,
+      "uiState": "dossier",
+      "mode": "google",
+      "phase": "orchestrator-v0-b",
+      "faces": true,
+      "sources": 4,
+      "candidates": 0,
+      "pass": true,
+      "reason": "ok",
+      "degraded": false
+    }
+  ]
+}

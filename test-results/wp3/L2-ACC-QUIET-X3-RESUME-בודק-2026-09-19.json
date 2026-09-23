@@ -1,0 +1,76 @@
+{
+  "base": "https://akvot-simple-demo.vercel.app",
+  "useVercel": false,
+  "rows": [
+    {
+      "label": "smith-1",
+      "mode": "COLD",
+      "http": 200,
+      "uiState": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "containsQ1701775": false,
+      "badPaths": [],
+      "wallMs": 6506,
+      "error": null
+    },
+    {
+      "label": "smith-2",
+      "mode": "WARM",
+      "http": 200,
+      "uiState": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "containsQ1701775": false,
+      "badPaths": [],
+      "wallMs": 8115,
+      "error": null
+    },
+    {
+      "label": "smith-3",
+      "mode": "WARM",
+      "http": 200,
+      "uiState": "candidates",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "containsQ1701775": false,
+      "badPaths": [],
+      "wallMs": 5945,
+      "error": null
+    },
+    {
+      "label": "assaf-invariant",
+      "mode": "WARM",
+      "http": 200,
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "faces": true,
+      "photo": true,
+      "containsQ1701775": false,
+      "badPaths": [],
+      "wallMs": 2576,
+      "error": null
+    },
+    {
+      "label": "cohen-invariant",
+      "mode": "WARM",
+      "http": 200,
+      "uiState": "need_context",
+      "qid": null,
+      "faces": false,
+      "photo": false,
+      "containsQ1701775": false,
+      "badPaths": [],
+      "wallMs": 14399,
+      "error": null
+    }
+  ],
+  "smithPass": true,
+  "assafPass": true,
+  "cohenPass": true,
+  "anyBadQ1701775": false,
+  "generatedAt": "2026-09-19T19:51:02.763Z"
+}

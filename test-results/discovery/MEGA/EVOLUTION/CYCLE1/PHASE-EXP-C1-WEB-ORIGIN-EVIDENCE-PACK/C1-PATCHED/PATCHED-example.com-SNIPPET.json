@@ -1,0 +1,21 @@
+{
+  "stamp": "C1-PATCHED",
+  "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+  "seed": "example.com",
+  "sessionId": "kv1.18f948a607ad8412e02f03fb0515ee69",
+  "status": "partial",
+  "providers": {
+    "wikidata": "ok",
+    "openlibrary": "ok",
+    "wikipedia": "partial",
+    "viaf": "ok",
+    "web_origin": "error"
+  },
+  "outcome": "PASS_BOUND",
+  "finding.relationship": null,
+  "finding.facetHints.relationship": null,
+  "evidence.relationship": null,
+  "facet.buckets": [],
+  "wo_findings": 0,
+  "SAME-REFERENCE_on_wo": false
+}

@@ -1,0 +1,12 @@
+{
+  "fixtureId": "ADV-07-kv-rehydrate-poison",
+  "qSection": "Q99",
+  "runnow": false,
+  "status": "BLOCKED_KV",
+  "intent": "Poisoned KV session blob must be Acc-scrubbed on HIT before emit",
+  "expect": {
+    "entityLeak": 0,
+    "path": "KV read → Acc scrub → emit"
+  },
+  "note": "DEFERRED until KV credentials provisioned on Preview"
+}

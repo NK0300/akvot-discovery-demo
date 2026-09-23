@@ -1,0 +1,44 @@
+id: 1
+event: meta
+data: {"sessionId":"kv1.e21963fe45f327f6056a8f052fa04f16","seed":"example.org","q":"example.org","version":2,"forbiddenIdentitiesVersion":"2026-09-19.1","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true},"cursor":1}
+
+id: 2
+event: progress
+data: {"progress":{"done":6,"totalHint":6},"stage":"S10","cursor":2}
+
+id: 3
+event: provider
+data: {"providerId":"wikidata","state":"ok","cursor":3}
+
+id: 4
+event: provider
+data: {"providerId":"openlibrary","state":"ok","cursor":4}
+
+id: 5
+event: provider
+data: {"providerId":"wikipedia","state":"ok","cursor":5}
+
+id: 6
+event: finding
+data: {"finding":{"id":"wd-Q306656","kind":"registry","title":"example.com","summary":"domain name reserved for documentation purposes and as an example of the use of domain names","evidenceIds":["ev-15f62f74222c0d22f4e3c93d"],"providers":["wikidata"],"facetHints":["provider:wikidata","kind:registry"],"entityRefs":["wd-Q306656"],"scoreFinding":0.7183333333333333,"scoreIdentity":null,"ranking":{"discoveryScore":0.7183333333333333,"factors":{"authority":0.9,"corroboration":0.333,"directness":0.65,"freshness":0.9,"httpsOnly":1,"providerDiversity":1,"evidenceCount":1,"domains":["www.wikidata.org"]},"rationale":"authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"}},"evidence":[{"id":"ev-15f62f74222c0d22f4e3c93d","provenanceUrl":"https://www.wikidata.org/wiki/Q306656","url":"https://www.wikidata.org/wiki/Q306656","domain":"www.wikidata.org","providerId":"wikidata","retrievedAt":"2026-09-20T04:51:33.316Z","evidenceType":"registry","quote":"domain name reserved for documentation purposes and as an example of the use of domain names","contentType":"text/html","robotsOk":true}],"forbiddenIdentitiesVersion":"2026-09-19.1","cursor":6}
+
+id: 7
+event: finding
+data: {"finding":{"id":"wd-Q908643","kind":"registry","title":".example","summary":"domain name","evidenceIds":["ev-331f0199fec0472f09f86532"],"providers":["wikidata"],"facetHints":["provider:wikidata","kind:registry"],"entityRefs":["wd-Q908643"],"scoreFinding":0.7083333333333333,"scoreIdentity":null,"ranking":{"discoveryScore":0.7183333333333333,"factors":{"authority":0.9,"corroboration":0.333,"directness":0.65,"freshness":0.9,"httpsOnly":1,"providerDiversity":1,"evidenceCount":1,"domains":["www.wikidata.org"]},"rationale":"authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"}},"evidence":[{"id":"ev-331f0199fec0472f09f86532","provenanceUrl":"https://www.wikidata.org/wiki/Q908643","url":"https://www.wikidata.org/wiki/Q908643","domain":"www.wikidata.org","providerId":"wikidata","retrievedAt":"2026-09-20T04:51:33.316Z","evidenceType":"registry","quote":"domain name","contentType":"text/html","robotsOk":true}],"forbiddenIdentitiesVersion":"2026-09-19.1","cursor":7}
+
+id: 8
+event: finding
+data: {"finding":{"id":"wp-en-Example_org","kind":"page","title":"Example.org","evidenceIds":["ev-f1cd89043843f0511138e403"],"providers":["wikipedia"],"facetHints":["provider:wikipedia","kind:page"],"entityRefs":["wp:en:Example.org"],"scoreFinding":0.6283333333333333,"scoreIdentity":null,"ranking":{"discoveryScore":0.6483333333333333,"factors":{"authority":0.7,"corroboration":0.333,"directness":0.65,"freshness":0.9,"httpsOnly":1,"providerDiversity":1,"evidenceCount":1,"domains":["en.wikipedia.org"]},"rationale":"authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"}},"evidence":[{"id":"ev-f1cd89043843f0511138e403","provenanceUrl":"https://en.wikipedia.org/wiki/Example.org","url":"https://en.wikipedia.org/wiki/Example.org","domain":"en.wikipedia.org","providerId":"wikipedia","retrievedAt":"2026-09-20T04:51:33.048Z","evidenceType":"page","contentType":"text/html","robotsOk":true}],"forbiddenIdentitiesVersion":"2026-09-19.1","cursor":8}
+
+id: 9
+event: facets
+data: {"facets":[{"key":"provider","label":"Provider","buckets":[{"value":"wikidata","count":2},{"value":"wikipedia","count":1}]},{"key":"kind","label":"Kind","buckets":[{"value":"registry","count":2},{"value":"page","count":1}]},{"key":"hint","label":"Hint","buckets":[],"emptyReason":"no_evidence"}],"cursor":9}
+
+id: 10
+event: status
+data: {"status":"complete","findingCount":3,"forbiddenStripped":0,"forbiddenIdentitiesVersion":"2026-09-19.1","version":2,"cursor":10}
+
+id: 11
+event: done
+data: {"status":"complete","sessionId":"kv1.e21963fe45f327f6056a8f052fa04f16","findingCount":3,"forbiddenIdentitiesVersion":"2026-09-19.1","version":2,"cursor":11}
+

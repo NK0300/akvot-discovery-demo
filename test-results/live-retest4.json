@@ -1,0 +1,44 @@
+[
+  {
+    "id": "amb-dani",
+    "pass": true,
+    "ms": 31422,
+    "fails": []
+  },
+  {
+    "id": "amb-moshe",
+    "pass": true,
+    "ms": 24282,
+    "fails": []
+  },
+  {
+    "id": "amb-israel",
+    "pass": true,
+    "ms": 29148,
+    "fails": []
+  },
+  {
+    "id": "wiki-netanyahu",
+    "pass": true,
+    "ms": 25585,
+    "fails": []
+  },
+  {
+    "id": "wiki-herzog",
+    "pass": true,
+    "ms": 34148,
+    "fails": []
+  },
+  {
+    "id": "junk",
+    "pass": true,
+    "ms": 9569,
+    "fails": []
+  },
+  {
+    "id": "biz-gil",
+    "pass": true,
+    "ms": 39736,
+    "fails": []
+  }
+]

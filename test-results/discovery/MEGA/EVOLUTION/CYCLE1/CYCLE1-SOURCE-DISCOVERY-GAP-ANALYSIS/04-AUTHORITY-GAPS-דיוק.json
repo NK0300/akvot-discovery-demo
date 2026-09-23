@@ -1,0 +1,33 @@
+{
+  "doc": "04-AUTHORITY-GAPS-דיוק",
+  "stamp": "2026-09-20T11:03:09+03:00",
+  "agent": "דיוק",
+  "mode": "gap-analysis-docs-only",
+  "promote": false,
+  "exp_b": false,
+  "multi_is_metric_not_objective": true,
+  "authority_attest_requires": ["typed_key_intersection", "hostFamily_ge_2"],
+  "label_ceiling_a2_safe": "SAME-REFERENCE",
+  "registry_vs_narrative": {
+    "registry_can_attest": ["viaf", "qid", "ol"],
+    "narrative_alone_cannot_attest": ["wikipedia"],
+    "wd_wp_one_family": true
+  },
+  "s04": {
+    "classification": "AUTHORITY_SOURCE_COVERAGE_LIMITATION",
+    "frozen_multi_rate": 0.0,
+    "is_bug": false,
+    "top_fc": ["FC-REF-PRESENT-NO-CROSS-FAMILY", "FC-COVERAGE-DILUTION", "FC-HOMONYM-BLOCK", "FC-VIAF-ONLY-SIBLING", "FC-BRAND-CANONICAL-UNMERGED"]
+  },
+  "s05": {
+    "classification": "CROSS_ENTITY_AUTHORITY_GRANULARITY_LIMITATION",
+    "frozen_multi_rate": 0.1,
+    "is_bug": false,
+    "top_fc": ["FC-COVERAGE-DILUTION", "FC-REF-PRESENT-NO-CROSS-FAMILY", "FC-SOFT-REF-MISS", "FC-ORG-DISAMBIG-SIBLING"]
+  },
+  "s01_contrast": {
+    "frozen_multi_rate": 0.5556,
+    "triangle": ["Q80", "viaf:85312226", "ol:OL25245A"]
+  },
+  "gates": ["leak=0", "no_title_sim_merge", "SAME-REFERENCE_ceiling", "UNKNOWN_preferred", "S04_S05_product_limits"]
+}

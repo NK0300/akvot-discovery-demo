@@ -1,0 +1,124 @@
+{
+  "doc": "SEARCH-STRATEGY-MAP",
+  "phase": "PHASE5-SEARCH-STRATEGY",
+  "cycle": "CYCLE1",
+  "stamp": "2026-09-20T10:06:46+03:00",
+  "zone": "Asia/Jerusalem",
+  "mode": "analysis_design_only",
+  "promote": false,
+  "coreLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "discoveryB0Alias": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "expAPreviewInspectOnly": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+  "executiveFinding": "No query-expansion layer; seed forwarded verbatim as q to all providers; locale may switch WP host/WD language; soft-label corroboration is post-retrieval only (EXP-A Preview).",
+  "steps": {
+    "41_seed_to_queries": {
+      "pipeline": ["trim_seed", "softEntityResolve_hash_only", "parallel_provider_search_same_q", "normalize_dedupe", "optional_softLabel_corroboration", "rank_facets_scrub"],
+      "code": [
+        "api/lib/discovery/orchestrator.js#createDiscoverySession",
+        "api/lib/discovery/orchestrator.js#runPipeline",
+        "api/lib/discovery/providers.js",
+        "api/lib/discovery/requestGuards.js"
+      ],
+      "providersB0": ["wikidata", "openlibrary", "wikipedia"],
+      "providersExpAPreview": ["wikidata", "openlibrary", "wikipedia", "viaf"],
+      "querySurfaces": {
+        "wikidata": "wbsearchentities search=q language=locale",
+        "openlibrary": "search/authors.json?q=",
+        "wikipedia": "opensearch host=en|he by locale",
+        "viaf": "AutoSuggest?query= (flag DISCOVERY_ENABLE_VIAF=1)"
+      }
+    },
+    "42_query_expansion": {
+      "present": false,
+      "behaviors": {
+        "synonym": false,
+        "multiQueryFanout": false,
+        "hintRewrite": false,
+        "secondaryFollowOn": false,
+        "cursorPagination": "interface_only_unused"
+      },
+      "designNeed": "S1.5 QueryPlan with explicit queries[], purpose, riskClass"
+    },
+    "43_aliases": {
+      "seedAliasList": false,
+      "punctuationParse": false,
+      "viafAsRequery": false,
+      "softLabelPostMergeOnly": true,
+      "gapSeeds": ["S15"]
+    },
+    "44_spelling_variants": {
+      "typoFanout": false,
+      "diacriticOnQuery": false,
+      "softLabelStripsForMerge": true,
+      "stance": "prefer_provider_suggest_over_client_spelling; defer until coverage/locale land"
+    },
+    "45_multilingual": {
+      "explicitLocaleHe": "switches_wp_host_and_wd_uselang",
+      "autoDetectHebrewScript": false,
+      "transliteration": false,
+      "parallelHeEn": false,
+      "gapSeeds": ["S07"],
+      "links": ["PG-04", "QD-05", "BS-SRC-04"]
+    },
+    "46_contextual": {
+      "roleParse": false,
+      "compoundSplit": false,
+      "contextAsConstraint": false,
+      "gapSeeds": ["S11", "S12", "S13", "S14"],
+      "links": ["PG-02", "QD-04", "BS-SRC-06"]
+    },
+    "47_domain": {
+      "urlNormalize": false,
+      "originMetadataFetch": false,
+      "gapSeeds": ["S06", "S16"],
+      "links": ["QD-04", "BS-SRC-05"],
+      "safetyPrerequisite": "urlSafety.assertSafePublicHttpsUrl"
+    },
+    "48_organization": {
+      "olAuthorsOnly": true,
+      "orgTypeBoost": false,
+      "viafCorporateNametype": "preview_only",
+      "filings": false,
+      "links": ["BS-SRC-03", "QD-05"]
+    },
+    "49_relationship": {
+      "graphHops": false,
+      "affiliationExpansion": false,
+      "phase3AffiliationShare": 0.0155,
+      "stance": "defer_until_entity_head_resolution"
+    },
+    "50_noise_risks": {
+      "detailDoc": "EXPANSION-NOISE-RISKS.md",
+      "topRisks": [
+        "vanity_count_vs_information_gain",
+        "soft_label_overmerge",
+        "he_en_echo_without_native_sources",
+        "ssrf_on_url_expand",
+        "ol_author_noise_on_org_seeds",
+        "acc_facet_reopen"
+      ]
+    }
+  },
+  "expAContext": {
+    "verdict": "PASS_mean_multi_0.414",
+    "gate": "mean(S01,S04,S05) multi_independent_rate >= 0.15",
+    "perSeed": {
+      "S01": { "findingsB0": 10, "findingsPreview": 1, "multiPreview": 1.0, "note": "soft-label collapse 10→1" },
+      "S04": { "multiPreview": 0.1364, "note": "below 0.15 per-seed" },
+      "S05": { "multiPreview": 0.1053, "note": "below 0.15 per-seed" }
+    },
+    "aliasUntouched": true
+  },
+  "informationGainPriorities": [
+    { "rank": 1, "lever": "HE_locale_script_detect_quote_floor", "qd": ["QD-05"], "pg": ["PG-04"], "experiment": "EXP-B" },
+    { "rank": 2, "lever": "URL_role_compound_resolvers", "qd": ["QD-04"], "pg": ["PG-02"], "experiment": "EXP-C" },
+    { "rank": 3, "lever": "keep_EXP-A_soft_label_gated", "qd": ["QD-01"], "pg": ["PG-01"], "experiment": "EXP-A_hold_promote" },
+    { "rank": 4, "lever": "org_intent_demote_ol_author", "qd": ["QD-05"], "pg": ["PG-01"], "experiment": "EXP-D_stretch" },
+    { "rank": 5, "lever": "spelling_relationship_fanout", "qd": [], "pg": [], "experiment": "DEFER" }
+  ],
+  "linkedGaps": {
+    "PG": ["PG-01", "PG-02", "PG-03", "PG-04"],
+    "QD": ["QD-01", "QD-02", "QD-03", "QD-04", "QD-05"],
+    "BS_SRC": ["BS-SRC-01", "BS-SRC-02", "BS-SRC-03", "BS-SRC-04", "BS-SRC-05", "BS-SRC-06"]
+  }
+}

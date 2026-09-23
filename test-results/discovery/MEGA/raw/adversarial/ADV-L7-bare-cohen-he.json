@@ -1,0 +1,13 @@
+{
+  "httpStatus": 201,
+  "ms": 2766,
+  "summary": {
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoi15vXlNefIiwiaCI6e30sImwiOiJlbiIsInQiOiIyMDI2LTA5LTIwVDA0OjI1OjI1Ljc0OFoiLCJuIjoiOWI3OTJhMDY0ZDViIn0",
+    "findings": 16,
+    "status": "partial",
+    "store": "fs-regen",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "entityLeak": 0,
+    "bans": []
+  }
+}

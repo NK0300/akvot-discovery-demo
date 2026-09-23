@@ -1,0 +1,13 @@
+{
+  "httpStatus": 201,
+  "ms": 2630,
+  "summary": {
+    "sessionId": "ds1.eyJ2IjoxLCJzIjoiSm9obiBTbWl0aCBRMTcwMTc3NSIsImgiOnt9LCJsIjoiZW4iLCJ0IjoiMjAyNi0wOS0yMFQwNDoyNDoxNi4zMTVaIiwibiI6IjhlODA5ODJiNzQwZSJ9",
+    "findings": 0,
+    "status": "complete",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "entityLeak": 0,
+    "rawForbiddenTokenCount": 3,
+    "bans": []
+  }
+}

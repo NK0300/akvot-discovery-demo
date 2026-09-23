@@ -1,0 +1,214 @@
+{
+  "create": {
+    "ok": true,
+    "sessionId": "kv1.e0a36f9f7fe4a633299c24eed54a6e71",
+    "status": "failed_soft",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "acc-reafter-Ho6jg-TREAT-ACC-H04",
+    "snapshot": {
+      "sessionId": "kv1.e0a36f9f7fe4a633299c24eed54a6e71",
+      "seed": "https://en.wikipedia.org/wiki/John_Smith",
+      "q": "https://en.wikipedia.org/wiki/John_Smith",
+      "status": "failed_soft",
+      "findings": [],
+      "evidence": [],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        }
+      ],
+      "progress": {
+        "done": 8,
+        "totalHint": 8
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:c04d0a19d815"
+        ],
+        "status": "candidate",
+        "displayHint": "https://en.wikipedia.org/wiki/John_Smith",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T08:55:13.079Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:c04d0a19d815",
+            "kind": "seed"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "durabilityState": "durable-kv",
+        "kvReachable": true,
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  },
+  "final": {
+    "sessionId": "kv1.e0a36f9f7fe4a633299c24eed54a6e71",
+    "seed": "https://en.wikipedia.org/wiki/John_Smith",
+    "q": "https://en.wikipedia.org/wiki/John_Smith",
+    "status": "failed_soft",
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:c04d0a19d815"
+      ],
+      "status": "candidate",
+      "displayHint": "https://en.wikipedia.org/wiki/John_Smith",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:55:13.079Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:c04d0a19d815",
+          "kind": "seed"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  },
+  "narrow": {
+    "ok": false,
+    "error": "method not allowed"
+  },
+  "analysis": {
+    "id": "ACC-H04",
+    "seed": "https://en.wikipedia.org/wiki/John_Smith",
+    "role": "homonym_wiki",
+    "expect": "UNKNOWN",
+    "status": "failed_soft",
+    "findings_n": 0,
+    "evidence_n": 0,
+    "wo_findings_n": 0,
+    "wo_evidence_n": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "has_web_origin_provider": true,
+    "rel_hist": {},
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "se_sr_hits": [],
+    "acc_leak": 0,
+    "private_provenance_n": 0,
+    "wo_sample": [],
+    "wo_ev_sample": [],
+    "sessionId": "kv1.e0a36f9f7fe4a633299c24eed54a6e71",
+    "create_ok": true,
+    "polls": 0,
+    "latencyMs": 11351,
+    "narrow_leak": 0,
+    "sse_leak": 0,
+    "sse_sampled": true,
+    "hit_leak": 0,
+    "total_leak": 0
+  }
+}

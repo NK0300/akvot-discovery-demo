@@ -1,0 +1,17 @@
+{
+  "status": "WP3_FAIL_HOLD",
+  "accGate": "FAIL",
+  "wp4": "NO_GO",
+  "baseline": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "streams": {
+    "L2A": "PASS",
+    "L2B": "PASS",
+    "L2C": "STOPPED_INCOMPLETE",
+    "L2D": "STOPPED"
+  },
+  "finding": "F-L2-ACC-001",
+  "pw": 1,
+  "faces": 0,
+  "forbiddenQid": "Q1701775",
+  "pack": "test-results/wp3/WP3-FAIL-EVIDENCE-PACK-בודק-2026-09-19.md"
+}

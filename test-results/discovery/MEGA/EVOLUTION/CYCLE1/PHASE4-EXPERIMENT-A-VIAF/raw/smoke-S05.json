@@ -1,0 +1,33 @@
+{
+  "id": "S05",
+  "seed": "Red Cross",
+  "sessionId": "kv1.df7f6ba5dba5ab01d092171f4f312160",
+  "status": "partial",
+  "findings_n": 30,
+  "viaf_findings": 8,
+  "providers": {
+    "wikidata": 8,
+    "viaf": 8,
+    "openlibrary": 8,
+    "wikipedia": 6
+  },
+  "hosts": {
+    "www.wikidata.org": 8,
+    "openlibrary.org": 8,
+    "en.wikipedia.org": 6,
+    "viaf.org": 8
+  },
+  "providersMap": {
+    "wikidata": "partial",
+    "openlibrary": "partial",
+    "wikipedia": "partial",
+    "viaf": "partial"
+  },
+  "families_union": [
+    "openlibrary",
+    "viaf",
+    "wikimedia"
+  ],
+  "multi_independent_finding_n": 0,
+  "multi_independent_rate": 0.0
+}

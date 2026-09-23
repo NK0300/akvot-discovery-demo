@@ -1,0 +1,69 @@
+{
+  "wave": "MEGA-C-STORAGE",
+  "date": "2026-09-20",
+  "zone": "Asia/Jerusalem",
+  "checkedAt": "2026-09-20T07:24:30+03:00",
+  "preview": {
+    "url": "https://akvot-simple-demo-r96vensj6-k-akvot.vercel.app",
+    "dpl": "dpl_3TndxBYU4rvafTYsLA8aWU5Mfj23",
+    "target": null,
+    "promoted": false
+  },
+  "coreAlias": "dpl_8ag… LOCKED",
+  "storeBackend": "fs-regen",
+  "promoteEligible": false,
+  "explicitFallback": true,
+  "fsRegenFallback": true,
+  "kvCredsPresent": false,
+  "kvBlocked": true,
+  "health": {
+    "route": "GET /api/discovery/health",
+    "ok": true,
+    "steps": [
+      "WRITE",
+      "READ",
+      "UPDATE",
+      "DELETE"
+    ],
+    "latencyMsSample": 8
+  },
+  "units": {
+    "sessionStore": {
+      "passed": 58,
+      "failed": 0
+    },
+    "discoveryOrch": {
+      "passed": 110,
+      "failed": 0
+    },
+    "adversarialAcc": {
+      "passed": 36,
+      "failed": 0
+    },
+    "coreOrch": {
+      "passed": 128,
+      "failed": 0
+    },
+    "forbidden": {
+      "passed": 39,
+      "failed": 0
+    }
+  },
+  "sse": {
+    "lastEventId": true,
+    "terminalDone": true,
+    "noHang": true
+  },
+  "faultInject": {
+    "gate": "DISCOVERY_FAULT_INJECT=1",
+    "faults": [
+      "store_miss",
+      "provider_timeout",
+      "scrub_path",
+      "store_latency"
+    ],
+    "previewEnvEnabled": false
+  },
+  "coreLookupUntouched": true,
+  "aliasPromote": false
+}

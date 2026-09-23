@@ -1,0 +1,351 @@
+{
+  "fixtureId": "seed-person-latin",
+  "seedKind": "person_name",
+  "q": "Alex Morgan",
+  "matchHints": [
+    "Alex Morgan",
+    "alex morgan"
+  ],
+  "locale": "en",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "evidence": [
+    {
+      "id": "ev-lat-1",
+      "provenanceUrl": "https://www.wikidata.org/w/index.php?search=Alex+Morgan&title=Special%3ASearch",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T00:10:00.000Z",
+      "quote": "Multiple public Wikidata search hits — ambiguity fixture",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-lat-2",
+      "provenanceUrl": "https://openlibrary.org/search/authors?q=Alex+Morgan",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T00:10:01.000Z",
+      "quote": "Public author search results for ambiguous Latin name",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-lat-3",
+      "provenanceUrl": "https://viaf.org/viaf/search?query=local.personalNames+%3D+%22Morgan%2C+Alex%22",
+      "providerId": "viaf",
+      "retrievedAt": "2026-09-20T00:10:02.000Z",
+      "quote": "VIAF personal name search — no forced merge",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-lat-1",
+      "kind": "registry",
+      "title": "Wikidata search cluster (ambiguous)",
+      "summary": "Several public hits share a name string. Same name ≠ same person.",
+      "evidenceIds": [
+        "ev-lat-1"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry",
+        "confidence_band:low",
+        "relationship:name_overlap"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.88
+    },
+    {
+      "id": "f-lat-2",
+      "kind": "registry",
+      "title": "Open Library author hits",
+      "summary": "Author registry findings kept separate — no identity commit.",
+      "evidenceIds": [
+        "ev-lat-2"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry",
+        "relationship:author_record"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.79
+    },
+    {
+      "id": "f-lat-3",
+      "kind": "registry",
+      "title": "VIAF name string match",
+      "summary": "Evidence-backed registry finding only.",
+      "evidenceIds": [
+        "ev-lat-3"
+      ],
+      "providers": [
+        "viaf"
+      ],
+      "facetHints": [
+        "provider:viaf",
+        "kind:registry",
+        "confidence_band:low"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.7
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": {
+        "done": 0,
+        "totalHint": 3,
+        "findingsN": 0
+      },
+      "providers": {
+        "wikidata": "pending",
+        "openlibrary": "pending",
+        "viaf": "pending"
+      },
+      "findingIds": [],
+      "facets": [],
+      "lifeStage": "START"
+    },
+    {
+      "afterMs": 400,
+      "status": "partial",
+      "progress": {
+        "done": 1,
+        "totalHint": 3,
+        "findingsN": 1
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "pending",
+        "viaf": "pending"
+      },
+      "findingIds": [
+        "f-lat-1"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "lifeStage": "FINDINGS"
+    },
+    {
+      "afterMs": 850,
+      "status": "partial",
+      "progress": {
+        "done": 2,
+        "totalHint": 3,
+        "findingsN": 2
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "viaf": "pending"
+      },
+      "findingIds": [
+        "f-lat-1",
+        "f-lat-2"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 1
+            },
+            {
+              "value": "openlibrary",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "lifeStage": "EVIDENCE"
+    },
+    {
+      "afterMs": 1300,
+      "status": "complete",
+      "progress": {
+        "done": 3,
+        "totalHint": 3,
+        "findingsN": 3
+      },
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "viaf": "ok"
+      },
+      "findingIds": [
+        "f-lat-1",
+        "f-lat-2",
+        "f-lat-3"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 1
+            },
+            {
+              "value": "openlibrary",
+              "count": 1
+            },
+            {
+              "value": "viaf",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "confidence_band",
+          "label": "Confidence band",
+          "buckets": [
+            {
+              "value": "low",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "relationship",
+          "label": "Relationship",
+          "buckets": [
+            {
+              "value": "name_overlap",
+              "count": 1
+            },
+            {
+              "value": "author_record",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "lifeStage": "COMPLETE"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed",
+        "kind": "seed",
+        "label": "Alex Morgan"
+      },
+      {
+        "id": "f-lat-1",
+        "kind": "finding",
+        "label": "Wikidata search cluster (ambiguous)"
+      },
+      {
+        "id": "f-lat-2",
+        "kind": "finding",
+        "label": "Open Library author hits"
+      },
+      {
+        "id": "f-lat-3",
+        "kind": "finding",
+        "label": "VIAF name string match"
+      }
+    ],
+    "edges": [
+      {
+        "id": "sup-0",
+        "kind": "supports",
+        "from": "f-lat-1",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "sup-1",
+        "kind": "supports",
+        "from": "f-lat-2",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "sup-2",
+        "kind": "supports",
+        "from": "f-lat-3",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "corr-lat-1",
+        "kind": "corroboration",
+        "from": "f-lat-1",
+        "to": "f-lat-2",
+        "relationship": "possible-match",
+        "findingIds": [
+          "f-lat-1",
+          "f-lat-2"
+        ]
+      }
+    ]
+  },
+  "softEr": {
+    "status": "candidate",
+    "note": "soft resolve only — not identity"
+  },
+  "gaps": [
+    {
+      "kind": "coverage",
+      "label": "כיסוי חלקי אפשרי — לא כל משפחות המקור נבדקו"
+    },
+    {
+      "kind": "unknown_rel",
+      "label": "חלק מהקשרים UNKNOWN — אינו FALSE"
+    }
+  ],
+  "contradictions": []
+}

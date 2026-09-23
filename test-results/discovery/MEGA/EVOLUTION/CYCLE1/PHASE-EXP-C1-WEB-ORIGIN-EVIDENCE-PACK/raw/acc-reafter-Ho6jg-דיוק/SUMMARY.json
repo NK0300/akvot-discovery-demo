@@ -1,0 +1,1110 @@
+{
+  "stamp": "2026-09-20T11:58:04+03:00",
+  "stamp_label": "2026-09-20 11:58 IDT",
+  "stamp_utc": "2026-09-20T08:57:30.747347Z",
+  "agent": "דיוק",
+  "experiment": "EXP-C1-WEB-ORIGIN",
+  "treatment_class": "C1-PATCHED",
+  "scrap_class": "C1-PREPATCH",
+  "verdict": "PASS",
+  "identity_bound": "CLOSED",
+  "promote": "HOLD",
+  "no_promote": true,
+  "no_C2": true,
+  "stop_for_chief": true,
+  "treatment": {
+    "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+    "url": "https://akvot-simple-demo-c5if0fxif-k-akvot.vercel.app",
+    "flag": "DISCOVERY_ENABLE_WEB_ORIGIN=1"
+  },
+  "scrap_prepatch": {
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "note": "Acc FAIL SAME-REFERENCE · superseded · do not Acc-PASS"
+  },
+  "control": {
+    "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "alias": "akvot-discovery.vercel.app",
+    "state": "LOCKED · UNCHANGED"
+  },
+  "core": {
+    "alias": "akvot-simple-demo.vercel.app",
+    "dpl_locked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "rows": [
+      {
+        "q": "Assaf Rappaport",
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "leak": 0,
+        "pw": 0,
+        "has_Q47507930": true,
+        "has_Q1701775": false,
+        "ambiguous": false,
+        "note": "dossier_Q47507930"
+      },
+      {
+        "q": "כהן",
+        "ui": "need_context",
+        "qid": null,
+        "leak": 0,
+        "pw": 0,
+        "has_Q47507930": false,
+        "has_Q1701775": false,
+        "ambiguous": true,
+        "note": "soft"
+      },
+      {
+        "q": "Smith",
+        "ui": "need_context",
+        "qid": null,
+        "leak": 0,
+        "pw": 0,
+        "has_Q47507930": false,
+        "has_Q1701775": false,
+        "ambiguous": true,
+        "note": "never_Q1701775"
+      }
+    ],
+    "leak": 0,
+    "pw": 0,
+    "assaf_Q47507930": true,
+    "cohen_soft": true,
+    "smith_never_Q1701775": true
+  },
+  "who_int_label": "UNKNOWN",
+  "who_int_surfaces": {
+    "finding.relationship": "UNKNOWN",
+    "evidence.relationship": "UNKNOWN",
+    "facetHints": [
+      "provider:web_origin",
+      "kind:page",
+      "hostFamily:web_origin",
+      "relationship:UNKNOWN"
+    ]
+  },
+  "totals": {
+    "treat_leak": 0,
+    "raw_body_leak": 0,
+    "same_entity": 0,
+    "same_reference": 0,
+    "private_provenance": 0,
+    "BAD_URL_ALONE_SAME": 0,
+    "treat_rows_n": 18,
+    "raw_seed_echo_only": 2,
+    "identity_surface_leak": 0
+  },
+  "gates": {
+    "AG1_leak_treat": {
+      "value": 0,
+      "pass": true,
+      "note": "analysis.total_leak=0 on all rows; raw_body Q1701775 only in client seed string for ACC-P01/P04 (poison inject) — scrubbed from findings/evidence/facets/narrow/SSE/HIT identity surfaces",
+      "raw_seed_echo_only": 2,
+      "identity_surface_leak": 0
+    },
+    "AG2_poison_qid_surface": {
+      "value": 0,
+      "pass": true
+    },
+    "AG3_url_alone_same_entity": {
+      "value": 0,
+      "pass": true
+    },
+    "AG3_url_alone_same_reference": {
+      "value": 0,
+      "pass": true
+    },
+    "AG3_url_alone_rows_fail_n": {
+      "value": 0,
+      "pass": true
+    },
+    "AG3_s16_finding_evidence_facet_UNKNOWN": {
+      "value": {
+        "finding": "UNKNOWN",
+        "evidence": "UNKNOWN",
+        "facetUnknown": true,
+        "wo_n": 1
+      },
+      "pass": true
+    },
+    "AG3_w5_bare_host_UNKNOWN": {
+      "value": {
+        "rel_hist": {
+          "UNKNOWN": 1
+        },
+        "finding": "UNKNOWN"
+      },
+      "pass": true
+    },
+    "AG4_private_provenance": {
+      "value": 0,
+      "pass": true
+    },
+    "AG4_pretty_wrong": {
+      "value": 0,
+      "pass": true
+    },
+    "AG5_core_leak": {
+      "value": 0,
+      "pass": true
+    },
+    "AG5_core_assaf_Q47507930": {
+      "value": true,
+      "pass": true
+    },
+    "AG5_core_cohen_soft": {
+      "value": true,
+      "pass": true
+    },
+    "AG5_core_smith_never_Q1701775": {
+      "value": true,
+      "pass": true
+    },
+    "AG5_core_dpl_8ag": {
+      "value": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "pass": true
+    },
+    "AG6_ssrf_block": {
+      "value": [
+        {
+          "id": "ACC-S01",
+          "wo": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          }
+        },
+        {
+          "id": "ACC-S02",
+          "wo": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "error",
+            "viaf": "ok",
+            "web_origin": "error"
+          }
+        },
+        {
+          "id": "ACC-S04",
+          "wo": 0,
+          "providers": {
+            "wikidata": "error",
+            "openlibrary": "ok",
+            "wikipedia": "error",
+            "viaf": "error",
+            "web_origin": "error"
+          }
+        },
+        {
+          "id": "ACC-S05",
+          "wo": 0,
+          "providers": {
+            "wikidata": "error",
+            "openlibrary": "ok",
+            "wikipedia": "error",
+            "viaf": "error",
+            "web_origin": "error"
+          }
+        },
+        {
+          "id": "ADV-js",
+          "wo": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "error",
+            "web_origin": "ok"
+          }
+        }
+      ],
+      "pass": true
+    },
+    "AG10_B0_unchanged": {
+      "value": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "pass": true,
+      "alias": "akvot-discovery.vercel.app"
+    },
+    "promote_HOLD": {
+      "value": "HOLD",
+      "pass": true
+    },
+    "NO_C2": {
+      "value": "NO C2",
+      "pass": true
+    }
+  },
+  "treat_rows": [
+    {
+      "id": "ACC-H04",
+      "seed": "https://en.wikipedia.org/wiki/John_Smith",
+      "role": "homonym_wiki",
+      "expect": "UNKNOWN",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.e0a36f9f7fe4a633299c24eed54a6e71",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 11351,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-P01",
+      "seed": "https://www.example.com/page?qid=Q1701775",
+      "role": "poison_query",
+      "expect": "leak0",
+      "status": "partial",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.d5d779e782883704d5bf83c8ca77e412",
+      "create_ok": true,
+      "polls": 2,
+      "latencyMs": 16292,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-P04",
+      "seed": "https://www.wikidata.org/wiki/Q1701775",
+      "role": "poison_entity_page",
+      "expect": "UNKNOWN_leak0",
+      "status": "complete",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.94bd85a0398907e9aa9672b2aaff364c",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 7890,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-R01",
+      "seed": "https://example.com/redirect?url=http://127.0.0.1/",
+      "role": "redirect_private",
+      "expect": "safe",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.ef0989b15f24815347a85a6d22f963ee",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 8196,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-S01",
+      "seed": "http://127.0.0.1/",
+      "role": "ssrf_block",
+      "expect": "block",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.92301470abf18d2cc3044b558ccb89a7",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 8054,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-S02",
+      "seed": "https://localhost/",
+      "role": "ssrf_block",
+      "expect": "block",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.9b85dface00b7418db8e16c0cd6fa8d0",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 7513,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-S04",
+      "seed": "http://169.254.169.254/",
+      "role": "ssrf_block",
+      "expect": "block",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "error",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.cb081a475b81be00c9794f50f393d92c",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 7684,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-S05",
+      "seed": "https://metadata.google.internal/",
+      "role": "ssrf_block",
+      "expect": "block",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "error",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.1018acef1a91d69e54fcec5a40c3a3f3",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 8211,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-U01",
+      "seed": "https://www.wikidata.org/wiki/Q80",
+      "role": "entity_looking_URL",
+      "expect": "UNKNOWN",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.8a9db870432a6627016782b5535be368",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 9112,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ACC-U02",
+      "seed": "https://viaf.org/viaf/85312226",
+      "role": "entity_looking_URL",
+      "expect": "UNKNOWN",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.e07b348609b02f0d3d673fd14183b6a6",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 8698,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "ADV-js",
+      "seed": "javascript:alert(1)",
+      "role": "dangerous_scheme",
+      "expect": "block",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "error",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.6184e6bc7ceaffe5cba735d9b661bf12",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 8735,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "S01",
+      "seed": "Tim Berners-Lee",
+      "role": "person",
+      "status": "partial",
+      "findings_n": 18,
+      "evidence_n": 18,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "acc_leak": 0,
+      "forbidden_stripped": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.269a640423887c166188b4704f425d7d",
+      "create_ok": true,
+      "polls": 12,
+      "latencyMs": 68159,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "total_leak": 0
+    },
+    {
+      "id": "S02",
+      "seed": "John Smith",
+      "role": "homonym_person",
+      "expect": "no_pw",
+      "status": "partial",
+      "findings_n": 29,
+      "evidence_n": 29,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.1253cd5dbd4f0152ace59721533af897",
+      "create_ok": true,
+      "polls": 2,
+      "latencyMs": 19528,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "S06",
+      "seed": "openai.com",
+      "role": "domain_alone",
+      "expect": "UNKNOWN_or_soft",
+      "status": "partial",
+      "findings_n": 7,
+      "evidence_n": 7,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.9cc1b59b796ec3829452150998e581c7",
+      "create_ok": true,
+      "polls": 2,
+      "latencyMs": 17409,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "S16",
+      "seed": "https://www.who.int",
+      "role": "URL_alone",
+      "expect": "UNKNOWN",
+      "status": "complete",
+      "findings_n": 1,
+      "evidence_n": 1,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [
+        {
+          "id": "wo-7fd08b15039288ff",
+          "relationship": "UNKNOWN",
+          "hostFamily": "web_origin",
+          "title": "World Health Organization (WHO)",
+          "registrableDomain": "who.int",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN"
+          ],
+          "entityRefs": [
+            "web_origin:who.int"
+          ]
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-b568e650d6f4a41767d75ac8",
+          "relationship": "UNKNOWN",
+          "provenanceUrl": "https://www.who.int/",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          },
+          "resultClass": "ok"
+        }
+      ],
+      "sessionId": "kv1.d945925859cd433717e6d2f1a0550a48",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 10233,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "W1",
+      "seed": "https://www.example.com",
+      "role": "URL_alone",
+      "expect": "UNKNOWN_or_soft",
+      "status": "failed_soft",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.542b67887cb4f53deadb8a0997866147",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 8221,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "W5",
+      "seed": "who.int",
+      "role": "bare_host",
+      "expect": "UNKNOWN_or_soft",
+      "status": "partial",
+      "findings_n": 16,
+      "evidence_n": 16,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [
+        {
+          "id": "wo-7fd08b15039288ff",
+          "relationship": "UNKNOWN",
+          "hostFamily": "web_origin",
+          "title": "World Health Organization (WHO)",
+          "registrableDomain": "who.int",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN"
+          ],
+          "entityRefs": [
+            "web_origin:who.int"
+          ]
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-b568e650d6f4a41767d75ac8",
+          "relationship": "UNKNOWN",
+          "provenanceUrl": "https://www.who.int/",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          },
+          "resultClass": "ok"
+        }
+      ],
+      "sessionId": "kv1.264dd878910ad4365632abf4c2ab0ab0",
+      "create_ok": true,
+      "polls": 2,
+      "latencyMs": 16750,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "W7",
+      "seed": "https://www.microsoft.com",
+      "role": "URL_alone",
+      "expect": "UNKNOWN",
+      "status": "complete",
+      "findings_n": 1,
+      "evidence_n": 1,
+      "wo_findings_n": 1,
+      "wo_evidence_n": 1,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "has_web_origin_provider": true,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [
+        {
+          "id": "wo-ea0cb5f6efdd6aa6",
+          "relationship": "UNKNOWN",
+          "hostFamily": "web_origin",
+          "title": "Your request has been blocked. This could be due to several reasons.",
+          "registrableDomain": "microsoft.com",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN"
+          ],
+          "entityRefs": [
+            "web_origin:microsoft.com"
+          ]
+        }
+      ],
+      "wo_ev_sample": [
+        {
+          "id": "ev-b6f13e12ae0e32534fbd8e14",
+          "relationship": "UNKNOWN",
+          "provenanceUrl": "https://www.microsoft.com/",
+          "safetyDecision": {
+            "stage": "normalize",
+            "ok": true,
+            "reason": "allow"
+          },
+          "resultClass": "ok"
+        }
+      ],
+      "sessionId": "kv1.2030c6712920e413713f34d7764330f4",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 7643,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    }
+  ],
+  "ctrl_rows": [
+    {
+      "id": "ACC-S01",
+      "seed": "http://127.0.0.1/",
+      "role": "ssrf_block",
+      "status": "complete",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "has_web_origin_provider": false,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.db1d1bd974fb584544b0b10d9b6c1c27",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 7640,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    },
+    {
+      "id": "S16",
+      "seed": "https://www.who.int",
+      "role": "URL",
+      "status": "complete",
+      "findings_n": 0,
+      "evidence_n": 0,
+      "wo_findings_n": 0,
+      "wo_evidence_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "has_web_origin_provider": false,
+      "rel_hist": {},
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "se_sr_hits": [],
+      "acc_leak": 0,
+      "private_provenance_n": 0,
+      "wo_sample": [],
+      "wo_ev_sample": [],
+      "sessionId": "kv1.5e1d0247ec5538e9c5f3fa97a44adb1c",
+      "create_ok": true,
+      "polls": 0,
+      "latencyMs": 9345,
+      "narrow_leak": 0,
+      "sse_leak": 0,
+      "sse_sampled": true,
+      "hit_leak": 0,
+      "total_leak": 0
+    }
+  ],
+  "url_alone_failures": [],
+  "adversarial": {
+    "poison_leak": 0,
+    "ssrf_blocked_ok": true,
+    "blocked": [
+      {
+        "id": "ACC-S01",
+        "wo": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "ok",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ACC-S02",
+        "wo": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "error",
+          "viaf": "ok",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ACC-S04",
+        "wo": 0,
+        "providers": {
+          "wikidata": "error",
+          "openlibrary": "ok",
+          "wikipedia": "error",
+          "viaf": "error",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ACC-S05",
+        "wo": 0,
+        "providers": {
+          "wikidata": "error",
+          "openlibrary": "ok",
+          "wikipedia": "error",
+          "viaf": "error",
+          "web_origin": "error"
+        }
+      },
+      {
+        "id": "ADV-js",
+        "wo": 0,
+        "providers": {
+          "wikidata": "ok",
+          "openlibrary": "ok",
+          "wikipedia": "ok",
+          "viaf": "error",
+          "web_origin": "ok"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1253 @@
+{
+  "httpStatus": 201,
+  "ms": 3099,
+  "meta": {
+    "sessionId": "kv1.3170c1d6e546aa6f0b1c2f4d04a377ac",
+    "status": "partial",
+    "findings": 22,
+    "evidence": 22,
+    "facets": 3,
+    "contradictions": 0,
+    "regenerated": null,
+    "storeBackend": null,
+    "durable": null,
+    "fiv": "2026-09-19.1",
+    "candidatesPresent": false
+  },
+  "leak": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.3170c1d6e546aa6f0b1c2f4d04a377ac",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9eem5h-4baa30",
+    "snapshot": {
+      "sessionId": "kv1.3170c1d6e546aa6f0b1c2f4d04a377ac",
+      "seed": "כהן",
+      "q": "כהן",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q66723764",
+          "kind": "registry",
+          "title": "Cohen",
+          "summary": "family name (כהן)",
+          "evidenceIds": [
+            "ev-5452be7fe192d1329360aa42"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q66723764"
+          ],
+          "scoreFinding": 0.7183333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q1158586",
+          "kind": "registry",
+          "title": "Cohen",
+          "summary": "family name",
+          "evidenceIds": [
+            "ev-7a9f435fd069074d5c4a5252"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q1158586"
+          ],
+          "scoreFinding": 0.7083333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q21065973",
+          "kind": "registry",
+          "title": "Cohn",
+          "summary": "family name",
+          "evidenceIds": [
+            "ev-94d12a53d8e8247387b8ea7f"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q21065973"
+          ],
+          "scoreFinding": 0.6983333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q728973",
+          "kind": "registry",
+          "title": "kohen",
+          "summary": "hereditary priest in Judaism, descendant of Aaron",
+          "evidenceIds": [
+            "ev-1b478b17f0d77a32cba4e63f"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q728973"
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q42603",
+          "kind": "registry",
+          "title": "priest",
+          "summary": "person who consecrates his life to some divinity and whose main functions are to direct religious rites and offer sacrifices to the divinity (for a minister use Q1423891)",
+          "evidenceIds": [
+            "ev-98068e44ea9de155616cc8ff"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q42603"
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q37046104",
+          "kind": "registry",
+          "title": "Kahan",
+          "summary": "family name",
+          "evidenceIds": [
+            "ev-5db5615eef7762adc7be9c45"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q37046104"
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q3667800",
+          "kind": "registry",
+          "title": "cleric",
+          "summary": "standard playable character class in the Dungeons & Dragons fantasy role-playing game",
+          "evidenceIds": [
+            "ev-c467b334ce596c22bf4d7695"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q3667800"
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q118910793",
+          "kind": "registry",
+          "title": "Shiri Kohen",
+          "evidenceIds": [
+            "ev-e3be3a2685cc3f40e1eb37ba"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q118910793"
+          ],
+          "scoreFinding": 0.6483333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL133038A",
+          "kind": "registry",
+          "title": "Israel Cohen",
+          "summary": "Top work: Ishim min ha-Miḳra",
+          "evidenceIds": [
+            "ev-cefe1a47671a408a23a34536"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL133038A"
+          ],
+          "scoreFinding": 0.5858333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL4973655A",
+          "kind": "registry",
+          "title": "David Cohen",
+          "summary": "Top work: Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+          "evidenceIds": [
+            "ev-2ceeb07e90a5e99ca8a1eed2"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL4973655A"
+          ],
+          "scoreFinding": 0.5758333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL16098624A",
+          "kind": "registry",
+          "title": "זמיר בן אליעזר כהן",
+          "summary": "Top work: Leḳeṭ nevuʾot",
+          "evidenceIds": [
+            "ev-0499873426e44ae6118c76f0"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL16098624A"
+          ],
+          "scoreFinding": 0.5658333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL1801847A",
+          "kind": "registry",
+          "title": "Sholom Jacob Kahn",
+          "summary": "Top work: Science and Aesthetic Judgement",
+          "evidenceIds": [
+            "ev-f7e7eacb2219424632d368f4"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL1801847A"
+          ],
+          "scoreFinding": 0.5558333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL5263297A",
+          "kind": "registry",
+          "title": "Ṭoviyah Kohen",
+          "summary": "Top work: Nivon ʻIvri",
+          "evidenceIds": [
+            "ev-239a63032c03280838f0a2c3"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL5263297A"
+          ],
+          "scoreFinding": 0.5458333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15941596A",
+          "kind": "registry",
+          "title": "שירלי כהן",
+          "summary": "Top work: הקורס, \"טכנולוגיות חדשות ושינוי חברתי\"",
+          "evidenceIds": [
+            "ev-2c8a729192c43b5736f12d39"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL15941596A"
+          ],
+          "scoreFinding": 0.5358333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15386735A",
+          "kind": "registry",
+          "title": "ש. כהן",
+          "summary": "Top work: דוד ליב מגדבורגר",
+          "evidenceIds": [
+            "ev-e27251db5f4505ccb6c17933"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL15386735A"
+          ],
+          "scoreFinding": 0.5258333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL15507527A",
+          "kind": "registry",
+          "title": "אידוב כהן",
+          "summary": "Top work: עשרים וארבע שעות בחייה של אשה",
+          "evidenceIds": [
+            "ev-fda11557d6f45f77b11c4d0c"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL15507527A"
+          ],
+          "scoreFinding": 0.5158333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "page",
+          "title": "כהן גדול",
+          "evidenceIds": [
+            "ev-6923dd2305211c4110d48dae"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:כהן גדול"
+          ],
+          "scoreFinding": 0.4883333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "page",
+          "title": "כהן@מושון",
+          "evidenceIds": [
+            "ev-0e761b43f46cc261853aacb4"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:כהן@מושון"
+          ],
+          "scoreFinding": 0.4783333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "page",
+          "title": "כהנא",
+          "evidenceIds": [
+            "ev-7c30ef9da6bb740b5d9202be"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:כהנא"
+          ],
+          "scoreFinding": 0.4683333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "page",
+          "title": "כהניזם",
+          "evidenceIds": [
+            "ev-fba1a509a70b37bc0eea734f"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:כהניזם"
+          ],
+          "scoreFinding": 0.4583333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "page",
+          "title": "כאן",
+          "evidenceIds": [
+            "ev-5da628c154ec55a825a8f61d"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:כאן"
+          ],
+          "scoreFinding": 0.4483333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "page",
+          "title": "כן",
+          "evidenceIds": [
+            "ev-0d166605391b73f75d331588"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:כן"
+          ],
+          "scoreFinding": 0.43833333333333335,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-5452be7fe192d1329360aa42",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q66723764",
+          "url": "https://www.wikidata.org/wiki/Q66723764",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "family name (כהן)",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7a9f435fd069074d5c4a5252",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q1158586",
+          "url": "https://www.wikidata.org/wiki/Q1158586",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "family name",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-94d12a53d8e8247387b8ea7f",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q21065973",
+          "url": "https://www.wikidata.org/wiki/Q21065973",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "family name",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-1b478b17f0d77a32cba4e63f",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q728973",
+          "url": "https://www.wikidata.org/wiki/Q728973",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "hereditary priest in Judaism, descendant of Aaron",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-98068e44ea9de155616cc8ff",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q42603",
+          "url": "https://www.wikidata.org/wiki/Q42603",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "person who consecrates his life to some divinity and whose main functions are to direct religious rites and offer sacrifices to the divinity (for a minister use Q1423891)",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-5db5615eef7762adc7be9c45",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q37046104",
+          "url": "https://www.wikidata.org/wiki/Q37046104",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "family name",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-c467b334ce596c22bf4d7695",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q3667800",
+          "url": "https://www.wikidata.org/wiki/Q3667800",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "quote": "standard playable character class in the Dungeons & Dragons fantasy role-playing game",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e3be3a2685cc3f40e1eb37ba",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q118910793",
+          "url": "https://www.wikidata.org/wiki/Q118910793",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:12.582Z",
+          "evidenceType": "registry",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-cefe1a47671a408a23a34536",
+          "provenanceUrl": "https://openlibrary.org/authors/OL133038A",
+          "url": "https://openlibrary.org/authors/OL133038A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "Ishim min ha-Miḳra",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2ceeb07e90a5e99ca8a1eed2",
+          "provenanceUrl": "https://openlibrary.org/authors/OL4973655A",
+          "url": "https://openlibrary.org/authors/OL4973655A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "Zikhron aḥizah le-ʻir Daṿid: [peraṭim li-shenat 637]",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-0499873426e44ae6118c76f0",
+          "provenanceUrl": "https://openlibrary.org/authors/OL16098624A",
+          "url": "https://openlibrary.org/authors/OL16098624A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "Leḳeṭ nevuʾot",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f7e7eacb2219424632d368f4",
+          "provenanceUrl": "https://openlibrary.org/authors/OL1801847A",
+          "url": "https://openlibrary.org/authors/OL1801847A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "Science and Aesthetic Judgement",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-239a63032c03280838f0a2c3",
+          "provenanceUrl": "https://openlibrary.org/authors/OL5263297A",
+          "url": "https://openlibrary.org/authors/OL5263297A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "Nivon ʻIvri",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2c8a729192c43b5736f12d39",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15941596A",
+          "url": "https://openlibrary.org/authors/OL15941596A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "הקורס, \"טכנולוגיות חדשות ושינוי חברתי\"",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-e27251db5f4505ccb6c17933",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15386735A",
+          "url": "https://openlibrary.org/authors/OL15386735A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "דוד ליב מגדבורגר",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fda11557d6f45f77b11c4d0c",
+          "provenanceUrl": "https://openlibrary.org/authors/OL15507527A",
+          "url": "https://openlibrary.org/authors/OL15507527A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:13.092Z",
+          "evidenceType": "registry",
+          "quote": "עשרים וארבע שעות בחייה של אשה",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-6923dd2305211c4110d48dae",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%9F_%D7%92%D7%93%D7%95%D7%9C",
+          "url": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%9F_%D7%92%D7%93%D7%95%D7%9C",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:12.539Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-0e761b43f46cc261853aacb4",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%9F@%D7%9E%D7%95%D7%A9%D7%95%D7%9F",
+          "url": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%9F@%D7%9E%D7%95%D7%A9%D7%95%D7%9F",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:12.539Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7c30ef9da6bb740b5d9202be",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%A0%D7%90",
+          "url": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%A0%D7%90",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:12.539Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fba1a509a70b37bc0eea734f",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%A0%D7%99%D7%96%D7%9D",
+          "url": "https://en.wikipedia.org/wiki/%D7%9B%D7%94%D7%A0%D7%99%D7%96%D7%9D",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:12.539Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-5da628c154ec55a825a8f61d",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%9B%D7%90%D7%9F",
+          "url": "https://en.wikipedia.org/wiki/%D7%9B%D7%90%D7%9F",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:12.539Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-0d166605391b73f75d331588",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%9B%D7%9F",
+          "url": "https://en.wikipedia.org/wiki/%D7%9B%D7%9F",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:12.539Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "openlibrary",
+              "count": 8
+            },
+            {
+              "value": "wikidata",
+              "count": 8
+            },
+            {
+              "value": "wikipedia",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 16
+            },
+            {
+              "value": "page",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        }
+      ],
+      "progress": {
+        "done": 6,
+        "totalHint": 6
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:e0a4142e78fa"
+        ],
+        "status": "candidate",
+        "displayHint": "כהן",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T05:51:12.293Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:e0a4142e78fa",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q66723764",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q1158586",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q21065973",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q728973",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q42603",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q37046104",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q3667800",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q118910793",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL133038A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL4973655A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL16098624A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL1801847A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL5263297A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15941596A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15386735A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL15507527A",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-_",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-_",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-_",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-_",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  }
+}

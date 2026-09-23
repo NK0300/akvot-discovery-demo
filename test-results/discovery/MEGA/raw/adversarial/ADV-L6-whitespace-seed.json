@@ -1,0 +1,10 @@
+{
+  "httpStatus": 400,
+  "ms": 2581,
+  "summary": {
+    "softFail": true,
+    "sessionId": null,
+    "entityLeak": 0,
+    "bans": []
+  }
+}

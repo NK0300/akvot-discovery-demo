@@ -1,0 +1,35 @@
+id: 1
+event: meta
+data: {"sessionId":"kv1.1253cd5dbd4f0152ace59721533af897","seed":"John Smith","q":"John Smith","version":2,"forbiddenIdentitiesVersion":"2026-09-19.1","store":{"backend":"upstash","storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true,"note":"Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).","ttlMs":3600000,"kvCredsPresent":true},"cursor":1}
+
+id: 2
+event: progress
+data: {"progress":{"done":8,"totalHint":8},"stage":"S10","cursor":2}
+
+id: 3
+event: provider
+data: {"providerId":"wikidata","state":"partial","cursor":3}
+
+id: 4
+event: provider
+data: {"providerId":"openlibrary","state":"partial","cursor":4}
+
+id: 5
+event: provider
+data: {"providerId":"wikipedia","state":"partial","cursor":5}
+
+id: 6
+event: provider
+data: {"providerId":"viaf","state":"partial","cursor":6}
+
+id: 7
+event: provider
+data: {"providerId":"web_origin","state":"ok","cursor":7}
+
+id: 8
+event: finding
+data: {"finding":{"id":"ol-OL177707A","kind":"registry","title":"John Smith","summary":"Top work: The general historie of Virginia, New England and the Summer Isles","evidenceIds":["ev-044834c623ca126245a161f9","ev-093d1893503a116e174453aa"],"providers":["openlibrary","viaf"],"facetHints":["provider:openlibrary","kind:registry","provider:viaf","corroboration:multi_family"],"entityRefs":["ol:OL177707A","ol-OL177707A","viaf:4952029","qid:Q228024","wd-Q228024"],"scoreFinding":0.8141666666666666,"ranking":{"discoveryScore":0.8141666666666666,"factors":{"authority":0.85,"corroboration":0.667,"directness":0.8,"freshness":0.9,"httpsOnly":1,"providerDiversity":2,"evidenceCount":2,"domains":["openlibrary.org","viaf.org"]},"rationale":"authority=0.85 corroboration=0.67 directness=0.80 (discovery≠identity)"}},"evidence":[{"id":"ev-044834c623ca126245a161f9","provenanceUrl":"https://openlibrary.org/authors/OL177707A","url":"https://openlibrary.org/authors/OL177707A","domain":"openlibrary.org","providerId":"openlibrary","retrievedAt":"2026-09-20T08:56:15.115Z","evidenceType":"registry","quote":"The general historie of Virginia, New England and the Summer Isles","contentType":"text/html","robotsOk":true},{"id":"ev-093d1893503a116e174453aa","provenanceUrl":"https://viaf.org/viaf/4952029","url":"https://viaf.org/viaf/4952029","domain":"viaf.org","providerId":"viaf","retrievedAt":"2026-09-20T08:56:13.129Z","evidenceType":"registry","quote":"John Smith, 1580-1631","contentType":"text/html","robotsOk":true}],"forbiddenIdentitiesVersion":"2026-09-19.1","cursor":8}
+
+id: 9
+event: finding
+data: {"finding":{"id":"viaf-4952029","kind":"registry","title":"John Smith, 1580-1631","summary":"type:personal · lc:n80032759 · dnb:118797689","evidenceIds":["ev-044834c623ca126245a161f9","ev-093d1893503a116e174453aa"],"providers":["openlibrary","viaf"],"facetHints":["provider:openlibrary","kind:registry","provider:viaf","corroboration:multi_family"],"entityRefs":["ol:OL177707A","ol-OL177707A","viaf:4952029","qid:Q228024","wd-Q228024"],"scoreFinding":0.8041666666666666,"ranking":{"discoveryScore":0.8141666666666666,"factors":{"authority":0.85,"corroboration":0.667,"directness":0.8,"freshness":0.9,"httpsOnly":1,"providerDiversity":2,"evidenceCount":2,"domains":["openlibrary.org","viaf.org"]},"rationale":"authority=0.85 corroboration=0.67 directness=0.80 (discovery≠identity)"}},"evidence":[{"id":"ev-044834c623ca126245a161f9","provenanceUrl":"https://openlibrary.org/authors/OL177707A","url":"https://openlibrary.org/authors/OL177707A","domain":"openlibrary.org","providerId":"openlibrary","retrievedAt":"2026-09-20T08:56:15.115Z","evidenceType":"registry","quote":"The general historie of Virginia, New England and the Summer Isles","contentType":"text/html","robotsOk":true},{"id":"ev-093d1893503a116e174453aa","provenanceUrl":"https://viaf.org/viaf/4952029","url":"https://viaf.org/viaf/4952029","domain":"via

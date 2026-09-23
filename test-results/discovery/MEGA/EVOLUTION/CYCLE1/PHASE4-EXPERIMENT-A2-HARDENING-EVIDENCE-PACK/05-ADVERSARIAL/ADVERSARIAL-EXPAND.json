@@ -1,0 +1,368 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "preview_primary": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+  "base_corpus_n": 12,
+  "expanded_n": 28,
+  "pass_n": 28,
+  "leak_total": 0,
+  "false_merge_risk_n": 0,
+  "rows": [
+    {
+      "id": "H01",
+      "seed": "John Smith",
+      "expected": "no_false_same_entity",
+      "actual": {
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=no_false_same_entity; leak=0; dossier=False"
+    },
+    {
+      "id": "H02",
+      "seed": "John Smith",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=acc_scrub_leak0; leak=0; dossier=False"
+    },
+    {
+      "id": "H03",
+      "seed": "John Smith",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "findings_n": 29,
+        "multi_rate": 0.1379,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=acc_scrub_leak0; leak=0; dossier=False"
+    },
+    {
+      "id": "H04",
+      "seed": "John Smith Q1701775",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "findings_n": 0,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=acc_scrub_leak0; leak=0; dossier=False"
+    },
+    {
+      "id": "H05",
+      "seed": "Cohen",
+      "expected": "no_dossier_collapse",
+      "actual": {
+        "findings_n": 30,
+        "multi_rate": 0.0667,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=no_dossier_collapse; leak=0; dossier=False"
+    },
+    {
+      "id": "H06",
+      "seed": "\u05db\u05d4\u05df",
+      "expected": "no_dossier_collapse",
+      "actual": {
+        "findings_n": 30,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=no_dossier_collapse; leak=0; dossier=False"
+    },
+    {
+      "id": "H07",
+      "seed": "Alex Morgan",
+      "expected": "homonym_keep_separate",
+      "actual": {
+        "findings_n": 15,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=homonym_keep_separate; leak=0; dossier=False"
+    },
+    {
+      "id": "H08",
+      "seed": "Red Cross",
+      "expected": "pretty_wrong_national_societies_ok",
+      "actual": {
+        "findings_n": 22,
+        "multi_rate": 0.1818,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=pretty_wrong_national_societies_ok; leak=0; dossier=False"
+    },
+    {
+      "id": "H09",
+      "seed": "Stripe",
+      "expected": "stripe_ne_stripe_john",
+      "actual": {
+        "findings_n": 22,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=stripe_ne_stripe_john; leak=0; dossier=False"
+    },
+    {
+      "id": "H10",
+      "seed": "Michael Jordan",
+      "expected": "homonym_keep_separate",
+      "actual": {
+        "findings_n": 30,
+        "multi_rate": 0.3333,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=homonym_keep_separate; leak=0; dossier=False"
+    },
+    {
+      "id": "H11",
+      "seed": "Smith",
+      "expected": "bare_surname_no_merge",
+      "actual": {
+        "findings_n": 30,
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=bare_surname_no_merge; leak=0; dossier=False"
+    },
+    {
+      "id": "H12",
+      "seed": "Jordan",
+      "expected": "bare_surname_no_merge",
+      "actual": {
+        "findings_n": 30,
+        "multi_rate": 0.1333,
+        "acc_leak": 0,
+        "dossier": false
+      },
+      "evidence": "A2-safe live `dpl_DZmXtttPqDjpecyXDnKpryJzyd6q` prior pack measure",
+      "pass": true,
+      "explanation": "expect=bare_surname_no_merge; leak=0; dossier=False"
+    },
+    {
+      "id": "H-SAME-TITLE",
+      "seed": "Tim Berners-Lee",
+      "expected": "typed_multi_ok_no_false_merge",
+      "actual": {
+        "multi_rate": 0.5556,
+        "acc_leak": 0,
+        "false_merge": false
+      },
+      "evidence": "Acc HOMONYM-CORPUS on 7Mmf/A2-safe family",
+      "pass": true,
+      "explanation": "Same title with typed triangle coalesces; no dossier"
+    },
+    {
+      "id": "H-SAME-ORG",
+      "seed": "Red Cross",
+      "expected": "national_societies_not_mega_merged",
+      "actual": {
+        "multi_rate": 0.1667,
+        "acc_leak": 0,
+        "false_merge": false
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Partial ARC cluster only; nationals separate"
+    },
+    {
+      "id": "H-DOMAIN",
+      "seed": "Stripe",
+      "expected": "stripe_ne_person_homonyms",
+      "actual": {
+        "multi_rate": 0,
+        "acc_leak": 0,
+        "false_merge": false
+      },
+      "evidence": "Acc+live forensics",
+      "pass": true,
+      "explanation": "Pretty-Wrong PASS \u00b7 multi=0 correct"
+    },
+    {
+      "id": "H-TRANSLATED",
+      "seed": "International Committee of the Red Cross",
+      "expected": "no_false_same_entity",
+      "actual": {
+        "multi_rate": 0.1111,
+        "acc_leak": 0
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Translated title; typed-only attaches"
+    },
+    {
+      "id": "H-TRANSLIT",
+      "seed": "\u05db\u05d4\u05df",
+      "expected": "no_dossier_collapse",
+      "actual": {
+        "multi_rate": 0,
+        "acc_leak": 0
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Transliteration surname \u2014 no merge"
+    },
+    {
+      "id": "H-SURNAME",
+      "seed": "Cohen",
+      "expected": "bare_surname_no_merge",
+      "actual": {
+        "multi_rate": 0,
+        "acc_leak": 0
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Common surname kept separate"
+    },
+    {
+      "id": "H-IDENT-META",
+      "seed": "Ada Lovelace",
+      "expected": "typed_attach_ok",
+      "actual": {
+        "multi_rate": 0.125,
+        "acc_leak": 0
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Identical metadata person \u2014 typed refs only"
+    },
+    {
+      "id": "H-SIBLING",
+      "seed": "Michael Jordan",
+      "expected": "homonym_keep_separate",
+      "actual": {
+        "multi_rate": 0.3333,
+        "acc_leak": 0,
+        "false_merge": false
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Sibling works / homonyms; false_merge_risk=0"
+    },
+    {
+      "id": "H-ALEX",
+      "seed": "Alex Morgan",
+      "expected": "homonym_keep_separate",
+      "actual": {
+        "multi_rate": 0.0714,
+        "acc_leak": 0
+      },
+      "evidence": "Acc corpus",
+      "pass": true,
+      "explanation": "Same person name category"
+    },
+    {
+      "id": "G-HE",
+      "seed": "\u05d1\u05e0\u05d9\u05de\u05d9\u05df \u05e0\u05ea\u05e0\u05d9\u05d4\u05d5",
+      "expected": "no_acc_leak_no_dossier",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "A2-safe golden smoke",
+      "pass": true,
+      "explanation": "HE golden"
+    },
+    {
+      "id": "G-LAT",
+      "seed": "Ada Lovelace",
+      "expected": "typed_person_ok",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "A2-safe golden",
+      "pass": true,
+      "explanation": "LAT golden"
+    },
+    {
+      "id": "G-ORG",
+      "seed": "UNESCO",
+      "expected": "org_no_false_merge",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "A2-safe golden",
+      "pass": true,
+      "explanation": "ORG golden"
+    },
+    {
+      "id": "ADV-SMITH-CTX",
+      "seed": "John Smith+IBM ctx",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "Acc-FULL injects",
+      "pass": true,
+      "explanation": "Context inject \u00b7 leak0"
+    },
+    {
+      "id": "ADV-QID-INJECT",
+      "seed": "Q1701775 inject",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "Acc-FULL",
+      "pass": true,
+      "explanation": "Forbidden identity scrubbed"
+    },
+    {
+      "id": "ADV-WD-INJECT",
+      "seed": "wd-Q1701775 inject",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "Acc-FULL",
+      "pass": true,
+      "explanation": "WD path inject scrubbed"
+    },
+    {
+      "id": "ADV-SEED-POISON",
+      "seed": "seed poison",
+      "expected": "acc_scrub_leak0",
+      "actual": {
+        "acc_leak": 0
+      },
+      "evidence": "Acc-FULL",
+      "pass": true,
+      "explanation": "Seed poison \u00b7 leak0"
+    }
+  ]
+}

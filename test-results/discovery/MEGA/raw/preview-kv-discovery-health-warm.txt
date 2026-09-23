@@ -1,0 +1,3 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+{"ok":true,"backend":"upstash","storeBackend":"upstash","latencyMs":109,"correlationId":"hc-mu9bszxa-1e0611","fsRegenFallback":false,"explicitFallback":false,"promoteEligible":true,"durable":true,"fallback":false,"kvCredsPresent":true,"mode":"kv-shared","steps":[{"step":"WRITE","ok":true,"ms":33},{"step":"READ","ok":true,"ms":33},{"step":"UPDATE","ok":true,"ms":61},{"step":"DELETE","ok":true,"ms":109}],"ttlMs":3600000,"faultInjectAvailable":false}
+HTTP:200 TIME:0.426763

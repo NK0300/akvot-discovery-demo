@@ -1,0 +1,268 @@
+{
+  "forbiddenQid": "Q1701775",
+  "baselineId": "B0",
+  "alias": "https://akvot-discovery.vercel.app",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "scannedAt": "2026-09-20T06:46:29.673Z",
+  "leakageTotal": 0,
+  "hits": [],
+  "perSeed": [
+    {
+      "id": "S01",
+      "run": 1,
+      "seed": "Tim Berners-Lee",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.a491cb4f68029bdd69807cb648ee7182"
+    },
+    {
+      "id": "S01",
+      "run": 2,
+      "seed": "Tim Berners-Lee",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.ec314ba070b6e0e225e66625bc566ad9"
+    },
+    {
+      "id": "S02",
+      "run": 1,
+      "seed": "John Smith",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.7bc5977814ebb988e3d4e45d2a33d997"
+    },
+    {
+      "id": "S02",
+      "run": 2,
+      "seed": "John Smith",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.02cc370ba057672d7797a549c0892b65"
+    },
+    {
+      "id": "S03",
+      "run": 1,
+      "seed": "Alex Morgan",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.2d844c2189942d37fd7b70e2948048d4"
+    },
+    {
+      "id": "S03",
+      "run": 2,
+      "seed": "Alex Morgan",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.ef6b5135dcd3a40757b5ed091e8e96f4"
+    },
+    {
+      "id": "S04",
+      "run": 1,
+      "seed": "Stripe",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.5afb46821bf24458bf701017539df9ed"
+    },
+    {
+      "id": "S04",
+      "run": 2,
+      "seed": "Stripe",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.31bb99b1be75330b93b46431b218c92d"
+    },
+    {
+      "id": "S05",
+      "run": 1,
+      "seed": "Red Cross",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.075f8c8574d93af8966f087aaac1fa6d"
+    },
+    {
+      "id": "S05",
+      "run": 2,
+      "seed": "Red Cross",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.91167d8c5ef643ffee6059e4a8b99392"
+    },
+    {
+      "id": "S06",
+      "run": 1,
+      "seed": "openai.com",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.143d1f9dcd80887433a9893e8eced35b"
+    },
+    {
+      "id": "S06",
+      "run": 2,
+      "seed": "openai.com",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.fe575697869b4c0280ca99bc92735e67"
+    },
+    {
+      "id": "S07",
+      "run": 1,
+      "seed": "בנימין נתניהו",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.bb4c7d8870baf947a500f66759fa5d42"
+    },
+    {
+      "id": "S07",
+      "run": 2,
+      "seed": "בנימין נתניהו",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.69b88b49f19bb09c0bb96ba5ab8ff1eb"
+    },
+    {
+      "id": "S08",
+      "run": 1,
+      "seed": "Tel Aviv University",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.db612addc2607acba577a65645e3e6a2"
+    },
+    {
+      "id": "S08",
+      "run": 2,
+      "seed": "Tel Aviv University",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.93fd11795cca101cdd2316f25d15a084"
+    },
+    {
+      "id": "S09",
+      "run": 1,
+      "seed": "zzzznonexistentxyz999",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.d13536d0a1bf9bf0abdeea126a04bccb"
+    },
+    {
+      "id": "S09",
+      "run": 2,
+      "seed": "zzzznonexistentxyz999",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.896304c9551fc7229e63131fedbc012c"
+    },
+    {
+      "id": "S10",
+      "run": 1,
+      "seed": "Francis Bacon",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.dc422af8084b668b63b86923444a8a1c"
+    },
+    {
+      "id": "S10",
+      "run": 2,
+      "seed": "Francis Bacon",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.be0fe699136f1e0783bbc8cd2d7f4ca5"
+    },
+    {
+      "id": "S11",
+      "run": 1,
+      "seed": "Michael Jordan baseball",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.771433e02614c7004b081aae55c06ea9"
+    },
+    {
+      "id": "S11",
+      "run": 2,
+      "seed": "Michael Jordan baseball",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.247e8ca95d72b3237e5f006a20369f49"
+    },
+    {
+      "id": "S12",
+      "run": 1,
+      "seed": "Wikipedia Wikimedia Foundation",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.91a4a7a7dfd6e181d3c486088bd0d5c0"
+    },
+    {
+      "id": "S12",
+      "run": 2,
+      "seed": "Wikipedia Wikimedia Foundation",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.d6f458915496444fa3dc0a02923233c6"
+    },
+    {
+      "id": "S13",
+      "run": 1,
+      "seed": "Demis Hassabis DeepMind",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.3cf76c919b14021ae220e72e379792b2"
+    },
+    {
+      "id": "S13",
+      "run": 2,
+      "seed": "Demis Hassabis DeepMind",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.fa11456f47dd3e149bc1a2c9eb1215fd"
+    },
+    {
+      "id": "S14",
+      "run": 1,
+      "seed": "CEO of Microsoft",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.7984355447e257f407f2f8243f8b1f83"
+    },
+    {
+      "id": "S14",
+      "run": 2,
+      "seed": "CEO of Microsoft",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.52162234235caaf92bc989d11148ebfa"
+    },
+    {
+      "id": "S15",
+      "run": 1,
+      "seed": "Mark Zuckerberg / Meta CEO",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.930d903755eb892200de0ecb900a2093"
+    },
+    {
+      "id": "S15",
+      "run": 2,
+      "seed": "Mark Zuckerberg / Meta CEO",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.f09e86499987ea5fcf293a154f3bea30"
+    },
+    {
+      "id": "S16",
+      "run": 1,
+      "seed": "https://www.who.int",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.96caefd545b5321f5dcb829c3b0b3aeb"
+    },
+    {
+      "id": "S16",
+      "run": 2,
+      "seed": "https://www.who.int",
+      "createLeak": 0,
+      "getLeak": 0,
+      "sessionId": "kv1.5cf60de3b480d4a440e8b3c0e04b3a19"
+    }
+  ],
+  "pass": true
+}

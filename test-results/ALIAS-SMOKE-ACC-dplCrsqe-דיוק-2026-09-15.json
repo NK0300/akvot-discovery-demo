@@ -1,0 +1,125 @@
+{
+  "when": "2026-09-15T18:23:05.427708+03:00",
+  "whenUtc": "2026-09-15T15:23:05.427708+00:00",
+  "role": "דיוק",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "baseline": "dpl_CrsqeSQX1GAhi1VFExVsGwdsSYHt",
+  "from_rc": "dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk",
+  "access": "plain curl (prod alias)",
+  "deploy": false,
+  "PASS": true,
+  "prettyWrong": 0,
+  "verdict": "GO",
+  "cases": [
+    {
+      "id": "Assaf Rappaport",
+      "expected": "dossier Q47507930",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "photo": true,
+        "images": 2,
+        "mode": "wiki",
+        "label": "אסף רפפורט",
+        "requestId": "4689998c-e79d-469c-9da0-ce673aedb3e6",
+        "http": 200,
+        "ms": 772,
+        "err": null,
+        "build": null,
+        "candidates_n": 0,
+        "extract_snip": "אסף רפפורט הוא יזם היי-טק ואיש עסקים ישראלי. מעשירי ישראל, מהנדס תוכנה במקצועו ה"
+      }
+    },
+    {
+      "id": "John Rappaport (T-C6/A06)",
+      "expected": "need_context|candidates|thin · qid null · not dossier · not Q105094696 · not Assaf",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">John Rappaport</span></span>",
+        "requestId": "a85019d1-e940-4717-8625-d097df6869af",
+        "http": 200,
+        "ms": 2613,
+        "err": null,
+        "build": null,
+        "candidates_n": 0,
+        "extract_snip": "John Rappaport is an American legal scholar who is currently a professor of law "
+      }
+    },
+    {
+      "id": "POST John Smith nested ctx IBM/NY/US",
+      "expected": "candidates|thin|need_context · not dossier · not Q1701775 · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "images": 0,
+        "mode": "candidates",
+        "label": "John Smith",
+        "requestId": "2102d68b-03e0-4b52-bc0a-deb1c75fd715",
+        "http": 200,
+        "ms": 6651,
+        "err": null,
+        "build": null,
+        "candidates_n": 6,
+        "extract_snip": ""
+      },
+      "body": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        },
+        "nocache": 1
+      }
+    },
+    {
+      "id": "bare כהן",
+      "expected": "need_context|thin · never dossier · faces=0",
+      "pass": true,
+      "prettyWrong": false,
+      "fails": [],
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "images": 0,
+        "mode": "google",
+        "label": "כהן",
+        "requestId": "e40a0b2d-2fa5-4ffe-bdf6-f44f683b874f",
+        "http": 200,
+        "ms": 22441,
+        "err": null,
+        "build": null,
+        "candidates_n": 0,
+        "extract_snip": ""
+      }
+    }
+  ],
+  "health": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_CrsqeSQX1GAhi1VFExVsGwdsSYHt",
+      "baselineHint": "dpl_DNfPZ9"
+    }
+  }
+}

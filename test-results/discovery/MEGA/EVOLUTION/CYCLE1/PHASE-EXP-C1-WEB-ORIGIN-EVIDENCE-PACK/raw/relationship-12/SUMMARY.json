@@ -1,0 +1,421 @@
+{
+  "stamp": "2026-09-20T09:01:25.554Z",
+  "stamp_idt": "2026-09-20 12:01:25 IDT",
+  "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+  "verdict": "PASS",
+  "pass_n": 12,
+  "fail_n": 0,
+  "rows": [
+    {
+      "id": "R01",
+      "seed": "https://www.who.int",
+      "expect": "UNKNOWN",
+      "note": "URL-alone org",
+      "sessionId": "kv1.21cfbdc028bf7bd750958cf098b3b12e",
+      "status": "complete",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "wo_n": 1,
+      "wo_e_n": 1,
+      "rels": [
+        "UNKNOWN"
+      ],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "wo≥1 UNKNOWN; zero SAME-*",
+      "finding": {
+        "id": "wo-7fd08b15039288ff",
+        "relationship": "UNKNOWN",
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ]
+      },
+      "evidence_rel": "UNKNOWN"
+    },
+    {
+      "id": "R02",
+      "seed": "who.int",
+      "expect": "UNKNOWN",
+      "note": "bare hostname",
+      "sessionId": "kv1.210a1b0893ee7d43986f5f643863e506",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "wo_n": 1,
+      "wo_e_n": 1,
+      "rels": [
+        "UNKNOWN"
+      ],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "wo≥1 UNKNOWN; zero SAME-*",
+      "finding": {
+        "id": "wo-7fd08b15039288ff",
+        "relationship": "UNKNOWN",
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ]
+      },
+      "evidence_rel": "UNKNOWN"
+    },
+    {
+      "id": "R03",
+      "seed": "https://www.example.com",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "URL-alone; soft-fail OK",
+      "sessionId": "kv1.cb311b82f9dd4ab0a68716cdfd107ed9",
+      "status": "failed_soft",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit; zero SAME-*",
+      "finding": null,
+      "evidence_rel": null
+    },
+    {
+      "id": "R04",
+      "seed": "example.com",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "bare host; soft-fail OK",
+      "sessionId": "kv1.305c1aaa4603adc2defd95bea3e98d99",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit; zero SAME-*",
+      "finding": null,
+      "evidence_rel": null
+    },
+    {
+      "id": "R05",
+      "seed": "https://www.microsoft.com",
+      "expect": "UNKNOWN",
+      "note": "URL-alone corp",
+      "sessionId": "kv1.ee9acd5ea6531b0a3ad87a281a0e91b0",
+      "status": "complete",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "wo_n": 1,
+      "wo_e_n": 1,
+      "rels": [
+        "UNKNOWN"
+      ],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "wo≥1 UNKNOWN; zero SAME-*",
+      "finding": {
+        "id": "wo-ea0cb5f6efdd6aa6",
+        "relationship": "UNKNOWN",
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ]
+      },
+      "evidence_rel": "UNKNOWN"
+    },
+    {
+      "id": "R06",
+      "seed": "openai.com",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "domain seed (WAF soft-fail OK)",
+      "sessionId": "kv1.e302a326ee1050e5bc52e51ae2f4cc3e",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit; zero SAME-*",
+      "finding": null,
+      "evidence_rel": null
+    },
+    {
+      "id": "R07",
+      "seed": "https://en.wikipedia.org/wiki/John_Smith",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "homonym wiki URL",
+      "sessionId": "kv1.89eb8c9d5b33124eee43298a18fbf7fc",
+      "status": "failed_soft",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit (soft-fail/cite-or-drop); zero SAME-* — Bound OK",
+      "finding": null,
+      "evidence_rel": null,
+      "note_bound": "Bound is anti-SAME-* from URL-alone; positive UNKNOWN emit preferred but not required when fetch soft-fails"
+    },
+    {
+      "id": "R08",
+      "seed": "https://www.wikidata.org/wiki/Q80",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "entity URL ≠ typed soft-ref",
+      "sessionId": "kv1.c6d7b15b5ee64193e4ecb4bd4bcb5bc6",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit (soft-fail/cite-or-drop); zero SAME-* — Bound OK",
+      "finding": null,
+      "evidence_rel": null,
+      "note_bound": "Bound is anti-SAME-* from URL-alone; positive UNKNOWN emit preferred but not required when fetch soft-fails"
+    },
+    {
+      "id": "R09",
+      "seed": "https://viaf.org/viaf/85312226",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "VIAF URL-alone",
+      "sessionId": "kv1.fdbc11826c62df41e904a6aa4255357e",
+      "status": "failed_soft",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit (soft-fail/cite-or-drop); zero SAME-* — Bound OK",
+      "finding": null,
+      "evidence_rel": null,
+      "note_bound": "Bound is anti-SAME-* from URL-alone; positive UNKNOWN emit preferred but not required when fetch soft-fails"
+    },
+    {
+      "id": "R10",
+      "seed": "https://www.example.com/page?qid=Q1701775",
+      "expect": "UNKNOWN_OR_NONE",
+      "note": "poison query; no SAME-*",
+      "sessionId": "kv1.e26ebca31d3f990c3ded3150a8b18df0",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no wo emit; zero SAME-*",
+      "finding": null,
+      "evidence_rel": null
+    },
+    {
+      "id": "R11",
+      "seed": "Tim Berners-Lee",
+      "expect": "NO_URL_ALONE_SAME",
+      "note": "person seed; wo idle or non-SAME",
+      "sessionId": "kv1.7f511acd291527c61b961cfb23778e8c",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "no URL-alone SAME-* on wo",
+      "finding": null,
+      "evidence_rel": null
+    },
+    {
+      "id": "R12",
+      "seed": "http://127.0.0.1/",
+      "expect": "BLOCK",
+      "note": "SSRF; no wo emit",
+      "sessionId": "kv1.fb7072f87b07b993923ca4fff85c2668",
+      "status": "failed_soft",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "wo_n": 0,
+      "wo_e_n": 0,
+      "rels": [],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "SSRF blocked; no wo",
+      "finding": null,
+      "evidence_rel": null
+    }
+  ],
+  "bound_rule": "URL/hostname-alone → max UNKNOWN; never SAME-REFERENCE/SAME-ENTITY from URL alone",
+  "who_int": {
+    "R01": {
+      "id": "R01",
+      "seed": "https://www.who.int",
+      "expect": "UNKNOWN",
+      "note": "URL-alone org",
+      "sessionId": "kv1.21cfbdc028bf7bd750958cf098b3b12e",
+      "status": "complete",
+      "polls": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "wo_n": 1,
+      "wo_e_n": 1,
+      "rels": [
+        "UNKNOWN"
+      ],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "wo≥1 UNKNOWN; zero SAME-*",
+      "finding": {
+        "id": "wo-7fd08b15039288ff",
+        "relationship": "UNKNOWN",
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ]
+      },
+      "evidence_rel": "UNKNOWN"
+    },
+    "R02": {
+      "id": "R02",
+      "seed": "who.int",
+      "expect": "UNKNOWN",
+      "note": "bare hostname",
+      "sessionId": "kv1.210a1b0893ee7d43986f5f643863e506",
+      "status": "partial",
+      "polls": 14,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "wo_n": 1,
+      "wo_e_n": 1,
+      "rels": [
+        "UNKNOWN"
+      ],
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "pass": true,
+      "reason": "wo≥1 UNKNOWN; zero SAME-*",
+      "finding": {
+        "id": "wo-7fd08b15039288ff",
+        "relationship": "UNKNOWN",
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:UNKNOWN"
+        ]
+      },
+      "evidence_rel": "UNKNOWN"
+    }
+  }
+}

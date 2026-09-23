@@ -1,0 +1,1077 @@
+{
+  "phase": 6,
+  "url": "https://akvot-simple-demo.vercel.app",
+  "ts": "2026-09-06T16:11:27.471Z",
+  "summary": {
+    "total": 27,
+    "pass": 22,
+    "fail": 5,
+    "critical": 3
+  },
+  "results": [
+    {
+      "id": "wiki-netanyahu",
+      "cat": "wiki",
+      "q": "בנימין נתניהו",
+      "ms": 7058,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q43723 imgs=8 src=19 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "בנימין נתניהו",
+      "qid": "Q43723",
+      "photo": true,
+      "imgs": 8,
+      "src": 19,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "נתניהו",
+        "משפט נתניהו",
+        "בנציון נתניהו",
+        "המחאה נגד ראש ממשלת ישראל בנימין נתניהו",
+        "נאום בנימין נתניהו בפני הקונגרס של ארצות הברית (2015)"
+      ]
+    },
+    {
+      "id": "wiki-galon",
+      "cat": "wiki",
+      "q": "זהבה גלאון",
+      "ms": 24492,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q2630062 imgs=8 src=15 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "זהבה גלאון",
+      "qid": "Q2630062",
+      "photo": true,
+      "imgs": 8,
+      "src": 15,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "גלאון (פירושונים)",
+        "מרצ",
+        "הבחירות לראשות מרצ (2018)",
+        "הבחירות המקדימות במרצ (2022)",
+        "בג\"ץ גלאון נגד היועץ המשפטי לממשלה"
+      ]
+    },
+    {
+      "id": "wiki-obama",
+      "cat": "wiki",
+      "q": "Barack Obama",
+      "ms": 24315,
+      "status": 200,
+      "pass": false,
+      "critical": false,
+      "fails": [
+        "missing wiki"
+      ],
+      "notes": [
+        "mode=google qid=- imgs=8 src=3 alts=6 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "Barack Obama",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 3,
+      "alts": 6,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "Google Trends",
+        "ברק אובמה",
+        "ברק אובמה האב",
+        "מייקל ג'ורדן: הריקוד האחרון",
+        "המרכז הנשיאותי על שם ברק אובמה"
+      ]
+    },
+    {
+      "id": "wiki-herzog",
+      "cat": "wiki",
+      "q": "יצחק הרצוג",
+      "ms": 37114,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki+google qid=Q983258 imgs=8 src=19 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki+google",
+      "label": "יצחק הרצוג",
+      "qid": "Q983258",
+      "photo": true,
+      "imgs": 8,
+      "src": 19,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "יצחק אייזיק הלוי הרצוג",
+        "אורה הרצוג",
+        "מיכל הרצוג",
+        "מיכאל הרצוג",
+        "יואל לייב הלוי הרצוג"
+      ]
+    },
+    {
+      "id": "wiki-einstein",
+      "cat": "wiki",
+      "q": "Albert Einstein",
+      "ms": 31922,
+      "status": 200,
+      "pass": false,
+      "critical": false,
+      "fails": [
+        "missing wiki"
+      ],
+      "notes": [
+        "mode=google qid=- imgs=8 src=5 alts=6 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "אלברט איינשטיין",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 5,
+      "alts": 6,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "אלברט איינשטיין",
+        "ארכיון אלברט איינשטיין",
+        "מכללת אלברט איינשטיין לרפואה",
+        "בית החולים היהודי אלברט איינשטיין",
+        "השקפותיו הפוליטיות של אלברט איינשטיין"
+      ]
+    },
+    {
+      "id": "amb-dani",
+      "cat": "amb",
+      "q": "דני כהן",
+      "ms": 5958,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=8 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "דני כהן",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 8,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [
+        "דני כהן (מדען מחשב)",
+        "דני כהן (מנהל)",
+        "דני כהן (מתופף)",
+        "דני כהן (צלם)",
+        "דן כהן"
+      ],
+      "altLabels": [
+        "דן כהן",
+        "דני בריאן",
+        "דני כהן (מדען מחשב)",
+        "דני כהן (מנהל)",
+        "דני כהן (מתופף)"
+      ]
+    },
+    {
+      "id": "amb-moshe-levi",
+      "cat": "amb",
+      "q": "משה לוי",
+      "ms": 27282,
+      "status": 200,
+      "pass": false,
+      "critical": true,
+      "fails": [
+        "CRITICAL photo on unresolved ambiguous",
+        "CRITICAL images=8 on unresolved ambiguous",
+        "CRITICAL committed wiki משה לוי/Q1391622 without pick"
+      ],
+      "notes": [
+        "mode=wiki qid=Q1391622 imgs=8 src=9 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "משה לוי",
+      "qid": "Q1391622",
+      "photo": true,
+      "imgs": 8,
+      "src": 9,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "משה לוי (רב)",
+        "משה לוי (פרופסור)",
+        "משה לוי (ראש מועצה מקומית)",
+        "משה לוי (פירושונים)",
+        "משה אליהו לוי"
+      ]
+    },
+    {
+      "id": "amb-israel",
+      "cat": "amb",
+      "q": "ישראל ישראלי",
+      "ms": 42613,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=6 cands=6 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "ישראל ישראלי",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 6,
+      "cands": 6,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [
+        "חוק האזרחות (ישראל)",
+        "קולנוע ישראלי",
+        "ערביי ישראל",
+        "אגודת ישראל",
+        "פלוני"
+      ],
+      "altLabels": [
+        "קולנוע ישראלי",
+        "ערביי ישראל",
+        "אגודת ישראל",
+        "פלוני",
+        "ישראלים"
+      ]
+    },
+    {
+      "id": "amb-yossi",
+      "cat": "amb",
+      "q": "יוסי כהן",
+      "ms": 15943,
+      "status": 200,
+      "pass": false,
+      "critical": true,
+      "fails": [
+        "CRITICAL photo on unresolved ambiguous",
+        "CRITICAL images=8 on unresolved ambiguous",
+        "CRITICAL committed wiki יוסי כהן/Q15725863 without pick"
+      ],
+      "notes": [
+        "mode=wiki qid=Q15725863 imgs=8 src=10 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "יוסי כהן",
+      "qid": "Q15725863",
+      "photo": true,
+      "imgs": 8,
+      "src": 10,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "יוסי כהן (פירושונים)",
+        "יוסי כהן (עורך דין)",
+        "יוסי כהן (קצין)",
+        "רבי יוסי בר חנינא",
+        "רבי יוסי בן זמרה"
+      ]
+    },
+    {
+      "id": "amb-sarah",
+      "cat": "amb",
+      "q": "שרה לוי",
+      "ms": 32425,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=6 cands=6 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "שרה לוי",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 6,
+      "cands": 6,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [
+        "שרה לוי (אוצרת)",
+        "שרה אדלר לוי",
+        "שרה לוי",
+        "שרה לוי-תנאי",
+        "שיר לוי"
+      ],
+      "altLabels": [
+        "שרה לוי (אוצרת)",
+        "שרה אדלר לוי",
+        "שרה לוי",
+        "שרה לוי-תנאי",
+        "שיר לוי"
+      ]
+    },
+    {
+      "id": "biz-gil",
+      "cat": "biz",
+      "q": "גיל פרידמן",
+      "ms": 55814,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=2 alts=6 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "גיל פרידמן",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 2,
+      "alts": 6,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [
+        "אתר משרד עו\"ד גיל פרידמן",
+        "כרטיס עו\"ד גיל פרידמן באתר פוסטה",
+        "ישראל פרידמן (רוז'ין)",
+        "גיל פרידמן (עורך דין פלילי)",
+        "גיל פרידמן (עורך דין מקרקעין)"
+      ],
+      "altLabels": [
+        "ישראל פרידמן (רוז'ין)",
+        "הרשי פרידמן",
+        "מייקל פרידמן",
+        "הושע פרידמן בן-שלום",
+        "דוד אריה פרידמן"
+      ]
+    },
+    {
+      "id": "biz-assaf",
+      "cat": "biz",
+      "q": "Assaf Rappaport",
+      "ms": 26081,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=8 src=10 alts=1 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "אסף רפפורט",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 10,
+      "alts": 1,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "Wiz (חברה)"
+      ]
+    },
+    {
+      "id": "biz-dov",
+      "cat": "biz",
+      "q": "דב מורן",
+      "ms": 5459,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q1252841 imgs=8 src=10 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "דב מורן",
+      "qid": "Q1252841",
+      "photo": true,
+      "imgs": 8,
+      "src": 10,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "מורן (פירושונים)",
+        "דב קמחי",
+        "מודו",
+        "M-Systems",
+        "גרוב ונצ'רס"
+      ]
+    },
+    {
+      "id": "biz-kobi",
+      "cat": "biz",
+      "q": "קובי אלכסנדר",
+      "ms": 60113,
+      "status": 504,
+      "pass": false,
+      "critical": true,
+      "fails": [
+        "non-json: An error occurred with your deployment\n\nFUNCTION_INVOCATION_TIMEOUT\n\ncle1::fkprm-1788710716576-7dc933d20c70\n"
+      ],
+      "notes": [],
+      "label": "",
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 0,
+      "cands": 0,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": []
+    },
+    {
+      "id": "junk-he",
+      "cat": "junk",
+      "q": "פלורקסימון זבולון קפצוני",
+      "ms": 21113,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=0 src=0 alts=0 cands=0 photo=N amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "פלורקסימון זבולון קפצוני",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 0,
+      "cands": 0,
+      "broad": false,
+      "ambiguous": false,
+      "pick": false,
+      "thin": true,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": []
+    },
+    {
+      "id": "junk-en",
+      "cat": "junk",
+      "q": "Xyzzypq Blorfnak 999",
+      "ms": 19107,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=0 src=0 alts=0 cands=0 photo=N amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "Xyzzypq Blorfnak 999",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 0,
+      "cands": 0,
+      "broad": false,
+      "ambiguous": false,
+      "pick": false,
+      "thin": true,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": []
+    },
+    {
+      "id": "junk-mix",
+      "cat": "junk",
+      "q": "קוונטום פלומפרסקי Q9",
+      "ms": 8408,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=0 src=0 alts=0 cands=0 photo=N amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "קוונטום פלומפרסקי Q9",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 0,
+      "cands": 0,
+      "broad": false,
+      "ambiguous": false,
+      "pick": false,
+      "thin": true,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": []
+    },
+    {
+      "id": "junk-gibber",
+      "cat": "junk",
+      "q": "Zzxqwerty Mmmblorf",
+      "ms": 10959,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=0 src=0 alts=0 cands=0 photo=N amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "Zzxqwerty Mmmblorf",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 0,
+      "cands": 0,
+      "broad": false,
+      "ambiguous": false,
+      "pick": false,
+      "thin": true,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": []
+    },
+    {
+      "id": "sid-phone-city",
+      "cat": "strong",
+      "q": "דני כהן",
+      "ms": 12169,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=8 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "דני כהן",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 8,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": {
+        "city": "תל אביב",
+        "org": "",
+        "role": "",
+        "context": "",
+        "phone": "[provided]",
+        "email": "",
+        "focus": ""
+      },
+      "candLabels": [
+        "דני כהן (מדען מחשב)",
+        "דני כהן (מנהל)",
+        "דני כהן (מתופף)",
+        "דני כהן (צלם)",
+        "דני כהן תל אביב [phone]"
+      ],
+      "altLabels": [
+        "דן כהן",
+        "דני בריאן",
+        "דני כהן (מדען מחשב)",
+        "דני כהן (מנהל)",
+        "דני כהן (מתופף)"
+      ]
+    },
+    {
+      "id": "sid-email",
+      "cat": "strong",
+      "q": "משה לוי",
+      "ms": 28189,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=Q1391622 imgs=0 src=8 alts=5 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "משה לוי",
+      "qid": "Q1391622",
+      "photo": false,
+      "imgs": 0,
+      "src": 8,
+      "alts": 5,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": {
+        "city": "",
+        "org": "",
+        "role": "",
+        "context": "",
+        "phone": "",
+        "email": "[provided]",
+        "focus": ""
+      },
+      "candLabels": [
+        "000375609",
+        "משה לוי",
+        "Moshe Levy (chief of staff)",
+        "موشيه ليفي",
+        "موشيه ليفى"
+      ],
+      "altLabels": [
+        "משה לוי (רב)",
+        "משה לוי (פרופסור)",
+        "משה לוי (ראש מועצה מקומית)",
+        "משה לוי (פירושונים)",
+        "משה אליהו לוי"
+      ]
+    },
+    {
+      "id": "sid-org",
+      "cat": "strong",
+      "q": "דני כהן",
+      "ms": 31886,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=6 alts=8 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "דניאל (דני) כהן-אור",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 6,
+      "alts": 8,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": {
+        "city": "",
+        "org": "אוניברסיטת תל אביב",
+        "role": "מדען מחשב",
+        "context": "",
+        "phone": "",
+        "email": "",
+        "focus": ""
+      },
+      "candLabels": [
+        "עמוד חבר סגל באוניברסיטת תל אביב",
+        "tau.ac.il",
+        "דני כהן (מדען מחשב)",
+        "דני כהן (מנהל)",
+        "דני כהן (מתופף)"
+      ],
+      "altLabels": [
+        "דן כהן",
+        "דני בריאן",
+        "דני כהן (מדען מחשב)",
+        "דני כהן (מנהל)",
+        "דני כהן (מתופף)"
+      ]
+    },
+    {
+      "id": "sid-phone-only-name",
+      "cat": "strong",
+      "q": "ישראל ישראלי",
+      "ms": 12616,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=6 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "ישראל ישראלי חיפה [phone]",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 6,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": {
+        "city": "חיפה",
+        "org": "",
+        "role": "",
+        "context": "",
+        "phone": "[provided]",
+        "email": "",
+        "focus": ""
+      },
+      "candLabels": [
+        "חוק האזרחות (ישראל)",
+        "ישראל ישראלי חיפה [phone]",
+        "קולנוע ישראלי",
+        "ערביי ישראל",
+        "אגודת ישראל"
+      ],
+      "altLabels": [
+        "קולנוע ישראלי",
+        "ערביי ישראל",
+        "אגודת ישראל",
+        "פלוני",
+        "ישראלים"
+      ]
+    },
+    {
+      "id": "wiki-lapid",
+      "cat": "wiki",
+      "q": "יאיר לפיד",
+      "ms": 26765,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q1396120 imgs=8 src=20 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "יאיר לפיד",
+      "qid": "Q1396120",
+      "photo": true,
+      "imgs": 8,
+      "src": 20,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "יאיר לפיד (תוכנית טלוויזיה)",
+        "יוסף לפיד",
+        "ליהיא לפיד",
+        "שולמית לפיד",
+        "יש עתיד"
+      ]
+    },
+    {
+      "id": "wiki-lieberman",
+      "cat": "wiki",
+      "q": "אביגדור ליברמן",
+      "ms": 44669,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q58311 imgs=6 src=16 alts=5 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "אביגדור ליברמן",
+      "qid": "Q58311",
+      "photo": true,
+      "imgs": 6,
+      "src": 16,
+      "alts": 5,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "ליברמן",
+        "מקס ליברמן",
+        "ישראל ביתנו",
+        "דורית גולנדר",
+        "הליכוד - ישראל ביתנו"
+      ]
+    },
+    {
+      "id": "amb-david",
+      "cat": "amb",
+      "q": "דוד כהן",
+      "ms": 8204,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=8 cands=7 photo=N amb=true pick=true"
+      ],
+      "mode": "candidates",
+      "label": "דוד כהן",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": 8,
+      "cands": 7,
+      "broad": false,
+      "ambiguous": true,
+      "pick": true,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [
+        "דוד כהן (איש חינוך)",
+        "דוד כהן (בלשן)",
+        "דוד כהן (דיין)",
+        "דוד כהן (היסטוריון)",
+        "דוד כהן (הנזיר)"
+      ],
+      "altLabels": [
+        "אוגדת יהודה",
+        "דוד הוגו כהן",
+        "דוד הכהן",
+        "דוד כהן (איש חינוך)",
+        "דוד כהן (בלשן)"
+      ]
+    },
+    {
+      "id": "biz-miri",
+      "cat": "biz",
+      "q": "Miri Regev",
+      "ms": 30092,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=8 src=6 alts=1 cands=0 photo=Y amb=false pick=false"
+      ],
+      "mode": "google",
+      "label": "מירי רגב",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 6,
+      "alts": 1,
+      "cands": 0,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": null,
+      "candLabels": [],
+      "altLabels": [
+        "חשבונות ה-X הישראליים הנעקבים ביותר"
+      ]
+    },
+    {
+      "id": "focus-deepen",
+      "cat": "focus",
+      "q": "דני כהן",
+      "ms": 30798,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q5220231 imgs=8 src=10 alts=5 cands=4 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "דני כהן (מהנדס)",
+      "qid": "Q5220231",
+      "photo": true,
+      "imgs": 8,
+      "src": 10,
+      "alts": 5,
+      "cands": 4,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": {
+        "city": "",
+        "org": "אוניברסיטת תל אביב",
+        "role": "",
+        "context": "",
+        "phone": "",
+        "email": "",
+        "focus": "דני כהן (מדען מחשב)"
+      },
+      "candLabels": [
+        "דני כהן (מהנדס)",
+        "987007277429805171",
+        "Danny Cohen (computer scientist)",
+        "داني كوهين"
+      ],
+      "altLabels": [
+        "דני כהן",
+        "הרמן כהן",
+        "דן מדען",
+        "מדען ראשי (ממשלת ישראל)",
+        "דן שכטמן"
+      ],
+      "focus": "דני כהן (מדען מחשב)",
+      "seed": {
+        "pass": true,
+        "mode": "candidates",
+        "cands": 6,
+        "alts": 6,
+        "labels": [
+          "דני כהן (מדען מחשב)",
+          "דני כהן סולל",
+          "דני כהן",
+          "דן כהן",
+          "דני בריאן"
+        ]
+      }
+    }
+  ],
+  "focusFlow": {
+    "seed": {
+      "pass": true,
+      "mode": "candidates",
+      "cands": 6,
+      "alts": 6,
+      "labels": [
+        "דני כהן (מדען מחשב)",
+        "דני כהן סולל",
+        "דני כהן",
+        "דן כהן",
+        "דני בריאן"
+      ]
+    },
+    "focus": "דני כהן (מדען מחשב)",
+    "deepen": {
+      "id": "focus-deepen",
+      "cat": "focus",
+      "q": "דני כהן",
+      "ms": 30798,
+      "status": 200,
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q5220231 imgs=8 src=10 alts=5 cands=4 photo=Y amb=false pick=false"
+      ],
+      "mode": "wiki",
+      "label": "דני כהן (מהנדס)",
+      "qid": "Q5220231",
+      "photo": true,
+      "imgs": 8,
+      "src": 10,
+      "alts": 5,
+      "cands": 4,
+      "broad": true,
+      "ambiguous": false,
+      "pick": false,
+      "thin": false,
+      "contextUsed": {
+        "city": "",
+        "org": "אוניברסיטת תל אביב",
+        "role": "",
+        "context": "",
+        "phone": "",
+        "email": "",
+        "focus": "דני כהן (מדען מחשב)"
+      },
+      "candLabels": [
+        "דני כהן (מהנדס)",
+        "987007277429805171",
+        "Danny Cohen (computer scientist)",
+        "داني كوهين"
+      ],
+      "altLabels": [
+        "דני כהן",
+        "הרמן כהן",
+        "דן מדען",
+        "מדען ראשי (ממשלת ישראל)",
+        "דן שכטמן"
+      ]
+    }
+  }
+}

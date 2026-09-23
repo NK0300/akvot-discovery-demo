@@ -1,0 +1,1058 @@
+{
+  "meta": {
+    "title": "ACCURACY_EVAL-P2-HTTP-Preview-POST-CTX-dpl_2QrfuXhQg1Jt9q2NBdedkKJHwTqT",
+    "date": "2026-09-15",
+    "when": "2026-09-15T14:31:47.341Z",
+    "when_jerusalem": "15/09/2026, 17:31:47",
+    "preview_url": "https://akvot-simple-demo-8t702yisg-k-akvot.vercel.app",
+    "deploy": "dpl_2QrfuXhQg1Jt9q2NBdedkKJHwTqT",
+    "origin": "https://akvot-simple-demo.vercel.app",
+    "phase_expected": "orchestrator-v0-b",
+    "case_set": "handoff/P2-CASES-דיוק-2026-09-15.json",
+    "concurrency": 2,
+    "timeout_ms": 65000,
+    "elapsed_ms": 120398,
+    "access": "vercel curl",
+    "post_body_shape": "nested {q, ctx:{…}} for ctx cases",
+    "constraints": [
+      "NO product code changes",
+      "NO EXPECTED rewrite",
+      "NO promote"
+    ],
+    "probe": {
+      "status": 200,
+      "ms": 8260,
+      "not_403": true,
+      "requestId_ok": true,
+      "requestId_header": "0a912a68-4d38-416a-8032-7c7bb2c0fcc1",
+      "requestId_body": "0a912a68-4d38-416a-8032-7c7bb2c0fcc1"
+    },
+    "health": {
+      "status": 200,
+      "ms": 2687,
+      "ok": true,
+      "build": "dpl_2QrfuXhQg1Jt9q2NBdedkKJHwTqT",
+      "buildOk": true,
+      "phase": "orchestrator-v0-b"
+    }
+  },
+  "summary": {
+    "N": 18,
+    "PASS": 18,
+    "FAIL": 0,
+    "pretty_wrong": 0,
+    "safety_lock": "PASS",
+    "safety_detail": "7/7",
+    "e01_pass": true,
+    "health_build_ok": true,
+    "requestId_ok": true,
+    "recommendation": "GO",
+    "recommendation_evidence": "all 18 cases PASS · pw=0 · SAFETY=PASS · health build match · requestId ok",
+    "critical": {
+      "S03": {
+        "status": "PASS",
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "ms": 8783
+      },
+      "A01": {
+        "status": "PASS",
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "ms": 8926
+      },
+      "A03": {
+        "status": "PASS",
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "ms": 10217
+      },
+      "A05": {
+        "status": "PASS",
+        "ui": "need_context",
+        "qid": null
+      },
+      "A06": {
+        "status": "PASS",
+        "ui": "need_context",
+        "qid": null
+      },
+      "E02": {
+        "status": "PASS",
+        "ui": "candidates"
+      },
+      "L03": {
+        "status": "PASS",
+        "wall_ms": 9178,
+        "timings_total": 6524,
+        "qid": "Q47507930"
+      }
+    }
+  },
+  "e01_probes": [
+    {
+      "id": "E01-url-noise-ib",
+      "expect": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "E01-title-IBM",
+      "expect": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "E01-url-boston",
+      "expect": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "results": [
+    {
+      "id": "P2-S01",
+      "category": "ambiguous",
+      "input": {
+        "q": "דני כהן"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 2757,
+        "timings_total": 0,
+        "requestId": "049fcbaf-4371-4187-86de-1dec487f8398",
+        "requestId_header": "049fcbaf-4371-4187-86de-1dec487f8398",
+        "requestId_body": "049fcbaf-4371-4187-86de-1dec487f8398"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-S02",
+      "category": "duplicate",
+      "input": {
+        "q": "John Smith"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 8005,
+        "timings_total": 5500,
+        "requestId": "7faa929d-036b-48b3-8825-3f197b890833",
+        "requestId_header": "7faa929d-036b-48b3-8825-3f197b890833",
+        "requestId_body": "7faa929d-036b-48b3-8825-3f197b890833"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-S03",
+      "category": "conflict",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "org": "IBM",
+          "city": "New York",
+          "country": "US"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[candidates|thin|need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 6,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 8783,
+        "timings_total": 5922,
+        "requestId": "54672234-2191-4be7-9c72-b8edad4d1b3b",
+        "requestId_header": "54672234-2191-4be7-9c72-b8edad4d1b3b",
+        "requestId_body": "54672234-2191-4be7-9c72-b8edad4d1b3b"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Open Library:John Smith@openlibrary.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org",
+      "err": null
+    },
+    {
+      "id": "P2-S04",
+      "category": "conflict",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier",
+          "email_leak"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[candidates|thin] · 0 faces · must_not=dossier,email_leak"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 6,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "identifier",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 9478,
+        "timings_total": 6842,
+        "requestId": "0295e770-a57a-49a3-a988-6db372b58604",
+        "requestId_header": "0295e770-a57a-49a3-a988-6db372b58604",
+        "requestId_body": "0295e770-a57a-49a3-a988-6db372b58604"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Open Library:John Smith@openlibrary.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org",
+      "err": null
+    },
+    {
+      "id": "P2-S05",
+      "category": "non-match",
+      "input": {
+        "q": "Xzqplmnvwtr987654321asdfgh"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[need_context|thin] · 0 faces"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 8256,
+        "timings_total": 5500,
+        "requestId": "7d62307f-dc7c-45af-a7d1-cfc977ea7665",
+        "requestId_header": "7d62307f-dc7c-45af-a7d1-cfc977ea7665",
+        "requestId_body": "7d62307f-dc7c-45af-a7d1-cfc977ea7665"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-S06",
+      "category": "unknown",
+      "input": {
+        "q": "פלמוני אלמוניזקש",
+        "ctx": {
+          "org": "מפעל בדיקה פיקטיבי"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "need_context",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[need_context|thin] · 0 faces"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "thin",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "google",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "no_public_sources",
+        "ms": 47847,
+        "timings_total": 45001,
+        "requestId": "52b1c24b-f3bb-446c-b065-3d1747ed9153",
+        "requestId_header": "52b1c24b-f3bb-446c-b065-3d1747ed9153",
+        "requestId_body": "52b1c24b-f3bb-446c-b065-3d1747ed9153"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-S07",
+      "category": "conflict",
+      "input": {
+        "q": "כהן"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "stranger",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 43218,
+        "timings_total": 40380,
+        "requestId": "f93ed2a4-9c3d-4a05-a145-99127b6040bd",
+        "requestId_header": "f93ed2a4-9c3d-4a05-a145-99127b6040bd",
+        "requestId_body": "f93ed2a4-9c3d-4a05-a145-99127b6040bd"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-K01",
+      "category": "exact",
+      "input": {
+        "q": "נתניהו"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q43723",
+        "faces": null,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[dossier] · qid=Q43723"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q43723",
+        "faces": true,
+        "sources": 17,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki",
+        "scenario": "known",
+        "images": 1,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 9478,
+        "timings_total": 2617,
+        "requestId": "b7d31777-a4b2-4757-9c0e-303b7425eade",
+        "requestId_header": "b7d31777-a4b2-4757-9c0e-303b7425eade",
+        "requestId_body": "b7d31777-a4b2-4757-9c0e-303b7425eade"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "NLI:987007265800905171@www.nli.org.il; NLI HE:000098960@www.nli.org.il; ויקיפדיה:בנימין נתניהו@he.wikipedia.org; Wikidata:Q43723@www.wikidata.org; Wikipedia EN:Benjamin Netanyahu@en.wikipedia.org",
+      "err": null
+    },
+    {
+      "id": "P2-K02",
+      "category": "transliteration",
+      "input": {
+        "q": "Zehava Galon"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q2630062",
+        "faces": null,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[dossier] · qid=Q2630062"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q2630062",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 11237,
+        "timings_total": 6211,
+        "requestId": "9e330a4f-c787-4760-8596-b990f5afe223",
+        "requestId_header": "9e330a4f-c787-4760-8596-b990f5afe223",
+        "requestId_body": "9e330a4f-c787-4760-8596-b990f5afe223"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q2630062@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P2-K03",
+      "category": "transliteration",
+      "input": {
+        "q": "Angela Merkel"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q567",
+        "faces": null,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[dossier] · qid=Q567"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q567",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 6,
+        "photo": false,
+        "messageKey": "dossier_ready",
+        "ms": 9219,
+        "timings_total": 6584,
+        "requestId": "9982fae7-80e1-4353-98d8-00a9cff45c19",
+        "requestId_header": "9982fae7-80e1-4353-98d8-00a9cff45c19",
+        "requestId_body": "9982fae7-80e1-4353-98d8-00a9cff45c19"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q567@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P2-K04",
+      "category": "exact",
+      "input": {
+        "q": "אורלי לוי"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q466537",
+        "faces": null,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[dossier] · qid=Q466537"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q466537",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 8947,
+        "timings_total": 6326,
+        "requestId": "4ccc93b9-669e-4f3d-a078-e2d2b788f2e1",
+        "requestId_header": "4ccc93b9-669e-4f3d-a078-e2d2b788f2e1",
+        "requestId_body": "4ccc93b9-669e-4f3d-a078-e2d2b788f2e1"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q466537@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P2-A01",
+      "category": "exact",
+      "input": {
+        "q": "Assaf Rappaport"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q47507930",
+        "faces": true,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[dossier] · qid=Q47507930 · faces"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 8926,
+        "timings_total": 6371,
+        "requestId": "c6b11b87-edc0-4f93-be1d-1fa68720dc0d",
+        "requestId_header": "c6b11b87-edc0-4f93-be1d-1fa68720dc0d",
+        "requestId_body": "c6b11b87-edc0-4f93-be1d-1fa68720dc0d"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q47507930@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P2-A03",
+      "category": "exact",
+      "input": {
+        "q": "אסף רפפורט"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q47507930",
+        "faces": null,
+        "must_not": [],
+        "measure_ms": false,
+        "label": "ui∈[dossier] · qid=Q47507930"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 10217,
+        "timings_total": 7469,
+        "requestId": "bbab389e-3f6f-4e80-9346-fdf4c52222e9",
+        "requestId_header": "bbab389e-3f6f-4e80-9346-fdf4c52222e9",
+        "requestId_body": "bbab389e-3f6f-4e80-9346-fdf4c52222e9"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q47507930@www.wikidata.org",
+      "err": null
+    },
+    {
+      "id": "P2-A05",
+      "category": "near-miss",
+      "input": {
+        "q": "Assaf Smith"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context",
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": null,
+        "must_not": [
+          "qid:Q47507930"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[need_context|candidates|thin] · must_not=qid:Q47507930"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 8805,
+        "timings_total": 5501,
+        "requestId": "c38d1afa-bf42-4c6f-8fec-32616a48f611",
+        "requestId_header": "c38d1afa-bf42-4c6f-8fec-32616a48f611",
+        "requestId_body": "c38d1afa-bf42-4c6f-8fec-32616a48f611"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-A06",
+      "category": "conflict",
+      "input": {
+        "q": "John Rappaport"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "need_context",
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": null,
+        "must_not": [
+          "qid:Q47507930"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[need_context|candidates|thin] · must_not=qid:Q47507930"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "need_context",
+        "qid": null,
+        "faces": false,
+        "sources": 0,
+        "confidence": "none",
+        "phase": "orchestrator-v0-b",
+        "mode": "ambiguous",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "common_name",
+        "ms": 8194,
+        "timings_total": 5501,
+        "requestId": "edad3267-bd01-4aed-88aa-27b4ceba1181",
+        "requestId_header": "edad3267-bd01-4aed-88aa-27b4ceba1181",
+        "requestId_body": "edad3267-bd01-4aed-88aa-27b4ceba1181"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "none",
+      "err": null
+    },
+    {
+      "id": "P2-E02",
+      "category": "partial",
+      "input": {
+        "q": "Emily Chen",
+        "ctx": {
+          "city": "Palo Alto",
+          "role": "student"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "need_context"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[candidates|need_context] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 5,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "foreign",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 11768,
+        "timings_total": 9003,
+        "requestId": "8bd7fd1c-ebfc-4584-b226-6788fe83d174",
+        "requestId_header": "8bd7fd1c-ebfc-4584-b226-6788fe83d174",
+        "requestId_body": "8bd7fd1c-ebfc-4584-b226-6788fe83d174"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [
+        "Emily shape: ui=candidates (EXPECTED candidates|need_context; thin would be OTHER not pw)"
+      ],
+      "evidence": "ORCID:Emily Chen@orcid.org; VIAF:Emily Cheney Neville 1919-1997@viaf.org; VIAF:Emily Cheng, 1953-@viaf.org; VIAF:Emily Chenoweth@viaf.org; VIAF:Emily Cheney, 1952-@viaf.org",
+      "err": null
+    },
+    {
+      "id": "P2-E04",
+      "category": "conflict",
+      "input": {
+        "q": "John Smith",
+        "ctx": {
+          "email": "qa.rethink.test@example.com"
+        }
+      },
+      "method": "POST",
+      "expected": {
+        "ui": [
+          "candidates",
+          "thin"
+        ],
+        "qid": null,
+        "faces": 0,
+        "must_not": [
+          "dossier"
+        ],
+        "measure_ms": false,
+        "label": "ui∈[candidates|thin] · 0 faces · must_not=dossier"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "candidates",
+        "qid": null,
+        "faces": false,
+        "sources": 6,
+        "confidence": "low",
+        "phase": "orchestrator-v0-b",
+        "mode": "candidates",
+        "scenario": "identifier",
+        "images": 0,
+        "photo": false,
+        "messageKey": "pick_one",
+        "ms": 12557,
+        "timings_total": 9533,
+        "requestId": "6cb4b8a2-0ef3-47ef-b3b9-ea109e383e64",
+        "requestId_header": "6cb4b8a2-0ef3-47ef-b3b9-ea109e383e64",
+        "requestId_body": "6cb4b8a2-0ef3-47ef-b3b9-ea109e383e64"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "ORCID:John Smith@orcid.org; VIAF:John Smith, 1580-1631@viaf.org; VIAF:John Smith, 1750-1836@viaf.org; VIAF:John Smith, 1749-1831@viaf.org; VIAF:John Smith Hurt, 1894-1966@viaf.org",
+      "err": null
+    },
+    {
+      "id": "P2-L03",
+      "category": "latency",
+      "input": {
+        "q": "Assaf Rappaport"
+      },
+      "method": "GET",
+      "expected": {
+        "ui": [
+          "dossier"
+        ],
+        "qid": "Q47507930",
+        "faces": null,
+        "must_not": [],
+        "measure_ms": true,
+        "label": "ui∈[dossier] · qid=Q47507930 · measure_ms"
+      },
+      "actual": {
+        "http": 200,
+        "uiState": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "sources": 1,
+        "confidence": "high",
+        "phase": "orchestrator-v0-b",
+        "mode": "wiki+google",
+        "scenario": "known",
+        "images": 7,
+        "photo": true,
+        "messageKey": "dossier_ready",
+        "ms": 9178,
+        "timings_total": 6524,
+        "requestId": "3b75f092-7d1b-4799-bed6-4e6495700cbd",
+        "requestId_header": "3b75f092-7d1b-4799-bed6-4e6495700cbd",
+        "requestId_body": "3b75f092-7d1b-4799-bed6-4e6495700cbd"
+      },
+      "status": "PASS",
+      "pass": true,
+      "prettyWrong": false,
+      "errorType": null,
+      "fails": [],
+      "notes": [],
+      "evidence": "Wikidata:Q47507930@www.wikidata.org",
+      "err": null
+    }
+  ],
+  "smoke_post_x3": {
+    "case": "P2-S03 POST nested ×3 smoke",
+    "body": {
+      "q": "John Smith",
+      "ctx": {
+        "org": "IBM",
+        "city": "New York",
+        "country": "US"
+      },
+      "nocache": 1
+    },
+    "runs": [
+      {
+        "run": 1,
+        "pass": true,
+        "prettyWrong": false,
+        "fails": [],
+        "http": 200,
+        "ms": 17957,
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "requestId": "bfbd0f31-93ce-4603-92ed-6923b75cbc66",
+        "body": {
+          "q": "John Smith",
+          "ctx": {
+            "org": "IBM",
+            "city": "New York",
+            "country": "US"
+          },
+          "nocache": 1
+        }
+      },
+      {
+        "run": 2,
+        "pass": true,
+        "prettyWrong": false,
+        "fails": [],
+        "http": 200,
+        "ms": 17752,
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "requestId": "34d445f8-6fe5-4b9e-bac6-5679efbf1b57",
+        "body": {
+          "q": "John Smith",
+          "ctx": {
+            "org": "IBM",
+            "city": "New York",
+            "country": "US"
+          },
+          "nocache": 1
+        }
+      },
+      {
+        "run": 3,
+        "pass": true,
+        "prettyWrong": false,
+        "fails": [],
+        "http": 200,
+        "ms": 17855,
+        "ui": "thin",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "requestId": "d78e1716-5978-4c29-8d24-997c0224e4f8",
+        "body": {
+          "q": "John Smith",
+          "ctx": {
+            "org": "IBM",
+            "city": "New York",
+            "country": "US"
+          },
+          "nocache": 1
+        }
+      }
+    ],
+    "allPass": true,
+    "prettyWrong": 0
+  },
+  "hebrew_summary": "בדיקת HTTP Acc POST-CTX מקונן ל־P2 Preview (`dpl_2QrfuXhQg1Jt9q2NBdedkKJHwTqT`): N=18, PASS=18, FAIL=0, pretty-wrong=0, SAFETY=PASS, S03=PASS/candidates, smoke×3=true. Health מחזיר build=`dpl_2QrfuXhQg1Jt9q2NBdedkKJHwTqT` (התאמה=כן) · requestId=PASS. Assaf A01/A03 → dossier/dossier qid=Q47507930/Q47507930 · A05/A06 ללא Q47507930 · E01=PASS · E02 ui=candidates · L03 9178ms. המלצה לשער P2 Release: **GO** — all 18 cases PASS · pw=0 · SAFETY=PASS · health build match · requestId ok. ללא שינוי קוד מוצר · ללא rewrite ל־EXPECTED · ללא promote."
+}

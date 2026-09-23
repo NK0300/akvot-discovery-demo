@@ -1,0 +1,230 @@
+{
+  "stamp": "2026-09-20T08:50:01+03:00",
+  "deployment": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+  "url": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app",
+  "sessionId": "kv1.5496b081a5875d1c0b20338d3d6689da",
+  "storeBackend": "upstash",
+  "steps": {
+    "health": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+      "baselineHint": "dpl_DNfPZ9",
+      "discoveryStore": {
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "kvCredsPresent": true,
+        "crossInstance": "shared-kv"
+      }
+    },
+    "discoveryHealth": {
+      "ok": true,
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "latencyMs": 115,
+      "correlationId": "hc-mu9eana4-36b875",
+      "fsRegenFallback": false,
+      "explicitFallback": false,
+      "promoteEligible": true,
+      "durable": true,
+      "fallback": false,
+      "kvCredsPresent": true,
+      "mode": "kv-shared",
+      "steps": [
+        {
+          "step": "WRITE",
+          "ok": true,
+          "ms": 35
+        },
+        {
+          "step": "READ",
+          "ok": true,
+          "ms": 35
+        },
+        {
+          "step": "UPDATE",
+          "ok": true,
+          "ms": 66
+        },
+        {
+          "step": "DELETE",
+          "ok": true,
+          "ms": 115
+        }
+      ],
+      "ttlMs": 3600000,
+      "faultInjectAvailable": false
+    },
+    "post": {
+      "http": 201,
+      "sessionId": "kv1.5496b081a5875d1c0b20338d3d6689da",
+      "status": "partial",
+      "findings": 1,
+      "storeBackend": "upstash"
+    },
+    "get1": {
+      "http": 200,
+      "status": "partial",
+      "findings": 1,
+      "storeBackend": "upstash"
+    },
+    "events1": {
+      "http": 200,
+      "events": [
+        "meta",
+        "progress",
+        "provider",
+        "provider",
+        "provider",
+        "finding",
+        "facets",
+        "status",
+        "done"
+      ],
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "frameCount": 9,
+      "hasDone": true,
+      "contentType": true
+    },
+    "events2": {
+      "http": 200,
+      "events": [
+        "meta",
+        "progress",
+        "provider",
+        "provider",
+        "provider",
+        "finding",
+        "facets",
+        "status",
+        "done"
+      ],
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "frameCount": 9,
+      "hasDone": true,
+      "contentType": true
+    },
+    "eventsCursor5": {
+      "http": 200,
+      "events": [
+        "finding",
+        "facets",
+        "status",
+        "done"
+      ],
+      "ids": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "frameCount": 4,
+      "hasDone": true,
+      "contentType": true
+    },
+    "eventsCursor99": {
+      "http": 200,
+      "events": [
+        "done"
+      ],
+      "ids": [
+        100
+      ],
+      "frameCount": 1,
+      "hasDone": true,
+      "contentType": true
+    },
+    "narrowPage": {
+      "http": 200,
+      "narrow": {
+        "applied": {
+          "kind": [
+            "page"
+          ]
+        },
+        "beforeCount": 1,
+        "afterCount": 1
+      },
+      "version": 3,
+      "findings": 1
+    },
+    "narrowRegistry": {
+      "http": 200,
+      "narrow": {
+        "applied": {
+          "kind": [
+            "registry"
+          ]
+        },
+        "beforeCount": 1,
+        "afterCount": 0
+      },
+      "version": 4,
+      "findings": 0
+    },
+    "get3AfterNarrowRegistry": {
+      "http": 200,
+      "findings": 1,
+      "findingIds": [
+        "wp-en-Example_org"
+      ],
+      "hasNarrowKey": false,
+      "storeBackend": "upstash",
+      "note": "GET still returns full findings; lastNarrow not projected — server OPEN"
+    },
+    "eventsAfterNarrow": {
+      "http": null,
+      "events": [
+        "meta",
+        "progress",
+        "provider",
+        "provider",
+        "provider",
+        "finding",
+        "facets",
+        "status",
+        "done"
+      ],
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "frameCount": 9,
+      "hasDone": true,
+      "contentType": false
+    }
+  },
+  "clientBytes": 55458,
+  "localMatchesPreview": true
+}

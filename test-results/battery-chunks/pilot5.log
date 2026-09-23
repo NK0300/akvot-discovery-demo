@@ -1,0 +1,26 @@
+{
+  "base": "https://akvot-simple-demo.vercel.app",
+  "at": "2026-09-08T05:39:42.024Z",
+  "n": 5,
+  "pass": 0,
+  "fail": 5,
+  "byBucket": {
+    "famous": {
+      "n": 5,
+      "pass": 0,
+      "fail": 5
+    },
+    "obscure": {
+      "n": 0,
+      "pass": 0,
+      "fail": 0
+    },
+    "nonexist": {
+      "n": 0,
+      "pass": 0,
+      "fail": 0
+    }
+  },
+  "p50": 51813,
+  "p95": 60434
+}

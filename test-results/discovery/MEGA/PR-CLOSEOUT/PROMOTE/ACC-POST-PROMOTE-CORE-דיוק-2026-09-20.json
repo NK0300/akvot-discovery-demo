@@ -1,0 +1,75 @@
+{
+  "doc": "ACC-POST-PROMOTE-CORE-דיוק-2026-09-20",
+  "checked": "2026-09-20T09:11:08+03:00",
+  "finished": "2026-09-20T09:12:32+03:00",
+  "alias": "https://akvot-simple-demo.vercel.app",
+  "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "promote": false,
+  "hold_promote": true,
+  "verdict": "PASS",
+  "leakage_total": 0,
+  "pw_total": 0,
+  "checks": {
+    "health_build_match": true,
+    "assaf_dossier_qid": true,
+    "cohen_soft": true,
+    "smith_nocache": true,
+    "smith_warm": true,
+    "leakage_0": true,
+    "pw_0": true
+  },
+  "cases": [
+    {
+      "case": "assaf",
+      "uiState": "dossier",
+      "qid": "Q47507930",
+      "faces": 7,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "b5d329b0-b600-4c6f-970c-ac75ce0822b3",
+      "pass": true
+    },
+    {
+      "case": "cohen",
+      "uiState": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "9183bd79-9be4-4864-95f2-c4d27960c85d",
+      "pass": true
+    },
+    {
+      "case": "smith-nocache",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "f247cfd7-3e25-4e50-8491-bb299ca15148",
+      "pass": true
+    },
+    {
+      "case": "smith-warm",
+      "uiState": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leakage": 0,
+      "pw": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "requestId": "a598bcac-9a7d-4d61-a92c-f4904a8cee93",
+      "pass": true
+    }
+  ],
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "summary": {
+    "Core-P0": "PASS",
+    "leakage": 0,
+    "pw": 0,
+    "promote": "NO · HOLD further",
+    "core_build_still_8ag": true
+  }
+}

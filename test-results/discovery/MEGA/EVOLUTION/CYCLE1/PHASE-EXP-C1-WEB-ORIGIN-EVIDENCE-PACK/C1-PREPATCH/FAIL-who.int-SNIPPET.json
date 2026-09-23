@@ -1,0 +1,19 @@
+{
+  "stamp": "C1-PREPATCH",
+  "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+  "seed": "https://www.who.int",
+  "outcome": "FAIL",
+  "finding.relationship": "SAME-REFERENCE",
+  "finding.facetHints.relationship": [
+    "relationship:SAME-REFERENCE"
+  ],
+  "evidence.relationship": "SAME-REFERENCE",
+  "facet.buckets": [
+    {
+      "key": "hint",
+      "value": "relationship:SAME-REFERENCE",
+      "count": 1
+    }
+  ],
+  "source": "raw/TREAT-S16-NARROW.json"
+}

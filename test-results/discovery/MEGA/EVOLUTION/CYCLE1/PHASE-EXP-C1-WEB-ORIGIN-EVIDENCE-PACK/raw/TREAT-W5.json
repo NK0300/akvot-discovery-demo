@@ -1,0 +1,617 @@
+{
+  "ok": true,
+  "sessionId": "kv1.a8e014ae06d959987e1411b8526400de",
+  "status": "partial",
+  "pollAfterMs": 300,
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  },
+  "correlationId": "c1-TREAT-W5",
+  "snapshot": {
+    "sessionId": "kv1.a8e014ae06d959987e1411b8526400de",
+    "seed": "who.int",
+    "q": "who.int",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "viaf-158800605",
+        "kind": "registry",
+        "title": "WHO International Reference Centre for Community Water Supply",
+        "summary": "type:corporate · lc:n82016180 · dnb:1087585449",
+        "evidenceIds": [
+          "ev-b1e8bea918a39e12ff7078d2"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:158800605"
+        ],
+        "scoreFinding": 0.7008333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-149984809",
+        "kind": "registry",
+        "title": "WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care",
+        "summary": "type:corporate · lc:n2010017641",
+        "evidenceIds": [
+          "ev-98dfab199ddbde68aeb17d37"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:149984809"
+        ],
+        "scoreFinding": 0.6908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-148738844",
+        "kind": "registry",
+        "title": "Who International Expert Meeting to review and analyse clinical reports on Combination treatment for SARS",
+        "summary": "type:corporate · dnb:974418056",
+        "evidenceIds": [
+          "ev-533f8b52fe8fbf08ad4162e8"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:148738844"
+        ],
+        "scoreFinding": 0.6808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-840173669171707660009",
+        "kind": "registry",
+        "title": "WHO International Agency for Research on Cancer",
+        "summary": "type:corporate",
+        "evidenceIds": [
+          "ev-3bed38ebeae5dcdcb84d8dbb"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:840173669171707660009"
+        ],
+        "scoreFinding": 0.6708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-305447069",
+        "kind": "registry",
+        "title": "WHO International Reference Centre for Chemical Reference Substances",
+        "summary": "type:corporate · lc:n2013187479",
+        "evidenceIds": [
+          "ev-6e544c76f343d61b7886f51c"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:305447069"
+        ],
+        "scoreFinding": 0.6608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-306382847",
+        "kind": "registry",
+        "title": "WHO International Reference Centre for Diagnosis of Diseases of Vectors",
+        "summary": "type:corporate · lc:n2014181344",
+        "evidenceIds": [
+          "ev-4464afe43f41e6a70eb90fcb"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:306382847"
+        ],
+        "scoreFinding": 0.6508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-307434245",
+        "kind": "registry",
+        "title": "WHO International Conference on Health Consequences of the Chernobyl and other Radiological Accidents",
+        "summary": "type:corporate · lc:n2014180394",
+        "evidenceIds": [
+          "ev-d41e6f9f3f595c4fcc772df6"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:307434245"
+        ],
+        "scoreFinding": 0.6408333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-283149294373780522364",
+        "kind": "registry",
+        "title": "WHO International working group for drug statistics methology",
+        "summary": "type:corporate",
+        "evidenceIds": [
+          "ev-729e6d9d493b02cfdc865eda"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:283149294373780522364"
+        ],
+        "scoreFinding": 0.6308333333333331,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wo-7fd08b15039288ff",
+        "kind": "page",
+        "title": "World Health Organization (WHO)",
+        "summary": "World Health Organization (WHO) — The United Nations agency working to promote health, keep the world safe and serve the vulnerable.",
+        "evidenceIds": [
+          "ev-b568e650d6f4a41767d75ac8"
+        ],
+        "providers": [
+          "web_origin"
+        ],
+        "facetHints": [
+          "provider:web_origin",
+          "kind:page",
+          "hostFamily:web_origin",
+          "relationship:SAME-REFERENCE"
+        ],
+        "entityRefs": [
+          "web_origin:who.int"
+        ],
+        "scoreFinding": 0.4633333333333333,
+        "hostFamily": "web_origin",
+        "relationship": "SAME-REFERENCE",
+        "registrableDomain": "who.int",
+        "hostname": "www.who.int",
+        "ranking": {
+          "discoveryScore": 0.5433333333333333,
+          "factors": {
+            "authority": 0.4,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.who.int"
+            ]
+          },
+          "rationale": "authority=0.40 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-b1e8bea918a39e12ff7078d2",
+        "provenanceUrl": "https://viaf.org/viaf/158800605",
+        "url": "https://viaf.org/viaf/158800605",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Reference Centre for Community Water Supply",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-98dfab199ddbde68aeb17d37",
+        "provenanceUrl": "https://viaf.org/viaf/149984809",
+        "url": "https://viaf.org/viaf/149984809",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO Interregional Workshop on the Use of Traditional Medicine in Primary Health Care",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-533f8b52fe8fbf08ad4162e8",
+        "provenanceUrl": "https://viaf.org/viaf/148738844",
+        "url": "https://viaf.org/viaf/148738844",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "Who International Expert Meeting to review and analyse clinical reports on Combination treatment for SARS",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-3bed38ebeae5dcdcb84d8dbb",
+        "provenanceUrl": "https://viaf.org/viaf/840173669171707660009",
+        "url": "https://viaf.org/viaf/840173669171707660009",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Agency for Research on Cancer",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6e544c76f343d61b7886f51c",
+        "provenanceUrl": "https://viaf.org/viaf/305447069",
+        "url": "https://viaf.org/viaf/305447069",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Reference Centre for Chemical Reference Substances",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4464afe43f41e6a70eb90fcb",
+        "provenanceUrl": "https://viaf.org/viaf/306382847",
+        "url": "https://viaf.org/viaf/306382847",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Reference Centre for Diagnosis of Diseases of Vectors",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d41e6f9f3f595c4fcc772df6",
+        "provenanceUrl": "https://viaf.org/viaf/307434245",
+        "url": "https://viaf.org/viaf/307434245",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO International Conference on Health Consequences of the Chernobyl and other Radiological Accidents",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-729e6d9d493b02cfdc865eda",
+        "provenanceUrl": "https://viaf.org/viaf/283149294373780522364",
+        "url": "https://viaf.org/viaf/283149294373780522364",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T08:37:59.835Z",
+        "evidenceType": "registry",
+        "quote": "WHO International working group for drug statistics methology",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-b568e650d6f4a41767d75ac8",
+        "provenanceUrl": "https://www.who.int/",
+        "url": "https://www.who.int/",
+        "domain": "www.who.int",
+        "providerId": "web_origin",
+        "retrievedAt": "2026-09-20T08:37:59.750Z",
+        "evidenceType": "page",
+        "quote": "World Health Organization (WHO) · The United Nations agency working to promote health, keep the world safe and serve the vulnerable.",
+        "contentType": "text/html",
+        "robotsOk": true,
+        "hostFamily": "web_origin",
+        "originalUrl": "who.int",
+        "normalizedUrl": "https://www.who.int/",
+        "origin": "https://www.who.int",
+        "hostname": "www.who.int",
+        "registrableDomain": "who.int",
+        "scheme": "https",
+        "path": "/",
+        "safetyDecision": {
+          "stage": "normalize",
+          "ok": true,
+          "reason": "allow"
+        },
+        "httpStatus": 200,
+        "resultClass": "ok",
+        "relationship": "SAME-REFERENCE",
+        "webOriginMeta": {
+          "title": "World Health Organization (WHO)",
+          "description": "The United Nations agency working to promote health, keep the world safe and serve the vulnerable."
+        }
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "viaf",
+            "count": 8
+          },
+          {
+            "value": "web_origin",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 8
+          },
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "hostFamily:web_origin",
+            "count": 1
+          },
+          {
+            "value": "relationship:SAME-REFERENCE",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 8,
+      "totalHint": 8
+    },
+    "providers": {
+      "wikidata": "error",
+      "openlibrary": "ok",
+      "wikipedia": "error",
+      "viaf": "partial",
+      "web_origin": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:d1bb97578027"
+      ],
+      "status": "candidate",
+      "displayHint": "who.int",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T08:37:59.654Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:d1bb97578027",
+          "kind": "seed"
+        },
+        {
+          "id": "viaf-158800605",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-149984809",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-148738844",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-840173669171707660009",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-305447069",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-306382847",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-307434245",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-283149294373780522364",
+          "kind": "finding"
+        },
+        {
+          "id": "wo-7fd08b15039288ff",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

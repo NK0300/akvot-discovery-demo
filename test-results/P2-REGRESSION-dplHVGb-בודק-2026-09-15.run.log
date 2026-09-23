@@ -1,0 +1,37 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Retrieving project…
+Downloading `development` environment variables
+Loaded env from /workspace/akvot-quick-demo/.env.local
+P2 REGRESSION · בודק → https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app
+dpl=dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk when=15.9.2026, 17:54:52 Asia/Jerusalem
+
+O-F1 health: http=200 ok=true build=dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk 441ms PASS
+→ S-A1 דני כהן ... PASS 402ms http=200 ui=need_context qid=- faces=false
+→ S-A2 John Smith bare ... PASS 5692ms http=200 ui=need_context qid=- faces=false
+→ S-A3 Smith+IBM+NY ... PASS 5927ms http=200 ui=candidates qid=- faces=false
+→ S-A3-POST Smith+IBM+NY POST nested ... PASS 6410ms http=200 ui=candidates qid=- faces=false
+→ S-A4 Smith+email ... PASS 8739ms http=200 ui=candidates qid=- faces=false
+→ S-A5 junk HE ... PASS 37020ms http=200 ui=need_context qid=- faces=false
+→ S-A7 obscure+org ... PASS 1387ms http=200 ui=thin qid=- faces=false
+→ S-A8 כהן bare ... PASS 24333ms http=200 ui=need_context qid=- faces=false
+→ K-B1 בנימין נתניהו ... PASS 1086ms http=200 ui=dossier qid=Q43723 faces=true
+→ K-B3a נתניהו ... PASS 1073ms http=200 ui=dossier qid=Q43723 faces=true
+→ K-B3b ביבי ... PASS 1069ms http=200 ui=dossier qid=Q43723 faces=true
+→ K-B2 אורלי לוי ... PASS 1321ms http=200 ui=dossier qid=Q466537 faces=true
+→ K-B4a Angela Merkel ... PASS 1788ms http=200 ui=dossier qid=Q567 faces=true
+→ K-B4b Zehava Galon ... PASS 1271ms http=200 ui=dossier qid=Q2630062 faces=true
+→ K-B4c זהבה גלאון ... PASS 1227ms http=200 ui=dossier qid=Q2630062 faces=true
+→ T-C1 Assaf Rappaport ... PASS 1061ms http=200 ui=dossier qid=Q47507930 faces=true
+→ T-C1b אסף רפפורט ... PASS 1086ms http=200 ui=dossier qid=Q47507930 faces=true
+→ T-C5 Assaf Smith ... PASS 5691ms http=200 ui=need_context qid=- faces=false
+→ T-C6 John Rappaport ... PASS 2858ms http=200 ui=need_context qid=- faces=false
+
+========== P2 SUMMARY ==========
+N=19 PASS=19 FAIL=0 pw=0
+health=true requestId=true
+Assaf T-C1=Q47507930 (PASS) T-C1b=Q47507930 (PASS)
+JSON: /workspace/akvot-quick-demo/test-results/P2-REGRESSION-dplHVGb-בודק-2026-09-15.json
+MD:   /workspace/akvot-quick-demo/test-results/P2-REGRESSION-dplHVGb-בודק-2026-09-15.md
+================================
+
+EXIT:0

@@ -1,0 +1,199 @@
+{
+  "when": "2026-09-17T17:44:58.112Z",
+  "zone": "Asia/Jerusalem",
+  "alias": "https://akvot-simple-demo.vercel.app",
+  "baseline": "dpl_3cgoTVkUJpHfcdos8EVY327ZUTYy",
+  "measureOnly": true,
+  "body": {
+    "q": "John Smith",
+    "ctx": {
+      "org": "IBM",
+      "city": "New York",
+      "country": "US"
+    }
+  },
+  "cacheKeyFor": {
+    "fn": "cacheKeyFor(q, ctx) = [q, city, org, role, country, context, phone, email, focus].join(\"|\")",
+    "inputs": {
+      "q": "John Smith",
+      "city": "New York",
+      "org": "IBM",
+      "role": "",
+      "country": "US",
+      "context": "",
+      "phone": "",
+      "email": "",
+      "focus": ""
+    },
+    "cacheKey": "John Smith|New York|IBM||US||||",
+    "cacheKeyHash8": "b00dac41",
+    "note": "allowCache requires !skipCache && !sensId (no phone/email) — Smith+ctx IS cacheable"
+  },
+  "samples": [
+    {
+      "label": "COLD",
+      "nocache": true,
+      "wallMs": 6238,
+      "exit": 0,
+      "accessErr": null,
+      "parseErr": null,
+      "uiState": "candidates",
+      "mode": "candidates",
+      "qid": null,
+      "cached": false,
+      "faces": false,
+      "photo": false,
+      "imagesN": 0,
+      "candidatesN": 6,
+      "timings": {
+        "wiki": 2353,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 1127,
+        "total": 3484
+      },
+      "wikiMeta": null,
+      "requestId": "59b78eb5-2c2e-4854-be2e-eb03354babda",
+      "scenario": "foreign",
+      "messageKey": "pick_one",
+      "cacheHeaderGuess": null
+    },
+    {
+      "label": "SEED",
+      "nocache": false,
+      "wallMs": 8781,
+      "exit": 0,
+      "accessErr": null,
+      "parseErr": null,
+      "uiState": "candidates",
+      "mode": "candidates",
+      "qid": null,
+      "cached": false,
+      "faces": false,
+      "photo": false,
+      "imagesN": 0,
+      "candidatesN": 6,
+      "timings": {
+        "wiki": 5499,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 505,
+        "total": 6008
+      },
+      "wikiMeta": null,
+      "requestId": "49128a55-228b-4f30-8863-caf343ff3237",
+      "scenario": "foreign",
+      "messageKey": "pick_one",
+      "cacheHeaderGuess": null
+    },
+    {
+      "label": "WARM1",
+      "nocache": false,
+      "wallMs": 8806,
+      "exit": 0,
+      "accessErr": null,
+      "parseErr": null,
+      "uiState": "candidates",
+      "mode": "candidates",
+      "qid": null,
+      "cached": false,
+      "faces": false,
+      "photo": false,
+      "imagesN": 0,
+      "candidatesN": 6,
+      "timings": {
+        "wiki": 5501,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 692,
+        "total": 6197
+      },
+      "wikiMeta": null,
+      "requestId": "c2ee41ad-8f6c-487c-9ca6-c4b481dd3679",
+      "scenario": "foreign",
+      "messageKey": "pick_one",
+      "cacheHeaderGuess": null
+    },
+    {
+      "label": "WARM2",
+      "nocache": false,
+      "wallMs": 9488,
+      "exit": 0,
+      "accessErr": null,
+      "parseErr": null,
+      "uiState": "candidates",
+      "mode": "candidates",
+      "qid": null,
+      "cached": false,
+      "faces": false,
+      "photo": false,
+      "imagesN": 0,
+      "candidatesN": 6,
+      "timings": {
+        "wiki": 5501,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 922,
+        "total": 6427
+      },
+      "wikiMeta": null,
+      "requestId": "bb8a068b-4907-4b2d-95cc-2e746a4144b3",
+      "scenario": "foreign",
+      "messageKey": "pick_one",
+      "cacheHeaderGuess": null
+    },
+    {
+      "label": "WARM3",
+      "nocache": false,
+      "wallMs": 8479,
+      "exit": 0,
+      "accessErr": null,
+      "parseErr": null,
+      "uiState": "candidates",
+      "mode": "candidates",
+      "qid": null,
+      "cached": false,
+      "faces": false,
+      "photo": false,
+      "imagesN": 0,
+      "candidatesN": 6,
+      "timings": {
+        "wiki": 5501,
+        "gemini": 0,
+        "enrich": 0,
+        "stageB": 488,
+        "total": 5992
+      },
+      "wikiMeta": null,
+      "requestId": "f5bc086d-5f58-49cd-ab17-d7836448ec8b",
+      "scenario": "foreign",
+      "messageKey": "pick_one",
+      "cacheHeaderGuess": null
+    }
+  ],
+  "analysis": {
+    "coldWallMs": 6238,
+    "coldCached": false,
+    "coldUiState": "candidates",
+    "coldTimingsTotal": 3484,
+    "seedWallMs": 8781,
+    "seedCached": false,
+    "warmWallsMs": [
+      8806,
+      9488,
+      8479
+    ],
+    "warmAvgMs": 8924,
+    "warmCachedFlags": [
+      false,
+      false,
+      false
+    ],
+    "allWarmCached": false,
+    "warmApproxCold": true,
+    "ratioWarmAvgOverCold": 1.43,
+    "staleTimingsOnHitN": 0,
+    "staleExamples": [],
+    "explanationIfWarmApproxCold": "WARM wall still close to COLD on dpl_3cgo — possible causes: (1) cached:false every time (key mismatch / TTL / instance) (2) cached:true but edge/TTFB dominates (3) HIT returns stale timings that mislead; check cached flags + wall vs timings.total"
+  }
+}

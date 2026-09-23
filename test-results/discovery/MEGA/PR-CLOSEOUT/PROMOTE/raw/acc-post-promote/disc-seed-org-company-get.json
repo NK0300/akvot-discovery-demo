@@ -1,0 +1,1258 @@
+{
+  "ok": true,
+  "sessionId": "kv1.294f2572faee9de7c76c5a9782a48e81",
+  "seed": "Microsoft",
+  "q": "Microsoft",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "wd-Q2283",
+      "kind": "registry",
+      "title": "Microsoft",
+      "summary": "American multinational technology corporation",
+      "evidenceIds": [
+        "ev-79d347b2179c27024399da94"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q2283"
+      ],
+      "scoreFinding": 0.7183333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q1406",
+      "kind": "registry",
+      "title": "Microsoft Windows",
+      "summary": "family of computer operating systems developed by Microsoft",
+      "evidenceIds": [
+        "ev-63a197641d8d3d3aea8e9418"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q1406"
+      ],
+      "scoreFinding": 0.7083333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q135288",
+      "kind": "registry",
+      "title": "Microsoft Store",
+      "summary": "digital distribution platform operated by Microsoft",
+      "evidenceIds": [
+        "ev-15f86516714a00b850f8da44"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q135288"
+      ],
+      "scoreFinding": 0.6983333333333333,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q11272",
+      "kind": "registry",
+      "title": "Microsoft Excel",
+      "summary": "spreadsheet editor, part of Microsoft 365",
+      "evidenceIds": [
+        "ev-8f35715914fc8bf5487175bb"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q11272"
+      ],
+      "scoreFinding": 0.6883333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q60683589",
+      "kind": "registry",
+      "title": "Microsoft Academic Knowledge Graph",
+      "summary": "RDF representation of the Microsoft Academic Graph",
+      "evidenceIds": [
+        "ev-f83c05c51752a25a9447fed3"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q60683589"
+      ],
+      "scoreFinding": 0.6783333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q83370",
+      "kind": "registry",
+      "title": "Windows 95",
+      "summary": "personal computer operating system by Microsoft",
+      "evidenceIds": [
+        "ev-42b63c8ef8b3197c76330c00"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q83370"
+      ],
+      "scoreFinding": 0.6683333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q21207",
+      "kind": "registry",
+      "title": "Windows Mobile",
+      "summary": "discontinued family of mobile operating systems by Microsoft",
+      "evidenceIds": [
+        "ev-69804b45c0df9f3dc8946459"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q21207"
+      ],
+      "scoreFinding": 0.6583333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wd-Q1144725",
+      "kind": "registry",
+      "title": "Microsoft Research",
+      "summary": "research division of Microsoft Corporation",
+      "evidenceIds": [
+        "ev-6c1d2e5442f48b550ff5223a"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "wd-Q1144725"
+      ],
+      "scoreFinding": 0.6483333333333332,
+      "ranking": {
+        "discoveryScore": 0.7183333333333333,
+        "factors": {
+          "authority": 0.9,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "www.wikidata.org"
+          ]
+        },
+        "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2638444A",
+      "kind": "registry",
+      "title": "Microsoft Press",
+      "summary": "Top work: Set",
+      "evidenceIds": [
+        "ev-9f9e102eb4873a7b28e02e19"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2638444A"
+      ],
+      "scoreFinding": 0.5858333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL3079719A",
+      "kind": "registry",
+      "title": "Microsoft Educational Services Staff",
+      "summary": "Top work: Windows Server 2008 Server Core Administrator's Pocket Consultant",
+      "evidenceIds": [
+        "ev-24dac2ce831f4154b9bf52f1"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL3079719A"
+      ],
+      "scoreFinding": 0.5758333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL15692848A",
+      "kind": "registry",
+      "title": "Microsoft Home (Firm)",
+      "summary": "Top work: Microsoft Art gallery",
+      "evidenceIds": [
+        "ev-62e805b102b05f30ca0b3bac"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL15692848A"
+      ],
+      "scoreFinding": 0.5658333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL15318077A",
+      "kind": "registry",
+      "title": "microsoft corporation",
+      "summary": "Top work: programming tools for the microsoft windows operating system",
+      "evidenceIds": [
+        "ev-9838742df69a5a1b2fdd3ee2"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL15318077A"
+      ],
+      "scoreFinding": 0.5558333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL15861168A",
+      "kind": "registry",
+      "title": "Microsoft Corpporation",
+      "summary": "Top work: Implementing a Microsoft Windows Server 2003 Network Infrastructure",
+      "evidenceIds": [
+        "ev-bea7610f23e9d387f7211ec2"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL15861168A"
+      ],
+      "scoreFinding": 0.5458333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL15200627A",
+      "kind": "registry",
+      "title": "Microsoft Research",
+      "summary": "Top work: Towards 2020 science",
+      "evidenceIds": [
+        "ev-3cabb571b92bbc7e29c16247"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL15200627A"
+      ],
+      "scoreFinding": 0.5358333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL2879671A",
+      "kind": "registry",
+      "title": "Corp Microsoft",
+      "evidenceIds": [
+        "ev-8761bb00c8e089e0e5025b97"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL2879671A"
+      ],
+      "scoreFinding": 0.5258333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "ol-OL16462563A",
+      "kind": "registry",
+      "title": "Copilot Microsoft",
+      "evidenceIds": [
+        "ev-6ca1dea0571778b8083df5ab"
+      ],
+      "providers": [
+        "openlibrary"
+      ],
+      "facetHints": [
+        "provider:openlibrary",
+        "kind:registry"
+      ],
+      "entityRefs": [
+        "ol-OL16462563A"
+      ],
+      "scoreFinding": 0.5158333333333333,
+      "ranking": {
+        "discoveryScore": 0.6658333333333333,
+        "factors": {
+          "authority": 0.75,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "openlibrary.org"
+          ]
+        },
+        "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Microsoft",
+      "kind": "page",
+      "title": "Microsoft",
+      "evidenceIds": [
+        "ev-88f90c1de1c516399ba0dbf3"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Microsoft"
+      ],
+      "scoreFinding": 0.4883333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Microsoft_Windows",
+      "kind": "page",
+      "title": "Microsoft Windows",
+      "evidenceIds": [
+        "ev-8f3658714f6ee09f6e0655b3"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Microsoft Windows"
+      ],
+      "scoreFinding": 0.4783333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Microsoft_Word",
+      "kind": "page",
+      "title": "Microsoft Word",
+      "evidenceIds": [
+        "ev-eaa9f5eb25d9cd21f9e58e2f"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Microsoft Word"
+      ],
+      "scoreFinding": 0.4683333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Microsoft_Office",
+      "kind": "page",
+      "title": "Microsoft Office",
+      "evidenceIds": [
+        "ev-14efab4164e23dde9c72ead0"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Microsoft Office"
+      ],
+      "scoreFinding": 0.4583333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Microsoft_Bing",
+      "kind": "page",
+      "title": "Microsoft Bing",
+      "evidenceIds": [
+        "ev-a6b391f7f407d172460a261a"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Microsoft Bing"
+      ],
+      "scoreFinding": 0.4483333333333333,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    },
+    {
+      "id": "wp-en-Microsoft_365",
+      "kind": "page",
+      "title": "Microsoft 365",
+      "evidenceIds": [
+        "ev-467f8567344c7e95786e9251"
+      ],
+      "providers": [
+        "wikipedia"
+      ],
+      "facetHints": [
+        "provider:wikipedia",
+        "kind:page"
+      ],
+      "entityRefs": [
+        "wp:en:Microsoft 365"
+      ],
+      "scoreFinding": 0.43833333333333335,
+      "ranking": {
+        "discoveryScore": 0.6483333333333333,
+        "factors": {
+          "authority": 0.7,
+          "corroboration": 0.333,
+          "directness": 0.65,
+          "freshness": 0.9,
+          "httpsOnly": 1,
+          "providerDiversity": 1,
+          "evidenceCount": 1,
+          "domains": [
+            "en.wikipedia.org"
+          ]
+        },
+        "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-79d347b2179c27024399da94",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q2283",
+      "url": "https://www.wikidata.org/wiki/Q2283",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "American multinational technology corporation",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-63a197641d8d3d3aea8e9418",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q1406",
+      "url": "https://www.wikidata.org/wiki/Q1406",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "family of computer operating systems developed by Microsoft",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-15f86516714a00b850f8da44",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q135288",
+      "url": "https://www.wikidata.org/wiki/Q135288",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "digital distribution platform operated by Microsoft",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8f35715914fc8bf5487175bb",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q11272",
+      "url": "https://www.wikidata.org/wiki/Q11272",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "spreadsheet editor, part of Microsoft 365",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-f83c05c51752a25a9447fed3",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q60683589",
+      "url": "https://www.wikidata.org/wiki/Q60683589",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "RDF representation of the Microsoft Academic Graph",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-42b63c8ef8b3197c76330c00",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q83370",
+      "url": "https://www.wikidata.org/wiki/Q83370",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "personal computer operating system by Microsoft",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-69804b45c0df9f3dc8946459",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q21207",
+      "url": "https://www.wikidata.org/wiki/Q21207",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "discontinued family of mobile operating systems by Microsoft",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-6c1d2e5442f48b550ff5223a",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Q1144725",
+      "url": "https://www.wikidata.org/wiki/Q1144725",
+      "domain": "www.wikidata.org",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-20T06:11:38.863Z",
+      "evidenceType": "registry",
+      "quote": "research division of Microsoft Corporation",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-9f9e102eb4873a7b28e02e19",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2638444A",
+      "url": "https://openlibrary.org/authors/OL2638444A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "quote": "Set",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-24dac2ce831f4154b9bf52f1",
+      "provenanceUrl": "https://openlibrary.org/authors/OL3079719A",
+      "url": "https://openlibrary.org/authors/OL3079719A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "quote": "Windows Server 2008 Server Core Administrator's Pocket Consultant",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-62e805b102b05f30ca0b3bac",
+      "provenanceUrl": "https://openlibrary.org/authors/OL15692848A",
+      "url": "https://openlibrary.org/authors/OL15692848A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "quote": "Microsoft Art gallery",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-9838742df69a5a1b2fdd3ee2",
+      "provenanceUrl": "https://openlibrary.org/authors/OL15318077A",
+      "url": "https://openlibrary.org/authors/OL15318077A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "quote": "programming tools for the microsoft windows operating system",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-bea7610f23e9d387f7211ec2",
+      "provenanceUrl": "https://openlibrary.org/authors/OL15861168A",
+      "url": "https://openlibrary.org/authors/OL15861168A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "quote": "Implementing a Microsoft Windows Server 2003 Network Infrastructure",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-3cabb571b92bbc7e29c16247",
+      "provenanceUrl": "https://openlibrary.org/authors/OL15200627A",
+      "url": "https://openlibrary.org/authors/OL15200627A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "quote": "Towards 2020 science",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8761bb00c8e089e0e5025b97",
+      "provenanceUrl": "https://openlibrary.org/authors/OL2879671A",
+      "url": "https://openlibrary.org/authors/OL2879671A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-6ca1dea0571778b8083df5ab",
+      "provenanceUrl": "https://openlibrary.org/authors/OL16462563A",
+      "url": "https://openlibrary.org/authors/OL16462563A",
+      "domain": "openlibrary.org",
+      "providerId": "openlibrary",
+      "retrievedAt": "2026-09-20T06:11:39.140Z",
+      "evidenceType": "registry",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-88f90c1de1c516399ba0dbf3",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Microsoft",
+      "url": "https://en.wikipedia.org/wiki/Microsoft",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:38.866Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-8f3658714f6ee09f6e0655b3",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Microsoft_Windows",
+      "url": "https://en.wikipedia.org/wiki/Microsoft_Windows",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:38.866Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-eaa9f5eb25d9cd21f9e58e2f",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Microsoft_Word",
+      "url": "https://en.wikipedia.org/wiki/Microsoft_Word",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:38.866Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-14efab4164e23dde9c72ead0",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Microsoft_Office",
+      "url": "https://en.wikipedia.org/wiki/Microsoft_Office",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:38.866Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-a6b391f7f407d172460a261a",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Microsoft_Bing",
+      "url": "https://en.wikipedia.org/wiki/Microsoft_Bing",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:38.866Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-467f8567344c7e95786e9251",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Microsoft_365",
+      "url": "https://en.wikipedia.org/wiki/Microsoft_365",
+      "domain": "en.wikipedia.org",
+      "providerId": "wikipedia",
+      "retrievedAt": "2026-09-20T06:11:38.866Z",
+      "evidenceType": "page",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "facets": [
+    {
+      "key": "provider",
+      "label": "Provider",
+      "buckets": [
+        {
+          "value": "openlibrary",
+          "count": 8
+        },
+        {
+          "value": "wikidata",
+          "count": 8
+        },
+        {
+          "value": "wikipedia",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "kind",
+      "label": "Kind",
+      "buckets": [
+        {
+          "value": "registry",
+          "count": 16
+        },
+        {
+          "value": "page",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "hint",
+      "label": "Hint",
+      "buckets": [],
+      "emptyReason": "no_evidence"
+    }
+  ],
+  "progress": {
+    "done": 6,
+    "totalHint": 6
+  },
+  "providers": {
+    "wikidata": "partial",
+    "openlibrary": "partial",
+    "wikipedia": "partial"
+  },
+  "softEr": {
+    "softRefs": [
+      "seed:9fbf261b62c1"
+    ],
+    "status": "candidate",
+    "displayHint": "Microsoft",
+    "hints": {
+      "kind": "org"
+    }
+  },
+  "stage": "S10",
+  "createdAt": "2026-09-20T06:11:38.594Z",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed:9fbf261b62c1",
+        "kind": "seed"
+      },
+      {
+        "id": "wd-Q2283",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q1406",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q135288",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q11272",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q60683589",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q83370",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q21207",
+        "kind": "finding"
+      },
+      {
+        "id": "wd-Q1144725",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2638444A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL3079719A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL15692848A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL15318077A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL15861168A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL15200627A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL2879671A",
+        "kind": "finding"
+      },
+      {
+        "id": "ol-OL16462563A",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Microsoft",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Microsoft_Windows",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Microsoft_Word",
+        "kind": "finding"
+      },
+      {
+        "id": "wp-en-Microsoft_Office",
+        "kind": "finding"
+      }
+    ],
+    "edges": []
+  },
+  "contradictions": [
+    {
+      "type": "same_title_multi_domain",
+      "title": "microsoft",
+      "findingIds": [
+        "wd-Q2283",
+        "wp-en-Microsoft"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    },
+    {
+      "type": "same_title_multi_domain",
+      "title": "microsoft windows",
+      "findingIds": [
+        "wd-Q1406",
+        "wp-en-Microsoft_Windows"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "en.wikipedia.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    },
+    {
+      "type": "same_title_multi_domain",
+      "title": "microsoft research",
+      "findingIds": [
+        "wd-Q1144725",
+        "ol-OL15200627A"
+      ],
+      "domains": [
+        "www.wikidata.org",
+        "openlibrary.org"
+      ],
+      "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+    }
+  ],
+  "store": {
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true,
+    "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+    "ttlMs": 3600000,
+    "kvCredsPresent": true
+  }
+}

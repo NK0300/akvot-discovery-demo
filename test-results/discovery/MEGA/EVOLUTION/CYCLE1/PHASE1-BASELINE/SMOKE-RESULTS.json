@@ -1,0 +1,89 @@
+{
+  "results": [
+    {
+      "label": "person",
+      "seed": "John Smith",
+      "createCode": 201,
+      "sessionId": "kv1.6dc6ce7c65057fce6a4c303854f4ab19",
+      "createMs": 1500.0,
+      "getMs": 798.3,
+      "findings": 21,
+      "status": "partial",
+      "leak": false
+    },
+    {
+      "label": "company",
+      "seed": "Acme Corporation",
+      "createCode": 201,
+      "sessionId": "kv1.e0a6c422f135be5bdb95aade84fd2aad",
+      "createMs": 726.8,
+      "getMs": 367.3,
+      "findings": 9,
+      "status": "partial",
+      "leak": false
+    },
+    {
+      "label": "domain",
+      "seed": "example.com",
+      "createCode": 201,
+      "sessionId": "kv1.3d77614f11dbe99d268154d3c485a102",
+      "createMs": 585.3,
+      "getMs": 325.3,
+      "findings": 8,
+      "status": "partial",
+      "leak": false
+    },
+    {
+      "label": "org",
+      "seed": "United Nations",
+      "createCode": 201,
+      "sessionId": "kv1.4cb5e9d3d5435e2d4c29ca68ed451e0b",
+      "createMs": 642.3,
+      "getMs": 308.9,
+      "findings": 22,
+      "status": "partial",
+      "leak": false
+    },
+    {
+      "label": "ambiguous",
+      "seed": "Alex",
+      "createCode": 201,
+      "sessionId": "kv1.912ed39237a7188486903640a40f216c",
+      "createMs": 593.0,
+      "getMs": 292.0,
+      "findings": 22,
+      "status": "partial",
+      "leak": false
+    },
+    {
+      "label": "nomatch",
+      "seed": "zzzznonexistentxyz999",
+      "createCode": 201,
+      "sessionId": "kv1.68ca8c44c67f2cc1ff5a8055e9078d98",
+      "createMs": 507.7,
+      "getMs": 284.1,
+      "findings": 0,
+      "status": "failed_soft",
+      "leak": false
+    }
+  ],
+  "lifecycle": {
+    "sseBytes": 24506,
+    "sseLeak": false,
+    "narrowCode": 200,
+    "narrowMs": 848.0,
+    "narrowLeak": false,
+    "reloadCode": 200,
+    "reloadLeak": false
+  },
+  "core": {
+    "lookupCode": 200,
+    "ms": 3092.8,
+    "leak": false,
+    "mode": "ambiguous",
+    "qid": null,
+    "cands": 0,
+    "assafLeak": false,
+    "assafQid": null
+  }
+}

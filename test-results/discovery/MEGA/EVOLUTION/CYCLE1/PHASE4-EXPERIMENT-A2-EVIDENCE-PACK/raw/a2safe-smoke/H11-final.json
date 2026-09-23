@@ -1,0 +1,1691 @@
+{
+  "ms": 2308,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.cab2535dfabff245ecf84eacef340db8",
+    "seed": "Smith",
+    "q": "Smith",
+    "status": "partial",
+    "findings": [
+      {
+        "id": "wd-Q1158446",
+        "kind": "registry",
+        "title": "Smith",
+        "summary": "family name",
+        "evidenceIds": [
+          "ev-b65897ff59d3d1ec861e1ff6"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q1158446",
+          "wd-Q1158446"
+        ],
+        "scoreFinding": 0.7183333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q21079662",
+        "kind": "registry",
+        "title": "Smith",
+        "summary": "male given name",
+        "evidenceIds": [
+          "ev-43655c36326fca3c467ecccb"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q21079662",
+          "wd-Q21079662"
+        ],
+        "scoreFinding": 0.7083333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q1639825",
+        "kind": "registry",
+        "title": "blacksmith",
+        "summary": "person who creates wrought iron or steel products by forging, hammering, bending, and cutting",
+        "evidenceIds": [
+          "ev-66f2cbd800ff8493b3391b6d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q1639825",
+          "wd-Q1639825"
+        ],
+        "scoreFinding": 0.6983333333333333,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q131626",
+        "kind": "registry",
+        "title": "Smithsonian Institution",
+        "summary": "group of museums and research centers administered by the United States government",
+        "evidenceIds": [
+          "ev-9519c789f3feccf22def12bf"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q131626",
+          "wd-Q131626",
+          "viaf:159805885"
+        ],
+        "scoreFinding": 0.6883333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q984158",
+        "kind": "registry",
+        "title": "Smithsonian Astrophysical Observatory Star Catalog",
+        "summary": "astrometric star catalogue",
+        "evidenceIds": [
+          "ev-d6b98bf2e8d292c3fb00e009"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q984158",
+          "wd-Q984158"
+        ],
+        "scoreFinding": 0.6783333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q3037221",
+        "kind": "registry",
+        "title": "Smith",
+        "summary": "French artist, photographer and director",
+        "evidenceIds": [
+          "ev-15d2cc9684a2a2615e0d335d"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q3037221",
+          "wd-Q3037221",
+          "viaf:13753110"
+        ],
+        "scoreFinding": 0.6683333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q3047418",
+        "kind": "registry",
+        "title": "Edgar Albert Smith",
+        "summary": "British zoologist (1847-1916)",
+        "evidenceIds": [
+          "ev-a8cd16472b67a9e41a47c377"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q3047418",
+          "wd-Q3047418",
+          "viaf:16278655"
+        ],
+        "scoreFinding": 0.6583333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wd-Q507606",
+        "kind": "registry",
+        "title": "Andrew Smith",
+        "summary": "Scottish surgeon, explorer, ethnologist and zoologist (1797–1872)",
+        "evidenceIds": [
+          "ev-dd3a630130e40af493f1805b"
+        ],
+        "providers": [
+          "wikidata"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "qid:Q507606",
+          "wd-Q507606",
+          "viaf:22151719"
+        ],
+        "scoreFinding": 0.6483333333333332,
+        "ranking": {
+          "discoveryScore": 0.7183333333333333,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "www.wikidata.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-49231791",
+        "kind": "registry",
+        "title": "Smith, Adam, 1723-1790",
+        "summary": "type:personal · lc:n80032761 · dnb:118615033",
+        "evidenceIds": [
+          "ev-e19ffbdb786a48cf8e53a7e7"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:49231791"
+        ],
+        "scoreFinding": 0.6208333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-108187427",
+        "kind": "registry",
+        "title": "Smith, Rosamond",
+        "summary": "type:personal · lc:n78095538 · dnb:118589121",
+        "evidenceIds": [
+          "ev-4e0ea96e84fee77cb8e3edd8"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:108187427"
+        ],
+        "scoreFinding": 0.6108333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-7524803",
+        "kind": "registry",
+        "title": "Smith, Kanonik",
+        "summary": "type:personal · lc:n83069510 · dnb:118759523",
+        "evidenceIds": [
+          "ev-42c2207df95a8b5187ecea33"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:7524803"
+        ],
+        "scoreFinding": 0.6008333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-14776833",
+        "kind": "registry",
+        "title": "Smith, Wilbur, 1933-2021",
+        "summary": "type:personal · lc:n79060984 · dnb:11818881x",
+        "evidenceIds": [
+          "ev-ec7491fabd1e34e8d53cd5b6"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:14776833"
+        ],
+        "scoreFinding": 0.5908333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-118073838",
+        "kind": "registry",
+        "title": "Smith, Will, 1968-",
+        "summary": "type:personal · lc:n92045012 · dnb:12100869x",
+        "evidenceIds": [
+          "ev-7322664727b1ab98c7c4b7e9"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:118073838"
+        ],
+        "scoreFinding": 0.5808333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-84037206",
+        "kind": "registry",
+        "title": "Smith, Patti, 1946-",
+        "summary": "type:personal · lc:n84095418 · dnb:118748556",
+        "evidenceIds": [
+          "ev-538352087d278f54a10d5c6d"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:84037206"
+        ],
+        "scoreFinding": 0.5708333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-95175916",
+        "kind": "registry",
+        "title": "Smith, Martin Cruz, 1942-",
+        "summary": "type:personal · lc:n50013285 · dnb:120008823",
+        "evidenceIds": [
+          "ev-4799111b94e741d20dea6569"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:95175916"
+        ],
+        "scoreFinding": 0.5608333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-108562491",
+        "kind": "registry",
+        "title": "Smith, Edward Lucie, 1933-",
+        "summary": "type:personal · lc:n79027218 · dnb:115722998",
+        "evidenceIds": [
+          "ev-ba283fc7418cef7137d5d8e7"
+        ],
+        "providers": [
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:viaf",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "viaf:108562491"
+        ],
+        "scoreFinding": 0.5508333333333332,
+        "ranking": {
+          "discoveryScore": 0.7008333333333332,
+          "factors": {
+            "authority": 0.85,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.85 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL218443A",
+        "kind": "registry",
+        "title": "Joan Smith",
+        "summary": "Top work: Dame Durden's Daughter",
+        "evidenceIds": [
+          "ev-ff5786298780a5cf2f00d344"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL218443A",
+          "ol-OL218443A"
+        ],
+        "scoreFinding": 0.5058333333333332,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL430813A",
+        "kind": "registry",
+        "title": "Jeff Smith",
+        "summary": "Top work: Out From Boneville",
+        "evidenceIds": [
+          "ev-a11b29e5a5727f0d3e9fcd8f"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL430813A",
+          "ol-OL430813A",
+          "viaf:69039303",
+          "qid:Q1335436",
+          "wd-Q1335436"
+        ],
+        "scoreFinding": 0.49583333333333324,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL2426732A",
+        "kind": "registry",
+        "title": "Gipsy Smith",
+        "summary": "Top work: Gipsy Smith",
+        "evidenceIds": [
+          "ev-cb020bce1d5e580c34ac90b3"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL2426732A",
+          "ol-OL2426732A",
+          "viaf:50334593",
+          "qid:Q1980154",
+          "wd-Q1980154"
+        ],
+        "scoreFinding": 0.4858333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL28012A",
+        "kind": "registry",
+        "title": "Thorne Smith",
+        "summary": "Top work: Topper: a ribald adventure",
+        "evidenceIds": [
+          "ev-aec0a9e90cc3ac2900c92108"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL28012A",
+          "ol-OL28012A",
+          "viaf:34665603",
+          "qid:Q2428988",
+          "wd-Q2428988"
+        ],
+        "scoreFinding": 0.4758333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL884528A",
+        "kind": "registry",
+        "title": "Lisa Jane Smith",
+        "summary": "Top work: The Awakening",
+        "evidenceIds": [
+          "ev-7406fc9ceb72197f3ff1a4c4"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL884528A",
+          "ol-OL884528A",
+          "viaf:100652128",
+          "qid:Q233424",
+          "wd-Q233424"
+        ],
+        "scoreFinding": 0.46583333333333327,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL30118A",
+        "kind": "registry",
+        "title": "Zadie Smith",
+        "summary": "Top work: White Teeth",
+        "evidenceIds": [
+          "ev-c7d3ee5703068c6d8f358f11"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL30118A",
+          "ol-OL30118A",
+          "viaf:14951645",
+          "qid:Q140052",
+          "wd-Q140052"
+        ],
+        "scoreFinding": 0.4558333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL227412A",
+        "kind": "registry",
+        "title": "Patti Smith",
+        "summary": "Top work: Just Kids",
+        "evidenceIds": [
+          "ev-4faf5d99e1bc1944d33f2873"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL227412A",
+          "ol-OL227412A"
+        ],
+        "scoreFinding": 0.4458333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "ol-OL76547A",
+        "kind": "registry",
+        "title": "Martin Cruz Smith",
+        "summary": "Top work: Gorky Park",
+        "evidenceIds": [
+          "ev-1dc16fd80005860caf970f70"
+        ],
+        "providers": [
+          "openlibrary"
+        ],
+        "facetHints": [
+          "provider:openlibrary",
+          "kind:registry"
+        ],
+        "entityRefs": [
+          "ol:OL76547A",
+          "ol-OL76547A"
+        ],
+        "scoreFinding": 0.4358333333333333,
+        "ranking": {
+          "discoveryScore": 0.6658333333333333,
+          "factors": {
+            "authority": 0.75,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "openlibrary.org"
+            ]
+          },
+          "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Smith",
+        "kind": "page",
+        "title": "Smith",
+        "evidenceIds": [
+          "ev-fd885d30135af8504972985c"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Smith"
+        ],
+        "scoreFinding": 0.4083333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Smithsonian_Institution",
+        "kind": "page",
+        "title": "Smithsonian Institution",
+        "evidenceIds": [
+          "ev-62932c48cd56a6019dfd690e"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Smithsonian Institution"
+        ],
+        "scoreFinding": 0.3983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Anna_Nicole_Smith",
+        "kind": "page",
+        "title": "Anna Nicole Smith",
+        "evidenceIds": [
+          "ev-91cc6ac878dd083e8693cbca"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Anna Nicole Smith"
+        ],
+        "scoreFinding": 0.3883333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Will_Smith",
+        "kind": "page",
+        "title": "Will Smith",
+        "evidenceIds": [
+          "ev-d3feaf8e9b6b417df2c023b6"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Will Smith"
+        ],
+        "scoreFinding": 0.3783333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Joseph_Smith",
+        "kind": "page",
+        "title": "Joseph Smith",
+        "evidenceIds": [
+          "ev-9ebce163389f83181fa993dd"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Joseph Smith"
+        ],
+        "scoreFinding": 0.3683333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-Patti_Smith",
+        "kind": "page",
+        "title": "Patti Smith",
+        "evidenceIds": [
+          "ev-6733845c616607c0421ab412"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:Patti Smith"
+        ],
+        "scoreFinding": 0.35833333333333334,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-b65897ff59d3d1ec861e1ff6",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q1158446",
+        "url": "https://www.wikidata.org/wiki/Q1158446",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "family name",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-43655c36326fca3c467ecccb",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q21079662",
+        "url": "https://www.wikidata.org/wiki/Q21079662",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "male given name",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-66f2cbd800ff8493b3391b6d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q1639825",
+        "url": "https://www.wikidata.org/wiki/Q1639825",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "person who creates wrought iron or steel products by forging, hammering, bending, and cutting",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9519c789f3feccf22def12bf",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q131626",
+        "url": "https://www.wikidata.org/wiki/Q131626",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "group of museums and research centers administered by the United States government",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d6b98bf2e8d292c3fb00e009",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q984158",
+        "url": "https://www.wikidata.org/wiki/Q984158",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "astrometric star catalogue",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-15d2cc9684a2a2615e0d335d",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q3037221",
+        "url": "https://www.wikidata.org/wiki/Q3037221",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "French artist, photographer and director",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a8cd16472b67a9e41a47c377",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q3047418",
+        "url": "https://www.wikidata.org/wiki/Q3047418",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "British zoologist (1847-1916)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-dd3a630130e40af493f1805b",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q507606",
+        "url": "https://www.wikidata.org/wiki/Q507606",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:41:15.633Z",
+        "evidenceType": "registry",
+        "quote": "Scottish surgeon, explorer, ethnologist and zoologist (1797–1872)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ff5786298780a5cf2f00d344",
+        "provenanceUrl": "https://openlibrary.org/authors/OL218443A",
+        "url": "https://openlibrary.org/authors/OL218443A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "Dame Durden's Daughter",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-a11b29e5a5727f0d3e9fcd8f",
+        "provenanceUrl": "https://openlibrary.org/authors/OL430813A",
+        "url": "https://openlibrary.org/authors/OL430813A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "Out From Boneville",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-cb020bce1d5e580c34ac90b3",
+        "provenanceUrl": "https://openlibrary.org/authors/OL2426732A",
+        "url": "https://openlibrary.org/authors/OL2426732A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "Gipsy Smith",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-aec0a9e90cc3ac2900c92108",
+        "provenanceUrl": "https://openlibrary.org/authors/OL28012A",
+        "url": "https://openlibrary.org/authors/OL28012A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "Topper: a ribald adventure",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-7406fc9ceb72197f3ff1a4c4",
+        "provenanceUrl": "https://openlibrary.org/authors/OL884528A",
+        "url": "https://openlibrary.org/authors/OL884528A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "The Awakening",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-c7d3ee5703068c6d8f358f11",
+        "provenanceUrl": "https://openlibrary.org/authors/OL30118A",
+        "url": "https://openlibrary.org/authors/OL30118A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "White Teeth",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4faf5d99e1bc1944d33f2873",
+        "provenanceUrl": "https://openlibrary.org/authors/OL227412A",
+        "url": "https://openlibrary.org/authors/OL227412A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "Just Kids",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-1dc16fd80005860caf970f70",
+        "provenanceUrl": "https://openlibrary.org/authors/OL76547A",
+        "url": "https://openlibrary.org/authors/OL76547A",
+        "domain": "openlibrary.org",
+        "providerId": "openlibrary",
+        "retrievedAt": "2026-09-20T07:41:17.017Z",
+        "evidenceType": "registry",
+        "quote": "Gorky Park",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-fd885d30135af8504972985c",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Smith",
+        "url": "https://en.wikipedia.org/wiki/Smith",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:15.644Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-62932c48cd56a6019dfd690e",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Smithsonian_Institution",
+        "url": "https://en.wikipedia.org/wiki/Smithsonian_Institution",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:15.644Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-91cc6ac878dd083e8693cbca",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Anna_Nicole_Smith",
+        "url": "https://en.wikipedia.org/wiki/Anna_Nicole_Smith",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:15.644Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d3feaf8e9b6b417df2c023b6",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Will_Smith",
+        "url": "https://en.wikipedia.org/wiki/Will_Smith",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:15.644Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-9ebce163389f83181fa993dd",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Joseph_Smith",
+        "url": "https://en.wikipedia.org/wiki/Joseph_Smith",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:15.644Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-6733845c616607c0421ab412",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/Patti_Smith",
+        "url": "https://en.wikipedia.org/wiki/Patti_Smith",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:41:15.644Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-e19ffbdb786a48cf8e53a7e7",
+        "provenanceUrl": "https://viaf.org/viaf/49231791",
+        "url": "https://viaf.org/viaf/49231791",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Adam, 1723-1790",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4e0ea96e84fee77cb8e3edd8",
+        "provenanceUrl": "https://viaf.org/viaf/108187427",
+        "url": "https://viaf.org/viaf/108187427",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Rosamond",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-42c2207df95a8b5187ecea33",
+        "provenanceUrl": "https://viaf.org/viaf/7524803",
+        "url": "https://viaf.org/viaf/7524803",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Kanonik",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ec7491fabd1e34e8d53cd5b6",
+        "provenanceUrl": "https://viaf.org/viaf/14776833",
+        "url": "https://viaf.org/viaf/14776833",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Wilbur, 1933-2021",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-7322664727b1ab98c7c4b7e9",
+        "provenanceUrl": "https://viaf.org/viaf/118073838",
+        "url": "https://viaf.org/viaf/118073838",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Will, 1968-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-538352087d278f54a10d5c6d",
+        "provenanceUrl": "https://viaf.org/viaf/84037206",
+        "url": "https://viaf.org/viaf/84037206",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Patti, 1946-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-4799111b94e741d20dea6569",
+        "provenanceUrl": "https://viaf.org/viaf/95175916",
+        "url": "https://viaf.org/viaf/95175916",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Martin Cruz, 1942-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba283fc7418cef7137d5d8e7",
+        "provenanceUrl": "https://viaf.org/viaf/108562491",
+        "url": "https://viaf.org/viaf/108562491",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:41:15.574Z",
+        "evidenceType": "registry",
+        "quote": "Smith, Edward Lucie, 1933-",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "openlibrary",
+            "count": 8
+          },
+          {
+            "value": "viaf",
+            "count": 8
+          },
+          {
+            "value": "wikidata",
+            "count": 8
+          },
+          {
+            "value": "wikipedia",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 24
+          },
+          {
+            "value": "page",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "partial",
+      "openlibrary": "partial",
+      "wikipedia": "partial",
+      "viaf": "partial"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:6627835f988e"
+      ],
+      "status": "candidate",
+      "displayHint": "Smith",
+      "hints": {
+        "city": "Boston"
+      }
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:41:15.379Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:6627835f988e",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q1158446",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q21079662",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q1639825",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q131626",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q984158",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q3037221",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q3047418",
+          "kind": "finding"
+        },
+        {
+          "id": "wd-Q507606",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL218443A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL430813A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL2426732A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL28012A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL884528A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL30118A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL227412A",
+          "kind": "finding"
+        },
+        {
+          "id": "ol-OL76547A",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Smith",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Smithsonian_Institution",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Anna_Nicole_Smith",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-Will_Smith",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "smith",
+        "findingIds": [
+          "wd-Q1158446",
+          "wd-Q21079662",
+          "wd-Q3037221",
+          "wp-en-Smith"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      },
+      {
+        "type": "same_title_multi_domain",
+        "title": "smithsonian institution",
+        "findingIds": [
+          "wd-Q131626",
+          "wp-en-Smithsonian_Institution"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      },
+      {
+        "type": "same_title_multi_domain",
+        "title": "patti smith",
+        "findingIds": [
+          "ol-OL227412A",
+          "wp-en-Patti_Smith"
+        ],
+        "domains": [
+          "openlibrary.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

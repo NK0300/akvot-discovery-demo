@@ -1,0 +1,59 @@
+{
+  "snap": {
+    "status": "failed_soft",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R03",
+    "seed": "https://www.example.com",
+    "expect": "UNKNOWN_OR_NONE",
+    "note": "URL-alone; soft-fail OK",
+    "sessionId": "kv1.cb311b82f9dd4ab0a68716cdfd107ed9",
+    "status": "failed_soft",
+    "polls": 0,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": true,
+    "reason": "no wo emit; zero SAME-*",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

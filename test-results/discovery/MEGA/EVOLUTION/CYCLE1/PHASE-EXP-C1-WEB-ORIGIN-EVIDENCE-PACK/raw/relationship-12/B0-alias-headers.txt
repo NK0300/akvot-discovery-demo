@@ -1,0 +1,11 @@
+HTTP/2 302 
+cache-control: no-store, max-age=0
+content-type: text/plain
+date: Sun, 20 Sep 2026 09:02:35 GMT
+location: https://vercel.com/sso-api?url=https%3A%2F%2Fakvot-discovery.vercel.app%2F&nonce=5c44b86bb17f3af7f5fc3fd87b94ead1a81f19499e653611fb9e67c07823358c
+server: Vercel
+set-cookie: _vercel_sso_nonce=f11cfa18bc558ece74734dfdd16137c30f062b91a808e45b; Max-Age=3600; Path=/; Secure; HttpOnly; SameSite=Lax
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-frame-options: DENY
+x-vercel-id: cle1::r4j2x-1789894955632-14489a8cb67f
+

@@ -1,0 +1,46 @@
+{
+  "doc": "ACC-COMPARE-A2-דיוק-2026-09-20",
+  "role": "דיוק",
+  "stamp": "2026-09-20T10:26:08+03:00",
+  "ended": "2026-09-20T10:27:50+03:00",
+  "promote": "HOLD",
+  "chief_promote_path": "Bound#1 Fz2iq",
+  "frndab_role": "interim/caveat baseline only",
+  "table": [
+    {
+      "lane": "Bound1-Fz2iq",
+      "dpl": "dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw",
+      "mean_multi": 0,
+      "pooled": 0,
+      "s01_findings": 18,
+      "leak": 0,
+      "multi_gate": "FAIL",
+      "hard": "PASS",
+      "acc_verdict": "FAIL"
+    },
+    {
+      "lane": "FRNDab-caveat",
+      "dpl": "dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2",
+      "mean_multi": 0.5189,
+      "pooled": 0.4675,
+      "s01_findings": 17,
+      "leak": 0,
+      "multi_gate": "PASS",
+      "hard": "PASS",
+      "acc_verdict": "CONFIRM_PASS"
+    },
+    {
+      "lane": "B0",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "mean_multi": 0,
+      "pooled": 0,
+      "s01_findings": 10,
+      "leak": 0,
+      "multi_gate": "N/A (frozen BEFORE)",
+      "hard": "PASS",
+      "acc_verdict": "LOCKED_BEFORE"
+    }
+  ],
+  "exp_a2_acc_for_chief": "FAIL",
+  "note": "Chief Acc PASS|FAIL = Bound#1 only. FRNDab not promote-path."
+}

@@ -1,0 +1,4 @@
+wp3-l2-harness v=wp3-l2-1.1.0 mode=smoke base=https://akvot-simple-demo.vercel.app tag=L2-smoke-שרת run=f3f185e8 vercelCurl=false
+L2-A load step=low conc=2 case=A-assaf-get mix=COLD n=2
+  A-assaf-get COLD 1/2 862ms ui=dossier cached=false err=-
+  A-assaf-get COLD 2/2 954ms ui=dossier cached=false err=-

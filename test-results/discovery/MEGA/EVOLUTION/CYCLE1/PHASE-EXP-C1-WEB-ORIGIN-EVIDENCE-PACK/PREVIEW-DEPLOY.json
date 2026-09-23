@@ -1,0 +1,33 @@
+{
+  "stamp": "2026-09-20T11:40:01+0300",
+  "stampLabel": "2026-09-20 11:40:01 IDT",
+  "experiment": "CYCLE1-EXP-C1-WEB-ORIGIN",
+  "promote": "HOLD",
+  "aliasTouch": false,
+  "preview": {
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "url": "https://akvot-simple-demo-kqiu92b4a-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "readyState": "READY",
+    "target": null,
+    "env": {
+      "DISCOVERY_ENABLE_WEB_ORIGIN": "1",
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "locks": {
+    "discovery_B0": {
+      "alias": "akvot-discovery.vercel.app",
+      "expected": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "actual": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "ok": true
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "expected": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "actual": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "ok": true
+    }
+  }
+}

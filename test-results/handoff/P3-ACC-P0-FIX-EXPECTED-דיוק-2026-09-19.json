@@ -1,0 +1,31 @@
+{
+  "role": "דיוק",
+  "date": "2026-09-19",
+  "invariant": "NEVER Q1701775 in dossier OR candidates OR ranked identity sources",
+  "forbidden_qids": [
+    "Q1701775"
+  ],
+  "smith_ctx": {
+    "q": "John Smith",
+    "ctx": {
+      "org": "IBM",
+      "city": "New York",
+      "country": "US"
+    }
+  },
+  "pw_hard": 0,
+  "faces0_clears_fail": false,
+  "assaf_keep": "Q47507930",
+  "matrix": [
+    "M1-quietx3",
+    "M2-COLDx3",
+    "M3-WARMx3",
+    "M4-repeatedx5",
+    "M5-WDabsent",
+    "M6-Assaf",
+    "M7-cohen",
+    "M8-TC6"
+  ],
+  "alias": "FROZEN",
+  "status": "EXPECTED_LOCKED_WAIT_IMPL"
+}

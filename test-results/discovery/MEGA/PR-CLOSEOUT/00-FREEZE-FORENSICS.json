@@ -1,0 +1,152 @@
+{
+  "stamp": "2026-09-20T08:45:41+03:00",
+  "zone": "Asia/Jerusalem",
+  "repo": "/workspace/akvot-quick-demo",
+  "git": {
+    "available": false,
+    "commit": null,
+    "branch": null
+  },
+  "vercel": {
+    "projectId": "prj_Xm61SjyuvgYXDf7Vs0IxBXbDI5V5",
+    "orgScope": "k-akvot",
+    "projectName": "akvot-simple-demo"
+  },
+  "preview": {
+    "deploymentId": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+    "url": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app",
+    "canonical": true,
+    "health": {
+      "apiHealthOk": true,
+      "discoveryHealthOk": true,
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "promoteEligible": true,
+      "kvCredsPresent": true,
+      "mode": "kv-shared",
+      "steps": [
+        "WRITE",
+        "READ",
+        "UPDATE",
+        "DELETE"
+      ],
+      "latencyMsApprox": 122
+    }
+  },
+  "coreAliasLocked": {
+    "deploymentId": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "url": "https://akvot-simple-demo.vercel.app",
+    "touch": false
+  },
+  "envPresenceNamesOnly": {
+    "UPSTASH_REDIS_REST_URL": {
+      "Development": true,
+      "Preview": true,
+      "Production": true
+    },
+    "UPSTASH_REDIS_REST_TOKEN": {
+      "Development": true,
+      "Preview": true,
+      "Production": true
+    },
+    "KV_REST_API_URL": {
+      "Development": false,
+      "Preview": false,
+      "Production": false
+    },
+    "KV_REST_API_TOKEN": {
+      "Development": false,
+      "Preview": false,
+      "Production": false
+    }
+  },
+  "backendDetection": [
+    "vercel-kv if KV_REST_*",
+    "upstash if UPSTASH_*",
+    "else fs-regen"
+  ],
+  "lifecycle": [
+    "CREATE",
+    "WRITE",
+    "READ",
+    "UPDATE",
+    "SSE",
+    "NARROW",
+    "HIT",
+    "RELOAD",
+    "RECOVER",
+    "EXPIRE"
+  ],
+  "ops": [
+    "GET",
+    "SET",
+    "UPDATE",
+    "DELETE",
+    "TTL",
+    "HEALTH"
+  ],
+  "fallbacks": [
+    "fs-regen",
+    "seed-decode-regen",
+    "memory-warm-only",
+    "redis-one-retry",
+    "provider-soft"
+  ],
+  "paths": [
+    "POST",
+    "GET",
+    "SSE",
+    "narrow",
+    "HIT"
+  ],
+  "telemetryPreUpgrade": [
+    "logStoreOp",
+    "obs.metrics",
+    "sse.lifecycle",
+    "publicStoreInfo",
+    "health.steps"
+  ],
+  "b17Gap": [
+    "outcome",
+    "failureClass",
+    "retryCount",
+    "backendType",
+    "durabilityState",
+    "scrubbedSessionRef"
+  ],
+  "accScrubSurfaces": [
+    "findings",
+    "evidence",
+    "facets",
+    "contradictions",
+    "candidates(deleted)",
+    "graph/nested",
+    "SSE",
+    "narrow",
+    "HIT",
+    "POST",
+    "errors/stripped",
+    "metrics",
+    "logs",
+    "provenance"
+  ],
+  "locks": [
+    "no-promote",
+    "no-core-alias",
+    "no-secrets-in-evidence",
+    "preview-redeploy-only-if-needed"
+  ],
+  "closeoutSuccessorPreview": {
+    "deploymentId": "dpl_4trZGxgN7CKKtC6Zed6SbACzF6Po",
+    "url": "https://akvot-simple-demo-7ogfp6yun-k-akvot.vercel.app",
+    "note": "B17/B18 closeout Preview; freeze baseline was dpl_9PkJ"
+  },
+  "closeoutCandidate": {
+    "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "url": "https://akvot-simple-demo-6palh6t62-k-akvot.vercel.app",
+    "note": "Preview-only redeploy for B17/B18; not promoted"
+  },
+  "recommendation": "PROMOTE-READY",
+  "promoted": false
+}

@@ -1,0 +1,289 @@
+{
+  "when": "2026-09-09T09:31:24.047061+00:00",
+  "whenLocal": "2026-09-09 12:31:24 IDT Asia/Jerusalem",
+  "agent": "בודק",
+  "report": "VERIFY-dpl9V8i",
+  "claimedDeploy": "dpl_9V8iig4PLALA4t7V7hNNQFo8Q3az",
+  "alias": "https://akvot-simple-demo.vercel.app",
+  "runtime": {
+    "vercelInspect": {
+      "id": "dpl_9V8iig4PLALA4t7V7hNNQFo8Q3az",
+      "readyState": "READY",
+      "target": "production",
+      "url": "akvot-simple-demo-jkq83wqnv-k-akvot.vercel.app",
+      "aliases": [
+        "akvot-simple-demo.vercel.app",
+        "akvot-simple-demo-k-akvot.vercel.app"
+      ],
+      "createdAtUtc": "2026-09-09T09:20:48Z",
+      "createdAtLocal": "2026-09-09 12:20:48 IDT",
+      "gitSource": null,
+      "meta": {}
+    },
+    "sampleLookup": {
+      "q": "בנימין נתניהו",
+      "http": 200,
+      "phase": "orchestrator-v0-b",
+      "uiState": "dossier",
+      "qid": "Q43723",
+      "faces": true,
+      "xVercelId": "cle1::fra1::wvq4c-1788946047520-7c76e31b2f3a",
+      "xVercelCache": "MISS",
+      "mentionsOldDpl_5N3G": false
+    },
+    "phaseObservedAllCases": "orchestrator-v0-b",
+    "stuckOnOldDpl_5N3G": false
+  },
+  "version": {
+    "VERSION": "orchestrator-v0-b (phase JSON)",
+    "BUILD": "dpl_9V8iig4PLALA4t7V7hNNQFo8Q3az",
+    "COMMIT": null,
+    "note": "vercel inspect: no gitSource/meta commit; CLI/upload deploy"
+  },
+  "tests": {
+    "units": {
+      "passed": 46,
+      "failed": 0,
+      "exit": 0,
+      "cmd": "node api/lib/orchestrator.test.mjs"
+    },
+    "contract": {
+      "method": "equivalent HTTP harness (same judges as contract-identity-p0.mjs); node script runner binding blocked",
+      "base": "https://akvot-simple-demo.vercel.app",
+      "pass": "5/5",
+      "allPass": true,
+      "rows": [
+        {
+          "id": "a-netanyahu-keep",
+          "tier": "KEEP",
+          "label": "Netanyahu HE",
+          "pass": true,
+          "http": 200,
+          "ms": 6606,
+          "uiState": "dossier",
+          "mode": "wiki+google",
+          "qid": "Q43723",
+          "faces": true,
+          "phase": "orchestrator-v0-b",
+          "messageKey": "dossier_ready",
+          "candidates": 0,
+          "fails": [],
+          "notes": [],
+          "vercelId": "cle1::fra1::99hsf-1788946123182-876fbbe71f51"
+        },
+        {
+          "id": "b-cohen-keep",
+          "tier": "KEEP",
+          "label": "Danny Cohen HE",
+          "pass": true,
+          "http": 200,
+          "ms": 351,
+          "uiState": "need_context",
+          "mode": "ambiguous",
+          "qid": null,
+          "faces": false,
+          "phase": "orchestrator-v0-b",
+          "messageKey": "common_name",
+          "candidates": 0,
+          "fails": [],
+          "notes": [],
+          "vercelId": "cle1::fra1::z95x6-1788946131220-558e00c214ba"
+        },
+        {
+          "id": "c-smith-bare-keep",
+          "tier": "KEEP",
+          "label": "John Smith bare",
+          "pass": true,
+          "http": 200,
+          "ms": 5925,
+          "uiState": "need_context",
+          "mode": "ambiguous",
+          "qid": null,
+          "faces": false,
+          "phase": "orchestrator-v0-b",
+          "messageKey": "common_name",
+          "candidates": 0,
+          "fails": [],
+          "notes": [],
+          "vercelId": "cle1::fra1::2wlkf-1788946133129-76c18d98370b"
+        },
+        {
+          "id": "d-smith-ctx-p0",
+          "tier": "P0",
+          "label": "Smith+IBM+NY+US",
+          "pass": true,
+          "http": 200,
+          "ms": 10369,
+          "uiState": "candidates",
+          "mode": "candidates",
+          "qid": null,
+          "faces": false,
+          "phase": "orchestrator-v0-b",
+          "messageKey": "pick_one",
+          "candidates": 7,
+          "fails": [],
+          "notes": [],
+          "vercelId": "cle1::fra1::jnvxn-1788946140501-f29f591a5899"
+        },
+        {
+          "id": "e-smith-email-g11-p0",
+          "tier": "P0",
+          "label": "Smith+email",
+          "pass": true,
+          "http": 200,
+          "ms": 9807,
+          "uiState": "candidates",
+          "mode": "candidates",
+          "qid": null,
+          "faces": false,
+          "phase": "orchestrator-v0-b",
+          "messageKey": "pick_one",
+          "candidates": 6,
+          "fails": [],
+          "notes": [],
+          "vercelId": "cle1::fra1::qrxbv-1788946152364-2a9d11df35f8"
+        }
+      ]
+    },
+    "safety": {
+      "method": "sequential HTTP e2e concurrency=1",
+      "pass": "6/6",
+      "corePass": "5/5",
+      "rows": [
+        {
+          "case": "Netanyahu HE",
+          "id": "a-netanyahu-keep",
+          "tier": "KEEP",
+          "ui": "dossier",
+          "mode": "wiki+google",
+          "qid": "Q43723",
+          "faces": true,
+          "ms": 6606,
+          "pass": true,
+          "candidates": 0,
+          "messageKey": "dossier_ready",
+          "phase": "orchestrator-v0-b",
+          "http": 200
+        },
+        {
+          "case": "Danny Cohen HE",
+          "id": "b-cohen-keep",
+          "tier": "KEEP",
+          "ui": "need_context",
+          "mode": "ambiguous",
+          "qid": null,
+          "faces": false,
+          "ms": 351,
+          "pass": true,
+          "candidates": 0,
+          "messageKey": "common_name",
+          "phase": "orchestrator-v0-b",
+          "http": 200
+        },
+        {
+          "case": "John Smith bare",
+          "id": "c-smith-bare-keep",
+          "tier": "KEEP",
+          "ui": "need_context",
+          "mode": "ambiguous",
+          "qid": null,
+          "faces": false,
+          "ms": 5925,
+          "pass": true,
+          "candidates": 0,
+          "messageKey": "common_name",
+          "phase": "orchestrator-v0-b",
+          "http": 200
+        },
+        {
+          "case": "Smith+IBM+NY+US",
+          "id": "d-smith-ctx-p0",
+          "tier": "P0",
+          "ui": "candidates",
+          "mode": "candidates",
+          "qid": null,
+          "faces": false,
+          "ms": 10369,
+          "pass": true,
+          "candidates": 7,
+          "messageKey": "pick_one",
+          "phase": "orchestrator-v0-b",
+          "http": 200
+        },
+        {
+          "case": "Smith+email",
+          "id": "e-smith-email-g11-p0",
+          "tier": "P0",
+          "ui": "candidates",
+          "mode": "candidates",
+          "qid": null,
+          "faces": false,
+          "ms": 9807,
+          "pass": true,
+          "candidates": 6,
+          "messageKey": "pick_one",
+          "phase": "orchestrator-v0-b",
+          "http": 200
+        },
+        {
+          "case": "Orly Levy HE",
+          "id": "f-orly-optional",
+          "tier": "OPTIONAL",
+          "ui": "dossier",
+          "mode": "wiki+google",
+          "qid": "Q466537",
+          "faces": true,
+          "ms": 6773,
+          "pass": true,
+          "candidates": 0,
+          "messageKey": "dossier_ready",
+          "phase": "orchestrator-v0-b",
+          "http": 200
+        }
+      ]
+    }
+  },
+  "latencyMs": {
+    "a-netanyahu-keep": 6606,
+    "b-cohen-keep": 351,
+    "c-smith-bare-keep": 5925,
+    "d-smith-ctx-p0": 10369,
+    "e-smith-email-g11-p0": 9807,
+    "f-orly-optional": 6773
+  },
+  "latencySummary": {
+    "coreMin": 351,
+    "coreMax": 10369,
+    "coreSum": 33058,
+    "cohenMs": 351,
+    "smithBareMs": 5925,
+    "smithCtxMs": 10369,
+    "smithEmailMs": 9807
+  },
+  "knownRisks": [
+    "Latin bare ~6s wiki floor (P1 speed)",
+    "Smith+ctx/email ~9-10s",
+    "COMMIT=null (CLI upload)",
+    "Single sequential smoke; not 12-gate/battery",
+    "node contract script not bound; equivalent harness used",
+    "QA slice only — not final release gate"
+  ],
+  "overall": "GREEN",
+  "passFail": {
+    "units": "PASS 46/46",
+    "contract": "PASS 5/5",
+    "safety": "PASS 6/6 (incl optional Orly)",
+    "runtimeDeployMatch": "PASS"
+  },
+  "summaryHe": "אימות QA על dpl_9V8i — ירוק. יחידות 46/46, חוזה 5/5, סמוק בטיחות 6/6. פאזה orchestrator-v0-b; לא תקוע על dpl_5N3G. P0 Smith+ctx → candidates ללא פנים; G11 email → candidates ללא פנים וללא דליפת אימייל.",
+  "ms": {
+    "a-netanyahu-keep": 6606,
+    "b-cohen-keep": 351,
+    "c-smith-bare-keep": 5925,
+    "d-smith-ctx-p0": 10369,
+    "e-smith-email-g11-p0": 9807,
+    "f-orly-optional": 6773
+  },
+  "local_s": "2026-09-09 12:31:24 IDT",
+  "deploy_created": "2026-09-09 12:20:48 IDT"
+}

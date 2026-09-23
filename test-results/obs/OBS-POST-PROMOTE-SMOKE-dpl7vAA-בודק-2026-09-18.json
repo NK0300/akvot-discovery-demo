@@ -1,0 +1,151 @@
+{
+  "when": "2026-09-18T09:08:16.173323+03:00",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "expectedBuild": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+  "health": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_7vAAEXkrSBYfS2XVR2VyujmxV3rR",
+      "baselineHint": "dpl_DNfPZ9"
+    }
+  },
+  "PASS": true,
+  "pw": 0,
+  "cases": [
+    {
+      "id": "Assaf COLD",
+      "pass": true,
+      "expected": "dossier Q47507930 + wikiMeta",
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 0,
+          "wikiTimeout": 0,
+          "wikiRetries": 0
+        },
+        "ms": 740,
+        "http": 200,
+        "cached": null
+      }
+    },
+    {
+      "id": "כהן COLD",
+      "pass": true,
+      "expected": "need_context|thin + wikiMeta · 0 faces",
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 0,
+          "wikiTimeout": 0,
+          "wikiRetries": 0
+        },
+        "ms": 992,
+        "http": 200,
+        "cached": null
+      }
+    },
+    {
+      "id": "Smith POST COLD",
+      "pass": true,
+      "expected": "candidates + wikiMeta · pw=0",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 6,
+          "wikiTimeout": 1,
+          "wikiRetries": 7
+        },
+        "ms": 8021,
+        "http": 200,
+        "cached": null
+      }
+    },
+    {
+      "id": "Smith POST WARM×1",
+      "pass": true,
+      "expected": "candidates + wikiMeta · pw=0",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 11,
+          "wikiTimeout": 1,
+          "wikiRetries": 12
+        },
+        "ms": 8526,
+        "http": 200,
+        "cached": null
+      }
+    },
+    {
+      "id": "Smith POST WARM×2",
+      "pass": true,
+      "expected": "candidates + wikiMeta · pw=0",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 15,
+          "wikiTimeout": 1,
+          "wikiRetries": 16
+        },
+        "ms": 7614,
+        "http": 200,
+        "cached": null
+      }
+    },
+    {
+      "id": "Smith POST WARM×3",
+      "pass": true,
+      "expected": "candidates + wikiMeta · pw=0",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 2,
+          "wikiTimeout": 0,
+          "wikiRetries": 2
+        },
+        "ms": 11507,
+        "http": 200,
+        "cached": null
+      }
+    },
+    {
+      "id": "T-C6",
+      "pass": true,
+      "expected": "need_context · 0 faces",
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "hasWikiMeta": true,
+        "wikiMeta": {
+          "wiki429": 6,
+          "wikiTimeout": 1,
+          "wikiRetries": 7
+        },
+        "ms": 5855,
+        "http": 200,
+        "cached": null
+      }
+    }
+  ]
+}

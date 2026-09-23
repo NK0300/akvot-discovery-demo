@@ -1,0 +1,85 @@
+[דיוק] CYCLE1 Phase2 Acc GOLDEN METRICS start 2026-09-20T09:51:02+03:00
+[דיוק] Discovery https://akvot-discovery.vercel.app → dpl_AvyhrW24gGRquWCPPZdydBiz81dv
+[דיוק] Core https://akvot-simple-demo.vercel.app → dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED
+[דיוק] Corpus seeds=16
+[health] disc build=dpl_AvyhrW24gGRquWCPPZdydBiz81dv ok=true store=upstash
+[corpus] S01 POST seed=Tim Berners-Lee
+  POST → pass=true status=partial findings=10 leak=0 b23=0 dossier=false
+[corpus] S01 GET HIT id=kv1.e661e7d13320e4187651f0f6…
+  GET  → pass=true status=partial findings=10 leak=0 b23=0
+[corpus] S02 POST seed=John Smith
+  POST → pass=true status=partial findings=21 leak=0 b23=0 dossier=false
+[corpus] S02 GET HIT id=kv1.cfcb59beb17d7658ffb7cffe…
+  GET  → pass=true status=partial findings=21 leak=0 b23=0
+[corpus] S03 POST seed=Alex Morgan
+  POST → pass=true status=partial findings=21 leak=0 b23=0 dossier=false
+[corpus] S03 GET HIT id=kv1.8fd728bc4ad0bbde9d630c91…
+  GET  → pass=true status=partial findings=21 leak=0 b23=0
+[corpus] S04 POST seed=Stripe
+  POST → pass=true status=partial findings=14 leak=0 b23=0 dossier=false
+[corpus] S04 GET HIT id=kv1.08e32515acc818679552d82c…
+  GET  → pass=true status=partial findings=14 leak=0 b23=0
+[corpus] S05 POST seed=Red Cross
+  POST → pass=true status=partial findings=6 leak=0 b23=0 dossier=false
+[corpus] S05 GET HIT id=kv1.0a5ea6f58b6ca477dd218338…
+  GET  → pass=true status=partial findings=6 leak=0 b23=0
+[corpus] S06 POST seed=openai.com
+  POST → pass=true status=partial findings=6 leak=0 b23=0 dossier=false
+[corpus] S06 GET HIT id=kv1.00359ef3aee1aac3a2fa1812…
+  GET  → pass=true status=partial findings=6 leak=0 b23=0
+[corpus] S07 POST seed=בנימין נתניהו
+  POST → pass=true status=partial findings=1 leak=0 b23=0 dossier=false
+[corpus] S07 GET HIT id=kv1.1a21b37f5bd4efaae7e2d09b…
+  GET  → pass=true status=partial findings=1 leak=0 b23=0
+[corpus] S08 POST seed=Tel Aviv University
+  POST → pass=true status=failed_soft findings=0 leak=0 b23=0 dossier=false
+[corpus] S08 GET HIT id=kv1.bb20dfaec5741cfd8bf96c92…
+  GET  → pass=true status=failed_soft findings=0 leak=0 b23=0
+[corpus] S09 POST seed=zzzznonexistentxyz999
+  POST → pass=true status=failed_soft findings=0 leak=0 b23=0 dossier=false
+[corpus] S09 GET HIT id=kv1.ec4f343417f355fbf47b45fc…
+  GET  → pass=true status=failed_soft findings=0 leak=0 b23=0
+[corpus] S10 POST seed=Francis Bacon
+  POST → pass=true status=partial findings=22 leak=0 b23=0 dossier=false
+[corpus] S10 GET HIT id=kv1.7826738614688a7ef259fe2b…
+  GET  → pass=true status=partial findings=22 leak=0 b23=0
+[corpus] S11 POST seed=Michael Jordan baseball
+  POST → pass=true status=partial findings=2 leak=0 b23=0 dossier=false
+[corpus] S11 GET HIT id=kv1.3a0afd9183723fc41de4b461…
+  GET  → pass=true status=partial findings=2 leak=0 b23=0
+[corpus] S12 POST seed=Wikipedia Wikimedia Foundation
+  POST → pass=true status=failed_soft findings=0 leak=0 b23=0 dossier=false
+[corpus] S12 GET HIT id=kv1.deccd625a7568c35a533b86b…
+  GET  → pass=true status=failed_soft findings=0 leak=0 b23=0
+[corpus] S13 POST seed=Demis Hassabis DeepMind
+  POST → pass=true status=failed_soft findings=0 leak=0 b23=0 dossier=false
+[corpus] S13 GET HIT id=kv1.cfad72e3ae0ce5e418d55988…
+  GET  → pass=true status=failed_soft findings=0 leak=0 b23=0
+[corpus] S14 POST seed=CEO of Microsoft
+  POST → pass=true status=failed_soft findings=0 leak=0 b23=0 dossier=false
+[corpus] S14 GET HIT id=kv1.e8e85d2ed4b9fbba5257127e…
+  GET  → pass=true status=failed_soft findings=0 leak=0 b23=0
+[corpus] S15 POST seed=Mark Zuckerberg / Meta CEO
+  POST → pass=true status=failed_soft findings=0 leak=0 b23=0 dossier=false
+[corpus] S15 GET HIT id=kv1.29d3ac675db2ecd2751bd0db…
+  GET  → pass=true status=failed_soft findings=0 leak=0 b23=0
+[corpus] S16 POST seed=https://www.who.int
+  POST → pass=true status=complete findings=0 leak=0 b23=0 dossier=false
+[corpus] S16 GET HIT id=kv1.d74559db4f1ec7a6b9dc1def…
+  GET  → pass=true status=complete findings=0 leak=0 b23=0
+[adv] Smith+IBM/NY/US
+[adv] inject raw Q1701775 / wd-Q1701775 in hints if API allows
+  adv-inject-qid → pass=true findings=13 leak=0 b23=0
+  adv-inject-wd-qid → pass=true findings=13 leak=0 b23=0
+  adv-inject-seed-poison → pass=true findings=0 leak=0 b23=0
+[דיוק] Golden metrics written · verdict=PASS
+[core] smoke on LOCKED alias
+  Assaf → pass=true ui=dossier qid=Q47507930 faces=2
+  כהן → pass=true ui=need_context faces=0
+  Smith nocache → pass=true ui=thin qid=null
+  Smith warm → pass=true ui=candidates qid=null
+
+========== דיוק PHASE2 Acc DONE ==========
+Acc corpus: PASS · leakageTotal=0 · Seeds 16/16 · B23=true · adversarial=true
+Core smoke: PASS · build dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+HOLD promote · no code

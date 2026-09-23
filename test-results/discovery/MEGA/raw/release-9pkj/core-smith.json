@@ -1,0 +1,53 @@
+{
+  "httpStatus": 200,
+  "ms": 7900,
+  "json": {
+    "mode": "ambiguous",
+    "label": "Smith",
+    "qid": null,
+    "desc": "Several possible matches — add context",
+    "extract": "",
+    "photo": null,
+    "sources": [],
+    "images": [],
+    "extra_facts": [],
+    "candidates": [],
+    "ambiguous": true,
+    "thin": false,
+    "alts": [],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 5501,
+      "gemini": 0,
+      "enrich": 0,
+      "stageB": 0,
+      "total": 5501,
+      "wikiMeta": {
+        "wiki429": 10,
+        "wikiTimeout": 1,
+        "wikiRetries": 11
+      }
+    },
+    "uiState": "need_context",
+    "scenario": "foreign",
+    "confidence": "none",
+    "needContextFields": [
+      "country",
+      "city",
+      "org",
+      "role"
+    ],
+    "messageKey": "common_name",
+    "photoUrl": null,
+    "faces": false,
+    "needContext": true,
+    "needCandidatePick": false,
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "requestId": "3845892b-f5d9-4318-a9ff-46624452df9a",
+    "wikiMeta": {
+      "wiki429": 10,
+      "wikiTimeout": 1,
+      "wikiRetries": 11
+    }
+  }
+}

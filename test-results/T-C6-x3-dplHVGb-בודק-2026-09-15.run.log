@@ -1,0 +1,16 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Retrieving project…
+Downloading `development` environment variables
+Loaded env from /workspace/akvot-quick-demo/.env.local
+T-C6 / A06 John Rappaport GET×3 · בודק → https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app
+dpl=dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk when=15.9.2026, 17:50:36 Asia/Jerusalem
+
+→ GET run 1 ... PASS http=200 ui=need_context qid=- faces=false ms=4441 rid=ff0a7e62-4c23-4f0b-a849-47b694febe1c
+→ GET run 2 ... PASS http=200 ui=need_context qid=- faces=false ms=5750 rid=6fead2af-9e7e-4b63-adf2-7c643aec3594
+→ GET run 3 ... PASS http=200 ui=need_context qid=- faces=false ms=5716 rid=a52c4cca-d35d-435f-82f0-d4f84e2d7e65
+
+========== T-C6×3 SUMMARY ==========
+gate=PASS pass=3/3 pw=0
+JSON: /workspace/akvot-quick-demo/test-results/T-C6-x3-dplHVGb-בודק-2026-09-15.json
+====================================
+

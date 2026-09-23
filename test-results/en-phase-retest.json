@@ -1,0 +1,199 @@
+{
+  "phase": "EN-B-retest",
+  "url": "https://akvot-simple-demo.vercel.app",
+  "ts": "2026-09-06T22:50:40.157Z",
+  "summary": {
+    "total": 11,
+    "pass": 11,
+    "fail": 0
+  },
+  "results": [
+    {
+      "id": "wiki-obama",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q76 imgs=8 src=20 alts=0 cands=0 photo=Y amb=false pick=false"
+      ],
+      "ms": 7043,
+      "status": 200,
+      "mode": "wiki",
+      "qid": "Q76",
+      "imgs": 8,
+      "photo": true,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "ctx-obama-org",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q76 imgs=8 src=20 alts=0 cands=0 photo=Y amb=false pick=false"
+      ],
+      "ms": 11426,
+      "status": 200,
+      "mode": "wiki",
+      "qid": "Q76",
+      "imgs": 8,
+      "photo": true,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "mid-bennett",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q39318 imgs=8 src=20 alts=0 cands=0 photo=Y amb=false pick=false"
+      ],
+      "ms": 3482,
+      "status": 200,
+      "mode": "wiki",
+      "qid": "Q39318",
+      "imgs": 8,
+      "photo": true,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "amb-john-smith",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=10 cands=7 photo=N amb=true pick=true"
+      ],
+      "ms": 1656,
+      "status": 200,
+      "mode": "candidates",
+      "qid": null,
+      "imgs": 0,
+      "photo": false,
+      "cands": 7,
+      "pick": true
+    },
+    {
+      "id": "wiki-galon-en",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q2630062 imgs=8 src=15 alts=0 cands=0 photo=Y amb=false pick=false"
+      ],
+      "ms": 57421,
+      "status": 200,
+      "mode": "wiki",
+      "qid": "Q2630062",
+      "imgs": 8,
+      "photo": true,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "wiki-jordan",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q41421 imgs=8 src=15 alts=0 cands=0 photo=Y amb=false pick=false"
+      ],
+      "ms": 58698,
+      "status": 200,
+      "mode": "wiki",
+      "qid": "Q41421",
+      "imgs": 8,
+      "photo": true,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "junk-blorf",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=google qid=- imgs=0 src=0 alts=0 cands=0 photo=N amb=false pick=false"
+      ],
+      "ms": 55426,
+      "status": 200,
+      "mode": "google",
+      "qid": null,
+      "imgs": 0,
+      "photo": false,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "amb-david-cohen",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=10 cands=7 photo=N amb=true pick=true"
+      ],
+      "ms": 933,
+      "status": 200,
+      "mode": "candidates",
+      "qid": null,
+      "imgs": 0,
+      "photo": false,
+      "cands": 7,
+      "pick": true
+    },
+    {
+      "id": "wiki-musk",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=wiki qid=Q317521 imgs=8 src=20 alts=0 cands=0 photo=Y amb=false pick=false"
+      ],
+      "ms": 1690,
+      "status": 200,
+      "mode": "wiki",
+      "qid": "Q317521",
+      "imgs": 8,
+      "photo": true,
+      "cands": 0,
+      "pick": false
+    },
+    {
+      "id": "ctrl-danny-he",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=candidates qid=- imgs=0 src=0 alts=6 cands=6 photo=N amb=true pick=true"
+      ],
+      "ms": 10877,
+      "status": 200,
+      "mode": "candidates",
+      "qid": null,
+      "imgs": 0,
+      "photo": false,
+      "cands": 6,
+      "pick": true
+    },
+    {
+      "id": "sid-smith-phone",
+      "pass": true,
+      "critical": false,
+      "fails": [],
+      "notes": [
+        "mode=ambiguous qid=- imgs=0 src=0 alts=1 cands=1 photo=N amb=true pick=false"
+      ],
+      "ms": 14119,
+      "status": 200,
+      "mode": "ambiguous",
+      "qid": null,
+      "imgs": 0,
+      "photo": false,
+      "cands": 1,
+      "pick": false
+    }
+  ]
+}

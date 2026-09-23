@@ -1,0 +1,30 @@
+{
+  "id": "S01",
+  "seed": "Tim Berners-Lee",
+  "sessionId": "kv1.02b3808de650260cb8a9b29eb24608e6",
+  "status": "partial",
+  "findings_n": 17,
+  "viaf_findings": 8,
+  "providers": {
+    "wikidata": 8,
+    "viaf": 8,
+    "wikipedia": 1
+  },
+  "hosts": {
+    "www.wikidata.org": 8,
+    "en.wikipedia.org": 1,
+    "viaf.org": 8
+  },
+  "providersMap": {
+    "wikidata": "partial",
+    "openlibrary": "error",
+    "wikipedia": "ok",
+    "viaf": "partial"
+  },
+  "families_union": [
+    "viaf",
+    "wikimedia"
+  ],
+  "multi_independent_finding_n": 0,
+  "multi_independent_rate": 0.0
+}

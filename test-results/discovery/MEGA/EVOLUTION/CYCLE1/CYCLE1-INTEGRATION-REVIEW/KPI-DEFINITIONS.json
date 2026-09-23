@@ -1,0 +1,21 @@
+{
+  "stamp": "2026-09-20T12:21:00+03:00",
+  "product_objective": "true_useful_independently_supported_public_discovery_with_honest_UNKNOWN",
+  "multi_independent_is_secondary": true,
+  "kpis": [
+    {"id": 1, "name": "relevant_findings_per_seed", "unit": "findings/seed", "instrumented": "partial"},
+    {"id": 2, "name": "novel_findings_per_seed", "unit": "findings/seed", "instrumented": "partial"},
+    {"id": 3, "name": "evidence_coverage", "unit": "ratio", "instrumented": "partial"},
+    {"id": 4, "name": "source_family_diversity", "unit": "families/session", "instrumented": "yes"},
+    {"id": 5, "name": "independent_source_diversity", "unit": "mean_multi", "instrumented": "yes_on_A2_preview", "secondary": true},
+    {"id": 6, "name": "entity_type_coverage", "unit": "ratio_by_bucket", "instrumented": "partial"},
+    {"id": 7, "name": "url_domain_coverage", "unit": "ratio", "instrumented": "yes_on_C1_corpus"},
+    {"id": 8, "name": "contradiction_rate", "unit": "rate", "instrumented": "partial"},
+    {"id": 9, "name": "UNKNOWN_preservation", "unit": "ratio_and_count", "instrumented": "yes_on_C1"},
+    {"id": 10, "name": "false_merge_rate", "unit": "rate", "instrumented": "partial"},
+    {"id": 11, "name": "pretty_wrong", "unit": "count", "instrumented": "yes_core"},
+    {"id": 12, "name": "Acc_leakage", "unit": "count", "instrumented": "yes"},
+    {"id": 13, "name": "latency", "unit": "ms", "instrumented": "partial"},
+    {"id": 14, "name": "provider_failure_rate", "unit": "rate", "instrumented": "partial"}
+  ]
+}

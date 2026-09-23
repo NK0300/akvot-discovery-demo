@@ -1,0 +1,13 @@
+A2-SAFE measure dpl_4Zxd9MnMs6WsTgSLrryyvGY3htpY 2026-09-20T10:36:39+03:00
+seed S01 Tim Berners-Lee
+  18 multi 0.5 leak 0 rels {}
+seed S04 Stripe
+  30 multi 0 leak 0 rels {}
+seed S05 Red Cross
+  30 multi 0.1 leak 0 rels {}
+seed G-HE בנימין נתניהו
+  6 multi 0.8333 leak 0 rels {}
+seed G-LAT Ada Lovelace
+  24 multi 0.0833 leak 0 rels {}
+seed G-ORG UNESCO
+  22 multi 0.0909 leak 0 rels {}

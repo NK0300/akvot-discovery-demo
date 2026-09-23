@@ -1,0 +1,61 @@
+
+> test:failure
+> node api/lib/discovery/failureInject.test.mjs
+
+PASS FAILURE_KINDS covers timeout/429/5xx/redis/sse
+PASS shouldInject off by default
+PASS shouldInject honors injectFailure
+PASS inject provider_timeout throws AbortError
+PASS inject provider_429 status 429
+PASS inject provider_5xx status 5xx
+PASS timeout inject soft-fails create (no throw)
+PASS timeout inject returns status string
+PASS timeout inject no secrets in snapshot
+PASS redis unavailable ok=false
+PASS redis unavailable promoteEligible=false
+PASS redis unavailable durable=false
+PASS redis unavailable no token leak
+PASS storeBackend present
+PASS fs-regen durable=false
+PASS fs-regen promoteEligible=false
+PASS fs-regen fallback true
+PASS SSE events non-empty
+PASS SSE events include done
+PASS SSE reconnect hangPolicy finite
+PASS SSE disconnect returns without hang
+PASS SSE lifecycle metrics recorded
+PASS SSE resume-past-end emits done
+PASS sanitizeDiscoveryPayload strips Q1701775
+PASS SSE progressive Acc-scrubs Q1701775
+PASS https public ok
+PASS http rejected
+PASS javascript rejected
+PASS data rejected
+PASS file rejected
+PASS localhost rejected
+PASS .localhost rejected
+PASS .local rejected
+PASS .internal rejected
+PASS metadata IP rejected
+PASS 127 rejected
+PASS hex loopback rejected
+PASS decimal loopback rejected
+PASS userinfo rejected
+PASS raw ipv4 rejected
+PASS isBlockedDiscoveryHost localhost
+PASS isBlockedDiscoveryHost example.com
+PASS normalize drops javascript provenance
+PASS normalize drops .localhost provenance
+PASS normalize keeps public https
+PASS empty seed rejected
+PASS ok seed accepted
+PASS oversized seed rejected
+PASS rate limit trips at max
+PASS correlation id minted
+PASS metrics snapshot has counters
+PASS sse.open counted
+PASS no secrets in metrics
+PASS sse frame has id+event+data
+
+--- failureInject / security / obs ---
+passed=54 failed=0

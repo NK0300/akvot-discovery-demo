@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "httpStatus": 200,
+  "ms": 2621,
+  "contentType": "text/event-stream; charset=utf-8",
+  "events": 27,
+  "types": [
+    "meta",
+    "progress",
+    "provider",
+    "finding",
+    "facets",
+    "status",
+    "done"
+  ],
+  "leak": 0
+}

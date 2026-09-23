@@ -1,0 +1,59 @@
+{
+  "case": "d-smith-ctx-p0",
+  "base": "https://akvot-simple-demo-lwvupih3v-k-akvot.vercel.app",
+  "dpl": "dpl_9nM3Y9fFVdqDoYRwyyQvbBq9e9oL",
+  "when": "2026-09-15T14:06:51.134Z",
+  "whenLocal": "15.9.2026, 17:06:51 Asia/Jerusalem",
+  "expected": "NOT dossier+faces · NOT qid Q1701775 · ui in candidates|need_context|thin · pretty-wrong=0",
+  "runs": [
+    {
+      "run": 1,
+      "pass": true,
+      "prettyWrong": false,
+      "http": 200,
+      "ms": 5690,
+      "err": null,
+      "ui": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": false,
+      "images": 0,
+      "mode": "candidates",
+      "requestId": "817b9a3f-39cb-49d9-8fa2-0fc2e2256709",
+      "build": null
+    },
+    {
+      "run": 2,
+      "pass": true,
+      "prettyWrong": false,
+      "http": 200,
+      "ms": 7189,
+      "err": null,
+      "ui": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": false,
+      "images": 0,
+      "mode": "candidates",
+      "requestId": "7abe8ed9-c053-4197-b673-9be34808c4c7",
+      "build": null
+    },
+    {
+      "run": 3,
+      "pass": true,
+      "prettyWrong": false,
+      "http": 200,
+      "ms": 6310,
+      "err": null,
+      "ui": "candidates",
+      "qid": null,
+      "photo": false,
+      "faces": false,
+      "images": 0,
+      "mode": "candidates",
+      "requestId": "32085fd4-5e89-4fa5-af23-83a3437ec7b9",
+      "build": null
+    }
+  ],
+  "allPass": true
+}

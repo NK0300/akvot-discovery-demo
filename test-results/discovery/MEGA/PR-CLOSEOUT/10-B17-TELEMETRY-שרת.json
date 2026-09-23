@@ -1,0 +1,13 @@
+{
+  "id": "B17",
+  "stamp": "2026-09-20T08:52:56+03:00",
+  "zone": "Asia/Jerusalem",
+  "status": "CLOSED",
+  "promote": false,
+  "preview": { "deploymentId": "dpl_4trZGxgN7CKKtC6Zed6SbACzF6Po", "url": "https://akvot-simple-demo-7ogfp6yun-k-akvot.vercel.app" },
+  "failureClasses": ["fetch_failed","auth","timeout","parse","not_found","conflict","unknown"],
+  "alwaysFields": ["op","backend","ok","latencyMs","failureClass","correlationId"],
+  "secretsPolicy": "never log tokens/URLs-with-creds",
+  "units": { "sessionStore": "passed=125 failed=0" },
+  "files": ["api/lib/discovery/sessionStore.js","api/lib/discovery/sessionStore.test.mjs"]
+}

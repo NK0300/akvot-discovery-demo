@@ -1,0 +1,24 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+An error occurred with your deployment
+
+FUNCTION_INVOCATION_TIMEOUT
+
+cle1::xxcrg-1789878960827-00d3c18e4655
+
+HTTP:504 TIME:15.774766
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+An error occurred with your deployment
+
+FUNCTION_INVOCATION_TIMEOUT
+
+cle1::d4gzk-1789878980685-a66cf863429d
+
+HTTP:504 TIME:15.441252
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+An error occurred with your deployment
+
+FUNCTION_INVOCATION_TIMEOUT
+
+cle1::snkt4-1789879000077-1e2252243c11
+
+HTTP:504 TIME:15.265774

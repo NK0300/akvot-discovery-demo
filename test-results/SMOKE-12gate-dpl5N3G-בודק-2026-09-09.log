@@ -1,0 +1,21 @@
+UNIT PASS U-dani-need_context | PASS U-smith-need_context | PASS U-known-dossier | PASS U-gate-reject-generic
+LIVE smoke → https://akvot-simple-demo.vercel.app  gates=15
+→ G1-bibi ... PASS 7178ms phase=orchestrator-v0-b ui=dossier scn=known qid=Q43723 cand=0 src=1
+→ G2a-galon-he ... PASS 6475ms phase=orchestrator-v0-b ui=dossier scn=known qid=Q2630062 cand=0 src=1
+→ G2b-galon-en ... PASS 4029ms phase=orchestrator-v0-b ui=dossier scn=known qid=Q2630062 cand=0 src=15
+→ G3a-obama-en ... PASS-SAFE/IMPROVE 5695ms phase=orchestrator-v0-b ui=need_context scn=foreign qid=- cand=0 src=0
+→ G3b-obama-he ... PASS-SAFE/IMPROVE 45205ms phase=orchestrator-v0-b ui=thin scn=stranger qid=- cand=0 src=0
+→ G4-dani ... PASS 201ms phase=orchestrator-v0-b ui=need_context scn=stranger qid=- cand=0 src=0
+→ G5-dani-ctx ... PASS-SAFE/IMPROVE 8452ms phase=orchestrator-v0-b ui=thin scn=stranger qid=- cand=0 src=0
+→ G6-smith ... PASS 5705ms phase=orchestrator-v0-b ui=need_context scn=foreign qid=- cand=0 src=0
+→ G7-smith-ibm ... PASS-SAFE/IMPROVE 12693ms phase=orchestrator-v0-b ui=thin scn=foreign qid=- cand=0 src=0
+→ G8-mbrown ... PASS 5708ms phase=orchestrator-v0-b ui=need_context scn=foreign qid=- cand=0 src=0
+→ G9-assaf ... PASS-SAFE/IMPROVE 5703ms phase=orchestrator-v0-b ui=need_context scn=foreign qid=- cand=0 src=0
+→ G10-phone ... PASS 5913ms phase=orchestrator-v0-b ui=thin scn=identifier qid=- cand=0 src=0
+→ G11-email ... FAIL-CRIT 13205ms phase=orchestrator-v0-b ui=dossier scn=known qid=Q332377 cand=0 src=10
+    SAFETY fail
+→ G12a-junk-he ... PASS 45206ms phase=orchestrator-v0-b ui=thin scn=stranger qid=- cand=0 src=0
+→ G12b-junk-en ... PASS 10506ms phase=orchestrator-v0-b ui=need_context scn=foreign qid=- cand=0 src=0
+
+=== SMOKE-12 === {"unit":"4/4","safety":"14/15","product":"9/15","critical":1}
+wrote /workspace/akvot-quick-demo/test-results/SMOKE-12gate-orchestrator-v0-2026-09-08.json

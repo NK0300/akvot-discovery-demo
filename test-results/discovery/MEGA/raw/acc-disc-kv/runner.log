@@ -1,0 +1,51 @@
+[acc-disc-kv] start 2026-09-20T07:37:38+03:00
+[acc-disc-kv] preview dpl_BAkeDgvpvqGEg53zXxScGdESvdPv · alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 · HOLD promote
+[health] disc dpl_BAkeDgvpvqGEg53zXxScGdESvdPv true storeBackend upstash alias dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 true
+[health] discovery/health {"ok":true,"backend":"upstash","storeBackend":"upstash","latencyMs":124,"correlationId":"hc-mu9bs3vu-afabc9","fsRegenFallback":false,"explicitFallback":false,"promoteEligible":true,"durable":true,"fal
+[disc] POST session seed=דוד כהן
+  → pass=true status=partial findings=19 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.45a38d1cbafa44a2cdb5…
+  GET → pass=true regenerated=false status=partial fiv=2026-09-19.1 leak=0
+[disc] POST session seed=John Smith
+  → pass=false status=partial findings=21 fiv=2026-09-19.1 leak=1
+[disc] GET session (HIT/regen) id=kv1.b8b84b1fa0f89f66bf9b…
+  GET → pass=false regenerated=false status=partial fiv=2026-09-19.1 leak=1
+[disc] POST session seed=example.org
+  → pass=true status=complete findings=3 fiv=2026-09-19.1 leak=0
+[disc] GET session (HIT/regen) id=kv1.86cfb669c9a93bc14e0b…
+  GET → pass=true regenerated=false status=complete fiv=2026-09-19.1 leak=0
+[sse] GET …/events session=kv1.b8b84b1fa0f89f66bf9baa4a…
+  SSE → pass=true events=29 names=meta,progress,provider,finding,facets,status,done leak=0 ct=text/event-stream; charset=utf-8
+[narrow] POST …/narrow
+  NARROW → pass=true before=21 after=8 ver=3 fiv=2026-09-19.1 leak=0
+[disc] Smith+ctx via preview /api/lookup
+  → pass=true ui=candidates qid=null leak=0
+[core] alias Assaf / כהן / Smith
+  Assaf → pass=true ui=dossier qid=Q47507930
+  כהן → pass=true ui=need_context faces=0
+  Smith cold → pass=true ui=candidates qid=null pw=0
+  Smith warm → pass=true ui=candidates qid=null pw=0
+{
+  "disc": {
+    "Acc-DISC": "NO-GO",
+    "leakage": 2,
+    "seeds": 2,
+    "storeBackend": "upstash",
+    "dossier_bindings": 0,
+    "sse": "PASS",
+    "narrow": "PASS",
+    "promote": "HOLD"
+  },
+  "core": {
+    "Core-P0": "PASS",
+    "leakage": 0,
+    "pw": 0,
+    "promote": "HOLD"
+  },
+  "storeBackend": "upstash",
+  "storeOk": true
+}
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-DISC-KV-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-DISC-KV-דיוק-2026-09-20.md
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-CORE-P0-KV-GATE-דיוק-2026-09-20.json
+wrote /workspace/akvot-quick-demo/test-results/discovery/MEGA/MEGA-ACC-CORE-P0-KV-GATE-דיוק-2026-09-20.md

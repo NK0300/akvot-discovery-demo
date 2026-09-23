@@ -1,0 +1,442 @@
+{
+  "step": 24,
+  "metric": "near_duplicate_rate",
+  "normalization": {
+    "title": "lower + strip punctuation + collapse whitespace (HE letters kept)",
+    "url": "strip scheme, www., trailing slash, lower"
+  },
+  "summary": {
+    "sessions_with_findings": 19,
+    "mean_rate_norm_title": 0.289,
+    "mean_rate_norm_url": 0.0,
+    "total_near_title_surplus": 92,
+    "total_near_url_surplus": 0,
+    "note": "Near-duplicate = surplus items after normalizing title (lower/punct-strip) or url (strip scheme/www/trailing slash)."
+  },
+  "perSession": [
+    {
+      "seedId": "S01",
+      "run": 1,
+      "n": 10,
+      "near_title": 6,
+      "near_url": 0,
+      "rate_title": 0.6,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "tim berners lee",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "seedId": "S01",
+      "run": 2,
+      "n": 10,
+      "near_title": 6,
+      "near_url": 0,
+      "rate_title": 0.6,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "tim berners lee",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 1,
+      "n": 21,
+      "near_title": 15,
+      "near_url": 0,
+      "rate_title": 0.7143,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "john smith",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "seedId": "S02",
+      "run": 2,
+      "n": 21,
+      "near_title": 15,
+      "near_url": 0,
+      "rate_title": 0.7143,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "john smith",
+          "count": 16
+        }
+      ]
+    },
+    {
+      "seedId": "S03",
+      "run": 1,
+      "n": 21,
+      "near_title": 10,
+      "near_url": 0,
+      "rate_title": 0.4762,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "alex morgan",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "seedId": "S03",
+      "run": 2,
+      "n": 21,
+      "near_title": 10,
+      "near_url": 0,
+      "rate_title": 0.4762,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "alex morgan",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "seedId": "S04",
+      "run": 1,
+      "n": 22,
+      "near_title": 7,
+      "near_url": 0,
+      "rate_title": 0.3182,
+      "rate_url": 0.0,
+      "clusters_title": 2,
+      "examples": [
+        {
+          "normTitle": "stripe",
+          "count": 7
+        },
+        {
+          "normTitle": "striped skunk",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "seedId": "S04",
+      "run": 2,
+      "n": 14,
+      "near_title": 2,
+      "near_url": 0,
+      "rate_title": 0.1429,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "stripe",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "seedId": "S05",
+      "run": 1,
+      "n": 22,
+      "near_title": 7,
+      "near_url": 0,
+      "rate_title": 0.3182,
+      "rate_url": 0.0,
+      "clusters_title": 3,
+      "examples": [
+        {
+          "normTitle": "red cross",
+          "count": 6
+        },
+        {
+          "normTitle": "american red cross",
+          "count": 2
+        },
+        {
+          "normTitle": "red cross portuguese red cross",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "seedId": "S05",
+      "run": 2,
+      "n": 22,
+      "near_title": 7,
+      "near_url": 0,
+      "rate_title": 0.3182,
+      "rate_url": 0.0,
+      "clusters_title": 3,
+      "examples": [
+        {
+          "normTitle": "red cross",
+          "count": 6
+        },
+        {
+          "normTitle": "american red cross",
+          "count": 2
+        },
+        {
+          "normTitle": "red cross portuguese red cross",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "seedId": "S06",
+      "run": 1,
+      "n": 7,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0.0,
+      "rate_url": 0.0,
+      "clusters_title": 0,
+      "examples": []
+    },
+    {
+      "seedId": "S06",
+      "run": 2,
+      "n": 7,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0.0,
+      "rate_url": 0.0,
+      "clusters_title": 0,
+      "examples": []
+    },
+    {
+      "seedId": "S07",
+      "run": 1,
+      "n": 2,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0.0,
+      "rate_url": 0.0,
+      "clusters_title": 0,
+      "examples": []
+    },
+    {
+      "seedId": "S07",
+      "run": 2,
+      "n": 2,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0.0,
+      "rate_url": 0.0,
+      "clusters_title": 0,
+      "examples": []
+    },
+    {
+      "seedId": "S08",
+      "run": 1,
+      "n": 16,
+      "near_title": 1,
+      "near_url": 0,
+      "rate_title": 0.0625,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "tel aviv university",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "seedId": "S08",
+      "run": 2,
+      "n": 8,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0.0,
+      "rate_url": 0.0,
+      "clusters_title": 0,
+      "examples": []
+    },
+    {
+      "seedId": "S09",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S09",
+      "run": 2,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S10",
+      "run": 1,
+      "n": 8,
+      "near_title": 3,
+      "near_url": 0,
+      "rate_title": 0.375,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "francis bacon",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "seedId": "S10",
+      "run": 2,
+      "n": 8,
+      "near_title": 3,
+      "near_url": 0,
+      "rate_title": 0.375,
+      "rate_url": 0.0,
+      "clusters_title": 1,
+      "examples": [
+        {
+          "normTitle": "francis bacon",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "seedId": "S11",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S11",
+      "run": 2,
+      "n": 2,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0.0,
+      "rate_url": 0.0,
+      "clusters_title": 0,
+      "examples": []
+    },
+    {
+      "seedId": "S12",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S12",
+      "run": 2,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S13",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S13",
+      "run": 2,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S14",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S14",
+      "run": 2,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S15",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S15",
+      "run": 2,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S16",
+      "run": 1,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    },
+    {
+      "seedId": "S16",
+      "run": 2,
+      "n": 0,
+      "near_title": 0,
+      "near_url": 0,
+      "rate_title": 0,
+      "rate_url": 0,
+      "clusters_title": 0
+    }
+  ]
+}

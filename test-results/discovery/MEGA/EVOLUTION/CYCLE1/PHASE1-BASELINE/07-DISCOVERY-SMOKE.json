@@ -1,0 +1,127 @@
+{
+  "stamp": "2026-09-20T09:47:15+03:00",
+  "alias": "https://akvot-discovery.vercel.app",
+  "deploymentId": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "method": "plain curl + x-vercel-protection-bypass (token extracted via vercel curl -v; NOT stored in evidence)",
+  "health": {
+    "GET /api/health": {
+      "build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "ok": true,
+      "latency_ms": 349
+    },
+    "GET /api/discovery/health": {
+      "ok": true,
+      "mode": "kv-shared",
+      "storeBackend": "upstash",
+      "durable": true,
+      "latency_ms": 897
+    }
+  },
+  "seeds": [
+    {
+      "kind": "company",
+      "seed": "Acme Corporation",
+      "sessionId": "kv1.1d9b64b831279598338b980b562615bc",
+      "post_status": "partial",
+      "get_status": "partial",
+      "finding_count": 9,
+      "storeBackend": "upstash",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "acc_leakage": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial"
+      },
+      "create_file": "07-create-Acme_Corporation.json",
+      "get_file": "07-get-Acme_Corporation.json"
+    },
+    {
+      "kind": "person",
+      "seed": "Assaf",
+      "sessionId": "kv1.f234d3d8fb1af7f5dde797c30254300e",
+      "post_status": "partial",
+      "get_status": "partial",
+      "finding_count": 22,
+      "storeBackend": "upstash",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "acc_leakage": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "create_file": "07-create-Assaf.json",
+      "get_file": "07-get-Assaf.json"
+    },
+    {
+      "kind": "person",
+      "seed": "John Smith",
+      "sessionId": "kv1.2ff212548fae16546bd833277fd7048d",
+      "post_status": "partial",
+      "get_status": "partial",
+      "finding_count": 21,
+      "storeBackend": "upstash",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "acc_leakage": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "create_file": "07-create-John_Smith.json",
+      "get_file": "07-get-John_Smith.json"
+    },
+    {
+      "kind": "domain",
+      "seed": "example.org",
+      "sessionId": "kv1.c8cc4ab0762fa37db409e8d1c5f315f8",
+      "post_status": "complete",
+      "get_status": "complete",
+      "finding_count": 3,
+      "storeBackend": "upstash",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "acc_leakage": 0,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok"
+      },
+      "create_file": "07-create-example.org.json",
+      "get_file": "07-get-example.org.json"
+    }
+  ],
+  "sse_sample": {
+    "sessionId": "kv1.c8cc4ab0762fa37db409e8d1c5f315f8",
+    "events": [
+      "meta",
+      "progress",
+      "provider",
+      "provider",
+      "provider",
+      "finding",
+      "finding",
+      "finding",
+      "facets",
+      "status",
+      "done"
+    ],
+    "bytes": 4692,
+    "has_done": true,
+    "file": "raw/07-sse-example.org.txt"
+  },
+  "acc_leakage_total": 0,
+  "pass": true
+}

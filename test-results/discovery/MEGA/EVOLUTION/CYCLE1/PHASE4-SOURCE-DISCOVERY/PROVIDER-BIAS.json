@@ -1,0 +1,101 @@
+{
+  "step": 34,
+  "title": "PROVIDER-SPECIFIC-BIAS",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "baselineId": "B0",
+  "providers": {
+    "wikidata": {
+      "volume_share": 0.328,
+      "n": 80,
+      "primaryClass_distribution_P3_sample": {
+        "identity-relevant": 23,
+        "publication": 7,
+        "contextual": 1,
+        "geographic": 1,
+        "corporate": 13,
+        "professional": 1,
+        "affiliation": 2
+      },
+      "biases": [
+        "Proper-name entity search bias — strong on person/org labels, weak on role/URL seeds",
+        "English description bias even for HE labels when language=en default",
+        "Returns works-about-person QIDs (TED talks) sharing person title → publication noise QD-05",
+        "partial/error rates non-trivial (12 error + 8 partial of 32 GETs) — soft failure hides gaps"
+      ],
+      "authority_weight": 0.9,
+      "observed_quote_mean": 38.275,
+      "thin_lt20_rate": 0.2625,
+      "seeds_touched": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    "openlibrary": {
+      "volume_share": 0.402,
+      "n": 98,
+      "primaryClass_distribution_P3_sample": {
+        "publication": 23,
+        "identity-relevant": 11,
+        "corporate": 15
+      },
+      "biases": [
+        "Author-registry / bibliographic bias — floods common names (S02/S03) and historical figures (S10)",
+        "Highest volume provider (98/244) with publication primaryClass dominant in P3 sample (23/49)",
+        "Survives when WD/WP error (S10) → monoculture fallback, not independent corroboration",
+        "Not locale-aware; irrelevant for HE politics seed (correctly absent on S07)"
+      ],
+      "authority_weight": 0.75,
+      "observed_quote_mean": 43.69387755102041,
+      "thin_lt20_rate": 0.08163265306122448,
+      "seeds_touched": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S08",
+        "S10"
+      ]
+    },
+    "wikipedia": {
+      "volume_share": 0.27,
+      "n": 66,
+      "primaryClass_distribution_P3_sample": {
+        "contextual": 8,
+        "professional": 4,
+        "corporate": 14,
+        "identity-relevant": 6
+      },
+      "biases": [
+        "EN Wikipedia default — HE seed did not switch host",
+        "Empty quote/summary on observed B0 evidence (quote_mean=0) → 100% thin",
+        "Ambiguous OpenSearch titles (Openai.com, Opera.com for openai.com seed)",
+        "error status common (13/32 GETs) — unstable contribution"
+      ],
+      "authority_weight": 0.7,
+      "observed_quote_mean": 0.0,
+      "thin_lt20_rate": 1.0,
+      "seeds_touched": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S11"
+      ]
+    }
+  },
+  "crossProvider": {
+    "finding_level_multi_provider_rate": 0.0,
+    "session_level_multi_provider_common": true,
+    "bias_summary": "System looks multi-provider at session facets but each finding is single-provider; ranking providerDiversity often=1 while still scoring high via domain authority"
+  }
+}

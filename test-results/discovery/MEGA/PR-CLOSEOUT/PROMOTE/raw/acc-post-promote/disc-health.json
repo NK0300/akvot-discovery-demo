@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "phase": "orchestrator-v0-b",
+  "build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "baselineHint": "dpl_DNfPZ9",
+  "discoveryStore": {
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "kvCredsPresent": true,
+    "crossInstance": "shared-kv",
+    "durabilityState": "durable-kv",
+    "kvReachable": true
+  },
+  "kvPing": {
+    "ok": true,
+    "latencyMs": 32
+  }
+}

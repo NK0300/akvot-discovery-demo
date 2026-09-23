@@ -1,0 +1,80 @@
+[
+  {
+    "label": "person",
+    "sid": "kv1.551781e31edf0a74bc9cf1832b44bf9c",
+    "create_ok": true,
+    "get_ok": true,
+    "findings": 13,
+    "scoreIdentity": 0,
+    "leak_create": 0,
+    "leak_get": 0,
+    "b23": [],
+    "store": "upstash",
+    "durable": true
+  },
+  {
+    "label": "company",
+    "sid": "kv1.ff40fb33f2e314ff15c1bacd5de25ce2",
+    "create_ok": true,
+    "get_ok": true,
+    "findings": 9,
+    "scoreIdentity": 0,
+    "leak_create": 0,
+    "leak_get": 0,
+    "b23": [],
+    "store": "upstash",
+    "durable": true
+  },
+  {
+    "label": "domain",
+    "sid": "kv1.c6783cf7485013837007bbe78262e7d5",
+    "create_ok": true,
+    "get_ok": true,
+    "findings": 3,
+    "scoreIdentity": 0,
+    "leak_create": 0,
+    "leak_get": 0,
+    "b23": [],
+    "store": "upstash",
+    "durable": true
+  },
+  {
+    "label": "org",
+    "sid": "kv1.542736d3f7e5821acd69115952ecb70d",
+    "create_ok": true,
+    "get_ok": true,
+    "findings": 22,
+    "scoreIdentity": 0,
+    "leak_create": 0,
+    "leak_get": 0,
+    "b23": [],
+    "store": "upstash",
+    "durable": true
+  },
+  {
+    "label": "ambiguous",
+    "sid": "kv1.d28da9527373ec1365a1594a662995b9",
+    "create_ok": true,
+    "get_ok": true,
+    "findings": 13,
+    "scoreIdentity": 0,
+    "leak_create": 0,
+    "leak_get": 0,
+    "b23": [],
+    "store": "upstash",
+    "durable": true
+  },
+  {
+    "label": "nomatch",
+    "sid": "kv1.130e68ed5e16832b0189b4854c126592",
+    "create_ok": true,
+    "get_ok": true,
+    "findings": 0,
+    "scoreIdentity": 0,
+    "leak_create": 0,
+    "leak_get": 0,
+    "b23": [],
+    "store": "upstash",
+    "durable": true
+  }
+]

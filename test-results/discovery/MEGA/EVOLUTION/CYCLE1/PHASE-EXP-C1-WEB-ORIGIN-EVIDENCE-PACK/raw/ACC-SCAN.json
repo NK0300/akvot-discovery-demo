@@ -1,0 +1,354 @@
+{
+  "totalLeak": 0,
+  "rows": [
+    {
+      "file": "TREAT-ADV-archive.json",
+      "leak": 0,
+      "seed": "https://web.archive.org",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-doc.json",
+      "leak": 0,
+      "seed": "https://www.rfc-editor.org",
+      "status": "partial",
+      "wo": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-ADV-http.json",
+      "leak": 0,
+      "seed": "http://example.com",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-internal.json",
+      "leak": 0,
+      "seed": "https://metadata.google.internal/",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "error",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-js.json",
+      "leak": 0,
+      "seed": "javascript:alert(1)",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "error",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-ADV-local.json",
+      "leak": 0,
+      "seed": "https://localhost/",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-meta.json",
+      "leak": 0,
+      "seed": "http://169.254.169.254/",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "error",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-park.json",
+      "leak": 0,
+      "seed": "https://example.com",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-poison.json",
+      "leak": 0,
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-private.json",
+      "leak": 0,
+      "seed": "http://127.0.0.1/",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-query.json",
+      "leak": 0,
+      "seed": "https://www.who.int/path?utm_source=x&q=1",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-social.json",
+      "leak": 0,
+      "seed": "https://twitter.com",
+      "status": "partial",
+      "wo": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-ADV-sub.json",
+      "leak": 0,
+      "seed": "https://en.wikipedia.org",
+      "status": "partial",
+      "wo": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-ADV-unrelated.json",
+      "leak": 0,
+      "seed": "https://www.w3.org",
+      "status": "partial",
+      "wo": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-ADV-www.json",
+      "leak": 0,
+      "seed": "https://www.who.int",
+      "status": "partial",
+      "wo": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-S01.json",
+      "leak": 0,
+      "seed": "Tim Berners-Lee",
+      "status": "partial",
+      "wo": 0,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "ok",
+        "viaf": "partial",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-S02.json",
+      "leak": 0,
+      "seed": "John Smith",
+      "status": "partial",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "error",
+        "viaf": "partial",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-S04.json",
+      "leak": 0,
+      "seed": "Stripe",
+      "status": "partial",
+      "wo": 0,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-S05.json",
+      "leak": 0,
+      "seed": "Red Cross",
+      "status": "partial",
+      "wo": 0,
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-S06.json",
+      "leak": 0,
+      "seed": "openai.com",
+      "status": "partial",
+      "wo": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-S09.json",
+      "leak": 0,
+      "seed": "zzzznonexistentxyz999",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-S16.json",
+      "leak": 0,
+      "seed": "https://www.who.int",
+      "status": "complete",
+      "wo": 1,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-W1.json",
+      "leak": 0,
+      "seed": "https://www.example.com",
+      "status": "failed_soft",
+      "wo": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "error"
+      }
+    },
+    {
+      "file": "TREAT-W5.json",
+      "leak": 0,
+      "seed": "who.int",
+      "status": "partial",
+      "wo": 1,
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "partial",
+        "web_origin": "ok"
+      }
+    },
+    {
+      "file": "TREAT-W7.json",
+      "leak": 0,
+      "seed": "https://www.microsoft.com",
+      "status": "complete",
+      "wo": 1,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    }
+  ]
+}

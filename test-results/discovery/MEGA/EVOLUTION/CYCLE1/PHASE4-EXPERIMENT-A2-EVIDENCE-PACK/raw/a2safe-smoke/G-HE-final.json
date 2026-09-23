@@ -1,0 +1,480 @@
+{
+  "ms": 2313,
+  "status": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.0bc8894e49ec99cc7afd4f8510188fd9",
+    "seed": "בנימין נתניהו",
+    "q": "בנימין נתניהו",
+    "status": "complete",
+    "findings": [
+      {
+        "id": "wd-Q43723",
+        "kind": "registry",
+        "title": "Benjamin Netanyahu",
+        "summary": "Prime Minister of Israel (born 1949), (1996–1999; 2009–2021; 2022–present)",
+        "evidenceIds": [
+          "ev-32b2c0a126cb4677291b8bff",
+          "ev-d78c69e7c1531d4cec3d3a84",
+          "ev-ba68ef360b1ff3b19d13c522",
+          "ev-ba23a0537d7fc7969875df98",
+          "ev-2e54c05fb52a47e051697e53"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q43723",
+          "wd-Q43723",
+          "viaf:114192441"
+        ],
+        "scoreFinding": 0.8716666666666666,
+        "ranking": {
+          "discoveryScore": 0.8716666666666666,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 5,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-114192441",
+        "kind": "registry",
+        "title": "בנימין נתניהו, 1949-",
+        "summary": "type:personal · lc:n78049769 · dnb:119479575",
+        "evidenceIds": [
+          "ev-32b2c0a126cb4677291b8bff",
+          "ev-d78c69e7c1531d4cec3d3a84",
+          "ev-ba68ef360b1ff3b19d13c522",
+          "ev-ba23a0537d7fc7969875df98",
+          "ev-2e54c05fb52a47e051697e53"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q43723",
+          "wd-Q43723",
+          "viaf:114192441"
+        ],
+        "scoreFinding": 0.8616666666666666,
+        "ranking": {
+          "discoveryScore": 0.8716666666666666,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 5,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-114192441",
+        "kind": "registry",
+        "title": "בנימין נתניהו",
+        "summary": "type:personal · lc:n78049769 · dnb:119479575",
+        "evidenceIds": [
+          "ev-32b2c0a126cb4677291b8bff",
+          "ev-d78c69e7c1531d4cec3d3a84",
+          "ev-ba68ef360b1ff3b19d13c522",
+          "ev-ba23a0537d7fc7969875df98",
+          "ev-2e54c05fb52a47e051697e53"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q43723",
+          "wd-Q43723",
+          "viaf:114192441"
+        ],
+        "scoreFinding": 0.8516666666666666,
+        "ranking": {
+          "discoveryScore": 0.8716666666666666,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 5,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-114192441",
+        "kind": "registry",
+        "title": "בנימין נתניהו, ראש ממשלת ישראל",
+        "summary": "type:personal · lc:n78049769 · dnb:119479575",
+        "evidenceIds": [
+          "ev-32b2c0a126cb4677291b8bff",
+          "ev-d78c69e7c1531d4cec3d3a84",
+          "ev-ba68ef360b1ff3b19d13c522",
+          "ev-ba23a0537d7fc7969875df98",
+          "ev-2e54c05fb52a47e051697e53"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q43723",
+          "wd-Q43723",
+          "viaf:114192441"
+        ],
+        "scoreFinding": 0.8416666666666666,
+        "ranking": {
+          "discoveryScore": 0.8716666666666666,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 5,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "viaf-114192441",
+        "kind": "registry",
+        "title": "בנימין נתניהו, ראש ממשלת ישראל ויושב-ראש מפלגת הליכוד",
+        "summary": "type:personal · lc:n78049769 · dnb:119479575",
+        "evidenceIds": [
+          "ev-32b2c0a126cb4677291b8bff",
+          "ev-d78c69e7c1531d4cec3d3a84",
+          "ev-ba68ef360b1ff3b19d13c522",
+          "ev-ba23a0537d7fc7969875df98",
+          "ev-2e54c05fb52a47e051697e53"
+        ],
+        "providers": [
+          "wikidata",
+          "viaf"
+        ],
+        "facetHints": [
+          "provider:wikidata",
+          "kind:registry",
+          "provider:viaf",
+          "corroboration:multi_family"
+        ],
+        "entityRefs": [
+          "qid:Q43723",
+          "wd-Q43723",
+          "viaf:114192441"
+        ],
+        "scoreFinding": 0.8316666666666666,
+        "ranking": {
+          "discoveryScore": 0.8716666666666666,
+          "factors": {
+            "authority": 0.9,
+            "corroboration": 0.667,
+            "directness": 1,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 2,
+            "evidenceCount": 5,
+            "domains": [
+              "www.wikidata.org",
+              "viaf.org"
+            ]
+          },
+          "rationale": "authority=0.90 corroboration=0.67 directness=1.00 (discovery≠identity)"
+        }
+      },
+      {
+        "id": "wp-en-_",
+        "kind": "page",
+        "title": "בנימין נתניהו",
+        "evidenceIds": [
+          "ev-97339b17991135197e46d290"
+        ],
+        "providers": [
+          "wikipedia"
+        ],
+        "facetHints": [
+          "provider:wikipedia",
+          "kind:page"
+        ],
+        "entityRefs": [
+          "wp:en:בנימין נתניהו"
+        ],
+        "scoreFinding": 0.5983333333333333,
+        "ranking": {
+          "discoveryScore": 0.6483333333333333,
+          "factors": {
+            "authority": 0.7,
+            "corroboration": 0.333,
+            "directness": 0.65,
+            "freshness": 0.9,
+            "httpsOnly": 1,
+            "providerDiversity": 1,
+            "evidenceCount": 1,
+            "domains": [
+              "en.wikipedia.org"
+            ]
+          },
+          "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-32b2c0a126cb4677291b8bff",
+        "provenanceUrl": "https://www.wikidata.org/wiki/Q43723",
+        "url": "https://www.wikidata.org/wiki/Q43723",
+        "domain": "www.wikidata.org",
+        "providerId": "wikidata",
+        "retrievedAt": "2026-09-20T07:37:18.711Z",
+        "evidenceType": "registry",
+        "quote": "Prime Minister of Israel (born 1949), (1996–1999; 2009–2021; 2022–present)",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-97339b17991135197e46d290",
+        "provenanceUrl": "https://en.wikipedia.org/wiki/%D7%91%D7%A0%D7%99%D7%9E%D7%99%D7%9F_%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%95",
+        "url": "https://en.wikipedia.org/wiki/%D7%91%D7%A0%D7%99%D7%9E%D7%99%D7%9F_%D7%A0%D7%AA%D7%A0%D7%99%D7%94%D7%95",
+        "domain": "en.wikipedia.org",
+        "providerId": "wikipedia",
+        "retrievedAt": "2026-09-20T07:37:18.740Z",
+        "evidenceType": "page",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-d78c69e7c1531d4cec3d3a84",
+        "provenanceUrl": "https://viaf.org/viaf/114192441",
+        "url": "https://viaf.org/viaf/114192441",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:18.640Z",
+        "evidenceType": "registry",
+        "quote": "בנימין נתניהו, 1949-",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba68ef360b1ff3b19d13c522",
+        "provenanceUrl": "https://viaf.org/viaf/114192441",
+        "url": "https://viaf.org/viaf/114192441",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:18.640Z",
+        "evidenceType": "registry",
+        "quote": "בנימין נתניהו",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-ba23a0537d7fc7969875df98",
+        "provenanceUrl": "https://viaf.org/viaf/114192441",
+        "url": "https://viaf.org/viaf/114192441",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:18.640Z",
+        "evidenceType": "registry",
+        "quote": "בנימין נתניהו, ראש ממשלת ישראל",
+        "contentType": "text/html",
+        "robotsOk": true
+      },
+      {
+        "id": "ev-2e54c05fb52a47e051697e53",
+        "provenanceUrl": "https://viaf.org/viaf/114192441",
+        "url": "https://viaf.org/viaf/114192441",
+        "domain": "viaf.org",
+        "providerId": "viaf",
+        "retrievedAt": "2026-09-20T07:37:18.640Z",
+        "evidenceType": "registry",
+        "quote": "בנימין נתניהו, ראש ממשלת ישראל ויושב-ראש מפלגת הליכוד",
+        "contentType": "text/html",
+        "robotsOk": true
+      }
+    ],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "viaf",
+            "count": 5
+          },
+          {
+            "value": "wikidata",
+            "count": 5
+          },
+          {
+            "value": "wikipedia",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 5
+          },
+          {
+            "value": "page",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [
+          {
+            "value": "corroboration:multi_family",
+            "count": 5
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "done": 7,
+      "totalHint": 7
+    },
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok"
+    },
+    "softEr": {
+      "softRefs": [
+        "seed:323e635083a5"
+      ],
+      "status": "candidate",
+      "displayHint": "בנימין נתניהו",
+      "hints": {}
+    },
+    "stage": "S10",
+    "createdAt": "2026-09-20T07:37:18.448Z",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "graph": {
+      "nodes": [
+        {
+          "id": "seed:323e635083a5",
+          "kind": "seed"
+        },
+        {
+          "id": "wd-Q43723",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-114192441",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-114192441",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-114192441",
+          "kind": "finding"
+        },
+        {
+          "id": "viaf-114192441",
+          "kind": "finding"
+        },
+        {
+          "id": "wp-en-_",
+          "kind": "finding"
+        }
+      ],
+      "edges": []
+    },
+    "contradictions": [
+      {
+        "type": "same_title_multi_domain",
+        "title": "בנימין נתניהו",
+        "findingIds": [
+          "viaf-114192441",
+          "wp-en-_"
+        ],
+        "domains": [
+          "www.wikidata.org",
+          "viaf.org",
+          "en.wikipedia.org"
+        ],
+        "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+      }
+    ],
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "durabilityState": "durable-kv",
+      "kvReachable": true,
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    }
+  }
+}

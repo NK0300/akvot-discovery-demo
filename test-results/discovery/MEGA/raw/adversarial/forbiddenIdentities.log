@@ -1,0 +1,42 @@
+PASS version is 2026-09-19.1
+PASS denylist non-empty (fail-closed test)
+PASS denylist includes Q1701775
+PASS units list each QID: Q1701775 only for v1
+PASS normalize Q1701775
+PASS normalize q1701775
+PASS extract wd-Q1701775
+PASS extract wiki URL
+PASS extract entity URL
+PASS isForbidden Q1701775
+PASS isForbidden wd-Q1701775
+PASS not forbidden Q6258357
+PASS not forbidden Assaf Q47507930
+PASS before strip payloadContainsForbidden
+PASS strip removes wd-Q1701775 candidate
+PASS strip removes sources URL Q1701775
+PASS strip preserves non-forbidden WD Q6258357
+PASS strip preserves VIAF
+PASS strip preserves Q6258357 source
+PASS strippedIds includes Q1701775
+PASS strippedCount >= 1
+PASS after strip invariant holds
+PASS extractPayloadQids has no forbidden
+PASS top qid belt clears forbidden
+PASS top qid belt strips source
+PASS sanitize drops forbidden
+PASS sanitize sets version
+PASS attach scrub: no Q1701775 in candidates
+PASS attach scrub: no Q1701775 in sources
+PASS attach scrub invariant
+PASS attach preserves VIAF/other WD
+PASS revalidate scrub invariant
+PASS revalidate no wd-Q1701775 candidate
+PASS P0 mayCommit Smith+Q1701775 still false
+PASS P0 isTrustedWikiSeed Smith+Q1701775 fake → false
+PASS Assaf trusted seed still true
+PASS mayCommit Assaf seeded still true
+PASS P0 decideStage FAKE seed NOT dossier
+PASS sanitize null passthrough
+
+39 passed, 0 failed
+

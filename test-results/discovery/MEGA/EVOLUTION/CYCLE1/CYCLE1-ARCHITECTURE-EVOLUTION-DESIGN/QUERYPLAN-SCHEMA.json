@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/design/queryplan/v1",
+  "title": "QueryPlan (design contract)",
+  "description": "Deterministic search-intent schedule. SEARCH INTENT not ENTITY TRUTH. Design-only; not implemented.",
+  "type": "object",
+  "required": [
+    "planSchemaVersion",
+    "planId",
+    "seedClass",
+    "orderedIntents",
+    "budgets",
+    "stopConditions",
+    "dedupeRules",
+    "provenanceRequirements",
+    "reasons"
+  ],
+  "properties": {
+    "planSchemaVersion": {
+      "type": "string",
+      "const": "1.0.0-design"
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "seedHash": {
+      "type": "string",
+      "description": "Opaque seed hash; not identity"
+    },
+    "seedClass": {
+      "type": "string",
+      "enum": [
+        "person",
+        "company",
+        "organization",
+        "domain",
+        "url",
+        "document",
+        "ambiguous",
+        "unknown"
+      ]
+    },
+    "orderedIntents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/DiscoveryIntent"
+      }
+    },
+    "budgets": {
+      "$ref": "akvot://discovery/design/budget/v1"
+    },
+    "stopConditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "all_intents_attempted",
+          "budget_exhausted",
+          "wall_clock",
+          "unsafe_url_only",
+          "empty_acceptable",
+          "max_plan_revisions"
+        ]
+      }
+    },
+    "dedupeRules": {
+      "type": "object",
+      "properties": {
+        "byEvidenceFingerprint": {
+          "type": "boolean",
+          "default": true
+        },
+        "byCanonicalUrl": {
+          "type": "boolean",
+          "default": true
+        },
+        "titleBridgeForbidden": {
+          "type": "boolean",
+          "const": true
+        },
+        "typedSoftRefAttachOnly": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": [
+        "titleBridgeForbidden",
+        "typedSoftRefAttachOnly"
+      ]
+    },
+    "provenanceRequirements": {
+      "type": "object",
+      "properties": {
+        "requireProviderId": {
+          "type": "boolean",
+          "default": true
+        },
+        "requireSourceUrlOrRegistryLabel": {
+          "type": "boolean",
+          "default": true
+        },
+        "minQuoteOrSummaryChars": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "reasons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "reason"
+        ],
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "forbiddenDirectives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "SAME_ENTITY",
+          "URL_ALONE_SAME_REFERENCE",
+          "TITLE_BRIDGE",
+          "DOMAIN_OWNERSHIP_INFERENCE",
+          "IDENTITY_CONFIDENCE_SCORE",
+          "OPEN_CRAWL"
+        ]
+      },
+      "default": [
+        "SAME_ENTITY",
+        "URL_ALONE_SAME_REFERENCE",
+        "TITLE_BRIDGE",
+        "DOMAIN_OWNERSHIP_INFERENCE",
+        "IDENTITY_CONFIDENCE_SCORE",
+        "OPEN_CRAWL"
+      ]
+    },
+    "knownRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(qid|viaf|ol):.+"
+      }
+    },
+    "urlTargets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "safety"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "safety": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "allowed",
+              "blocked",
+              "unsafe"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "DiscoveryIntent": {
+      "type": "object",
+      "required": [
+        "intentId",
+        "priority",
+        "sourceFamilies",
+        "budgets",
+        "reason"
+      ],
+      "properties": {
+        "intentId": {
+          "type": "string",
+          "enum": [
+            "DISCOVER_IDENTITY_REFERENCES",
+            "DISCOVER_OFFICIAL_WEB_ORIGIN",
+            "DISCOVER_DOCUMENTS",
+            "DISCOVER_ORGANIZATION_PRESENCE",
+            "DISCOVER_PUBLICATIONS",
+            "DISCOVER_NEWS",
+            "DISCOVER_FILINGS",
+            "DISCOVER_REGISTRIES",
+            "DISCOVER_ALIASES",
+            "DISCOVER_RELATED_ENTITIES"
+          ]
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceFamilies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "queries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "familyId": {
+                "type": "string"
+              },
+              "q": {
+                "type": "string"
+              },
+              "lookup": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "budgets": {
+          "type": "object"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,67 @@
+
+=== PR-CLOSEOUT QA MATRIX start 2026-09-20T08:50:23+03:00 ===
+Preview dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 · Core dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 LOCKED · HOLD promote
+
+--- storage/health ---
+[PASS] ST-01 · storage · Preview /api/health upstash durable · build=dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 store=upstash durable=true promoteEligible=true
+[PASS] ST-02 · storage · Discovery health WRUD upstash · steps=WRITE:true,READ:true,UPDATE:true,DELETE:true latencyMs=112
+[PASS] ST-03 · storage · Core alias health build locked · build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+--- functional Discovery ---
+POST FN-01 דוד כהן
+[PASS] FN-01 · functional · HE person דוד כהן · sid=kv1.49066637ec2de98f4da89af932b4636c findings=19 leak=0 contraClean=true fiv=2026-09-19.1
+[PASS] FN-01-GET · storage · POST→GET durable HE person דוד כהן · regen=null findings=19 leak=0
+POST FN-02 Alex Morgan
+[PASS] FN-02 · functional · Latin ambiguous Alex Morgan · sid=kv1.700cc89ac191c0feaf75a7b3562386cd findings=21 leak=0 contraClean=true fiv=2026-09-19.1
+[PASS] FN-02-GET · storage · POST→GET durable Latin ambiguous Alex Morgan · regen=null findings=21 leak=0
+POST FN-03 example.org
+[PASS] FN-03 · functional · org/domain example.org · sid=kv1.72fd3c8b1d956144fd5bcbb86dbaf324 findings=3 leak=0 contraClean=true fiv=2026-09-19.1
+[PASS] FN-03-GET · storage · POST→GET durable org/domain example.org · regen=null findings=3 leak=0
+POST FN-04 (empty)
+[PASS] FN-04 · functional · empty seed → 400 · sid=- findings=0 leak=0 contraClean=true fiv=null
+POST FN-05 John Smith
+[PASS] FN-05 · functional · Smith+ctx IBM/NY/US · sid=kv1.37cfa9a5439dfc1fd6088818aa3d531b findings=21 leak=0 contraClean=true fiv=2026-09-19.1
+[PASS] FN-05-GET · storage · POST→GET durable Smith+ctx IBM/NY/US · regen=null findings=21 leak=0
+--- security/Acc scrub ---
+[PASS] ACC-01 · security · SSE Acc scrub Smith+ctx (Q1701775=0) · events=29 leak=0
+[PASS] ACC-02 · security · narrow Acc scrub + contradictions clean · leak=0 contraClean=true
+[PASS] ACC-03 · security · Aggregate Q1701775/wd-Q1701775 leakage=0 all surfaces so far · aggregateLeak=0
+[PASS] ACC-04 · security · seed text inject Q1701775 · surfaceLeak=0 fullLeak=0 findings=0 (seed may echo)
+[PASS] ACC-05 · security · seed text inject wd-Q1701775 · surfaceLeak=0 fullLeak=0 findings=0 (seed may echo)
+--- adversarial ---
+[PASS] ADV-01 · adversarial · empty seed · http=400 findings=0 leak=0
+[PASS] ADV-02 · adversarial · whitespace seed · http=400 findings=0 leak=0
+[PASS] ADV-03 · adversarial · bare surname כהן · http=201 findings=22 leak=0
+[PASS] ADV-04 · adversarial · bare John Smith · http=201 findings=21 leak=0
+--- concurrency ---
+[PASS] CONC-01 · concurrency · 2 parallel Discovery sessions distinct durable · C1:http=201/sid=kv1.6c13f74e5699bc465ab4020697a3940f/leak=0/findings=17 | C2:http=201/sid=kv1.e11af20c7fdc891f711158342e
+--- regression RB-01..12 ---
+[PASS] RB-01 · regression · KV SoT storeBackend=upstash · storeBackend=upstash
+[PASS] RB-02 · regression · storeBackend ≠ fs-regen · storeBackend=upstash fsRegenFallback=false
+[PASS] RB-03 · regression · Acc ≥3 seeds + Smith+ctx leakage=0 · fnPass=true smithLeak=0
+[PASS] RB-04 · regression · SSE works · events=27 leak=0
+[PASS] RB-05 · regression · durable GET across calls (regen false|absent) · http=200 regen=null
+[PASS] RB-06 · regression · KV HIT / GET same sessionId · http=200
+[PASS] RB-07 · regression · narrow works · http=200 leak=0
+[PASS] RB-08 · regression · leakage=0 deep scan all surfaces incl contradictions · aggregateLeak=0
+--- Core regression ---
+[PASS] CORE-Assaf · core · Core Assaf Rappaport · ui=dossier qid=Q47507930 faces=2 leak=0 pw=false
+[PASS] CORE-כהן · core · Core כהן · ui=need_context qid=null faces=0 leak=0 pw=false
+[PASS] CORE-Smith · core · Core John Smith · ui=need_context qid=null faces=0 leak=0 pw=false
+[PASS] CORE-Smith-ctx · core · Core John Smith+IBM · ui=candidates qid=null faces=0 leak=0 pw=false
+[PASS] RB-09 · regression · pw=0 (Core) · pw=0
+[PASS] RB-10 · regression · Core alias regression PASS · pass=4/4 leak=0
+[PASS] RB-11 · regression · rehydrate scrub GET after POST forbidden absent · FN-05-GET=PASS
+[PASS] RB-12 · regression · ADV quick empty · bare כהן · John Smith bare · ADV-01/03/04 pass=true
+[HOLD] RB-13 · regression · Chief GO · No Chief GO · HOLD promote
+[HOLD] RB-14 · regression · promote ask · HOLD · do not promote
+
+=== SUMMARY ===
+{
+  "PASS": 38,
+  "FAIL": 0,
+  "HOLD": 2,
+  "total": 40
+}
+recommendation: PROMOTE-READY
+rb_01_12_all_pass: true
+aggregate_leak: 0 core_pw: 0

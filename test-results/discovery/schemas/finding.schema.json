@@ -1,0 +1,18 @@
+{
+  "$id": "akvot/discovery/finding",
+  "title": "Finding",
+  "type": "object",
+  "required": ["id", "kind", "title", "evidenceIds", "providers"],
+  "properties": {
+    "id": { "type": "string" },
+    "kind": { "type": "string", "enum": ["page", "registry", "document", "contact_public", "media", "other"] },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "evidenceIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "providers": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "facetHints": { "type": "array", "items": { "type": "string" } },
+    "entityRefs": { "type": "array", "items": { "type": "string" }, "description": "soft refs only; not identity commit" },
+    "scoreFinding": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "additionalProperties": false
+}

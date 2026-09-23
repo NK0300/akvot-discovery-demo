@@ -1,0 +1,225 @@
+{
+  "step": 31,
+  "title": "SOURCE-TYPE-MAP",
+  "baselineId": "B0",
+  "stamp": "2026-09-20T09:54:00+03:00",
+  "zone": "Asia/Jerusalem",
+  "zone_label": "IDT",
+  "alias": "https://akvot-discovery.vercel.app",
+  "discoveryDpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+  "coreDplLocked": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+  "definition": "Union of source types the system can discover: (A) implemented runtime providers/adapters, (B) observed in Phase2 B0 raw, (C) pack/interface-only or test-stubbed but NOT live on B0.",
+  "codeInventory": {
+    "file": "api/lib/discovery/providers.js",
+    "DEFAULT_PROVIDERS": [
+      "wikidata",
+      "openlibrary",
+      "wikipedia"
+    ],
+    "providers": [
+      {
+        "providerId": "wikidata",
+        "adapter": "wikidataProvider",
+        "api": "wbsearchentities",
+        "host": "www.wikidata.org",
+        "kindEmitted": "registry",
+        "capabilities": [
+          "person_name",
+          "org",
+          "doc"
+        ],
+        "authMode": "none",
+        "robotsPolicy": "respect",
+        "localeAware": true,
+        "liveOnB0": true
+      },
+      {
+        "providerId": "openlibrary",
+        "adapter": "openLibraryProvider",
+        "api": "search/authors.json",
+        "host": "openlibrary.org",
+        "kindEmitted": "registry",
+        "capabilities": [
+          "person_name",
+          "org",
+          "doc"
+        ],
+        "authMode": "none",
+        "robotsPolicy": "respect",
+        "localeAware": false,
+        "liveOnB0": true
+      },
+      {
+        "providerId": "wikipedia",
+        "adapter": "wikipediaOpenSearchProvider",
+        "api": "opensearch",
+        "host": "en.wikipedia.org | he.wikipedia.org (if locale=he)",
+        "kindEmitted": "page",
+        "capabilities": [
+          "person_name",
+          "org",
+          "doc"
+        ],
+        "authMode": "none",
+        "robotsPolicy": "respect",
+        "localeAware": true,
+        "liveOnB0": true,
+        "note": "Phase2 S07 Hebrew seed still hit en.wikipedia.org — create path did not pass locale=he"
+      }
+    ],
+    "notInDefaultProviders": [
+      {
+        "providerId": "viaf",
+        "status": "pack_named_and_acc_test_stub_only",
+        "evidence": "adversarial.acc.test.mjs injects viaf; Core Stage-B still surfaces VIAF; discovery DEFAULT_PROVIDERS omits viaf",
+        "liveOnB0": false
+      },
+      {
+        "providerId": "web_public",
+        "status": "interface_only_PhaseA_deferred",
+        "evidence": "PHASE-A pack + ARCH-BLINDSPOTS BS-PROV",
+        "liveOnB0": false
+      }
+    ],
+    "rankingAuthorityDomainsCoded": {
+      "file": "api/lib/discovery/store.js DOMAIN_AUTHORITY",
+      "domains": {
+        "www.wikidata.org": 0.9,
+        "wikidata.org": 0.9,
+        "openlibrary.org": 0.75,
+        "en.wikipedia.org": 0.7,
+        "www.wikipedia.org": 0.65,
+        "*.gov / *.gov.il": 0.85,
+        "*.edu": 0.7,
+        "*.org": 0.55,
+        "default": 0.4
+      },
+      "note": "Authority table anticipates gov/edu but no live provider emits those domains on B0"
+    }
+  },
+  "observedOnB0": {
+    "n_finding_instances": 244,
+    "kinds": {
+      "registry": 178,
+      "page": 66
+    },
+    "providers": {
+      "openlibrary": 98,
+      "wikidata": 80,
+      "wikipedia": 66
+    },
+    "domains": {
+      "openlibrary.org": 98,
+      "www.wikidata.org": 80,
+      "en.wikipedia.org": 66
+    },
+    "independenceFamilies": [
+      "wikimedia",
+      "openlibrary"
+    ],
+    "sourceTypesPresent": [
+      {
+        "type": "knowledge_graph_registry",
+        "provider": "wikidata",
+        "kind": "registry",
+        "domain": "www.wikidata.org",
+        "n": 80
+      },
+      {
+        "type": "library_author_registry",
+        "provider": "openlibrary",
+        "kind": "registry",
+        "domain": "openlibrary.org",
+        "n": 98
+      },
+      {
+        "type": "encyclopedia_page",
+        "provider": "wikipedia",
+        "kind": "page",
+        "domain": "en.wikipedia.org",
+        "n": 66
+      }
+    ],
+    "sourceTypesAbsentButRankable": [
+      "gov_registry",
+      "edu_page",
+      "generic_org_https"
+    ],
+    "heWikipediaObserved": false,
+    "viafObserved": false,
+    "newsObserved": false,
+    "companyFilingsObserved": false,
+    "secGovObserved": false
+  },
+  "sourceTypeCatalog": [
+    {
+      "id": "ST-WD-REGISTRY",
+      "family": "wikimedia",
+      "status": "live_observed",
+      "valueRole": "identity_anchor"
+    },
+    {
+      "id": "ST-WP-PAGE",
+      "family": "wikimedia",
+      "status": "live_observed",
+      "valueRole": "identity_or_contextual_page",
+      "qualityIssue": "empty_quote_on_B0"
+    },
+    {
+      "id": "ST-OL-AUTHOR",
+      "family": "openlibrary",
+      "status": "live_observed",
+      "valueRole": "publication_author_registry",
+      "qualityIssue": "publication_noise_QD05"
+    },
+    {
+      "id": "ST-VIAF",
+      "family": "viaf",
+      "status": "code_gap_pack_named",
+      "valueRole": "authority_control_crosswalk"
+    },
+    {
+      "id": "ST-WEB-PUBLIC",
+      "family": "web",
+      "status": "interface_only",
+      "valueRole": "open_web_corroboration"
+    },
+    {
+      "id": "ST-NEWS",
+      "family": "news",
+      "status": "blind_spot",
+      "valueRole": "fresh_events_reputation"
+    },
+    {
+      "id": "ST-COMPANY-FILING",
+      "family": "filings",
+      "status": "blind_spot",
+      "valueRole": "corporate_legal"
+    },
+    {
+      "id": "ST-HE-NATIVE",
+      "family": "he_locale",
+      "status": "blind_spot_runtime",
+      "valueRole": "multilingual_HE",
+      "note": "he.wikipedia adapter exists but unused without locale"
+    },
+    {
+      "id": "ST-GOV",
+      "family": "gov",
+      "status": "authority_table_only",
+      "valueRole": "official_registry"
+    },
+    {
+      "id": "ST-DOMAIN-WHOIS-OR-ORIGIN",
+      "family": "web_origin",
+      "status": "blind_spot",
+      "valueRole": "URL/domain seeds S06/S16"
+    },
+    {
+      "id": "ST-ROLE-RESOLVER",
+      "family": "structured_query",
+      "status": "blind_spot",
+      "valueRole": "role/alias seeds S14/S15"
+    }
+  ]
+}

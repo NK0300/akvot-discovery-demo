@@ -1,0 +1,37 @@
+[דיוק] ACC AFTER Bound#1 PRIMARY start 2026-09-20T10:26:08+03:00
+[דיוק] PRIMARY dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw
+[דיוק] B0 LOCKED https://akvot-discovery.vercel.app → dpl_AvyhrW24gGRquWCPPZdydBiz81dv
+[דיוק] Core LOCKED https://akvot-simple-demo.vercel.app → dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+[דיוק] Promote HOLD
+[b0] build=dpl_AvyhrW24gGRquWCPPZdydBiz81dv aliasStillAvyhr=true
+
+=== PRIMARY_VERDICT bound1 dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw ===
+  health build=dpl_Fz2iqzpX5sXVyyN4CnzatKKyxckw exact=true
+  [bound1] S01 POST seed=Tim Berners-Lee
+  [bound1] S01 → status=partial findings=18 withEv=18 multi=0/18=0 viaf=8 leak=0 b23=0
+  [bound1] S04 POST seed=Stripe
+  [bound1] S04 → status=partial findings=30 withEv=30 multi=0/30=0 viaf=8 leak=0 b23=0
+  [bound1] S05 POST seed=Red Cross
+  [bound1] S05 → status=partial findings=30 withEv=30 multi=0/30=0 viaf=8 leak=0 b23=0
+  [adv] Smith+IBM/NY/US on bound1
+  [adv] adv-inject-qid leak=0 b23=0 dossier=false findings=29
+  [adv] adv-inject-wd-qid leak=0 b23=0 dossier=false findings=29
+  [adv] adv-inject-seed-poison leak=0 b23=0 dossier=false findings=0
+
+[core] smoke LOCKED 8ag
+  Assaf=true כהן=true smithNc=true smithWarm=true build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8 corePass=true
+
+=== CAVEAT_BASELINE frndab dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2 ===
+  health build=dpl_FRNDabpFbbLhF4TWTyEKQv8VfEV2 exact=true
+  [frndab] S01 POST seed=Tim Berners-Lee
+  [frndab] S01 → status=partial findings=17 withEv=17 multi=14/17=0.8235 viaf=14 leak=0 b23=0
+  [frndab] S04 POST seed=Stripe
+  [frndab] S04 → status=partial findings=30 withEv=30 multi=10/30=0.3333 viaf=9 leak=0 b23=0
+  [frndab] S05 POST seed=Red Cross
+  [frndab] S05 → status=partial findings=30 withEv=30 multi=12/30=0.4 viaf=15 leak=0 b23=0
+
+========== SUMMARY ==========
+Bound1 mean=0 multi_gate=FAIL leak=0 S01=18 VERDICT=FAIL
+FRNDab mean=0.5189 confirm=CONFIRM_PASS
+Core=true B0alias=true HOLD
+DONE

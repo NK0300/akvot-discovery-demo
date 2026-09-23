@@ -1,0 +1,49 @@
+{
+  "stamp": "2026-09-20T10:52:51+03:00",
+  "preview": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+  "semantics_before_SAME": [
+    "Normalized keys only: viaf:DIGITS, qid:QDIGITS, ol:KEY",
+    "Intersection nonempty across \u22652 hostFamilies required for attach (SAME-REFERENCE ceiling)",
+    "titleSecondary is annotation only \u2014 never sole key",
+    "wp: is informational underkey \u2014 never coalesce key",
+    "wd-Q / ol-OL aliases normalize to qid:/ol:",
+    "CONTRADICTORY if same key claims incompatible entity types (person vs org) \u2014 do not attach"
+  ],
+  "families": {
+    "viaf": {
+      "precision": "high when WKP present; Autosuggest displayForm variants collide on same viaf id (intentional attach_keep)",
+      "coverage": "good for persons; weak for modern corps without VIAF corp record",
+      "collisions": "locale title variants share viaf id",
+      "malformed": "reject non-digit viaf",
+      "missing": "WKP often absent on Autosuggest",
+      "conflicting": "distinct viaf ids for related orgs (ICRC 160178001 vs Movement 145680594) must stay separate"
+    },
+    "qid": {
+      "precision": "high",
+      "coverage": "search-limited; Stripe Inc may appear as Q7624104",
+      "collisions": "homonym QIDs (paintings, biology) share seed label not keys",
+      "malformed": "must match Q\\d+",
+      "missing": "P214 often empty for corps",
+      "conflicting": "disambiguation Q342029 \u2260 company Q7624104"
+    },
+    "ol": {
+      "precision": "high when remote_ids present",
+      "coverage": "enrichN capped; remote_ids often null for org-ish authors",
+      "collisions": "multiple OL keys for same display name",
+      "malformed": "strip /authors/",
+      "missing": "remote_ids",
+      "conflicting": "OL author for corp name \u2260 company entity"
+    }
+  },
+  "cross_combos": {
+    "viaf\u2229qid": "primary S01/S05 success path (WKP or P214)",
+    "ol\u2229qid|viaf": "requires remote_ids; TBL OL25245A when enrich succeeds",
+    "wp\u2229qid": "not implemented; even if, same wikimedia family \u2192 no multi attach",
+    "title\u2229anything": "FORBIDDEN as sole key"
+  },
+  "live_observation": {
+    "S01": "viaf\u2229qid works; OL variance",
+    "S04": "no cross combo succeeds",
+    "S05": "ARC viaf\u2229qid; ICRC viaf id mismatch vs Movement"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$id": "akvot/discovery/facet",
+  "title": "Facet",
+  "description": "Dynamic facet with counts; emptyReason when no_evidence",
+  "type": "object",
+  "required": ["key", "label", "buckets"],
+  "properties": {
+    "key": { "type": "string" },
+    "label": { "type": "string" },
+    "buckets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["value", "count"],
+        "properties": {
+          "value": { "type": "string" },
+          "count": { "type": "integer", "minimum": 0 },
+          "evidenceHint": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "emptyReason": {
+      "type": "string",
+      "description": "e.g. no_evidence when buckets empty"
+    }
+  },
+  "additionalProperties": false
+}

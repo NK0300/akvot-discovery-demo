@@ -1,0 +1,351 @@
+{
+  "role": "בודק",
+  "mode": "MEASURE_ONLY_NO_PROMOTE",
+  "stamp_start": "2026-09-20T09:09:35+03:00",
+  "stamp_zone": "Asia/Jerusalem (IDT, UTC+3)",
+  "discovery": {
+    "alias": "https://akvot-discovery.vercel.app",
+    "expected_dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+  },
+  "core": {
+    "alias": "https://akvot-simple-demo.vercel.app",
+    "expected_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+  },
+  "inspect": {
+    "discovery": {
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "status": "Ready",
+      "match": true
+    },
+    "core": {
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "status": "Ready",
+      "match": true,
+      "still_8ag": true
+    }
+  },
+  "health": {
+    "discovery_alias": {
+      "httpStatus": 200,
+      "build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "build_match": true
+    },
+    "api": {
+      "httpStatus": 200,
+      "build": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+      "build_match": true,
+      "storeBackend": "upstash",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "durabilityState": "durable-kv"
+    },
+    "discovery_health": {
+      "httpStatus": 200,
+      "ok": true,
+      "storeBackend": "upstash",
+      "durable": true,
+      "promoteEligible": true,
+      "kvReachable": true,
+      "durabilityState": "durable-kv",
+      "mode": "kv-shared",
+      "steps": [
+        {
+          "step": "WRITE",
+          "ok": true,
+          "ms": 33
+        },
+        {
+          "step": "READ",
+          "ok": true,
+          "ms": 33
+        },
+        {
+          "step": "UPDATE",
+          "ok": true,
+          "ms": 61
+        },
+        {
+          "step": "DELETE",
+          "ok": true,
+          "ms": 108
+        }
+      ]
+    },
+    "core_alias": {
+      "httpStatus": 200,
+      "build": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "build_match": true,
+      "still_8ag": true
+    },
+    "pass": true
+  },
+  "seeds": [
+    {
+      "id": "david-cohen",
+      "seed": "דוד כהן",
+      "kind": "person",
+      "post": {
+        "httpStatus": 201,
+        "ms": 3024,
+        "sessionId": "kv1.f6064071f990c789f7f87a7b4cd35bbe",
+        "status": "partial",
+        "findings_n": 19,
+        "storeBackend": "upstash",
+        "durable": true,
+        "leakage_count": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "b23": []
+      },
+      "get": {
+        "httpStatus": 200,
+        "ms": 2327,
+        "sessionId": "kv1.f6064071f990c789f7f87a7b4cd35bbe",
+        "sessionId_match": true,
+        "status": "partial",
+        "findings_n": 19,
+        "leakage_count": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "b23": []
+      },
+      "pass": true
+    },
+    {
+      "id": "alex-morgan",
+      "seed": "Alex Morgan",
+      "kind": "ambiguous",
+      "post": {
+        "httpStatus": 201,
+        "ms": 4702,
+        "sessionId": "kv1.3c392a3049dae18b7df0a5c065a1e7e3",
+        "status": "partial",
+        "findings_n": 21,
+        "storeBackend": "upstash",
+        "durable": true,
+        "leakage_count": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "b23": []
+      },
+      "get": {
+        "httpStatus": 200,
+        "ms": 2289,
+        "sessionId": "kv1.3c392a3049dae18b7df0a5c065a1e7e3",
+        "sessionId_match": true,
+        "status": "partial",
+        "findings_n": 21,
+        "leakage_count": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "b23": []
+      },
+      "pass": true
+    },
+    {
+      "id": "example-org",
+      "seed": "example.org",
+      "kind": "domain",
+      "post": {
+        "httpStatus": 201,
+        "ms": 3357,
+        "sessionId": "kv1.b66069c56bb7683ff0a8665756e33531",
+        "status": "complete",
+        "findings_n": 3,
+        "storeBackend": "upstash",
+        "durable": true,
+        "leakage_count": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "b23": []
+      },
+      "get": {
+        "httpStatus": 200,
+        "ms": 2197,
+        "sessionId": "kv1.b66069c56bb7683ff0a8665756e33531",
+        "sessionId_match": true,
+        "status": "complete",
+        "findings_n": 3,
+        "leakage_count": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "b23": []
+      },
+      "pass": true
+    }
+  ],
+  "lifecycle": {
+    "sessionId": "kv1.b66069c56bb7683ff0a8665756e33531",
+    "get": {
+      "httpStatus": 200,
+      "match": true,
+      "findings_n": 3,
+      "leakage_count": 0
+    },
+    "sse": {
+      "httpStatus": 200,
+      "ms": 2497,
+      "events": [
+        "meta",
+        "progress",
+        "provider",
+        "provider",
+        "provider",
+        "finding",
+        "finding",
+        "finding",
+        "facets",
+        "status",
+        "done"
+      ],
+      "has_done": true,
+      "leakage_count": 0
+    },
+    "narrow": {
+      "httpStatus": 200,
+      "sessionId": "kv1.b66069c56bb7683ff0a8665756e33531",
+      "match": true,
+      "findings_n": 1,
+      "leakage_count": 0
+    },
+    "get2": {
+      "httpStatus": 200,
+      "match": true,
+      "leakage_count": 0
+    },
+    "cross_session": {
+      "otherSessionId": "kv1.f6064071f990c789f7f87a7b4cd35bbe",
+      "returnedSessionId": "kv1.f6064071f990c789f7f87a7b4cd35bbe",
+      "match": true,
+      "not_life": true,
+      "leakage_count": 0
+    },
+    "pass": true
+  },
+  "acc": {
+    "adversarial": [
+      {
+        "id": "adv-smith",
+        "seed": "John Smith",
+        "httpStatus": 201,
+        "sessionId": "kv1.23bcaaeda9a11b3bba489cfa1af5511b",
+        "post_leakage": 0,
+        "get_leakage": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "pass": true
+      },
+      {
+        "id": "adv-qid",
+        "seed": "John Smith Q1701775",
+        "httpStatus": 201,
+        "sessionId": "kv1.c006e855c5197652690c77b530ee9b45",
+        "post_leakage": 0,
+        "get_leakage": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "pass": true
+      },
+      {
+        "id": "adv-wd",
+        "seed": "wd-Q1701775",
+        "httpStatus": 201,
+        "sessionId": "kv1.123eb39b18685a6389141f268803dbea",
+        "post_leakage": 0,
+        "get_leakage": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "pass": true
+      },
+      {
+        "id": "adv-q",
+        "seed": "Q1701775",
+        "httpStatus": 201,
+        "sessionId": "kv1.9b9ba681d503078d9211e605b92cc572",
+        "post_leakage": 0,
+        "get_leakage": 0,
+        "contradictions_leak": 0,
+        "deep_scan_hits": [],
+        "pass": true
+      }
+    ],
+    "seeds_leakage": 0,
+    "adv_leakage": 0,
+    "total_leakage": 0,
+    "contradictions_zero": true,
+    "pass": true
+  },
+  "core_checks": {
+    "alias_still_8ag": true,
+    "alias_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "expected_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "cases": [
+      {
+        "id": "assaf",
+        "httpStatus": 200,
+        "ms": 2563,
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": 2,
+        "leakage_count": 0,
+        "pw": 0,
+        "pass": true
+      },
+      {
+        "id": "cohen-soft",
+        "httpStatus": 200,
+        "ms": 2983,
+        "ui": "need_context",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "pw": 0,
+        "pass": true
+      },
+      {
+        "id": "smith-soft",
+        "httpStatus": 200,
+        "ms": 8533,
+        "ui": "candidates",
+        "qid": null,
+        "faces": 0,
+        "leakage_count": 0,
+        "pw": 0,
+        "pass": true
+      }
+    ],
+    "pw": 0,
+    "leakage": 0,
+    "pass": true
+  },
+  "incidents": [],
+  "summary": {
+    "final_status": "PASS",
+    "pass": true,
+    "core_still_8ag": true,
+    "discovery_dpl_match": true,
+    "discovery_dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv",
+    "core_dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+    "storeBackend": "upstash",
+    "durable": true,
+    "leakage": 0,
+    "pw": 0,
+    "seeds_pass": true,
+    "lifecycle_pass": true,
+    "acc_pass": true,
+    "core_pass": true,
+    "health_pass": true,
+    "contradictions_zero": true,
+    "promote_performed": false,
+    "incidents_n": 0
+  },
+  "seeds_summary": {
+    "n": 3,
+    "min_required": 3,
+    "pass": true,
+    "total_acc_leak": 0,
+    "storeBackend_prefer_upstash": true
+  },
+  "stamp_end": "2026-09-20T09:11:04+03:00"
+}

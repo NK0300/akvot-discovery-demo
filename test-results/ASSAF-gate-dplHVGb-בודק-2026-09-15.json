@@ -1,0 +1,11 @@
+{
+  "gate": "PASS",
+  "base": "https://akvot-simple-demo-29yid8jo9-k-akvot.vercel.app",
+  "dpl": "dpl_HVGb86Qrxe9Ztte3ESMCc7F3tnHk",
+  "whenLocal": "15.9.2026 Asia/Jerusalem",
+  "rows": [
+    {"q": "Assaf Rappaport", "http": 200, "ui": "dossier", "qid": "Q47507930", "faces": true, "pass": true, "ms": 2696},
+    {"q": "אסף רפפורט", "http": 200, "ui": "dossier", "qid": "Q47507930", "faces": true, "pass": true, "ms": 3476},
+    {"q": "Assaf Smith", "http": 200, "ui": "need_context", "qid": null, "faces": false, "pass": true, "ms": 5703}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "stamp": "2026-09-20T10:04:15+0300",
+  "stampLabel": "2026-09-20 10:04 IDT",
+  "experiment": "EXP-A-VIAF",
+  "promote": "HOLD",
+  "preview": {
+    "dpl": "dpl_4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "url": "https://akvot-simple-demo-c7eq1un0r-k-akvot.vercel.app",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/4Rj7cPbjz2cvzzY6ktumo64Za5aE",
+    "target": null,
+    "env": {
+      "DISCOVERY_ENABLE_VIAF": "1",
+      "scope": "Preview only"
+    }
+  },
+  "aliasesUntouched": {
+    "discovery": {
+      "alias": "akvot-discovery.vercel.app",
+      "dpl": "dpl_AvyhrW24gGRquWCPPZdydBiz81dv"
+    },
+    "core": {
+      "alias": "akvot-simple-demo.vercel.app",
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+    }
+  },
+  "note": "Deployed Preview only. No --prod. No alias retarget."
+}

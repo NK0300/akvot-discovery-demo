@@ -1,0 +1,31 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2)
+Fetching deployment "akvot-simple-demo.vercel.app" in k-akvot
+> Fetched deployment "akvot-simple-demo-3i5lh8hts-k-akvot.vercel.app" in k-akvot [1s]
+
+  General
+
+    id		dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+    name	akvot-simple-demo
+    target	production
+    status	● Ready
+    url		https://akvot-simple-demo-3i5lh8hts-k-akvot.vercel.app
+    created	Sun Sep 20 2026 00:56:41 GMT+0300 (Israel Daylight Time) [9h ago]
+
+
+  Aliases
+
+    ╶ https://akvot-simple-demo.vercel.app
+    ╶ https://akvot-simple-demo-k-akvot.vercel.app
+    
+
+  Builds
+
+    ┌ .        [0ms]
+    ├── λ api/health (1.83KB) [fra1]
+    ├── λ api/lib/forbiddenIdentities (3.81KB) [fra1]
+    ├── λ api/lib/forbiddenIdentities.test (17.19KB) [fra1]
+    ├── λ api/lib/knownIdentities (4.44KB) [fra1]
+    ├── λ api/lib/obsTrust (2.32KB) [fra1]
+    └── 5 output items hidden
+    
+

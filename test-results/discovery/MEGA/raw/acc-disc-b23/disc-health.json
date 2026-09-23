@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "phase": "orchestrator-v0-b",
+  "build": "dpl_CAVh2rDSNDFfjrGzw8EJWJNmPN4e",
+  "baselineHint": "dpl_DNfPZ9",
+  "discoveryStore": {
+    "storeBackend": "upstash",
+    "durable": true,
+    "fallback": false,
+    "explicitFallback": false,
+    "fsRegenFallback": false,
+    "promoteEligible": true,
+    "kvCredsPresent": true,
+    "crossInstance": "shared-kv"
+  }
+}

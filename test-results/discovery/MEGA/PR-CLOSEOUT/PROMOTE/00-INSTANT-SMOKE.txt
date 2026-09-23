@@ -1,0 +1,12 @@
+# PROMOTE instant smoke 2026-09-20T08:58:44+03:00
+## Discovery health
+{"ok":true,"phase":"orchestrator-v0-b","build":"dpl_AvyhrW24gGRquWCPPZdydBiz81dv","baselineHint":"dpl_DNfPZ9","discoveryStore":{"storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"kvCredsPresent":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true},"kvPing":{"ok":true,"latencyMs":36}}
+## Core health
+{"ok":true,"phase":"orchestrator-v0-b","build":"dpl_8agSZKvcb2pjehzXgMeckDgJvDV8","baselineHint":"dpl_DNfPZ9"}
+## Core inspect id
+    id		dpl_8agSZKvcb2pjehzXgMeckDgJvDV8
+    url		https://akvot-simple-demo-3i5lh8hts-k-akvot.vercel.app
+## Discovery inspect via alias
+    id		dpl_AvyhrW24gGRquWCPPZdydBiz81dv
+    target	preview
+    url		https://akvot-simple-demo-6palh6t62-k-akvot.vercel.app

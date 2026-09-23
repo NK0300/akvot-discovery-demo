@@ -1,0 +1,135 @@
+{
+  "stamp": "2026-09-20T10:42:29+03:00",
+  "dpl": "dpl_DZmXtttPqDjpecyXDnKpryJzyd6q",
+  "corpus": "homonym-adversarial",
+  "n": 12,
+  "pass_n": 12,
+  "leak_total": 0,
+  "rows": [
+    {
+      "id": "H01",
+      "seed": "John Smith",
+      "findings_n": 29,
+      "multi_rate": 0.1379,
+      "acc_leak": 0,
+      "expect": "no_false_same_entity",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H02",
+      "seed": "John Smith",
+      "findings_n": 29,
+      "multi_rate": 0.1379,
+      "acc_leak": 0,
+      "expect": "acc_scrub_leak0",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H03",
+      "seed": "John Smith",
+      "findings_n": 29,
+      "multi_rate": 0.1379,
+      "acc_leak": 0,
+      "expect": "acc_scrub_leak0",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H04",
+      "seed": "John Smith Q1701775",
+      "findings_n": 0,
+      "multi_rate": 0,
+      "acc_leak": 0,
+      "expect": "acc_scrub_leak0",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H05",
+      "seed": "Cohen",
+      "findings_n": 30,
+      "multi_rate": 0.0667,
+      "acc_leak": 0,
+      "expect": "no_dossier_collapse",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H06",
+      "seed": "\u05db\u05d4\u05df",
+      "findings_n": 30,
+      "multi_rate": 0,
+      "acc_leak": 0,
+      "expect": "no_dossier_collapse",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H07",
+      "seed": "Alex Morgan",
+      "findings_n": 15,
+      "multi_rate": 0,
+      "acc_leak": 0,
+      "expect": "homonym_keep_separate",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H08",
+      "seed": "Red Cross",
+      "findings_n": 22,
+      "multi_rate": 0.1818,
+      "acc_leak": 0,
+      "expect": "pretty_wrong_national_societies_ok",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H09",
+      "seed": "Stripe",
+      "findings_n": 22,
+      "multi_rate": 0,
+      "acc_leak": 0,
+      "expect": "stripe_ne_stripe_john",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H10",
+      "seed": "Michael Jordan",
+      "findings_n": 30,
+      "multi_rate": 0.3333,
+      "acc_leak": 0,
+      "expect": "homonym_keep_separate",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H11",
+      "seed": "Smith",
+      "findings_n": 30,
+      "multi_rate": 0,
+      "acc_leak": 0,
+      "expect": "bare_surname_no_merge",
+      "pass": true,
+      "dossier": false
+    },
+    {
+      "id": "H12",
+      "seed": "Jordan",
+      "findings_n": 30,
+      "multi_rate": 0.1333,
+      "acc_leak": 0,
+      "expect": "bare_surname_no_merge",
+      "pass": true,
+      "dossier": false
+    }
+  ],
+  "forbidden": [
+    "Q1701775",
+    "wd-Q1701775"
+  ],
+  "policy": "title-only merge FORBIDDEN; no title as identity key; no similarity-alone same-entity"
+}

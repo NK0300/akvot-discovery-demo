@@ -1,0 +1,69 @@
+[PREVIEW] CREATE S01 Tim Berners-Lee
+[PREVIEW] S01 n=1 multi=1 fam=[openlibrary,viaf,wikimedia] viaf=true leak=0
+[PREVIEW] CREATE S04 Stripe
+[PREVIEW] S04 n=22 multi=0.1364 fam=[openlibrary,viaf,wikimedia] viaf=true leak=0
+[PREVIEW] CREATE S05 Red Cross
+[PREVIEW] S05 n=19 multi=0.1053 fam=[openlibrary,viaf,wikimedia] viaf=true leak=0
+[B0] CREATE S01 Tim Berners-Lee
+[B0] S01 n=10 multi=0 fam=[openlibrary,wikimedia] viaf=false leak=0
+[B0] CREATE S04 Stripe
+[B0] S04 n=22 multi=0 fam=[openlibrary,wikimedia] viaf=false leak=0
+[B0] CREATE S05 Red Cross
+[B0] S05 n=22 multi=0 fam=[openlibrary,wikimedia] viaf=false leak=0
+{
+  "previewMean": 0.4139,
+  "b0Mean": 0,
+  "viafSeeds": 3,
+  "leakTotal": 0,
+  "pass": true,
+  "perSeed": {
+    "S01": {
+      "previewRate": 1,
+      "b0Rate": 0,
+      "viaf": true,
+      "findingsPreview": 1,
+      "findingsB0": 10,
+      "familiesPreview": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "familiesB0": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    "S04": {
+      "previewRate": 0.1364,
+      "b0Rate": 0,
+      "viaf": true,
+      "findingsPreview": 22,
+      "findingsB0": 22,
+      "familiesPreview": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "familiesB0": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    },
+    "S05": {
+      "previewRate": 0.1053,
+      "b0Rate": 0,
+      "viaf": true,
+      "findingsPreview": 19,
+      "findingsB0": 22,
+      "familiesPreview": [
+        "openlibrary",
+        "viaf",
+        "wikimedia"
+      ],
+      "familiesB0": [
+        "openlibrary",
+        "wikimedia"
+      ]
+    }
+  }
+}

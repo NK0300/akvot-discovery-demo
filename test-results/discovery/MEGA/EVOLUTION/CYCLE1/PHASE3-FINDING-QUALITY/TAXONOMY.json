@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "baselineId": "B0",
+  "phase": 3,
+  "createdAt": "2026-09-20T09:52:07+03:00",
+  "classes": [
+    {
+      "id": "identity-relevant",
+      "description": "Primary entity matching seed identity intent (person/org canonical hit with identifying bio)"
+    },
+    {
+      "id": "corporate",
+      "description": "Company, NGO, university, agency, or institutional entity"
+    },
+    {
+      "id": "ownership",
+      "description": "Ownership, subsidiary, parent, or acquisition relations"
+    },
+    {
+      "id": "affiliation",
+      "description": "Membership, employment, alumni, school-of / subunit affiliation"
+    },
+    {
+      "id": "professional",
+      "description": "Occupation, role, career, or professional descriptor"
+    },
+    {
+      "id": "geographic",
+      "description": "Place, locale, nationality, or geo-anchored descriptor"
+    },
+    {
+      "id": "publication",
+      "description": "Books, talks, biographies-as-works, editions, catalogues"
+    },
+    {
+      "id": "legal/public",
+      "description": "Legal instruments, charters, statutes, public-law references"
+    },
+    {
+      "id": "contact/public-endpoint",
+      "description": "Domains, websites, public contact endpoints"
+    },
+    {
+      "id": "historical",
+      "description": "Dated lifespan, historical era, former-role temporal facts"
+    },
+    {
+      "id": "relationship",
+      "description": "Kinship, co-founder, interpersonal relations"
+    },
+    {
+      "id": "technical",
+      "description": "Protocols, software, technical artifacts, tech-company signals"
+    },
+    {
+      "id": "contextual",
+      "description": "Homonyms, common-noun senses, fictional, disambiguation noise"
+    },
+    {
+      "id": "other",
+      "description": "Unclassified residual"
+    }
+  ],
+  "classificationMethod": "Heuristic on title+summary+kind+seed category (priority primary); secondary tags retained",
+  "samplePolicy": "All findings from Phase2 GET r1 for seeds with findings≥1 (≥5 seeds)"
+}

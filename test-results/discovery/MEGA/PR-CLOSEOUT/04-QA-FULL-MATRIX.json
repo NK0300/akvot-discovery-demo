@@ -1,0 +1,518 @@
+{
+  "stamp_start": "2026-09-20T08:50:23+03:00",
+  "stamp_end": "2026-09-20T08:51:41+03:00",
+  "role": "בודק",
+  "promote": "HOLD",
+  "recommendation": "PROMOTE-READY",
+  "targets": {
+    "discovery_preview": {
+      "dpl": "dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2",
+      "url": "https://akvot-simple-demo-2v59j4kvl-k-akvot.vercel.app"
+    },
+    "core_alias": {
+      "dpl": "dpl_8agSZKvcb2pjehzXgMeckDgJvDV8",
+      "url": "https://akvot-simple-demo.vercel.app",
+      "locked": true
+    }
+  },
+  "commit": "unknown",
+  "counts": {
+    "PASS": 38,
+    "FAIL": 0,
+    "HOLD": 2,
+    "total": 40
+  },
+  "by_category": {
+    "storage": {
+      "PASS": 7,
+      "FAIL": 0,
+      "HOLD": 0
+    },
+    "functional": {
+      "PASS": 5,
+      "FAIL": 0,
+      "HOLD": 0
+    },
+    "security": {
+      "PASS": 5,
+      "FAIL": 0,
+      "HOLD": 0
+    },
+    "adversarial": {
+      "PASS": 4,
+      "FAIL": 0,
+      "HOLD": 0
+    },
+    "concurrency": {
+      "PASS": 1,
+      "FAIL": 0,
+      "HOLD": 0
+    },
+    "regression": {
+      "PASS": 12,
+      "FAIL": 0,
+      "HOLD": 2
+    },
+    "core": {
+      "PASS": 4,
+      "FAIL": 0,
+      "HOLD": 0
+    }
+  },
+  "aggregate_leak": 0,
+  "core_pw": 0,
+  "core_leak": 0,
+  "rb_01_12_all_pass": true,
+  "rows": [
+    {
+      "id": "ST-01",
+      "category": "storage",
+      "name": "Preview /api/health upstash durable",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2379,
+      "evidence": "raw/qa-matrix/health-api.json",
+      "notes": "build=dpl_9PkJ5WJFEEYMjpSr5W8mf1GDv6A2 store=upstash durable=true promoteEligible=true"
+    },
+    {
+      "id": "ST-02",
+      "category": "storage",
+      "name": "Discovery health WRUD upstash",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2654,
+      "evidence": "raw/qa-matrix/health-discovery.json",
+      "notes": "steps=WRITE:true,READ:true,UPDATE:true,DELETE:true latencyMs=112"
+    },
+    {
+      "id": "ST-03",
+      "category": "storage",
+      "name": "Core alias health build locked",
+      "status": "PASS",
+      "http": 200,
+      "ms": 320,
+      "evidence": "raw/qa-matrix/health-core-alias.json",
+      "notes": "build=dpl_8agSZKvcb2pjehzXgMeckDgJvDV8"
+    },
+    {
+      "id": "FN-01",
+      "category": "functional",
+      "name": "HE person דוד כהן",
+      "status": "PASS",
+      "http": 201,
+      "ms": 2943,
+      "sessionId": "kv1.49066637ec2de98f4da89af932b4636c",
+      "findings": 19,
+      "leak": 0,
+      "contraOk": true,
+      "evidence": "raw/qa-matrix/POST-FN-01.json",
+      "notes": "sid=kv1.49066637ec2de98f4da89af932b4636c findings=19 leak=0 contraClean=true fiv=2026-09-19.1"
+    },
+    {
+      "id": "FN-01-GET",
+      "category": "storage",
+      "name": "POST→GET durable HE person דוד כהן",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2224,
+      "sessionId": "kv1.49066637ec2de98f4da89af932b4636c",
+      "findings": 19,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/GET-FN-01.json",
+      "notes": "regen=null findings=19 leak=0"
+    },
+    {
+      "id": "FN-02",
+      "category": "functional",
+      "name": "Latin ambiguous Alex Morgan",
+      "status": "PASS",
+      "http": 201,
+      "ms": 3036,
+      "sessionId": "kv1.700cc89ac191c0feaf75a7b3562386cd",
+      "findings": 21,
+      "leak": 0,
+      "contraOk": true,
+      "evidence": "raw/qa-matrix/POST-FN-02.json",
+      "notes": "sid=kv1.700cc89ac191c0feaf75a7b3562386cd findings=21 leak=0 contraClean=true fiv=2026-09-19.1"
+    },
+    {
+      "id": "FN-02-GET",
+      "category": "storage",
+      "name": "POST→GET durable Latin ambiguous Alex Morgan",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2323,
+      "sessionId": "kv1.700cc89ac191c0feaf75a7b3562386cd",
+      "findings": 21,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/GET-FN-02.json",
+      "notes": "regen=null findings=21 leak=0"
+    },
+    {
+      "id": "FN-03",
+      "category": "functional",
+      "name": "org/domain example.org",
+      "status": "PASS",
+      "http": 201,
+      "ms": 2788,
+      "sessionId": "kv1.72fd3c8b1d956144fd5bcbb86dbaf324",
+      "findings": 3,
+      "leak": 0,
+      "contraOk": true,
+      "evidence": "raw/qa-matrix/POST-FN-03.json",
+      "notes": "sid=kv1.72fd3c8b1d956144fd5bcbb86dbaf324 findings=3 leak=0 contraClean=true fiv=2026-09-19.1"
+    },
+    {
+      "id": "FN-03-GET",
+      "category": "storage",
+      "name": "POST→GET durable org/domain example.org",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2410,
+      "sessionId": "kv1.72fd3c8b1d956144fd5bcbb86dbaf324",
+      "findings": 3,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/GET-FN-03.json",
+      "notes": "regen=null findings=3 leak=0"
+    },
+    {
+      "id": "FN-04",
+      "category": "functional",
+      "name": "empty seed → 400",
+      "status": "PASS",
+      "http": 400,
+      "ms": 2272,
+      "sessionId": null,
+      "findings": 0,
+      "leak": 0,
+      "contraOk": true,
+      "evidence": "raw/qa-matrix/POST-FN-04.json",
+      "notes": "sid=- findings=0 leak=0 contraClean=true fiv=null"
+    },
+    {
+      "id": "FN-05",
+      "category": "functional",
+      "name": "Smith+ctx IBM/NY/US",
+      "status": "PASS",
+      "http": 201,
+      "ms": 2709,
+      "sessionId": "kv1.37cfa9a5439dfc1fd6088818aa3d531b",
+      "findings": 21,
+      "leak": 0,
+      "contraOk": true,
+      "evidence": "raw/qa-matrix/POST-FN-05.json",
+      "notes": "sid=kv1.37cfa9a5439dfc1fd6088818aa3d531b findings=21 leak=0 contraClean=true fiv=2026-09-19.1"
+    },
+    {
+      "id": "FN-05-GET",
+      "category": "storage",
+      "name": "POST→GET durable Smith+ctx IBM/NY/US",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2301,
+      "sessionId": "kv1.37cfa9a5439dfc1fd6088818aa3d531b",
+      "findings": 21,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/GET-FN-05.json",
+      "notes": "regen=null findings=21 leak=0"
+    },
+    {
+      "id": "ACC-01",
+      "category": "security",
+      "name": "SSE Acc scrub Smith+ctx (Q1701775=0)",
+      "status": "PASS",
+      "ms": 3325,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/SSE-FN-05.json",
+      "notes": "events=29 leak=0"
+    },
+    {
+      "id": "ACC-02",
+      "category": "security",
+      "name": "narrow Acc scrub + contradictions clean",
+      "status": "PASS",
+      "http": 200,
+      "ms": 2608,
+      "leak": 0,
+      "contraOk": true,
+      "evidence": "raw/qa-matrix/NARROW-FN-05.json",
+      "notes": "leak=0 contraClean=true"
+    },
+    {
+      "id": "ACC-03",
+      "category": "security",
+      "name": "Aggregate Q1701775/wd-Q1701775 leakage=0 all surfaces so far",
+      "status": "PASS",
+      "leak": 0,
+      "notes": "aggregateLeak=0"
+    },
+    {
+      "id": "ACC-04",
+      "category": "security",
+      "name": "seed text inject Q1701775",
+      "status": "PASS",
+      "http": 201,
+      "ms": 2909,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/ADV-inject-ACC-04.json",
+      "notes": "surfaceLeak=0 fullLeak=0 findings=0 (seed may echo)"
+    },
+    {
+      "id": "ACC-05",
+      "category": "security",
+      "name": "seed text inject wd-Q1701775",
+      "status": "PASS",
+      "http": 201,
+      "ms": 2865,
+      "leak": 0,
+      "evidence": "raw/qa-matrix/ADV-inject-ACC-05.json",
+      "notes": "surfaceLeak=0 fullLeak=0 findings=0 (seed may echo)"
+    },
+    {
+      "id": "ADV-01",
+      "category": "adversarial",
+      "name": "empty seed",
+      "status": "PASS",
+      "http": 400,
+      "ms": 2186,
+      "leak": 0,
+      "findings": 0,
+      "evidence": "raw/qa-matrix/ADV-ADV-01.json",
+      "notes": "http=400 findings=0 leak=0"
+    },
+    {
+      "id": "ADV-02",
+      "category": "adversarial",
+      "name": "whitespace seed",
+      "status": "PASS",
+      "http": 400,
+      "ms": 2316,
+      "leak": 0,
+      "findings": 0,
+      "evidence": "raw/qa-matrix/ADV-ADV-02.json",
+      "notes": "http=400 findings=0 leak=0"
+    },
+    {
+      "id": "ADV-03",
+      "category": "adversarial",
+      "name": "bare surname כהן",
+      "status": "PASS",
+      "http": 201,
+      "ms": 3099,
+      "leak": 0,
+      "findings": 22,
+      "evidence": "raw/qa-matrix/ADV-ADV-03.json",
+      "notes": "http=201 findings=22 leak=0"
+    },
+    {
+      "id": "ADV-04",
+      "category": "adversarial",
+      "name": "bare John Smith",
+      "status": "PASS",
+      "http": 201,
+      "ms": 3210,
+      "leak": 0,
+      "findings": 21,
+      "evidence": "raw/qa-matrix/ADV-ADV-04.json",
+      "notes": "http=201 findings=21 leak=0"
+    },
+    {
+      "id": "CONC-01",
+      "category": "concurrency",
+      "name": "2 parallel Discovery sessions distinct durable",
+      "status": "PASS",
+      "evidence": "raw/qa-matrix/CONC-C1.json · CONC-C2.json",
+      "notes": "C1:http=201/sid=kv1.6c13f74e5699bc465ab4020697a3940f/leak=0/findings=17 | C2:http=201/sid=kv1.e11af20c7fdc891f711158342ee4a1b5/leak=0/findings=22"
+    },
+    {
+      "id": "RB-01",
+      "category": "regression",
+      "name": "KV SoT storeBackend=upstash",
+      "status": "PASS",
+      "notes": "storeBackend=upstash",
+      "evidence": "raw/qa-matrix/health-api.json"
+    },
+    {
+      "id": "RB-02",
+      "category": "regression",
+      "name": "storeBackend ≠ fs-regen",
+      "status": "PASS",
+      "notes": "storeBackend=upstash fsRegenFallback=false",
+      "evidence": "raw/qa-matrix/health-api.json"
+    },
+    {
+      "id": "RB-03",
+      "category": "regression",
+      "name": "Acc ≥3 seeds + Smith+ctx leakage=0",
+      "status": "PASS",
+      "notes": "fnPass=true smithLeak=0",
+      "evidence": "raw/qa-matrix/POST-FN-*.json"
+    },
+    {
+      "id": "RB-04",
+      "category": "regression",
+      "name": "SSE works",
+      "status": "PASS",
+      "notes": "events=27 leak=0",
+      "evidence": "raw/qa-matrix/SSE-FN-01.json"
+    },
+    {
+      "id": "RB-05",
+      "category": "regression",
+      "name": "durable GET across calls (regen false|absent)",
+      "status": "PASS",
+      "notes": "http=200 regen=null",
+      "evidence": "raw/qa-matrix/GET2-FN-01.json"
+    },
+    {
+      "id": "RB-06",
+      "category": "regression",
+      "name": "KV HIT / GET same sessionId",
+      "status": "PASS",
+      "notes": "http=200",
+      "evidence": "raw/qa-matrix/GET2-FN-01.json"
+    },
+    {
+      "id": "RB-07",
+      "category": "regression",
+      "name": "narrow works",
+      "status": "PASS",
+      "notes": "http=200 leak=0",
+      "evidence": "raw/qa-matrix/NARROW-FN-01.json"
+    },
+    {
+      "id": "RB-08",
+      "category": "regression",
+      "name": "leakage=0 deep scan all surfaces incl contradictions",
+      "status": "PASS",
+      "notes": "aggregateLeak=0",
+      "evidence": "raw/qa-matrix/"
+    },
+    {
+      "id": "CORE-Assaf",
+      "category": "core",
+      "name": "Core Assaf Rappaport",
+      "status": "PASS",
+      "http": 200,
+      "ms": 892,
+      "ui": "dossier",
+      "qid": "Q47507930",
+      "faces": 2,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-Assaf.json",
+      "notes": "ui=dossier qid=Q47507930 faces=2 leak=0 pw=false"
+    },
+    {
+      "id": "CORE-כהן",
+      "category": "core",
+      "name": "Core כהן",
+      "status": "PASS",
+      "http": 200,
+      "ms": 980,
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-כהן.json",
+      "notes": "ui=need_context qid=null faces=0 leak=0 pw=false"
+    },
+    {
+      "id": "CORE-Smith",
+      "category": "core",
+      "name": "Core John Smith",
+      "status": "PASS",
+      "http": 200,
+      "ms": 5788,
+      "ui": "need_context",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-Smith.json",
+      "notes": "ui=need_context qid=null faces=0 leak=0 pw=false"
+    },
+    {
+      "id": "CORE-Smith-ctx",
+      "category": "core",
+      "name": "Core John Smith+IBM",
+      "status": "PASS",
+      "http": 200,
+      "ms": 6280,
+      "ui": "candidates",
+      "qid": null,
+      "faces": 0,
+      "leak": 0,
+      "pw": false,
+      "evidence": "raw/qa-matrix/CORE-Smith-ctx.json",
+      "notes": "ui=candidates qid=null faces=0 leak=0 pw=false"
+    },
+    {
+      "id": "RB-09",
+      "category": "regression",
+      "name": "pw=0 (Core)",
+      "status": "PASS",
+      "notes": "pw=0",
+      "evidence": "raw/qa-matrix/CORE-*.json"
+    },
+    {
+      "id": "RB-10",
+      "category": "regression",
+      "name": "Core alias regression PASS",
+      "status": "PASS",
+      "notes": "pass=4/4 leak=0",
+      "evidence": "raw/qa-matrix/CORE-*.json"
+    },
+    {
+      "id": "RB-11",
+      "category": "regression",
+      "name": "rehydrate scrub GET after POST forbidden absent",
+      "status": "PASS",
+      "notes": "FN-05-GET=PASS",
+      "evidence": "raw/qa-matrix/GET-FN-05.json"
+    },
+    {
+      "id": "RB-12",
+      "category": "regression",
+      "name": "ADV quick empty · bare כהן · John Smith bare",
+      "status": "PASS",
+      "notes": "ADV-01/03/04 pass=true",
+      "evidence": "raw/qa-matrix/ADV-*.json"
+    },
+    {
+      "id": "RB-13",
+      "category": "regression",
+      "name": "Chief GO",
+      "status": "HOLD",
+      "notes": "No Chief GO · HOLD promote",
+      "evidence": "00-CHIEF-MANDATE.md"
+    },
+    {
+      "id": "RB-14",
+      "category": "regression",
+      "name": "promote ask",
+      "status": "HOLD",
+      "notes": "HOLD · do not promote",
+      "evidence": "this matrix"
+    }
+  ],
+  "open_items": [
+    {
+      "id": "B17",
+      "category": "observability",
+      "name": "Store telemetry taxonomy (outcome/failureClass/retryCount) incomplete vs mandate",
+      "notes": "Soft OK — owned by Server; not a QA matrix HTTP FAIL",
+      "owner": "Server",
+      "severity": "soft"
+    },
+    {
+      "id": "B18",
+      "category": "observability",
+      "name": "B18 production-readiness observability gaps (if any remaining)",
+      "notes": "Soft OK — owned by Server; track in FINAL-REPORT",
+      "owner": "Server",
+      "severity": "soft"
+    }
+  ]
+}

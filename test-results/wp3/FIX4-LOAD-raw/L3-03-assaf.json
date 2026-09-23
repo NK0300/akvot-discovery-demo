@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "level": "L3",
+    "request": 3,
+    "case": "assaf",
+    "variant": null,
+    "method": "GET",
+    "path": "/api/lookup?q=Assaf%20Rappaport",
+    "ms": 2822,
+    "status": 200,
+    "ok": true,
+    "failure": null,
+    "err": null,
+    "timedOut": false,
+    "forbiddenLeak": false,
+    "leak_hits": 0,
+    "leak_detail": [],
+    "candLeak": false,
+    "dossierLeak": false,
+    "sourcesLeak": false,
+    "ui": "dossier",
+    "qid": "Q47507930",
+    "faces": true,
+    "facesCount": 7,
+    "top": [],
+    "stripped": null,
+    "ver": "2026-09-19.1",
+    "rid": "447e6911-ea8b-47e3-8c95-363b36492d16",
+    "label": "Assaf Rappaport",
+    "rawFile": "L3-03-assaf.json"
+  },
+  "response": {
+    "mode": "wiki+google",
+    "label": "Assaf Rappaport",
+    "qid": "Q47507930",
+    "birth": null,
+    "age": null,
+    "place": null,
+    "desc": "",
+    "extract": "Wikidata: Israeli entrepreneur and cybersecurity executive (born 1983)",
+    "photo": "https://pic1.calcalist.co.il/picserver3/crop_images/2025/03/19/r1ePzp4dn1e/r1ePzp4dn1e_0_0_3000_2000_0_x-large.jpg",
+    "alts": [],
+    "email": null,
+    "phone": null,
+    "sources": [
+      {
+        "kind": "Wikidata",
+        "title": "Q47507930",
+        "note": "Israeli entrepreneur and cybersecurity executive (born 1983)",
+        "url": "https://www.wikidata.org/wiki/Q47507930",
+        "group": "identity",
+        "conf": 0.85
+      }
+    ],
+    "images": [
+      {
+        "url": "https://pic1.calcalist.co.il/picserver3/crop_images/2025/03/19/r1ePzp4dn1e/r1ePzp4dn1e_0_0_3000_2000_0_x-large.jpg",
+        "source": "חיפוש תמונות",
+        "note": "תוצאת תמונה ציבורית"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Assaf_Rappaport_-_TechCrunch_Disrupt_2024_%28cropped%29.jpg?utm_source=www.wikidata.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+        "source": "Wikidata",
+        "note": "Asaf Rappaport"
+      },
+      {
+        "url": "https://socialthink.io/wp-content/uploads/2025/12/Who-is-Assaf-Rappaport-682x1024.webp",
+        "source": "חיפוש תמונות",
+        "note": "תוצאת תמונה ציבורית"
+      },
+      {
+        "url": "https://assets.entrepreneur.com/content/3x2/2000/1742414119-Assaf-rappaport-2181573842.jpg",
+        "source": "חיפוש תמונות",
+        "note": "תוצאת תמונה ציבורית"
+      },
+      {
+        "url": "https://kitrum.com/wp-content/uploads/2024/11/Inner-Assaf-Rappaport-1024x584.webp",
+        "source": "חיפוש תמונות",
+        "note": "תוצאת תמונה ציבורית"
+      },
+      {
+        "url": "https://www.techloy.com/content/images/2025/03/time100-next-2024-Assaf-rappaport-1.webp",
+        "source": "חיפוש תמונות",
+        "note": "תוצאת תמונה ציבורית"
+      },
+      {
+        "url": "https://techcrunch.com/wp-content/uploads/2024/10/Rappaport_tc_disrupt_2024_speaker-carousel_1920x1080-1-speaker.png?resize=1280",
+        "source": "חיפוש תמונות",
+        "note": "תוצאת תמונה ציבורית"
+      }
+    ],
+    "extra_facts": [],
+    "queries": [],
+    "scanned": 1,
+    "allowBroadImages": true,
+    "ambiguous": false,
+    "thin": false,
+    "candidates": [],
+    "phase": "orchestrator-v0-b",
+    "timings": {
+      "wiki": 99,
+      "gemini": 0,
+      "enrich": 1371,
+      "stageB": 0,
+      "total": 1655,
+      "wikiMeta": {
+        "wiki429": 8,
+        "wikiTimeout": 0,
+        "wikiRetries": 8
+      }
+    },
+    "phonePath": false,
+    "demoCiteHost": "Wikidata",
+    "uiState": "dossier",
+    "scenario": "known",
+    "confidence": "high",
+    "needContextFields": [
+      "city",
+      "org",
+      "country",
+      "role"
+    ],
+    "messageKey": "dossier_ready",
+    "forbiddenIdentitiesVersion": "2026-09-19.1",
+    "needCandidatePick": false,
+    "requestId": "447e6911-ea8b-47e3-8c95-363b36492d16",
+    "wikiMeta": {
+      "wiki429": 8,
+      "wikiTimeout": 0,
+      "wikiRetries": 8
+    }
+  }
+}

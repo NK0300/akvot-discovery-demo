@@ -1,0 +1,171 @@
+{
+  "wave": "MEGA-C-KV-REST-REFRESH",
+  "agent": "שרת",
+  "date": "2026-09-20",
+  "zone": "Asia/Jerusalem",
+  "checkedAt": "2026-09-20T07:45:30+03:00",
+  "promoted": false,
+  "coreAliasLocked": "dpl_8ag… untouched",
+  "oldFail": {
+    "dpl": "dpl_BAkeDgvpvqGEg53zXxScGdESvdPv",
+    "url": "https://akvot-simple-demo-ndmmkolpg-k-akvot.vercel.app",
+    "reasons": [
+      "kv set/get failed: fetch failed",
+      "POST 201 then GET 404 (memory-only write)",
+      "health TIMEOUT / FUNCTION_INVOCATION_TIMEOUT",
+      "Acc Smith leak wd-Q1701775 in snapshot.contradictions[].findingIds"
+    ]
+  },
+  "preview": {
+    "dpl": "dpl_CAVh2rDSNDFfjrGzw8EJWJNmPN4e",
+    "url": "https://akvot-simple-demo-p68nhr48g-k-akvot.vercel.app",
+    "target": "preview",
+    "createdIdt": "2026-09-20T07:43:39+03:00",
+    "inspector": "https://vercel.com/k-akvot/akvot-simple-demo/CAVh2rDSNDFfjrGzw8EJWJNmPN4e"
+  },
+  "envRefresh": {
+    "team": "k-akvot",
+    "project": "akvot-simple-demo",
+    "upstashHost": "causal-oriole-287287.upstash.io",
+    "preview": "UPSTASH_REDIS_REST_URL + TOKEN re-added (Secret)",
+    "development": "URL + TOKEN refreshed",
+    "production": "NOT rotated (Core locked)"
+  },
+  "health": {
+    "ok": true,
+    "backend": "upstash",
+    "storeBackend": "upstash",
+    "latencyMs": 208,
+    "correlationId": "hc-mu9c06ov-4bb153",
+    "fsRegenFallback": false,
+    "explicitFallback": false,
+    "promoteEligible": true,
+    "durable": true,
+    "fallback": false,
+    "kvCredsPresent": true,
+    "mode": "kv-shared",
+    "steps": [
+      {
+        "step": "WRITE",
+        "ok": true,
+        "ms": 123
+      },
+      {
+        "step": "READ",
+        "ok": true,
+        "ms": 123
+      },
+      {
+        "step": "UPDATE",
+        "ok": true,
+        "ms": 153
+      },
+      {
+        "step": "DELETE",
+        "ok": true,
+        "ms": 208
+      }
+    ],
+    "ttlMs": 3600000,
+    "faultInjectAvailable": false
+  },
+  "wrud": {
+    "healthProbe": {
+      "pass": true,
+      "steps": [
+        {
+          "step": "WRITE",
+          "ok": true,
+          "ms": 123
+        },
+        {
+          "step": "READ",
+          "ok": true,
+          "ms": 123
+        },
+        {
+          "step": "UPDATE",
+          "ok": true,
+          "ms": 153
+        },
+        {
+          "step": "DELETE",
+          "ok": true,
+          "ms": 208
+        }
+      ],
+      "latencyMs": 208,
+      "durable": true,
+      "promoteEligible": true,
+      "fsRegenFallback": false
+    },
+    "sessionPath": {
+      "post": {
+        "http": 201,
+        "sessionId": "kv1.582a57a3cc58e22b42022c893d35b707",
+        "storeBackend": "upstash",
+        "timeSec": 1.33
+      },
+      "get": {
+        "http": 200,
+        "not404": true,
+        "storeBackend": "upstash",
+        "findings": 19,
+        "timeSec": 0.433
+      },
+      "narrowUpdate": {
+        "http": 200,
+        "afterCount": 8,
+        "timeSec": 0.53
+      },
+      "delete": {
+        "http": 405,
+        "note": "sessions DELETE not exposed; KV DELETE covered by health probe"
+      }
+    },
+    "noPost201Get404": true,
+    "noFetchFailedInLogs": true
+  },
+  "accScrub": {
+    "change": "sanitizeDiscoveryPayload reconciles contradictions[].findingIds to surviving findings + strips forbidden QID tokens; also facetHints + graph edges",
+    "sot": "api/lib/forbiddenIdentities.js (no Smith special-case)",
+    "files": [
+      "api/lib/discovery/emit.js",
+      "api/lib/discovery/adversarial.acc.test.mjs",
+      "api/lib/discovery/orchestrator.test.mjs"
+    ],
+    "units": {
+      "adversarial.acc": {
+        "passed": 46,
+        "failed": 0,
+        "delta": "+10 B23"
+      },
+      "discovery.orchestrator": {
+        "passed": 113,
+        "failed": 0,
+        "delta": "+3 B23"
+      },
+      "forbiddenIdentities": {
+        "passed": 39,
+        "failed": 0
+      },
+      "sessionStore": {
+        "passed": 58,
+        "failed": 0
+      }
+    },
+    "liveSmith": {
+      "seed": "John Smith + IBM/NY/US",
+      "postHttp": 201,
+      "getHttp": 200,
+      "leak_Q1701775": false,
+      "forbiddenStripped": 1,
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "contradictionsFindingIdsClean": true,
+      "dossier": null,
+      "faces": null
+    }
+  },
+  "noteForAccQa": "Acc/QA must re-verify ≥3 seeds + storage CRUD gate on this Preview before any promote consideration. NO promote by שרת.",
+  "blockers": []
+}

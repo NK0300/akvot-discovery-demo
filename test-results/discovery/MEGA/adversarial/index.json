@@ -1,0 +1,120 @@
+{
+  "suite": "MEGA-adversarial-fixtures",
+  "updated": "2026-09-20T07:25:18+03:00",
+  "zone": "Asia/Jerusalem",
+  "fixtures": [
+    "ADV-01-same-name-different-person.json",
+    "ADV-02-ambiguous-he-en.json",
+    "ADV-03-entity-collision.json",
+    "ADV-04-pretty-wrong-guards.json",
+    "ADV-05-forbidden-qid-inject.json",
+    "ADV-06-org-seed.json",
+    "ADV-07-kv-rehydrate-poison.json"
+  ],
+  "live": [
+    {
+      "id": "ADV-L1",
+      "name": "collision-name-cohen",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L1-collision-cohen.json",
+      "detail": "http=201 findings=13 leak=0 bans=none"
+    },
+    {
+      "id": "ADV-L2",
+      "name": "ambiguous-alex-morgan",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L2-ambiguous-alex.json",
+      "detail": "http=201 findings=15 leak=0"
+    },
+    {
+      "id": "ADV-L3",
+      "name": "org-seed-example.org",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L3-org-example.json",
+      "detail": "http=201 findings=2 leak=0"
+    },
+    {
+      "id": "ADV-L4",
+      "name": "forbidden-qid-inject-seed",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L4-forbidden-qid-inject.json",
+      "detail": "http=201 entityLeak=0 rawTokens=3 bans=none",
+      "note": "RUNNOW on Preview; KV inject/rehydrate path DEFERRED"
+    }
+  ],
+  "status": "fixtures + live RUNNOW L1–L12 · KV paths DEFERRED/BLOCKED_KV",
+  "expandLive": [
+    {
+      "id": "ADV-L5",
+      "name": "empty-seed-soft-fail",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L5-empty-seed.json",
+      "detail": "http=400 softFail=true entityLeak=0",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L6",
+      "name": "whitespace-seed-soft-fail",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L6-whitespace-seed.json",
+      "detail": "http=400 softFail=true entityLeak=0",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L7",
+      "name": "bare-cohen-he-discovery",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L7-bare-cohen-he.json",
+      "detail": "http=201 findings=16 entityLeak=0 bans=none",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L8",
+      "name": "john-smith-bare-discovery",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L8-john-smith-bare.json",
+      "detail": "http=201 findings=15 entityLeak=0 bans=none",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L9",
+      "name": "double-get-regen-consistency",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L9-double-get-regen.json",
+      "detail": "sidOk findings=15/15 regen=true,true entityLeak=0",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L10",
+      "name": "sse-second-subscribe-replay-soft",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L10-sse-second-subscribe.meta.json",
+      "detail": "ctOk=true ev=9/9 types2=meta,progress,provider,finding,facets entityLeak=0",
+      "notes": "Soft replay only · durable Last-Event-ID across instances = BLOCKED_KV",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L11",
+      "name": "narrow-forbidden-qid-filter-inject",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L11-narrow-qid-inject.json",
+      "detail": "http=200 findings=13 entityLeak=0 bans=none",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L12",
+      "name": "david-cohen-en-collision-soft",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L12-david-cohen-en.json",
+      "detail": "http=201 findings=16 entityLeak=0",
+      "notes": "",
+      "runnow": true
+    }
+  ]
+}

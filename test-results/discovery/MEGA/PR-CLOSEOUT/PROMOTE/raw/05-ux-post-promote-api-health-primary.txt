@@ -1,0 +1,20 @@
+Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback
+HTTP/2 200 
+access-control-allow-origin: *
+age: 0
+cache-control: no-store
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+content-type: application/json; charset=utf-8
+date: Sun, 20 Sep 2026 06:06:17 GMT
+etag: W/"18a-wkFP/WIamT+IaSul8HyX9s7YGAM"
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: no-referrer
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-vercel-cache: MISS
+x-vercel-id: cle1::fra1::hzsff-1789884377018-7629177de703
+content-length: 394
+
+{"ok":true,"phase":"orchestrator-v0-b","build":"dpl_AvyhrW24gGRquWCPPZdydBiz81dv","baselineHint":"dpl_DNfPZ9","discoveryStore":{"storeBackend":"upstash","durable":true,"fallback":false,"explicitFallback":false,"fsRegenFallback":false,"promoteEligible":true,"kvCredsPresent":true,"crossInstance":"shared-kv","durabilityState":"durable-kv","kvReachable":true},"kvPing":{"ok":true,"latencyMs":35}}

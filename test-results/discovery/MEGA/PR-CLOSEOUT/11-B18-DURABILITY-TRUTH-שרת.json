@@ -1,0 +1,18 @@
+{
+  "id": "B18",
+  "stamp": "2026-09-20T08:52:56+03:00",
+  "zone": "Asia/Jerusalem",
+  "status": "CLOSED",
+  "promote": false,
+  "preview": { "deploymentId": "dpl_4trZGxgN7CKKtC6Zed6SbACzF6Po", "url": "https://akvot-simple-demo-7ogfp6yun-k-akvot.vercel.app" },
+  "invariant": "durable/promoteEligible only if kv-backend AND last-known-good probe",
+  "live": {
+    "apiHealthDurable": true,
+    "discoveryHealthDurable": true,
+    "createDurable": true,
+    "getDurable": true,
+    "kvPingOk": true
+  },
+  "failLoud": "KV set fail → 503 KV_SET_FAILED, memory cleared",
+  "units": { "sessionStore": "passed=125 failed=0" }
+}

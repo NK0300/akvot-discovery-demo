@@ -1,0 +1,67 @@
+{
+  "snap": {
+    "status": "partial",
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "findings": [],
+    "evidence": [],
+    "facets": [
+      {
+        "key": "provider",
+        "label": "Provider",
+        "buckets": [
+          {
+            "value": "wikidata",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "kind",
+        "label": "Kind",
+        "buckets": [
+          {
+            "value": "registry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "key": "hint",
+        "label": "Hint",
+        "buckets": [],
+        "emptyReason": "no_evidence"
+      }
+    ]
+  },
+  "row": {
+    "id": "R10",
+    "seed": "https://www.example.com/page?qid=Q1701775",
+    "expect": "UNKNOWN_OR_NONE",
+    "note": "poison query; no SAME-*",
+    "sessionId": "kv1.e26ebca31d3f990c3ded3150a8b18df0",
+    "status": "partial",
+    "polls": 14,
+    "providers": {
+      "wikidata": "ok",
+      "openlibrary": "ok",
+      "wikipedia": "ok",
+      "viaf": "ok",
+      "web_origin": "error"
+    },
+    "wo_n": 0,
+    "wo_e_n": 0,
+    "rels": [],
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "pass": true,
+    "reason": "no wo emit; zero SAME-*",
+    "finding": null,
+    "evidence_rel": null
+  }
+}

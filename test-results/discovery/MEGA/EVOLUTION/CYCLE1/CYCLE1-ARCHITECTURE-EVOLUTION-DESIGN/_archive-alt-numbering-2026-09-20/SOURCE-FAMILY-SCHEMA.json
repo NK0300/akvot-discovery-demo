@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/design/source-family/v1",
+  "title": "SourceFamily (design contract)",
+  "type": "object",
+  "required": [
+    "familyId",
+    "authorityClass",
+    "independenceClass",
+    "safetyClass",
+    "capabilities",
+    "entityTypes",
+    "inputRequirements",
+    "outputTypes",
+    "productionEligible"
+  ],
+  "properties": {
+    "familyId": {
+      "type": "string",
+      "enum": [
+        "knowledge_graph",
+        "encyclopedia",
+        "bibliographic",
+        "authority",
+        "web_origin",
+        "filings",
+        "registries",
+        "news",
+        "scholarly",
+        "government",
+        "archives"
+      ]
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "authorityClass": {
+      "type": "string",
+      "enum": [
+        "registry",
+        "encyclopedia",
+        "bibliographic",
+        "regulatory",
+        "web_origin",
+        "news",
+        "scholarly",
+        "government",
+        "archives",
+        "other"
+      ]
+    },
+    "independenceClass": {
+      "type": "string",
+      "enum": [
+        "same_provider",
+        "same_host_family",
+        "same_source_family",
+        "cross_family_candidate",
+        "typed_corroboration_eligible"
+      ]
+    },
+    "safetyClass": {
+      "type": "string",
+      "enum": [
+        "trusted_api",
+        "public_metadata",
+        "untrusted_web",
+        "credentialed"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entityTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "person",
+          "company",
+          "organization",
+          "domain",
+          "url",
+          "document",
+          "ambiguous",
+          "unknown"
+        ]
+      }
+    },
+    "inputRequirements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "raw_seed",
+          "typed_ref",
+          "url",
+          "domain",
+          "locale"
+        ]
+      }
+    },
+    "outputTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "finding",
+          "evidence",
+          "typed_soft_ref",
+          "url_candidate",
+          "document_meta"
+        ]
+      }
+    },
+    "costClass": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "latencyClass": {
+      "type": "string"
+    },
+    "rateLimitClass": {
+      "type": "string"
+    },
+    "failureModes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "previewFlag": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "productionEligible": {
+      "type": "boolean",
+      "const": false
+    },
+    "providers": {
+      "type": "array",
+      "description": "Conceptual only in design pack \u2014 no live wiring",
+      "items": {
+        "type": "object",
+        "properties": {
+          "providerId": {
+            "type": "string"
+          },
+          "hostFamily": {
+            "type": "string"
+          },
+          "wired": {
+            "type": "boolean",
+            "const": false
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

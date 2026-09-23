@@ -1,0 +1,231 @@
+{
+  "stamp": "2026-09-20T11:43:00+03:00",
+  "results": {
+    "BOUND_OPEN_268": {
+      "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+      "rows": [
+        {
+          "id": "S16",
+          "seed": "https://www.who.int",
+          "status": "complete",
+          "wo_n": 1,
+          "wo_e_n": 1,
+          "rel_hist": {
+            "SAME-REFERENCE": 1
+          },
+          "same_entity": 0,
+          "same_reference": 2,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "ok"
+          },
+          "wo_sample": [
+            {
+              "id": "wo-7fd08b15039288ff",
+              "relationship": "SAME-REFERENCE",
+              "hostFamily": "web_origin"
+            }
+          ],
+          "create_ok": true
+        },
+        {
+          "id": "S06",
+          "seed": "openai.com",
+          "status": "partial",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "partial",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        },
+        {
+          "id": "W1",
+          "seed": "https://www.example.com",
+          "status": "failed_soft",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        },
+        {
+          "id": "ACC-U01",
+          "seed": "https://www.wikidata.org/wiki/Q80",
+          "status": "partial",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        },
+        {
+          "id": "ACC-P01",
+          "seed": "https://www.example.com/page?qid=Q1701775",
+          "status": "partial",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        }
+      ]
+    },
+    "CLAIMED_PATCH_Byn": {
+      "dpl": "dpl_BynXm5iQ17wLzYZ4aiHiMbGFJSkx",
+      "rows": [
+        {
+          "id": "S16",
+          "seed": "https://www.who.int",
+          "status": "complete",
+          "wo_n": 1,
+          "wo_e_n": 1,
+          "rel_hist": {
+            "UNKNOWN": 1
+          },
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "ok"
+          },
+          "wo_sample": [
+            {
+              "id": "wo-7fd08b15039288ff",
+              "relationship": "UNKNOWN",
+              "hostFamily": "web_origin"
+            }
+          ],
+          "create_ok": true
+        },
+        {
+          "id": "S06",
+          "seed": "openai.com",
+          "status": "partial",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "partial",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        },
+        {
+          "id": "W1",
+          "seed": "https://www.example.com",
+          "status": "failed_soft",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        },
+        {
+          "id": "ACC-U01",
+          "seed": "https://www.wikidata.org/wiki/Q80",
+          "status": "partial",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        },
+        {
+          "id": "ACC-P01",
+          "seed": "https://www.example.com/page?qid=Q1701775",
+          "status": "partial",
+          "wo_n": 0,
+          "wo_e_n": 0,
+          "rel_hist": {},
+          "same_entity": 0,
+          "same_reference": 0,
+          "acc_leak": 0,
+          "providers": {
+            "wikidata": "ok",
+            "openlibrary": "ok",
+            "wikipedia": "ok",
+            "viaf": "ok",
+            "web_origin": "error"
+          },
+          "wo_sample": [],
+          "create_ok": true
+        }
+      ]
+    }
+  }
+}

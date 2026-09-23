@@ -1,0 +1,37 @@
+{
+  "doc": "13-ACCEPTANCE-MEASURABILITY-בודק",
+  "owner": "בודק",
+  "stamp": "2026-09-20T11:03:15+03:00",
+  "mode": "MEASURABILITY_SPEC",
+  "exp_b": false,
+  "promote": false,
+  "baseline_pointer": "../A2-EXPERIMENTAL-BASELINE.md",
+  "hard_gates": {
+    "acc_leak": { "must_equal": 0, "forbidden_example": "Q1701775" },
+    "pretty_wrong": { "must_equal": 0 },
+    "core_regression_smoke": "pass_unchanged",
+    "b0_lock": "unchanged"
+  },
+  "per_seed_distribution_mandatory": true,
+  "mean_alone_insufficient": true,
+  "flag_seed_specific_gains": true,
+  "vocabulary_ceiling_for_coalesce_claims": "SAME-REFERENCE",
+  "not_same_entity_from_title_or_sim": true,
+  "comparison_lanes_required": ["B0", "A", "A2-safe", "candidate"],
+  "a2_bound_aspirational": false,
+  "reject_tricks": ["title-only merge", "similarity-alone same-entity", "invented-ref", "fake S04/S05 recovery"],
+  "reproducibility": {
+    "vercel_deployment_id": "required",
+    "raw_session_paths": "required",
+    "scripts": "required",
+    "core_b0_lock_json": "required",
+    "stamp_zone": "Asia/Jerusalem IDT"
+  },
+  "do_not_optimize": [
+    "multi vanity on S01-only",
+    "mean without seed split",
+    "fake S04/S05 recovery",
+    "mutate frozen A2 packs"
+  ],
+  "policy": { "truth_gt_multi": true, "multi_is_metric_not_objective": true }
+}

@@ -1,0 +1,129 @@
+{
+  "when": "2026-09-17T18:25:32.535640+03:00",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "baseline": "dpl_3cgoTVkUJpHfcdos8EVY327ZUTYy",
+  "PASS": true,
+  "health": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "phase": "orchestrator-v0-b",
+      "build": "dpl_3cgoTVkUJpHfcdos8EVY327ZUTYy",
+      "baselineHint": "dpl_DNfPZ9"
+    }
+  },
+  "cases": [
+    {
+      "id": "Assaf",
+      "pass": true,
+      "expected": "dossier Q47507930",
+      "actual": {
+        "ui": "dossier",
+        "qid": "Q47507930",
+        "faces": true,
+        "photo": true,
+        "mode": "wiki",
+        "requestId": "57f86a6a-c1c5-4d73-a879-7c759afaa0fc",
+        "cached": null,
+        "http": 200,
+        "ms": 776
+      }
+    },
+    {
+      "id": "T-C6",
+      "pass": true,
+      "expected": "need_context|… · qid=null · 0 faces",
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "e678cfe9-fbce-4134-a986-df967c35abf7",
+        "cached": null,
+        "http": 200,
+        "ms": 2629
+      }
+    },
+    {
+      "id": "כהן",
+      "pass": true,
+      "expected": "need_context|thin · 0 faces",
+      "actual": {
+        "ui": "need_context",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "e5d47fbd-4a84-434c-8724-0f5edfa45dd1",
+        "cached": null,
+        "http": 200,
+        "ms": 13324
+      }
+    },
+    {
+      "id": "Smith POST COLD",
+      "pass": true,
+      "expected": "not dossier · not Q1701775 · 0 faces",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "dfab1498-557d-436e-b333-337a949a5934",
+        "cached": null,
+        "http": 200,
+        "ms": 6952
+      }
+    },
+    {
+      "id": "Smith POST WARM×1",
+      "pass": true,
+      "expected": "candidates · 0 faces · not Q1701775",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "8055ff6a-58da-4b60-ac46-ee2a06ca706e",
+        "cached": null,
+        "http": 200,
+        "ms": 6795
+      }
+    },
+    {
+      "id": "Smith POST WARM×2",
+      "pass": true,
+      "expected": "candidates · 0 faces · not Q1701775",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "c91f8f6d-43c5-46bb-90c0-1e7445f6e160",
+        "cached": null,
+        "http": 200,
+        "ms": 6409
+      }
+    },
+    {
+      "id": "Smith POST WARM×3",
+      "pass": true,
+      "expected": "candidates · 0 faces · not Q1701775",
+      "actual": {
+        "ui": "candidates",
+        "qid": null,
+        "faces": false,
+        "photo": false,
+        "mode": "candidates",
+        "requestId": "ac16bce1-f826-4ae8-a93d-3b58234c32c5",
+        "cached": null,
+        "http": 200,
+        "ms": 6375
+      }
+    }
+  ]
+}

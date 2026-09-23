@@ -1,0 +1,16 @@
+{
+  "forbiddenQid": "Q1701775",
+  "variants": [
+    "Q1701775",
+    "wd-Q1701775",
+    "wikidata.org/wiki/Q1701775",
+    "wikidata.org/entity/Q1701775"
+  ],
+  "scannedAt": "2026-09-20T09:52:07+03:00",
+  "filesScanned": 64,
+  "leakageTotal": 0,
+  "hits": [],
+  "phase2AccPass": true,
+  "phase2Leakage": 0,
+  "pass": true
+}

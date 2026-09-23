@@ -1,0 +1,253 @@
+{
+  "results": [
+    {
+      "id": "amb-israel-israeli",
+      "q": "ישראל ישראלי",
+      "ms": 25985,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "google",
+      "label": "ישראל ישראלי",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 3,
+      "alts": [
+        "קולנוע ישראלי",
+        "ערביי ישראל",
+        "אגודת ישראל",
+        "Yes קולנוע ישראלי",
+        "פלוני"
+      ],
+      "broad": false
+    },
+    {
+      "id": "amb-moshe-cohen",
+      "q": "משה כהן",
+      "ms": 31903,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "wiki+google",
+      "label": "משה כהן (שופט)",
+      "qid": "Q6639789",
+      "photo": true,
+      "imgs": 8,
+      "src": 3,
+      "alts": [
+        "משה כהן",
+        "משה כהן (זמר)",
+        "משה כהן הנריקז",
+        "משה כהן שאולי",
+        "משה כהן-אליה"
+      ],
+      "broad": true
+    },
+    {
+      "id": "amb-dani-cohen",
+      "q": "דני כהן",
+      "ms": 36009,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "wiki+google",
+      "label": "דני כהן (מהנדס)",
+      "qid": "Q5220231",
+      "photo": true,
+      "imgs": 8,
+      "src": 11,
+      "alts": [
+        "דני כהן",
+        "דני כהן סולל",
+        "דן כהן",
+        "דני בריאן",
+        "דנה בלנקשטיין כהן"
+      ],
+      "broad": true
+    },
+    {
+      "id": "junk-invented",
+      "q": "פלורקסימון זבולון קפצוני",
+      "ms": 11054,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "google",
+      "label": "פלורקסימון זבולון קפצוני",
+      "qid": null,
+      "photo": false,
+      "imgs": 0,
+      "src": 0,
+      "alts": [],
+      "broad": false
+    },
+    {
+      "id": "wiki-netanyahu",
+      "q": "בנימין נתניהו",
+      "ms": 39817,
+      "status": 200,
+      "pass": false,
+      "fails": [
+        "missing wiki"
+      ],
+      "mode": "google",
+      "label": "בנימין נתניהו",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 8,
+      "alts": [
+        "בנימין נתניהו",
+        "נתניהו",
+        "משפט נתניהו",
+        "בנציון נתניהו",
+        "המחאה נגד ראש ממשלת ישראל בנימין נתניהו"
+      ],
+      "broad": true
+    },
+    {
+      "id": "wiki-galon",
+      "q": "זהבה גלאון",
+      "ms": 43554,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "wiki+google",
+      "label": "זהבה גלאון",
+      "qid": "Q2630062",
+      "photo": true,
+      "imgs": 8,
+      "src": 16,
+      "alts": [
+        "גלאון (פירושונים)",
+        "מרצ",
+        "הבחירות לראשות מרצ (2018)",
+        "הבחירות המקדימות במרצ (2022)",
+        "בג\"ץ גלאון נגד היועץ המשפטי לממשלה"
+      ],
+      "broad": true
+    },
+    {
+      "id": "wiki-obama",
+      "q": "ברק אובמה",
+      "ms": 23679,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "wiki+google",
+      "label": "ברק אובמה",
+      "qid": "Q76",
+      "photo": true,
+      "imgs": 8,
+      "src": 20,
+      "alts": [
+        "ברק אובמה האב",
+        "המרכז הנשיאותי על שם ברק אובמה",
+        "הקבינט של ארצות הברית בממשל ברק אובמה",
+        "נאום ברק אובמה באוניברסיטת קהיר",
+        "השבעתו הראשונה של ברק אובמה לנשיאות ארצות הברית"
+      ],
+      "broad": true
+    },
+    {
+      "id": "wiki-lieberman",
+      "q": "אביגדור ליברמן",
+      "ms": 33879,
+      "status": 200,
+      "pass": false,
+      "fails": [
+        "missing wiki"
+      ],
+      "mode": "google",
+      "label": "אביגדור ליברמן",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 5,
+      "alts": [
+        "אביגדור ליברמן",
+        "ליברמן",
+        "מקס ליברמן",
+        "ישראל ביתנו",
+        "דורית גולנדר"
+      ],
+      "broad": true
+    },
+    {
+      "id": "biz-assaf",
+      "q": "Assaf Rappaport",
+      "ms": 27666,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "google",
+      "label": "אסף רפפורט",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 9,
+      "alts": [
+        "Wiz (חברה)"
+      ],
+      "broad": true
+    },
+    {
+      "id": "biz-gil",
+      "q": "גיל פרידמן",
+      "ms": 39800,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "google",
+      "label": "גיל פרידמן",
+      "qid": null,
+      "photo": true,
+      "imgs": 8,
+      "src": 8,
+      "alts": [
+        "ישראל פרידמן (רוז'ין)",
+        "הרשי פרידמן",
+        "אלון פרידמן",
+        "הושע פרידמן בן-שלום",
+        "דוד אריה פרידמן"
+      ],
+      "broad": true
+    },
+    {
+      "id": "biz-dov",
+      "q": "דב מורן",
+      "ms": 11518,
+      "status": 200,
+      "pass": true,
+      "fails": [],
+      "mode": "wiki+google",
+      "label": "דב מורן",
+      "qid": "Q1252841",
+      "photo": true,
+      "imgs": 8,
+      "src": 14,
+      "alts": [
+        "מורן (פירושונים)",
+        "דב קמחי",
+        "מודו",
+        "גרוב ונצ'רס",
+        "M-Systems"
+      ],
+      "broad": true
+    }
+  ],
+  "times": [
+    11054,
+    11518,
+    23679,
+    25985,
+    27666,
+    31903,
+    33879,
+    36009,
+    39800,
+    39817,
+    43554
+  ]
+}

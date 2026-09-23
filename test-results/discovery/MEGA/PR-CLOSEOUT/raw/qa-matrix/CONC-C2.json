@@ -1,0 +1,1297 @@
+{
+  "httpStatus": 201,
+  "ms": 3868,
+  "meta": {
+    "sessionId": "kv1.e11af20c7fdc891f711158342ee4a1b5",
+    "status": "partial",
+    "findings": 22,
+    "evidence": 22,
+    "facets": 3,
+    "contradictions": 3,
+    "regenerated": null,
+    "storeBackend": null,
+    "durable": null,
+    "fiv": "2026-09-19.1",
+    "candidatesPresent": false
+  },
+  "leak": 0,
+  "json": {
+    "ok": true,
+    "sessionId": "kv1.e11af20c7fdc891f711158342ee4a1b5",
+    "status": "partial",
+    "pollAfterMs": 300,
+    "store": {
+      "backend": "upstash",
+      "storeBackend": "upstash",
+      "durable": true,
+      "fallback": false,
+      "explicitFallback": false,
+      "fsRegenFallback": false,
+      "promoteEligible": true,
+      "crossInstance": "shared-kv",
+      "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+      "ttlMs": 3600000,
+      "kvCredsPresent": true
+    },
+    "correlationId": "sess-mu9eerwx-f39438",
+    "snapshot": {
+      "sessionId": "kv1.e11af20c7fdc891f711158342ee4a1b5",
+      "seed": "OpenAI",
+      "q": "OpenAI",
+      "status": "partial",
+      "findings": [
+        {
+          "id": "wd-Q21708200",
+          "kind": "registry",
+          "title": "OpenAI",
+          "summary": "American artificial intelligence research organization",
+          "evidenceIds": [
+            "ev-8266a21859663560282c91b3"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q21708200"
+          ],
+          "scoreFinding": 0.7183333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q96237091",
+          "kind": "registry",
+          "title": "OpenAI API",
+          "summary": "various AI APIs, products of OpenAI",
+          "evidenceIds": [
+            "ev-be442b452030b4fdfd0e800e"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q96237091"
+          ],
+          "scoreFinding": 0.7083333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q101366575",
+          "kind": "registry",
+          "title": "OpenAir Sessions",
+          "summary": "podcast from CPR News",
+          "evidenceIds": [
+            "ev-2c86bdc57287b5ff11e9fade"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q101366575"
+          ],
+          "scoreFinding": 0.6983333333333333,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q25106053",
+          "kind": "registry",
+          "title": "OpenAIRE",
+          "summary": "network of Open Access repositories, archives and journals that support Open Access policies",
+          "evidenceIds": [
+            "ev-a93e3990b4be8c280482a344"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q25106053"
+          ],
+          "scoreFinding": 0.6883333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q124544998",
+          "kind": "registry",
+          "title": "Sora",
+          "summary": "text-to-video model developed by OpenAI",
+          "evidenceIds": [
+            "ev-a3ffeb23a24ffe1779658d2a"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q124544998"
+          ],
+          "scoreFinding": 0.6783333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q124605186",
+          "kind": "registry",
+          "title": "OpenAI",
+          "summary": "artificial intelligence company, owner and operator of ChatGPT, ChatGPT Enterprise and OpenAI’s API tools",
+          "evidenceIds": [
+            "ev-4b285dcd63b173dcf2e4f36e"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q124605186"
+          ],
+          "scoreFinding": 0.6683333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q130288245",
+          "kind": "registry",
+          "title": "OpenAI o1",
+          "summary": "2024 AI model from OpenAI",
+          "evidenceIds": [
+            "ev-9c1a63df9614374a6d676c2b"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q130288245"
+          ],
+          "scoreFinding": 0.6583333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wd-Q131535482",
+          "kind": "registry",
+          "title": "OpenAI o3",
+          "summary": "large language model developed by OpenAI",
+          "evidenceIds": [
+            "ev-27b47b26361540398d4dac46"
+          ],
+          "providers": [
+            "wikidata"
+          ],
+          "facetHints": [
+            "provider:wikidata",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "wd-Q131535482"
+          ],
+          "scoreFinding": 0.6483333333333332,
+          "ranking": {
+            "discoveryScore": 0.7183333333333333,
+            "factors": {
+              "authority": 0.9,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "www.wikidata.org"
+              ]
+            },
+            "rationale": "authority=0.90 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL13109376A",
+          "kind": "registry",
+          "title": "OpenAI ChatGPT",
+          "summary": "Top work: Dialogues NOIA - Tome 2",
+          "evidenceIds": [
+            "ev-278d9dd2edda61cfdfe17405"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL13109376A"
+          ],
+          "scoreFinding": 0.5858333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL11054964A",
+          "kind": "registry",
+          "title": "OpenAI GPT-2",
+          "summary": "Top work: Rapunzel. AI",
+          "evidenceIds": [
+            "ev-aa528e7bab08963391ab2e7e"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL11054964A"
+          ],
+          "scoreFinding": 0.5758333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL11795593A",
+          "kind": "registry",
+          "title": "Dall-e 2 OpenAI",
+          "summary": "Top work: Its Buster Crayon's Crayon Busting See & Do Alphabet Workbook",
+          "evidenceIds": [
+            "ev-1414db503fbdf159a5c1d01e"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL11795593A"
+          ],
+          "scoreFinding": 0.5658333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL12318280A",
+          "kind": "registry",
+          "title": "DALL-E OpenAI",
+          "summary": "Top work: IJotit Pocket Journal 4x6 - Parisian Purses",
+          "evidenceIds": [
+            "ev-c8b16e2c318fdc2ee16ea8d7"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL12318280A"
+          ],
+          "scoreFinding": 0.5558333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL12960105A",
+          "kind": "registry",
+          "title": "ChatGpt OpenAi",
+          "summary": "Top work: CHATGPT in Education",
+          "evidenceIds": [
+            "ev-7876f3b6b9d13974bb8e1f51"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL12960105A"
+          ],
+          "scoreFinding": 0.5458333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL12450033A",
+          "kind": "registry",
+          "title": "Assistant OpenAi",
+          "summary": "Top work: Artificial Intelligence Shows How to Build an e-Commerce Business",
+          "evidenceIds": [
+            "ev-7f7d042ff4600ad865f24d49"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL12450033A"
+          ],
+          "scoreFinding": 0.5358333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL10673913A",
+          "kind": "registry",
+          "title": "Sky OpenAI",
+          "summary": "Top work: Unconventional Guide to a Better Life",
+          "evidenceIds": [
+            "ev-f3eae508eac7aaa95f699db5"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL10673913A"
+          ],
+          "scoreFinding": 0.5258333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "ol-OL13221847A",
+          "kind": "registry",
+          "title": "ChatGPT-4 OpenAI",
+          "summary": "Top work: Conversations with History",
+          "evidenceIds": [
+            "ev-9d96c6f4ce61a508bc974a8c"
+          ],
+          "providers": [
+            "openlibrary"
+          ],
+          "facetHints": [
+            "provider:openlibrary",
+            "kind:registry"
+          ],
+          "entityRefs": [
+            "ol-OL13221847A"
+          ],
+          "scoreFinding": 0.5158333333333333,
+          "ranking": {
+            "discoveryScore": 0.6658333333333333,
+            "factors": {
+              "authority": 0.75,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "openlibrary.org"
+              ]
+            },
+            "rationale": "authority=0.75 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-OpenAI",
+          "kind": "page",
+          "title": "OpenAI",
+          "evidenceIds": [
+            "ev-fd4149442fd2a5d5b15fd357"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:OpenAI"
+          ],
+          "scoreFinding": 0.4883333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-OpenAI_HuggingFace_incident",
+          "kind": "page",
+          "title": "OpenAI–HuggingFace incident",
+          "evidenceIds": [
+            "ev-9a16918d93e237c447a7c9a0"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:OpenAI–HuggingFace incident"
+          ],
+          "scoreFinding": 0.4783333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-OpenAI_Codex_AI_agent_",
+          "kind": "page",
+          "title": "OpenAI Codex (AI agent)",
+          "evidenceIds": [
+            "ev-7258b43f691e401c5cfcde85"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:OpenAI Codex (AI agent)"
+          ],
+          "scoreFinding": 0.4683333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-OpenAI_o1",
+          "kind": "page",
+          "title": "OpenAI o1",
+          "evidenceIds": [
+            "ev-14a21a0e62bef84fe0492d22"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:OpenAI o1"
+          ],
+          "scoreFinding": 0.4583333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-OpenAI_Five",
+          "kind": "page",
+          "title": "OpenAI Five",
+          "evidenceIds": [
+            "ev-d2b363a53ae70e8f5ee2c98e"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:OpenAI Five"
+          ],
+          "scoreFinding": 0.4483333333333333,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        },
+        {
+          "id": "wp-en-OpenAI_o3",
+          "kind": "page",
+          "title": "OpenAI o3",
+          "evidenceIds": [
+            "ev-faaf2d1b5fb465389119729d"
+          ],
+          "providers": [
+            "wikipedia"
+          ],
+          "facetHints": [
+            "provider:wikipedia",
+            "kind:page"
+          ],
+          "entityRefs": [
+            "wp:en:OpenAI o3"
+          ],
+          "scoreFinding": 0.43833333333333335,
+          "ranking": {
+            "discoveryScore": 0.6483333333333333,
+            "factors": {
+              "authority": 0.7,
+              "corroboration": 0.333,
+              "directness": 0.65,
+              "freshness": 0.9,
+              "httpsOnly": 1,
+              "providerDiversity": 1,
+              "evidenceCount": 1,
+              "domains": [
+                "en.wikipedia.org"
+              ]
+            },
+            "rationale": "authority=0.70 corroboration=0.33 directness=0.65 (discovery≠identity)"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev-8266a21859663560282c91b3",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q21708200",
+          "url": "https://www.wikidata.org/wiki/Q21708200",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "American artificial intelligence research organization",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-be442b452030b4fdfd0e800e",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q96237091",
+          "url": "https://www.wikidata.org/wiki/Q96237091",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "various AI APIs, products of OpenAI",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-2c86bdc57287b5ff11e9fade",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q101366575",
+          "url": "https://www.wikidata.org/wiki/Q101366575",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "podcast from CPR News",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a93e3990b4be8c280482a344",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q25106053",
+          "url": "https://www.wikidata.org/wiki/Q25106053",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "network of Open Access repositories, archives and journals that support Open Access policies",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-a3ffeb23a24ffe1779658d2a",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q124544998",
+          "url": "https://www.wikidata.org/wiki/Q124544998",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "text-to-video model developed by OpenAI",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-4b285dcd63b173dcf2e4f36e",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q124605186",
+          "url": "https://www.wikidata.org/wiki/Q124605186",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "artificial intelligence company, owner and operator of ChatGPT, ChatGPT Enterprise and OpenAI’s API tools",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-9c1a63df9614374a6d676c2b",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q130288245",
+          "url": "https://www.wikidata.org/wiki/Q130288245",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "2024 AI model from OpenAI",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-27b47b26361540398d4dac46",
+          "provenanceUrl": "https://www.wikidata.org/wiki/Q131535482",
+          "url": "https://www.wikidata.org/wiki/Q131535482",
+          "domain": "www.wikidata.org",
+          "providerId": "wikidata",
+          "retrievedAt": "2026-09-20T05:51:19.974Z",
+          "evidenceType": "registry",
+          "quote": "large language model developed by OpenAI",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-278d9dd2edda61cfdfe17405",
+          "provenanceUrl": "https://openlibrary.org/authors/OL13109376A",
+          "url": "https://openlibrary.org/authors/OL13109376A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "Dialogues NOIA - Tome 2",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-aa528e7bab08963391ab2e7e",
+          "provenanceUrl": "https://openlibrary.org/authors/OL11054964A",
+          "url": "https://openlibrary.org/authors/OL11054964A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "Rapunzel. AI",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-1414db503fbdf159a5c1d01e",
+          "provenanceUrl": "https://openlibrary.org/authors/OL11795593A",
+          "url": "https://openlibrary.org/authors/OL11795593A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "Its Buster Crayon's Crayon Busting See & Do Alphabet Workbook",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-c8b16e2c318fdc2ee16ea8d7",
+          "provenanceUrl": "https://openlibrary.org/authors/OL12318280A",
+          "url": "https://openlibrary.org/authors/OL12318280A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "IJotit Pocket Journal 4x6 - Parisian Purses",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7876f3b6b9d13974bb8e1f51",
+          "provenanceUrl": "https://openlibrary.org/authors/OL12960105A",
+          "url": "https://openlibrary.org/authors/OL12960105A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "CHATGPT in Education",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7f7d042ff4600ad865f24d49",
+          "provenanceUrl": "https://openlibrary.org/authors/OL12450033A",
+          "url": "https://openlibrary.org/authors/OL12450033A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "Artificial Intelligence Shows How to Build an e-Commerce Business",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-f3eae508eac7aaa95f699db5",
+          "provenanceUrl": "https://openlibrary.org/authors/OL10673913A",
+          "url": "https://openlibrary.org/authors/OL10673913A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "Unconventional Guide to a Better Life",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-9d96c6f4ce61a508bc974a8c",
+          "provenanceUrl": "https://openlibrary.org/authors/OL13221847A",
+          "url": "https://openlibrary.org/authors/OL13221847A",
+          "domain": "openlibrary.org",
+          "providerId": "openlibrary",
+          "retrievedAt": "2026-09-20T05:51:20.175Z",
+          "evidenceType": "registry",
+          "quote": "Conversations with History",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-fd4149442fd2a5d5b15fd357",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/OpenAI",
+          "url": "https://en.wikipedia.org/wiki/OpenAI",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:20.007Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-9a16918d93e237c447a7c9a0",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/OpenAI%E2%80%93HuggingFace_incident",
+          "url": "https://en.wikipedia.org/wiki/OpenAI%E2%80%93HuggingFace_incident",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:20.007Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-7258b43f691e401c5cfcde85",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/OpenAI_Codex_(AI_agent)",
+          "url": "https://en.wikipedia.org/wiki/OpenAI_Codex_(AI_agent)",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:20.007Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-14a21a0e62bef84fe0492d22",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/OpenAI_o1",
+          "url": "https://en.wikipedia.org/wiki/OpenAI_o1",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:20.007Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-d2b363a53ae70e8f5ee2c98e",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/OpenAI_Five",
+          "url": "https://en.wikipedia.org/wiki/OpenAI_Five",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:20.007Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        },
+        {
+          "id": "ev-faaf2d1b5fb465389119729d",
+          "provenanceUrl": "https://en.wikipedia.org/wiki/OpenAI_o3",
+          "url": "https://en.wikipedia.org/wiki/OpenAI_o3",
+          "domain": "en.wikipedia.org",
+          "providerId": "wikipedia",
+          "retrievedAt": "2026-09-20T05:51:20.007Z",
+          "evidenceType": "page",
+          "contentType": "text/html",
+          "robotsOk": true
+        }
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "openlibrary",
+              "count": 8
+            },
+            {
+              "value": "wikidata",
+              "count": 8
+            },
+            {
+              "value": "wikipedia",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "registry",
+              "count": 16
+            },
+            {
+              "value": "page",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "key": "hint",
+          "label": "Hint",
+          "buckets": [],
+          "emptyReason": "no_evidence"
+        }
+      ],
+      "progress": {
+        "done": 6,
+        "totalHint": 6
+      },
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial"
+      },
+      "softEr": {
+        "softRefs": [
+          "seed:7d3194f79e64"
+        ],
+        "status": "candidate",
+        "displayHint": "OpenAI",
+        "hints": {}
+      },
+      "stage": "S10",
+      "createdAt": "2026-09-20T05:51:19.761Z",
+      "forbiddenIdentitiesVersion": "2026-09-19.1",
+      "graph": {
+        "nodes": [
+          {
+            "id": "seed:7d3194f79e64",
+            "kind": "seed"
+          },
+          {
+            "id": "wd-Q21708200",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q96237091",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q101366575",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q25106053",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q124544998",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q124605186",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q130288245",
+            "kind": "finding"
+          },
+          {
+            "id": "wd-Q131535482",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL13109376A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL11054964A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL11795593A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL12318280A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL12960105A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL12450033A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL10673913A",
+            "kind": "finding"
+          },
+          {
+            "id": "ol-OL13221847A",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-OpenAI",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-OpenAI_HuggingFace_incident",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-OpenAI_Codex_AI_agent_",
+            "kind": "finding"
+          },
+          {
+            "id": "wp-en-OpenAI_o1",
+            "kind": "finding"
+          }
+        ],
+        "edges": []
+      },
+      "contradictions": [
+        {
+          "type": "same_title_multi_domain",
+          "title": "openai",
+          "findingIds": [
+            "wd-Q21708200",
+            "wd-Q124605186",
+            "wp-en-OpenAI"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "openai o1",
+          "findingIds": [
+            "wd-Q130288245",
+            "wp-en-OpenAI_o1"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        },
+        {
+          "type": "same_title_multi_domain",
+          "title": "openai o3",
+          "findingIds": [
+            "wd-Q131535482",
+            "wp-en-OpenAI_o3"
+          ],
+          "domains": [
+            "www.wikidata.org",
+            "en.wikipedia.org"
+          ],
+          "note": "INFORMATION≠IDENTITY: multiple sources share a label — do not collapse to one identity"
+        }
+      ],
+      "store": {
+        "backend": "upstash",
+        "storeBackend": "upstash",
+        "durable": true,
+        "fallback": false,
+        "explicitFallback": false,
+        "fsRegenFallback": false,
+        "promoteEligible": true,
+        "crossInstance": "shared-kv",
+        "note": "Using Redis/KV REST for shared session persistence (promote-eligible when health GREEN).",
+        "ttlMs": 3600000,
+        "kvCredsPresent": true
+      }
+    }
+  },
+  "err": "Vercel CLI 59.11.2 (Node.js 20.19.2) | curl is in beta — https://vercel.com/feedback\n"
+}

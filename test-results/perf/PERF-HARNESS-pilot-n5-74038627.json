@@ -1,0 +1,2546 @@
+{
+  "runId": "74038627",
+  "tag": "pilot-n5",
+  "started": "2026-09-16T19:03:33.522Z",
+  "finished": "2026-09-16T19:07:53.381Z",
+  "base": "https://akvot-simple-demo.vercel.app",
+  "n": 5,
+  "baselineHint": "dpl_CrsqeSQX1GAhi1VFExVsGwdsSYHt",
+  "constraint": "MEASURE ONLY — no Core optimize — no dpl",
+  "results": [
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 718,
+        "max": 2086,
+        "mean": 1049,
+        "p50": 800,
+        "p90": 2086,
+        "p95": 2086,
+        "p99": 2086
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 339,
+        "max": 1566,
+        "mean": 624,
+        "p50": 394,
+        "p90": 1566,
+        "p95": 1566,
+        "p99": 1566
+      },
+      "wiki": {
+        "n": 5,
+        "min": 102,
+        "max": 469,
+        "mean": 331,
+        "p50": 351,
+        "p90": 469,
+        "p95": 469,
+        "p99": 469
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 252,
+        "max": 1218,
+        "mean": 465,
+        "p50": 261,
+        "p90": 1218,
+        "p95": 1218,
+        "p99": 1218
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 846,
+        "max": 846,
+        "mean": 846,
+        "p50": 846,
+        "p90": 846,
+        "p95": 846,
+        "p99": 846
+      },
+      "wiki": {
+        "n": 5,
+        "min": 105,
+        "max": 105,
+        "mean": 105,
+        "p50": 105,
+        "p90": 105,
+        "p95": 105,
+        "p99": 105
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 5865,
+        "max": 5912,
+        "mean": 5883,
+        "p50": 5877,
+        "p90": 5912,
+        "p95": 5912,
+        "p99": 5912
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5501,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5501,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 247,
+        "max": 5921,
+        "mean": 1403,
+        "p50": 275,
+        "p90": 5921,
+        "p95": 5921,
+        "p99": 5921
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 6370,
+        "max": 7066,
+        "mean": 6653,
+        "p50": 6664,
+        "p90": 7066,
+        "p95": 7066,
+        "p99": 7066
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5998,
+        "max": 6692,
+        "mean": 6260,
+        "p50": 6216,
+        "p90": 6692,
+        "p95": 6692,
+        "p99": 6692
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5501,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 5,
+        "min": 494,
+        "max": 1188,
+        "mean": 755,
+        "p50": 709,
+        "p90": 1188,
+        "p95": 1188,
+        "p99": 1188
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "candidates": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 4923,
+        "max": 7267,
+        "mean": 6445,
+        "p50": 6532,
+        "p90": 7267,
+        "p95": 7267,
+        "p99": 7267
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 4558,
+        "max": 6821,
+        "mean": 6060,
+        "p50": 6158,
+        "p90": 6821,
+        "p95": 6821,
+        "p99": 6821
+      },
+      "wiki": {
+        "n": 5,
+        "min": 3584,
+        "max": 5501,
+        "mean": 5118,
+        "p50": 5501,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 5,
+        "min": 500,
+        "max": 1317,
+        "mean": 845,
+        "p50": 654,
+        "p90": 1317,
+        "p95": 1317,
+        "p99": 1317
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "candidates": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 1982,
+        "max": 29580,
+        "mean": 19639,
+        "p50": 26550,
+        "p90": 29580,
+        "p95": 29580,
+        "p99": 29580
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 1616,
+        "max": 29220,
+        "mean": 19264,
+        "p50": 26146,
+        "p90": 29220,
+        "p95": 29220,
+        "p99": 29220
+      },
+      "wiki": {
+        "n": 5,
+        "min": 1616,
+        "max": 28007,
+        "mean": 18652,
+        "p50": 25214,
+        "p90": 28007,
+        "p95": 28007,
+        "p99": 28007
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 819,
+        "mean": 383,
+        "p50": 496,
+        "p90": 819,
+        "p95": 819,
+        "p99": 819
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 239,
+        "max": 1138,
+        "mean": 436,
+        "p50": 261,
+        "p90": 1138,
+        "p95": 1138,
+        "p99": 1138
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 712,
+        "max": 712,
+        "mean": 712,
+        "p50": 712,
+        "p90": 712,
+        "p95": 712,
+        "p99": 712
+      },
+      "wiki": {
+        "n": 5,
+        "min": 712,
+        "max": 712,
+        "mean": 712,
+        "p50": 712,
+        "p90": 712,
+        "p95": 712,
+        "p99": 712
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 5859,
+        "max": 5930,
+        "mean": 5885,
+        "p50": 5879,
+        "p90": 5930,
+        "p95": 5930,
+        "p99": 5930
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5500,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5500,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 253,
+        "max": 5880,
+        "mean": 1469,
+        "p50": 334,
+        "p90": 5880,
+        "p95": 5880,
+        "p99": 5880
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 1503,
+        "max": 3188,
+        "mean": 1990,
+        "p50": 1567,
+        "p90": 3188,
+        "p95": 3188,
+        "p99": 3188
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 1130,
+        "max": 2823,
+        "mean": 1619,
+        "p50": 1185,
+        "p90": 2823,
+        "p95": 2823,
+        "p99": 2823
+      },
+      "wiki": {
+        "n": 5,
+        "min": 102,
+        "max": 135,
+        "mean": 115,
+        "p50": 113,
+        "p90": 135,
+        "p95": 135,
+        "p99": 135
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 253,
+        "max": 2215,
+        "mean": 651,
+        "p50": 260,
+        "p90": 2215,
+        "p95": 2215,
+        "p99": 2215
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 1839,
+        "max": 1839,
+        "mean": 1839,
+        "p50": 1839,
+        "p90": 1839,
+        "p95": 1839,
+        "p99": 1839
+      },
+      "wiki": {
+        "n": 5,
+        "min": 112,
+        "max": 112,
+        "mean": 112,
+        "p50": 112,
+        "p90": 112,
+        "p95": 112,
+        "p99": 112
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "sampleCount": 5
+    }
+  ],
+  "raw": [
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 718,
+        "max": 2086,
+        "mean": 1049,
+        "p50": 800,
+        "p90": 2086,
+        "p95": 2086,
+        "p99": 2086
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 339,
+        "max": 1566,
+        "mean": 624,
+        "p50": 394,
+        "p90": 1566,
+        "p95": 1566,
+        "p99": 1566
+      },
+      "wiki": {
+        "n": 5,
+        "min": 102,
+        "max": 469,
+        "mean": 331,
+        "p50": 351,
+        "p90": 469,
+        "p95": 469,
+        "p99": 469
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 771,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "56d0bfb8-b287-40b6-b6d0-559253e41175",
+          "cached": false,
+          "timings": {
+            "wiki": 392,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 394
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 872,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "f98a50ec-7144-4a3b-91b8-a5c275a16351",
+          "cached": false,
+          "timings": {
+            "wiki": 469,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 469
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 800,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "c1c835d0-4865-44f6-a8a5-ca019f1f9fce",
+          "cached": false,
+          "timings": {
+            "wiki": 351,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 352
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 718,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "33233ca0-87d2-4050-b483-40b949971470",
+          "cached": false,
+          "timings": {
+            "wiki": 339,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 339
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 2086,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "e741fee6-86b1-4142-9662-73790fd944ea",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 838,
+            "stageB": 0,
+            "total": 1566
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "A-assaf-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 252,
+        "max": 1218,
+        "mean": 465,
+        "p50": 261,
+        "p90": 1218,
+        "p95": 1218,
+        "p99": 1218
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 846,
+        "max": 846,
+        "mean": 846,
+        "p50": 846,
+        "p90": 846,
+        "p95": 846,
+        "p99": 846
+      },
+      "wiki": {
+        "n": 5,
+        "min": 105,
+        "max": 105,
+        "mean": 105,
+        "p50": 105,
+        "p90": 105,
+        "p95": 105,
+        "p99": 105
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 1218,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "9601cec8-ebc4-47fb-9597-709259120a76",
+          "cached": false,
+          "timings": {
+            "wiki": 105,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 846
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 256,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "9601cec8-ebc4-47fb-9597-709259120a76",
+          "cached": false,
+          "timings": {
+            "wiki": 105,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 846
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 338,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "9601cec8-ebc4-47fb-9597-709259120a76",
+          "cached": false,
+          "timings": {
+            "wiki": 105,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 846
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 252,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "9601cec8-ebc4-47fb-9597-709259120a76",
+          "cached": false,
+          "timings": {
+            "wiki": 105,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 846
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 261,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q47507930",
+          "requestId": "9601cec8-ebc4-47fb-9597-709259120a76",
+          "cached": false,
+          "timings": {
+            "wiki": 105,
+            "gemini": 0,
+            "enrich": 553,
+            "stageB": 0,
+            "total": 846
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 5865,
+        "max": 5912,
+        "mean": 5883,
+        "p50": 5877,
+        "p90": 5912,
+        "p95": 5912,
+        "p99": 5912
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5501,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5501,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 5875,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "b66a4dac-bdcd-4a5a-a9ac-e14b2b919b5b",
+          "cached": false,
+          "timings": {
+            "wiki": 5503,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5503
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 5865,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "80d7260c-3d9d-4331-9cbf-2b97bf6abe2d",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 5912,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "bea2a77b-5a22-489a-9a37-4950c416e55a",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 5885,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "f46dbbd8-209d-40be-8af8-40d4f813ca68",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 5877,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c3dd5272-8a6d-4ad0-a1dd-7456cb6fcc76",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "B-smith-bare-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 247,
+        "max": 5921,
+        "mean": 1403,
+        "p50": 275,
+        "p90": 5921,
+        "p95": 5921,
+        "p99": 5921
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 5921,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ee602935-e287-40a7-93c7-687f16ece41a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 275,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ee602935-e287-40a7-93c7-687f16ece41a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 247,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ee602935-e287-40a7-93c7-687f16ece41a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 263,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ee602935-e287-40a7-93c7-687f16ece41a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 309,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "ee602935-e287-40a7-93c7-687f16ece41a",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 6370,
+        "max": 7066,
+        "mean": 6653,
+        "p50": 6664,
+        "p90": 7066,
+        "p95": 7066,
+        "p99": 7066
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5998,
+        "max": 6692,
+        "mean": 6260,
+        "p50": 6216,
+        "p90": 6692,
+        "p95": 6692,
+        "p99": 6692
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5501,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 5,
+        "min": 494,
+        "max": 1188,
+        "mean": 755,
+        "p50": 709,
+        "p90": 1188,
+        "p95": 1188,
+        "p99": 1188
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "candidates": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 6664,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "8fdf8129-33b4-48e5-ad71-bf66b66c4315",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 709,
+            "total": 6216
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 6370,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "833d9554-ce5b-4520-994c-e5018d8eaf8d",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 494,
+            "total": 5998
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 7066,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "cc818115-a69d-4db9-99af-3928a1dc7f7f",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1188,
+            "total": 6692
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 6745,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "bd828c23-3bb1-437d-8109-9bea1256ffb0",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 851,
+            "total": 6357
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 6419,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "ffa49258-fcc7-4b27-a950-69b0d67b48fc",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 532,
+            "total": 6037
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "C-smith-ctx-post",
+      "method": "POST",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 4923,
+        "max": 7267,
+        "mean": 6445,
+        "p50": 6532,
+        "p90": 7267,
+        "p95": 7267,
+        "p99": 7267
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 4558,
+        "max": 6821,
+        "mean": 6060,
+        "p50": 6158,
+        "p90": 6821,
+        "p95": 6821,
+        "p99": 6821
+      },
+      "wiki": {
+        "n": 5,
+        "min": 3584,
+        "max": 5501,
+        "mean": 5118,
+        "p50": 5501,
+        "p90": 5501,
+        "p95": 5501,
+        "p99": 5501
+      },
+      "stageB": {
+        "n": 5,
+        "min": 500,
+        "max": 1317,
+        "mean": 845,
+        "p50": 654,
+        "p90": 1317,
+        "p95": 1317,
+        "p99": 1317
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "candidates": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 6996,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "59a2d560-13f4-4376-b75f-a202055a8f60",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1111,
+            "total": 6617
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 4923,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "dd939adc-c3d6-40ab-8ab4-8eddcb67ed20",
+          "cached": false,
+          "timings": {
+            "wiki": 3584,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 500,
+            "total": 4558
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 6505,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "b507db21-9a10-4689-acb7-cfe490f81043",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 641,
+            "total": 6146
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 6532,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "f9efc258-a1b1-4b32-ae11-7ce39145eb01",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 654,
+            "total": 6158
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 7267,
+          "status": 200,
+          "err": null,
+          "uiState": "candidates",
+          "qid": null,
+          "requestId": "f386c77f-51b0-4ccd-bee9-e0b48b753ece",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 1317,
+            "total": 6821
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 1982,
+        "max": 29580,
+        "mean": 19639,
+        "p50": 26550,
+        "p90": 29580,
+        "p95": 29580,
+        "p99": 29580
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 1616,
+        "max": 29220,
+        "mean": 19264,
+        "p50": 26146,
+        "p90": 29220,
+        "p95": 29220,
+        "p99": 29220
+      },
+      "wiki": {
+        "n": 5,
+        "min": 1616,
+        "max": 28007,
+        "mean": 18652,
+        "p50": 25214,
+        "p90": 28007,
+        "p95": 28007,
+        "p99": 28007
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 819,
+        "mean": 383,
+        "p50": 496,
+        "p90": 819,
+        "p95": 819,
+        "p99": 819
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 29580,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "1bd67fc1-adff-4d55-a9f1-648f89987b0f",
+          "cached": false,
+          "timings": {
+            "wiki": 28007,
+            "gemini": 0,
+            "enrich": 203,
+            "stageB": 819,
+            "total": 29220
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 13530,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a2b589b4-24da-431b-b168-a7424c07a9e4",
+          "cached": false,
+          "timings": {
+            "wiki": 13155,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 13156
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 26550,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "a34a1bb1-1b8d-4882-bddb-a70f17b7c9b0",
+          "cached": false,
+          "timings": {
+            "wiki": 25214,
+            "gemini": 0,
+            "enrich": 187,
+            "stageB": 599,
+            "total": 26180
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 26555,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "7ea55596-3cf0-47e1-8b1a-6ffa6da2357f",
+          "cached": false,
+          "timings": {
+            "wiki": 25266,
+            "gemini": 0,
+            "enrich": 204,
+            "stageB": 496,
+            "total": 26146
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 1982,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "61530ad5-6499-4e3c-b05b-3e617d62f36d",
+          "cached": false,
+          "timings": {
+            "wiki": 1616,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 1616
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "D-cohen-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 239,
+        "max": 1138,
+        "mean": 436,
+        "p50": 261,
+        "p90": 1138,
+        "p95": 1138,
+        "p99": 1138
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 712,
+        "max": 712,
+        "mean": 712,
+        "p50": 712,
+        "p90": 712,
+        "p95": 712,
+        "p99": 712
+      },
+      "wiki": {
+        "n": 5,
+        "min": 712,
+        "max": 712,
+        "mean": 712,
+        "p50": 712,
+        "p90": 712,
+        "p95": 712,
+        "p99": 712
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 1138,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5ee89b87-a642-4735-875f-6b39dd037159",
+          "cached": false,
+          "timings": {
+            "wiki": 712,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 712
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 261,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5ee89b87-a642-4735-875f-6b39dd037159",
+          "cached": false,
+          "timings": {
+            "wiki": 712,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 712
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 239,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5ee89b87-a642-4735-875f-6b39dd037159",
+          "cached": false,
+          "timings": {
+            "wiki": 712,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 712
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 285,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5ee89b87-a642-4735-875f-6b39dd037159",
+          "cached": false,
+          "timings": {
+            "wiki": 712,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 712
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 259,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5ee89b87-a642-4735-875f-6b39dd037159",
+          "cached": false,
+          "timings": {
+            "wiki": 712,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 712
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 5859,
+        "max": 5930,
+        "mean": 5885,
+        "p50": 5879,
+        "p90": 5930,
+        "p95": 5930,
+        "p99": 5930
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5500,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5501,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5503,
+        "mean": 5501,
+        "p50": 5500,
+        "p90": 5503,
+        "p95": 5503,
+        "p99": 5503
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 5878,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "0128e42d-d010-4a9f-bb0e-aac22dedd073",
+          "cached": false,
+          "timings": {
+            "wiki": 5501,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 5879,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "3263bab6-9dbf-42a7-a6f1-76cc197fbc73",
+          "cached": false,
+          "timings": {
+            "wiki": 5503,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5503
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 5930,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "34646ddf-719e-4004-affb-56559d4005c7",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5501
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 5859,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "8191312a-4330-49ed-be0c-5ac2cfe2d98e",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 5881,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "5874a28d-61ad-4ea0-8210-5ee6fb15b777",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "E-rappaport-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 253,
+        "max": 5880,
+        "mean": 1469,
+        "p50": 334,
+        "p90": 5880,
+        "p95": 5880,
+        "p99": 5880
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "wiki": {
+        "n": 5,
+        "min": 5500,
+        "max": 5500,
+        "mean": 5500,
+        "p50": 5500,
+        "p90": 5500,
+        "p95": 5500,
+        "p99": 5500
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "need_context": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 5880,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c032ca83-d304-46ab-aba3-ea5d65f5467d",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 597,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c032ca83-d304-46ab-aba3-ea5d65f5467d",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 334,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c032ca83-d304-46ab-aba3-ea5d65f5467d",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 279,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c032ca83-d304-46ab-aba3-ea5d65f5467d",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "need_context",
+          "qid": null,
+          "requestId": "c032ca83-d304-46ab-aba3-ea5d65f5467d",
+          "cached": false,
+          "timings": {
+            "wiki": 5500,
+            "gemini": 0,
+            "enrich": 0,
+            "stageB": 0,
+            "total": 5500
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "COLD",
+      "wall": {
+        "n": 5,
+        "min": 1503,
+        "max": 3188,
+        "mean": 1990,
+        "p50": 1567,
+        "p90": 3188,
+        "p95": 3188,
+        "p99": 3188
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 1130,
+        "max": 2823,
+        "mean": 1619,
+        "p50": 1185,
+        "p90": 2823,
+        "p95": 2823,
+        "p99": 2823
+      },
+      "wiki": {
+        "n": 5,
+        "min": 102,
+        "max": 135,
+        "mean": 115,
+        "p50": 113,
+        "p90": 135,
+        "p95": 135,
+        "p99": 135
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "COLD",
+          "wallMs": 3188,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "56e21849-31d6-474f-a6f0-665c146c37db",
+          "cached": false,
+          "timings": {
+            "wiki": 135,
+            "gemini": 0,
+            "enrich": 2064,
+            "stageB": 0,
+            "total": 2823
+          }
+        },
+        {
+          "i": 1,
+          "mode": "COLD",
+          "wallMs": 2185,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "8c15fd34-fb6c-4b10-a57b-f381eb94b0d1",
+          "cached": false,
+          "timings": {
+            "wiki": 104,
+            "gemini": 0,
+            "enrich": 1180,
+            "stageB": 0,
+            "total": 1811
+          }
+        },
+        {
+          "i": 2,
+          "mode": "COLD",
+          "wallMs": 1503,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "2574c656-5cbe-4f10-8c79-e2aee17fe141",
+          "cached": false,
+          "timings": {
+            "wiki": 113,
+            "gemini": 0,
+            "enrich": 631,
+            "stageB": 0,
+            "total": 1130
+          }
+        },
+        {
+          "i": 3,
+          "mode": "COLD",
+          "wallMs": 1567,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "e4802080-0f99-4dbe-99a4-d845d2e6ee54",
+          "cached": false,
+          "timings": {
+            "wiki": 102,
+            "gemini": 0,
+            "enrich": 860,
+            "stageB": 0,
+            "total": 1185
+          }
+        },
+        {
+          "i": 4,
+          "mode": "COLD",
+          "wallMs": 1507,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "0983a591-471a-4d53-8f0b-fcaf2502aef4",
+          "cached": false,
+          "timings": {
+            "wiki": 120,
+            "gemini": 0,
+            "enrich": 840,
+            "stageB": 0,
+            "total": 1146
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "F-netanyahu-get",
+      "method": "GET",
+      "mode": "WARM",
+      "wall": {
+        "n": 5,
+        "min": 253,
+        "max": 2215,
+        "mean": 651,
+        "p50": 260,
+        "p90": 2215,
+        "p95": 2215,
+        "p99": 2215
+      },
+      "serverTotal": {
+        "n": 5,
+        "min": 1839,
+        "max": 1839,
+        "mean": 1839,
+        "p50": 1839,
+        "p90": 1839,
+        "p95": 1839,
+        "p99": 1839
+      },
+      "wiki": {
+        "n": 5,
+        "min": 112,
+        "max": 112,
+        "mean": 112,
+        "p50": 112,
+        "p90": 112,
+        "p95": 112,
+        "p99": 112
+      },
+      "stageB": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "gemini": {
+        "n": 5,
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "p50": 0,
+        "p90": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "uiCounts": {
+        "dossier": 5
+      },
+      "errors": 0,
+      "samples": [
+        {
+          "i": 0,
+          "mode": "WARM",
+          "wallMs": 2215,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "13e20830-1fa2-4de2-8efb-7cc616953257",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1441,
+            "stageB": 0,
+            "total": 1839
+          }
+        },
+        {
+          "i": 1,
+          "mode": "WARM",
+          "wallMs": 253,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "13e20830-1fa2-4de2-8efb-7cc616953257",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1441,
+            "stageB": 0,
+            "total": 1839
+          }
+        },
+        {
+          "i": 2,
+          "mode": "WARM",
+          "wallMs": 258,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "13e20830-1fa2-4de2-8efb-7cc616953257",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1441,
+            "stageB": 0,
+            "total": 1839
+          }
+        },
+        {
+          "i": 3,
+          "mode": "WARM",
+          "wallMs": 267,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "13e20830-1fa2-4de2-8efb-7cc616953257",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1441,
+            "stageB": 0,
+            "total": 1839
+          }
+        },
+        {
+          "i": 4,
+          "mode": "WARM",
+          "wallMs": 260,
+          "status": 200,
+          "err": null,
+          "uiState": "dossier",
+          "qid": "Q43723",
+          "requestId": "13e20830-1fa2-4de2-8efb-7cc616953257",
+          "cached": false,
+          "timings": {
+            "wiki": 112,
+            "gemini": 0,
+            "enrich": 1441,
+            "stageB": 0,
+            "total": 1839
+          }
+        }
+      ]
+    }
+  ]
+}

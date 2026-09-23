@@ -1,0 +1,119 @@
+vidence.provenanceUrl
+PASS normalize finding has evidenceIds
+PASS dedupe merges same fingerprint
+PASS facets include provider buckets
+PASS store backend is kv or fs-regen
+PASS store info has backend
+PASS mintSessionId returns string
+PASS decodeSessionId recovers seed
+PASS decodeSessionId recovers hints
+PASS create returns sessionId
+PASS create status terminal-ish
+PASS create includes snapshot findings
+PASS create snapshot evidence provenance
+PASS create returns store info
+PASS create snapshot Acc version
+PASS GET snapshot has findings
+PASS finding has evidence.provenanceUrl via evidence[]
+PASS findings link evidenceIds
+PASS facets present
+PASS providers map present
+PASS no dossier field
+PASS no faces field
+PASS forbiddenIdentitiesVersion set
+PASS GET after memory clear still returns session (fs or regen)
+PASS rehydrate Acc-scrubbed
+PASS multi-seed "Alpha Org Example" returns findings
+PASS multi-seed "example.org" returns findings
+PASS multi-seed "Jordan Lee" returns findings
+PASS denylist includes Q1701775
+PASS forbidden finding stripped
+PASS ok finding kept
+PASS forbidden evidence stripped
+PASS facet forbidden bucket stripped
+PASS graph node stripped
+PASS forbiddenStripped > 0
+PASS inject forbidden QID stripped from session
+PASS Core sanitizeCandidatesPayload still strips
+PASS payloadContainsForbidden false after sanitize
+PASS parseNarrowFilters provider set
+PASS findingMatchesFilters openlibrary only
+PASS narrow ok
+PASS narrow reduces or equals findings
+PASS narrow findings only openlibrary
+PASS narrow has Acc version
+PASS narrow no dossier
+PASS narrow has version bump
+PASS narrow.narrow.applied present
+PASS narrow path strips forbidden
+PASS loadSessionRaw works
+PASS SSE has meta event
+PASS SSE has finding events
+PASS SSE has facets event
+PASS SSE has status event
+PASS SSE has done event
+PASS SSE events have monotonic ids
+PASS SSE terminal status ok
+PASS SSE frame has id and event
+PASS SSE scrubFindingChunk strips forbidden
+PASS SSE scrubFacetsChunk strips forbidden bucket
+PASS SSE progressive no Q1701775 leak
+PASS SSE progressive no dossier
+PASS MEGA storeBackend present
+PASS MEGA fs-regen durable false
+PASS MEGA fs-regen fallback true
+PASS MEGA fs-regen promoteEligible false
+PASS create snapshot store has storeBackend
+PASS evidence has url alias
+PASS evidence has domain
+PASS evidence has retrievedAt
+PASS evidence has evidenceType
+PASS finding has ranking rationale or scoreFinding
+PASS finding scoreIdentity is null (≠ identity)
+PASS ranking has factors
+PASS ranking rationale mentions discovery
+PASS rankFindings attaches ranking
+PASS contradictions surfaced for same title multi-domain
+[discovery.store.telemetry] {
+  op: 'health',
+  storeBackend: 'fs-regen',
+  latencyMs: 1,
+  ok: true,
+  correlationId: 'orch-test-hc',
+  promoteEligible: false,
+  explicitFallback: true
+}
+PASS orchestrator path healthCheck ok
+PASS SSE resume filter skips early ids
+PASS urlSafety accepts wikidata https
+PASS urlSafety rejects http
+PASS urlSafety rejects localhost
+PASS urlSafety rejects metadata IP
+PASS normalize drops unsafe host
+PASS inject 429 throws or soft
+PASS FAILURE_KINDS non-empty
+PASS simulate redis unavailable ok=false
+PASS snapshot storeBackend present
+PASS snapshot explicitFallback true
+PASS snapshot fsRegenFallback true
+PASS snapshot promoteEligible false
+PASS SSE_RECONNECT_DOCS has lastEventIdHeader
+PASS SSE_RECONNECT_DOCS hangPolicy finite
+PASS SSE_RECONNECT_DOCS reconnectSafe
+PASS SSE resume-past-end emits done
+PASS SSE resume-past-end finite (ended)
+PASS scrub_path create response no Q1701775
+PASS scrub_path no FORBIDDEN_INJECT title leak
+PASS direct scrub strips forbidden finding
+PASS orch health latencyMs number
+PASS orch health has fsRegenFallback
+PASS wikipedia in DEFAULT_PROVIDERS
+PASS wikipediaOpenSearchProvider id
+PASS wikipedia authMode none
+PASS mintCorrelationId shape
+PASS metrics snapshot shape
+
+--- discovery orchestrator + harden tests ---
+store.backend=fs-regen crossInstance=regenerate-from-seed
+passed=110 failed=0
+

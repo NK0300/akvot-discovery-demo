@@ -1,0 +1,129 @@
+{
+  "stamp": "2026-09-20T12:05:00+03:00",
+  "stampLabel": "2026-09-20 12:05 IDT",
+  "note": "Deltas only; success only after labels clean",
+  "prepatch": {
+    "dpl": "dpl_268RUsfFVq2CdhQ3EkoEhmitEEja",
+    "seed": "https://www.who.int",
+    "finding.relationship": "SAME-REFERENCE",
+    "evidence.relationship": "SAME-REFERENCE",
+    "facet": [
+      {
+        "key": "hint",
+        "value": "relationship:SAME-REFERENCE",
+        "count": 1
+      }
+    ],
+    "outcome": "FAIL_SAME-REFERENCE"
+  },
+  "patched": {
+    "dpl": "dpl_Ho6jgJg4TGeDr5mjzv9sfRy4iW1w",
+    "who_url": {
+      "seed": "https://www.who.int",
+      "finding": "UNKNOWN",
+      "evidence": "UNKNOWN",
+      "facet": [
+        {
+          "key": "hint",
+          "value": "relationship:UNKNOWN",
+          "count": 1
+        }
+      ],
+      "SAME-REFERENCE_on_wo": false
+    },
+    "who_bare": {
+      "seed": "who.int",
+      "finding": "UNKNOWN",
+      "evidence": "UNKNOWN",
+      "SAME-REFERENCE_on_wo": false
+    }
+  },
+  "acc_reafter_rows": {
+    "S16": {
+      "wo_findings_n": 1,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      }
+    },
+    "W5": {
+      "wo_findings_n": 1,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      }
+    },
+    "W7": {
+      "wo_findings_n": 1,
+      "rel_hist": {
+        "UNKNOWN": 1
+      },
+      "same_entity_n": 0,
+      "same_reference_n": 0,
+      "total_leak": 0
+    },
+    "S01": {
+      "wo_findings_n": 0,
+      "findings_n": 18,
+      "total_leak": 0
+    },
+    "S06": {
+      "wo_findings_n": 0,
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "error"
+      },
+      "total_leak": 0
+    }
+  },
+  "ctrl_b0_wo": {
+    "ACC-S01": 0,
+    "S16": 0
+  },
+  "label_clean_on_patched": true,
+  "delta_label_S16": {
+    "prepatch": "SAME-REFERENCE",
+    "patched": "UNKNOWN"
+  },
+  "delta_label_W5": {
+    "prepatch": "SAME-REFERENCE",
+    "patched": "UNKNOWN"
+  },
+  "relationship_12": {
+    "verdict": "PASS",
+    "pass_n": 12
+  },
+  "acc_verdict": "PASS",
+  "acc_totals": {
+    "treat_leak": 0,
+    "raw_body_leak": 0,
+    "same_entity": 0,
+    "same_reference": 0,
+    "private_provenance": 0,
+    "BAD_URL_ALONE_SAME": 0,
+    "treat_rows_n": 18,
+    "raw_seed_echo_only": 2,
+    "identity_surface_leak": 0
+  }
+}

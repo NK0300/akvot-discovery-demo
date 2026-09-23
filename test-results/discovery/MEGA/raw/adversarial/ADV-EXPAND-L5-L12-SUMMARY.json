@@ -1,0 +1,85 @@
+{
+  "role": "בודק",
+  "suite": "MEGA-adversarial-expand-L5-L12",
+  "checkedAt": "2026-09-20T07:25:18+03:00",
+  "deployment": "dpl_BMhUKUQ4rV4j7jgjPWLdLaXq5LLB",
+  "promote": "HOLD",
+  "counts": {
+    "PASS": 8,
+    "FAIL": 0
+  },
+  "results": [
+    {
+      "id": "ADV-L5",
+      "name": "empty-seed-soft-fail",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L5-empty-seed.json",
+      "detail": "http=400 softFail=true entityLeak=0",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L6",
+      "name": "whitespace-seed-soft-fail",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L6-whitespace-seed.json",
+      "detail": "http=400 softFail=true entityLeak=0",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L7",
+      "name": "bare-cohen-he-discovery",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L7-bare-cohen-he.json",
+      "detail": "http=201 findings=16 entityLeak=0 bans=none",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L8",
+      "name": "john-smith-bare-discovery",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L8-john-smith-bare.json",
+      "detail": "http=201 findings=15 entityLeak=0 bans=none",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L9",
+      "name": "double-get-regen-consistency",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L9-double-get-regen.json",
+      "detail": "sidOk findings=15/15 regen=true,true entityLeak=0",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L10",
+      "name": "sse-second-subscribe-replay-soft",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L10-sse-second-subscribe.meta.json",
+      "detail": "ctOk=true ev=9/9 types2=meta,progress,provider,finding,facets entityLeak=0",
+      "notes": "Soft replay only · durable Last-Event-ID across instances = BLOCKED_KV",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L11",
+      "name": "narrow-forbidden-qid-filter-inject",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L11-narrow-qid-inject.json",
+      "detail": "http=200 findings=13 entityLeak=0 bans=none",
+      "notes": "",
+      "runnow": true
+    },
+    {
+      "id": "ADV-L12",
+      "name": "david-cohen-en-collision-soft",
+      "status": "PASS",
+      "evidence": "MEGA/raw/adversarial/ADV-L12-david-cohen-en.json",
+      "detail": "http=201 findings=16 entityLeak=0",
+      "notes": "",
+      "runnow": true
+    }
+  ]
+}

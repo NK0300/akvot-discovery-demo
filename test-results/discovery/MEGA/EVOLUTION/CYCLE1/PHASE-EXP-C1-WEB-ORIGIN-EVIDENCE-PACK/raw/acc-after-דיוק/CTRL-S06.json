@@ -1,0 +1,32 @@
+{
+  "create": null,
+  "final": {},
+  "narrow": null,
+  "analysis": {
+    "id": "S06",
+    "seed": "openai.com",
+    "role": "domain",
+    "findings_n": 0,
+    "evidence_n": 0,
+    "wo_findings_n": 0,
+    "wo_evidence_n": 0,
+    "providers": {},
+    "has_web_origin_provider": false,
+    "rel_hist": {},
+    "same_entity_n": 0,
+    "same_reference_n": 0,
+    "acc_leak": 0,
+    "forbidden_stripped": 0,
+    "private_provenance_n": 0,
+    "wo_sample": [],
+    "wo_ev_sample": [],
+    "create_ok": false,
+    "polls": 0,
+    "latencyMs": 2684,
+    "narrow_leak": 0,
+    "sse_leak": 0,
+    "sse_sampled": false,
+    "total_leak": 0,
+    "raw_error": "parse_fail"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akvot://discovery/design/budget/v1",
+  "title": "DiscoveryBudget (design contract)",
+  "type": "object",
+  "required": [
+    "maxProviders",
+    "maxFamilyCalls",
+    "maxRequests",
+    "maxUrls",
+    "maxRedirects",
+    "maxResponseBytes",
+    "maxWallMs",
+    "maxProviderMs",
+    "maxFindings",
+    "maxEvidence",
+    "maxPlanRevisions"
+  ],
+  "properties": {
+    "maxProviders": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxFamilyCalls": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxRequests": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxUrls": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxRedirects": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxResponseBytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxWallMs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxProviderMs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxFindings": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxDuplicateDrops": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxEvidence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "maxPlanRevisions": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "silentExpansionForbidden": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "additionalProperties": false
+}
