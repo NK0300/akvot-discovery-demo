@@ -1,20 +1,31 @@
 {
   "track": "GO-IMPL-UX",
   "agent": "ממשק",
-  "stamp": "2026-09-23T22:53:21+03:00",
+  "stamp": "2026-09-23T22:55:17+03:00",
   "zone": "Asia/Jerusalem",
-  "checkpoint": "K",
+  "checkpoint": "L",
   "status": "PASS",
   "promote": false,
   "deploy": false,
+  "flagsNoted": [
+    "DISCOVERY_WD_CLAIM_PACK=OFF",
+    "DISCOVERY_OL_WORKS_SEARCH=OFF",
+    "DISCOVERY_WP_PAGEPROPS=OFF"
+  ],
+  "flagsEnabledInClient": false,
   "wave": "G-H-I-J",
-  "waveStatus": "PASS",
-  "postWave": "K",
+  "postWave": "K-L",
   "files": [
     "discovery-ui.js",
     "index.html",
-    "scripts/ux-checkpoint-k-smoke.mjs"
+    "scripts/ux-checkpoint-l-smoke.mjs"
   ],
+  "docs": [
+    "UX-P0-ADAPTER-SURFACE-READY-ממשק-2026-09-23.md",
+    "UX-CHECKPOINT-L-POLISH-ממשק-2026-09-23.md",
+    "ACTION-LOG-ממשק.md"
+  ],
+  "archSpec": "../GO-IMPL-500/ARCH-DEPTH-P0-ADAPTER-SPECS-ארכיטקט.md",
   "locks": {
     "coreLookupUntouched": true,
     "a2c1Frozen": true,
@@ -24,51 +35,48 @@
     "entityAgnostic": true,
     "fSecurityUntouched": true,
     "f11Hold": true,
-    "gNotRegressed": true,
-    "hNotRegressed": true,
-    "iNotRegressed": true,
-    "jNotRegressed": true
+    "flagsDefaultOff": true,
+    "noNewHttp": true
   },
-  "kCriteria": {
-    "expandSmoke": "PASS",
-    "a11yChecklist": "PASS",
-    "codePolish": "PASS",
-    "actionLogStatus": "PASS"
+  "lCriteria": {
+    "surfaceContractDoc": "PASS",
+    "softLabelsFallback": "PASS",
+    "noFlagEnable": "PASS",
+    "smokeL": "PASS"
   },
-  "increments": [
-    "ux-checkpoint-k-smoke-dense",
-    "a11y-checklist-evidence",
-    "clipboard-insecure-context-fallback",
-    "facet-announce-debounce",
-    "graph-focus-visible-contrast"
-  ],
   "checks": [
     {
       "name": "node --check discovery-ui.js",
-      "result": "PASS"
+      "passed": 1,
+      "failed": 0
     },
     {
-      "name": "node scripts/ux-checkpoint-j-smoke.mjs",
-      "result": "PASS"
+      "name": "ux-checkpoint-j-smoke",
+      "passed": true,
+      "failed": 0
     },
     {
-      "name": "node scripts/ux-checkpoint-k-smoke.mjs",
-      "result": "PASS",
-      "detail": "passed=30 failed=0"
+      "name": "ux-checkpoint-k-smoke",
+      "passed": 30,
+      "failed": 0
+    },
+    {
+      "name": "ux-checkpoint-l-smoke",
+      "passed": 16,
+      "failed": 0
     },
     {
       "name": "npm run test:checkpoint-d",
-      "result": "PASS",
-      "detail": "passed=16 failed=0"
+      "passed": 16,
+      "failed": 0,
+      "note": "cancel+graph+plan+ids+sse"
     }
   ],
-  "evidence": "UX-CHECKPOINT-K-POLISH-ממשק-2026-09-23.md",
-  "a11yChecklist": "UX-A11Y-CHECKLIST-ממשק-2026-09-23.md",
-  "actionLog": "ACTION-LOG-ממשק.md",
-  "priorEvidence": "UX-CHECKPOINT-J-POLISH-ממשק-2026-09-23.md",
+  "evidence": "UX-CHECKPOINT-L-POLISH-ממשק-2026-09-23.md",
+  "surfaceReadyDoc": "UX-P0-ADAPTER-SURFACE-READY-ממשק-2026-09-23.md",
   "remainingGaps": [
-    "Live plan/graph SSE density Foundation-gated",
-    "Live axe / Preview still OPEN (Vercel 403)",
-    "Clipboard prompt fallback is last-resort"
+    "Server must implement Arch P0 behind flags before denser WD/OL/WP paint",
+    "Live Preview still OPEN",
+    "promote held false"
   ]
 }

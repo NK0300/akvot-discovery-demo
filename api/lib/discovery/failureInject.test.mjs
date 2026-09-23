@@ -7,7 +7,12 @@ import {
   shouldInject,
   wrapProviderWithInjection,
   simulateRedisUnavailable,
+  softFailCodeForFailureKind,
+  injectErrorForKind,
+  failureKindsCoverSoftFailFamilies,
+  assertInjectedSoftFailCode,
 } from './failureInject.js';
+import { adapterSoftFailCode, softFailCodesArePairwiseDistinct } from './adapterContract.js';
 import { assertSafePublicHttpsUrl, isBlockedDiscoveryHost } from './urlSafety.js';
 import {
   validateDiscoveryCreateBody,
@@ -326,6 +331,57 @@ assert(
   const frame = formatSseEvent('meta', { sessionId: 's1' }, 1);
   assert('sse frame has id+event+data', /id: 1\nevent: meta\ndata: /.test(frame));
 }
+
+{
+  assert('FAILURE_KINDS includes cancelled+budget', FAILURE_KINDS.includes('provider_cancelled') && FAILURE_KINDS.includes('provider_budget_exhausted'));
+  assert('failureKindsCoverSoftFailFamilies', failureKindsCoverSoftFailFamilies() === true);
+  assert('softFail map timeout', softFailCodeForFailureKind('provider_timeout') === 'timeout');
+  assert('softFail map cancelled', softFailCodeForFailureKind('provider_cancelled') === 'cancelled');
+  assert('softFail map budget', softFailCodeForFailureKind('provider_budget_exhausted') === 'budget_exhausted');
+  assert('softFail map 429', softFailCodeForFailureKind('provider_429') === 'http_429');
+  const mapped = [
+    softFailCodeForFailureKind('provider_cancelled'),
+    softFailCodeForFailureKind('provider_timeout'),
+    softFailCodeForFailureKind('provider_429'),
+    softFailCodeForFailureKind('provider_budget_exhausted'),
+  ];
+  assert('softFail mapped pairwise distinct', softFailCodesArePairwiseDistinct(mapped));
+  for (const kind of ['provider_timeout', 'provider_cancelled', 'provider_budget_exhausted', 'provider_429', 'provider_5xx']) {
+    const chk = assertInjectedSoftFailCode(kind);
+    assert(`assertInjectedSoftFailCode ${kind}`, chk.ok === true);
+  }
+  assert(
+    'injectErrorForKind budget → adapterSoftFailCode',
+    adapterSoftFailCode(injectErrorForKind('provider_budget_exhausted')) === 'budget_exhausted',
+  );
+  assert(
+    'injectErrorForKind cancelled → adapterSoftFailCode',
+    adapterSoftFailCode(injectErrorForKind('provider_cancelled'), { aborted: true }) === 'cancelled',
+  );
+}
+
+{
+  const pCancel = wrapProviderWithInjection(mockOk, 'provider_cancelled');
+  let code = '';
+  try {
+    await pCancel.search({ injectFailure: 'provider_cancelled' }, {});
+  } catch (e) {
+    code = adapterSoftFailCode(e, { aborted: true });
+  }
+  assert('wrap inject cancelled soft-fail code', code === 'cancelled');
+}
+
+{
+  const pBud = wrapProviderWithInjection(mockOk, 'provider_budget_exhausted');
+  let code = '';
+  try {
+    await pBud.search({ injectFailure: 'provider_budget_exhausted' }, {});
+  } catch (e) {
+    code = adapterSoftFailCode(e);
+  }
+  assert('wrap inject budget soft-fail code', code === 'budget_exhausted');
+}
+
 
 console.log('\n--- failureInject / security / obs ---');
 console.log(`passed=${passed} failed=${failed}`);

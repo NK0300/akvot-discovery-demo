@@ -40,6 +40,7 @@ import {
   runDualRunStub,
   dualRunMeasureSheetStub,
   dualRunDelta,
+  runTreatmentComposeProbe,
   DUAL_RUN_HARNESS_VERSION,
 } from './dualRunHarness.js';
 import { createDiscoverySession, clearSessions } from './orchestrator.js';
@@ -457,6 +458,29 @@ ok(
   'F11 wired all false',
   CANDIDATE_FAMILY_IDS.every((id) => getCandidateFamily(id)?.wired === false),
 );
+
+// Wave-3 TREATMENT compose: soft-fail + SSRF + budget under flag-ON
+{
+  const probe = await runTreatmentComposeProbe({
+    poisonUrls: ['http://127.0.0.1/x', 'https://169.254.169.254/', 'file:///etc/passwd'],
+    budgetCaps: { maxFamilyCalls: 1, maxRequests: 1, maxWallMs: 60, maxFindings: 2, maxEvidence: 2 },
+  });
+  ok('compose probe TREATMENT flag on', probe.flagOnConfirmed === true && probe.compose.hasQueryPlan === true);
+  ok(
+    'compose probe SSRF blocked or poison',
+    probe.compose.ssrfGate.fetchableCount === 0 ||
+      probe.compose.ssrfGate.blockedCount > 0 ||
+      probe.compose.ssrfGate.poison === true,
+  );
+  ok(
+    'compose probe soft-fail or budget hard-stop',
+    probe.compose.softFailPresent || probe.compose.budgetHardStop,
+  );
+  ok('compose probe Acc leak 0', probe.compose.accLeakForbiddenQ === 0);
+  ok('compose probe no promote', probe.livePreviewPromote === false);
+  ok('compose probe no raw poison', probe.compose.noRawPoisonUrl === true);
+}
+
 
 console.log('\n--- phase2 engine ---');
 console.log(`passed=${passed} failed=${failed}`);

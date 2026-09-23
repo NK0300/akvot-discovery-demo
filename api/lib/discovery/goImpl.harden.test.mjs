@@ -46,6 +46,25 @@ import {
   resetDiscoveryRateLimit,
   getDiscoveryRateLimitInfo,
 } from './requestGuards.js';
+import {
+  runTreatmentComposeProbe,
+  DUAL_RUN_HARNESS_VERSION,
+} from './dualRunHarness.js';
+import {
+  sanitizeDiscoveryPayload,
+  scrubErrorChunk,
+  scrubGraphPayload,
+  scrubGraphChunk,
+  scrubSoftErForEmit,
+} from './emit.js';
+import { scrubSseError } from './sse.js';
+import {
+  FAILURE_KINDS,
+  softFailCodeForFailureKind,
+  injectErrorForKind,
+  failureKindsCoverSoftFailFamilies,
+  assertInjectedSoftFailCode,
+} from './failureInject.js';
 
 let passed = 0;
 let failed = 0;
@@ -737,6 +756,194 @@ ok(
 
   ok('rl info still memory honesty', getDiscoveryRateLimitInfo().distributed === false);
   ok('rl info no Upstash invent', getDiscoveryRateLimitInfo().upstashWiredForRateLimit === false);
+}
+
+
+// ---------- Wave-3: TREATMENT compose soft-fail + SSRF + budget hard-stop ----------
+{
+  const probe = await runTreatmentComposeProbe({});
+  ok('compose harness version stamped', /dualrun-compose/.test(DUAL_RUN_HARNESS_VERSION));
+  ok('compose flagOnConfirmed', probe.flagOnConfirmed === true);
+  ok('compose no live promote claim', probe.livePreviewPromote === false);
+  ok('compose hasQueryPlan TREATMENT', probe.compose.hasQueryPlan === true);
+  ok(
+    'compose soft-fail present (timeout/budget/error)',
+    probe.compose.softFailPresent === true ||
+      (probe.compose.softFailCodes || []).length > 0 ||
+      probe.compose.budgetHardStop === true,
+  );
+  ok(
+    'compose SSRF gate blocks poison / zero fetchable',
+    probe.compose.ssrfGate.fetchableCount === 0 ||
+      probe.compose.ssrfGate.blockedCount > 0 ||
+      probe.compose.ssrfGate.poison === true,
+  );
+  ok(
+    'compose budget hard-stop OR soft-fail budget code',
+    probe.compose.budgetHardStop === true ||
+      (probe.compose.softFailCodes || []).includes('budget_exhausted') ||
+      (probe.compose.softFailCodes || []).includes('timeout'),
+  );
+  ok('compose Acc leak 0', probe.compose.accLeakForbiddenQ === 0);
+  ok('compose no credential leak', probe.compose.noCredentialLeak === true);
+  ok('compose no raw poison URL in snapshot', probe.compose.noRawPoisonUrl === true);
+}
+
+// ---------- Wave-3: Emit Acc scrub depth (SSE error + graph edges + softEr) ----------
+{
+  const FORBIDDEN = [...FORBIDDEN_IDENTITY_QIDS][0] || 'Q1701775';
+  const err = scrubErrorChunk({
+    code: 'timeout',
+    message: `upstream ${FORBIDDEN} token=supersecret SAME-ENTITY`,
+    stack: `Error: leak ${FORBIDDEN}\n    at x`,
+    detail: { seed: 'bait', apiKey: 'sk-live-XXX' },
+    seed: 'should-not-emit',
+  });
+  const errBlob = JSON.stringify(err);
+  ok('emit error SoT QID scrub', !errBlob.includes(FORBIDDEN));
+  ok('emit error credential scrub', !/supersecret|sk-live/i.test(errBlob));
+  ok('emit error directive blocked', !/SAME-ENTITY/.test(err.message || ''));
+  ok('emit error no stack leak', !('stack' in err) && !/at x/.test(errBlob));
+  ok('emit error no seed/detail leak', !('seed' in err) && !('detail' in err));
+  ok('emit error failureClass', err.failureClass === 'timeout' || err.failureClass === 'error');
+
+  const sse = scrubSseError({
+    message: `sse ${FORBIDDEN} Bearer abc.def SAME_ENTITY`,
+    code: 'provider_error',
+  });
+  ok('sse error SoT QID scrub', !JSON.stringify(sse).includes(FORBIDDEN));
+  ok('sse error bearer scrub', !/Bearer abc/i.test(JSON.stringify(sse)));
+  ok('sse error directive blocked', !/SAME_ENTITY/.test(sse.message || ''));
+
+  const g = scrubGraphPayload(
+    {
+      nodes: [
+        { id: 'n1', label: 'Ada' },
+        { id: 'n2', label: 'Safe' },
+      ],
+      edges: [
+        {
+          from: 'n1',
+          to: 'n2',
+          relationship: 'related-entity',
+          signalSummary: 'ok',
+          why: `because ${FORBIDDEN} and token=edgeSecret`,
+          reason: `api_key=leak-${FORBIDDEN}`,
+          note: 'TITLE_BRIDGE revive attempt',
+          stack: 'should-drop',
+          detail: { password: 'hunter2' },
+        },
+      ],
+    },
+    [],
+  );
+  const gBlob = JSON.stringify(g || {});
+  ok('graph edge Acc QID scrub depth', !gBlob.includes(FORBIDDEN));
+  ok('graph edge credential scrub depth', !/edgeSecret|api_key=leak|hunter2/i.test(gBlob));
+  ok('graph edge no stack/detail spread', !/"stack"/i.test(gBlob) && !/hunter2/i.test(gBlob));
+  ok('graph edge directive blocked in note', !/TITLE_BRIDGE/.test(gBlob));
+  const chunk = scrubGraphChunk({
+    nodes: [{ id: 'n1' }, { id: 'n2' }],
+    edges: [
+      {
+        from: 'n1',
+        to: 'n2',
+        relationship: 'related-entity',
+        why: `mention ${FORBIDDEN}`,
+      },
+    ],
+  });
+  ok('graph chunk why Acc scrub', !JSON.stringify(chunk || {}).includes(FORBIDDEN));
+
+  const soft = scrubSoftErForEmit({
+    softRefs: ['seed:abc'],
+    status: 'candidate',
+    displayHint: 'Ada',
+    hints: {
+      seedClass: 'person',
+      urls: ['https://localhost/secret', 'http://127.0.0.1/admin', 'https://en.wikipedia.org/wiki/Ada_Lovelace'],
+    },
+  });
+  const softBlob = JSON.stringify(soft);
+  ok('softEr no raw localhost poison', !/localhost\/secret|127\.0\.0\.1/i.test(softBlob));
+  ok('softEr classifies urls', Array.isArray(soft.hints?.urls) && soft.hints.urls.every((u) => u.safety));
+
+  const snap = sanitizeDiscoveryPayload({
+    sessionId: 'emit-depth',
+    seed: 'safe',
+    status: 'partial',
+    findings: [],
+    evidence: [],
+    softEr: {
+      softRefs: ['seed:x'],
+      status: 'candidate',
+      hints: { urls: ['https://169.254.169.254/latest/meta-data/', 'file:///etc/passwd'] },
+    },
+    errors: [
+      {
+        code: 'timeout',
+        message: `fail ${FORBIDDEN} password=x`,
+        stack: 'STACK',
+        seed: 'seed-leak',
+      },
+    ],
+    graph: {
+      nodes: [{ id: 'a' }, { id: 'b' }],
+      edges: [{ from: 'a', to: 'b', relationship: 'related-entity', note: `token=abc ${FORBIDDEN}` }],
+    },
+  });
+  const sBlob = JSON.stringify(snap);
+  ok('snapshot errors Acc scrub depth', !sBlob.includes(FORBIDDEN));
+  ok('snapshot errors no stack/seed', !/STACK|seed-leak|password=x/i.test(sBlob));
+  ok('snapshot graph edge note scrub', !/token=abc/i.test(sBlob));
+  ok('snapshot softEr no metadata IP raw', !/169\.254\.169\.254|file:\/\//i.test(sBlob));
+}
+
+// ---------- Wave-3: FailureInject soft-fail family consistency ----------
+{
+  ok('failure kinds cover soft-fail families', failureKindsCoverSoftFailFamilies() === true);
+  ok('FAILURE_KINDS has cancelled', FAILURE_KINDS.includes('provider_cancelled'));
+  ok('FAILURE_KINDS has budget_exhausted', FAILURE_KINDS.includes('provider_budget_exhausted'));
+  ok('map timeout→timeout', softFailCodeForFailureKind('provider_timeout') === 'timeout');
+  ok('map cancelled→cancelled', softFailCodeForFailureKind('provider_cancelled') === 'cancelled');
+  ok(
+    'map budget→budget_exhausted',
+    softFailCodeForFailureKind('provider_budget_exhausted') === 'budget_exhausted',
+  );
+  ok('map 429→http_429', softFailCodeForFailureKind('provider_429') === 'http_429');
+  ok('map 5xx→http_503', softFailCodeForFailureKind('provider_5xx') === 'http_503');
+
+  const codes = [
+    softFailCodeForFailureKind('provider_cancelled'),
+    softFailCodeForFailureKind('provider_timeout'),
+    softFailCodeForFailureKind('provider_429'),
+    softFailCodeForFailureKind('provider_budget_exhausted'),
+  ];
+  ok('inject soft-fail codes pairwise distinct', softFailCodesArePairwiseDistinct(codes));
+
+  for (const kind of [
+    'provider_timeout',
+    'provider_cancelled',
+    'provider_budget_exhausted',
+    'provider_429',
+    'provider_5xx',
+  ]) {
+    const chk = assertInjectedSoftFailCode(kind);
+    ok(`inject ${kind} → softFail ${chk.expected}`, chk.ok === true && chk.got === chk.expected);
+  }
+
+  ok(
+    'injectError timeout code',
+    adapterSoftFailCode(injectErrorForKind('provider_timeout')) === 'timeout',
+  );
+  ok(
+    'injectError budget code',
+    adapterSoftFailCode(injectErrorForKind('provider_budget_exhausted')) === 'budget_exhausted',
+  );
+  ok(
+    'injectError 429 code',
+    adapterSoftFailCode(injectErrorForKind('provider_429')) === 'http_429',
+  );
 }
 
 

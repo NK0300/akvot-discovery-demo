@@ -18,6 +18,8 @@
  * · print-safe Discovery · UX smoke strings · wave G–J closeout.
  * Checkpoint K polish: clipboard insecure-context fallback · facet-announce debounce ·
  * denser UX smoke · a11y checklist evidence · graph focus contrast.
+ * Checkpoint L polish: P0 adapter surface-ready (WD/OL/WP) · soft family/provider labels
+ * · graceful unknown-family fallback · flags stay OFF · no new HTTP.
  * Wires to POST/GET /api/discovery/sessions · prefers SSE …/events · POST …/narrow
  * (server recompute); falls back to poll + discovery-fixtures/* progressive stages.
  * Entity-agnostic · INFORMATION ≠ IDENTITY · no Core /api/lookup changes.
@@ -32,6 +34,20 @@
     relationship: 'קשר מדווח',
     confidence_band: 'רמת ראיות',
     hint: 'רמז',
+    instance: 'מופע (P31)',
+    occupation: 'עיסוק',
+    citizenship: 'אזרחות',
+    birth: 'שנת לידה (רמז)',
+    death: 'שנת פטירה (רמז)',
+    officialWebsite: 'אתר רשמי (מועמד)',
+    authorName: 'שם מחבר',
+    authorKey: 'מפתח מחבר',
+    firstPublishYear: 'שנת פרסום',
+    isbn: 'ISBN (פן בלבד)',
+    edition: 'מהדורה',
+    wikibase: 'Wikibase QID',
+    family: 'משפחת מקור',
+    sourceFamily: 'משפחת מקור',
   };
   const KIND_HE = {
     page: 'דף',
@@ -40,6 +56,39 @@
     contact_public: 'יצירת קשר ציבורי',
     media: 'מדיה',
     other: 'אחר',
+    work: 'יצירה',
+  };
+  /**
+   * Soft source-family / provider labels for Arch P0 adapters (WD/OL/WP).
+   * Display only · INFORMATION ≠ IDENTITY · no client flag ON · no new HTTP.
+   * Unknown ids fall back to raw string (entity-agnostic passthrough).
+   */
+  const FAMILY_LABEL_HE = {
+    knowledge_graph: 'גרף ידע',
+    bibliographic: 'ביבליוגרפי',
+    encyclopedia: 'אנציקלופדיה',
+    wikidata: 'ויקינתונים',
+    openlibrary: 'Open Library',
+    wikipedia: 'ויקיפדיה',
+    viaf: 'VIAF',
+    web_origin: 'מקור ווב',
+  };
+  const FAMILY_LABEL_EN = {
+    knowledge_graph: 'Knowledge graph',
+    bibliographic: 'Bibliographic',
+    encyclopedia: 'Encyclopedia',
+    wikidata: 'Wikidata',
+    openlibrary: 'Open Library',
+    wikipedia: 'Wikipedia',
+    viaf: 'VIAF',
+    web_origin: 'Web origin',
+  };
+  const PROVIDER_LABEL_HE = {
+    wikidata: 'ויקינתונים',
+    openlibrary: 'Open Library',
+    wikipedia: 'ויקיפדיה',
+    viaf: 'VIAF',
+    web_origin: 'מקור ווב',
   };
   const STATUS_HE = {
     running: 'מאתר…',
@@ -121,6 +170,37 @@
       ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]),
     );
   }
+
+  /** Soft family/provider label — passthrough unknown · never invents identity. */
+  function labelFamily(id) {
+    const raw = String(id || '').trim();
+    if (!raw) return '';
+    const key = raw.toLowerCase();
+    return FAMILY_LABEL_HE[key] || FAMILY_LABEL_HE[raw] || raw;
+  }
+  function labelFamilyEn(id) {
+    const raw = String(id || '').trim();
+    if (!raw) return '';
+    const key = raw.toLowerCase();
+    return FAMILY_LABEL_EN[key] || FAMILY_LABEL_EN[raw] || raw;
+  }
+  function labelProvider(id) {
+    const raw = String(id || '').trim();
+    if (!raw) return '';
+    const key = raw.toLowerCase();
+    return PROVIDER_LABEL_HE[key] || PROVIDER_LABEL_HE[raw] || raw;
+  }
+  function findingFamilyId(f) {
+    if (!f || typeof f !== 'object') return '';
+    return (
+      f.sourceFamily ||
+      f.familyId ||
+      f.family ||
+      (f.provenance && (f.provenance.sourceFamily || f.provenance.familyId)) ||
+      ''
+    );
+  }
+
   function safeUrl(u) {
     const s = String(u || '').trim();
     if (!s) return '';
@@ -1301,7 +1381,7 @@
     const urlAlone = isUrlAloneFinding(f, evList);
     const providerSet = [...new Set(evList.map((e) => e.providerId || e.provider).filter(Boolean))];
     const providerRow = providerSet.length
-      ? `<div class="disc-prov-providers" aria-label="ספקי ראיות">${providerSet.map((p) => `<span class="disc-prov ok">${esc(p)}</span>`).join('')}</div>`
+      ? `<div class="disc-prov-providers" aria-label="ספקי ראיות">${providerSet.map((p) => `<span class="disc-prov ok" title="${esc(p)}">${esc(labelProvider(p))}</span>`).join('')}</div>`
       : '';
     const provenance = evList
       .map((e, ei) => {
@@ -1329,11 +1409,18 @@
       ? `<span class="disc-finding-rank" title="דירוג גילוי · לא זהות">#${esc(opts.rank)}</span>`
       : '';
     const evN = evList.length;
-    const tab = opts.rovingIndex === 0 ? '0' : '-1';
-    return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}" role="option" tabindex="${tab}" aria-selected="false">
+        const tab = opts.rovingIndex === 0 ? '0' : '-1';
+    const famId = findingFamilyId(f);
+    const famHe = labelFamily(famId);
+    const famEn = labelFamilyEn(famId);
+    const familyChip = famId
+      ? `<span class="disc-family-chip" title="${esc(famEn || famId)} · משפחת מקור · לא זהות" data-family="${esc(famId)}">${esc(famHe)}</span>`
+      : '';
+return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}" role="option" tabindex="${tab}" aria-selected="false">
       <div class="disc-finding-head">
         ${rank}
         <span class="disc-kind">${esc(kind)}</span>
+        ${familyChip}
         ${score}
         ${badge}
         ${evN ? `<span class="disc-finding-evn" title="מספר ראיות מצוטטות">${evN} ראיות</span>` : ''}

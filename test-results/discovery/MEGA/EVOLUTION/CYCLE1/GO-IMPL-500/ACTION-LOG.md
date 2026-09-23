@@ -889,3 +889,67 @@
 **Concurrent bands:** Arch SoT **77–80** · Server **81–87** · UX **90–94** · בודק **100–102** · Server softfail **103–110** · Acc **200–206** · FF glance **210–214** · Arch-depth **220–226** · **this 230–236**  
 **Checkpoints:** C Arch glance **CONSISTENT** · E Arch glance **CONSISTENT** · runtime edits **0** · F11 **HOLD** · Preview SSRF **Server-owned**  
 **NO PROMOTE** · flags default OFF · locks in force
+
+
+---
+
+## Arch glance · Checkpoint D + F (ארכיטקט)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 240 | 22:54 | Arch: RO read D/F checkpoint docs + C/E glance format · Preview/SSRF/RL notes |
+| 241 | 22:54 | Arch: RO spot-check sse.js lifecycle/allow-set · emit scrub imports · re-run D tests 16/0 + 24 |
+| 242 | 22:54 | Arch: wrote CHECKPOINT-D-ARCH-GLANCE · verdict **CONSISTENT** |
+| 243 | 22:54 | Arch: RO spot-check security helpers · scrubProvidersState · emit DEEP_SKIP · soft-fail families · Preview OPEN |
+| 244 | 22:54 | Arch: wrote CHECKPOINT-F-ARCH-GLANCE · verdict **PARTIAL** (aligned) · Preview/RL = HOLD not Arch fix |
+| 245 | 22:54 | Arch: LOCAL-WAVE-ARCH-GLANCE-DF.md combined wave report |
+| 246 | 22:54 | Arch: ACTION-LOG append **240–246** · checksum verify · NO promote · zero runtime edits |
+
+### Action 240 — RO cite pass for D+F glances
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Read `CHECKPOINT-D-SSE.md`, `CHECKPOINT-D-UX-NOTES.md`, `CHECKPOINT-F-SECURITY.md`, `LOCAL-WAVE-F-SEC.md`, `F-RESIDUALS-CLOSE-שרת.md`, `PREVIEW-URLTARGETS-SSRF-PACK.md`, `MEMORY-RL-NOTE.md`, softfail/obs note, mirrored format from C/E Arch glances. Next free Arch band after **230–236** is **240–246** (skipped 237–239 gap · no collision with Acc 200+ / FF 210–214 / Server 81–87 / 103–110).
+- **Files:** (read-only) checkpoint docs + prior Arch glances + Server F residuals
+
+### Action 241 — Checkpoint D RO SSE/emit/test cite
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Spot-checked `sse.js` (`SSE_LIFECYCLE_PHASES`, `SSE_EVENT_ALLOW_SET`, `buildProgressiveEvents`, always `done`, budget UX, Acc imports), emit scrub chunk imports (RO). Re-ran `checkpointD.sse.test.mjs` **16/0** and `sse.contract.test.mjs` **24** passed. Did **not** edit sse/emit/security/providers/familyOrchestrator/requestGuards.
+- **Files:** (read-only) `sse.js`, `emit.js`, D test suites
+
+### Action 242 — CHECKPOINT-D-ARCH-GLANCE
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote D glance vs Server PASS (+ UX PASS cited). Overall **CONSISTENT**. Residuals: Preview RUNNOW deferred; concurrent Server hash churn on sse/emit OK; F out of scope for D.
+- **Files:** `CHECKPOINT-D-ARCH-GLANCE-ארכיטקט.md`
+
+### Action 243 — Checkpoint F RO security/Acc/soft-fail cite
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Spot-checked `security.js` fetch-gate helpers + `scrubProvidersState` (forbidden QID keys), emit `providers` in `DEEP_SKIP_KEYS`, `adapterContract.js` soft-fail families, requestGuards memory RL honesty. Confirmed Preview SSRF still **OPEN** (Vercel 403 / no project in scope) and distributed RL **OPEN** — Server-owned HOLD, not Arch fix. Did **not** write any F collision surface.
+- **Files:** (read-only) `security.js`, `emit.js`, `requestGuards.js`, `adapterContract.js`, F docs
+
+### Action 244 — CHECKPOINT-F-ARCH-GLANCE
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote F glance vs Server PARTIAL. Overall Arch **PARTIAL** (aligned). Acc scrub / soft-fail vs SoT **CONSISTENT**. Preview SSRF OPEN + Vercel 403 + distributed RL = **HOLD not Arch fix**. No promote petition.
+- **Files:** `CHECKPOINT-F-ARCH-GLANCE-ארכיטקט.md`
+
+### Action 245 — LOCAL-WAVE-ARCH-GLANCE-DF
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Short combined wave report · D+F verdicts · checksum prefixes · concurrent band map · Hebrew room one-liner · honest next notes. Docs only.
+- **Files:** `LOCAL-WAVE-ARCH-GLANCE-DF.md`
+
+### Action 246 — ACTION-LOG honesty + runtime integrity
+- **When:** 2026-09-23 22:54 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Appended actions **240–246** only (honest · not padded to 500). Skipped colliding / gap bands. Verified Arch wrote **0** bytes to locked runtime / SSRF-security files (checksums recorded in glances). **NO promote**.
+- **Files:** `ACTION-LOG.md` (docs only)
+
+---
+
+**Arch D+F glance wave action ids:** **240–246** (7 meaningful · honest · not padded to 500)  
+**Concurrent bands:** Arch SoT **77–80** · Server **81–87** · UX **90–94** · בודק **100–102** · Server softfail **103–110** · Acc **200–206** · FF glance **210–214** · Arch-depth **220–226** · C+E glance **230–236** · **this 240–246**  
+**Checkpoints:** D Arch glance **CONSISTENT** · F Arch glance **PARTIAL** (aligned) · runtime edits **0** · F11 **HOLD** · Preview SSRF **Server-owned HOLD**  
+**NO PROMOTE** · flags default OFF · locks in force
