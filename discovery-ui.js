@@ -6,7 +6,7 @@
  * GO-IMPL-UX: premium Investigation workspace · mobile nav/drawer · soft vocabulary
  * · provenance density · narrowSource tag · Foundation plan/graph soft surface.
  * GO-IMPL-UX plan/graph wire: defensive SSE plan+graph parsers · QueryPlan/Family/Budget
- * paint · soft graph panel · empty/UNKNOWN polish · facet focus-trap · safe-area.
+ * paint · soft graph panel · empty/UNKNOWN polish · facet Escape close · safe-area.
  * Wires to POST/GET /api/discovery/sessions · prefers SSE …/events · POST …/narrow
  * (server recompute); falls back to poll + discovery-fixtures/* progressive stages.
  * Entity-agnostic · INFORMATION ≠ IDENTITY · no Core /api/lookup changes.
@@ -304,8 +304,22 @@
         ? 'גילוי ציבורי · ממצאים וראיות סביב seed · לא תיק זהות'
         : 'מקורות ציבוריים · ראיות מצוטטות · בלי ניחושים';
     }
-    if (tabEnt) tabEnt.setAttribute('aria-selected', disc ? 'false' : 'true');
-    if (tabDisc) tabDisc.setAttribute('aria-selected', disc ? 'true' : 'false');
+    if (tabEnt) {
+      tabEnt.setAttribute('aria-selected', disc ? 'false' : 'true');
+      tabEnt.setAttribute('tabindex', disc ? '-1' : '0');
+    }
+    if (tabDisc) {
+      tabDisc.setAttribute('aria-selected', disc ? 'true' : 'false');
+      tabDisc.setAttribute('tabindex', disc ? '0' : '-1');
+    }
+    if (entityWrap) {
+      entityWrap.setAttribute('role', 'tabpanel');
+      entityWrap.setAttribute('aria-labelledby', 'tab-entity');
+    }
+    if (discWrap) {
+      discWrap.setAttribute('role', 'tabpanel');
+      discWrap.setAttribute('aria-labelledby', 'tab-discovery');
+    }
     const out = document.getElementById('out');
     if (disc && out && discState.status === 'idle') {
       paintDiscoveryReady();
@@ -314,6 +328,8 @@
       if (out.dataset.surface === 'discovery') {
         out.dataset.surface = '';
         out.className = 'empty-state';
+        const skip = document.querySelector('a.skip-link');
+        if (skip) skip.setAttribute('href', '#out');
         out.innerHTML =
           '<span class="big">READY</span>הזינו שם (עברית או English) ו/או טלפון/אימייל ציבורי. שם נפוץ → נבקש הקשר · מועמדים רק עם ראיות · תיק רק כשיש מקורות.';
       }
@@ -325,6 +341,8 @@
   function paintDiscoveryReady() {
     const out = document.getElementById('out');
     if (!out) return;
+    const skip = document.querySelector('a.skip-link');
+    if (skip) skip.setAttribute('href', '#out');
     out.dataset.surface = 'discovery';
     out.className = 'empty-state';
     out.innerHTML = `
@@ -1151,16 +1169,9 @@
         : typeof f.findingScore === 'number'
           ? `<span class="conf${f.findingScore >= 0.8 ? ' hi' : ''}">רלוונטיות ${(f.findingScore * 100).toFixed(0)}%</span>`
           : '';
-    const evIds = f.evidenceIds || f.evidenceIds || [];
+    const evIds = f.evidenceIds || [];
     const evList = evIds.map((id) => evMap.get(id)).filter(Boolean);
-    // also accept evidenceIds legacy
-    if (!evList.length && Array.isArray(f.evidenceIds)) {
-      f.evidenceIds.forEach((id) => {
-        const e = evMap.get(id);
-        if (e) evList.push(e);
-      });
-    }
-    const relHint = (f.facetHints || f.facetHints || []).find((h) => String(h).startsWith('relationship:'));
+    const relHint = (f.facetHints || []).find((h) => String(h).startsWith('relationship:'));
     const rel = f.relationship || (relHint ? String(relHint).split(':').slice(1).join(':') : '');
     const urlAlone = isUrlAloneFinding(f, evList);
     const providerSet = [...new Set(evList.map((e) => e.providerId || e.provider).filter(Boolean))];
@@ -1178,7 +1189,7 @@
             ${host ? `<span class="disc-ev-k">מארח</span><span class="disc-ev-v disc-ev-host">${esc(host)}</span>` : ''}
             <span class="disc-ev-k">URL</span><span class="disc-ev-v">${href !== '#' ? `<a class="disc-ev-link" href="${href}" target="_blank" rel="noopener noreferrer">${esc(url)}</a>` : esc(url || '—')}</span>
             ${e.quote ? `<span class="disc-ev-k">ציטוט</span><span class="disc-ev-v"><q>${esc(e.quote)}</q></span>` : ''}
-            <span class="disc-ev-k">נשלף</span><span class="disc-ev-v mono">${esc(e.retrievedAt || e.retrievedAt || '—')}</span>
+            <span class="disc-ev-k">נשלף</span><span class="disc-ev-v mono">${esc(e.retrievedAt || '—')}</span>
           </div>
         </div>`;
       })
@@ -1552,6 +1563,8 @@
       <p class="disc-footer-note">אין דיוקן · אין תיק זהות · אין «זה האדם» · ראיות ניתנות לבדיקה · אין graph laundering — קשת view-derived מסומנת במפורש · URL לבד ≠ זהות.</p>
     `;
     bindDiscoveryResultHandlers(out);
+    const skip = document.querySelector('a.skip-link');
+    if (skip) skip.setAttribute('href', '#disc-progress');
     // Move focus to results region once progressive content appears (a11y)
     if (
       discState._focusResultsOnce !== true &&
@@ -1563,7 +1576,7 @@
         if (exec && typeof exec.focus === 'function') exec.setAttribute('tabindex', '-1'), exec.focus({ preventScroll: true });
       } catch (_) {}
     }
-    if (discState.status === 'idle' || discState.status === 'running' && !(discState.findings || []).length) {
+    if (discState.status === 'idle' || (discState.status === 'running' && !(discState.findings || []).length)) {
       discState._focusResultsOnce = false;
     }
   }
@@ -1675,6 +1688,25 @@
         }
       };
     });
+    // Mobile section jump: mark aria-current (CSS already styles it)
+    out.querySelectorAll('.disc-mobile-nav a').forEach((a) => {
+      a.addEventListener('click', () => {
+        out.querySelectorAll('.disc-mobile-nav a').forEach((x) => x.removeAttribute('aria-current'));
+        a.setAttribute('aria-current', 'true');
+      });
+    });
+    // Facet drawer: Escape closes (residual a11y polish)
+    const drawer = out.querySelector('.disc-facets-drawer');
+    if (drawer) {
+      drawer.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && drawer.open) {
+          ev.preventDefault();
+          drawer.open = false;
+          const sum = drawer.querySelector('summary');
+          if (sum) sum.focus();
+        }
+      });
+    }
   }
 
   function applySnapshot(snap, meta = {}) {
@@ -2762,6 +2794,13 @@
     try {
       if (discAbort) discAbort.abort();
     } catch (_) {}
+    const go = document.getElementById('disc-go');
+    const cancel = document.getElementById('disc-cancel');
+    if (go) {
+      go.disabled = false;
+      go.textContent = 'גלה';
+    }
+    if (cancel) cancel.classList.remove('show');
   }
 
   function bindDiscoveryChrome() {
@@ -2779,6 +2818,24 @@
     const tabDisc = document.getElementById('tab-discovery');
     if (tabEnt) tabEnt.onclick = () => setMode('entity');
     if (tabDisc) tabDisc.onclick = () => setMode('discovery');
+    // Tablist keyboard: Left/Right/Home/End (a11y)
+    const tablist = document.querySelector('.mode-tabs[role="tablist"]');
+    if (tablist && tabEnt && tabDisc) {
+      const tabs = [tabEnt, tabDisc];
+      tablist.addEventListener('keydown', (e) => {
+        const i = tabs.indexOf(document.activeElement);
+        if (i < 0) return;
+        let next = -1;
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          next = e.key === 'ArrowLeft' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
+        } else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        if (next < 0) return;
+        e.preventDefault();
+        tabs[next].focus();
+        tabs[next].click();
+      });
+    }
     const go = document.getElementById('disc-go');
     const cancel = document.getElementById('disc-cancel');
     if (go) go.onclick = () => startDiscovery();

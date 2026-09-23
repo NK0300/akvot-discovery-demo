@@ -177,6 +177,105 @@
 
 ---
 
-**Action count logged:** **45** (honest · not padded to 500)  
-**Checkpoints:** A **PASS** · B **PASS** · C **SOLID** · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL** · G **FINAL report written**  
-**NO PROMOTE** · flags default OFF · locks in force · AWAITING CHIEF GO
+
+| 46 | 21:37 | F-SEC: urlSafety harden + Preview-oriented urlTargets fetch-gate tests |
+| 47 | 21:37 | F-SEC: providers explicit DEEP_SKIP + scrub + no-laundering tests |
+| 48 | 21:37 | F-SEC: memory rate-limit harden/docs (no Upstash RL) + clientKey |
+| 49 | 21:37 | F-SEC: CHECKPOINT-F + LOCAL-WAVE-F-SEC.md honest PARTIAL (improved) |
+| 50 | 21:38 | Polish: discovery-ui dead dups + cancel chrome + skip/facet/mobile a11y |
+| 51 | 21:38 | Polish: index.html tabpanel / hints aria-controls / tab tabindex |
+| 52 | 21:38 | Docs: README.md + .env.example + gitignore !.env.example; remove junk -o/-w |
+| 53 | 21:38 | Docs: LOCAL-WAVE-POLISH.md; tests checkpoint-d 16/0 · phase1 79/0 · sse 24 |
+
+### Action 46 — urlTargets / urlSafety SSRF residual
+- **When:** 2026-09-23 21:37 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-F-SEC)
+- **What:** Hardened urlSafety cloud-metadata aliases; expanded security.checkpoint tests for selectFetchablePlanUrlTargets / runPlanUrlTargetsFetchGate (poison failClosed, Preview sim no network). Live Preview pack still OPEN.
+- **Files:** `api/lib/discovery/urlSafety.js`, `api/lib/discovery/security.js`, `api/lib/discovery/security.checkpoint.test.mjs`, `api/lib/discovery/index.js`
+
+### Action 47 — providers DEEP_SKIP AMBER close
+- **When:** 2026-09-23 21:37 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-F-SEC)
+- **What:** Added `providers` to emit DEEP_SKIP_KEYS (explicit); keep scrubProvidersState pre-scrub; tests prove Acc/credential scrub + no findings/candidates laundering.
+- **Files:** `api/lib/discovery/emit.js`, `api/lib/discovery/security.checkpoint.test.mjs`
+
+### Action 48 — in-memory rate limit harden
+- **When:** 2026-09-23 21:37 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-F-SEC)
+- **What:** Documented RATE_LIMIT_BACKEND=memory; getDiscoveryRateLimitInfo (upstashWiredForRateLimit=false); prune/maxKeys; clientKey prefers platform headers. Did not invent Upstash RL.
+- **Files:** `api/lib/discovery/requestGuards.js`, `api/lib/discovery/index.js`, `api/lib/discovery/security.checkpoint.test.mjs`
+
+### Action 49 — Checkpoint F docs honesty
+- **When:** 2026-09-23 21:37 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-F-SEC)
+- **What:** Updated CHECKPOINT-F-SECURITY.md to PARTIAL PASS (improved); wrote LOCAL-WAVE-F-SEC.md; appended real actions 46–49 (not padded to 500).
+- **Files:** `test-results/.../CHECKPOINT-F-SECURITY.md`, `LOCAL-WAVE-F-SEC.md`, `ACTION-LOG.md`
+
+
+### Action 50 — Discovery UI dead paths + a11y handlers
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-POLISH)
+- **What:** Cleared dead `evidenceIds`/`facetHints`/`retrievedAt` duplicates; tab keyboard; skip→progress; mobile `aria-current`; facet Escape; cancel button reset. No Core/B0/A2/C1 semantic changes.
+- **Files:** `discovery-ui.js`
+
+### Action 51 — index.html a11y markup
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-POLISH)
+- **What:** tabpanel roles, hints `aria-controls`, tab tabindex, entity search landmark on `.entity-primary`.
+- **Files:** `index.html`
+
+### Action 52 — README / env template / junk cleanup
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-POLISH)
+- **What:** Root README local-run accuracy (`vercel dev` / fixture serve); `.env.example` flags OFF; `!.env.example` in gitignore; deleted curl junk `-o`/`-w`.
+- **Files:** `README.md`, `.env.example`, `.gitignore`
+
+### Action 53 — LOCAL-WAVE-POLISH evidence + regression tests
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** GO-IMPL executor (LOCAL-WAVE-POLISH)
+- **What:** Wrote `LOCAL-WAVE-POLISH.md`; ran checkpoint-d 16/0, phase1 79/0, sse.contract 24, static smoke. No promote / no GitHub.
+- **Files:** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/LOCAL-WAVE-POLISH.md`, `ACTION-LOG.md`
+
+| 54 | 21:38 | Acc: explainWhy contradiction/corroboration scrub (prefer UNKNOWN) |
+| 55 | 21:38 | Acc: evidenceGraph build/orphan/scrubGraph Acc-strip forbidden QIDs |
+| 56 | 21:38 | Acc: emit scrubContradiction allowlist (no raw spread leak) |
+| 57 | 21:38 | Acc: SoT valueHasForbidden export; evidence bait uses denylist |
+| 58 | 21:38 | Docs+tests: LOCAL-WAVE-ACC.md + explainWhy/graph/allowlist coverage |
+
+### Action 54 — explainWhy Acc scrub
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** Acc executor (LOCAL-WAVE-ACC)
+- **What:** Hostile probe showed `explainWhy` leaked denylist QID `Q1701775` via contradiction notes. Added `scrubContradictionForWhy` / `scrubCorroborationForWhy`; drop baited rows; coerce same-entity corroboration → unknown/drop. `EVIDENCE_ENGINE_VERSION` → `2026-09-23.evidence-acc1`.
+- **Files:** `api/lib/discovery/evidence.js`, `evidence.test.mjs`
+
+### Action 55 — evidenceGraph Acc strip
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** Acc executor (LOCAL-WAVE-ACC)
+- **What:** `scrubGraphForEmit` previously relationship-clamped only. Acc-strip nodes/edges by SoT. Build skips forbidden findings; orphan evidence fill no longer re-introduces forbidden URL/qid evidence.
+- **Files:** `api/lib/discovery/evidenceGraph.js`, `evidenceGraph.test.mjs`
+
+### Action 56 — contradiction allowlist
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** Acc executor (LOCAL-WAVE-ACC)
+- **What:** Replaced `...c` spread in `scrubContradiction` with allowlisted fields so message/detail/qid/urls cannot Acc-leak before deepStrip.
+- **Files:** `api/lib/discovery/emit.js`, `adversarial.acc.test.mjs`
+
+### Action 57 — SoT bait probe
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** Acc executor (LOCAL-WAVE-ACC)
+- **What:** Exported `valueHasForbidden`; `evidence.js` stopped hardcoding a single QID regex and uses denylist SoT (`Q1701775`).
+- **Files:** `api/lib/forbiddenIdentities.js`, `api/lib/discovery/evidence.js`
+
+### Action 58 — LOCAL-WAVE-ACC doc + suite
+- **When:** 2026-09-23 21:38 IDT
+- **Who:** Acc executor (LOCAL-WAVE-ACC)
+- **What:** Wrote `LOCAL-WAVE-ACC.md`; evidence 55/0 · evidenceGraph 24/0 · adversarial 67/0 · matrix 75/0. No promote. No GitHub. No Core/B0/A2/C1/F11 unfreeze.
+- **Files:** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/LOCAL-WAVE-ACC.md`, `ACTION-LOG.md`
+
+---
+
+**Action count logged:** **58** (honest · not padded to 500)  
+**Checkpoints:** A **PASS** · B **PASS** · C **SOLID** (+Acc wave) · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL (improved)** · G **FINAL** · LOCAL-WAVE-ACC **PASS (unit)**  
+**NO PROMOTE** · flags default OFF · locks in force · live Preview SSRF + distributed RL still OPEN
+
+| 59 | 21:40 | Arch: wrote `CHECKPOINT-B-ARCH-GLANCE-ארכיטקט.md` — verdict **CONSISTENT** vs Server B PASS (36/0); glance only; no runtime edits; no promote; F11 hold; Core/B0/A2/C1 frozen |

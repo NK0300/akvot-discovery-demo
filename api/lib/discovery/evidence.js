@@ -16,6 +16,7 @@ import {
   explainRanking,
 } from './store.js';
 import { familyIdForProvider, independenceTag, areFamiliesIndependent } from './sourceFamily.js';
+import { isForbiddenQid, valueHasForbidden } from '../forbiddenIdentities.js';
 
 /** @type {readonly string[]} */
 export const EVIDENCE_STRENGTHS = Object.freeze([
@@ -31,17 +32,69 @@ export const EPISTEMIC_STATES = Object.freeze(['candidate', 'corroborated_candid
 /** Aging bands (observation freshness — not identity confidence). */
 export const AGING_BANDS = Object.freeze(['fresh', 'recent', 'stale', 'unknown']);
 
-export const EVIDENCE_ENGINE_VERSION = '2026-09-22.evidence-c1';
-
-const FORBIDDEN_QID_RE = /\bQ1701775\b/i;
+export const EVIDENCE_ENGINE_VERSION = '2026-09-23.evidence-acc1';
 
 /**
+ * Acc bait probe — SoT denylist (never hardcode a single QID here).
  * @param {unknown} v
  * @returns {boolean}
  */
 function hasForbiddenBait(v) {
   if (v == null) return false;
-  return FORBIDDEN_QID_RE.test(String(v));
+  return valueHasForbidden(v) || isForbiddenQid(v);
+}
+
+/**
+ * Scrub contradiction row for explainWhy / enrich surfaces.
+ * Prefer drop (UNKNOWN) over leaking forbidden identity tokens.
+ * @param {object} c
+ * @returns {object|null}
+ */
+function scrubContradictionForWhy(c) {
+  if (!c || typeof c !== 'object') return null;
+  for (const key of ['title', 'note', 'type', 'kind', 'reason', 'summary']) {
+    if (c[key] != null && hasForbiddenBait(c[key])) return null;
+  }
+  const domains = (Array.isArray(c.domains) ? c.domains : []).filter((d) => !hasForbiddenBait(d));
+  const findingIds = (Array.isArray(c.findingIds) ? c.findingIds : [])
+    .map((id) => String(id))
+    .filter((id) => !hasForbiddenBait(id));
+  if (!findingIds.length) return null;
+  return {
+    type: c.type,
+    domains,
+    findingIds,
+    note: c.note,
+  };
+}
+
+/**
+ * Scrub corroboration edge for explainWhy — coerce identity-ish rel → unknown.
+ * @param {object} e
+ * @returns {object|null}
+ */
+function scrubCorroborationForWhy(e) {
+  if (!e || typeof e !== 'object') return null;
+  if (hasForbiddenBait(e.note) || hasForbiddenBait(e.relationship)) return null;
+  const findingIds = (Array.isArray(e.findingIds) ? e.findingIds : [])
+    .map((id) => String(id))
+    .filter((id) => !hasForbiddenBait(id));
+  if (!findingIds.length) return null;
+  const coalesceKeys = (Array.isArray(e.coalesceKeys) ? e.coalesceKeys : []).filter(
+    (k) => !hasForbiddenBait(k),
+  );
+  let relationship = e.relationship || 'unknown';
+  const rel = String(relationship).toLowerCase().replace(/_/g, '-');
+  if (rel === 'same-entity' || rel === 'same_entity') {
+    relationship = 'unknown'; // prefer UNKNOWN over wrong identity
+  }
+  return {
+    relationship,
+    coalesceKeys,
+    families: e.families,
+    mode: e.mode,
+    note: e.note || 'INFORMATION≠IDENTITY',
+  };
 }
 
 /**
@@ -363,7 +416,9 @@ export function explainWhy(query = {}, session = {}) {
       agingBand: enriched.agingBand || classifyEvidenceAging(enriched).band,
       epistemicState: enriched.epistemicState || 'candidate',
       planId: enriched.provenance?.planId || session.planId || session.queryPlan?.planId || null,
-      signalSummary: enriched.provenance?.signalSummary,
+      signalSummary: hasForbiddenBait(enriched.provenance?.signalSummary)
+        ? undefined
+        : enriched.provenance?.signalSummary,
     };
   });
 
@@ -389,21 +444,13 @@ export function explainWhy(query = {}, session = {}) {
     rationale: ranking?.rationale || 'provenance chain only — discovery≠identity',
     factors: ranking?.factors || null,
     provenanceChain: chain,
-    contradictions: relatedContradictions.map((c) => ({
-      type: c.type,
-      domains: c.domains,
-      findingIds: c.findingIds,
-      note: c.note,
-    })),
+    contradictions: relatedContradictions
+      .map((c) => scrubContradictionForWhy(c))
+      .filter(Boolean),
     corroboration: (session.corroborationEdges || [])
       .filter((e) => finding && (e.findingIds || []).includes(finding.id))
-      .map((e) => ({
-        relationship: e.relationship,
-        coalesceKeys: e.coalesceKeys,
-        families: e.families,
-        mode: e.mode,
-        note: e.note || 'INFORMATION≠IDENTITY',
-      })),
+      .map((e) => scrubCorroborationForWhy(e))
+      .filter(Boolean),
     engineVersion: EVIDENCE_ENGINE_VERSION,
   };
 }

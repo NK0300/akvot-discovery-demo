@@ -11,6 +11,10 @@ import {
   resolveWebOriginCandidates,
 } from './webOrigin.js';
 import {
+  selectFetchablePlanUrlTargets,
+  assertSafePublicHttpsUrl,
+} from './security.js';
+import {
   safeFetchJson,
   adapterBudgetSignal,
   scrubAdapterBatch,
@@ -481,7 +485,7 @@ export const webOriginProvider = {
     const hints = req.hints && typeof req.hints === 'object' ? req.hints : {};
     try {
       const candidates = [];
-      // Primary: seed is URL/hostname
+      // Primary: seed is URL/hostname (must individually pass SSRF)
       if (looksLikeUrlOrHostname(seed)) {
         candidates.push(seed);
       }
@@ -489,17 +493,51 @@ export const webOriginProvider = {
       for (const c of extractUrlCandidatesFromSeed(seed)) {
         candidates.push(c);
       }
-      // Explicit one-hop URLs from hints (discovered on prior findings / caller)
-      const hop = hints.webOriginUrls || hints.oneHopUrls || hints.urls;
-      if (Array.isArray(hop)) {
-        for (const u of hop.slice(0, 5)) {
-          if (u) candidates.push(String(u));
+
+      // Checkpoint F: QueryPlan urlTargets fail-closed fetch gate (boundary re-validate).
+      // Prefer hints.queryPlan / planUrlTargets / urlTargets; on poison → zero plan urls.
+      const planForGate =
+        hints.queryPlan && typeof hints.queryPlan === 'object'
+          ? hints.queryPlan
+          : Array.isArray(hints.planUrlTargets)
+            ? { urlTargets: hints.planUrlTargets }
+            : Array.isArray(hints.urlTargets)
+              ? { urlTargets: hints.urlTargets }
+              : null;
+
+      if (planForGate) {
+        const gate = selectFetchablePlanUrlTargets(planForGate);
+        if (!(gate.poison || gate.failClosed)) {
+          for (const u of gate.urls || []) {
+            if (u) candidates.push(String(u));
+          }
         }
-      } else if (typeof hop === 'string' && hop.trim()) {
-        candidates.push(hop.trim());
+        // On poison/failClosed: intentionally add ZERO plan urls (safe seed may still proceed).
+      } else {
+        // Legacy / non-plan path: explicit one-hop hints, still SSRF-filtered below
+        const hop = hints.webOriginUrls || hints.oneHopUrls || hints.urls;
+        if (Array.isArray(hop)) {
+          for (const u of hop.slice(0, 5)) {
+            if (u) candidates.push(String(u));
+          }
+        } else if (typeof hop === 'string' && hop.trim()) {
+          candidates.push(hop.trim());
+        }
       }
 
-      const uniq = [...new Set(candidates.map((c) => String(c).trim()).filter(Boolean))];
+      // Defense in depth: every candidate must pass assertSafePublicHttpsUrl before resolve
+      const uniq = [
+        ...new Set(
+          candidates
+            .map((c) => String(c).trim())
+            .filter(Boolean)
+            .map((c) => {
+              const check = assertSafePublicHttpsUrl(c.startsWith('http') ? c : `https://${c}`);
+              return check.ok ? check.canonical || c : null;
+            })
+            .filter(Boolean),
+        ),
+      ];
       if (!uniq.length) {
         return { providerId: this.id, findings: [], partial: false };
       }

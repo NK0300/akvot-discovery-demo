@@ -280,5 +280,54 @@ assert(
   sess.findings.find((f) => f.id === 'f-fake-fact').epistemicState === 'candidate',
 );
 
+
+// --- LOCAL-WAVE-ACC: explainWhy must not leak forbidden QIDs in contradictions ---
+{
+  const FORBIDDEN = 'Q1701775';
+  const whyPoison = explainWhy(
+    { findingId: 'f-ada' },
+    {
+      findings: [{ id: 'f-ada', title: 'Ada', evidenceIds: ['e-ada'] }],
+      evidence: [
+        {
+          id: 'e-ada',
+          url: 'https://example.com/ada',
+          quote: 'mathematician',
+          providerId: 'wikidata',
+        },
+      ],
+      contradictions: [
+        {
+          type: 'title_conflict',
+          note: `conflicts with ${FORBIDDEN}`,
+          findingIds: ['f-ada'],
+          domains: ['wikidata.org'],
+        },
+        {
+          type: 'title_conflict',
+          note: 'INFORMATION≠IDENTITY',
+          findingIds: ['f-ada', `f-${FORBIDDEN}`],
+          domains: ['example.com'],
+        },
+      ],
+      corroborationEdges: [
+        {
+          relationship: 'same-entity',
+          findingIds: ['f-ada'],
+          coalesceKeys: [`qid:${FORBIDDEN}`],
+          note: 'should scrub',
+        },
+      ],
+    },
+  );
+  assert('explainWhy drops contradiction with forbidden note', !(whyPoison.contradictions || []).some((c) => /Q1701775/i.test(JSON.stringify(c))));
+  assert('explainWhy contradiction findingIds scrubbed', (whyPoison.contradictions || []).every((c) => !(c.findingIds || []).some((id) => /Q1701775/i.test(String(id)))));
+  assert('explainWhy full JSON leak=0', !JSON.stringify(whyPoison).includes(FORBIDDEN));
+  assert(
+    'explainWhy same-entity corroboration → unknown or dropped',
+    (whyPoison.corroboration || []).every((e) => String(e.relationship).toLowerCase() !== 'same-entity'),
+  );
+}
+
 console.log(`\n--- evidence engine (Checkpoint C) ---\npassed=${passed} failed=${failed}`);
 process.exit(failed ? 1 : 0);

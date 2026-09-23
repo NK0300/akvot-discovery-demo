@@ -11,6 +11,7 @@ import {
   BUDGET_EXHAUSTED,
 } from './budget.js';
 import { FAMILY_TO_PROVIDER } from './queryPlan.js';
+import { selectFetchablePlanUrlTargets } from './security.js';
 import { candidateSkipReason, CANDIDATE_FAMILY_IDS } from './candidateFamilies.js';
 import { normalizeRawHit } from './store.js';
 import {
@@ -188,6 +189,7 @@ export async function executeFamilyCall({
   budgetMs,
   signal,
   ledger,
+  plan,
 }) {
   if (!ledger._seenProviders) ledger._seenProviders = new Set();
   const isNew = !ledger._seenProviders.has(providerId);
@@ -217,13 +219,32 @@ export async function executeFamilyCall({
 
   const t0 = Date.now();
   try {
+    // Checkpoint F: for web_origin, inject fail-closed plan urlTargets into provider hints
+    let hints = session.hints && typeof session.hints === 'object' ? { ...session.hints } : {};
+    if (familyId === 'web_origin' && plan && typeof plan === 'object') {
+      const gate = selectFetchablePlanUrlTargets(plan);
+      hints = {
+        ...hints,
+        queryPlan: plan,
+        planUrlTargets: Array.isArray(plan.urlTargets) ? plan.urlTargets : hints.planUrlTargets,
+        urlTargets: Array.isArray(plan.urlTargets) ? plan.urlTargets : hints.urlTargets,
+      };
+      if (gate.poison || gate.failClosed) {
+        // Fail-closed: zero plan urls; provider may still resolve a safe seed alone
+        hints.webOriginUrls = [];
+        hints.oneHopUrls = [];
+        hints.urls = [];
+      } else {
+        hints.webOriginUrls = [...(gate.urls || [])];
+      }
+    }
     const batch = await provider.search(
       {
         q: query || session.seed,
         sessionId: session.sessionId,
         budgetMs,
         locale: session.locale,
-        hints: session.hints,
+        hints,
       },
       { signal },
     );
@@ -426,6 +447,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       budgetMs,
       signal: opts.signal,
       ledger,
+      plan,
     });
     journal.push(result);
     providerStates[result.providerId] = result.status;

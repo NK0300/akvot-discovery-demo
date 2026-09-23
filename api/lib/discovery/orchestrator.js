@@ -10,6 +10,10 @@ import {
   looksLikeUrlOrHostname,
 } from './webOrigin.js';
 import {
+  assertSafePublicHttpsUrl,
+  selectFetchablePlanUrlTargets,
+} from './security.js';
+import {
   normalizeRawHit,
   dedupeByEvidenceFingerprint,
   coalesceBySoftEntity,
@@ -667,7 +671,24 @@ export async function runPipeline(sessionId, opts = {}) {
         // Also honor explicit hints
         const hintHop = session.hints?.webOriginUrls || session.hints?.oneHopUrls;
         if (Array.isArray(hintHop)) hopUrls.push(...hintHop.map(String));
-        const uniq = [...new Set(hopUrls)].slice(0, 3);
+        // Checkpoint F: SSRF filter hop URLs (fail-closed). F11 hold — no crawl expand.
+        // QueryPlan path already skips this block (!useQueryPlan); if a plan is still
+        // attached, poison/failClosed gates zero hops.
+        let uniq = [...new Set(hopUrls)];
+        const planForGate = session.queryPlan || session.hints?.queryPlan;
+        if (planForGate && typeof planForGate === 'object') {
+          const gate = selectFetchablePlanUrlTargets(planForGate);
+          if (gate.poison || gate.failClosed) {
+            uniq = [];
+          }
+        }
+        uniq = uniq
+          .map((u) => {
+            const check = assertSafePublicHttpsUrl(String(u));
+            return check.ok ? (check.canonical || String(u)) : null;
+          })
+          .filter(Boolean);
+        uniq = [...new Set(uniq)].slice(0, 3);
         // Skip one-hop if seed itself was already a URL/hostname (provider handled it)
         const seedIsUrl = looksLikeUrlOrHostname(session.seed);
         if (uniq.length && !seedIsUrl) {

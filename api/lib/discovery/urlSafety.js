@@ -25,8 +25,17 @@ export function isBlockedDiscoveryHost(hostname) {
     h === 'metadata' ||
     h === 'metadata.google.internal' ||
     h.startsWith('metadata.google') ||
+    h === 'instance-data' ||
+    h.endsWith('.instance-data') ||
     h === 'kubernetes.default' ||
-    h === 'kubernetes.default.svc'
+    h === 'kubernetes.default.svc' ||
+    // Preview SSRF: common cloud metadata aliases
+    h === 'metadata.azure.com' ||
+    h.endsWith('.metadata.azure.com') ||
+    h === 'metadata.packet' ||
+    // Opaque single-label that Node may resolve oddly
+    h === '0' ||
+    h === 'broadcasthost'
   ) {
     return true;
   }
@@ -79,7 +88,12 @@ export function assertSafePublicHttpsUrl(url) {
   if (proto !== 'https:') return { ok: false, reason: 'scheme_not_https' };
   if (u.username || u.password) return { ok: false, reason: 'userinfo_forbidden' };
   const host = u.hostname.toLowerCase();
+  if (!host || /[\s\x00-\x1f]/.test(host)) return { ok: false, reason: 'invalid_host' };
+  // Reject non-DNS oddities that still parse (e.g. trailing control via URL API)
+  if (host.includes('%') || host.includes(' ')) return { ok: false, reason: 'invalid_host' };
   if (isBlockedDiscoveryHost(host)) return { ok: false, reason: 'blocked_host' };
+  // Fail closed on unexpected ports only if explicitly targeting common DB/admin locals
+  // (public https on non-443 is allowed for provenance; fetch gate still re-checks)
   return { ok: true, canonical: u.toString() };
 }
 

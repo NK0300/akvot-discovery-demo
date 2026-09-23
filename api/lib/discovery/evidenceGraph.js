@@ -5,6 +5,14 @@
  * Cite: SoT 07-EVIDENCE-GRAPH · UNKNOWN-NORMATIVE · ACC-EMIT-SURFACE-MATRIX
  */
 
+import { isForbiddenQid, valueHasForbidden } from '../forbiddenIdentities.js';
+
+function graphValueForbidden(v) {
+  if (v == null) return false;
+  return valueHasForbidden(v) || isForbiddenQid(v);
+}
+
+
 /** Closed relationship vocab (emit ceiling). SAME-ENTITY forbidden on wire. */
 export const GRAPH_RELATIONSHIPS = Object.freeze([
   'same-source',
@@ -142,6 +150,7 @@ export function buildEvidenceGraph(session = {}, opts = {}) {
   });
 
   for (const f of findings.slice(0, 64)) {
+    if (graphValueForbidden(f.id) || graphValueForbidden(f.title) || graphValueForbidden(f.qid)) continue;
     const ceiling = urlAloneCeiling(f);
     const rel = ceiling || clampGraphRelationship(f.relationship, {
       hasTypedSoftRef: (f.entityRefs || []).some((r) => /^(viaf|qid|ol):/i.test(String(r))),
@@ -174,6 +183,7 @@ export function buildEvidenceGraph(session = {}, opts = {}) {
   }
 
   for (const e of evidence.slice(0, 128)) {
+    if (graphValueForbidden(e.id) || graphValueForbidden(e.url) || graphValueForbidden(e.provenanceUrl) || graphValueForbidden(e.qid)) continue;
     const ceiling = urlAloneCeiling(e);
     addNode({
       id: e.id,
@@ -258,15 +268,23 @@ export function buildEvidenceGraph(session = {}, opts = {}) {
     return r !== 'same-entity';
   });
 
-  // Drop orphan edges (endpoints not in nodes) — evidence supports may reference evidence nodes
+  // Drop orphan edges (endpoints not in nodes) — evidence supports may reference evidence nodes.
+  // Acc: never re-introduce forbidden evidence that the earlier loop skipped.
   for (const e of evidence.slice(0, 128)) {
-    if (!nodeIds.has(e.id)) {
-      addNode({
-        id: e.id,
-        kind: 'evidence',
-        planId: e.planId || planId || undefined,
-      });
+    if (!e?.id || nodeIds.has(e.id)) continue;
+    if (
+      graphValueForbidden(e.id) ||
+      graphValueForbidden(e.url) ||
+      graphValueForbidden(e.provenanceUrl) ||
+      graphValueForbidden(e.qid)
+    ) {
+      continue;
     }
+    addNode({
+      id: e.id,
+      kind: 'evidence',
+      planId: e.planId || planId || undefined,
+    });
   }
   const finalEdges = safeEdges.filter((e) => {
     const from = e.from ?? e.source;
@@ -304,7 +322,19 @@ export function scrubGraphForEmit(graph) {
           })
         : undefined,
     }))
-    .filter((n) => n.id);
+    .filter((n) => {
+      if (!n?.id) return false;
+      if (
+        graphValueForbidden(n.id) ||
+        graphValueForbidden(n.qid) ||
+        graphValueForbidden(n.label) ||
+        graphValueForbidden(n.title) ||
+        graphValueForbidden(n.signalSummary)
+      ) {
+        return false;
+      }
+      return true;
+    });
   const nodeIds = new Set(nodes.map((n) => n.id));
   const edges = (graph.edges || [])
     .map((e) => {
@@ -316,6 +346,15 @@ export function scrubGraphForEmit(graph) {
       if (rel === 'same-entity') return null;
       const from = e.from ?? e.source;
       const to = e.to ?? e.target;
+      if (
+        graphValueForbidden(from) ||
+        graphValueForbidden(to) ||
+        graphValueForbidden(e?.id) ||
+        graphValueForbidden(e?.signalSummary) ||
+        graphValueForbidden(e?.label)
+      ) {
+        return null;
+      }
       if (!nodeIds.has(from) || !nodeIds.has(to)) return null;
       return {
         id: e.id,

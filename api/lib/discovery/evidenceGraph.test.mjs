@@ -12,6 +12,7 @@ import {
   FORBIDDEN_GRAPH_RELATIONSHIPS,
 } from './evidenceGraph.js';
 import { sanitizeDiscoveryPayload } from './emit.js';
+import { FORBIDDEN_IDENTITY_QIDS } from '../forbiddenIdentities.js';
 
 let passed = 0;
 function ok(name, cond) {
@@ -140,5 +141,56 @@ ok(
   !snap.findings?.length ||
     snap.findings.every((f) => String(f.relationship || '').toLowerCase() !== 'same-entity'),
 );
+
+
+// --- LOCAL-WAVE-ACC: scrubGraphForEmit must Acc-strip (prefer drop over wrong identity) ---
+const FORBIDDEN = FORBIDDEN_IDENTITY_QIDS[0];
+
+const poisonGraph = {
+  nodes: [
+    { id: 'seed:s-acc', kind: 'seed' },
+    { id: 'f-ok', kind: 'finding' },
+    { id: `f-${FORBIDDEN}`, kind: 'finding', label: 'bait' },
+    { id: 'e-ok', kind: 'evidence' },
+  ],
+  edges: [
+    {
+      id: 'edge-bait',
+      from: 'f-ok',
+      to: `f-${FORBIDDEN}`,
+      relationship: 'related-entity',
+      signalSummary: `mentions ${FORBIDDEN}`,
+    },
+    {
+      id: 'edge-ok',
+      from: 'f-ok',
+      to: 'e-ok',
+      relationship: 'supports',
+      planId: 'qp-1',
+    },
+  ],
+  meta: { sameEntityEmitted: 1 },
+};
+const accScrubbed = scrubGraphForEmit(poisonGraph);
+ok('T-ACC-scrubGraph strips forbidden node ids', !(accScrubbed.nodes || []).some((n) => String(n.id).includes(FORBIDDEN)));
+ok('T-ACC-scrubGraph strips forbidden edges', !(accScrubbed.edges || []).some((e) => JSON.stringify(e).includes(FORBIDDEN)));
+ok('T-ACC-scrubGraph keeps safe nodes', (accScrubbed.nodes || []).some((n) => n.id === 'f-ok'));
+ok('T-ACC-scrubGraph leak=0', !JSON.stringify(accScrubbed).includes(FORBIDDEN));
+ok('T-ACC-scrubGraph sameEntityEmitted 0', (accScrubbed.meta?.sameEntityEmitted ?? 0) === 0);
+
+const builtPoison = buildEvidenceGraph({
+  sessionId: 'acc-build',
+  findings: [
+    { id: 'f-ok', title: 'Ada', evidenceIds: ['e-ok'] },
+    { id: `f-${FORBIDDEN}`, title: 'Poison', evidenceIds: ['e-bad'] },
+  ],
+  evidence: [
+    { id: 'e-ok', url: 'https://example.com/ok' },
+    { id: 'e-bad', url: `https://www.wikidata.org/wiki/${FORBIDDEN}` },
+  ],
+});
+ok('T-ACC-build skips forbidden finding node', !(builtPoison.nodes || []).some((n) => String(n.id).includes(FORBIDDEN)));
+ok('T-ACC-build skips forbidden evidence URL node', !(builtPoison.nodes || []).some((n) => n.id === 'e-bad'));
+ok('T-ACC-build leak=0', !JSON.stringify(builtPoison).includes(FORBIDDEN));
 
 console.log(`evidenceGraph.test.mjs: ${passed} passed`);

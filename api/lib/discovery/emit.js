@@ -197,14 +197,22 @@ function scrubContradiction(c, survivingFindingIds, strippedIds) {
     findingIds.push(sid);
   }
   if (!findingIds.length) return null;
-  return {
-    ...c,
-    findingIds,
-    domains,
-  };
+  // Allowlist only — never spread raw `c` (message/detail/qid/urls can Acc-leak before deepStrip).
+  const out = { findingIds, domains };
+  for (const key of ['type', 'kind', 'title', 'note', 'reason', 'summary']) {
+    if (c[key] != null) out[key] = c[key];
+  }
+  return out;
 }
 
 
+/**
+ * Root keys skipped by deepStripForbidden.
+ * `providers` is EXPLICITLY skipped (operational status map) — Acc deep-walk must
+ * NOT treat provider error strings as identity surfaces (no identity laundering).
+ * Mandatory pre-scrub: sanitizeDiscoveryPayload calls scrubProvidersState BEFORE
+ * deepStrip so Acc bait / credentials never emit raw.
+ */
 const DEEP_SKIP_KEYS = new Set([
   'store',
   'forbiddenIdentitiesVersion',
@@ -218,7 +226,11 @@ const DEEP_SKIP_KEYS = new Set([
   'version',
   'eventCursor',
   'evidenceEngineVersion',
+  'providers', // explicit DEEP_SKIP — scrub via scrubProvidersState only
 ]);
+
+/** Frozen list for tests / docs — do not mutate. */
+export const EMIT_DEEP_SKIP_KEYS = Object.freeze([...DEEP_SKIP_KEYS]);
 
 /**
  * Final nested sweep: forbidden QIDs cannot survive in any leftover surface
@@ -626,4 +638,5 @@ export default {
   scrubPlanChunk,
   scrubGraphChunk,
   scrubErrorChunk,
+  EMIT_DEEP_SKIP_KEYS,
 };

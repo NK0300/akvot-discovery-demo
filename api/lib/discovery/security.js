@@ -8,7 +8,7 @@
 import { assertSafePublicHttpsUrl, isBlockedDiscoveryHost } from './urlSafety.js';
 import { isForbiddenQid, extractQid, FORBIDDEN_IDENTITIES_VERSION } from '../forbiddenIdentities.js';
 
-export const SECURITY_MODULE_VERSION = '2026-09-22.security-f1';
+export const SECURITY_MODULE_VERSION = '2026-09-23.security-f-wave';
 
 /** Credential / secret shaped patterns (emit + logs). */
 const CREDENTIAL_RE =
@@ -225,6 +225,14 @@ export function assertPlanUrlTargetsSafe(plan) {
  */
 export function scrubProvidersState(providers) {
   if (providers == null) return providers;
+  const scrubKey = (k) => {
+    const s = String(k);
+    // Never emit Acc-forbidden QID as a providers map key
+    if (isForbiddenQid(s) || (extractQid(s) && isForbiddenQid(extractQid(s)))) {
+      return '[REDACTED_QID]';
+    }
+    return redactSensitiveText(s, { maxLen: 64 }) || s;
+  };
   const scrubVal = (v) => {
     if (v == null) return v;
     if (typeof v === 'string') return redactSensitiveText(v, { maxLen: 120 });
@@ -232,19 +240,106 @@ export function scrubProvidersState(providers) {
     if (Array.isArray(v)) return v.map(scrubVal);
     const out = {};
     for (const [k, val] of Object.entries(v)) {
-      if (/^(error|message|msg|reason|detail)$/i.test(k)) {
-        out[k] = redactSensitiveText(val, { maxLen: 160 });
+      const safeKey = scrubKey(k);
+      if (/^(error|message|msg|reason|detail|qid|entityRef|entityRefs)$/i.test(k)) {
+        out[safeKey] =
+          typeof val === 'string' || typeof val === 'number'
+            ? redactSensitiveText(val, { maxLen: 160 })
+            : scrubVal(val);
       } else if (typeof val === 'string') {
-        out[k] = redactSensitiveText(val, { maxLen: 120 });
+        out[safeKey] = redactSensitiveText(val, { maxLen: 120 });
       } else if (val && typeof val === 'object') {
-        out[k] = scrubVal(val);
+        out[safeKey] = scrubVal(val);
       } else {
-        out[k] = val;
+        out[safeKey] = val;
       }
     }
     return out;
   };
+  // Keep providers key present (caller responsibility); never drop to undefined here.
   return scrubVal(providers);
+}
+
+
+
+/**
+ * Fail-closed fetch allow-list from QueryPlan.urlTargets.
+ * ONLY returns URLs that pass assertSafePublicHttpsUrl right now.
+ * Declared safety=allowed that fails re-check is DROPPED (poison defense).
+ * Never returns private/metadata/userinfo/http/raw-IP.
+ * Prefer this over plan.safety labels at fetch time.
+ * @param {object} plan
+ * @returns {{ ok: boolean, urls: string[], blocked: object[], poison: boolean, reasons: string[] }}
+ */
+export function selectFetchablePlanUrlTargets(plan) {
+  const boundary = assertPlanUrlTargetsSafe(plan);
+  const urls = [];
+  const blocked = [];
+  const reasons = [...(boundary.reasons || [])];
+  for (const t of boundary.allowed || []) {
+    const check = assertSafePublicHttpsUrl(t.url);
+    if (!check.ok) {
+      blocked.push({ url: String(t.url).slice(0, 120), reason: check.reason || 'recheck_failed' });
+      reasons.push(`FETCH_GATE_DROP:${check.reason}:${String(t.url).slice(0, 60)}`);
+      continue;
+    }
+    urls.push(check.canonical || t.url);
+  }
+  for (const u of boundary.unsafe || []) {
+    blocked.push(u);
+  }
+  // Fail-closed: poison (unsafe marked allowed) → zero fetchable URLs
+  if (boundary.leakAllowedUnsafe) {
+    return {
+      ok: false,
+      urls: [],
+      blocked,
+      poison: true,
+      reasons,
+      failClosed: true,
+    };
+  }
+  return {
+    ok: true,
+    urls: [...new Set(urls)],
+    blocked,
+    poison: false,
+    reasons,
+    failClosed: false,
+  };
+}
+
+/**
+ * Simulate Preview flag-ON plan fetch gate without network.
+ * Inject plan urlTargets → assert every candidate must pass gate before "fetch".
+ * @param {object} plan
+ * @param {{ fetchFn?: (url: string) => Promise<unknown> }} [opts]
+ * @returns {Promise<{ ok: boolean, fetched: string[], blocked: object[], poison: boolean }>}
+ */
+export async function runPlanUrlTargetsFetchGate(plan, opts = {}) {
+  const gate = selectFetchablePlanUrlTargets(plan);
+  const fetched = [];
+  if (gate.poison || gate.failClosed) {
+    return { ok: false, fetched: [], blocked: gate.blocked, poison: true, reasons: gate.reasons };
+  }
+  const fetchFn = typeof opts.fetchFn === 'function' ? opts.fetchFn : async () => ({ ok: true });
+  for (const url of gate.urls) {
+    // Defense in depth: re-assert immediately before each fetch
+    const check = assertSafePublicHttpsUrl(url);
+    if (!check.ok) {
+      gate.blocked.push({ url, reason: check.reason || 'pre_fetch_reject' });
+      continue;
+    }
+    await fetchFn(check.canonical || url);
+    fetched.push(check.canonical || url);
+  }
+  return {
+    ok: true,
+    fetched,
+    blocked: gate.blocked,
+    poison: false,
+    reasons: gate.reasons,
+  };
 }
 
 export default {
@@ -256,6 +351,8 @@ export default {
   assertPayloadSize,
   containsSecurityBait,
   assertPlanUrlTargetsSafe,
+  selectFetchablePlanUrlTargets,
+  runPlanUrlTargetsFetchGate,
   scrubProvidersState,
   assertSafePublicHttpsUrl,
   isBlockedDiscoveryHost,

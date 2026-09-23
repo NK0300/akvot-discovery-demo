@@ -78,9 +78,11 @@ export {
 } from './obs.js';
 export {
   MAX_SEED_CHARS,
+  RATE_LIMIT_BACKEND,
   validateDiscoveryCreateBody,
   checkDiscoveryRateLimit,
   resetDiscoveryRateLimit,
+  getDiscoveryRateLimitInfo,
   clientKeyFromReq,
 } from './requestGuards.js';
 
@@ -198,6 +200,10 @@ export {
   withSourceTimeout,
   assertPayloadSize,
   containsSecurityBait,
+  assertPlanUrlTargetsSafe,
+  selectFetchablePlanUrlTargets,
+  runPlanUrlTargetsFetchGate,
+  scrubProvidersState,
 } from './security.js';
 export { buildStructuredLog, logDiscoveryEvent, structuredLog, recordBudgetUsage } from './obs.js';
 

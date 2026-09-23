@@ -439,5 +439,36 @@ assert('ACC-snap: fiv present', !!snapshotFields.forbiddenIdentitiesVersion);
 assert('ACC-snap: safe Q7259 kept', JSON.stringify(snapshotFields).includes('Q7259'));
 
 
+
+// --- LOCAL-WAVE-ACC: contradiction allowlist — extra fields must not Acc-leak ---
+{
+  const FORBIDDEN = 'Q1701775';
+  const allowSnap = sanitizeDiscoveryPayload({
+    findings: [
+      { id: 'f-safe', title: 'Safe', evidenceIds: ['e-safe'], entityRefs: ['qid:Q42'] },
+    ],
+    evidence: [
+      { id: 'e-safe', url: 'https://example.com/safe', provenanceUrl: 'https://example.com/safe', quote: 'ok' },
+    ],
+    contradictions: [
+      {
+        type: 'title_conflict',
+        note: 'INFORMATION≠IDENTITY',
+        findingIds: ['f-safe'],
+        domains: ['example.com'],
+        message: `also saw ${FORBIDDEN}`,
+        detail: `wd:${FORBIDDEN}`,
+        qid: FORBIDDEN,
+        urls: [`https://www.wikidata.org/wiki/${FORBIDDEN}`],
+      },
+    ],
+  });
+  assert('ACC-contradiction-allowlist: message field cannot leak', !JSON.stringify(allowSnap).includes(FORBIDDEN));
+  assert(
+    'ACC-contradiction-allowlist: no qid/message keys retained when baited',
+    !(allowSnap.contradictions || []).some((c) => c.qid || c.message || c.detail || c.urls),
+  );
+}
+
 console.log(`\n--- MEGA adversarial Acc tests ---\npassed=${passed} failed=${failed}`);
 process.exit(failed ? 1 : 0);

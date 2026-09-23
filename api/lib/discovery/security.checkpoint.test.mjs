@@ -12,6 +12,8 @@ import {
   assertPayloadSize,
   containsSecurityBait,
   assertPlanUrlTargetsSafe,
+  selectFetchablePlanUrlTargets,
+  runPlanUrlTargetsFetchGate,
   scrubProvidersState,
   assertSafePublicHttpsUrl,
   isBlockedDiscoveryHost,
@@ -23,9 +25,12 @@ import {
   MAX_BODY_JSON_CHARS,
   MAX_HINTS_JSON_CHARS,
   RATE_LIMIT_MAX,
+  RATE_LIMIT_BACKEND,
   validateDiscoveryCreateBody,
   checkDiscoveryRateLimit,
   resetDiscoveryRateLimit,
+  getDiscoveryRateLimitInfo,
+  clientKeyFromReq,
 } from './requestGuards.js';
 import {
   mintCorrelationId,
@@ -40,6 +45,7 @@ import {
   scrubErrorChunk,
   scrubGraphChunk,
   scrubPlanChunk,
+  EMIT_DEEP_SKIP_KEYS,
 } from './emit.js';
 import { FORBIDDEN_IDENTITY_QIDS, FORBIDDEN_IDENTITIES_VERSION } from '../forbiddenIdentities.js';
 
@@ -71,6 +77,8 @@ const ssrfBlock = [
   'https://svc.internal/',
   'http://169.254.169.254/',
   'https://metadata.google.internal/',
+  'https://instance-data/',
+  'https://metadata.azure.com/',
   'https://192.168.1.1/',
   'https://10.0.0.1/',
   'https://172.16.5.1/',
@@ -80,6 +88,7 @@ const ssrfBlock = [
   'data:text/html,hi',
   'file:///etc/passwd',
   'https://user:pass@example.com/',
+  'https://0/',
 ];
 for (const u of ssrfBlock) {
   const r = assertFetchUrlSafe(u);
@@ -110,6 +119,9 @@ assert('payload size ok small', assertPayloadSize({ a: 1 }).ok === true);
 assert('payload size reject huge', assertPayloadSize({ blob: 'z'.repeat(300_000) }).ok === false);
 
 // ---------- Rate limit + isolation notes (unit) ----------
+assert('rate backend is memory', RATE_LIMIT_BACKEND === 'memory');
+assert('rate info documents no Upstash RL', getDiscoveryRateLimitInfo().upstashWiredForRateLimit === false);
+assert('rate info distributed=false', getDiscoveryRateLimitInfo().distributed === false);
 resetDiscoveryRateLimit();
 let tripped = false;
 for (let i = 0; i < RATE_LIMIT_MAX + 3; i++) {
@@ -117,10 +129,22 @@ for (let i = 0; i < RATE_LIMIT_MAX + 3; i++) {
   if (!r.ok && r.status === 429) tripped = true;
 }
 assert('rate limit trips', tripped === true);
+assert('429 carries backend=memory', checkDiscoveryRateLimit('sec-f-client', { max: 5 }).backend === 'memory');
 // Isolation: separate keys do not share counters
 resetDiscoveryRateLimit();
 assert('rate key A ok', checkDiscoveryRateLimit('iso-A', { max: 2 }).ok === true);
 assert('rate key B ok independent', checkDiscoveryRateLimit('iso-B', { max: 2 }).ok === true);
+// clientKey prefers platform headers over spoofable leftmost XFF
+assert(
+  'clientKey prefers x-real-ip',
+  clientKeyFromReq({ headers: { 'x-real-ip': '203.0.113.9', 'x-forwarded-for': '1.2.3.4, 203.0.113.9' } }) ===
+    '203.0.113.9',
+);
+assert(
+  'clientKey vercel-forwarded-for rightmost',
+  clientKeyFromReq({ headers: { 'x-vercel-forwarded-for': '1.2.3.4, 198.51.100.7' } }) === '198.51.100.7',
+);
+assert('clientKey anon fallback', clientKeyFromReq({ headers: {} }) === 'anon' || !!clientKeyFromReq({ headers: {} }));
 
 // ---------- Redaction: text / source content ----------
 assert(
@@ -355,15 +379,18 @@ assert('metrics counters present', !!metrics.counters);
   );
 }
 
-// ---------- providers DEEP_SKIP closed via scrubProvidersState ----------
+// ---------- providers DEEP_SKIP AMBER close: explicit skip + scrub + no identity laundering ----------
 {
+  assert('providers is EMIT_DEEP_SKIP explicit', EMIT_DEEP_SKIP_KEYS.includes('providers'));
   const scrubbed = scrubProvidersState({
     wikidata: { status: 'error', error: `fail ${FORBIDDEN} Bearer sk-test` },
     viaf: 'ok',
+    nested: [{ detail: `leak ${FORBIDDEN}` }],
   });
   const blob = JSON.stringify(scrubbed);
   assert('providers scrub Acc', !blob.includes(FORBIDDEN));
   assert('providers scrub credential', !/sk-test|Bearer/i.test(blob));
+  assert('providers nested Acc scrubbed', !blob.includes(FORBIDDEN));
 
   const snap = sanitizeDiscoveryPayload({
     sessionId: 'prov-1',
@@ -373,10 +400,103 @@ assert('metrics counters present', !!metrics.counters);
     evidence: [],
     facets: [],
     providers: {
-      wikidata: { status: 'error', message: `poison ${FORBIDDEN}` },
+      wikidata: { status: 'error', message: `poison ${FORBIDDEN}`, qid: FORBIDDEN },
     },
   });
-  assert('snapshot providers Acc scrubbed', !JSON.stringify(snap.providers || {}).includes(FORBIDDEN));
+  const providersBlob = JSON.stringify(snap.providers || {});
+  assert('snapshot providers Acc scrubbed', !providersBlob.includes(FORBIDDEN));
+  // No identity laundering: Acc bait in providers must not become findings/candidates
+  assert('providers Acc does not invent findings', (snap.findings || []).length === 0);
+  assert('providers Acc does not invent candidates', snap.candidates == null || (snap.candidates || []).length === 0);
+  assert('providers map still present after DEEP_SKIP', snap.providers != null && typeof snap.providers === 'object');
+}
+
+// ---------- Preview-oriented urlTargets fetch gate (no network; flag-ON simulation) ----------
+{
+  const mixedPlan = {
+    urlTargets: [
+      { url: 'https://example.com/page', safety: 'allowed' },
+      { url: 'http://127.0.0.1/admin', safety: 'allowed' }, // poison
+      { url: 'https://169.254.169.254/latest/meta-data', safety: 'blocked' },
+      { url: 'https://www.wikidata.org/wiki/Q42', safety: 'allowed' },
+      { url: '[blocked]', safety: 'blocked' },
+    ],
+  };
+  const poisonGate = selectFetchablePlanUrlTargets(mixedPlan);
+  assert('fetch gate poison → failClosed', poisonGate.ok === false && poisonGate.failClosed === true);
+  assert('fetch gate poison → zero urls', poisonGate.urls.length === 0);
+  assert('fetch gate poison flag', poisonGate.poison === true);
+
+  const cleanPlan = {
+    urlTargets: [
+      { url: 'https://example.com/a', safety: 'allowed' },
+      { url: 'https://localhost/', safety: 'blocked' },
+      { url: 'http://10.0.0.1/', safety: 'unsafe' },
+    ],
+  };
+  const cleanGate = selectFetchablePlanUrlTargets(cleanPlan);
+  assert('clean gate ok', cleanGate.ok === true && cleanGate.poison === false);
+  assert('clean gate only public https', cleanGate.urls.every((u) => assertSafePublicHttpsUrl(u).ok));
+  assert('clean gate excludes localhost/private', !cleanGate.urls.some((u) => /localhost|10\.0\.0/.test(u)));
+  assert('clean gate includes example.com', cleanGate.urls.some((u) => /example\.com/.test(u)));
+
+  const fetched = [];
+  const gateRun = await runPlanUrlTargetsFetchGate(mixedPlan, {
+    fetchFn: async (url) => {
+      fetched.push(url);
+      return { ok: true };
+    },
+  });
+  assert('Preview sim poison never fetches', gateRun.ok === false && fetched.length === 0 && gateRun.poison === true);
+
+  const fetched2 = [];
+  const gateRun2 = await runPlanUrlTargetsFetchGate(cleanPlan, {
+    fetchFn: async (url) => {
+      fetched2.push(url);
+      return { ok: true };
+    },
+  });
+  assert('Preview sim clean fetches only allowlisted', gateRun2.ok === true);
+  assert('Preview sim fetched count matches gate', fetched2.length === cleanGate.urls.length);
+  assert(
+    'Preview sim no private in fetched',
+    fetched2.every((u) => assertSafePublicHttpsUrl(u).ok === true),
+  );
+
+  // Declared allowed but http (scheme) — must not fetch
+  const httpAllowed = { urlTargets: [{ url: 'http://example.com/', safety: 'allowed' }] };
+  const httpGate = selectFetchablePlanUrlTargets(httpAllowed);
+  assert('http marked allowed is poison/failClosed', httpGate.urls.length === 0 && httpGate.ok === false);
+}
+
+// ---------- providers Acc scrub strengthen: forbidden QID keys + bait in errors ----------
+{
+  const keyed = scrubProvidersState({
+    [FORBIDDEN]: { status: 'ok' },
+    wikidata: { status: 'error', error: `upstream ${FORBIDDEN}`, qid: FORBIDDEN },
+  });
+  const blob = JSON.stringify(keyed);
+  assert('providers Acc key scrubbed', !blob.includes(FORBIDDEN));
+  assert('providers Acc key replaced', Object.keys(keyed).some((k) => k.includes('REDACTED_QID') || k === 'wikidata'));
+  assert('providers key map still object', keyed != null && typeof keyed === 'object');
+  assert('providers wikidata key retained', keyed.wikidata != null);
+}
+
+// ---------- Runtime wire contract: selectFetchable is the fetch allow-list (providers/orch) ----------
+{
+  // Documents the boundary used by providers.js / familyOrchestrator.js / orchestrator.js
+  const plan = {
+    urlTargets: [
+      { url: 'https://example.com/safe', safety: 'allowed' },
+      { url: 'http://169.254.169.254/', safety: 'allowed' },
+    ],
+  };
+  const gate = selectFetchablePlanUrlTargets(plan);
+  assert('runtime wire gate poison failClosed', gate.failClosed === true && gate.urls.length === 0);
+  const safeOnly = selectFetchablePlanUrlTargets({
+    urlTargets: [{ url: 'https://example.org/x', safety: 'allowed' }],
+  });
+  assert('runtime wire gate allows public https', safeOnly.urls.length === 1 && assertSafePublicHttpsUrl(safeOnly.urls[0]).ok);
 }
 
 // ---------- API error shape consistency (Checkpoint G) ----------

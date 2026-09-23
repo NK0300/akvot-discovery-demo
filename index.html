@@ -912,18 +912,18 @@
     <p class="sub" id="header-sub">מקורות ציבוריים · ראיות מצוטטות · בלי ניחושים</p>
     <span class="pill" id="mode-pill">PUBLIC SOURCES · CITE-OR-DROP</span>
     <div class="mode-tabs" role="tablist" aria-label="מצב ממשק">
-      <button type="button" id="tab-entity" role="tab" aria-controls="entity-search-wrap" aria-selected="true">מצב ישות</button>
-      <button type="button" id="tab-discovery" role="tab" aria-controls="discovery-search-wrap" aria-selected="false">מצב גילוי</button>
+      <button type="button" id="tab-entity" role="tab" aria-controls="entity-search-wrap" aria-selected="true" tabindex="0">מצב ישות</button>
+      <button type="button" id="tab-discovery" role="tab" aria-controls="discovery-search-wrap" aria-selected="false" tabindex="-1">מצב גילוי</button>
     </div>
   </div>
 </header>
 <main id="main" role="main">
   <div class="banner banner-entity">חיפוש ישות ממקורות פתוחים. <strong>לא ממציאים</strong> עובדות או דיוקנאות — רק מה שיש במקור ציבורי מאומת.</div>
   <div class="banner banner-discovery">גילוי ציבורי · ממצאים + ראיות + קשרים סביב seed · <strong>INFORMATION ≠ IDENTITY</strong> · UNKNOWN ≠ FALSE · CANDIDATE ≠ FACT · אין דיוקן / תיק זהות.</div>
-  <div class="search-wrap entity-home" id="entity-search-wrap" role="search" aria-label="חיפוש ישות">
+  <div class="search-wrap entity-home" id="entity-search-wrap" role="tabpanel" aria-labelledby="tab-entity" aria-label="חיפוש ישות">
     <h2 class="entity-home-title">מי או מה לחפש?</h2>
     <p class="entity-home-lead">הזינו שם (עברית או English). הוסיפו הקשר רק אם השם נפוץ — טלפון/אימייל ציבוריים משמשים כטריגר לחיפוש דפים פומביים בלבד.</p>
-    <div class="entity-primary">
+    <div class="entity-primary" role="search" aria-label="חיפוש ישות">
       <label for="q" class="visually-hidden">שם</label>
       <input id="q" placeholder="שם מלא / Full name…" autocomplete="off" autofocus/>
       <button id="go" type="button">חפש</button>
@@ -961,7 +961,7 @@
     </div>
   </div>
 
-  <div id="discovery-search-wrap" class="search-wrap" hidden>
+  <div id="discovery-search-wrap" class="search-wrap" role="tabpanel" aria-labelledby="tab-discovery" hidden>
     <div class="disc-home" role="search" aria-label="גילוי ציבורי">
       <p class="disc-home-kicker">AKVOT DISCOVERY · PUBLIC WEB</p>
       <h2 class="disc-home-title">מה תרצו לגלות במקורות ציבוריים?</h2>
@@ -973,7 +973,7 @@
         <button type="button" class="disc-seed-type" data-seed-kind="url" aria-pressed="false">URL</button>
         <button type="button" class="disc-seed-type" data-seed-kind="other" aria-pressed="false">אחר</button>
       </div>
-      <label for="disc-q" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Seed לגילוי</label>
+      <label for="disc-q" class="visually-hidden">Seed לגילוי</label>
       <div class="disc-q-row">
         <input id="disc-q" placeholder="לדוגמה: example.org · OpenAI · https://… · שם ציבורי…" autocomplete="off" aria-describedby="disc-seed-help"/>
         <button id="disc-go" type="button">גלה</button>
@@ -986,7 +986,7 @@
         <button type="button" class="disc-example" data-example="OpenAI" data-kind="organization">OpenAI</button>
         <button type="button" class="disc-example" data-example="https://www.iana.org/domains/reserved" data-kind="url">URL ציבורי</button>
       </div>
-      <button type="button" class="disc-hints-toggle" id="disc-hints-toggle" aria-expanded="false">הוסף הקשר (אופציונלי)</button>
+      <button type="button" class="disc-hints-toggle" id="disc-hints-toggle" aria-expanded="false" aria-controls="disc-hints">הוסף הקשר (אופציונלי)</button>
       <div class="disc-hints" id="disc-hints" hidden>
         <div class="field"><label for="disc-hint-org">ארגון</label><input id="disc-hint-org" placeholder="ארגון / חברה"/></div>
         <div class="field"><label for="disc-hint-city">עיר</label><input id="disc-hint-city" placeholder="עיר / אזור"/></div>

@@ -57,7 +57,7 @@ export function isForbiddenQid(q) {
 }
 
 /** @param {unknown} val */
-function valueHasForbidden(val) {
+export function valueHasForbidden(val) {
   if (val == null) return false;
   const matches = String(val).match(/\bQ\d+\b/gi);
   if (!matches) return false;
@@ -253,6 +253,7 @@ export default {
   normalizeQid,
   extractQid,
   isForbiddenQid,
+  valueHasForbidden,
   extractPayloadQids,
   payloadContainsForbidden,
   stripForbiddenFromPayload,
