@@ -902,3 +902,27 @@
 - Modules: policy.js · universalSeed.js · missionMemory.js · frontier.js
 - No Core/C1/Treatment · flags untouched · **NO PROMOTE**
 - Server: Step2 Policy+Select/Execute (parallel) · nightLoop unify = HOLD
+
+## QA · BIG BUILD Wave 1 local truth/mission matrix · 2026-09-24 20:00 IDT
+
+| Ref | Time (IDT) | Action |
+|---|---|---|
+| QA-W1-LOCAL-01 | 20:00 | Ran `npm test`: 26/26 chained stages PASS, exit 0; adversarial/truth/security/regression chain observed zero failed counters |
+| QA-W1-LOCAL-02 | 20:00 | Ran sourceFamily 33/0, Night/loopSpine 67/0, GW 66/0, DDG 78/0; ran Wave1 policy/seed/frontier/mission 9/0 |
+| QA-W1-LOCAL-03 | 20:00 | Wrote `MD-WAVE/QA-WAVE1-TRUTH-MISSION-MATRIX-בודק-2026-09-24.md`: L4 draft, Preview HOLD, PASS/PARTIAL/FAIL gates, no invented Preview result, no promote |
+
+**QA room state:** local KEEP/IMPROVE; standby for Chief-authorized Preview; Wave 1 product NOT DONE; אין promote.
+
+---
+
+## 286 · BIG BUILD Wave1 · Acc honesty locks (דיוק) · 2026-09-24 ~19:57 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 286 | ~19:57 | Acc Wave1 honesty locks LANDED · inspect Policy/Seed/Frontier/Mission/Registry · NO PROMOTE |
+
+### Action 286 — Acc Wave1 honesty locks
+- **Who:** דיוק (Accuracy)
+- **What:** INSPECT→DESIGN docs pack against `@9155aa1` Arch contracts + Registry SoT `@7647f51`. Explicit MUST locks (UNKNOWN preserved · INFORMATION≠IDENTITY · C1 · pw=0 · SAME-from-URL=0 · cite-or-drop · no invent · CONFLICT · fail-closed). EXPECTED E1–E5 adversarial. STOP table if Server/Arch wire violates. Acc PASS ≠ Wave1 DONE.
+- **Files:** `MD-WAVE/ACC-WAVE1-HONESTY-LOCKS-דיוק-2026-09-24.md` (+ `.json`) · `ACTION-LOG-ACC-NOTES.md`
+- **Verdict:** Honesty locks **LANDED** · Acc live **WAIT** · Wave1 **NOT DONE** · **NO PROMOTE**

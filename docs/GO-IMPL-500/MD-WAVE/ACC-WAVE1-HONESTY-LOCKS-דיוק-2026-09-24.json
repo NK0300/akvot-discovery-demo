@@ -1,0 +1,141 @@
+{
+  "id": "ACC-WAVE1-HONESTY-LOCKS",
+  "stamp": "2026-09-24T19:56:35+03:00",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "BIG BUILD Wave1 Acc honesty locks — prevent false identity / weak-evidence promotion",
+  "mode": "INSPECT_DESIGN_DOCS",
+  "baseline": {
+    "registrySoT": "7647f51",
+    "archContracts": "9155aa1",
+    "archModules": [
+      "api/lib/discovery/policy.js",
+      "api/lib/discovery/universalSeed.js",
+      "api/lib/discovery/frontier.js",
+      "api/lib/discovery/missionMemory.js"
+    ]
+  },
+  "notMeasured": [
+    "live Preview HTTP Acc",
+    "Server Step2 orch wire (IN FLIGHT)",
+    "TREATMENT",
+    "promote",
+    "Wave1 product DONE",
+    "12-point Wave room report"
+  ],
+  "promote": false,
+  "wave1ProductDone": false,
+  "wave1Note": "Acc honesty pack LANDED ≠ Wave1 DONE · NO PROMOTE",
+  "treatmentUntouched": true,
+  "flagsDefaultOff": true,
+  "verdict": "HONESTY_LOCKS_LANDED",
+  "accLivePass": "WAIT",
+  "keepImprove": "KEEP_LOCKS",
+  "locks": {
+    "UNKNOWN_preserved": true,
+    "INFORMATION_ne_IDENTITY": true,
+    "C1_url_alone_never_dossier": true,
+    "pw": 0,
+    "SAME_from_URL": 0,
+    "cite_or_drop": true,
+    "no_invent_candidates": true,
+    "CONFLICT_honesty": true,
+    "fail_closed": true,
+    "CANDIDATE_ne_FACT": true,
+    "NO_PROMOTE": true
+  },
+  "mustNumeric": {
+    "pw": 0,
+    "SAME_from_URL": 0,
+    "identityClaim_from_url_alone": 0,
+    "invented_candidates_on_error": 0
+  },
+  "risksTop3": [
+    {
+      "id": "R1",
+      "title": "URL/title → identity",
+      "severity": "HIGH",
+      "owners": ["Server", "Arch"],
+      "note": "Seed urls / Frontier URL keys / evaluateBatch URL admit / Mission frontierDigest must never mint SAME or dossier"
+    },
+    {
+      "id": "R2",
+      "title": "Weak evidence → SAME/dossier",
+      "severity": "HIGH",
+      "owners": ["Server", "Arch"],
+      "note": "gulfnews-class soft-wrong and untrusted_web must stay UNKNOWN · identityClaim=false"
+    },
+    {
+      "id": "R3",
+      "title": "UNKNOWN collapsed to FALSE/no-match",
+      "severity": "HIGH",
+      "owners": ["Server", "Arch"],
+      "note": "empty/error/opensearch_error → gap · cite-or-drop · no invent candidates"
+    }
+  ],
+  "risksAll": ["R1", "R2", "R3", "R4_CONFLICT_forced_merge", "R5_frontier_score_identity", "R6_seedHash_as_person_id", "R7_independence_inflation", "R8_dual_orch_Acc_drift"],
+  "stopConditions": [
+    "C1 URL-alone identityClaim=true or dossier or SAME-ENTITY",
+    "SAME-from-URL > 0",
+    "pw > 0 (Q1701775 class)",
+    "UNKNOWN collapsed to FALSE or invented candidates on empty/error",
+    "CONFLICT forced merge without honesty",
+    "soft-wrong promoted to identityClaim/SAME",
+    "Mission Memory becomes dossier / cross-mission SAME",
+    "silent flag enable or F11 candidate HTTP",
+    "Core/Treatment/C1 unlock/promote in Wave1 Policy orch",
+    "Acc invent Preview / padded PASS"
+  ],
+  "expectedAdversarial": [
+    {
+      "id": "E1",
+      "name": "common_names_Cohen_Smith",
+      "must_not": ["forced_merge", "invent_on_opensearch_error"],
+      "identityClaim": false
+    },
+    {
+      "id": "E2",
+      "name": "C1_url_alone_w3org",
+      "must_have": ["UNKNOWN", "identityClaim=false", "url_alone_ceiling"],
+      "must_not": ["dossier", "SAME_from_URL"],
+      "SAME_from_URL": 0
+    },
+    {
+      "id": "E3",
+      "name": "soft_wrong_gulfnews_watch",
+      "may_surface": true,
+      "relationship": "unknown",
+      "identityClaim": false,
+      "SAME_from_URL": 0
+    },
+    {
+      "id": "E4",
+      "name": "mission_memory_not_dossier",
+      "must_not": ["cross_mission_SAME", "raw_seed_on_emit", "people_DB"]
+    },
+    {
+      "id": "E5",
+      "name": "frontier_evaluateOk_only",
+      "must_have": ["evaluateOk===true_to_add"],
+      "must_not": ["silent_budget_expand", "score_sets_identity"]
+    }
+  ],
+  "inspectNotes": {
+    "universalSeed": "SEED≠identity · typed softRefs only · scrubUniversalSeedForEmit drops raw · seedHash soft ER only",
+    "policy": "evaluateBatch urlAlone→frontierAdds=[] · no identity assert · gateFamilyExecute fail-closed",
+    "frontier": "add requires evaluateOk===true · URL keys ≠ identity",
+    "missionMemory": "snapshot scrub · MUST NOT assert SAME across missions",
+    "registry": "untrusted_web alone never upgrades identity · productionEligible=false"
+  },
+  "recommendation": {
+    "honestyLocks": "LANDED",
+    "accLivePass": "WAIT",
+    "wave1Done": false,
+    "promote": false,
+    "next": "Re-inspect Server Step2 clean commit vs STOP table; live E1–E5 when Chief Preview declared"
+  },
+  "paths": {
+    "md": "docs/GO-IMPL-500/MD-WAVE/ACC-WAVE1-HONESTY-LOCKS-דיוק-2026-09-24.md",
+    "json": "docs/GO-IMPL-500/MD-WAVE/ACC-WAVE1-HONESTY-LOCKS-דיוק-2026-09-24.json"
+  }
+}

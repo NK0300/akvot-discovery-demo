@@ -59,3 +59,13 @@ Target: `dpl_6F9mjR76d18vYtgbcofhWceF1LP2` · `https://akvot-simple-demo-j1ds295
 **Verdict PASS** · **KEEP** · pw **0** · SAME-from-URL **0** · identityClaim **0** · primary 3/0 · wave≥2 **YES** (ABC+W3C) · gulfnews soft-wrong UNKNOWN.  
 Residuals: wo empty_enrich; optional/C1 opensearch_error fail-closed.  
 Wave 1 product **NOT DONE**. **NO PROMOTE**.
+
+## 2026-09-24 Acc BIG BUILD Wave1 honesty locks (דיוק)
+
+Shared log action **#286**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/ACC-WAVE1-HONESTY-LOCKS-דיוק-2026-09-24.md` (+ `.json`).  
+Baseline: Registry SoT `7647f51` · Arch contracts `9155aa1` (Policy · Seed · Frontier · Mission Memory).  
+**Mode:** INSPECT→DESIGN→docs · NO runtime · NO TREATMENT · **NO PROMOTE**.  
+Locks explicit: UNKNOWN preserved · INFORMATION≠IDENTITY · C1 URL-alone never dossier · pw=0 · SAME-from-URL=0 · cite-or-drop · no invent · CONFLICT honesty · fail-closed.  
+EXPECTED adversarial E1–E5 (common names · URL-alone · gulfnews soft-wrong · Mission Memory · Frontier).  
+Top risks for Server/Arch: R1 URL→identity · R2 weak→SAME/dossier · R3 UNKNOWN→FALSE.  
+Acc live PASS **WAIT** · Wave1 product **NOT DONE** · 12-point Wave report **HOLD**.
