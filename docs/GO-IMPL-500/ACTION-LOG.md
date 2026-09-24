@@ -485,3 +485,43 @@
 **Server L2 GENERAL_WEB follow-up action ids:** **154–158**  
 **Verdict:** fill.1.1 **CODE COMPLETE** · flag **OFF** · TREATMENT **untouched** · Wave1 product **NOT DONE** · **NO PROMOTE**
 
+
+### Action 270 — Arch glance fill.1.1 + exceed path
+- **When:** 2026-09-24 ~09:27 IDT
+- **Who:** ארכיטקט
+- **What:** Glanced `fcd8cb2` fill.1.1 → CONSISTENT/PASS (66/0). Next exceed if coverage PARTIAL: Adapter-2 DDG Instant Answer JSON (bounded). **NO PROMOTE**.
+- **Files:** `MD-WAVE/ARCH-GLANCE-L2-FILL-1.1-ארכיטקט-2026-09-24.md` · ACTION-LOG
+
+---
+
+## Server · UX Track C soft light-up push (שרת) · 2026-09-24 ~09:28 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 159 | 09:28 | Backend: verified Track C soft-only · recorded push `8061784` · **NO promote** · TREATMENT untouched |
+
+### Action 159 — UX WIP Track C soft push (record)
+- **When:** 2026-09-24 09:28 IDT
+- **Who:** Backend / שרת (push by שרת · WIP from ממשק)
+- **What:** Track C search URL candidates soft light-up on `origin/main` · SHA **`8061784`** (`feat(discovery): add MD-WAVE URL candidate UX evidence`). Soft-only: `discovery-ui.js` / `index.html?v=c1a1` / fixtures / ux-checkpoint-c+l4 smokes / UX pointers + ACTION-LOG-ממשק. **No `api/` Core**. Flag GENERAL_WEB stays OFF in client · C1 UNKNOWN ceiling preserved. Smokes C 19/0 · L4 20/0. **NO PROMOTE** · TREATMENT `dpl_J92G9…` untouched. Note: same SHA also carried teammate QA/Arch measure docs (race; not Server-owned — owners may supersede).
+- **Files:** `discovery-ui.js` · `index.html` · `discovery-fixtures/*` · `scripts/ux-checkpoint-c-smoke.mjs` · `scripts/ux-checkpoint-l4-smoke.mjs` · UX pointers
+- **Verdict:** UX soft **PUSHED** · ≠ promote · Wave1 product **NOT DONE**
+
+**Server UX Track C action id:** **159**
+
+---
+
+## Server · Wave 2 leverage prep (שרת) · 2026-09-24 ~09:29 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 160 | 09:29 | Backend: docs-only Wave 2 leverage prep · **HOLD CODE** · NO promote |
+
+### Action 160 — Wave 2 leverage prep (docs only)
+- **When:** 2026-09-24 09:29 IDT
+- **Who:** Backend / שרת
+- **What:** Wrote `docs/GO-IMPL-500/MD-WAVE/L3-WAVE2-LEVERAGE-PREP-שרת-2026-09-24.md` — ranked options (MW locales · WD sitelinks/P856 residual · OL/VIAF URL deepen · allowlisted-only · Arch DDG IA/ORCID evaluate). Honest Adapter-1 coverage vs gaps. **HOLD CODE** until Acc/QA on `dpl_CJPdnz…` + Arch glance fill.1.1 + Chief GO. **NO PROMOTE** · TREATMENT untouched · no adapter code.
+- **Files:** `MD-WAVE/L3-WAVE2-LEVERAGE-PREP-שרת-2026-09-24.md` · ACTION-LOG
+
+**Server Wave 2 prep action id:** **160**  
+**Verdict:** docs **PREP** · code **HOLD** · **NO PROMOTE**
