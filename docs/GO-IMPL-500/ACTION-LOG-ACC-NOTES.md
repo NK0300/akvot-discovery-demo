@@ -29,3 +29,11 @@ Target: `dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr` · `DISCOVERY_ENABLE_GENERAL_WEB=1` (
 Residuals: TBL all_dropped_ssrf_or_registry; CERN opensearch_error; John Smith extlinks_error; Ada soft-coalesce 5 urlCandidate facetHints on 1 finding (Cap≤5, no SAME); C1 URL-alone UNKNOWN.  
 Wave 1 product **NOT DONE**. **NO PROMOTE**.
 
+## 2026-09-24 Acc MD-WAVE A/E RERUN fill.1.1 GENERAL_WEB (דיוק)
+
+Shared log actions **#56–58**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/04-ACC-AE-GENERAL-WEB-FILL1.1-דיוק-2026-09-24.md` (+ `.json`, test-results mirror + raw).  
+Target: `dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15` · URL `akvot-simple-demo-htf848qo6-k-akvot.vercel.app` · `DISCOVERY_ENABLE_GENERAL_WEB=1` (deploy -e) · fix `fcd8cb2` fill.1.1 · NOT TREATMENT `dpl_J92G9…`.  
+**Verdict PASS** · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6 · GW wire total **2** (TBL + Ada) · flag ON observed.  
+**TBL residual CLOSED:** prior `all_dropped_ssrf_or_registry` → now `ok` + `https://info.cern.ch/Proposal.html` (UNKNOWN · identityClaim=false · cite WP).  
+Residuals remain: CERN/Cohen/C1 `opensearch_error`; Smith `extlinks_error`; Cohen/Smith honesty retained (no forced merge · Q1701775=0).  
+Wave 1 product **NOT DONE**. **NO PROMOTE**.

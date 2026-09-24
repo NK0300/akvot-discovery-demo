@@ -525,3 +525,30 @@
 
 **Server Wave 2 prep action id:** **160**  
 **Verdict:** docs **PREP** · code **HOLD** · **NO PROMOTE**
+
+
+---
+
+## Acc · GENERAL_WEB fill.1.1 Preview A/E RERUN (דיוק) · 2026-09-24 ~09:30–09:33 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 56 | 09:30 | Acc harness against fill.1.1 Preview `dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15` (vercel curl); health 200; flag ON observed |
+| 57 | 09:30–09:31 | Live Acc A/E+C1 cases (TBL, Ada, CERN, W3C URL, David Cohen, John Smith) → **PASS** 6/6 · pw0 · leak0 · SAME0 · GW=2 · **TBL residual CLOSED** |
+| 58 | 09:32–09:33 | Evidence md+json + raw mirror under MD-WAVE; ACTION-LOG Acc notes; docs commit+push (**≠ promote**) |
+
+### Action 56 — Acc fill.1.1 target lock
+- **Who:** דיוק / Acc
+- **What:** Locked measure to Chief fill.1.1 GENERAL_WEB Preview only (`fcd8cb2` http→https + OpenSearch retry). TREATMENT `dpl_J92G9…` not measured. Access via `vercel curl --deployment dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15`. Reused Acc method from `03-ACC-AE-GENERAL-WEB`.
+- **When:** 2026-09-24 09:30 IDT
+
+### Action 57 — Acc A/E live result (fill.1.1)
+- **Who:** דיוק / Acc
+- **What:** Cases A1 TBL / A2 Ada / A3 CERN / C1 W3C URL / E1 David Cohen / E2 John Smith. **Verdict PASS**. pretty-wrong Q1701775=0 · leak=0 · SAME-ENTITY-from-URL=0. **TBL:** `general_web_search=ok` · ≥1 `url_candidate` `https://info.cern.ch/Proposal.html` (UNKNOWN · identityClaim=false · cite WP) — closes prior PARTIAL SSRF-drop residual. Ada GW Wolfram blog. Cap ≤5 · no SERP HTML. OpenSearch residuals remain on CERN/Cohen/C1; Smith `extlinks_error`; Cohen/Smith multi-candidate honesty retained.
+- **Verdict:** **PASS** Acc A/E GENERAL_WEB fill.1.1 · TBL residual **CLOSED** · Wave 1 product **NOT DONE** · **NO PROMOTE**
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/04-ACC-AE-GENERAL-WEB-FILL1.1-דיוק-2026-09-24.md` + `.json`
+
+### Action 58 — Acc evidence + push
+- **Who:** דיוק / Acc
+- **What:** Wrote evidence + test-results mirror/raw; appended ACTION-LOG Acc notes. Commit+push docs only. Does not flip flags · does not promote · does not touch TREATMENT.
+- **When:** 2026-09-24 09:33 IDT
