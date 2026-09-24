@@ -701,6 +701,11 @@
 - **What:** Wrote `MD-WAVE/L4-NIGHT-LOOP-SPINE-HOP-A-שרת-2026-09-24.md`. Push origin/main ≠ promote. TREATMENT untouched.
 
 ### Action 166 — Night Preview deploy + smoke
+- **Preview:** `dpl_5n74RnGjRxDCvbrZW5G6fYyTy8dB` · https://akvot-simple-demo-xzc8ih0yy-k-akvot.vercel.app
+- **Smoke seed:** ABC Construction → `general_web_search=ok` · 1 `url_candidate` (gulfnews.com/…) · relationship=unknown · identityClaim=false
+- **SHA:** `5d12e4e` · Track C `discovery-ui.js?v=c1a1` · TREATMENT untouched · **NO PROMOTE**
+
+### Action 166 — Night Preview deploy + smoke (detail)
 - **Who:** Backend / שרת
 - **What:** Separate Preview deploy `-e` only (NIGHT=1 · GENERAL_WEB=1). Smoke org/name seed → url_candidate UNKNOWN through evaluate gates. DDG not required. **NO PROMOTE**.
 

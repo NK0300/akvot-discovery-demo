@@ -76,6 +76,25 @@ Track C UX remains on bundle (`discovery-ui.js?v=c1a1`).
 
 ---
 
+
+## Night Preview smoke (live)
+
+| Field | Value |
+|-------|-------|
+| Code SHA | `5d12e4e564aa78d34df070fca4f6d681ec6740e5` |
+| Night dpl | `dpl_5n74RnGjRxDCvbrZW5G6fYyTy8dB` |
+| Night URL | https://akvot-simple-demo-xzc8ih0yy-k-akvot.vercel.app |
+| Deploy env | `-e DISCOVERY_ENABLE_NIGHT=1 -e DISCOVERY_ENABLE_GENERAL_WEB=1` only (not project Preview env) |
+| Seed | `ABC Construction` |
+| Result | `providers.general_web_search=ok` · **1** `url_candidate` |
+| Candidate | `https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731` |
+| Gates | `relationship=unknown` · `identityClaim=false` · provider `general_web_search` |
+| Track C UX | `discovery-ui.js?v=c1a1` on bundle |
+| TREATMENT | untouched |
+| Promote | **NO** |
+
+Local spine journal (same seed): discover→expand→evaluate→corroborate→stop · 5 evaluate-gated candidates before Acc rank/dedupe.
+
 ## Provisional note
 
 Spine + Hop A follow Arch LOCKED contracts. Evidence below Preview deploy is filled after smoke (dpl + URL + seed).

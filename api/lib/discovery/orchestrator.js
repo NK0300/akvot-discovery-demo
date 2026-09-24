@@ -357,6 +357,7 @@ export function emitSnapshot(session) {
     budgetExhaustedReason: session.budgetExhaustedReason,
     gaps: session.gaps,
     urlDomainCandidates: session.urlDomainCandidates,
+    nightLoop: session.nightLoop,
     p856Bridge: session.p856Bridge,
     evidenceEngineVersion: session.evidenceEngineVersion,
     evidenceGroups: session.evidenceGroups,
