@@ -97,4 +97,21 @@ const goodLaunch = {
 };
 ok('validate accepts registered launch family', validateQueryPlan(goodLaunch).ok === true || !validateQueryPlan(goodLaunch).errors.some((e) => e.includes('family_unregistered')));
 
+
+// Defense-in-depth: registered launch family must be in orderedIntents
+const offIntentLaunch = {
+  ...plan,
+  launches: [
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'authority', priority: 1 },
+  ],
+};
+const offV = validateQueryPlan(offIntentLaunch);
+ok('validate rejects registered-but-off-intent launch', offV.ok === false);
+ok(
+  'validate launch_not_in_intents:authority',
+  (offV.errors || []).some((e) => e === 'launch_not_in_intents:authority'),
+);
+const intersect = launchesFromQueryPlan(offIntentLaunch);
+ok('launchesFromQueryPlan ∩ drops off-intent authority', !intersect.some((r) => r.familyId === 'authority'));
+
 console.log(`policy.queryPlan.select.test.mjs: ${passed} passed`);

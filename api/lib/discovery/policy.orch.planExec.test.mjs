@@ -189,4 +189,94 @@ const session = { sessionId: 'plan-exec-1', seed: 'Ada Lovelace', locale: 'en', 
   ok('policyObs selectLaunchCount 1', out.policyObs?.selectLaunchCount === 1);
 }
 
+
+// --- plan.launches inject registered family NOT in orderedIntents → ∩ drops it ---
+{
+  const searchLog = [];
+  const base = buildQueryPlan({ seed: 'Ada Lovelace' });
+  const intentAllow = new Set(launchesFromQueryPlan(base).map((r) => r.familyId));
+  ok('authority not in Ada intents (viaf OFF)', !intentAllow.has('authority'));
+  ok('authority is registered', !!FAMILY_TO_PROVIDER.authority);
+
+  const injected = {
+    ...base,
+    launches: [
+      {
+        intentId: 'DISCOVER_IDENTITY_REFERENCES',
+        familyId: 'encyclopedia',
+        priority: 1,
+        reason: 'in_intents',
+        query: 'Ada Lovelace',
+      },
+      {
+        intentId: 'DISCOVER_IDENTITY_REFERENCES',
+        familyId: 'authority', // registered but NOT in orderedIntents.sourceFamilies
+        priority: 2,
+        reason: 'off_intent_inject',
+        query: 'Ada Lovelace',
+      },
+    ],
+  };
+
+  const allowRows = launchesFromQueryPlan(injected);
+  ok(
+    'allow-set excludes off-intent authority',
+    !allowRows.some((r) => r.familyId === 'authority'),
+  );
+  ok(
+    'allow-set keeps in-intent encyclopedia',
+    allowRows.some((r) => r.familyId === 'encyclopedia'),
+  );
+
+  const v = validateQueryPlan(injected);
+  ok('validate rejects off-intent launch', v.ok === false);
+  ok(
+    'validate error launch_not_in_intents:authority',
+    (v.errors || []).some((e) => e === 'launch_not_in_intents:authority'),
+  );
+
+  const out = await runFamilyOrchestration(injected, session, {
+    providers: [
+      ...stubProviders(searchLog),
+      {
+        id: FAMILY_TO_PROVIDER.authority,
+        search: async () => {
+          searchLog.push('authority');
+          return { findings: [] };
+        },
+      },
+    ],
+    flags: { viaf: true },
+    policy: policyB0Default,
+  });
+  ok('off-intent authority never searched', !searchLog.includes('authority'));
+  ok(
+    'off-intent skipped not_in_plan or absent from execute',
+    !searchLog.includes('authority') &&
+      ((out.journal || []).some(
+        (j) => j.familyId === 'authority' && j.skipReason === 'not_in_plan',
+      ) ||
+        !(out.journal || []).some((j) => j.familyId === 'authority' && j.status !== 'skipped')),
+  );
+  ok('in-intent encyclopedia still searched', searchLog.includes('encyclopedia'));
+  ok(
+    'execute ⊆ intent allow-set',
+    searchLog.every((fid) => intentAllow.has(fid)),
+  );
+}
+
+// --- launches-only (no orderedIntents) ⇒ empty allow-set (fail-closed) ---
+{
+  const rows = launchesFromQueryPlan({
+    launches: [
+      {
+        intentId: 'DISCOVER_IDENTITY_REFERENCES',
+        familyId: 'encyclopedia',
+        priority: 1,
+      },
+    ],
+  });
+  ok('launches alone without intents → []', rows.length === 0);
+}
+
 console.log(`policy.orch.planExec.test.mjs: ${passed} passed`);

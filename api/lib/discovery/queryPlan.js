@@ -508,7 +508,15 @@ export function validateQueryPlan(plan) {
     errors.push('silentExpansionForbidden_required');
   }
   // Align with Policy.select: launches rows must carry registered familyIds (no invent)
+  // Defense-in-depth: each launch.familyId must also appear in orderedIntents.sourceFamilies
   if (Array.isArray(plan.launches)) {
+    const intentFamilies = new Set();
+    for (const intent of plan.orderedIntents || []) {
+      for (const f of intent.sourceFamilies || []) {
+        const id = String(f || '').trim();
+        if (id) intentFamilies.add(id);
+      }
+    }
     plan.launches.forEach((row, i) => {
       const familyId = String(row?.familyId || '').trim();
       if (!familyId) {
@@ -517,6 +525,9 @@ export function validateQueryPlan(plan) {
       }
       if (!FAMILY_TO_PROVIDER[familyId]) {
         errors.push(`family_unregistered:${familyId}`);
+      }
+      if (!intentFamilies.has(familyId)) {
+        errors.push(`launch_not_in_intents:${familyId}`);
       }
     });
   }

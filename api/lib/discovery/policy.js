@@ -58,15 +58,8 @@ export const POLICY_ACTIONS = Object.freeze(['next', 'stop']);
  * @returns {{ intentId: string, familyId: string, priority: number, reason: string, query?: string }[]}
  */
 export function launchesFromQueryPlan(plan = {}) {
-  if (Array.isArray(plan?.launches) && plan.launches.length) {
-    return plan.launches.map((row) => ({
-      intentId: String(row?.intentId || ''),
-      familyId: String(row?.familyId || ''),
-      priority: Number.isFinite(row?.priority) ? row.priority : 100,
-      reason: row?.reason || 'plan_launch',
-      query: row?.query,
-    }));
-  }
+  // Always derive intent allow-set from orderedIntents (flatten + dedupe).
+  // Fail-closed: empty/missing orderedIntents ⇒ [] (never invent from plan.launches alone).
   const out = [];
   const seen = new Set();
   const intents = Array.isArray(plan?.orderedIntents) ? plan.orderedIntents : [];
@@ -89,6 +82,21 @@ export function launchesFromQueryPlan(plan = {}) {
         query: q?.q,
       });
     }
+  }
+  if (!out.length) return [];
+
+  // Narrow ∩: plan.launches may only shrink the intent allow-set, never expand it.
+  if (Array.isArray(plan?.launches) && plan.launches.length) {
+    const allow = new Set(out.map((r) => r.familyId));
+    return plan.launches
+      .filter((row) => allow.has(String(row?.familyId || '')))
+      .map((row) => ({
+        intentId: String(row?.intentId || ''),
+        familyId: String(row?.familyId || ''),
+        priority: Number.isFinite(row?.priority) ? row.priority : 100,
+        reason: row?.reason || 'plan_launch',
+        query: row?.query,
+      }));
   }
   return out;
 }

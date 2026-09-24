@@ -146,3 +146,24 @@ In `familyOrchestrator.runFamilyOrchestration` after Policy.select:
 nightLoop → `policy.night.caps` · multi-wave LOOP inside orch · Preview · NO PROMOTE · flags default OFF · no Core/session/SSE · no new adapters
 
 **Tag:** IMPLEMENTED · Server · 2026-09-24 · **NO PROMOTE**
+
+---
+
+## Addendum · plan.launches ⊆ orderedIntents allow (defense-in-depth) · Server · 2026-09-24 21:13 IDT
+
+**Status:** **IMPLEMENTED**
+
+### Gap
+After QueryPlan→Execute allow-list (`launchesFromQueryPlan` preferred `plan.launches` wholesale when non-empty), a caller could inject a *registered* `familyId` via `plan.launches` that was **not** in any `orderedIntents[].sourceFamilies`. Both Policy.select (when fed those rows) and the orch allow-set then treated it as in-plan. `validateQueryPlan` only checked `FAMILY_TO_PROVIDER` registration, not intent membership.
+
+### Harden (fail-closed)
+1. **`launchesFromQueryPlan`:** Always derive the intent allow-set from `orderedIntents.sourceFamilies` (flatten + dedupe). If `plan.launches` is present and non-empty → return only launch rows whose `familyId` is in that allow-set (**narrow ∩**; never expand beyond intents). If `orderedIntents` empty/missing → `[]` (do not invent from `plan.launches` alone).
+2. **`validateQueryPlan`:** When `plan.launches` present, each `familyId` must appear in some `orderedIntents[].sourceFamilies` (in addition to registry check). Error: `launch_not_in_intents:<familyId>`.
+
+### Tests
+`policy.orch.planExec.test.mjs` · `policy.queryPlan.select.test.mjs` — off-intent inject · narrow subset · validate reject · launches-alone → [].
+
+### Still HOLD (unchanged)
+nightLoop → `policy.night.caps` · multi-wave LOOP · Preview · NO PROMOTE · flags default OFF · no Core/session/SSE · no new adapters
+
+**Tag:** IMPLEMENTED · Server · 2026-09-24 · **NO PROMOTE**
