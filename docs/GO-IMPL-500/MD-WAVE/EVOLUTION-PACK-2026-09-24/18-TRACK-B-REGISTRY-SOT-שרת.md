@@ -51,8 +51,8 @@ git diff — touches only:
 ## 4. OpenSearch flake (§13) — mitigation plan
 
 QA MW2: coverage 3/6 · `opensearch_error` / `EMPTY_FRONTIER`.  
-**Plan:** keep fail-closed (no invent candidates). Existing transient retry already in `generalWebSearch.js` (`attempts=2` on network/5xx).  
-**Next IMPROVE (separate if needed):** bounded backoff inside budget only — not this slice's behavior change beyond registry. Documented ownership: Server.
+**Plan:** keep fail-closed (no invent candidates). Transient retry already in `generalWebSearch.js` (`attempts=2` on network/5xx).  
+**IMPROVE landed (2026-09-24 · `gw.locale.1.3`):** bounded backoff before the single transient OpenSearch retry (`openSearchBackoffMs` · ~175–199ms, clamped to remaining GWS budget; rem≤0 → 0). Journal: `openSearchAttempts` / `openSearchRetried` / `openSearchBackoffMs`. Still fail-closed — empty findings on `opensearch_error` / timeout / abort. No new hosts · flags OFF · NO PROMOTE. Acc re-measure after deploy.
 
 ---
 

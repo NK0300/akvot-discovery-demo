@@ -8,6 +8,7 @@ import {
   gateGeneralWebHitUrl,
   tryUpgradeHttpToHttps,
   isTransientOpenSearchFailure,
+  openSearchBackoffMs,
   buildGeneralWebHit,
   GENERAL_WEB_SEARCH_VERSION,
   GENERAL_WEB_CONTRACT_VERSION,
@@ -73,7 +74,7 @@ function mockFetchFactory(extlinks) {
 }
 
 console.log('--- version / source lock ---');
-ok('gw.locale.1.2 version', GENERAL_WEB_SEARCH_VERSION === '2026-09-24.gw.locale.1.2');
+ok('gw.locale.1.3 version', GENERAL_WEB_SEARCH_VERSION === '2026-09-24.gw.locale.1.3');
 ok('stub.1 contract retained', GENERAL_WEB_CONTRACT_VERSION === '2026-09-24.stub.1');
 ok('source wp_opensearch_extlinks', GENERAL_WEB_SOURCE_ID === 'wp_opensearch_extlinks');
 
@@ -342,6 +343,8 @@ console.log('--- OpenSearch retry / error path ---');
   ok('retry then ok', r.reason === 'ok', r.reason);
   ok('retry yielded finding', r.findings.length >= 1);
   ok('meta attempts=2', (r.meta?.openSearchAttempts || r.openSearchAttempts) === 2, JSON.stringify(r.meta));
+  ok('retry applied backoff', (r.meta?.openSearchBackoffMs || 0) > 0, JSON.stringify(r.meta));
+  ok('retry flagged retried', r.meta?.openSearchRetried === true, JSON.stringify(r.meta));
 }
 {
   const r = await searchGeneralWeb(
@@ -364,6 +367,9 @@ console.log('--- OpenSearch retry / error path ---');
   ok('error partial', r.partial === true);
   ok('error empty findings', r.findings.length === 0);
   ok('attempts=2 on fail', (r.openSearchAttempts || r.meta?.openSearchAttempts) === 2, String(r.openSearchAttempts));
+  ok('fail path retried', r.openSearchRetried === true, String(r.openSearchRetried));
+  ok('fail path backoff journaled', (r.openSearchBackoffMs || 0) > 0, String(r.openSearchBackoffMs));
+  ok('fail-closed empty', r.findings.length === 0);
 }
 {
   ok(
@@ -385,6 +391,42 @@ console.log('--- OpenSearch retry / error path ---');
       'cancelled',
     ) === false,
   );
+}
+
+console.log('--- OpenSearch bounded backoff helper ---');
+ok('backoff attempt0 = 0', openSearchBackoffMs(0, 2000) === 0);
+ok('backoff rem0 = 0', openSearchBackoffMs(1, 0) === 0);
+{
+  const ms = openSearchBackoffMs(1, 2000);
+  ok('backoff in [175,199]', ms >= 175 && ms < 200, `ms=${ms}`);
+}
+{
+  const ms = openSearchBackoffMs(1, 50);
+  ok('backoff clamped to rem', ms >= 0 && ms <= 40, `ms=${ms}`);
+}
+{
+  // budget too tight for full backoff: still fail-closed, no invent
+  const r = await searchGeneralWeb(
+    { q: 'W3C', budgetMs: 80, locale: 'en' },
+    {
+      enableGeneralWebSearch: true,
+      fetchJson: async (url) => {
+        if (String(url).includes('action=opensearch')) {
+          const e = new Error('HTTP 503');
+          e.status = 503;
+          throw e;
+        }
+        return { query: { pages: {} } };
+      },
+    },
+  );
+  ok(
+    'tight budget fail-closed',
+    r.findings.length === 0 &&
+      (r.reason === 'opensearch_error' || r.reason === 'timeout' || r.reason === 'aborted'),
+    r.reason,
+  );
+  ok('tight budget no invent', Array.isArray(r.findings) && r.findings.length === 0);
 }
 
 restoreEnv();

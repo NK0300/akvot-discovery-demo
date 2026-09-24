@@ -110,8 +110,8 @@ console.log('--- ledger / stop ---');
   ok('stop on empty', stop.stop === true);
 }
 
-console.log('--- Hop A locale 1.2 ---');
-ok('version stamp', GENERAL_WEB_SEARCH_VERSION.includes('locale.1.2'));
+console.log('--- Hop A locale.1.3 ---');
+ok('version stamp', GENERAL_WEB_SEARCH_VERSION.includes('locale.1.3'));
 ok(
   'allowlist',
   JSON.stringify([...WIKI_LOCALE_ALLOWLIST].sort()) ===

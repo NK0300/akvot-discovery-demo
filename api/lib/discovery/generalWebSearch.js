@@ -20,7 +20,7 @@ import {
 
 export const GENERAL_WEB_SEARCH_PROVIDER_ID = 'general_web_search';
 /** Fill version (stub.1 contract preserved when flag OFF / empty q). */
-export const GENERAL_WEB_SEARCH_VERSION = '2026-09-24.gw.locale.1.2';
+export const GENERAL_WEB_SEARCH_VERSION = '2026-09-24.gw.locale.1.3';
 /** Locked stub contract id. */
 export const GENERAL_WEB_CONTRACT_VERSION = '2026-09-24.stub.1';
 export const GENERAL_WEB_SOURCE_ID = 'wp_opensearch_extlinks';
@@ -322,11 +322,39 @@ export function isTransientOpenSearchFailure(err, ownSignal, parentSignal, abort
   return false;
 }
 
-/**
- * @param {unknown} err
- * @param {AbortSignal} [parentSignal]
- * @param {string|null|undefined} [abortKind]
- */
+/** Backoff before the single transient OpenSearch retry (ms). Honors remaining budget. */
+export function openSearchBackoffMs(attempt, remainingBudgetMs) {
+  if (attempt < 1) return 0;
+  const rem = Math.max(0, Number(remainingBudgetMs) || 0);
+  if (rem <= 0) return 0;
+  const base = 175;
+  const jitter = 25;
+  const ms = base + Math.floor(Math.random() * jitter);
+  if (rem < ms) return Math.max(0, rem - 10);
+  return ms;
+}
+
+function sleepWithSignal(ms, signal) {
+  return new Promise((resolve, reject) => {
+    if (ms <= 0) return resolve();
+    if (signal?.aborted) {
+      const err = new Error('aborted');
+      err.name = 'AbortError';
+      return reject(err);
+    }
+    const t = setTimeout(resolve, ms);
+    const onAbort = () => {
+      clearTimeout(t);
+      const err = new Error('aborted');
+      err.name = 'AbortError';
+      reject(err);
+    };
+    if (signal) {
+      signal.addEventListener('abort', onAbort, { once: true });
+    }
+  });
+}
+
 function openSearchFailureMeta(err, parentSignal, abortKind) {
   if (parentSignal?.aborted || abortKind === 'cancelled') {
     return { reason: 'aborted', errorCode: 'cancelled' };
@@ -478,6 +506,9 @@ export async function searchGeneralWeb(req, ctx = {}) {
 
   let open;
   let openSearchAttempts = 0;
+  let openSearchBackoffAppliedMs = 0;
+  let openSearchRetried = false;
+  const startedAt = Date.now();
   try {
     let lastErr;
     for (let attempt = 0; attempt < 2; attempt++) {
@@ -509,6 +540,13 @@ export async function searchGeneralWeb(req, ctx = {}) {
           abortKind(),
         );
         if (!transient || attempt === 1) throw e;
+        const remainingBudgetMs = Math.max(0, budgetMs - (Date.now() - startedAt));
+        const backoffMs = openSearchBackoffMs(attempt + 1, remainingBudgetMs);
+        openSearchBackoffAppliedMs = backoffMs;
+        openSearchRetried = true;
+        if (backoffMs > 0) {
+          await sleepWithSignal(backoffMs, signal);
+        }
       }
     }
     if (!open && lastErr) throw lastErr;
@@ -519,6 +557,8 @@ export async function searchGeneralWeb(req, ctx = {}) {
       message: meta.message || String(e?.message || e).slice(0, 200),
       errorCode: meta.errorCode,
       openSearchAttempts,
+      openSearchRetried,
+      openSearchBackoffMs: openSearchBackoffAppliedMs,
     });
   }
 
@@ -529,12 +569,14 @@ export async function searchGeneralWeb(req, ctx = {}) {
       partial: true,
       errorCode: reason === 'aborted' ? 'cancelled' : 'timeout',
       openSearchAttempts,
+      openSearchRetried,
+      openSearchBackoffMs: openSearchBackoffAppliedMs,
     });
   }
 
   const topTitles = open.rows.slice(0, MAX_PAGE_FETCHES).map((r) => r.title);
   if (!topTitles.length) {
-    return emptyResult('empty_opensearch', { stub: false, openSearchAttempts });
+    return emptyResult('empty_opensearch', { stub: false, openSearchAttempts, openSearchRetried, openSearchBackoffMs: openSearchBackoffAppliedMs });
   }
 
   let ext;
@@ -549,6 +591,8 @@ export async function searchGeneralWeb(req, ctx = {}) {
       message: meta.message || String(e?.message || e).slice(0, 200),
       errorCode: meta.errorCode,
       openSearchAttempts,
+      openSearchRetried,
+      openSearchBackoffMs: openSearchBackoffAppliedMs,
     });
   }
 
@@ -559,6 +603,8 @@ export async function searchGeneralWeb(req, ctx = {}) {
       partial: true,
       errorCode: reason === 'aborted' ? 'cancelled' : 'timeout',
       openSearchAttempts,
+      openSearchRetried,
+      openSearchBackoffMs: openSearchBackoffAppliedMs,
     });
   }
 
@@ -630,6 +676,8 @@ export async function searchGeneralWeb(req, ctx = {}) {
       pageFetches: topTitles.length ? 1 : 0,
       openSearchCalls: openSearchAttempts,
       openSearchAttempts,
+      openSearchRetried,
+      openSearchBackoffMs: openSearchBackoffAppliedMs,
     },
     contract: {
       ...STUB_CONTRACT,
@@ -667,4 +715,5 @@ export default {
   wikiLangForLocale,
   generalWebBudgetSignal,
   isTransientOpenSearchFailure,
+  openSearchBackoffMs,
 };
