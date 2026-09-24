@@ -67,13 +67,13 @@
 | 5 | `lookup.js:891` `normNameTokens`, `:931` `titleExactish`, `:947` `softLatinClose`, `:972`, `:982`, `:1893` `tokenOverlapSafe` | **אסימטרי**: q מנורמל רק כשיש תו סמוי, title גולמי | `key` בשני הצדדים, תמיד |
 | 6 | `lookup.js:476` `decodeHtml`, `webOrigin.js:217` | מוגן (פענוח טקסט של provider, פעם אחת) | לא להחיל על seed/key פעם שנייה |
 | 7 | `lookup.js:2776` `scrubUrlField` | **חשוף** ל־double-encoding (`%2540` אחרי פענוח אחד הוא `%40`, ו־scrub של email מפספס). `decodeURIComponent` על קלט פגום זורק ונופל ל־scrub חלקי | scrub על decode-once ו־flag ל־`encoded_double`. קלט פגום מחליף את השדה ב־`''` (fail-closed) |
-| 8 | `store.js:347` `softLabel` (corroboration) | מוגן חלקית: קירילית נמחקת ולא ממופה, והניקוד נשאר (פספוס, בטוח) | `key` ואחריו softLabel. corroboration לעולם לא SAME (I5) |
+| 8 | `store.js:346` `softLabel` (corroboration) | מוגן חלקית: קירילית נמחקת ולא ממופה, והניקוד נשאר (פספוס, בטוח) | `key` ואחריו softLabel. corroboration לעולם לא SAME (I5) |
 | 9 | `sourceFamily.js:58` `DISPLAY_LABEL_DENY_RE`, deny ב־`discovery-ui.js` | **חשוף** ל־homoglyph ול־ZW | `guard` (§6) |
 | 10 | `forbiddenIdentities.js` | מוגן: השוואה על QID ASCII מה־providers | בלי שינוי. טסט: `Ｑ１７０１７７５` לא נחשב QID |
 | 11 | `requestGuards` / `createDiscoverySession` / `queryPlan` empty | מוגן ב־branch לתווים סמויים בלבד | `isBlankSeed` מ־§2 |
 | 12 | Discovery: `evidenceGraph`, `relationship`, `urlTargetBridge`, dedup ב־`familyOrchestrator` | מוגן בתכנון: המפתח הוא id/URL ולא שם | URL keys אחרי WHATWG parse |
 | 13 | `detectSeedClass` (`queryPlan.js`) | חשוף (ה־regex של person דוחה תווים סמויים, ולכן unknown. פספוס, בטוח) | `key` |
-| 14 | מפתחות cache (`lookup.js:535` `cacheGet`) | **לבדיקה**: אם המפתח raw, וריאנטים לא משתפים cache (בטוח). אם הוא מנורמל אחרת, יש סיכון לתשובה של שם אחר (לקח Q1701775) | cache על `key` ועוד fingerprint של `inputRisk` |
+| 14 | מפתחות cache (`lookup.js:3103` `cacheKeyFor`, `:535` `cacheGet`) | **לבדיקה**: אם המפתח raw, וריאנטים לא משתפים cache (בטוח). אם הוא מנורמל אחרת, יש סיכון לתשובה של שם אחר (לקח Q1701775) | cache על `key` ועוד fingerprint של `inputRisk` |
 
 ## 8. סדר מימוש (שרת)
 א. `canonicalizeInput` טהור, עם טבלת skeleton סגורה ו־inputRisk, וטסט יחידה לכל שלב בנפרד.
@@ -84,7 +84,7 @@
 כל שלב הוא commit נפרד על ה־branch. merge רק כשהכול ביחד עבר את השער.
 
 ## 9. שער
-1. **parity מלא** מול A′ (`f71dbac0…`) ו־v2′ (`49068d2c…`) על השורות הנקיות. כל שורה שזזה בגלל NFKC או casefold מוצהרת מראש ברשימה של שרת, ואין אחרות.
+1. **parity מלא** מול A′ (`QA-QUERYPLAN-GOLDEN-edf3f96.json`) ו־v2′ (`QA-SEEDCLASS-GOLDEN-v2-edf3f96`, 112 שורות) על השורות הנקיות. כל שורה שזזה בגלל NFKC או casefold מוצהרת מראש ברשימה של שרת, ואין אחרות.
 2. מטריצת QA (בודק 4ב): כל וריאנט `≤` הנקי. I2 דורש שוויון.
 3. property Acc (דיוק): I1–I5 ירוקים.
 4. לכל שורה ב־§7 יש טסט עם וריאנט אחד לפחות מכל דגל רלוונטי.
