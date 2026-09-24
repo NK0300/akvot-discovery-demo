@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Mission progressive UX · Wave1 soft · Planning→Family→Finding→Evidence→Frontier→Complete */
+/** Mission progressive UX · Wave1 soft · §22 rail + §23 Evidence Graph/Frontier paint */
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -31,7 +31,7 @@ ok('ingestMissionFields', /function ingestMissionFields\s*\(/.test(js));
 ok('serverEmitsConflict never invent', /function serverEmitsConflict\s*\(/.test(js));
 ok('conflict CSS class gated', /disc-finding-conflict/.test(js) && /disc-badge\.conflict/.test(html));
 ok('mission stages CSS 6-col', /repeat\(6,minmax\(0,1fr\)\)/.test(html));
-ok('cache-bust c1m', /discovery-ui\.js\?v=c1m/.test(html));
+ok('cache-bust c1m2', /discovery-ui\.js\?v=c1m2/.test(html));
 ok('Track C SEARCH strip kept', /QUICK READ · SEARCH URL CANDIDATES/.test(js));
 ok('client never enables GENERAL_WEB', !/DISCOVERY_ENABLE_GENERAL_WEB\s*=\s*['"]?1/.test(js));
 ok('no competing chrome id', !/id=["']mission-rail-alt["']/.test(js));
@@ -42,6 +42,18 @@ ok('derive Frontier only with data', /if \(hasFrontierData\(state\) && findingsN
 ok('SERVER map FINDINGS→FINDING', /FINDINGS:\s*'FINDING'/.test(js));
 ok('SERVER map DISCOVERY→FAMILY', /DISCOVERY:\s*'FAMILY'/.test(js));
 ok('SERVER map GRAPH→FRONTIER', /GRAPH:\s*'FRONTIER'/.test(js));
+
+// §23 Evidence Graph + Frontier progressive paint (soft · Arch orch bridge)
+ok('clampPaintRelationship fn', /function clampPaintRelationship\s*\(/.test(js));
+ok('scrubGraphForPaint fn', /function scrubGraphForPaint\s*\(/.test(js));
+ok('hasEvidenceGraphData fn', /function hasEvidenceGraphData\s*\(/.test(js));
+ok('renderEvidenceGraphReadout', /function renderEvidenceGraphReadout\s*\(/.test(js));
+ok('same-entity paint strip', /sameEntityEmitted:\s*0/.test(js) && /r !== 'same-entity'/.test(js));
+ok('urlAlone ceiling in clamp', /urlAloneCeiling/.test(js) && /urlAlone → UNKNOWN|urlAlone→UNKNOWN/.test(js));
+ok('typedRef≫url frontier order', /typedRef≫url/.test(js));
+ok('ingest evidenceGraph orch', /evidenceGraph/.test(js) && /orch-evidenceGraph/.test(js));
+ok('derive EVIDENCE via hasEvidenceGraphData', /hasEvidenceGraphData\(state\)/.test(js));
+ok('eg readout CSS', /disc-evidence-graph-readout/.test(html));
 
 console.log(`\nux-mission-stage-smoke passed=${passed} failed=${failed}`);
 if (failed) process.exit(1);

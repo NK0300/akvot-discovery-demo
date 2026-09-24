@@ -606,6 +606,16 @@
   .disc-frontier-k{color:#8eb4c9;letter-spacing:.06em;font-weight:600}
   .disc-frontier-v{color:var(--disc-ink)}
   .disc-frontier-keys{opacity:.75;word-break:break-all}
+  .disc-frontier-order{color:#8eb4c9;opacity:.9}
+  .disc-evidence-graph-readout{
+    display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:8px 0 4px;
+    padding:8px 10px;border:1px dashed rgba(155,191,122,.35);border-radius:6px;
+    background:rgba(155,191,122,.05);font-family:var(--mono);font-size:10px;color:var(--muted);
+  }
+  .disc-eg-k{color:var(--accent);letter-spacing:.06em;font-weight:600}
+  .disc-eg-v{color:var(--disc-ink)}
+  .disc-eg-ceil{color:#c9a227;border:1px solid rgba(201,162,39,.35);border-radius:999px;padding:1px 7px}
+  .disc-eg-meta{opacity:.8}
   .disc-stop-tag{max-width:100%;white-space:normal;line-height:1.35}
   .disc-stop-settled{border-color:rgba(155,191,122,.45)!important;color:var(--accent)!important}
   .disc-stop-info{border-color:rgba(201,162,39,.4)!important;color:var(--warn,#c9a227)!important}
@@ -2348,6 +2358,6 @@ if(cancelBtn) cancelBtn.onclick=()=>cancelActiveSearch();
   .disc-facet-chip[data-fkey="urlCandidate"],.disc-facet-chip.disc-facet-search{border-style:dashed}
 
 </style>
-<script src="discovery-ui.js?v=c1m1" defer></script>
+<script src="discovery-ui.js?v=c1m2" defer></script>
 </body>
 </html>

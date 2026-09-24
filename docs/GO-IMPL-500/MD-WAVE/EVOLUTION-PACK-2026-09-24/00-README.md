@@ -21,6 +21,7 @@ IMPLEMENTED | DESIGNED | EXPERIMENTAL | PROPOSED | UNKNOWN
 | 08 | Evidence Graph Design | Arch | **IMPLEMENTED**/DESIGNED |
 | 09 | Progressive UX/SSE Design · `09-PROGRESSIVE-DISCOVERY-UX-SSE-ממשק.md` | UX · ממשק | **DESIGNED** (+ Wave1 soft UI slice → §22) |
 | 22 | Mission Progressive UX · `22-MISSION-PROGRESSIVE-UX-ממשק.md` | UX · ממשק | **IMPLEMENTED** (soft UI slice · Wave1 DONE=NO) |
+| 23-UX | Evidence Graph + Frontier progressive paint · `23-UX-EVIDENCE-GRAPH-FRONTIER-ממשק.md` | UX · ממשק | **IMPLEMENTED** (soft · Arch ab17dd2 align · Wave1 DONE=NO) |
 | 10 | Observability Plan | Server | PENDING |
 | 11 | QA / Accuracy Strategy | QA / Acc | PENDING |
 | 12 | Visual Discovery Future Capability | Arch | **EXPERIMENTAL** capability-only |
@@ -54,8 +55,10 @@ PASS DESIGNED · Core growth rule confirmed · nightLoop unify = Track B only ·
 - File: `09-PROGRESSIVE-DISCOVERY-UX-SSE-ממשק.md`
 - Soft Evidence: MW2 wave≥2 soft light-up **PASS** · `UX-MW2-WAVE2-SOFT-LIGHTUP-ממשק-POINTER.md`
 - §22 Mission Progressive UX · **IMPLEMENTED** (soft slice) · Planning→Family→Finding→Evidence→Frontier→Complete · extends `LIFE_STAGES`/`renderProgressStrip`
-- Smoke: Track C **19/0** · mission-stage **25/0**
+- §23-UX Evidence Graph + Frontier paint · **IMPLEMENTED** (soft) · orch `evidenceGraph`/`frontier` progressive · same-entity=0 · urlAlone→UNKNOWN · typedRef≫url · `?v=c1m2`
+- Smoke: Track C **19/0** · mission-stage extended PASS
 - Locks: promote:false · Wave 1 DONE:NO · C1 UNKNOWN hard · Soft≠Acc
+- Align: Arch `ab17dd2` Frontier priority + Evidence Graph orch bridge (local · NO PROMOTE)
 
 ## §17 Track B FILL (2026-09-24)
 GW+DDG registry rows FILL notes LOCKED — `17-FILL-GW-DDG-REGISTRY-ROWS-ארכיטקט.md`. Migrate under key test; IMPLEMENTED only with evidence. NO PROMOTE.

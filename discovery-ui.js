@@ -503,6 +503,113 @@
     return r || 'unknown';
   }
 
+  /**
+   * Soft typed soft-ref probe — viaf|qid|ol only (paint ceiling · not identity).
+   * Aligns Arch evidenceGraph urlAloneCeiling / clampGraphRelationship.
+   */
+  function hasTypedSoftRef(nodeOrEdge) {
+    if (!nodeOrEdge || typeof nodeOrEdge !== 'object') return false;
+    if (nodeOrEdge.typedRef && /^(viaf|qid|ol):/i.test(String(nodeOrEdge.typedRef))) return true;
+    const refs = [
+      ...(Array.isArray(nodeOrEdge.entityRefs) ? nodeOrEdge.entityRefs : []),
+      ...(Array.isArray(nodeOrEdge.softRefs) ? nodeOrEdge.softRefs : []),
+      ...(Array.isArray(nodeOrEdge.coalesceKeys) ? nodeOrEdge.coalesceKeys : []),
+    ];
+    return refs.some((k) => /^(viaf|qid|ol):/i.test(String(k)));
+  }
+
+  /** URL/domain alone · frontier:url:* · web_origin without typed ref → urlAlone ceiling. */
+  function isUrlAloneNode(n) {
+    if (!n || typeof n !== 'object') return false;
+    if (n.urlAlone === true || n.urlAloneCeiling === true) return true;
+    const id = String(n.id || '');
+    if (id.startsWith('frontier:url:')) return true;
+    if (hasTypedSoftRef(n)) return false;
+    const hf = String(n.hostFamily || n.familyId || n.providerId || '').toLowerCase();
+    if (hf === 'web_origin') return true;
+    const sc = String(n.seedClass || n.kind || '').toLowerCase();
+    if (sc === 'url' || sc === 'domain' || sc === 'web_origin' || sc === 'url_candidate') return true;
+    return false;
+  }
+
+  /**
+   * Paint-only relationship clamp — never invent SAME-ENTITY.
+   * same-entity → same-reference (typed) or unknown · urlAlone SAME-* → unknown.
+   * Soft ≠ Acc · mirrors Arch clampGraphRelationship for display honesty.
+   */
+  function clampPaintRelationship(rel, ctx = {}) {
+    const raw = String(rel || 'unknown').trim();
+    const r = raw.toLowerCase().replace(/_/g, '-');
+    if (ctx.urlAlone === true || ctx.urlAloneCeiling === true) {
+      if (r.startsWith('same') || r === 'same-entity' || r === 'same-reference') return 'unknown';
+    }
+    if (r === 'same-entity' || r === 'same_entity') {
+      return ctx.hasTypedSoftRef ? 'same-reference' : 'unknown';
+    }
+    return raw || 'unknown';
+  }
+
+  /**
+   * Scrub graph for progressive paint: strip same-entity edges · clamp ceilings ·
+   * force meta.sameEntityEmitted = 0 (honesty · never invent SAME).
+   */
+  function scrubGraphForPaint(graph) {
+    if (!graph || typeof graph !== 'object') return { nodes: [], edges: [], meta: {} };
+    const nodes = Array.isArray(graph.nodes)
+      ? graph.nodes.map((n) => {
+          if (!n || typeof n !== 'object') return n;
+          const urlAlone = isUrlAloneNode(n);
+          const rel = clampPaintRelationship(n.relationship, {
+            urlAlone,
+            hasTypedSoftRef: hasTypedSoftRef(n),
+          });
+          return urlAlone || rel !== n.relationship
+            ? { ...n, relationship: rel, ...(urlAlone ? { urlAlone: true } : {}) }
+            : n;
+        })
+      : [];
+    const byId = new Map(nodes.filter((n) => n && n.id != null).map((n) => [String(n.id), n]));
+    const edges = (Array.isArray(graph.edges) ? graph.edges : [])
+      .filter((e) => {
+        if (!e) return false;
+        const r = String(e.relationship || e.kind || '').toLowerCase().replace(/_/g, '-');
+        return r !== 'same-entity' && r !== 'same_entity';
+      })
+      .map((e, i) => {
+        const from = e.from != null ? e.from : e.source;
+        const to = e.to != null ? e.to : e.target;
+        const fromN = byId.get(String(from));
+        const toN = byId.get(String(to));
+        const urlAlone =
+          e.urlAlone === true ||
+          isUrlAloneNode(fromN) ||
+          isUrlAloneNode(toN) ||
+          (String(from || '').startsWith('frontier:url:') || String(to || '').startsWith('frontier:url:'));
+        const typed =
+          hasTypedSoftRef(e) || hasTypedSoftRef(fromN) || hasTypedSoftRef(toN);
+        const rel = clampPaintRelationship(e.relationship || e.kind || 'unknown', {
+          urlAlone,
+          hasTypedSoftRef: typed,
+        });
+        return {
+          ...e,
+          id: e.id != null ? e.id : `e-${from || i}-${to || i}`,
+          from,
+          to,
+          relationship: rel,
+          ...(urlAlone ? { urlAlone: true } : {}),
+        };
+      });
+    const meta = {
+      ...(graph.meta && typeof graph.meta === 'object' ? graph.meta : {}),
+      sameEntityEmitted: 0,
+      paintScrubbed: true,
+      edgeCount: edges.length,
+      nodeCount: nodes.length,
+    };
+    return { nodes, edges, meta };
+  }
+
   function hostnameOf(u) {
     const href = safeUrl(u);
     if (!href) return '';
@@ -846,14 +953,20 @@
     return true;
   }
 
-  /** Merge parsed graph chunk — soft panel; marks graphFromServer. */
+  /** Merge parsed graph chunk — soft panel; marks graphFromServer; scrub same-entity. */
   function applyParsedGraph(parsed, meta = {}) {
     if (!parsed) return false;
+    const scrubbed = scrubGraphForPaint(parsed);
     const prev = discState.graph || { nodes: [], edges: [] };
     discState.graph = {
-      nodes: mergeById(prev.nodes || [], parsed.nodes || []),
-      edges: mergeById(prev.edges || [], parsed.edges || []),
-      meta: { ...(prev.meta || {}), ...(parsed.meta || {}) },
+      nodes: mergeById(prev.nodes || [], scrubbed.nodes || []),
+      edges: mergeById(prev.edges || [], scrubbed.edges || []),
+      meta: {
+        ...(prev.meta || {}),
+        ...(scrubbed.meta || {}),
+        sameEntityEmitted: 0,
+        ...(meta.source ? { ingestSource: meta.source } : {}),
+      },
     };
     discState.graphFromServer = true;
     if (meta.source) discState.stageSource = meta.source;
@@ -877,6 +990,34 @@
     if (nl && typeof nl === 'object' && nl.frontier && typeof nl.frontier === 'object') {
       if (typeof nl.frontier.size === 'number' && nl.frontier.size > 0) return true;
       if (Array.isArray(nl.frontier.items) && nl.frontier.items.length > 0) return true;
+    }
+    // Orch evidenceGraph may carry frontier:* nodes without a separate frontier blob
+    const g = state.graph;
+    if (g && typeof g === 'object') {
+      if (typeof g.meta?.frontierSize === 'number' && g.meta.frontierSize > 0) return true;
+      if ((g.nodes || []).some((n) => n && (n.kind === 'frontier' || String(n.id || '').startsWith('frontier:')))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Soft Evidence Graph presence — orch evidenceGraph / SSE graph / scrubbed panel.
+   * Degrade silently when absent · never invent nodes.
+   */
+  function hasEvidenceGraphData(state) {
+    if (!state || typeof state !== 'object') return false;
+    const g = state.graph;
+    if (!g || typeof g !== 'object') return false;
+    const nodesN = (g.nodes || []).length;
+    const edgesN = (g.edges || []).length;
+    if (state.graphFromServer && (nodesN > 0 || edgesN > 0)) return true;
+    const meta = g.meta || {};
+    if (meta.source === 'orch-evidenceGraph' || meta.ingestSource === 'orch-evidenceGraph') return true;
+    if (typeof meta.frontierDerivedEdges === 'number') return true;
+    if (meta.sameEntityEmitted === 0 && (typeof meta.edgeCount === 'number' || typeof meta.nodeCount === 'number') && (nodesN > 0 || edgesN > 0)) {
+      return true;
     }
     return false;
   }
@@ -990,6 +1131,32 @@
       (nl && Array.isArray(nl.hopJournal) && nl.hopJournal) ||
       null;
     if (hj) target.hopJournal = hj;
+    // Orch Record bridge · evidenceGraph when present (Arch ab17dd2) · scrub SAME-ENTITY
+    const eg =
+      payload.evidenceGraph ||
+      (payload.session && payload.session.evidenceGraph) ||
+      (payload.orch && payload.orch.evidenceGraph) ||
+      null;
+    if (eg && typeof eg === 'object' && (Array.isArray(eg.nodes) || Array.isArray(eg.edges))) {
+      const scrubbed = scrubGraphForPaint({
+        nodes: Array.isArray(eg.nodes) ? eg.nodes : [],
+        edges: Array.isArray(eg.edges) ? eg.edges : [],
+        meta: eg.meta && typeof eg.meta === 'object' ? eg.meta : {},
+      });
+      const prev = target.graph || { nodes: [], edges: [] };
+      target.graph = {
+        nodes: mergeById(prev.nodes || [], scrubbed.nodes || []),
+        edges: mergeById(prev.edges || [], scrubbed.edges || []),
+        meta: {
+          ...(prev.meta || {}),
+          ...(scrubbed.meta || {}),
+          sameEntityEmitted: 0,
+          source: 'orch-evidenceGraph',
+          ingestSource: 'orch-evidenceGraph',
+        },
+      };
+      target.graphFromServer = true;
+    }
     return target;
   }
 
@@ -1026,7 +1193,7 @@
       (Array.isArray(planFamilies) && planFamilies.length > 0);
     if (st === 'reconnecting') return state.lifeStage || 'FAMILY';
     if (hasFrontierData(state) && findingsN > 0) return 'FRONTIER';
-    if (evidenceN > 0 || edgesN > 0) return 'EVIDENCE';
+    if (evidenceN > 0 || edgesN > 0 || hasEvidenceGraphData(state)) return 'EVIDENCE';
     if (findingsN > 0) return 'FINDING';
     if (anyFamily) return 'FAMILY';
     if (state.planSseSeen || state.queryPlan) return 'PLANNING';
@@ -1034,31 +1201,74 @@
     return 'PLANNING';
   }
 
-  /** Soft Frontier readout — only when data present · Soft ≠ Acc. */
+  /** Soft Frontier readout — only when data present · Soft ≠ Acc · typedRef≫url order. */
   function renderFrontierReadout() {
     if (!hasFrontierData(discState)) return '';
     const fr = discState.frontier || (discState.nightLoop && discState.nightLoop.frontier) || {};
     const mm = discState.missionMemory || {};
+    const items = Array.isArray(fr.items) ? fr.items : [];
     const size =
       typeof fr.size === 'number'
         ? fr.size
-        : Array.isArray(fr.items)
-          ? fr.items.length
+        : items.length
+          ? items.length
           : Array.isArray(mm.frontierDigest)
             ? mm.frontierDigest.length
-            : 0;
+            : (discState.graph && discState.graph.meta && discState.graph.meta.frontierSize) || 0;
     const keys = Array.isArray(fr.keys)
       ? fr.keys
       : Array.isArray(mm.frontierDigest)
         ? mm.frontierDigest
         : [];
+    const typedN = items.filter(
+      (i) => i && i.typedRef && /^(viaf|qid|ol):/i.test(String(i.typedRef)),
+    ).length;
+    const urlN = items.filter(
+      (i) => i && i.url && !(i.typedRef && /^(viaf|qid|ol):/i.test(String(i.typedRef))),
+    ).length;
+    const orderHint =
+      typedN || urlN
+        ? `<span class="disc-frontier-order" title="expand order · not identity">typedRef≫url · ${esc(typedN)}typed · ${esc(urlN)}url</span>`
+        : '';
     const preview = keys.slice(0, 4).map((k) => esc(String(k).slice(0, 48))).join(' · ');
     const wave = missionWave(discState);
-    return `<div class="disc-frontier-readout" role="status" data-frontier-size="${esc(size)}" title="Frontier soft · expand queue · לא זהות · Soft≠Acc">
+    return `<div class="disc-frontier-readout" role="status" data-frontier-size="${esc(size)}" data-frontier-typed="${esc(typedN)}" data-frontier-url="${esc(urlN)}" title="Frontier soft · expand queue · typedRef≫url · לא זהות · Soft≠Acc">
       <span class="disc-frontier-k">FRONTIER</span>
       <span class="disc-frontier-v">${esc(size)} בתור הרחבה${wave ? ` · wave ${esc(wave)}` : ''}</span>
+      ${orderHint}
       ${preview ? `<span class="disc-frontier-keys">${preview}</span>` : ''}
-      <span class="disc-muted">מועמדים להרחבה · לא זהות · לא Acc</span>
+      <span class="disc-muted">מועמדים להרחבה · לא זהות · לא Acc · לא SAME</span>
+    </div>`;
+  }
+
+  /**
+   * Soft Evidence Graph meta readout — progressive paint when orch/SSE graph present.
+   * sameEntityEmitted forced 0 · urlAlone ceiling reflected · Soft ≠ Acc.
+   */
+  function renderEvidenceGraphReadout() {
+    if (!hasEvidenceGraphData(discState) && !(discState.graph && discState.graph.meta && discState.graph.meta.paintScrubbed)) {
+      // Still show thin honesty chip when server graph empty-but-scrubbed with meta
+      const meta0 = (discState.graph && discState.graph.meta) || {};
+      if (!(discState.graphFromServer && (meta0.sameEntityEmitted === 0 || meta0.source === 'orch-evidenceGraph'))) {
+        return '';
+      }
+    }
+    const g = discState.graph || { nodes: [], edges: [], meta: {} };
+    const meta = g.meta || {};
+    const n = (g.nodes || []).length;
+    const e = (g.edges || []).length;
+    if (!n && !e && meta.source !== 'orch-evidenceGraph' && !discState.graphFromServer) return '';
+    const wave = meta.wave != null ? meta.wave : missionWave(discState);
+    const frSz = meta.frontierSize != null ? meta.frontierSize : '';
+    const derived = meta.frontierDerivedEdges != null ? meta.frontierDerivedEdges : '';
+    const src = meta.source || meta.ingestSource || (discState.graphFromServer ? 'server' : 'soft');
+    return `<div class="disc-evidence-graph-readout" role="status" data-graph-nodes="${esc(n)}" data-graph-edges="${esc(e)}" data-same-entity="0" title="Evidence Graph soft · same-entity=0 · urlAlone→UNKNOWN · Soft≠Acc">
+      <span class="disc-eg-k">EVIDENCE GRAPH</span>
+      <span class="disc-eg-v">${esc(n)}n · ${esc(e)}e${wave ? ` · wave ${esc(wave)}` : ''}</span>
+      <span class="disc-eg-ceil" title="C1 · never invent SAME">same-entity=0</span>
+      ${frSz !== '' ? `<span class="disc-eg-meta">frontier ${esc(frSz)}</span>` : ''}
+      ${derived !== '' ? `<span class="disc-eg-meta">derived-from ${esc(derived)}</span>` : ''}
+      <span class="disc-muted">${esc(src)} · urlAlone→UNKNOWN · לא זהות</span>
     </div>`;
   }
 
@@ -1430,9 +1640,9 @@
     let nodes = Array.isArray(g.nodes) ? g.nodes.slice() : [];
     let edges = Array.isArray(g.edges) ? g.edges.slice() : [];
     const meta = g.meta && typeof g.meta === 'object' ? { ...g.meta } : {};
-    // Server graph wins when present (even if sparse) — soft panel, no derived laundering over it
-    if (state.graphFromServer && (nodes.length || edges.length)) {
-      return { nodes, edges, meta: { ...meta, source: 'server' } };
+    // Server/orch graph wins when present (even if sparse) — soft panel, scrub SAME-ENTITY
+    if (state.graphFromServer && (nodes.length || edges.length || meta.source === 'orch-evidenceGraph')) {
+      return scrubGraphForPaint({ nodes, edges, meta: { ...meta, source: meta.source || 'server' } });
     }
     if (!nodes.length && (state.findings || []).length) {
       nodes = [
@@ -1823,8 +2033,13 @@
     const budgetTag = discState.budgetExhaustedReason
       ? `<span class="disc-source-tag disc-budget-exh" title="תקציב מוצה · soft">budget:${esc(discState.budgetExhaustedReason)}</span>`
       : '';
+    const gMeta = (discState.graph && discState.graph.meta) || {};
     const graphTag = discState.graphFromServer
-      ? `<span class="disc-source-tag disc-graph-tag" title="גרף משרת · soft">graph:sse</span>`
+      ? `<span class="disc-source-tag disc-graph-tag" title="גרף משרת/orch · soft · same-entity=0">${
+          gMeta.source === 'orch-evidenceGraph' || gMeta.ingestSource === 'orch-evidenceGraph'
+            ? 'graph:orch'
+            : 'graph:sse'
+        }</span>`
       : '';
     // Concise SSE live announcement (separate polite region · avoids re-reading whole strip)
     const liveBits = [label, `שלב ${life}`];
@@ -1853,6 +2068,7 @@
         <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${barPct}" aria-label="התקדמות מקורות"><i style="width:${barPct}%"></i></div>
         <div class="disc-prov-row" aria-label="מצב מקורות">${providerChips || '<span class="disc-muted">מאתר מקורות…</span>'}</div>
         ${renderStopReasonChip()}
+        ${renderEvidenceGraphReadout()}
         ${renderFrontierReadout()}
         ${renderPlanBudgetPanel()}
         ${vocabLegend()}
@@ -2665,12 +2881,16 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
             const rel = e.relationship || e.kind || 'unknown';
             const other = String(from) === String(focus) ? to : from;
             const otherNode = nodes.find((n) => String(n.id) === String(other));
-            return `<div class="disc-rel-row" tabindex="0" data-edge="${esc(e.id)}">
+            const paintRel = clampPaintRelationship(rel, {
+              urlAlone: !!e.urlAlone || isUrlAloneNode(otherNode) || isUrlAloneNode(focusNode),
+              hasTypedSoftRef: hasTypedSoftRef(e) || hasTypedSoftRef(otherNode) || hasTypedSoftRef(focusNode),
+            });
+            return `<div class="disc-rel-row" tabindex="0" data-edge="${esc(e.id)}" data-rel="${esc(paintRel)}"${e.urlAlone ? ' data-url-alone="1"' : ''}>
               <div>
                 <p class="t">${esc(nodeLabel(focusNode))} ↔ ${esc(nodeLabel(otherNode) || other)}</p>
-                <div class="m">${esc(REL_HE[rel] || rel)}${e.derived ? ' · view-derived (לא laundering)' : ''}</div>
+                <div class="m">${esc(REL_HE[paintRel] || paintRel)}${e.derived ? ' · view-derived (לא laundering)' : ''}${e.urlAlone ? ' · urlAlone→UNKNOWN' : ''}</div>
               </div>
-              ${relBadge(rel)}
+              ${relBadge(paintRel, { urlAlone: !!e.urlAlone || paintRel === 'unknown' && (isUrlAloneNode(otherNode) || isUrlAloneNode(focusNode)) })}
             </div>`;
           })
           .join('')
@@ -3229,21 +3449,48 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
     let nextGraph = discState.graph || { nodes: [], edges: [] };
     let nextGraphFromServer = !!discState.graphFromServer;
     if (parsedSnapGraph) {
+      const scrubbed = scrubGraphForPaint(parsedSnapGraph);
       nextGraph = {
         nodes: merge
-          ? mergeById((discState.graph && discState.graph.nodes) || [], parsedSnapGraph.nodes || [])
-          : parsedSnapGraph.nodes || [],
+          ? mergeById((discState.graph && discState.graph.nodes) || [], scrubbed.nodes || [])
+          : scrubbed.nodes || [],
         edges: merge
-          ? mergeById((discState.graph && discState.graph.edges) || [], parsedSnapGraph.edges || [])
-          : parsedSnapGraph.edges || [],
-        meta: { ...((discState.graph && discState.graph.meta) || {}), ...(parsedSnapGraph.meta || {}), source: 'server' },
+          ? mergeById((discState.graph && discState.graph.edges) || [], scrubbed.edges || [])
+          : scrubbed.edges || [],
+        meta: {
+          ...((discState.graph && discState.graph.meta) || {}),
+          ...(scrubbed.meta || {}),
+          sameEntityEmitted: 0,
+          source: scrubbed.meta && scrubbed.meta.source === 'orch-evidenceGraph' ? 'orch-evidenceGraph' : 'server',
+        },
       };
       nextGraphFromServer = true;
     } else if (snap.graph && typeof snap.graph === 'object') {
+      const scrubbed = scrubGraphForPaint({
+        nodes: Array.isArray(snap.graph.nodes) ? snap.graph.nodes : [],
+        edges: Array.isArray(snap.graph.edges) ? snap.graph.edges : [],
+        meta: (snap.graph && snap.graph.meta) || {},
+      });
       nextGraph = {
-        nodes: Array.isArray(snap.graph.nodes) ? snap.graph.nodes : (discState.graph && discState.graph.nodes) || [],
-        edges: Array.isArray(snap.graph.edges) ? snap.graph.edges : (discState.graph && discState.graph.edges) || [],
-        meta: { ...((snap.graph && snap.graph.meta) || {}), source: 'server' },
+        nodes: scrubbed.nodes.length ? scrubbed.nodes : (discState.graph && discState.graph.nodes) || [],
+        edges: scrubbed.edges.length ? scrubbed.edges : (discState.graph && discState.graph.edges) || [],
+        meta: { ...(scrubbed.meta || {}), sameEntityEmitted: 0, source: 'server' },
+      };
+      nextGraphFromServer = true;
+    } else if (snap.evidenceGraph && typeof snap.evidenceGraph === 'object') {
+      const scrubbed = scrubGraphForPaint({
+        nodes: Array.isArray(snap.evidenceGraph.nodes) ? snap.evidenceGraph.nodes : [],
+        edges: Array.isArray(snap.evidenceGraph.edges) ? snap.evidenceGraph.edges : [],
+        meta: (snap.evidenceGraph && snap.evidenceGraph.meta) || {},
+      });
+      nextGraph = {
+        nodes: merge
+          ? mergeById((discState.graph && discState.graph.nodes) || [], scrubbed.nodes || [])
+          : scrubbed.nodes || [],
+        edges: merge
+          ? mergeById((discState.graph && discState.graph.edges) || [], scrubbed.edges || [])
+          : scrubbed.edges || [],
+        meta: { ...(scrubbed.meta || {}), sameEntityEmitted: 0, source: 'orch-evidenceGraph' },
       };
       nextGraphFromServer = true;
     }
@@ -3499,6 +3746,9 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
       // Soft plan hitchhiker on progress (some dual-run emits)
       const hitchPlan = parsePlanFromSse(data);
       if (hitchPlan) applyParsedPlan(hitchPlan, { source: 'sse-progress' });
+      // Soft evidenceGraph / graph hitchhike (orch Record · Arch bridge)
+      const hitchGraph = parseGraphFromSse(data);
+      if (hitchGraph) applyParsedGraph(hitchGraph, { source: 'sse-progress' });
       // Foundation emits stage / lifecyclePhase on progress (S1…S10 / PLAN / DISCOVER / PLANNING…)
       if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
       else if (data.phase) noteServerStage(data.phase, { source: 'sse-phase' });
@@ -4497,6 +4747,9 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
     MISSION_STAGES,
     stopReasonCopy,
     hasFrontierData,
+    hasEvidenceGraphData,
+    clampPaintRelationship,
+    scrubGraphForPaint,
     missionWave,
     serverEmitsConflict,
     ingestMissionFields,
