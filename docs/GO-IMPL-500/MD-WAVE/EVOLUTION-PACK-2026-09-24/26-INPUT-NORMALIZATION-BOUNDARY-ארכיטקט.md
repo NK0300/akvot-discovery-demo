@@ -1,6 +1,6 @@
 # §26 — Input Normalization Boundary (חוזה) — ארכיטקט · 2026-09-24
 
-סטטוס: **v1.2** (v1.1.1 אושר; §11 = ביקורת מלאה + אכיפה) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
+סטטוס: **v1.2.1** (v1.1.1 אושר; §11 = ביקורת מלאה + אכיפה) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
 נעילות: **PROD HOLD** · NO PROMOTE · TREATMENT unchanged · C1 קשיח · Wave 1 NOT DONE.
 רקע: אירוע ZERO-WIDTH/UNICODE. תו סמוי עקף את שמירת Smith ואת שמירת שם המשפחה העברי (שחזור שרת על `edf3f96`). ה־sweep למטה מראה שזו **מחלקה**, לא תו בודד.
 
@@ -134,7 +134,7 @@
 - **`lookup.js:3076`:** בדיקת q ריק ב־Core לא תופסת תווים סמויים. §7 #11 כיסה רק את Discovery.
 - **`lookup.js:903` `normalizePersonQuery`:** מוחלף ב־`canonicalizeInput`. זה מספר נקודות נרמול 1.
 
-**11.3 הסתירה עם §10.10 (הכרעה):** בקוד היום ה־ctx כן משפיע על commit. הוא דרישת `latin_evidence` (`orchestrator.js:262–276`), והנוכחות שלו משחררת need_context. הכלל המחייב: ctx יכול להשפיע על commit **רק דרך `recordHas(key, key)` מול הרשומה שנשלפה**. נוכחות בלבד נמדדת על `canonical(ctx)` לא ריק, ולא על truthiness גולמי. **שאלת מוצר פתוחה (Chief/דיוק, לא בסבב הזה, TREATMENT נעול):** האם נוכחות ctx תקין, בלי התאמה ברשומה, צריכה לשחרר את ה־hard-safety של שם עברי נפוץ.
+**11.3 הסתירה עם §10.10 (הכרעה):** בקוד היום ה־ctx כן משפיע על commit. הוא דרישת `latin_evidence` (`orchestrator.js:262–276`), והנוכחות שלו משחררת need_context. הכלל המחייב: ctx יכול להשפיע על commit **רק דרך `recordHas(key, key)` מול הרשומה שנשלפה**. נוכחות בלבד נמדדת על `canonical(ctx)` לא ריק, ולא על truthiness גולמי. **הכרעת Chief (v1.2.1):** ctx תקין משחרר את ה־guard של שם עברי נפוץ **רק לצורך חיפוש** (flow ה־need_context הקיים, ללא שינוי). commit ל־dossier או QID מותר רק כש־`recordHas(key,key)` מוצא את הערך בשדה מובנה של רשומה שנשלפה. אחרת התוצאה היא candidates או UNKNOWN. זו החמרה בלבד; השורות שזזות מוצהרות כ־movers מול A′. חתימת HMAC ל־`ds1.` היא פער מוצהר בבעלות שרת ואינה חוסמת.
 
 **11.4 שאר החשופים:** `knownIdentities.js:264` near-miss. `lookup.js:996` `isLatinScriptQuery` (full-width נכנס לנתיב העברי). `lookup.js:2758` `scrubIdentifiers` (האימייל `A@B.COM` דולף). `lookup.js:2765` `scrubUrlField` (`%2540` וקידוד פגום). `stageB.js:321` (שני תווים סמויים עוברים את `length<2`). `lookup.js:2507–2514`, `:2991` (precedence לפי `trim()!==''`). `orchestrator.js:566` (revalidate על raw). `webOrigin.js:59` (regex לא מעוגן).
 **כפילויות לאיחוד:** שני גלאי Latin (`orchestrator.js:57`, `lookup.js:996`), שני מסווגי seed (`detectSeedClass`, `loopSpine.js:187` `classifySeed`), ו־`normalizeUniversalSeed` שאינו בשימוש. השרת לא קורא את `seedKind` (slice B).
