@@ -18,7 +18,7 @@
 | Soft / UX soft | **≠ Acc** |
 | Wave1 product DONE | **NO** |
 | Promote | **NO** |
-| `ab17dd2` on origin | **NO** — local only (`main` ahead 1 · needs 1:1 approve to push code) |
+| `ab17dd2` on origin | **YES** (by Acc close — ancestor of `origin/main` @`c7b3346`+; Acc docs `@d714292` pushed) |
 
 **Explicit:** Soft ≠ Acc · live WAIT · Wave1 NOT DONE · NO PROMOTE · TREATMENT untouched · flags default OFF.
 
@@ -86,3 +86,12 @@
 - Code push `@ab17dd2`: **HOLD** for 1:1 approve (not Acc-owned push)
 
 **Tag:** Acc local Frontier/Evidence **PARTIAL** · Soft≠Acc · live WAIT · Wave1 NOT DONE · אין promote
+
+
+---
+
+## Postscript (stamp close)
+
+- Server **`c7b3346`** landed after Acc inspect baseline: `evaluateBatch` ↔ Evidence Graph C1 ceilings — **mitigates R-FE2** (re-inspect optional; verdict stays **PARTIAL** on CONFLICT R-FE1).
+- Acc docs pushed: **`d714292`** → `origin/main` (2026-09-24 ~21:02 IDT).
+- Soft ≠ Acc · live WAIT · Wave1 NOT DONE · NO PROMOTE — unchanged.
