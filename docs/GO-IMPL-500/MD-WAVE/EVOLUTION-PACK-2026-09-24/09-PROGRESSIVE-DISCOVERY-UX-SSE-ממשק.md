@@ -1,7 +1,8 @@
 # 09 · Progressive Discovery UX/SSE — Seed→Mission→Waves→Findings→Graph · ממשק · 2026-09-24
 
 **Title:** Progressive Discovery UX/SSE — Seed→Mission→Waves→Findings→Graph  
-**Status:** **DESIGNED** (not implement-prod · no production UI code in this section)  
+**Status:** **DESIGNED** (+ **Wave1 UX soft slice IMPLEMENTED** · see §22 · soft UI only · product Wave1 DONE = **NO** · promote:false)
+**Wave1 UX note (2026-09-24):** Mission stage rail landed in `discovery-ui.js` / `index.html` per §22 — Planning→Family→Finding→Evidence→Frontier→Complete · extends `renderProgressStrip`/`LIFE_STAGES` · does **not** claim product Wave1 DONE or authorize promote.  
 **Owner:** Product/UX · ממשק  
 **Locks:** NO PROMOTE · TREATMENT untouched · Core protected · Wave 1 DONE = NO · C1 UNKNOWN hard · Client never enables flags  
 **Soft Evidence (Part 1):** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/MD-WAVE/UX-MW2-WAVE2-SOFT-LIGHTUP-ממשק-2026-09-24.md`  
@@ -156,8 +157,8 @@ Bundle symbols (soft-checked on MW2 dpl): `isSearchUrlCandidateFinding` · `coll
 
 | Allowed now | Not allowed in §09 |
 |-------------|--------------------|
-| Design notes · copy · stage maps · soft Evidence | Production UI PRs |
+| Design notes · copy · stage maps · soft Evidence · **§22 Mission soft UI slice** | Production promote / alias / Treatment / Core · product Wave1 DONE flip |
 | Fixture / Preview soft measure | Core / orch / flag default changes |
 | Comments in design docs | promote · alias · TREATMENT · Production env |
 
-**Tag:** DESIGNED · ממשק · 2026-09-24
+**Tag:** DESIGNED (+ §22 soft UI IMPLEMENTED) · ממשק · 2026-09-24 · Wave1 DONE:NO · promote:false

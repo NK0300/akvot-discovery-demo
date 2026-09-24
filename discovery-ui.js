@@ -122,17 +122,21 @@
     failed_soft: 'חלקי (שגיאת מקור)',
     reconnecting: 'מתחבר מחדש…',
   };
-  /** Product lifecycle stages (UX) — map onto SSE without breaking B0 event names. */
+  /**
+   * Mission progressive stages (Wave1 soft UX · §09/§22) —
+   * Planning → Family → Finding → Evidence → Frontier → Complete.
+   * Extends prior LIFE_STAGES rail · no competing chrome · aliases keep SSE/fixtures.
+   */
   const LIFE_STAGES = [
-    { id: 'START', label: 'START', he: 'התחלה' },
     { id: 'PLANNING', label: 'PLANNING', he: 'תכנון' },
-    { id: 'DISCOVERY', label: 'DISCOVERY', he: 'גילוי' },
-    { id: 'FINDINGS', label: 'FINDINGS', he: 'ממצאים' },
+    { id: 'FAMILY', label: 'FAMILY', he: 'משפחה' },
+    { id: 'FINDING', label: 'FINDING', he: 'ממצא' },
     { id: 'EVIDENCE', label: 'EVIDENCE', he: 'ראיות' },
-    { id: 'RELATIONSHIPS', label: 'RELATIONSHIPS', he: 'קשרים' },
-    { id: 'GRAPH', label: 'GRAPH', he: 'גרף' },
+    { id: 'FRONTIER', label: 'FRONTIER', he: 'חזית' },
     { id: 'COMPLETE', label: 'COMPLETE', he: 'סיום' },
   ];
+  /** Alias for Acc/QA · same rail as LIFE_STAGES. */
+  const MISSION_STAGES = LIFE_STAGES;
   const LIFE_ORDER = LIFE_STAGES.map((s) => s.id);
   const SEED_PLACEHOLDERS = {
     name: 'שם ציבורי (HE או EN)…',
@@ -151,6 +155,8 @@
     possible: 'POSSIBLE · אפשרי',
     unknown: 'UNKNOWN · לא ידוע',
     UNKNOWN: 'UNKNOWN · לא ידוע',
+    conflict: 'CONFLICT · סתירה מדווחת',
+    CONFLICT: 'CONFLICT · סתירה מדווחת',
     supports: 'תומך',
     corroboration: 'חיזוק הדדי',
     site: 'אתר',
@@ -170,6 +176,8 @@
     possible: 'possible',
     unknown: 'unk',
     UNKNOWN: 'unk',
+    conflict: 'conflict',
+    CONFLICT: 'conflict',
   };
   const VOCAB_EN = {
     unk: 'UNKNOWN',
@@ -177,6 +185,7 @@
     related: 'RELATED',
     possible: 'POSSIBLE',
     fact: 'PROVENANCE',
+    conflict: 'CONFLICT',
   };
   /** Cap SSE reconnect attempts (manual backoff; avoid terminal thrash). */
   const SSE_MAX_RECONNECT = 5;
@@ -297,8 +306,8 @@
       /** Session status before UI overlay `reconnecting` */
       statusBeforeReconnect: null,
       reconnectAttempt: 0,
-      /** Product UX lifecycle stage */
-      lifeStage: 'START',
+      /** Mission progressive stage (Planning→…→Complete) */
+      lifeStage: 'PLANNING',
       graph: { nodes: [], edges: [] },
       contradictions: [],
       softEr: null,
@@ -325,6 +334,12 @@
       planSseSeen: false,
       /** 'server' | 'sse-*' | 'client' — provenance of lifecycle rail stage. */
       stageSource: null,
+      /** Soft mission payload (paint-only · never invent · client never enables flags). */
+      nightLoop: null,
+      frontier: null,
+      missionMemory: null,
+      stopReason: null,
+      hopJournal: null,
     };
   }
 
@@ -550,15 +565,17 @@
       : VOCAB_EN[cls.split(' ')[0]] || cls.toUpperCase();
     const tone = opts.urlAlone
       ? 'URL alone ≠ identity · soft UNKNOWN'
-      : cls.includes('unk')
-        ? 'UNKNOWN soft · לא שקר · לא אישור'
-        : cls.includes('related')
-          ? 'RELATED · לא merge'
-          : cls.includes('possible')
-            ? 'POSSIBLE · signal חלקי'
-            : cls.includes('cand')
-              ? 'SAME-REFERENCE typed · לא SAME-ENTITY'
-              : 'provenance-backed · לא זהות';
+      : cls.includes('conflict')
+        ? 'CONFLICT · שרת דיווח סתירה · לא זהות · לא invented'
+        : cls.includes('unk')
+          ? 'UNKNOWN soft · לא שקר · לא אישור'
+          : cls.includes('related')
+            ? 'RELATED · לא merge'
+            : cls.includes('possible')
+              ? 'POSSIBLE · signal חלקי'
+              : cls.includes('cand')
+                ? 'SAME-REFERENCE typed · לא SAME-ENTITY'
+                : 'provenance-backed · לא זהות';
     return `<span class="disc-badge ${cls}" title="${esc(tone)}" aria-label="${esc(en)}: ${esc(label)}"><span>${esc(label)}</span></span>`;
   }
 
@@ -574,13 +591,15 @@
   }
 
   const SERVER_STAGE_MAP = {
-    S0: 'START', S1: 'PLANNING', S2: 'PLANNING', S3: 'DISCOVERY', S4: 'DISCOVERY',
-    S5: 'FINDINGS', S6: 'GRAPH', S7: 'RELATIONSHIPS', S8: 'EVIDENCE', S9: 'RELATIONSHIPS', S10: 'COMPLETE',
-    CREATE: 'START', START: 'START', PLAN: 'PLANNING', PLANNING: 'PLANNING',
-    DISCOVER: 'DISCOVERY', DISCOVERY: 'DISCOVERY', ENRICH: 'FINDINGS', FINDINGS: 'FINDINGS',
-    EVIDENCE: 'EVIDENCE', CORROBORATE: 'RELATIONSHIPS', RELATIONSHIPS: 'RELATIONSHIPS',
-    EXPAND: 'EVIDENCE', RECONCILE: 'GRAPH', GRAPH: 'GRAPH', FINALIZE: 'COMPLETE', COMPLETE: 'COMPLETE',
-    ERROR: 'COMPLETE',
+    /* Mission rail targets */
+    S0: 'PLANNING', S1: 'PLANNING', S2: 'PLANNING', S3: 'FAMILY', S4: 'FAMILY',
+    S5: 'FINDING', S6: 'FRONTIER', S7: 'EVIDENCE', S8: 'EVIDENCE', S9: 'EVIDENCE', S10: 'COMPLETE',
+    CREATE: 'PLANNING', START: 'PLANNING', PLAN: 'PLANNING', PLANNING: 'PLANNING',
+    DISCOVER: 'FAMILY', DISCOVERY: 'FAMILY', FAMILY: 'FAMILY',
+    ENRICH: 'FINDING', FINDINGS: 'FINDING', FINDING: 'FINDING',
+    EVIDENCE: 'EVIDENCE', CORROBORATE: 'EVIDENCE', RELATIONSHIPS: 'EVIDENCE',
+    EXPAND: 'FRONTIER', RECONCILE: 'FRONTIER', GRAPH: 'FRONTIER', FRONTIER: 'FRONTIER',
+    FINALIZE: 'COMPLETE', COMPLETE: 'COMPLETE', STOP: 'COMPLETE', ERROR: 'COMPLETE',
   };
 
   /** Map Foundation/B0 session.stage → product lifecycle id; null if unknown. */
@@ -841,16 +860,148 @@
     return true;
   }
 
+  /** Soft Frontier presence — paint only when Server/payload already carries it. */
+  function hasFrontierData(state) {
+    if (!state || typeof state !== 'object') return false;
+    const fr = state.frontier;
+    if (fr && typeof fr === 'object') {
+      if (typeof fr.size === 'number' && fr.size > 0) return true;
+      if (Array.isArray(fr.items) && fr.items.length > 0) return true;
+      if (Array.isArray(fr.keys) && fr.keys.length > 0) return true;
+    }
+    const mm = state.missionMemory;
+    if (mm && typeof mm === 'object') {
+      if (Array.isArray(mm.frontierDigest) && mm.frontierDigest.length > 0) return true;
+    }
+    const nl = state.nightLoop;
+    if (nl && typeof nl === 'object' && nl.frontier && typeof nl.frontier === 'object') {
+      if (typeof nl.frontier.size === 'number' && nl.frontier.size > 0) return true;
+      if (Array.isArray(nl.frontier.items) && nl.frontier.items.length > 0) return true;
+    }
+    return false;
+  }
+
+  /** Wave depth from nightLoop / missionMemory / hopJournal — never invent. */
+  function missionWave(state) {
+    if (!state) return 0;
+    const nl = state.nightLoop || {};
+    const mm = state.missionMemory || {};
+    const fromNl = Number(nl.wave || nl.waveDepth || nl.maxWaveSeen || 0) || 0;
+    const fromMm = Number(mm.wave || 0) || 0;
+    const journal = state.hopJournal || nl.hopJournal || mm.waves || [];
+    let fromJ = 0;
+    if (Array.isArray(journal)) {
+      journal.forEach((h) => {
+        const w = Number(h && (h.wave || h.waveId || h.w)) || 0;
+        if (w > fromJ) fromJ = w;
+      });
+    }
+    return Math.max(fromNl, fromMm, fromJ);
+  }
+
+  /**
+   * Honest stopReason copy (§09) — NO_PROGRESS with wave≥2 ≠ failure.
+   * Soft ≠ Acc · never invent reasons.
+   */
+  function stopReasonCopy(reason, state) {
+    const r = String(reason || '').trim().toUpperCase();
+    if (!r) return null;
+    const wave = missionWave(state);
+    const he = {
+      NO_PROGRESS:
+        wave >= 2
+          ? ('NO_PROGRESS · לולאה הסתיימה (wave≥' + wave + ') · אין URL חדשים — לא כשל מערכת')
+          : 'NO_PROGRESS · אין התקדמות נוספת כרגע · לא בהכרח כשל',
+      EMPTY_FRONTIER: 'EMPTY_FRONTIER · חזית ריקה · אין מועמדים להרחבה',
+      ALL_HOPS_SETTLED: 'ALL_HOPS_SETTLED · כל הקפיצות הסתיימו למשימה זו',
+      BUDGET: 'BUDGET · תקציב גילוי מוצה · תוצאה חלקית',
+      MAX_WAVES: 'MAX_WAVES · הגיע לתקרת גלים',
+      POLICY_HOLD: 'POLICY_HOLD · מדיניות עצרה הרחבה',
+      SAFETY: 'SAFETY · עצירה בטיחותית',
+      EMPTY_PLAN: 'EMPTY_PLAN · אין תוכנית חיפוש',
+      FLAG_OFF: 'FLAG_OFF · יכולת כבויה בצד שרת · הלקוח לא מדליק דגלים',
+    };
+    const en = {
+      NO_PROGRESS:
+        wave >= 2
+          ? ('NO_PROGRESS · loop settled (wave≥' + wave + ') · no new URLs — not a system failure')
+          : 'NO_PROGRESS · no further progress for now · not necessarily failure',
+      EMPTY_FRONTIER: 'EMPTY_FRONTIER · empty expand queue · no candidates to expand',
+      ALL_HOPS_SETTLED: 'ALL_HOPS_SETTLED · all hops settled for this mission',
+      BUDGET: 'BUDGET · discovery budget exhausted · partial result',
+      MAX_WAVES: 'MAX_WAVES · wave ceiling reached',
+      POLICY_HOLD: 'POLICY_HOLD · policy stopped expand',
+      SAFETY: 'SAFETY · safety stop',
+      EMPTY_PLAN: 'EMPTY_PLAN · no search plan',
+      FLAG_OFF: 'FLAG_OFF · server capability off · client never enables flags',
+    };
+    return {
+      code: r,
+      he: he[r] || (r + ' · סיבת עצירה מדווחת מהשרת'),
+      en: en[r] || (r + ' · server-reported stop'),
+      wave,
+      settledOk: r === 'NO_PROGRESS' && wave >= 2,
+    };
+  }
+
+  /** CONFLICT only when Server already emitted it — never invent from UNKNOWN. */
+  function serverEmitsConflict(f, state) {
+    if (f && typeof f === 'object') {
+      const rel = String(f.relationship || f.relationshipState || '').toUpperCase();
+      if (rel === 'CONFLICT') return true;
+      if (f.conflict === true || f.hasConflict === true) return true;
+      if (Array.isArray(f.conflicts) && f.conflicts.length) return true;
+    }
+    if (state && Array.isArray(state.contradictions)) {
+      return state.contradictions.some((c) => {
+        if (!c) return false;
+        const k = String(c.kind || c.type || c.code || '').toUpperCase();
+        return k === 'CONFLICT' || k === 'CONTRADICTION' || c.conflict === true;
+      });
+    }
+    return false;
+  }
+
+  /** Ingest soft mission fields from snapshot/SSE — passthrough only. */
+  function ingestMissionFields(target, payload) {
+    if (!target || !payload || typeof payload !== 'object') return target;
+    const nl = payload.nightLoop || (payload.session && payload.session.nightLoop) || null;
+    if (nl && typeof nl === 'object') target.nightLoop = nl;
+    const fr =
+      payload.frontier ||
+      (payload.session && payload.session.frontier) ||
+      (nl && nl.frontier) ||
+      null;
+    if (fr && typeof fr === 'object') target.frontier = fr;
+    const mm =
+      payload.missionMemory ||
+      (payload.session && payload.session.missionMemory) ||
+      null;
+    if (mm && typeof mm === 'object') target.missionMemory = mm;
+    const sr =
+      payload.stopReason ||
+      (nl && nl.stopReason) ||
+      (mm && mm.lastDecision && mm.lastDecision.reason) ||
+      (payload.progress && payload.progress.stopReason) ||
+      null;
+    if (sr) target.stopReason = String(sr);
+    const hj =
+      (Array.isArray(payload.hopJournal) && payload.hopJournal) ||
+      (nl && Array.isArray(nl.hopJournal) && nl.hopJournal) ||
+      null;
+    if (hj) target.hopJournal = hj;
+    return target;
+  }
+
   function deriveLifeStage(state) {
     const st = state.status;
     // Prefer Foundation/B0 / SSE stage when present — local heuristic is fallback only.
-    // Never invent identity; stage labels are process UX only.
+    // Never invent identity; stage labels are process UX only (Mission rail).
     const mapped = mapServerStage(state.serverStage || state.progress?.stage || state.progress?.lifecyclePhase);
     if (mapped) {
       if (!state.stageSource || state.stageSource === 'client') {
         state.stageSource = state.serverStage ? 'server' : 'server';
       }
-      // Terminal status still wins for COMPLETE badge
       if ((st === 'complete' || st === 'failed_soft') && mapped !== 'COMPLETE') {
         state.stageSource = (state.stageSource || 'server') + '+terminal';
         return 'COMPLETE';
@@ -859,23 +1010,70 @@
     }
     state.stageSource = 'client';
     if (st === 'complete' || st === 'failed_soft') return 'COMPLETE';
-    if (st === 'idle') return 'START';
+    if (st === 'idle') return 'PLANNING';
     const findingsN = (state.findings || []).length;
     const evidenceN = (state.evidence || []).length;
     const edgesN = ((state.graph && state.graph.edges) || []).length;
-    const nodesN = ((state.graph && state.graph.nodes) || []).length;
     const providers = state.providers || {};
     const anyProvider = Object.keys(providers).length > 0;
-    if (st === 'reconnecting') return state.lifeStage || 'DISCOVERY';
-    if (state.graphFromServer && nodesN > 0 && findingsN > 0) return 'GRAPH';
-    if (nodesN > 1 && edgesN > 0 && findingsN > 0) return 'GRAPH';
-    if (edgesN > 0) return 'RELATIONSHIPS';
-    if (evidenceN > 0 && findingsN > 0) return 'EVIDENCE';
-    if (findingsN > 0) return 'FINDINGS';
-    if (anyProvider) return 'DISCOVERY';
+    const planFamilies =
+      (state.queryPlan &&
+        (Array.isArray(state.queryPlan.families) ? state.queryPlan.families : state.queryPlan.sourceFamilies)) ||
+      [];
+    const anyFamily =
+      anyProvider ||
+      (Array.isArray(state.familyJournal) && state.familyJournal.length > 0) ||
+      (Array.isArray(planFamilies) && planFamilies.length > 0);
+    if (st === 'reconnecting') return state.lifeStage || 'FAMILY';
+    if (hasFrontierData(state) && findingsN > 0) return 'FRONTIER';
+    if (evidenceN > 0 || edgesN > 0) return 'EVIDENCE';
+    if (findingsN > 0) return 'FINDING';
+    if (anyFamily) return 'FAMILY';
     if (state.planSseSeen || state.queryPlan) return 'PLANNING';
     if (st === 'running' || st === 'partial') return 'PLANNING';
-    return 'START';
+    return 'PLANNING';
+  }
+
+  /** Soft Frontier readout — only when data present · Soft ≠ Acc. */
+  function renderFrontierReadout() {
+    if (!hasFrontierData(discState)) return '';
+    const fr = discState.frontier || (discState.nightLoop && discState.nightLoop.frontier) || {};
+    const mm = discState.missionMemory || {};
+    const size =
+      typeof fr.size === 'number'
+        ? fr.size
+        : Array.isArray(fr.items)
+          ? fr.items.length
+          : Array.isArray(mm.frontierDigest)
+            ? mm.frontierDigest.length
+            : 0;
+    const keys = Array.isArray(fr.keys)
+      ? fr.keys
+      : Array.isArray(mm.frontierDigest)
+        ? mm.frontierDigest
+        : [];
+    const preview = keys.slice(0, 4).map((k) => esc(String(k).slice(0, 48))).join(' · ');
+    const wave = missionWave(discState);
+    return `<div class="disc-frontier-readout" role="status" data-frontier-size="${esc(size)}" title="Frontier soft · expand queue · לא זהות · Soft≠Acc">
+      <span class="disc-frontier-k">FRONTIER</span>
+      <span class="disc-frontier-v">${esc(size)} בתור הרחבה${wave ? ` · wave ${esc(wave)}` : ''}</span>
+      ${preview ? `<span class="disc-frontier-keys">${preview}</span>` : ''}
+      <span class="disc-muted">מועמדים להרחבה · לא זהות · לא Acc</span>
+    </div>`;
+  }
+
+  function renderStopReasonChip() {
+    const raw =
+      discState.stopReason ||
+      (discState.nightLoop && discState.nightLoop.stopReason) ||
+      (discState.missionMemory &&
+        discState.missionMemory.lastDecision &&
+        discState.missionMemory.lastDecision.reason) ||
+      null;
+    const copy = stopReasonCopy(raw, discState);
+    if (!copy) return '';
+    const cls = copy.settledOk ? 'disc-stop-settled' : 'disc-stop-info';
+    return `<span class="disc-source-tag disc-stop-tag ${cls}" title="${esc(copy.en)}" data-stop-reason="${esc(copy.code)}">${esc(copy.he)}</span>`;
   }
 
 
@@ -1651,9 +1849,11 @@
           ${graphTag}
           ${narrowInFlight ? `<span class="disc-source-tag">מצמצם…</span>` : ''}
         </div>
-        <div class="disc-life-stages" role="list" aria-label="שלבי גילוי">${stagesHtml}</div>
+        <div class="disc-life-stages disc-mission-stages" role="list" aria-label="שלבי משימת גילוי">${stagesHtml}</div>
         <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${barPct}" aria-label="התקדמות מקורות"><i style="width:${barPct}%"></i></div>
         <div class="disc-prov-row" aria-label="מצב מקורות">${providerChips || '<span class="disc-muted">מאתר מקורות…</span>'}</div>
+        ${renderStopReasonChip()}
+        ${renderFrontierReadout()}
         ${renderPlanBudgetPanel()}
         ${vocabLegend()}
       </div>`;
@@ -1761,13 +1961,19 @@
     const whyFoundBlock = whyRaw
       ? `<details class="disc-why-found"><summary>למה נמצא? · why-found · לא זהות</summary><p>${esc(whyRaw)}</p></details>`
       : '';
-return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}" role="option" tabindex="${tab}" aria-selected="false">
+    const conflictOn = !urlAlone && serverEmitsConflict(f, discState);
+    const conflictCls = conflictOn ? ' disc-finding-conflict' : '';
+    const conflictBadge = conflictOn
+      ? `<span class="disc-badge conflict" title="CONFLICT · שרת דיווח · לא invented">CONFLICT</span>`
+      : '';
+return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}" role="option" tabindex="${tab}" aria-selected="false" data-conflict="${conflictOn ? '1' : '0'}">
       <div class="disc-finding-head">
         ${rank}
         <span class="disc-kind">${esc(kind)}</span>
         ${familyChip}
         ${score}
         ${badge}
+        ${conflictBadge}
         ${evN ? `<span class="disc-finding-evn" title="מספר ראיות מצוטטות">${evN} ראיות</span>` : ''}
       </div>
       <h3 class="disc-finding-title" id="finding-title-${esc(f.id)}">${esc(f.title)}</h3>
@@ -2423,11 +2629,11 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
             body: 'התקבל אירוע graph מ-SSE אך ללא צמתים אחרי scrub — soft panel · לא זהות.',
             hint: 'graph ≠ dossier',
           })
-        : discState.lifeStage === 'GRAPH' || discState.lifeStage === 'RELATIONSHIPS'
+        : discState.lifeStage === 'FRONTIER' || discState.lifeStage === 'EVIDENCE' || discState.lifeStage === 'GRAPH' || discState.lifeStage === 'RELATIONSHIPS'
           ? `<div class="disc-graph-loading" role="status" aria-live="polite">${renderPremiumEmpty({
               kind: 'graph-wait',
               title: 'טוען גרף ראיות…',
-              body: 'שלב GRAPH/RELATIONSHIPS פעיל · צמתים יופיעו כש-Foundation ינפיק chunk. טעינה ≠ זהות.',
+              body: 'שלב EVIDENCE/FRONTIER פעיל · צמתים יופיעו כש-Foundation ינפיק chunk. טעינה ≠ זהות.',
               hint: 'soft wait · plan/graph flag-gated · ring layout',
             })}</div>`
           : graphFilter !== 'all'
@@ -3059,6 +3265,11 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
       planSseSeen: discState.planSseSeen,
       stageSource: discState.stageSource,
       _focusResultsOnce: discState._focusResultsOnce,
+      nightLoop: discState.nightLoop,
+      frontier: discState.frontier,
+      missionMemory: discState.missionMemory,
+      stopReason: discState.stopReason,
+      hopJournal: discState.hopJournal,
     };
 
     discState = {
@@ -3111,7 +3322,18 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
       errorMessage: meta.errorMessage !== undefined ? meta.errorMessage : discState.errorMessage,
       serverStage: nextServerStage,
       queryPlan: nextPlan,
-      lifeStage: 'START',
+      lifeStage: 'PLANNING',
+      nightLoop: snap.nightLoop || prevSoft.nightLoop || null,
+      frontier: snap.frontier || prevSoft.frontier || null,
+      missionMemory: snap.missionMemory || prevSoft.missionMemory || null,
+      stopReason:
+        snap.stopReason ||
+        (snap.nightLoop && snap.nightLoop.stopReason) ||
+        prevSoft.stopReason ||
+        null,
+      hopJournal: Array.isArray(snap.hopJournal)
+        ? snap.hopJournal
+        : prevSoft.hopJournal || null,
       budgetTelemetry: snap.budgetTelemetry || prevSoft.budgetTelemetry || null,
       budgetExhaustedReason:
         snap.budgetExhaustedReason || prevSoft.budgetExhaustedReason || null,
@@ -3125,6 +3347,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     };
     if (parsedSnapPlan) applyParsedPlan(parsedSnapPlan, {});  // plan soft · do not overwrite stageSource
     ingestBudgetFamilyFromPayload(snap);
+    ingestMissionFields(discState, snap);
     if (nextServerStage) noteServerStage(nextServerStage, { source: 'server', allowRegress: true });
     discState.lifeStage = deriveLifeStage(discState);
     stripIdentityChrome(discState);
@@ -3272,6 +3495,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
         data.findings.forEach((f) => mergeFindingChunk(f, data.evidence || []));
       }
       ingestBudgetFamilyFromPayload(data);
+      ingestMissionFields(discState, data);
       // Soft plan hitchhiker on progress (some dual-run emits)
       const hitchPlan = parsePlanFromSse(data);
       if (hitchPlan) applyParsedPlan(hitchPlan, { source: 'sse-progress' });
@@ -3296,6 +3520,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
         data.findings.forEach((f) => mergeFindingChunk(f, data.evidence || []));
       }
       ingestBudgetFamilyFromPayload(data);
+      ingestMissionFields(discState, data);
       const hitchPlan = parsePlanFromSse(data);
       if (hitchPlan) applyParsedPlan(hitchPlan, { source: 'sse-status' });
       const hitchGraph = parseGraphFromSse(data);
@@ -3330,6 +3555,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
       if (data.progress) discState.progress = data.progress;
       if (data.providers) discState.providers = { ...discState.providers, ...data.providers };
       ingestBudgetFamilyFromPayload(data);
+      ingestMissionFields(discState, data);
       // Soft Foundation surface — defensive parse; never invent plan; never treat as identity
       const parsedPlan = parsePlanFromSse(data);
       if (parsedPlan) applyParsedPlan(parsedPlan, { source: type === 'plan' ? 'sse-plan' : 'sse-event' });
@@ -3385,6 +3611,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
         discState.graphFromServer = true;
       }
       ingestBudgetFamilyFromPayload(data);
+      ingestMissionFields(discState, data);
       if (data.lifecyclePhase) noteServerStage(data.lifecyclePhase, { source: 'sse-lifecycle' });
       else if (type === 'graph') noteServerStage('GRAPH', { source: 'sse-graph' });
       else noteServerStage('RELATIONSHIPS', { source: 'sse-rel' });
@@ -3425,6 +3652,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
       if (data.progress) discState.progress = data.progress;
       if (data.providers) discState.providers = data.providers;
       ingestBudgetFamilyFromPayload(data);
+      ingestMissionFields(discState, data);
       const donePlan = parsePlanFromSse(data);
       if (donePlan) applyParsedPlan(donePlan, { source: 'sse-done' });
       const doneGraph = parseGraphFromSse(data);
@@ -3894,7 +4122,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
       const stages = data.stages || [];
       const fullGraph = data.graph || null;
       const lifeForIdx = (idx, total) => {
-        const seq = ['START', 'PLANNING', 'DISCOVERY', 'FINDINGS', 'EVIDENCE', 'RELATIONSHIPS', 'GRAPH', 'COMPLETE'];
+        const seq = ['PLANNING', 'FAMILY', 'FINDING', 'EVIDENCE', 'FRONTIER', 'COMPLETE'];
         if (idx >= total - 1) return 'COMPLETE';
         return seq[Math.min(idx + 1, seq.length - 2)];
       };
@@ -3930,7 +4158,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
           const findings = (stage.findingIds || []).map((id) => byId.get(id)).filter(Boolean);
           const evIds = new Set(findings.flatMap((f) => f.evidenceIds || []));
           const life = stage.lifeStage || lifeForIdx(idx, stages.length);
-          const includeGraph = ['RELATIONSHIPS', 'GRAPH', 'COMPLETE'].includes(life) || idx >= stages.length - 2;
+          const includeGraph = ['EVIDENCE', 'FRONTIER', 'COMPLETE', 'RELATIONSHIPS', 'GRAPH'].includes(life) || idx >= stages.length - 2;
           applySnapshot(
             {
               sessionId: `fix-${data.fixtureId}`,
@@ -3994,7 +4222,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     lastSseLiveText = '';
       applySeedKindHint();
       discState.status = 'running';
-      discState.lifeStage = 'START';
+      discState.lifeStage = 'PLANNING';
       discState.sessionId = String(sessionParam);
       discState.source = 'api:hydrate';
       renderDiscovery();
@@ -4054,7 +4282,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     lastSseLiveText = '';
     applySeedKindHint();
     discState.status = 'running';
-    discState.lifeStage = 'START';
+    discState.lifeStage = 'PLANNING';
     discState.stageSource = 'client';
     discState._focusResultsOnce = false;
     discState.q = q;
@@ -4266,5 +4494,11 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     deriveLifeStage,
     computeGaps,
     LIFE_STAGES,
+    MISSION_STAGES,
+    stopReasonCopy,
+    hasFrontierData,
+    missionWave,
+    serverEmitsConflict,
+    ingestMissionFields,
   };
 })();

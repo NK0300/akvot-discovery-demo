@@ -584,8 +584,8 @@
   }
   .disc-life-top{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:12px;
     font-family:var(--mono);font-size:11px}
-  .disc-life-stages{
-    display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;margin-bottom:10px;
+  .disc-life-stages, .disc-mission-stages{
+    display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;margin-bottom:10px;
   }
   .disc-life-stage{
     text-align:center;padding:6px 2px;border-radius:4px;border:1px solid var(--disc-line);
@@ -596,6 +596,27 @@
   .disc-life-stage.active{color:var(--disc-ink);border-color:var(--accent);
     box-shadow:0 0 0 1px rgba(155,191,122,.25);background:rgba(155,191,122,.1)}
   .disc-life-stage.pending{opacity:.55}
+
+  /* Mission progressive UX · Wave1 soft · §09/§22 · Soft≠Acc */
+  .disc-frontier-readout{
+    display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:8px 0 4px;
+    padding:8px 10px;border:1px dashed var(--disc-line);border-radius:6px;
+    background:rgba(100,150,180,.06);font-family:var(--mono);font-size:10px;color:var(--muted);
+  }
+  .disc-frontier-k{color:#8eb4c9;letter-spacing:.06em;font-weight:600}
+  .disc-frontier-v{color:var(--disc-ink)}
+  .disc-frontier-keys{opacity:.75;word-break:break-all}
+  .disc-stop-tag{max-width:100%;white-space:normal;line-height:1.35}
+  .disc-stop-settled{border-color:rgba(155,191,122,.45)!important;color:var(--accent)!important}
+  .disc-stop-info{border-color:rgba(201,162,39,.4)!important;color:var(--warn,#c9a227)!important}
+  .disc-badge.conflict{
+    color:#d98989;border-color:rgba(196,92,92,.55);background:rgba(196,92,92,.1);
+  }
+  .disc-finding-conflict{
+    border-color:rgba(196,92,92,.45)!important;
+    box-shadow:inset 3px 0 0 rgba(196,92,92,.55);
+  }
+
   .disc-hier{display:grid;gap:12px}
   .disc-sec{
     border:1px solid var(--disc-line);background:var(--disc-surface);
@@ -673,7 +694,7 @@
 
   @media (max-width:860px){
     .disc-exec-grid{grid-template-columns:1fr 1fr}
-    .disc-life-stages{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .disc-life-stages,.disc-mission-stages{grid-template-columns:repeat(3,minmax(0,1fr))}
     .disc-graph-panel{grid-template-columns:1fr}
     .disc-layout{grid-template-columns:1fr}
     .disc-facets{
@@ -697,7 +718,7 @@
     .disc-home{padding:16px 14px 14px}
     .disc-home-title{font-size:19px}
     .disc-exec-grid{grid-template-columns:1fr 1fr}
-    .disc-life-stages{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+    .disc-life-stages,.disc-mission-stages{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
     .disc-life-stage{font-size:7px;padding:5px 1px}
     .disc-sec-body{padding:10px 12px}
     body.mode-discovery header .sub{font-size:11px}
@@ -832,7 +853,7 @@
     .disc-facet-chips{
       flex-wrap:wrap;overflow-x:visible;padding-bottom:0;gap:8px;
     }
-    .disc-life-stages{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+    .disc-life-stages,.disc-mission-stages{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
     .disc-life-stage{min-height:36px;display:flex;align-items:center;justify-content:center;font-size:8px;padding:6px 2px}
     .disc-finding-actions{gap:8px}
     .disc-sec-head{padding:12px 14px;min-height:44px}
@@ -2327,6 +2348,6 @@ if(cancelBtn) cancelBtn.onclick=()=>cancelActiveSearch();
   .disc-facet-chip[data-fkey="urlCandidate"],.disc-facet-chip.disc-facet-search{border-style:dashed}
 
 </style>
-<script src="discovery-ui.js?v=c1a1" defer></script>
+<script src="discovery-ui.js?v=c1m1" defer></script>
 </body>
 </html>
