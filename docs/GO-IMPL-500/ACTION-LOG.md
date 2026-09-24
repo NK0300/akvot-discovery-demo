@@ -600,7 +600,7 @@
 - **When:** 2026-09-24 ~09:40–09:45 IDT
 - **Who:** Backend / שרת
 - **What:** Clean Preview deploy with `-e DISCOVERY_ENABLE_DDG_INSTANT=1` only (project Preview env **not** set). Bundle includes Track C UX `discovery-ui.js?v=c1a1`. Light smoke: flag ON health + one name→FirstURL gated UNKNOWN if feasible. **Do NOT** modify TREATMENT `dpl_J92G9…` or prior GENERAL_WEB Preview project env. **NO PROMOTE**.
-- **Preview:** _(filled after deploy)_
+- **Preview:** `dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k` · https://akvot-simple-demo-pnmmxdn7e-k-akvot.vercel.app · flag ON via `-e` · smoke: health ok · `providers.ddg_instant_answer=ia_error` (honest empty; DDG TLS/timeout from edge) · GENERAL_WEB absent · TREATMENT untouched · **NO promote**
 
 **Server Adapter-2 action ids:** **161–163**  
 **Verdict:** code **DONE** · measure Preview separate · Wave1 product **NOT DONE** · **NO PROMOTE**

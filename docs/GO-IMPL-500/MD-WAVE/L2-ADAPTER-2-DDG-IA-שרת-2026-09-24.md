@@ -66,12 +66,20 @@ vercel deploy --yes --target=preview -e DISCOVERY_ENABLE_DDG_INSTANT=1
 
 | Field | Value |
 |-------|-------|
-| Code SHA | _(filled after commit)_ |
-| Preview dpl | _(filled after deploy)_ |
-| Preview URL | _(filled after deploy)_ |
-| Flag on Preview | `DISCOVERY_ENABLE_DDG_INSTANT=1` via `-e` only |
-| Track C UX on bundle | yes · `discovery-ui.js?v=c1a1` (from `8061784`) |
-| TREATMENT | untouched |
+| Code SHA | `e4355451a55cbca39ce0d694321d516bcb641b22` (`e435545`) |
+| Preview dpl | `dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k` |
+| Preview URL | https://akvot-simple-demo-pnmmxdn7e-k-akvot.vercel.app |
+| Flag on Preview | `DISCOVERY_ENABLE_DDG_INSTANT=1` via deploy `-e` only (project Preview env **not** set) |
+| Track C UX on bundle | **yes** · `discovery-ui.js?v=c1a1` (SHA `8061784`) |
+| TREATMENT | `dpl_J92G9…` **untouched** |
 | Evidence path | `docs/GO-IMPL-500/MD-WAVE/L2-ADAPTER-2-DDG-IA-שרת-2026-09-24.md` |
 | Locks | **NO promote** |
+
+### Light smoke (`vercel curl`)
+
+- Health `/api/discovery/health` → `ok:true` · durable KV
+- Flag ON observed: `providers.ddg_instant_answer` present (absent when flag OFF)
+- Seeds `World Wide Web Consortium` · `Ada Lovelace` → `providers.ddg_instant_answer=ia_error` · 0 invented candidates (honest empty)
+- Live DDG TLS from box + Preview currently EOF/timeout to `api.duckduckgo.com` — cite-or-drop / never-invent path held
+- `general_web_search` **absent** (GENERAL_WEB left OFF) · project env has no `DISCOVERY_ENABLE_DDG_INSTANT` / no `DISCOVERY_ENABLE_GENERAL_WEB`
 
