@@ -10,6 +10,10 @@ import {
   urlAloneCeiling,
   clampGraphRelationship,
 } from './evidenceGraph.js';
+import {
+  familiesTriedAtWave,
+  missionHasProgress,
+} from './missionMemory.js';
 
 export const POLICY_SCHEMA_VERSION = '1.0.0-wave1';
 
@@ -36,6 +40,7 @@ export const POLICY_ACTIONS = Object.freeze(['next', 'stop']);
  *   wave?: number,
  *   maxWaves?: number,
  *   mission?: { lastProgress?: boolean },
+ *   missionMemory?: object,
  *   registryView?: object,
  * }} PolicyContext
  */
@@ -94,8 +99,14 @@ export function selectLaunches(ctx = {}) {
       ? ctx.plan.launches
       : launchesFromQueryPlan(ctx.plan || {});
   const flags = ctx.flags || {};
+  const wave = Number(ctx.wave) || 1;
+  const mem = ctx.missionMemory || null;
+  // §21 MAY: block repeat SELECT of same family@wave without progress
+  const triedAtWave = mem ? familiesTriedAtWave(mem, wave) : new Set();
+  const noProgress = mem ? !missionHasProgress(mem) : false;
   const launches = [];
   const skipped = [];
+  let memoryRepeatSkips = 0;
 
   for (const row of launchesIn) {
     const familyId = String(row?.familyId || '');
@@ -114,6 +125,16 @@ export function selectLaunches(ctx = {}) {
       skipped.push({ familyId, intentId: row.intentId, skipReason: skip });
       continue;
     }
+    if (noProgress && triedAtWave.has(familyId)) {
+      memoryRepeatSkips += 1;
+      skipped.push({
+        familyId,
+        intentId: row.intentId,
+        skipReason: 'mission_memory_repeat_no_progress',
+        wave,
+      });
+      continue;
+    }
     launches.push({
       intentId: String(row.intentId || ''),
       familyId,
@@ -124,7 +145,7 @@ export function selectLaunches(ctx = {}) {
   }
 
   launches.sort((a, b) => a.priority - b.priority || a.familyId.localeCompare(b.familyId));
-  return { launches, skipped };
+  return { launches, skipped, memoryRepeatSkips };
 }
 
 /**
@@ -238,7 +259,15 @@ export function nextOrStop(ctx = {}) {
   if (Array.isArray(planLaunches) && planLaunches.length === 0 && wave <= 1) {
     return { action: 'stop', reason: 'EMPTY_PLAN' };
   }
-  if (ctx.mission?.lastProgress === false && (ctx.frontier?.isEmpty || ctx.frontier?.size === 0)) {
+  const frontierEmpty = ctx.frontier?.isEmpty || ctx.frontier?.size === 0;
+  // Prefer explicit mission.lastProgress; else §21 memory digest (no invent)
+  const noProgress =
+    ctx.mission?.lastProgress === false ||
+    (ctx.mission?.lastProgress == null &&
+      ctx.missionMemory &&
+      !missionHasProgress(ctx.missionMemory) &&
+      familiesTriedAtWave(ctx.missionMemory, wave).size > 0);
+  if (noProgress && frontierEmpty) {
     return { action: 'stop', reason: 'NO_PROGRESS' };
   }
   const exp = expandDecision(ctx);
@@ -398,6 +427,7 @@ export function buildPolicyContext(parts = {}) {
     wave: Number(parts.wave) || 1,
     maxWaves: parts.maxWaves,
     mission: parts.mission || {},
+    missionMemory: parts.missionMemory || undefined,
     registryView: parts.registryView,
   };
 }

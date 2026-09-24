@@ -507,6 +507,19 @@ export function validateQueryPlan(plan) {
   if (plan.budgets && plan.budgets.silentExpansionForbidden !== true) {
     errors.push('silentExpansionForbidden_required');
   }
+  // Align with Policy.select: launches rows must carry registered familyIds (no invent)
+  if (Array.isArray(plan.launches)) {
+    plan.launches.forEach((row, i) => {
+      const familyId = String(row?.familyId || '').trim();
+      if (!familyId) {
+        errors.push(`launch_missing_familyId:${i}`);
+        return;
+      }
+      if (!FAMILY_TO_PROVIDER[familyId]) {
+        errors.push(`family_unregistered:${familyId}`);
+      }
+    });
+  }
   return { ok: errors.length === 0, errors };
 }
 

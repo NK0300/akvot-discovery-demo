@@ -184,6 +184,28 @@ export function structuredLog(level, event, fields = {}) {
     };
   }
   if (typeof f.ms === 'number') safe.ms = Math.max(0, f.ms);
+  // Policy orch light obs (§21b) — counts / closed enums only (no PII)
+  if (f.policyId) safe.policyId = String(f.policyId).slice(0, 64);
+  if (f.wave != null && Number.isFinite(Number(f.wave))) safe.wave = Math.max(0, Number(f.wave));
+  for (const k of [
+    'selectLaunchCount',
+    'selectSkipCount',
+    'memoryRepeatSkips',
+    'frontierAdded',
+    'c1Ceilinged',
+    'citeDropped',
+    'evidenceEdgeCount',
+    'missionWave',
+    'missionFrontierKeyCount',
+    'missionFindingDigestCount',
+    'missionEvidenceEdgeCount',
+  ]) {
+    if (f[k] != null && Number.isFinite(Number(f[k]))) safe[k] = Math.max(0, Number(f[k]));
+  }
+  if (typeof f.evaluateOk === 'boolean') safe.evaluateOk = f.evaluateOk;
+  if (typeof f.expand === 'boolean') safe.expand = f.expand;
+  if (f.decisionAction) safe.decisionAction = String(f.decisionAction).slice(0, 16);
+  if (f.decisionReason) safe.decisionReason = String(f.decisionReason).slice(0, 64);
   // Never log seed / URLs / credentials / Acc QIDs — allowlist only above
   try {
     console.info('[discovery]', JSON.stringify(safe));

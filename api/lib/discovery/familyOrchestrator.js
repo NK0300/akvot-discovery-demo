@@ -37,6 +37,7 @@ import {
   recordFrontierKeys,
   recordFindingDigests,
   recordDecision,
+  recordEvidenceEdgeCount,
   snapshotMissionMemory,
 } from './missionMemory.js';
 import { selectFetchablePlanUrlTargets } from './security.js';
@@ -392,12 +393,21 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   const providerStates = {};
 
   // SELECT — Policy over QueryPlan (registry eligibility). No Core. Flags default OFF.
+  const wave = Number(opts.wave) > 0 ? Number(opts.wave) : 1;
+  const missionMemoryEarly = opts.missionMemory || null;
+  const selectCtx = {
+    plan,
+    flags,
+    wave,
+    missionMemory: missionMemoryEarly || undefined,
+  };
   const selectOut =
     typeof policy.select === 'function'
-      ? policy.select({ plan, flags, wave: opts.wave || 1 })
-      : selectLaunches({ plan, flags, wave: opts.wave || 1 });
+      ? policy.select(selectCtx)
+      : selectLaunches(selectCtx);
   const selectedLaunches = Array.isArray(selectOut?.launches) ? selectOut.launches : [];
   const selectSkipped = Array.isArray(selectOut?.skipped) ? selectOut.skipped : [];
+  const memoryRepeatSkips = Number(selectOut?.memoryRepeatSkips) || 0;
 
   const planLaunchRows = launchesFromQueryPlan(plan);
   const queryByFamily = new Map(
@@ -434,6 +444,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       reasons: [sk.skipReason || 'policy_select_skip'],
       skipReason: sk.skipReason || 'policy_select_skip',
       policyId: policy.id,
+      wave,
     };
     journal.push(result);
     providerStates[providerId || familyId] = status;
@@ -585,6 +596,8 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       ledger,
       plan,
     });
+    result.policyId = policy.id;
+    result.wave = wave;
     journal.push(result);
     providerStates[result.providerId] = result.status;
     allFindings.push(...(result.findings || []));
@@ -625,7 +638,6 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   const scrubbedJournal = scrubFamilyJournal(journal);
 
   // EVALUATE → RECORD → EXPAND → NEXT|STOP (Policy spine · no auto wave-2 loop)
-  const wave = Number(opts.wave) > 0 ? Number(opts.wave) : 1;
   const frontier =
     opts.frontier && typeof opts.frontier.add === 'function'
       ? opts.frontier
@@ -663,6 +675,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     frontier,
     wave,
     maxWaves: opts.maxWaves,
+    missionMemory: opts.missionMemory || undefined,
     mission: {
       lastProgress:
         opts.mission?.lastProgress != null
@@ -737,6 +750,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     frontier,
     wave,
     maxWaves: opts.maxWaves,
+    missionMemory: opts.missionMemory || undefined,
     mission: {
       lastProgress:
         opts.mission?.lastProgress != null
@@ -783,6 +797,44 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     evidenceGraph.meta = { ...(evidenceGraph.meta || {}), sameEntityEmitted: 0, stripped: true };
   }
 
+  const edgeCount =
+    Number(evidenceGraph?.meta?.edgeCount) ||
+    (Array.isArray(evidenceGraph?.edges) ? evidenceGraph.edges.length : 0);
+  if (missionMemory) {
+    recordEvidenceEdgeCount(missionMemory, edgeCount);
+  }
+
+  // Light Policy orch observability — Acc/QA counts only (no SSE/Core/PII)
+  const missionSnap = missionMemory ? snapshotMissionMemory(missionMemory) : null;
+  const policyObs = {
+    policyId: policy.id,
+    wave,
+    selectLaunchCount: selectedLaunches.length,
+    selectSkipCount: selectSkipped.length,
+    memoryRepeatSkips,
+    evaluateOk: evaluateOut?.ok !== false,
+    frontierAdded,
+    c1Ceilinged: evaluateOut?.c1Ceilinged || 0,
+    citeDropped: evaluateOut?.citeDropped || 0,
+    expand: !!expandOut?.expand,
+    decisionAction: decision?.action === 'next' ? 'next' : 'stop',
+    decisionReason: decision?.reason || 'unknown',
+    evidenceEdgeCount: edgeCount,
+    missionWave: missionSnap?.wave ?? null,
+    missionFrontierKeyCount: missionSnap?.frontierKeyCount ?? null,
+    missionFindingDigestCount: missionSnap?.findingDigestCount ?? null,
+    missionEvidenceEdgeCount: missionSnap?.evidenceEdgeCount ?? null,
+  };
+  try {
+    structuredLog('info', 'policy.orch.obs', {
+      correlationId: opts.correlationId,
+      planId: plan.planId,
+      ...policyObs,
+    });
+  } catch {
+    /* obs must never break orchestration */
+  }
+
   return {
     journal: scrubbedJournal,
     findings: truncatedFindings,
@@ -817,6 +869,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     frontier: frontierSnap,
     evidenceGraph,
     missionMemory: missionMemory ? snapshotMissionMemory(missionMemory) : undefined,
+    policyObs,
   };
 }
 

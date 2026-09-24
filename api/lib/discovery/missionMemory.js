@@ -93,6 +93,51 @@ export function recordDecision(mem, decision = {}) {
   return mem;
 }
 
+
+/**
+ * Families already recorded for a given wave (for Policy.select repeat-block).
+ * @param {object} mem
+ * @param {number} wave
+ * @returns {Set<string>}
+ */
+export function familiesTriedAtWave(mem, wave) {
+  const want = Number(wave) || 0;
+  const set = new Set();
+  if (!mem || !Array.isArray(mem.waves)) return set;
+  for (const row of mem.waves) {
+    if (Number(row?.wave) !== want) continue;
+    for (const f of row.familyIds || []) {
+      const s = String(f || '').trim();
+      if (s) set.add(s);
+    }
+  }
+  return set;
+}
+
+/**
+ * Honest progress signal for §21 repeat-SELECT gate (digests/edges only — no PII).
+ * @param {object} mem
+ */
+export function missionHasProgress(mem) {
+  if (!mem || typeof mem !== 'object') return false;
+  if ((mem.findingDigests || []).length > 0) return true;
+  if ((mem.frontierDigest || []).length > 0) return true;
+  if ((Number(mem.evidenceEdgeCount) || 0) > 0) return true;
+  return false;
+}
+
+/**
+ * @param {object} mem
+ * @param {number} count
+ */
+export function recordEvidenceEdgeCount(mem, count) {
+  if (!mem) return mem;
+  const n = Math.max(0, Number(count) || 0);
+  mem.evidenceEdgeCount = Math.max(mem.evidenceEdgeCount || 0, n);
+  mem.updatedAt = new Date().toISOString();
+  return mem;
+}
+
 /**
  * Acc-safe emit snapshot — no raw seed / PII payloads.
  * @param {object} mem
@@ -122,5 +167,8 @@ export default {
   recordFrontierKeys,
   recordFindingDigests,
   recordDecision,
+  recordEvidenceEdgeCount,
+  familiesTriedAtWave,
+  missionHasProgress,
   snapshotMissionMemory,
 };

@@ -19,6 +19,9 @@ import {
   createMissionMemory,
   recordWave,
   recordDecision,
+  recordEvidenceEdgeCount,
+  familiesTriedAtWave,
+  missionHasProgress,
   snapshotMissionMemory,
 } from './missionMemory.js';
 import { createFrontier } from './frontier.js';
@@ -103,5 +106,15 @@ describe('mission memory', () => {
     assert.equal(snap.missionId, 'm1');
     assert.equal(snap.lastDecision.reason, 'NO_PROGRESS');
     assert.equal(snap.raw, undefined);
+  });
+
+  it('tracks evidence edges and tried families (§21)', () => {
+    const m = createMissionMemory({ missionId: 'm2', seedHash: 'ef01', policyId: 'policy.b0.default' });
+    recordWave(m, { wave: 1, familyIds: ['encyclopedia'] });
+    assert.equal(missionHasProgress(m), false);
+    assert.ok(familiesTriedAtWave(m, 1).has('encyclopedia'));
+    recordEvidenceEdgeCount(m, 3);
+    assert.equal(missionHasProgress(m), true);
+    assert.equal(snapshotMissionMemory(m).evidenceEdgeCount, 3);
   });
 });

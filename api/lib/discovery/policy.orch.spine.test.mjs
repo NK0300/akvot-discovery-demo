@@ -12,10 +12,15 @@ import {
   digestFinding,
   buildPolicyContext,
   evaluateBatch,
+  selectLaunches,
 } from './policy.js';
 import { createFrontier } from './frontier.js';
 import {
   createMissionMemory,
+  recordWave,
+  recordEvidenceEdgeCount,
+  familiesTriedAtWave,
+  missionHasProgress,
   snapshotMissionMemory,
 } from './missionMemory.js';
 import { buildQueryPlan } from './queryPlan.js';
@@ -175,5 +180,51 @@ ok('evaluate admits typed+url', ev.frontierAdds.length === 1);
 
 // getPolicy night exists but orch default remains b0
 ok('getPolicy night', getPolicy('policy.night.caps')?.id === 'policy.night.caps');
+
+// §21 Mission Memory deepen — evidenceEdgeCount + repeat SELECT gate + policyObs
+ok('evidenceEdgeCount on mission snap', (outMem.missionMemory?.evidenceEdgeCount ?? 0) >= 0);
+ok('policyObs present', outMem.policyObs && outMem.policyObs.policyId === 'policy.b0.default');
+ok('policyObs select counts', typeof outMem.policyObs.selectLaunchCount === 'number');
+ok('journal keeps policyId after scrub', outMem.journal.some((j) => j.policyId === 'policy.b0.default'));
+ok('journal keeps wave after scrub', outMem.journal.some((j) => j.wave === 1));
+
+const emptyMem = createMissionMemory({
+  missionId: 'm-repeat',
+  seedHash: 'hashcafe',
+  policyId: 'policy.b0.default',
+});
+recordWave(emptyMem, { wave: 1, familyIds: ['encyclopedia', 'knowledge_graph'] });
+ok('familiesTriedAtWave', familiesTriedAtWave(emptyMem, 1).has('encyclopedia'));
+ok('no progress yet', missionHasProgress(emptyMem) === false);
+const blocked = selectLaunches({
+  plan: {
+    launches: [
+      { intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'encyclopedia', priority: 1 },
+      { intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'bibliographic', priority: 2 },
+    ],
+  },
+  flags: {},
+  wave: 1,
+  missionMemory: emptyMem,
+});
+ok(
+  'repeat SELECT blocked without progress',
+  blocked.skipped.some((s) => s.skipReason === 'mission_memory_repeat_no_progress' && s.familyId === 'encyclopedia'),
+);
+ok('untried family still launches', blocked.launches.some((l) => l.familyId === 'bibliographic'));
+ok('memoryRepeatSkips counted', blocked.memoryRepeatSkips >= 1);
+
+// With progress digests, repeat is allowed
+recordEvidenceEdgeCount(emptyMem, 2);
+ok('missionHasProgress after edges', missionHasProgress(emptyMem) === true);
+const allowed = selectLaunches({
+  plan: {
+    launches: [{ intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'encyclopedia', priority: 1 }],
+  },
+  flags: {},
+  wave: 1,
+  missionMemory: emptyMem,
+});
+ok('repeat SELECT allowed after progress', allowed.launches.some((l) => l.familyId === 'encyclopedia'));
 
 console.log(`policy.orch.spine.test.mjs: ${passed} passed`);

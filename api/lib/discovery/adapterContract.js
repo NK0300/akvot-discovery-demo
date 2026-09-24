@@ -695,6 +695,13 @@ export function scrubFamilyJournal(journal) {
       reasons,
       forbiddenIdentitiesVersion: FORBIDDEN_IDENTITIES_VERSION,
     };
+    // Acc/QA-honest Policy orch fields (no PII) — survive scrub allowlist
+    if (entry.policyId != null) {
+      out.policyId = String(entry.policyId).slice(0, 64);
+    }
+    if (entry.wave != null && Number.isFinite(Number(entry.wave))) {
+      out.wave = Math.max(0, Number(entry.wave));
+    }
     if (entry.skipReason != null) {
       out.skipReason = scrubReasonToken(entry.skipReason, strippedIds);
     }

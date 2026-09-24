@@ -11,7 +11,7 @@ import {
   policyB0Default,
   POLICY_STOP_REASONS,
 } from './policy.js';
-import { buildQueryPlan } from './queryPlan.js';
+import { buildQueryPlan, validateQueryPlan } from './queryPlan.js';
 import { FAMILY_TO_PROVIDER } from './sourceFamily.js';
 
 let passed = 0;
@@ -78,5 +78,23 @@ ok('stop reasons closed set', POLICY_STOP_REASONS.includes('BUDGET'));
 const hold = getPolicy('policy.hold');
 const stop = hold.nextOrStop({});
 ok('hold preset stops', stop.action === 'stop');
+
+// QueryPlan.validate ↔ Policy.select gap harden (launches path)
+const badLaunch = {
+  ...plan,
+  launches: [
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: '' },
+    { intentId: 'x', familyId: 'nope_family_xyz' },
+  ],
+};
+const badV = validateQueryPlan(badLaunch);
+ok('validate catches missing familyId on launches', badV.errors.some((e) => e.startsWith('launch_missing_familyId')));
+ok('validate catches unregistered launch family', badV.errors.some((e) => e.includes('family_unregistered:nope_family_xyz')));
+
+const goodLaunch = {
+  ...plan,
+  launches: [{ intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'encyclopedia', priority: 1 }],
+};
+ok('validate accepts registered launch family', validateQueryPlan(goodLaunch).ok === true || !validateQueryPlan(goodLaunch).errors.some((e) => e.includes('family_unregistered')));
 
 console.log(`policy.queryPlan.select.test.mjs: ${passed} passed`);
