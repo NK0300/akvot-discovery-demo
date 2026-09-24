@@ -439,3 +439,49 @@
 - **What:** Wrote evidence + test-results mirror/raw; appended ACTION-LOG Acc notes. Commit+push docs only. Does not flip flags · does not promote.
 - **When:** 2026-09-24 08:34 IDT
 
+
+---
+
+## Server · L2 GENERAL_WEB follow-up TBL+OpenSearch (שרת) · 2026-09-24 ~08:33–08:40 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 154 | 08:33 | Backend: RCA confirm — TBL http extlinks → gate drop; Smith/כהן opensearch_error |
+| 155 | 08:34–08:36 | Backend: http→https upgrade in `gateGeneralWebHitUrl` + `tryUpgradeHttpToHttps` (cite-or-drop) |
+| 156 | 08:36–08:37 | Backend: dedicated GWS budget + 1 OpenSearch retry + message/errorCode |
+| 157 | 08:37 | Backend: unit tests **66/0** (upgrade + retry + error path) |
+| 158 | 08:38–08:40 | Backend: evidence · commit+push ≠ promote · separate Preview `-e DISCOVERY_ENABLE_GENERAL_WEB=1` · TREATMENT untouched |
+
+### Action 154 — RCA align
+- **When:** 2026-09-24 08:33 IDT
+- **Who:** Backend / שרת
+- **What:** Confirmed QA PARTIAL RCA on `dpl_HYUbw4g…`: TBL almost-all-http extlinks rejected by https-only gate; Smith/כהן hit `opensearch_error` (transient/budget). Arch FILL-SPEC intact.
+- **Files:** QA smoke md · generalWebSearch.js
+
+### Action 155 — HTTP→HTTPS upgrade
+- **When:** 2026-09-24 08:34–08:36 IDT
+- **Who:** שרת
+- **What:** Same-host/path http→https rewrite before SSRF+registry gate. Raw http never emitted. Registry/private still dropped. Version `fill.1.1`.
+- **Files:** `api/lib/discovery/generalWebSearch.js`
+
+### Action 156 — OpenSearch resilience
+- **When:** 2026-09-24 08:36–08:37 IDT
+- **Who:** שרת
+- **What:** Dedicated `adapterBudgetSignal` slice + dispose; one retry on transient network/5xx/abort-not-parent; `message`/`errorCode`/`openSearchAttempts` on emptyResult.
+- **Files:** `api/lib/discovery/generalWebSearch.js`
+
+### Action 157 — Unit tests
+- **When:** 2026-09-24 08:37 IDT
+- **Who:** שרת
+- **What:** Upgrade + registry/SSRF still-drop · OpenSearch retry · persistent 5xx error path. **66/0**.
+- **Files:** `generalWebSearch.test.mjs`
+
+### Action 158 — Evidence + push + separate Preview
+- **When:** 2026-09-24 08:38–08:40 IDT
+- **Who:** שרת
+- **What:** Wrote follow-up evidence. Commit+push `origin/main` (**≠ promote**). Separate Preview with `-e DISCOVERY_ENABLE_GENERAL_WEB=1` only. TREATMENT `dpl_J92G9…` untouched. UX WIP unstaged.
+- **Files:** evidence md · ACTION-LOG
+
+**Server L2 GENERAL_WEB follow-up action ids:** **154–158**  
+**Verdict:** fill.1.1 **CODE COMPLETE** · flag **OFF** · TREATMENT **untouched** · Wave1 product **NOT DONE** · **NO PROMOTE**
+

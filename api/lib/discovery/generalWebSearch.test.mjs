@@ -6,6 +6,8 @@ import {
   searchGeneralWeb,
   isGeneralWebSearchEnabled,
   gateGeneralWebHitUrl,
+  tryUpgradeHttpToHttps,
+  isTransientOpenSearchFailure,
   buildGeneralWebHit,
   GENERAL_WEB_SEARCH_VERSION,
   GENERAL_WEB_CONTRACT_VERSION,
@@ -71,7 +73,7 @@ function mockFetchFactory(extlinks) {
 }
 
 console.log('--- version / source lock ---');
-ok('fill.1 version', GENERAL_WEB_SEARCH_VERSION === '2026-09-24.fill.1');
+ok('fill.1.1 version', GENERAL_WEB_SEARCH_VERSION === '2026-09-24.fill.1.1');
 ok('stub.1 contract retained', GENERAL_WEB_CONTRACT_VERSION === '2026-09-24.stub.1');
 ok('source wp_opensearch_extlinks', GENERAL_WEB_SOURCE_ID === 'wp_opensearch_extlinks');
 
@@ -103,7 +105,23 @@ console.log('--- empty query ---');
 console.log('--- SSRF / registry gate ---');
 ok('loopback dropped', gateGeneralWebHitUrl('https://127.0.0.1/x').ok === false);
 ok('metadata IP dropped', gateGeneralWebHitUrl('https://169.254.169.254/latest').ok === false);
-ok('http dropped', gateGeneralWebHitUrl('http://example.org/').ok === false);
+ok(
+  'http upgraded to https',
+  (() => {
+    const g = gateGeneralWebHitUrl('http://example.com/foo');
+    return g.ok === true && String(g.canonical || '').startsWith('https://example.com/foo');
+  })(),
+  JSON.stringify(gateGeneralWebHitUrl('http://example.com/foo')),
+);
+ok(
+  'http upgrade still drops registry',
+  gateGeneralWebHitUrl('http://en.wikipedia.org/wiki/X').ok === false,
+);
+ok(
+  'http upgrade still drops private/SSRF',
+  gateGeneralWebHitUrl('http://127.0.0.1/x').ok === false &&
+    gateGeneralWebHitUrl('http://169.254.169.254/latest').ok === false,
+);
 ok('wikipedia registry dropped', gateGeneralWebHitUrl('https://en.wikipedia.org/wiki/X').ok === false);
 ok('wikidata registry dropped', gateGeneralWebHitUrl('https://www.wikidata.org/wiki/Q42').ok === false);
 ok('viaf registry dropped', gateGeneralWebHitUrl('https://viaf.org/viaf/1').ok === false);
@@ -148,7 +166,7 @@ console.log('--- flag ON adapter · mock WP · C1 + cap + drop ---');
     'https://www.w3.org/',
     'https://127.0.0.1/evil',
     'https://en.wikipedia.org/wiki/HTML',
-    'http://insecure.example/',
+    'http://127.0.0.1/insecure',
     'https://www.w3.org/TR/',
     'https://example.org/a',
     'https://example.org/b',
@@ -183,7 +201,7 @@ console.log('--- flag ON adapter · mock WP · C1 + cap + drop ---');
   );
   ok(
     'SSRF/registry poison dropped',
-    !r.findings.some((f) => /127\.0\.0\.1|wikipedia\.org|insecure\.example/i.test(f.url)),
+    !r.findings.some((f) => /127\.0\.0\.1|wikipedia\.org/i.test(f.url)),
     r.findings.map((f) => f.url).join(','),
   );
   ok('dropped count > 0', (r.dropped || 0) >= 1, `dropped=${r.dropped}`);
@@ -260,6 +278,113 @@ console.log('--- he locale host ---');
   );
   ok('he host used', /he\.wikipedia\.org/.test(seen), seen);
   ok('empty opensearch handled', r.findings.length === 0);
+}
+
+
+console.log('--- http→https upgrade helper ---');
+{
+  const up = tryUpgradeHttpToHttps('http://example.com/foo?x=1');
+  ok('upgrade helper ok', up.ok === true);
+  ok('upgrade helper https', up.ok && /^https:\/\/example\.com\/foo\?x=1$/.test(up.httpsUrl), up.httpsUrl);
+  ok('upgrade helper rejects https input', tryUpgradeHttpToHttps('https://example.com/').ok === false);
+  const hit = buildGeneralWebHit({
+    url: 'http://www.w3.org/',
+    title: 'w3.org',
+    snippet: 'W3C',
+    query: 'W3C',
+    pageTitle: 'World Wide Web Consortium',
+    wikiLang: 'en',
+    wikiPageUrl: 'https://en.wikipedia.org/wiki/World_Wide_Web_Consortium',
+    apiProvenanceUrl: 'https://en.wikipedia.org/w/api.php?action=query',
+  });
+  ok('build upgrades http hit', !!hit && String(hit.url).startsWith('https://'), hit && hit.url);
+}
+
+console.log('--- OpenSearch retry / error path ---');
+{
+  let calls = 0;
+  const r = await searchGeneralWeb(
+    { q: 'W3C', budgetMs: 2000, locale: 'en' },
+    {
+      enableGeneralWebSearch: true,
+      fetchJson: async (url) => {
+        if (String(url).includes('action=opensearch')) {
+          calls += 1;
+          if (calls === 1) {
+            const e = new Error('HTTP 503');
+            e.status = 503;
+            throw e;
+          }
+          return [
+            'Q',
+            ['World Wide Web Consortium'],
+            ['Standards org'],
+            ['https://en.wikipedia.org/wiki/World_Wide_Web_Consortium'],
+          ];
+        }
+        return {
+          query: {
+            pages: {
+              '42': {
+                pageid: 42,
+                title: 'World Wide Web Consortium',
+                extract: 'Standards.',
+                fullurl: 'https://en.wikipedia.org/wiki/World_Wide_Web_Consortium',
+                extlinks: [{ '*': 'https://www.w3.org/' }],
+              },
+            },
+          },
+        };
+      },
+    },
+  );
+  ok('opensearch retried once', calls === 2, `calls=${calls}`);
+  ok('retry then ok', r.reason === 'ok', r.reason);
+  ok('retry yielded finding', r.findings.length >= 1);
+  ok('meta attempts=2', (r.meta?.openSearchAttempts || r.openSearchAttempts) === 2, JSON.stringify(r.meta));
+}
+{
+  const r = await searchGeneralWeb(
+    { q: 'W3C', budgetMs: 2000, locale: 'en' },
+    {
+      enableGeneralWebSearch: true,
+      fetchJson: async (url) => {
+        if (String(url).includes('action=opensearch')) {
+          const e = new Error('HTTP 500');
+          e.status = 500;
+          throw e;
+        }
+        return { query: { pages: {} } };
+      },
+    },
+  );
+  ok('persistent 5xx → opensearch_error', r.reason === 'opensearch_error', r.reason);
+  ok('error has message', typeof r.message === 'string' && r.message.length > 0, r.message);
+  ok('error has errorCode', r.errorCode === 'http_500', r.errorCode);
+  ok('error partial', r.partial === true);
+  ok('error empty findings', r.findings.length === 0);
+  ok('attempts=2 on fail', (r.openSearchAttempts || r.meta?.openSearchAttempts) === 2, String(r.openSearchAttempts));
+}
+{
+  ok(
+    '4xx not transient',
+    isTransientOpenSearchFailure({ status: 404, message: 'HTTP 404' }, undefined, undefined, null) === false,
+  );
+  ok(
+    '5xx is transient',
+    isTransientOpenSearchFailure({ status: 503, message: 'HTTP 503' }, undefined, undefined, null) === true,
+  );
+  const parent = new AbortController();
+  parent.abort();
+  ok(
+    'parent abort not transient',
+    isTransientOpenSearchFailure(
+      { name: 'AbortError', message: 'aborted' },
+      undefined,
+      parent.signal,
+      'cancelled',
+    ) === false,
+  );
 }
 
 restoreEnv();

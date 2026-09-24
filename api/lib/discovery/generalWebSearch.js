@@ -20,7 +20,7 @@ import {
 
 export const GENERAL_WEB_SEARCH_PROVIDER_ID = 'general_web_search';
 /** Fill version (stub.1 contract preserved when flag OFF / empty q). */
-export const GENERAL_WEB_SEARCH_VERSION = '2026-09-24.fill.1';
+export const GENERAL_WEB_SEARCH_VERSION = '2026-09-24.fill.1.1';
 /** Locked stub contract id. */
 export const GENERAL_WEB_CONTRACT_VERSION = '2026-09-24.stub.1';
 export const GENERAL_WEB_SOURCE_ID = 'wp_opensearch_extlinks';
@@ -54,13 +54,50 @@ export function isGeneralWebSearchEnabled(opts = {}) {
 }
 
 /**
+ * Same-host/path http→https rewrite. Never lets raw http through the gate.
+ * @param {string} url
+ * @returns {{ ok: true, httpsUrl: string } | { ok: false, reason: string }}
+ */
+export function tryUpgradeHttpToHttps(url) {
+  const raw = String(url || '').trim();
+  if (!raw) return { ok: false, reason: 'empty' };
+  let u;
+  try {
+    u = new URL(raw);
+  } catch {
+    return { ok: false, reason: 'invalid_url' };
+  }
+  if (u.protocol.toLowerCase() !== 'http:') {
+    return { ok: false, reason: 'not_http' };
+  }
+  u.protocol = 'https:';
+  return { ok: true, httpsUrl: u.toString() };
+}
+
+/**
  * Validate a prospective search hit URL (cite-or-drop + SSRF).
+ * http: public hosts → same-host/path HTTPS rewrite, then gate (raw http never passes).
  * Also drops registry hosts (wiki/wikidata/viaf/OL) — not unknown-domain candidates.
  * @param {string} url
- * @returns {{ ok: boolean, reason?: string, canonical?: string }}
+ * @returns {{ ok: boolean, reason?: string, canonical?: string, upgradedFromHttp?: boolean }}
  */
 export function gateGeneralWebHitUrl(url) {
-  const safety = assertSafePublicHttpsUrl(url);
+  const raw = String(url || '').trim();
+  if (!raw) return { ok: false, reason: 'empty' };
+  let candidate = raw;
+  let upgradedFromHttp = false;
+  try {
+    const u = new URL(raw);
+    if (u.protocol.toLowerCase() === 'http:') {
+      const up = tryUpgradeHttpToHttps(raw);
+      if (!up.ok) return { ok: false, reason: up.reason || 'http_upgrade_failed' };
+      candidate = up.httpsUrl;
+      upgradedFromHttp = true;
+    }
+  } catch {
+    return { ok: false, reason: 'invalid_url' };
+  }
+  const safety = assertSafePublicHttpsUrl(candidate);
   if (!safety.ok) return safety;
   let host = '';
   try {
@@ -71,8 +108,11 @@ export function gateGeneralWebHitUrl(url) {
   if (REGISTRY_HOST_RE.test(host)) {
     return { ok: false, reason: 'registry_host_skipped' };
   }
-  return { ok: true, canonical: safety.canonical };
+  const out = { ok: true, canonical: safety.canonical };
+  if (upgradedFromHttp) out.upgradedFromHttp = true;
+  return out;
 }
+
 
 /** @param {string} locale */
 export function wikiHostForLocale(locale) {
@@ -234,6 +274,78 @@ export function generalWebBudgetSignal(timeoutMs, external) {
 }
 
 /**
+ * Transient OpenSearch failures worth one retry (network/5xx/abort-not-parent).
+ * Parent abort / own budget timeout → no retry (honest timeout/aborted).
+ * @param {unknown} err
+ * @param {AbortSignal} [ownSignal]
+ * @param {AbortSignal} [parentSignal]
+ * @param {string|null|undefined} [abortKind]
+ */
+export function isTransientOpenSearchFailure(err, ownSignal, parentSignal, abortKind) {
+  if (parentSignal?.aborted || abortKind === 'cancelled') return false;
+  if (abortKind === 'timeout') return false;
+  if (ownSignal?.aborted) return false;
+  const status =
+    err && typeof err === 'object' && 'status' in /** @type {object} */ (err)
+      ? /** @type {{ status?: number }} */ (err).status
+      : undefined;
+  if (typeof status === 'number') {
+    if (status >= 500 || status === 429 || status === 0) return true;
+    if (status > 0 && status < 500) return false;
+  }
+  const name =
+    err && typeof err === 'object' && 'name' in /** @type {object} */ (err)
+      ? String(/** @type {{ name?: unknown }} */ (err).name || '')
+      : '';
+  const msg = String(
+    (err && typeof err === 'object' && 'message' in /** @type {object} */ (err)
+      ? /** @type {{ message?: unknown }} */ (err).message
+      : err) || '',
+  );
+  if (name === 'AbortError' || /\babort\b|timeout/i.test(msg)) return true;
+  if (/network|fetch failed|ECONNRESET|ETIMEDOUT|ENOTFOUND|EAI_AGAIN/i.test(msg)) return true;
+  return false;
+}
+
+/**
+ * @param {unknown} err
+ * @param {AbortSignal} [parentSignal]
+ * @param {string|null|undefined} [abortKind]
+ */
+function openSearchFailureMeta(err, parentSignal, abortKind) {
+  if (parentSignal?.aborted || abortKind === 'cancelled') {
+    return { reason: 'aborted', errorCode: 'cancelled' };
+  }
+  if (abortKind === 'timeout') {
+    return { reason: 'timeout', errorCode: 'timeout' };
+  }
+  const status =
+    err && typeof err === 'object' && 'status' in /** @type {object} */ (err)
+      ? /** @type {{ status?: number }} */ (err).status
+      : undefined;
+  const name =
+    err && typeof err === 'object' && 'name' in /** @type {object} */ (err)
+      ? String(/** @type {{ name?: unknown }} */ (err).name || '')
+      : '';
+  const msg = String(
+    (err && typeof err === 'object' && 'message' in /** @type {object} */ (err)
+      ? /** @type {{ message?: unknown }} */ (err).message
+      : err) || '',
+  ).slice(0, 200);
+  if (name === 'AbortError' || /\babort\b|timeout/i.test(msg)) {
+    return { reason: 'timeout', errorCode: 'timeout', message: msg };
+  }
+  let errorCode = 'error';
+  if (typeof status === 'number' && status > 0) errorCode = `http_${status}`;
+  else if (status === 0) errorCode = 'network';
+  else if (err && typeof err === 'object' && 'code' in /** @type {object} */ (err)) {
+    errorCode = String(/** @type {{ code?: unknown }} */ (err).code || 'error').slice(0, 40);
+  }
+  return { reason: 'opensearch_error', errorCode, message: msg };
+}
+
+
+/**
  * @param {string} host
  * @param {string} q
  * @param {AbortSignal} signal
@@ -327,9 +439,22 @@ export async function searchGeneralWeb(req, ctx = {}) {
     Math.max(50, Number(req?.budgetMs) || GENERAL_WEB_TIMEOUT_MS),
     GENERAL_WEB_TIMEOUT_MS,
   );
-  const { signal } = generalWebBudgetSignal(budgetMs, ctx.signal);
+  // Dedicated GWS slice via adapterBudgetSignal. Parent (orch session wall) still
+  // cancels; GWS is not starved by sibling provider soft-fails on other signals.
+  const parentSignal = ctx.signal;
+  const budget = generalWebBudgetSignal(budgetMs, parentSignal);
+  const { signal, dispose } = budget;
+  const abortKind = () =>
+    typeof budget.abortKind === 'function' ? budget.abortKind() : budget.abortKind;
+
+  try {
   if (signal.aborted) {
-    return emptyResult('aborted', { partial: true });
+    const reason =
+      parentSignal?.aborted || abortKind() === 'cancelled' ? 'aborted' : 'timeout';
+    return emptyResult(reason, {
+      partial: true,
+      errorCode: reason === 'aborted' ? 'cancelled' : 'timeout',
+    });
   }
 
   const fetchJson = typeof ctx.fetchJson === 'function' ? ctx.fetchJson : safeFetchJson;
@@ -337,44 +462,89 @@ export async function searchGeneralWeb(req, ctx = {}) {
   const wikiLang = wikiLangForLocale(req?.locale);
 
   let open;
+  let openSearchAttempts = 0;
   try {
-    open = await runOpenSearch(host, q, signal, fetchJson);
+    let lastErr;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      openSearchAttempts = attempt + 1;
+      if (parentSignal?.aborted) {
+        return emptyResult('aborted', {
+          partial: true,
+          errorCode: 'cancelled',
+          openSearchAttempts,
+        });
+      }
+      if (signal.aborted) {
+        return emptyResult('timeout', {
+          partial: true,
+          errorCode: 'timeout',
+          openSearchAttempts,
+        });
+      }
+      try {
+        open = await runOpenSearch(host, q, signal, fetchJson);
+        lastErr = undefined;
+        break;
+      } catch (e) {
+        lastErr = e;
+        const transient = isTransientOpenSearchFailure(
+          e,
+          signal,
+          parentSignal,
+          abortKind(),
+        );
+        if (!transient || attempt === 1) throw e;
+      }
+    }
+    if (!open && lastErr) throw lastErr;
   } catch (e) {
-    const isAbort =
-      signal.aborted ||
-      e?.name === 'AbortError' ||
-      /abort|timeout/i.test(String(e?.message || e));
-    return emptyResult(isAbort ? 'timeout' : 'opensearch_error', {
+    const meta = openSearchFailureMeta(e, parentSignal, abortKind());
+    return emptyResult(meta.reason, {
       partial: true,
-      message: String(e?.message || e).slice(0, 200),
+      message: meta.message || String(e?.message || e).slice(0, 200),
+      errorCode: meta.errorCode,
+      openSearchAttempts,
     });
   }
 
   if (signal.aborted) {
-    return emptyResult('timeout', { partial: true });
+    const reason =
+      parentSignal?.aborted || abortKind() === 'cancelled' ? 'aborted' : 'timeout';
+    return emptyResult(reason, {
+      partial: true,
+      errorCode: reason === 'aborted' ? 'cancelled' : 'timeout',
+      openSearchAttempts,
+    });
   }
 
   const topTitles = open.rows.slice(0, MAX_PAGE_FETCHES).map((r) => r.title);
   if (!topTitles.length) {
-    return emptyResult('empty_opensearch', { stub: false });
+    return emptyResult('empty_opensearch', { stub: false, openSearchAttempts });
   }
 
   let ext;
   try {
     ext = await runExtlinksQuery(host, topTitles, signal, fetchJson);
   } catch (e) {
-    const isAbort =
-      signal.aborted ||
-      e?.name === 'AbortError' ||
-      /abort|timeout/i.test(String(e?.message || e));
-    return emptyResult(isAbort ? 'timeout' : 'extlinks_error', {
+    const meta = openSearchFailureMeta(e, parentSignal, abortKind());
+    const reason =
+      meta.reason === 'opensearch_error' ? 'extlinks_error' : meta.reason;
+    return emptyResult(reason, {
       partial: true,
-      message: String(e?.message || e).slice(0, 200),
+      message: meta.message || String(e?.message || e).slice(0, 200),
+      errorCode: meta.errorCode,
+      openSearchAttempts,
     });
   }
 
   if (signal.aborted) {
-    return emptyResult('timeout', { partial: true });
+    const reason =
+      parentSignal?.aborted || abortKind() === 'cancelled' ? 'aborted' : 'timeout';
+    return emptyResult(reason, {
+      partial: true,
+      errorCode: reason === 'aborted' ? 'cancelled' : 'timeout',
+      openSearchAttempts,
+    });
   }
 
   const pageByTitle = new Map();
@@ -443,7 +613,8 @@ export async function searchGeneralWeb(req, ctx = {}) {
       host,
       openSearchTitles: topTitles,
       pageFetches: topTitles.length ? 1 : 0,
-      openSearchCalls: 1,
+      openSearchCalls: openSearchAttempts,
+      openSearchAttempts,
     },
     contract: {
       ...STUB_CONTRACT,
@@ -451,6 +622,14 @@ export async function searchGeneralWeb(req, ctx = {}) {
       source: GENERAL_WEB_SOURCE_ID,
     },
   };
+  } finally {
+    try {
+      dispose?.();
+    } catch {
+      /* ignore */
+    }
+  }
+
 }
 
 export default {
@@ -464,8 +643,10 @@ export default {
   isGeneralWebSearchEnabled,
   searchGeneralWeb,
   gateGeneralWebHitUrl,
+  tryUpgradeHttpToHttps,
   buildGeneralWebHit,
   wikiHostForLocale,
   wikiLangForLocale,
   generalWebBudgetSignal,
+  isTransientOpenSearchFailure,
 };
