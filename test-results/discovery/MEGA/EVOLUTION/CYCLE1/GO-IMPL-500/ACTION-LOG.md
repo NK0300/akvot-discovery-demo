@@ -1235,3 +1235,66 @@
 - headed P0×3 after TDZ hoist: **PASS** (findings 2 · graph 3n·2e each)
 - served discovery-ui.js hoist verified · console residual caveat non-blocking
 - CHECKPOINT-QA-P0-FIXTURES OVERALL→PASS · **אין promote** · flags OFF
+
+---
+
+## Arch · MD-WAVE L3 · F11 capability registry SPEC (ארכיטקט)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 260 | 07:51 | Arch: STOP competing gap-map (Chief owns MD-WAVE/00-GAP-MAP) · pivot to L3 sole deliverable |
+| 261 | 07:51 | Arch: RO re-read candidateFamilies.js · orch skip candidate_unwired_f11 · budget FAMILY_STATUS · SoT 03 |
+| 262 | 07:51 | Arch: draft capability schema + health/budget hooks + cite-or-drop + orch plug-without-launch |
+| 263 | 07:51 | Arch: specify primary registries/filings/news · appendix scholarly/government/archives · no SERP · C1 freeze |
+| 264 | 07:51 | Arch: write ARCH-L3-F11-CAPABILITY-REGISTRY-SPEC-ארכיטקט.md under MD-WAVE |
+| 265 | 07:51 | Arch: write LOCAL-WAVE-ARCH-L3.md · scenarios A–E honest · zero E2E claim |
+| 266 | 07:51 | Arch: ACTION-LOG append **260–266** · git add docs · push · NO promote · zero runtime edits |
+
+### Action 260 — Pivot
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Steering: drop broader gap-map (duplicates Chief `00-GAP-MAP.md`). MAXIMUM-DISCOVERY dir left empty of competing gap docs. Sole deliverable = L3 F11 capability registry SPEC.
+- **Files:** (none yet)
+
+### Action 261 — RO cites
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Confirmed six CANDIDATE_FAMILIES `wired:false` · orch journals `unsupported`/`candidate_unwired_f11` · intents DISCOVER_FILINGS/NEWS/REGISTRIES unwired · no F11 in flags.js yet.
+- **Files:** (RO) candidateFamilies.js · familyOrchestrator.js · planOrchestration.js · sourceFamily.js · budget.js
+
+### Action 262 — Schema + hooks
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Closed capability verbs (search/lookup_by_id/filing_search/headline_search) · healthHooks (flag ON ∧ !wired ⇒ still unsupported) · budgetHooks (no reserve while unwired) · cite-or-drop candidate ceiling.
+- **Files:** SPEC draft
+
+### Action 263 — Family rows
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Align registries/filings/news with existing descriptors; appendix scholarly/government/archives; forbid SERP/crawl; URL candidates only via plan+urlSafety+provenance; C1 URL-alone→UNKNOWN frozen.
+- **Files:** SPEC
+
+### Action 264 — SPEC file
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote `GO-IMPL-500/MD-WAVE/ARCH-L3-F11-CAPABILITY-REGISTRY-SPEC-ארכיטקט.md`.
+- **Files:** ARCH-L3-F11-CAPABILITY-REGISTRY-SPEC-ארכיטקט.md
+
+### Action 265 — Wave report
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Wrote `LOCAL-WAVE-ARCH-L3.md` — honest no new E2E · scenarios A–E · remaining Chief GO list.
+- **Files:** LOCAL-WAVE-ARCH-L3.md
+
+### Action 266 — Log + push
+- **When:** 2026-09-24T07:51:56+0300 IDT
+- **Who:** Arch / ארכיטקט
+- **What:** Appended **260–266**. Docs-only commit+push if clean. **NO promote** · F11 HOLD · runtime edits **0**.
+- **Files:** ACTION-LOG.md
+
+---
+
+**Arch L3 action ids:** **260–266** (7 meaningful · honest · not padded)  
+**Concurrent bands:** Arch board 250–256 · Server 127–134 · בודק P0 fixtures · Acc 200–206  
+**Checkpoints:** L3 SPEC done · gap-map owned by Chief · F11 HOLD · flags default OFF  
+**NO PROMOTE** · NO HTTP · locks in force
