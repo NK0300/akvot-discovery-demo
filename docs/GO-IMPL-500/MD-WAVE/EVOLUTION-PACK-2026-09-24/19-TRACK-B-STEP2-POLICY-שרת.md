@@ -105,3 +105,17 @@ Additive orch return: `policyId`, `wave`, `evaluate`, `expand`, `decision`, `fro
 **HOLD:** nightLoop→`policy.night.caps` full unify · multi-wave LOOP inside orch.
 
 **Tag:** IMPLEMENTED (Evaluate/Record/Expand/Next hooks) · Server · 2026-09-24 · **NO PROMOTE**
+
+---
+
+## Addendum · evaluate ↔ Evidence Graph ceilings · Server · 2026-09-24
+
+On top of Arch `ab17dd2` (Frontier priority + orch `evidenceGraph` Record bridge — **do not reinvent**):
+
+- `evaluateBatch` uses existing `urlAloneCeiling` / `clampGraphRelationship`
+- cite-or-drop · C1 urlAlone → `unknown` (never SAME-ENTITY) · UNKNOWN≠FALSE · INFORMATION≠IDENTITY
+- Additive evaluate fields: `c1Ceilinged`, `citeDropped`
+- Tests: `policy.orch.evidenceGraph.test.mjs`
+- Detail: `23-FRONTIER-EVIDENCE-GRAPH-WIRE-שרת.md`
+
+**HOLD:** nightLoop→`policy.night.caps` · multi-wave LOOP · NO PROMOTE

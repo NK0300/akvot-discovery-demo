@@ -6,6 +6,10 @@
  */
 
 import { getFamily, familySkipReason, eligibleFamilies } from './sourceFamily.js';
+import {
+  urlAloneCeiling,
+  clampGraphRelationship,
+} from './evidenceGraph.js';
 
 export const POLICY_SCHEMA_VERSION = '1.0.0-wave1';
 
@@ -125,7 +129,8 @@ export function selectLaunches(ctx = {}) {
 
 /**
  * Evaluate a family batch for frontier admission (cite-or-drop / C1 ceiling).
- * Does not assert identity.
+ * Uses evidenceGraph ceilings — does not assert identity (INFORMATION≠IDENTITY).
+ * UNKNOWN≠FALSE: unknown relationship is valid; never coerced to fail/false.
  * @param {PolicyContext} _ctx
  * @param {{ findings?: object[], evaluateOk?: boolean, urlAlone?: boolean }} batch
  */
@@ -133,29 +138,71 @@ export function evaluateBatch(_ctx = {}, batch = {}) {
   if (batch.evaluateOk === false) {
     return { ok: false, frontierAdds: [], dropReason: batch.dropReason || 'evaluate_failed' };
   }
+  // Explicit batch C1 hard-hold (opts.urlAlone) — no frontier admits
   if (batch.urlAlone === true) {
     return { ok: true, frontierAdds: [], dropReason: 'url_alone_ceiling' };
   }
   const findings = Array.isArray(batch.findings) ? batch.findings : [];
   const frontierAdds = [];
+  let c1Ceilinged = 0;
+  let citeDropped = 0;
   for (const f of findings) {
+    if (f?.evaluateOk === false) {
+      citeDropped += 1;
+      continue;
+    }
     const url = f?.url || f?.canonicalUrl;
-    const typedRef = (f?.entityRefs || f?.softRefs || []).find((k) =>
-      /^(viaf|qid|ol):/i.test(String(k)),
-    );
-    if (!url && !typedRef) continue;
-    if (f?.evaluateOk === false) continue;
+    const refs = [...(f?.entityRefs || []), ...(f?.softRefs || [])].filter(Boolean);
+    const typedRef = refs.find((k) => /^(viaf|qid|ol):/i.test(String(k)));
+    // cite-or-drop: need URL or typed soft-ref
+    if (!url && !typedRef) {
+      citeDropped += 1;
+      continue;
+    }
+    const ceiling = urlAloneCeiling({
+      hostFamily: f.hostFamily || f.familyId,
+      familyId: f.familyId,
+      providerId: f.providerId || (f.providers || [])[0],
+      entityRefs: refs,
+      coalesceKeys: f.coalesceKeys || [],
+      relationship: f.relationship,
+      seedClass: f.seedClass,
+    });
+    const hasTyped = !!typedRef;
+    // C1: URL/title alone → relationship unknown; never SAME-ENTITY on admit
+    let rel = ceiling || clampGraphRelationship(f.relationship || 'unknown', {
+      hasTypedSoftRef: hasTyped,
+      urlAlone: ceiling === 'unknown',
+      urlAloneCeiling: ceiling === 'unknown',
+    });
+    if (String(rel).toLowerCase().replace(/_/g, '-') === 'same-entity') {
+      rel = hasTyped ? 'same-reference' : 'unknown';
+    }
+    // UNKNOWN≠FALSE: unknown is admissible for expand; not a drop
+    if (ceiling === 'unknown') c1Ceilinged += 1;
     frontierAdds.push({
       url: url || undefined,
       typedRef: typedRef || undefined,
       familyId: f.familyId,
       intentId: f.intentId,
       wave: f.wave,
-      reason: 'evaluate_ok',
+      relationship: rel, // INFORMATION≠IDENTITY · clamped
+      reason: ceiling === 'unknown' ? 'c1_url_alone_unknown' : 'evaluate_ok',
       evaluateOk: true,
     });
   }
-  return { ok: true, frontierAdds, dropReason: frontierAdds.length ? undefined : 'no_frontier_adds' };
+  const dropReason = frontierAdds.length
+    ? undefined
+    : citeDropped
+      ? 'cite_or_drop'
+      : 'no_frontier_adds';
+  return {
+    ok: true,
+    frontierAdds,
+    dropReason,
+    c1Ceilinged,
+    citeDropped,
+  };
 }
 
 /**
