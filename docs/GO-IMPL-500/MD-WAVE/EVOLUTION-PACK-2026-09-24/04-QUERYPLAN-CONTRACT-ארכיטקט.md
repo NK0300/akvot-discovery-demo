@@ -49,3 +49,10 @@ Core may call `planForSession` / emit scrubbed plan.
 Core must **not** learn new family ids when registry grows.
 
 **Tag:** DESIGNED (+ IMPLEMENTED subset)
+
+---
+
+## 5. Wave 1 · Policy handoff (2026-09-24)
+QueryPlan remains the **intent schedule**. Runtime **select/expand/stop** moves to Policy interface (§19 · `policy.js`). Orch must call `policy.select` over `plan.launches` + registry eligibility — not new Core switches. Universal Seed (§20) is the preferred plan input shape.
+
+**אין promote**

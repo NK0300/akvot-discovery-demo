@@ -867,3 +867,38 @@
 ## 2026-09-24 19:25 IDT · Chief · MW2 measure CLOSEOUT PARTIAL · Track B OPEN
 - Acc PASS/KEEP · QA PARTIAL/KEEP · UX soft PASS · Wave1 NOT DONE · NO PROMOTE
 - Evidence: EVOLUTION-PACK §01–02 · Acc/QA/UX MD under MD-WAVE/
+
+---
+
+## Arch · Track B FILL GW/DDG registry (ארכיטקט) · 2026-09-24 ~19:28 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 280 | ~19:28 | §17 FILL notes LOCKED for GW+DDG registry rows · Server GO migrate under key test |
+
+### Action 280 — Track B FILL GW/DDG registry
+- **Who:** ארכיטקט (Chief Track B GO)
+- **What:** Registry row descriptors for `general_web` + `ddg_instant` (existing providers only). Key test gate for Server migrate. Tag stays DESIGNED until evidence. No new adapters/hosts. NO PROMOTE.
+- **File:** `EVOLUTION-PACK-2026-09-24/17-FILL-GW-DDG-REGISTRY-ROWS-ארכיטקט.md`
+- **Verdict:** FILL **LOCKED** · Server GO · **NO PROMOTE**
+
+---
+
+## Arch · Track B step1 glance (ארכיטקט) · 2026-09-24 ~19:32 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 284 | ~19:32 | Arch glance CONSISTENT on `7647f51` registry SoT · key test PASS · NO PROMOTE |
+
+### Action 284 — Track B step1 Arch glance
+- **Who:** ארכיטקט
+- **What:** Verified §17 rows + map migrate vs key test. Tag registry SoT IMPLEMENTED with evidence. nightLoop unify still DESIGNED. Wave1/MW2 DONE unchanged.
+- **File:** `EVOLUTION-PACK-2026-09-24/ARCH-GLANCE-TRACK-B-STEP1-ארכיטקט-2026-09-24.md`
+- **Verdict:** CONSISTENT · **NO PROMOTE**
+
+## 285 · BIG BUILD Wave1 · Arch contracts Policy/Seed/Frontier/Mission · 2026-09-24
+- Chief: BIG BUILD MODE GO · Wave1 order Policy→Orch→Frontier contract
+- Arch LANDED: §19–21 + frontier.js stub · policy.wave1.test.mjs 9/9
+- Modules: policy.js · universalSeed.js · missionMemory.js · frontier.js
+- No Core/C1/Treatment · flags untouched · **NO PROMOTE**
+- Server: Step2 Policy+Select/Execute (parallel) · nightLoop unify = HOLD

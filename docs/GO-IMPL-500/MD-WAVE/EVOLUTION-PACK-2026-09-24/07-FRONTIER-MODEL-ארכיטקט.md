@@ -36,3 +36,14 @@
 | Scoring / priority beyond stable URL sort | EXPERIMENTAL |
 
 **Tag:** DESIGNED
+
+---
+
+## 4. Wave 1 modular stub (2026-09-24 BIG BUILD)
+**Code:** `api/lib/discovery/frontier.js` · `createFrontier()`  
+- `add` requires `evaluateOk === true` · dedupe by normalized URL / typedRef  
+- `takeNext(n)` · `snapshot()` for Policy/Mission Memory  
+- Runtime wire into orch Select/Execute = **Server Step 2** (after Policy)  
+- Parallel **contract only** until Policy Select lands — no Adapter theater  
+
+**Tag:** DESIGNED · stub LANDED · **אין promote**

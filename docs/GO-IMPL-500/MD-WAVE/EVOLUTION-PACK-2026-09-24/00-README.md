@@ -1,7 +1,7 @@
 # Discovery Evolution Pack · 2026-09-24
 
 **Authority:** Chief Directive — DISCOVERY EVOLUTION (Nachman)  
-**Status:** Arch contracts §03–08/12–15 LANDED · §15 CHIEF RATIFIED · §16 Server runtime boundary DESIGNED · MW2 Acc/QA/UX measure IN FLIGHT · Track B code HOLD until A closes  
+**Status:** Step1 ACCEPTED @7647f51 · BIG BUILD Wave1 GO · Arch §19–21 Policy/Seed/Mission + Frontier stub LANDED · Server Step2 Policy+Orch IN FLIGHT · **NO PROMOTE**  
 **Locks:** NO PROMOTE · TREATMENT UNTOUCHED · Core protected · Wave 1 DONE = NO · C1 UNKNOWN hard
 
 ## Status legend (per section)
@@ -29,6 +29,9 @@ IMPLEMENTED | DESIGNED | EXPERIMENTAL | PROPOSED | UNKNOWN
 | 17 | FILL GW/DDG registry rows | Arch | **DESIGNED** (Track B GO) |
 | 18 | Track B Registry SoT migrate | Server | **IMPLEMENTED** (maps + GW/DDG rows · no Core) |
 | 16 | Server Runtime Boundary | Server | **DESIGNED** (plan only · Track B HOLD) |
+| 19 | Policy Interface | Arch (+ Server wire) | **DESIGNED** · stub LANDED |
+| 20 | Universal Seed | Arch | **DESIGNED** · stub LANDED |
+| 21 | Mission Memory | Arch | **DESIGNED** · stub LANDED |
 
 ## Live MW2 Preview (for §02)
 - SHA: `1ed1a94472555afd736aa79a49bcb322eaba0517`
@@ -53,3 +56,12 @@ PASS DESIGNED · Core growth rule confirmed · nightLoop unify = Track B only ·
 
 ## §17 Track B FILL (2026-09-24)
 GW+DDG registry rows FILL notes LOCKED — `17-FILL-GW-DDG-REGISTRY-ROWS-ארכיטקט.md`. Migrate under key test; IMPLEMENTED only with evidence. NO PROMOTE.
+
+## BIG BUILD Wave 1 Arch (2026-09-24)
+Contracts + modular stubs (no Core/C1/Treatment/promote):
+- §19 Policy · `api/lib/discovery/policy.js`
+- §20 Universal Seed · `universalSeed.js`
+- §21 Mission Memory · `missionMemory.js`
+- §07 Frontier stub · `frontier.js`
+- Tests: `policy.wave1.test.mjs` (9 pass)
+Server wires Select/Execute; reports at Wave end. **אין promote**.

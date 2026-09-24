@@ -45,3 +45,15 @@ Status: nightLoop IMPLEMENTED as parallel · unification = DESIGNED.
 - Coordinate after §04–05 accepted — **no Core break**
 
 **Tag:** DESIGNED
+
+---
+
+## 5. Wave 1 path (BIG BUILD · Server Step 2)
+Target runner (align Chief cadence):
+```
+Plan → Policy.select → Registry.resolve → Execute → Policy.evaluate → Record
+  → Frontier.add → Policy.expand / nextOrStop → Evidence Graph → Mission Memory → LOOP
+```
+Do **not** auto-migrate nightLoop → policy until separate GO. Stub modules: `policy.js` · `frontier.js` · `missionMemory.js` · `universalSeed.js`.
+
+**אין promote**
