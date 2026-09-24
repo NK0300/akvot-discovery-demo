@@ -17,6 +17,47 @@ export const INDEPENDENCE_CLASSES = Object.freeze([
 ]);
 
 /**
+ * Closed capability enum (Track B · §04 §2 "intent.capabilities_needed ⊆ family.capabilities").
+ * Registry rows declare ONLY capabilities[] + entityTypes[] (+ optional displayLabel).
+ * No scoring / priority / execution logic in the Registry — ordering, priority and
+ * fallback stay in queryPlan/Policy.
+ * C1: NO capability may grant identity or bypass C1 (no identity-claim / same-entity /
+ * verified-type values). A row declaring any value outside this enum is rejected
+ * fail-closed (never matched into a plan).
+ */
+export const ACCESS_CAPABILITIES = Object.freeze([
+  'search',
+  'lookup_by_id',
+  'url_candidate',
+]);
+/** Intent-serving capabilities (what QueryPlan intents may require). */
+export const INTENT_CAPABILITIES = Object.freeze([
+  'reference_search', // search public reference records for a seed (SEARCH INTENT ≠ ENTITY TRUTH)
+  'open_knowledge_search', // open knowledge bases (Wikimedia / OpenLibrary); authority intentionally absent
+  'bibliographic_records', // bibliographic / publication records
+  'document_records', // document-oriented records (bibliographic + encyclopedic)
+  'origin_metadata', // public web-origin metadata for a URL/domain (URL-alone → UNKNOWN)
+]);
+export const FAMILY_CAPABILITY_ENUM = Object.freeze([
+  ...ACCESS_CAPABILITIES,
+  ...INTENT_CAPABILITIES,
+]);
+/** Closed entityTypes enum — mirrors queryPlan SEED_CLASSES (asserted in tests). */
+export const ENTITY_TYPE_ENUM = Object.freeze([
+  'person',
+  'company',
+  'organization',
+  'domain',
+  'url',
+  'document',
+  'ambiguous',
+  'unknown',
+]);
+/** Identity-ish tokens that must never appear as a capability or display label. */
+const IDENTITY_DENY_RE = /identity|same|verif|claim|merge|commit|truth|confirm/i;
+const DISPLAY_LABEL_DENY_RE = /verified|same|identical|confirmed|מאומת|זהה|אומת|ודאי/i;
+
+/**
  * Canonical family descriptors (wired adapters only for productionEligible=false Preview).
  * productionEligible always false until Chief promote GO.
  */
@@ -28,8 +69,9 @@ export const SOURCE_FAMILIES = Object.freeze({
     independenceClass: 'shared_host_family',
     hostFamily: 'wikimedia',
     safetyClass: 'trusted_api',
-    capabilities: Object.freeze(['search', 'lookup_by_id']),
-    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown']),
+    capabilities: Object.freeze(['search', 'lookup_by_id', 'reference_search', 'open_knowledge_search']),
+    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown', 'url', 'domain', 'document']),
+    displayLabel: Object.freeze({ en: 'Knowledge graph', he: 'גרף ידע' }),
     inputRequirements: Object.freeze(['raw_seed', 'typed_ref', 'locale']),
     outputTypes: Object.freeze(['finding', 'evidence', 'typed_soft_ref']),
     costClass: 'low',
@@ -49,8 +91,9 @@ export const SOURCE_FAMILIES = Object.freeze({
     independenceClass: 'shared_host_family',
     hostFamily: 'wikimedia',
     safetyClass: 'trusted_api',
-    capabilities: Object.freeze(['search']),
-    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown']),
+    capabilities: Object.freeze(['search', 'reference_search', 'open_knowledge_search', 'document_records']),
+    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown', 'url', 'domain', 'document']),
+    displayLabel: Object.freeze({ en: 'Encyclopedia', he: 'אנציקלופדיה' }),
     inputRequirements: Object.freeze(['raw_seed', 'locale']),
     outputTypes: Object.freeze(['finding', 'evidence']),
     costClass: 'low',
@@ -70,8 +113,9 @@ export const SOURCE_FAMILIES = Object.freeze({
     independenceClass: 'independent',
     hostFamily: 'openlibrary',
     safetyClass: 'trusted_api',
-    capabilities: Object.freeze(['search', 'lookup_by_id']),
-    entityTypes: Object.freeze(['person', 'document', 'organization', 'ambiguous', 'unknown']),
+    capabilities: Object.freeze(['search', 'lookup_by_id', 'reference_search', 'open_knowledge_search', 'bibliographic_records', 'document_records']),
+    entityTypes: Object.freeze(['person', 'document', 'organization', 'ambiguous', 'unknown', 'url', 'domain', 'company']),
+    displayLabel: Object.freeze({ en: 'Bibliographic', he: 'ביבליוגרפיה' }),
     inputRequirements: Object.freeze(['raw_seed', 'typed_ref', 'locale']),
     outputTypes: Object.freeze(['finding', 'evidence', 'typed_soft_ref', 'document_meta']),
     costClass: 'low',
@@ -91,8 +135,9 @@ export const SOURCE_FAMILIES = Object.freeze({
     independenceClass: 'independent',
     hostFamily: 'viaf',
     safetyClass: 'trusted_api',
-    capabilities: Object.freeze(['search', 'lookup_by_id']),
-    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous']),
+    capabilities: Object.freeze(['search', 'lookup_by_id', 'reference_search']),
+    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'url', 'domain', 'document']),
+    displayLabel: Object.freeze({ en: 'Authority (VIAF)', he: 'רשומות סמכות (VIAF)' }),
     inputRequirements: Object.freeze(['raw_seed', 'typed_ref', 'locale']),
     outputTypes: Object.freeze(['finding', 'evidence', 'typed_soft_ref']),
     costClass: 'low',
@@ -114,7 +159,8 @@ export const SOURCE_FAMILIES = Object.freeze({
     hostFamily: 'web_origin',
     safetyClass: 'untrusted_web',
     capabilities: Object.freeze(['origin_metadata']),
-    entityTypes: Object.freeze(['url', 'domain']),
+    entityTypes: Object.freeze(['url', 'domain', 'company', 'organization']),
+    displayLabel: Object.freeze({ en: 'Web origin metadata', he: 'מטא-נתוני אתר' }),
     inputRequirements: Object.freeze(['url', 'domain']),
     outputTypes: Object.freeze(['finding', 'evidence', 'url_candidate']),
     costClass: 'medium',
@@ -147,6 +193,7 @@ export const SOURCE_FAMILIES = Object.freeze({
     safetyClass: 'untrusted_web',
     capabilities: Object.freeze(['search', 'url_candidate']),
     entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown']),
+    displayLabel: Object.freeze({ en: 'General web', he: 'חיפוש רשת כללי' }),
     inputRequirements: Object.freeze(['raw_seed', 'locale']),
     outputTypes: Object.freeze(['finding', 'url_candidate']),
     costClass: 'medium',
@@ -178,6 +225,7 @@ export const SOURCE_FAMILIES = Object.freeze({
     safetyClass: 'untrusted_web',
     capabilities: Object.freeze(['search', 'url_candidate']),
     entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown']),
+    displayLabel: Object.freeze({ en: 'DuckDuckGo Instant Answer', he: 'תשובה מיידית DuckDuckGo' }),
     inputRequirements: Object.freeze(['raw_seed']),
     outputTypes: Object.freeze(['finding', 'url_candidate']),
     costClass: 'low',
@@ -311,6 +359,95 @@ export function eligibleFamilies(flags = {}) {
     out.push('ddg_instant');
   }
   return [...new Set(out)].sort();
+}
+
+/** previewFlag env name → flags key (same mapping eligibleFamilies uses). */
+const PREVIEW_FLAG_KEYS = Object.freeze({
+  DISCOVERY_ENABLE_VIAF: 'viaf',
+  DISCOVERY_ENABLE_WEB_ORIGIN: 'webOrigin',
+  DISCOVERY_ENABLE_GENERAL_WEB: 'generalWeb',
+  DISCOVERY_ENABLE_DDG_INSTANT: 'ddgInstant',
+});
+
+/**
+ * Fail-closed registry row check (declarations only). Returns reject reason or null.
+ * @param {object} row
+ */
+export function registryRowRejectReason(row) {
+  if (!row || typeof row !== 'object' || !row.familyId) return 'family_id_missing';
+  if (!Array.isArray(row.capabilities)) return 'capabilities_missing';
+  for (const c of row.capabilities) {
+    if (IDENTITY_DENY_RE.test(String(c))) return `capability_identity_forbidden:${c}`;
+    if (!FAMILY_CAPABILITY_ENUM.includes(c)) return `capability_not_in_enum:${c}`;
+  }
+  if (!Array.isArray(row.entityTypes)) return 'entity_types_missing';
+  for (const t of row.entityTypes) {
+    if (!ENTITY_TYPE_ENUM.includes(t)) return `entity_type_not_in_enum:${t}`;
+  }
+  if (row.displayLabel != null) {
+    const dl = row.displayLabel;
+    if (typeof dl !== 'object' || typeof dl.en !== 'string' || typeof dl.he !== 'string') {
+      return 'display_label_invalid';
+    }
+    if (DISPLAY_LABEL_DENY_RE.test(dl.en) || DISPLAY_LABEL_DENY_RE.test(dl.he)) {
+      return 'display_label_forbidden_word';
+    }
+  }
+  return null;
+}
+
+/**
+ * Eligibility from registry declarations: wired && (b0 || previewFlag on).
+ * Same env/flag rules as eligibleFamilies (parity-asserted in tests).
+ * @param {object} row
+ * @param {{ viaf?: boolean, webOrigin?: boolean, generalWeb?: boolean, ddgInstant?: boolean }} flags
+ */
+export function isFamilyRowEligible(row, flags = {}) {
+  if (!row || row.wired === false) return false;
+  if (row.b0 === true) return true;
+  const pf = row.previewFlag ? String(row.previewFlag) : '';
+  if (!pf) return false;
+  const key = PREVIEW_FLAG_KEYS[pf];
+  return (key ? flags[key] === true : false) || process.env[pf] === '1';
+}
+
+/**
+ * Capability match (§04 §2): capabilitiesNeeded ⊆ family.capabilities
+ *   AND seedClass ∈ family.entityTypes AND family eligible(flags).
+ * Invalid rows (capability/entityType outside closed enums, identity-ish values) are
+ * skipped fail-closed. Output sorted. Pure w.r.t. the registry passed in.
+ * @param {string[]} capabilitiesNeeded
+ * @param {{ seedClass?: string, flags?: object, registry?: Record<string, object> }} [opts]
+ * @returns {string[]}
+ */
+export function familiesForCapabilities(capabilitiesNeeded, opts = {}) {
+  const need = Array.isArray(capabilitiesNeeded) ? capabilitiesNeeded.map(String) : [];
+  if (!need.length || !need.every((c) => INTENT_CAPABILITIES.includes(c))) return [];
+  const seedClass = String(opts.seedClass || 'unknown');
+  const registry = opts.registry && typeof opts.registry === 'object' ? opts.registry : SOURCE_FAMILIES;
+  const flags = opts.flags || {};
+  const out = [];
+  for (const [key, row] of Object.entries(registry)) {
+    if (!row || row.familyId !== key) continue;
+    if (registryRowRejectReason(row)) continue;
+    if (!isFamilyRowEligible(row, flags)) continue;
+    if (!row.entityTypes.includes(seedClass)) continue;
+    if (!need.every((c) => row.capabilities.includes(c))) continue;
+    out.push(row.familyId);
+  }
+  return out.sort();
+}
+
+/**
+ * Does the (valid) registry row declare at least one of the given capabilities?
+ * @param {string} familyId
+ * @param {string[]} capabilities
+ * @param {Record<string, object>} [registry]
+ */
+export function familyDeclaresAnyCapability(familyId, capabilities, registry = SOURCE_FAMILIES) {
+  const row = registry?.[String(familyId || '')];
+  if (!row || registryRowRejectReason(row)) return false;
+  return (capabilities || []).some((c) => row.capabilities.includes(c));
 }
 
 /**
@@ -473,6 +610,13 @@ export default {
   familySkipReason,
   isUnwiredIntent,
   listCapabilityRegistry,
+  FAMILY_CAPABILITY_ENUM,
+  INTENT_CAPABILITIES,
+  ENTITY_TYPE_ENUM,
+  registryRowRejectReason,
+  isFamilyRowEligible,
+  familiesForCapabilities,
+  familyDeclaresAnyCapability,
   B0_FAMILIES,
   FAMILY_TO_PROVIDER,
   PROVIDER_TO_FAMILY,

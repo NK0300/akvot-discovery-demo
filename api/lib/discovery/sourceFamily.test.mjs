@@ -17,6 +17,10 @@ import {
   B0_FAMILIES,
   FAMILY_TO_PROVIDER,
   resolveFamilyProvider,
+  familiesForCapabilities,
+  registryRowRejectReason,
+  isFamilyRowEligible,
+  INTENT_CAPABILITIES,
 } from './sourceFamily.js';
 
 let passed = 0;
@@ -77,4 +81,20 @@ ok('maps derived SoT — FAMILY_TO_PROVIDER from registry', providerIdForFamily(
 
 ok('resolveFamilyProvider knowledge_graph', resolveFamilyProvider('knowledge_graph') === 'wikidata');
 ok('FAMILY_TO_PROVIDER matches registry', FAMILY_TO_PROVIDER.web_origin === 'web_origin');
+
+// Track B — registry intent capabilities (§04 §2 capability match · declarations only)
+ok('every registered row passes closed-enum check', REGISTERED_FAMILY_IDS.every((f) => registryRowRejectReason(SOURCE_FAMILIES[f]) === null));
+ok('web_origin capabilities = origin_metadata only', JSON.stringify(SOURCE_FAMILIES.web_origin.capabilities) === JSON.stringify(['origin_metadata']));
+ok('authority lacks open_knowledge_search (b0 fallback excludes VIAF)', !SOURCE_FAMILIES.authority.capabilities.includes('open_knowledge_search'));
+ok('authority entityTypes exclude unknown', !SOURCE_FAMILIES.authority.entityTypes.includes('unknown'));
+ok('reference_search × person (flags off) = B0', JSON.stringify(familiesForCapabilities(['reference_search'], { seedClass: 'person', flags: {} })) === JSON.stringify([...B0_FAMILIES].sort()));
+ok('reference_search × person (viaf) + authority', familiesForCapabilities(['reference_search'], { seedClass: 'person', flags: { viaf: true } }).includes('authority'));
+ok('reference_search × unknown (viaf) no authority', !familiesForCapabilities(['reference_search'], { seedClass: 'unknown', flags: { viaf: true } }).includes('authority'));
+ok('origin_metadata flag off → []', familiesForCapabilities(['origin_metadata'], { seedClass: 'url', flags: {} }).length === 0);
+ok('origin_metadata flag on → web_origin', JSON.stringify(familiesForCapabilities(['origin_metadata'], { seedClass: 'url', flags: { webOrigin: true } })) === JSON.stringify(['web_origin']));
+ok('document_records × person = bibliographic+encyclopedia', JSON.stringify(familiesForCapabilities(['document_records'], { seedClass: 'person' })) === JSON.stringify(['bibliographic', 'encyclopedia']));
+ok('GW/DDG never match an intent capability', INTENT_CAPABILITIES.every((c) => !familiesForCapabilities([c], { seedClass: 'person', flags: { generalWeb: true, ddgInstant: true } }).some((f) => f === 'general_web' || f === 'ddg_instant')));
+ok('row eligibility: unwired → false', isFamilyRowEligible({ b0: true, wired: false }) === false);
+ok('identity capability row rejected', registryRowRejectReason({ familyId: 'x', capabilities: ['same_entity'], entityTypes: ['person'] }) !== null);
+
 console.log(`sourceFamily.test.mjs: ${passed} passed`);

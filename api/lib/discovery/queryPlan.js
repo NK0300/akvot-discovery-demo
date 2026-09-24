@@ -12,6 +12,10 @@ import {
   B0_FAMILIES,
   PROVIDER_TO_FAMILY,
   FAMILY_TO_PROVIDER,
+  SOURCE_FAMILIES,
+  familiesForCapabilities,
+  familyDeclaresAnyCapability,
+  registryRowRejectReason,
 } from './sourceFamily.js';
 
 export { B0_FAMILIES, PROVIDER_TO_FAMILY, FAMILY_TO_PROVIDER };
@@ -108,137 +112,122 @@ export function detectSeedClass(seed, hints = {}) {
 }
 
 /**
- * Primary intents by seedClass. Families limited to wired adapters + flags.
+ * Intent schedule per seedClass — intentId · priority · reason · capabilitiesNeeded.
+ * Family MEMBERSHIP is never hardcoded here (§04 §2 "+20 families rule"): it comes from
+ * Registry capability match (familiesForCapabilities: capabilitiesNeeded ⊆ capabilities
+ * AND seedClass ∈ entityTypes AND eligible(flags)). Ordering / priority / fallback live here.
+ * fallbackCapabilitiesNeeded is used ONLY when the primary match is empty.
+ * Parity with pre-Track-B hardcoded maps: queryPlan.registryIntents.parity.test.mjs.
+ */
+const INTENT_SCHEDULE = Object.freeze({
+  url: Object.freeze([
+    {
+      intentId: 'DISCOVER_OFFICIAL_WEB_ORIGIN',
+      priority: 1,
+      capabilitiesNeeded: ['origin_metadata'],
+      fallbackCapabilitiesNeeded: ['open_knowledge_search'],
+      reason: 'url_or_domain_seed_prefer_origin_metadata',
+      fallbackReason: 'url_seed_web_origin_flag_off_fallback_b0',
+    },
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', priority: 2, capabilitiesNeeded: ['reference_search'], reason: 'secondary_b0_refs_after_origin' },
+  ]),
+  document: Object.freeze([
+    { intentId: 'DISCOVER_DOCUMENTS', priority: 1, capabilitiesNeeded: ['bibliographic_records'], reason: 'document_seed_bibliographic_first' },
+    { intentId: 'DISCOVER_PUBLICATIONS', priority: 2, capabilitiesNeeded: ['reference_search'], reason: 'publications_and_identity_refs' },
+  ]),
+  company: Object.freeze([
+    { intentId: 'DISCOVER_ORGANIZATION_PRESENCE', priority: 1, capabilitiesNeeded: ['reference_search'], reason: 'org_presence_via_b0_authority' },
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', priority: 2, capabilitiesNeeded: ['reference_search'], reason: 'identity_refs_not_identity_truth' },
+    { intentId: 'DISCOVER_OFFICIAL_WEB_ORIGIN', priority: 3, capabilitiesNeeded: ['origin_metadata'], reason: 'optional_web_origin_if_flag' },
+  ]),
+  person: Object.freeze([
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', priority: 1, capabilitiesNeeded: ['reference_search'], reason: 'person_seed_identity_refs_schedule' },
+    { intentId: 'DISCOVER_PUBLICATIONS', priority: 2, capabilitiesNeeded: ['bibliographic_records'], reason: 'publications_secondary' },
+    { intentId: 'DISCOVER_DOCUMENTS', priority: 3, capabilitiesNeeded: ['document_records'], reason: 'documents_tertiary' },
+  ]),
+  ambiguous: Object.freeze([
+    { intentId: 'DISCOVER_ALIASES', priority: 1, capabilitiesNeeded: ['reference_search'], reason: 'ambiguous_tight_alias_search_not_merge' },
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', priority: 2, capabilitiesNeeded: ['reference_search'], reason: 'ambiguous_identity_refs' },
+  ]),
+  unknown: Object.freeze([
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', priority: 1, capabilitiesNeeded: ['reference_search'], reason: 'unknown_minimal_b0_only' },
+  ]),
+});
+/** seedClass aliases sharing a schedule (routing only — not membership). */
+const SCHEDULE_ALIAS = Object.freeze({ domain: 'url', organization: 'company' });
+
+function scheduleFor(seedClass) {
+  const sc = SEED_CLASSES.includes(seedClass) ? seedClass : 'unknown';
+  return { matchClass: sc, rows: INTENT_SCHEDULE[SCHEDULE_ALIAS[sc] || sc] || INTENT_SCHEDULE.unknown };
+}
+
+/**
+ * Capabilities an intent may legitimately require (union over the schedule) — used by
+ * validateQueryPlan's additive capability check. Unwired intents map to [] (none).
+ */
+export const INTENT_CAPABILITY_NEEDS = Object.freeze(
+  Object.fromEntries(
+    INTENT_IDS.map((intentId) => {
+      const caps = new Set();
+      for (const rows of Object.values(INTENT_SCHEDULE)) {
+        for (const r of rows) {
+          if (r.intentId !== intentId) continue;
+          (r.capabilitiesNeeded || []).forEach((c) => caps.add(c));
+          (r.fallbackCapabilitiesNeeded || []).forEach((c) => caps.add(c));
+        }
+      }
+      return [intentId, Object.freeze([...caps].sort())];
+    }),
+  ),
+);
+
+/**
+ * Resolve one schedule row → { sourceFamilies, reason } via registry capability match.
+ * @param {object} row
+ * @param {string} matchClass
+ * @param {{ viaf?: boolean, webOrigin?: boolean }} flags
+ * @param {Record<string, object>} [registry]
+ */
+function resolveScheduleRow(row, matchClass, flags, registry) {
+  const opts = { seedClass: matchClass, flags: { viaf: flags.viaf === true, webOrigin: flags.webOrigin === true }, registry };
+  const primary = familiesForCapabilities(row.capabilitiesNeeded, opts);
+  if (primary.length || !row.fallbackCapabilitiesNeeded) {
+    return { sourceFamilies: primary, reason: row.reason };
+  }
+  return {
+    sourceFamilies: familiesForCapabilities(row.fallbackCapabilitiesNeeded, opts),
+    reason: row.fallbackReason || row.reason,
+  };
+}
+
+/**
+ * Registry-derived family list for one intent under a seedClass (pure helper).
+ * [] when the seedClass schedule has no such intent or no eligible capable family.
+ * @param {string} intentId
+ * @param {{ seedClass?: string, flags?: object, registry?: Record<string, object> }} [opts]
+ * @returns {string[]}
+ */
+export function familiesForIntent(intentId, opts = {}) {
+  const { matchClass, rows } = scheduleFor(String(opts.seedClass || 'unknown'));
+  const row = rows.find((r) => r.intentId === intentId);
+  if (!row) return [];
+  return resolveScheduleRow(row, matchClass, opts.flags || {}, opts.registry).sourceFamilies;
+}
+
+/**
+ * Primary intents by seedClass. Rows with no eligible capable family are dropped
+ * (e.g. company WEB_ORIGIN with the web-origin flag OFF).
  * @param {string} seedClass
  * @param {{ viaf?: boolean, webOrigin?: boolean }} flags
+ * @param {Record<string, object>} [registry]
  */
-function intentsForSeedClass(seedClass, flags) {
-  const b0 = [...B0_FAMILIES];
-  const withAuth = flags.viaf ? [...b0, 'authority'] : b0;
-
-  /** @type {{ intentId: string, priority: number, sourceFamilies: string[], reason: string }[]} */
-  let rows = [];
-  switch (seedClass) {
-    case 'url':
-    case 'domain':
-      rows = [
-        {
-          intentId: 'DISCOVER_OFFICIAL_WEB_ORIGIN',
-          priority: 1,
-          sourceFamilies: flags.webOrigin ? ['web_origin'] : [...b0],
-          reason: flags.webOrigin
-            ? 'url_or_domain_seed_prefer_origin_metadata'
-            : 'url_seed_web_origin_flag_off_fallback_b0',
-        },
-        {
-          intentId: 'DISCOVER_IDENTITY_REFERENCES',
-          priority: 2,
-          sourceFamilies: withAuth,
-          reason: 'secondary_b0_refs_after_origin',
-        },
-      ];
-      break;
-    case 'document':
-      rows = [
-        {
-          intentId: 'DISCOVER_DOCUMENTS',
-          priority: 1,
-          sourceFamilies: ['bibliographic'],
-          reason: 'document_seed_bibliographic_first',
-        },
-        {
-          intentId: 'DISCOVER_PUBLICATIONS',
-          priority: 2,
-          sourceFamilies: withAuth,
-          reason: 'publications_and_identity_refs',
-        },
-      ];
-      break;
-    case 'company':
-    case 'organization':
-      rows = [
-        {
-          intentId: 'DISCOVER_ORGANIZATION_PRESENCE',
-          priority: 1,
-          sourceFamilies: withAuth,
-          reason: 'org_presence_via_b0_authority',
-        },
-        {
-          intentId: 'DISCOVER_IDENTITY_REFERENCES',
-          priority: 2,
-          sourceFamilies: withAuth,
-          reason: 'identity_refs_not_identity_truth',
-        },
-      ];
-      if (flags.webOrigin) {
-        rows.push({
-          intentId: 'DISCOVER_OFFICIAL_WEB_ORIGIN',
-          priority: 3,
-          sourceFamilies: ['web_origin'],
-          reason: 'optional_web_origin_if_flag',
-        });
-      }
-      break;
-    case 'person':
-      rows = [
-        {
-          intentId: 'DISCOVER_IDENTITY_REFERENCES',
-          priority: 1,
-          sourceFamilies: withAuth,
-          reason: 'person_seed_identity_refs_schedule',
-        },
-        {
-          intentId: 'DISCOVER_PUBLICATIONS',
-          priority: 2,
-          sourceFamilies: ['bibliographic'],
-          reason: 'publications_secondary',
-        },
-        {
-          intentId: 'DISCOVER_DOCUMENTS',
-          priority: 3,
-          sourceFamilies: ['bibliographic', 'encyclopedia'],
-          reason: 'documents_tertiary',
-        },
-      ];
-      break;
-    case 'ambiguous':
-      rows = [
-        {
-          intentId: 'DISCOVER_ALIASES',
-          priority: 1,
-          sourceFamilies: withAuth,
-          reason: 'ambiguous_tight_alias_search_not_merge',
-        },
-        {
-          intentId: 'DISCOVER_IDENTITY_REFERENCES',
-          priority: 2,
-          sourceFamilies: withAuth,
-          reason: 'ambiguous_identity_refs',
-        },
-      ];
-      break;
-    case 'unknown':
-    default:
-      rows = [
-        {
-          intentId: 'DISCOVER_IDENTITY_REFERENCES',
-          priority: 1,
-          sourceFamilies: [...B0_FAMILIES],
-          reason: 'unknown_minimal_b0_only',
-        },
-      ];
-      break;
-  }
-
+function intentsForSeedClass(seedClass, flags, registry) {
+  const { matchClass, rows } = scheduleFor(seedClass);
   return rows
-    .map((r) => ({
-      ...r,
-      sourceFamilies: r.sourceFamilies.filter((f) => {
-        if (f === 'web_origin' && !flags.webOrigin) return false;
-        if (f === 'authority' && !flags.viaf) return false;
-        return true;
-      }),
-    }))
+    .map((row) => {
+      const { sourceFamilies, reason } = resolveScheduleRow(row, matchClass, flags, registry);
+      return { intentId: row.intentId, priority: row.priority, sourceFamilies, reason };
+    })
     .filter((r) => r.sourceFamilies.length > 0);
 }
 
@@ -305,8 +294,15 @@ function inputSnapshotHash(parts) {
  *   flags?: { viaf?: boolean, webOrigin?: boolean },
  *   discoveryState?: string,
  * }} input
+ * @param {{ registry?: Record<string, object> }} [opts] — test/DI seam only (never from
+ *   request input); default = shipped SOURCE_FAMILIES registry.
  */
-export function buildQueryPlan(input = {}) {
+export function buildQueryPlan(input = {}, opts = {}) {
+  const registry = opts && opts.registry && typeof opts.registry === 'object' ? opts.registry : undefined;
+  const providerFor = (familyId) =>
+    registry
+      ? registry[familyId]?.providerIds?.[0] || familyId
+      : FAMILY_TO_PROVIDER[familyId] || familyId;
   const seed = String(input.seed || '').trim();
   const hints = input.hints && typeof input.hints === 'object' ? input.hints : {};
   const locale = input.locale || 'en';
@@ -328,13 +324,13 @@ export function buildQueryPlan(input = {}) {
   const urlTargets = classifyUrlTargets(urlHints);
 
   const caps = createBudgetCaps(input.budgetsRemaining || {});
-  const intentRows = intentsForSeedClass(seedClass, flags);
+  const intentRows = intentsForSeedClass(seedClass, flags, registry);
 
   const orderedIntents = intentRows
     .map((row, idx) => {
       const queries = row.sourceFamilies.map((familyId) => ({
         familyId,
-        providerId: FAMILY_TO_PROVIDER[familyId] || familyId,
+        providerId: providerFor(familyId),
         q: seed,
         lookup: knownRefs.length ? { typedRefs: knownRefs.slice() } : undefined,
       }));
@@ -461,13 +457,28 @@ export function buildQueryPlan(input = {}) {
 /**
  * Validate plan before DISCOVER.
  * @param {object} plan
- * @returns {{ ok: boolean, errors: string[] }}
+ * Registry capability check (Track B · additive): an intent listing a registered family
+ * that declares none of the capabilities that intent may require →
+ * error `intent_family_capability_missing:<intent>:<family>` (fail-closed). Family whose
+ * entityTypes omit plan.seedClass → warning only (`warnings`; ok unaffected).
+ * @param {object} plan
+ * @param {{ registry?: Record<string, object> }} [opts] — test/DI seam; default shipped registry
+ * @returns {{ ok: boolean, errors: string[], warnings: string[] }}
  */
-export function validateQueryPlan(plan) {
+export function validateQueryPlan(plan, opts = {}) {
   const errors = [];
+  /** @type {string[]} */
+  const warnings = [];
   if (!plan || typeof plan !== 'object') {
-    return { ok: false, errors: ['plan_missing'] };
+    return { ok: false, errors: ['plan_missing'], warnings };
   }
+  const registry =
+    opts && opts.registry && typeof opts.registry === 'object' ? opts.registry : SOURCE_FAMILIES;
+  const isRegistered = (familyId) => {
+    if (registry === SOURCE_FAMILIES) return !!FAMILY_TO_PROVIDER[familyId];
+    const row = registry[familyId];
+    return !!(row && row.familyId === familyId && !registryRowRejectReason(row) && row.providerIds?.[0]);
+  };
   if (!plan.planId) errors.push('planId_missing');
   if (!SEED_CLASSES.includes(plan.seedClass)) errors.push('seedClass_invalid');
   if (!Array.isArray(plan.orderedIntents) || !plan.orderedIntents.length) {
@@ -482,7 +493,20 @@ export function validateQueryPlan(plan) {
       errors.push(`intent_reason_empty:${intent.intentId}`);
     }
     for (const f of intent.sourceFamilies || []) {
-      if (!FAMILY_TO_PROVIDER[f]) errors.push(`family_unregistered:${f}`);
+      if (!isRegistered(f)) {
+        errors.push(`family_unregistered:${f}`);
+        continue;
+      }
+      if (!INTENT_IDS.includes(intent.intentId)) continue;
+      const needs = INTENT_CAPABILITY_NEEDS[intent.intentId] || [];
+      if (!familyDeclaresAnyCapability(f, needs, registry)) {
+        errors.push(`intent_family_capability_missing:${intent.intentId}:${f}`);
+      } else if (
+        SEED_CLASSES.includes(plan.seedClass) &&
+        !(registry[f]?.entityTypes || []).includes(plan.seedClass)
+      ) {
+        warnings.push(`intent_family_entity_type_mismatch:${intent.intentId}:${f}:${plan.seedClass}`);
+      }
     }
   }
   if (!plan.dedupeRules?.titleBridgeForbidden) {
@@ -523,7 +547,7 @@ export function validateQueryPlan(plan) {
         errors.push(`launch_missing_familyId:${i}`);
         return;
       }
-      if (!FAMILY_TO_PROVIDER[familyId]) {
+      if (!isRegistered(familyId)) {
         errors.push(`family_unregistered:${familyId}`);
       }
       if (!intentFamilies.has(familyId)) {
@@ -531,7 +555,7 @@ export function validateQueryPlan(plan) {
       }
     });
   }
-  return { ok: errors.length === 0, errors };
+  return { ok: errors.length === 0, errors, warnings };
 }
 
 /**
@@ -692,6 +716,8 @@ export default {
   detectSeedClass,
   buildQueryPlan,
   validateQueryPlan,
+  familiesForIntent,
+  INTENT_CAPABILITY_NEEDS,
   scrubQueryPlanForEmit,
   planSummaryForSse,
 };

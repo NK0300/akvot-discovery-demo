@@ -62,3 +62,27 @@ QA MW2: coverage 3/6 · `opensearch_error` / `EMPTY_FRONTIER`.
 - New adapters / hosts / F11 LIVE / promote / TREATMENT
 
 **Tag:** IMPLEMENTED (registry SoT) · 2026-09-24 · **NO PROMOTE**
+
+---
+
+## 6. Addendum 2026-09-24 · capability-based intent match (§13/§19 gap · §04 §2)
+
+**What changed:** intent→family membership is no longer hardcoded in `queryPlan.js`. It now comes from registry capability match:
+`intent row capabilitiesNeeded ⊆ family.capabilities AND seedClass ∈ family.entityTypes AND eligible(flags)`.
+
+- **Registry (`sourceFamily.js`) = declarations only.** Rows declare `capabilities[]` (closed `FAMILY_CAPABILITY_ENUM` = access `search|lookup_by_id|url_candidate` + intent `reference_search|open_knowledge_search|bibliographic_records|document_records|origin_metadata`), `entityTypes[]` (closed `ENTITY_TYPE_ENUM` = SEED_CLASSES) and optional plain `displayLabel {he,en}`. No priority, scoring, fallback or execution logic. `registryRowRejectReason` fail-closes rows with values outside the enums, identity-ish capabilities (identity/same/verified/claim…) or identity words in labels.
+- `entityTypes` were widened to match what the families already served (e.g. knowledge_graph gets `url/domain/document`, web_origin gets `company/organization`). Nothing else reads `entityTypes`. `authority` deliberately omits `unknown` and `open_knowledge_search`, which keeps today's rules: unknown seeds are B0-only, and the url/domain fallback is B0-only.
+- **queryPlan (`INTENT_SCHEDULE`)** keeps intent · priority · reason · `capabilitiesNeeded` per seedClass. The web-origin **fallback** (`fallbackCapabilitiesNeeded: open_knowledge_search`) lives here, not in the registry. There are no family-id literals in the schedule/membership code. The only family-id checks left in queryPlan.js are in the pre-existing `reasons` labels (`preview_viaf_flag` / `preview_web_origin_flag`), which were left untouched to keep output byte-identical.
+- Helpers: `familiesForCapabilities` + `isFamilyRowEligible` (sourceFamily) · `familiesForIntent` + `INTENT_CAPABILITY_NEEDS` (queryPlan). `buildQueryPlan(input, { registry })` / `validateQueryPlan(plan, { registry })` provide a DI seam used only by tests. Production callers pass one argument.
+- **validateQueryPlan (additive):** error `intent_family_capability_missing:<intent>:<family>` (fail-closed); warning `intent_family_entity_type_mismatch:…` (`ok` unaffected); result gains `warnings[]`.
+
+**Parity (zero behavior change):**
+| Gate | Result |
+|---|---|
+| QA golden `test-results/2026-09-24/QA-QUERYPLAN-GOLDEN-bb3a7f6.json` (35 cases, not modified) | **PARITY_OK** |
+| `queryPlan.registryIntents.golden.test.mjs`: full planForSession/validate/plannedLaunches/launchesFromQueryPlan/skipReasons/eligible, 512 entries, golden frozen from pristine bb3a7f6 tree | **512/512 identical** |
+| `queryPlan.registryIntents.parity.test.mjs`: verbatim legacy oracle vs registry, 128 combos × 10 intents = 1280 cells + +1 family + C1 identity reject | **0 diffs** |
+
+**Not in this slice:** select-narrowing, empty-seed and org/.pdf classification behaviors are unchanged (next slices). No flag defaults changed · NO PROMOTE · no Core/session/SSE/UX edits.
+
+**Tag:** IMPLEMENTED (capability match switch) · NO PROMOTE
