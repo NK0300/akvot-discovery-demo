@@ -73,6 +73,13 @@ export function isUrlDomainCandidatesEnabled(opts = {}) {
 }
 
 
+/** WEB_ORIGIN origin-metadata enrich hop. Default OFF. Existing flag. */
+export function isWebOriginEnabled(opts = {}) {
+  if (opts.enableWebOrigin === true) return true;
+  if (opts.enableWebOrigin === false) return false;
+  return envOn('DISCOVERY_ENABLE_WEB_ORIGIN');
+}
+
 /** Night LOOP-SPINE path (discover→evaluate→expand→corroborate→stop). Default OFF. */
 export function isNightEnabled(opts = {}) {
   if (opts.enableNight === true) return true;
@@ -85,7 +92,7 @@ export function discoveryFlagSnapshot(opts = {}) {
     DISCOVERY_ENABLE_QUERYPLAN: isQueryPlanEnabled(opts),
     DISCOVERY_ENABLE_PLAN_SSE: isPlanSseEnabled(opts),
     DISCOVERY_ENABLE_VIAF: envOn('DISCOVERY_ENABLE_VIAF'),
-    DISCOVERY_ENABLE_WEB_ORIGIN: envOn('DISCOVERY_ENABLE_WEB_ORIGIN'),
+    DISCOVERY_ENABLE_WEB_ORIGIN: isWebOriginEnabled(opts),
     DISCOVERY_WD_CLAIM_PACK: isWdClaimPackEnabled(opts),
     DISCOVERY_OL_WORKS_SEARCH: isOlWorksSearchEnabled(opts),
     DISCOVERY_WP_PAGEPROPS: isWpPagepropsEnabled(opts),
@@ -105,6 +112,7 @@ export default {
   isUrlDomainCandidatesEnabled,
   isGeneralWebSearchEnabled,
   isDdgInstantEnabled,
+  isWebOriginEnabled,
   isNightEnabled,
   discoveryFlagSnapshot,
 };

@@ -17,7 +17,7 @@ import {
   mergeUrlDomainCandidatesIntoGraph,
   scrubUrlDomainCandidatesForEmit,
 } from './urlDomainCandidates.js';
-import { isWdClaimPackEnabled, isGeneralWebSearchEnabled, isDdgInstantEnabled, isNightEnabled } from './flags.js';
+import { isWdClaimPackEnabled, isGeneralWebSearchEnabled, isDdgInstantEnabled, isNightEnabled, isWebOriginEnabled } from './flags.js';
 import { runNightLoop } from './nightLoop.js';
 import {
   searchGeneralWeb,
@@ -966,6 +966,7 @@ export async function runPipeline(sessionId, opts = {}) {
           enableNight: true,
           enableGeneralWeb: isGeneralWebSearchEnabled(),
           enableDdgInstant: isDdgInstantEnabled(),
+          enableWebOrigin: isWebOriginEnabled(),
         });
         session.nightLoop = {
           enabled: !!night.enabled,
@@ -978,6 +979,9 @@ export async function runPipeline(sessionId, opts = {}) {
           fetches: night.fetches,
           hopJournal: night.hopJournal,
           phases: night.phases,
+          spineJournal: Array.isArray(night.spineJournal)
+            ? night.spineJournal.slice(0, 80)
+            : [],
         };
         for (const [pid, st] of Object.entries(night.providerStatuses || {})) {
           session.providers[pid] = st;

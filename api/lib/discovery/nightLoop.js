@@ -1,13 +1,14 @@
 /**
- * Night Mission loop — Arch LOOP-SPINE LOCKED 2026-09-24.
+ * Night Mission loop — Arch LOOP-SPINE LOCKED 2026-09-24 · Must-Win #2 wave≥2.
  * Phases: discover → evaluate → expand → corroborate → stop
  *
  * Must-Win #1 Hop A: GENERAL_WEB locale 1.2 (en|he|de|fr|es) as expand hop.
+ * Must-Win #2: multi-wave beginWave loop · wave-2 web_origin enrich (flag OFF default).
  * DDG Instant = optional expand hop; flaky does NOT block Night.
  * OL / ORCID = HOLD.
  *
- * Flags: DISCOVERY_ENABLE_NIGHT (spine) + DISCOVERY_ENABLE_GENERAL_WEB (Hop A)
- * both default OFF. NO PROMOTE · NOT TREATMENT.
+ * Flags: DISCOVERY_ENABLE_NIGHT + DISCOVERY_ENABLE_GENERAL_WEB + DISCOVERY_ENABLE_WEB_ORIGIN
+ * all default OFF. NO PROMOTE · NOT TREATMENT.
  */
 import {
   LOOP_PHASES,
@@ -21,6 +22,7 @@ import {
   isNightEnabled as nightFlagOn,
   isGeneralWebSearchEnabled,
   isDdgInstantEnabled,
+  isWebOriginEnabled,
 } from './flags.js';
 import {
   searchGeneralWeb,
@@ -33,8 +35,16 @@ import {
   DDG_INSTANT_PROVIDER_ID,
   DDG_INSTANT_TIMEOUT_MS,
 } from './ddgInstantAnswer.js';
+import {
+  safeFetchOriginMetadata,
+  WEB_ORIGIN_PROVIDER_ID,
+  DEFAULT_FETCH_TIMEOUT_MS,
+} from './webOrigin.js';
 
-export const NIGHT_LOOP_VERSION = '2026-09-24.night.loop.1';
+export const NIGHT_LOOP_VERSION = '2026-09-24.night.loop.2';
+
+/** Cap origin enrich fetches per wave-2 (Arch LOCK). */
+export const WEB_ORIGIN_WAVE2_MAX_URLS = 2;
 
 export function isNightEnabled(opts = {}) {
   return nightFlagOn(opts);
@@ -64,8 +74,43 @@ function findingToEvalRaw(finding, providerId) {
   };
 }
 
+/**
+ * Eligible hops for a given wave (Arch MW2 §1.2–1.3).
+ * Wave-1: general_web then optional ddg_instant.
+ * Wave-2: web_origin when flag ON and ≥1 evaluate-ok url candidate.
+ * Wave-3+: empty unless a remaining eligible hop exists (none today → stop).
+ */
+export function pickEligibleHopsForWave(waveNum, ctx = {}) {
+  const n = Number(waveNum) || 0;
+  /** @type {string[]} */
+  const hops = [];
+  if (n === 1) {
+    if (ctx.wantGeneralWeb) hops.push('general_web');
+    if (ctx.wantDdgInstant) hops.push('ddg_instant');
+    return hops;
+  }
+  if (n === 2) {
+    const frontier = Array.isArray(ctx.candidates) ? ctx.candidates : [];
+    if (ctx.wantWebOrigin && frontier.length >= 1) {
+      hops.push('web_origin');
+    }
+    return hops;
+  }
+  // Wave-3+: no further hops wired (no open-ended crawl).
+  return hops;
+}
+
+/** ≤2 wave-1 evaluate-ok URLs, stable sort by url. */
+export function pickWebOriginInputUrls(candidates, max = WEB_ORIGIN_WAVE2_MAX_URLS) {
+  const list = (Array.isArray(candidates) ? candidates : [])
+    .filter((c) => c && c.url)
+    .slice()
+    .sort((a, b) => String(a.url).localeCompare(String(b.url)));
+  return list.slice(0, Math.max(0, Number(max) || WEB_ORIGIN_WAVE2_MAX_URLS));
+}
+
 async function runExpandHop(hopId, ctx) {
-  const { seed, locale, signal, wallDeadline, ledger } = ctx;
+  const { seed, locale, signal, wallDeadline, ledger, candidates } = ctx;
   const remainingMs = Math.max(50, wallDeadline - Date.now());
   if (remainingMs <= 50) {
     return { hopId, ok: false, reason: 'wall_exhausted', findings: [] };
@@ -185,7 +230,97 @@ async function runExpandHop(hopId, ctx) {
     }
   }
 
+  if (hopId === 'web_origin') {
+    return runWebOriginEnrichHop(ctx);
+  }
+
   return { hopId, ok: false, reason: 'unknown_hop', findings: [] };
+}
+
+/**
+ * Wave-2 web_origin: hop-validated public fetch · enrich title/snippet/whyFound only.
+ * Still UNKNOWN · identityClaim=false · no SAME-ENTITY · cite-or-drop.
+ * Cap ≤2 · honor wall/AbortSignal · count toward night ledger fetches.
+ */
+async function runWebOriginEnrichHop(ctx) {
+  const { signal, wallDeadline, ledger, candidates } = ctx;
+  const inputs = pickWebOriginInputUrls(candidates, WEB_ORIGIN_WAVE2_MAX_URLS);
+  ledger.note('expand', 'hop_start', {
+    hopId: 'web_origin',
+    providerId: WEB_ORIGIN_PROVIDER_ID,
+    inputCount: inputs.length,
+  });
+
+  /** @type {object[]} */
+  const findings = [];
+  let firstProvider = true;
+
+  for (const c of inputs) {
+    if (signal?.aborted) break;
+    if (Date.now() >= wallDeadline) break;
+    const remainingMs = Math.max(50, wallDeadline - Date.now());
+    if (remainingMs <= 50) break;
+
+    const gate = ledger.canExpandHop({ requests: 1 });
+    if (!gate.ok) break;
+
+    ledger.recordFetch(WEB_ORIGIN_PROVIDER_ID, {
+      requests: 1,
+      isNewProvider: firstProvider,
+    });
+    firstProvider = false;
+
+    try {
+      const fetchResult = await safeFetchOriginMetadata(c.url, {
+        timeoutMs: Math.min(DEFAULT_FETCH_TIMEOUT_MS, remainingMs),
+        signal,
+      });
+      if (!fetchResult?.ok) {
+        ledger.note('expand', 'origin_fetch_fail', {
+          url: String(c.url).slice(0, 120),
+          reason: fetchResult?.failureClass || fetchResult?.resultClass || 'fetch_failed',
+        });
+        continue;
+      }
+      const meta = fetchResult.meta || {};
+      const title = meta.title || meta.siteName || c.title;
+      const snippet = meta.snippet || meta.description || c.snippet;
+      const whyFound =
+        `web_origin enrich · host metadata for ${String(c.url).slice(0, 80)} · not identity · C1 UNKNOWN`;
+      findings.push({
+        url: c.url,
+        normalizedUrl: c.normalizedUrl || c.url,
+        provenanceUrl: c.provenanceUrl || fetchResult.finalUrl || c.url,
+        title,
+        snippet,
+        whyFound,
+        familyId: WEB_ORIGIN_PROVIDER_ID,
+        sourceFamily: c.sourceFamily || 'general_web',
+        // Force C1 — never promote web_origin relationship labels to identity.
+        relationship: 'UNKNOWN',
+        identityClaim: false,
+      });
+    } catch (e) {
+      ledger.note('expand', 'origin_fetch_error', {
+        message: String(e?.message || e).slice(0, 200),
+      });
+    }
+  }
+
+  ledger.note('expand', 'hop_end', {
+    hopId: 'web_origin',
+    count: findings.length,
+    inputCount: inputs.length,
+  });
+  return {
+    hopId: 'web_origin',
+    providerId: WEB_ORIGIN_PROVIDER_ID,
+    ok: true,
+    reason: findings.length ? 'ok' : 'empty_enrich',
+    findings,
+    enrichOnly: true,
+    meta: { inputCount: inputs.length, enriched: findings.length },
+  };
 }
 
 function candidatesToBatchFindings(accepted) {
@@ -231,6 +366,52 @@ function candidatesToBatchFindings(accepted) {
 }
 
 /**
+ * Merge evaluate-ok candidate: URL-dedupe for new hops; enrich-in-place for web_origin.
+ * @returns {{ added: number, enriched: number, accepted: object[] }}
+ */
+function mergeEvaluatedCandidates(evCandidates, state, { enrichOnly = false } = {}) {
+  /** @type {object[]} */
+  const accepted = [];
+  let added = 0;
+  let enriched = 0;
+  for (const cand of evCandidates) {
+    if (!cand?.url) continue;
+    // Always force C1 ceiling on night path.
+    cand.relationship = 'UNKNOWN';
+    cand.relationshipState = 'UNKNOWN';
+    cand.identityClaim = false;
+    cand.urlAlone = true;
+    cand.urlIsNotIdentity = true;
+
+    if (state.seenUrls.has(cand.url)) {
+      if (enrichOnly) {
+        const idx = state.candidates.findIndex((c) => c.url === cand.url);
+        if (idx >= 0) {
+          const prev = state.candidates[idx];
+          state.candidates[idx] = {
+            ...prev,
+            title: cand.title || prev.title,
+            snippet: cand.snippet != null ? cand.snippet : prev.snippet,
+            whyFound: cand.whyFound || prev.whyFound,
+            relationship: 'UNKNOWN',
+            relationshipState: 'UNKNOWN',
+            identityClaim: false,
+          };
+          accepted.push(state.candidates[idx]);
+          enriched += 1;
+        }
+      }
+      continue;
+    }
+    state.seenUrls.add(cand.url);
+    state.candidates.push(cand);
+    accepted.push(cand);
+    added += 1;
+  }
+  return { added, enriched, accepted };
+}
+
+/**
  * @param {{
  *   seed: string,
  *   locale?: string,
@@ -239,7 +420,9 @@ function candidatesToBatchFindings(accepted) {
  *   enableNight?: boolean,
  *   enableGeneralWeb?: boolean,
  *   enableDdgInstant?: boolean,
+ *   enableWebOrigin?: boolean,
  *   budgetCaps?: object,
+ *   expandHop?: Function, // test-only hop override
  * }} input
  */
 export async function runNightLoop(input = {}) {
@@ -276,6 +459,7 @@ export async function runNightLoop(input = {}) {
   /** @type {Record<string, string>} */
   const providerStatuses = {};
   const seenUrls = new Set();
+  const mergeState = { candidates, seenUrls };
 
   ledger.note('discover', 'begin', { seed: seed.slice(0, 80) });
   const wantGw =
@@ -284,7 +468,11 @@ export async function runNightLoop(input = {}) {
   const wantDdg =
     input.enableDdgInstant === true ||
     (input.enableDdgInstant !== false && isDdgInstantEnabled(input));
+  const wantWo =
+    input.enableWebOrigin === true ||
+    (input.enableWebOrigin !== false && isWebOriginEnabled(input));
 
+  // Discover reports wave-1 hop set (web_origin is wave-2 only — not in initial discover list).
   const discovered = discoverPhase({
     seed,
     locale,
@@ -297,6 +485,7 @@ export async function runNightLoop(input = {}) {
   ledger.note('discover', 'end', {
     seedClass: discovered.seedClass,
     eligibleHops: discovered.eligibleHops,
+    wantWebOrigin: wantWo,
   });
 
   if (!discovered.ok) {
@@ -325,26 +514,11 @@ export async function runNightLoop(input = {}) {
     });
   }
 
-  const wave = ledger.beginWave();
-  if (!wave.ok) {
-    return pack(ledger, {
-      enabled: true,
-      discovered,
-      candidates,
-      hopJournal,
-      batches,
-      providerStatuses,
-      corroboration: { notes: [] },
-    });
-  }
+  /** @type {object} */
+  let lastCorroboration = { notes: [] };
 
-  const hopOrder = discovered.eligibleHops.slice().sort((a, b) => {
-    if (a === 'general_web') return -1;
-    if (b === 'general_web') return 1;
-    return 0;
-  });
-
-  for (const hopId of hopOrder) {
+  // Multi-wave driver (Must-Win #2): loop beginWave while ok up to maxWaves.
+  while (!ledger.stopReason) {
     if (signal?.aborted) {
       ledger.markStop('ABORTED');
       break;
@@ -354,78 +528,183 @@ export async function runNightLoop(input = {}) {
       break;
     }
 
-    const hopResult = await runExpandHop(hopId, {
-      seed,
-      locale,
-      signal,
-      wallDeadline,
-      ledger,
+    const waveResult = ledger.beginWave();
+    if (!waveResult.ok) break;
+    const waveNum = waveResult.wave;
+
+    const hopOrder = pickEligibleHopsForWave(waveNum, {
+      wantGeneralWeb: wantGw,
+      wantDdgInstant: wantDdg,
+      wantWebOrigin: wantWo,
+      candidates,
     });
-    hopJournal.push({
-      hopId,
-      providerId: hopResult.providerId || hopId,
-      reason: hopResult.reason,
-      count: (hopResult.findings || []).length,
-      optional: !!hopResult.optional,
-      meta: hopResult.meta || null,
-      error: hopResult.error || null,
-    });
-    if (hopResult.providerId) {
-      providerStatuses[hopResult.providerId] = hopResult.ok
-        ? hopResult.findings?.length
-          ? 'ok'
-          : hopResult.reason || 'empty'
-        : hopResult.reason || 'error';
+
+    // Wave-2 with flag OFF (or no frontier): still began — honest NO_PROGRESS.
+    if (waveNum === 2 && hopOrder.length === 0) {
+      ledger.note('expand', 'wave2_no_eligible_hop', {
+        wave: 2,
+        wantWebOrigin: wantWo,
+        frontierUrls: candidates.length,
+      });
+      hopJournal.push({
+        hopId: 'wave2_no_eligible_hop',
+        providerId: null,
+        reason: wantWo ? 'no_frontier_urls' : 'web_origin_flag_off',
+        count: 0,
+        wave: 2,
+      });
+      decideStop(ledger, {
+        aborted: !!signal?.aborted,
+        frontierEmpty: false,
+        progressDelta: 0,
+        allHopsSettled: false,
+        hopsRemaining: 0,
+      });
+      if (!ledger.stopReason) ledger.markStop('NO_PROGRESS');
+      break;
     }
 
-    ledger.note('evaluate', 'begin', { hopId });
-    /** @type {object[]} */
-    const accepted = [];
-    for (const f of hopResult.findings || []) {
-      const raw = findingToEvalRaw(f, hopResult.providerId || hopId);
-      if (!raw) continue;
-      const ev = evaluateUrlCandidate(raw);
-      if (!ev.ok || !ev.candidate) {
-        ledger.note('evaluate', 'drop', { reason: ev.reason, hopId });
-        continue;
+    if (hopOrder.length === 0) {
+      // Wave-3+ with nothing wired, or unexpected empty.
+      decideStop(ledger, {
+        aborted: !!signal?.aborted,
+        frontierEmpty: candidates.length === 0,
+        progressDelta: 0,
+        allHopsSettled: true,
+        hopsRemaining: 0,
+      });
+      if (!ledger.stopReason) {
+        ledger.markStop(candidates.length ? 'ALL_HOPS_SETTLED' : 'EMPTY_FRONTIER');
       }
-      if (seenUrls.has(ev.candidate.url)) continue;
-      seenUrls.add(ev.candidate.url);
-      accepted.push(ev.candidate);
-      candidates.push(ev.candidate);
+      break;
     }
-    ledger.note('evaluate', 'end', { hopId, accepted: accepted.length });
 
-    if (accepted.length) {
-      batches.push({
-        providerId: hopResult.providerId || hopId,
-        findings: candidatesToBatchFindings(accepted),
-        partial: false,
-        _nightSpine: true,
+    const countBeforeWave = candidates.length;
+
+    for (const hopId of hopOrder) {
+      if (signal?.aborted) {
+        ledger.markStop('ABORTED');
+        break;
+      }
+      if (Date.now() >= wallDeadline) {
+        ledger.markStop('BUDGET_EXHAUSTED');
+        break;
+      }
+
+      const expandFn =
+        typeof input.expandHop === 'function' ? input.expandHop : runExpandHop;
+      const hopResult = await expandFn(hopId, {
+        seed,
+        locale,
+        signal,
+        wallDeadline,
+        ledger,
+        candidates,
       });
-    }
-
-    if (hopId === 'ddg_instant' && (!hopResult.ok || !(hopResult.findings || []).length)) {
-      ledger.note('expand', 'optional_hop_fail_closed', {
+      hopJournal.push({
         hopId,
+        providerId: hopResult.providerId || hopId,
         reason: hopResult.reason,
+        count: (hopResult.findings || []).length,
+        optional: !!hopResult.optional,
+        enrichOnly: !!hopResult.enrichOnly,
+        wave: waveNum,
+        meta: hopResult.meta || null,
+        error: hopResult.error || null,
       });
+      if (hopResult.providerId) {
+        providerStatuses[hopResult.providerId] = hopResult.ok
+          ? hopResult.findings?.length
+            ? hopResult.enrichOnly
+              ? 'enriched'
+              : 'ok'
+            : hopResult.reason || 'empty'
+          : hopResult.reason || 'error';
+      }
+
+      ledger.note('evaluate', 'begin', { hopId, wave: waveNum });
+      /** @type {object[]} */
+      const evaluated = [];
+      for (const f of hopResult.findings || []) {
+        const raw = findingToEvalRaw(f, hopResult.providerId || hopId);
+        if (!raw) continue;
+        const ev = evaluateUrlCandidate(raw);
+        if (!ev.ok || !ev.candidate) {
+          ledger.note('evaluate', 'drop', { reason: ev.reason, hopId, wave: waveNum });
+          continue;
+        }
+        evaluated.push(ev.candidate);
+      }
+      const merged = mergeEvaluatedCandidates(evaluated, mergeState, {
+        enrichOnly: !!hopResult.enrichOnly,
+      });
+      ledger.note('evaluate', 'end', {
+        hopId,
+        wave: waveNum,
+        accepted: merged.accepted.length,
+        added: merged.added,
+        enriched: merged.enriched,
+      });
+
+      if (merged.accepted.length) {
+        batches.push({
+          providerId: hopResult.providerId || hopId,
+          findings: candidatesToBatchFindings(merged.accepted),
+          partial: false,
+          _nightSpine: true,
+          _wave: waveNum,
+          _enrichOnly: !!hopResult.enrichOnly,
+        });
+      }
+
+      if (hopId === 'ddg_instant' && (!hopResult.ok || !(hopResult.findings || []).length)) {
+        ledger.note('expand', 'optional_hop_fail_closed', {
+          hopId,
+          reason: hopResult.reason,
+        });
+      }
     }
+
+    if (ledger.stopReason) break;
+
+    const progressDelta = ledger.recordProgress(candidates.length);
+    const newUrlsThisWave = candidates.length - countBeforeWave;
+
+    ledger.note('corroborate', 'begin', {
+      candidateCount: candidates.length,
+      wave: waveNum,
+    });
+    lastCorroboration = corroborateCandidates(candidates);
+    ledger.note('corroborate', 'end', {
+      notes: (lastCorroboration.notes || []).length,
+      wave: waveNum,
+    });
+
+    // More waves possible? Do NOT ALL_HOPS_SETTLED after wave-1 alone while
+    // maxWaves>1 and candidates+budget remain (Arch §2 Hop-shaped PARTIAL fix).
+    const budgetOk = ledger.canExpandHop({ requests: 1 }).ok && !ledger.stopReason;
+    const underMaxWaves = waveNum < ledger.limits.maxWaves;
+    const hasFrontier = candidates.length > 0;
+    const moreWavesWorthTrying =
+      underMaxWaves &&
+      hasFrontier &&
+      budgetOk &&
+      !signal?.aborted &&
+      Date.now() < wallDeadline &&
+      (waveNum === 1 || (waveNum >= 2 && newUrlsThisWave > 0));
+
+    const stop = decideStop(ledger, {
+      aborted: !!signal?.aborted,
+      frontierEmpty: candidates.length === 0 && hopJournal.length > 0,
+      progressDelta: moreWavesWorthTrying ? Math.max(progressDelta, 1) : progressDelta,
+      allHopsSettled: !moreWavesWorthTrying,
+      hopsRemaining: moreWavesWorthTrying ? 1 : 0,
+    });
+
+    if (stop.stop) break;
+    // else continue → next beginWave
   }
 
-  const progressDelta = ledger.recordProgress(candidates.length);
-
-  ledger.note('corroborate', 'begin', { candidateCount: candidates.length });
-  const corroboration = corroborateCandidates(candidates);
-  ledger.note('corroborate', 'end', { notes: (corroboration.notes || []).length });
-
-  decideStop(ledger, {
-    aborted: !!signal?.aborted,
-    frontierEmpty: candidates.length === 0 && hopJournal.length > 0,
-    progressDelta,
-    allHopsSettled: true,
-    hopsRemaining: 0,
-  });
   if (!ledger.stopReason) {
     ledger.markStop(candidates.length ? 'ALL_HOPS_SETTLED' : 'EMPTY_FRONTIER');
   }
@@ -437,7 +716,7 @@ export async function runNightLoop(input = {}) {
     hopJournal,
     batches,
     providerStatuses,
-    corroboration,
+    corroboration: lastCorroboration,
   });
 }
 
@@ -463,6 +742,9 @@ function pack(ledger, parts) {
 
 export default {
   NIGHT_LOOP_VERSION,
+  WEB_ORIGIN_WAVE2_MAX_URLS,
   isNightEnabled,
+  pickEligibleHopsForWave,
+  pickWebOriginInputUrls,
   runNightLoop,
 };
