@@ -14,6 +14,13 @@ import {
   resolveFamilyProvider as primaryProviderIdForFamily,
   FAMILY_TO_PROVIDER,
 } from './sourceFamily.js';
+import {
+  selectLaunches,
+  launchesFromQueryPlan,
+  gateFamilyExecute,
+  policyB0Default,
+  getPolicy,
+} from './policy.js';
 import { selectFetchablePlanUrlTargets } from './security.js';
 import { candidateSkipReason, CANDIDATE_FAMILY_IDS } from './candidateFamilies.js';
 import { normalizeRawHit } from './store.js';
@@ -342,7 +349,15 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     viaf: opts.flags?.viaf === true || process.env.DISCOVERY_ENABLE_VIAF === '1',
     webOrigin:
       opts.flags?.webOrigin === true || process.env.DISCOVERY_ENABLE_WEB_ORIGIN === '1',
+    generalWeb:
+      opts.flags?.generalWeb === true || process.env.DISCOVERY_ENABLE_GENERAL_WEB === '1',
+    ddgInstant:
+      opts.flags?.ddgInstant === true || process.env.DISCOVERY_ENABLE_DDG_INSTANT === '1',
   };
+  const policy =
+    opts.policy ||
+    (opts.policyId ? getPolicy(opts.policyId) : null) ||
+    policyB0Default;
   const ledger =
     opts.ledger ||
     createBudgetLedger(plan.budgets || plan.budgets || {}, {
@@ -358,41 +373,54 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   const allEvidence = [];
   const providerStates = {};
 
-  // Flatten planned calls — support both orderedIntents and orderedIntents shapes
-  const intents = plan.orderedIntents || plan.orderedIntents || [];
-  const plannedCalls = [];
-  for (const intent of intents) {
-    const families = intent.sourceFamilies || intent.sourceFamilies || [];
-    for (const familyId of families) {
-      const queries = intent.queries || [];
-      const q =
-        queries.find((x) => x.familyId === familyId)?.q ||
-        queries.find((x) => x.familyId === familyId)?.q ||
-        session.seed;
-      plannedCalls.push({
-        familyId,
-        providerId: primaryProviderIdForFamily(familyId) || FAMILY_TO_PROVIDER[familyId] || familyId,
-        intentId: intent.intentId || intent.intentId,
-        query: q,
-      });
-    }
-  }
-  plannedCalls.sort(
-    (a, b) =>
-      String(a.intentId).localeCompare(String(b.intentId)) ||
-      String(a.familyId).localeCompare(String(b.familyId)),
-  );
+  // SELECT — Policy over QueryPlan (registry eligibility). No Core. Flags default OFF.
+  const selectOut =
+    typeof policy.select === 'function'
+      ? policy.select({ plan, flags, wave: opts.wave || 1 })
+      : selectLaunches({ plan, flags, wave: opts.wave || 1 });
+  const selectedLaunches = Array.isArray(selectOut?.launches) ? selectOut.launches : [];
+  const selectSkipped = Array.isArray(selectOut?.skipped) ? selectOut.skipped : [];
 
-  // Dedupe by familyId — first (highest-priority intent) wins; no double-fetch vanity
-  const seenFamilies = new Set();
-  const dedupedCalls = [];
-  for (const call of plannedCalls) {
-    if (seenFamilies.has(call.familyId)) continue;
-    seenFamilies.add(call.familyId);
-    dedupedCalls.push(call);
+  const planLaunchRows = launchesFromQueryPlan(plan);
+  const queryByFamily = new Map(
+    planLaunchRows.filter((r) => r.query != null).map((r) => [r.familyId, r.query]),
+  );
+  const plannedCalls = selectedLaunches.map((row) => ({
+    familyId: row.familyId,
+    providerId:
+      primaryProviderIdForFamily(row.familyId) ||
+      FAMILY_TO_PROVIDER[row.familyId] ||
+      row.familyId,
+    intentId: row.intentId,
+    query: row.query != null ? row.query : queryByFamily.get(row.familyId) || session.seed,
+    selectReason: row.reason,
+  }));
+
+  for (const sk of selectSkipped) {
+    const familyId = sk.familyId || '_unknown';
+    const providerId =
+      primaryProviderIdForFamily(familyId) || FAMILY_TO_PROVIDER[familyId] || familyId;
+    const status =
+      sk.skipReason && String(sk.skipReason).includes('unknown') ? 'unsupported' : 'skipped';
+    const result = {
+      familyId,
+      providerId,
+      intentId: sk.intentId,
+      planId: plan.planId,
+      status,
+      outcomeClass: outcomeClassForStatus(status),
+      findings: [],
+      evidence: [],
+      executionTimeMs: 0,
+      requestsUsed: 0,
+      reasons: [sk.skipReason || 'policy_select_skip'],
+      skipReason: sk.skipReason || 'policy_select_skip',
+      policyId: policy.id,
+    };
+    journal.push(result);
+    providerStates[providerId || familyId] = status;
+    if (typeof opts.onFamilyResult === 'function') opts.onFamilyResult(result);
   }
-  plannedCalls.length = 0;
-  plannedCalls.push(...dedupedCalls);
 
   let cursor = 0;
   while (cursor < plannedCalls.length) {
@@ -471,6 +499,32 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       };
       journal.push(result);
       providerStates[call.providerId || call.familyId] = 'unsupported';
+      if (typeof opts.onFamilyResult === 'function') opts.onFamilyResult(result);
+      continue;
+    }
+    // EXECUTE gate — Policy (registry+flags) then orch resolve for provider handle
+    const gated = gateFamilyExecute(call.familyId, flags, byId, {
+      providerIdForFamily: (fid) =>
+        primaryProviderIdForFamily(fid) || FAMILY_TO_PROVIDER[fid] || null,
+    });
+    if (!gated.ok) {
+      const result = {
+        familyId: call.familyId,
+        providerId: call.providerId,
+        intentId: call.intentId,
+        planId: plan.planId,
+        status: gated.status,
+        outcomeClass: outcomeClassForStatus(gated.status),
+        findings: [],
+        evidence: [],
+        executionTimeMs: 0,
+        requestsUsed: 0,
+        reasons: [gated.reason],
+        skipReason: gated.reason,
+        policyId: policy.id,
+      };
+      journal.push(result);
+      providerStates[call.providerId] = gated.status;
       if (typeof opts.onFamilyResult === 'function') opts.onFamilyResult(result);
       continue;
     }

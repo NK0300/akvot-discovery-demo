@@ -41,8 +41,54 @@ export const POLICY_ACTIONS = Object.freeze(['next', 'stop']);
  * @param {PolicyContext} ctx
  * @returns {{ launches: PolicyLaunch[], skipped: object[] }}
  */
+
+/**
+ * Flatten QueryPlan.orderedIntents → Policy launch rows (familyId-first).
+ * Dedupes by familyId (first intent wins). Does not HTTP.
+ * @param {object} plan
+ * @returns {{ intentId: string, familyId: string, priority: number, reason: string, query?: string }[]}
+ */
+export function launchesFromQueryPlan(plan = {}) {
+  if (Array.isArray(plan?.launches) && plan.launches.length) {
+    return plan.launches.map((row) => ({
+      intentId: String(row?.intentId || ''),
+      familyId: String(row?.familyId || ''),
+      priority: Number.isFinite(row?.priority) ? row.priority : 100,
+      reason: row?.reason || 'plan_launch',
+      query: row?.query,
+    }));
+  }
+  const out = [];
+  const seen = new Set();
+  const intents = Array.isArray(plan?.orderedIntents) ? plan.orderedIntents : [];
+  for (const intent of intents) {
+    const intentId = String(intent?.intentId || '');
+    const priority = Number.isFinite(intent?.priority) ? intent.priority : 100;
+    const reason = intent?.reason || 'plan_intent';
+    const families = Array.isArray(intent?.sourceFamilies) ? intent.sourceFamilies : [];
+    const queries = Array.isArray(intent?.queries) ? intent.queries : [];
+    for (const familyIdRaw of families) {
+      const familyId = String(familyIdRaw || '');
+      if (!familyId || seen.has(familyId)) continue;
+      seen.add(familyId);
+      const q = queries.find((x) => x && x.familyId === familyId);
+      out.push({
+        intentId,
+        familyId,
+        priority,
+        reason,
+        query: q?.q,
+      });
+    }
+  }
+  return out;
+}
+
 export function selectLaunches(ctx = {}) {
-  const launchesIn = Array.isArray(ctx.plan?.launches) ? ctx.plan.launches : [];
+  const launchesIn =
+    Array.isArray(ctx.plan?.launches) && ctx.plan.launches.length
+      ? ctx.plan.launches
+      : launchesFromQueryPlan(ctx.plan || {});
   const flags = ctx.flags || {};
   const launches = [];
   const skipped = [];
@@ -69,6 +115,7 @@ export function selectLaunches(ctx = {}) {
       familyId,
       priority: Number.isFinite(row.priority) ? row.priority : 100,
       reason: row.reason || 'plan_launch',
+      ...(row.query != null ? { query: row.query } : {}),
     });
   }
 
@@ -223,6 +270,39 @@ const PRESETS = Object.freeze({
 /**
  * @param {string} id
  */
+
+/**
+ * Execute gate — registry + flags only (no HTTP). Orch still calls provider.search.
+ * Fail-closed: unknown / flag-off / missing provider ⇒ not ok.
+ * @param {string} familyId
+ * @param {object} flags
+ * @param {Map<string, object>|null} byId
+ * @param {{ providerIdForFamily?: Function }} [registry]
+ */
+export function gateFamilyExecute(familyId, flags = {}, byId = null, registry = {}) {
+  const id = String(familyId || '');
+  if (!id) return { ok: false, status: 'unsupported', reason: 'missing_familyId' };
+  const fam = typeof getFamily === 'function' ? getFamily(id) : null;
+  if (!fam) return { ok: false, status: 'unsupported', reason: 'unknown_family' };
+  const skip = typeof familySkipReason === 'function' ? familySkipReason(id, flags) : null;
+  if (skip) return { ok: false, status: 'skipped', reason: skip };
+  let providerId = null;
+  if (typeof registry.providerIdForFamily === 'function') {
+    providerId = registry.providerIdForFamily(id);
+  } else if (Array.isArray(fam.providerIds) && fam.providerIds[0]) {
+    providerId = fam.providerIds[0];
+  }
+  if (!providerId) return { ok: false, status: 'unsupported', reason: `family_unmapped:${id}` };
+  if (byId && typeof byId.get === 'function') {
+    const provider = byId.get(providerId);
+    if (!provider || typeof provider.search !== 'function') {
+      return { ok: false, status: 'unavailable', reason: `provider_missing:${providerId}`, providerId };
+    }
+    return { ok: true, status: 'ok', providerId, provider };
+  }
+  return { ok: true, status: 'ok', providerId };
+}
+
 export function getPolicy(id) {
   return PRESETS[id] || null;
 }
@@ -245,7 +325,9 @@ export function listEligibleFamilyIds(flags = {}) {
 export default {
   POLICY_SCHEMA_VERSION,
   POLICY_STOP_REASONS,
+  launchesFromQueryPlan,
   selectLaunches,
+  gateFamilyExecute,
   evaluateBatch,
   expandDecision,
   nextOrStop,
