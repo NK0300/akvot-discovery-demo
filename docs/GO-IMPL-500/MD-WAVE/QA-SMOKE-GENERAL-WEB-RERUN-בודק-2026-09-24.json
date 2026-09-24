@@ -1,0 +1,168 @@
+{
+  "report": "QA-SMOKE-GENERAL-WEB-RERUN-בודק-2026-09-24",
+  "when": "2026-09-24 09:30:22-09:31:01 IDT",
+  "lane": "fill.1.1 separate GENERAL_WEB Preview, ON-only; not TREATMENT",
+  "target": {
+    "deployment": "dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15",
+    "url": "https://akvot-simple-demo-htf848qo6-k-akvot.vercel.app",
+    "access": "vercel curl --scope k-akvot --deployment dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15",
+    "runtime": "GENERAL_WEB ON via deploy -e; http→https upgrade-then-re-gate + isolated budget + 1 retry",
+    "treatmentMeasured": false,
+    "oldDeploymentUsed": false,
+    "promoted": false
+  },
+  "method": {
+    "create": "POST /api/discovery/sessions",
+    "poll": "GET /api/discovery/sessions/{sessionId}",
+    "requiredGetPolls": 4,
+    "boundedHangHandling": "45s per seed; no seed exceeded bound; final snapshot GET saved",
+    "health": "PASS; HTTP 200, durable shared KV, fallback false"
+  },
+  "verdict": "PARTIAL",
+  "wave1Product": "NOT DONE",
+  "runtimeOnEvidence": {
+    "probe": "w3c/tbl",
+    "provider": "general_web_search",
+    "familyId": "general_web_search",
+    "sourceFamily": "general_web",
+    "hostFamily": "web_search",
+    "kind": "url_candidate",
+    "observedStatuses": {
+      "w3c": "ok",
+      "tbl": "ok",
+      "smith": "opensearch_error",
+      "cohen-he": "extlinks_error"
+    }
+  },
+  "probes": [
+    {
+      "id": "w3c",
+      "seed": "World Wide Web Consortium",
+      "sessionId": "kv1.d2c5ee43601d4e6e3a29c55f496d9b3e",
+      "status": "complete",
+      "createHttp": 201,
+      "getPoll": {"http": 200, "n": 0, "timeout": false},
+      "verdict": "PASS",
+      "findings": 9,
+      "generalWebFindings": 1,
+      "urlCandidate": "https://www.w3.org/Consortium/join",
+      "urlCandidateEvidenceId": "ev-d21de0339d275f2df68cad34",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium",
+      "source": "wp_opensearch_extlinks",
+      "citeOrDrop": true,
+      "candidateRelationship": "UNKNOWN",
+      "candidateIdentityClaim": false,
+      "candidateEpistemicState": "candidate",
+      "urlIsNotIdentity": true,
+      "sameEntityEmitted": 0,
+      "q1701775Occurrences": 0,
+      "providerStatus": "ok",
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/w3c.final.json"
+    },
+    {
+      "id": "tbl",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.21f385455256b324cc659dfb8ab6b19c",
+      "status": "partial",
+      "createHttp": 201,
+      "getPoll": {"http": 200, "n": 0, "timeout": false},
+      "verdict": "PASS",
+      "findings": 13,
+      "generalWebFindings": 1,
+      "urlCandidate": "https://info.cern.ch/Proposal.html",
+      "urlCandidateEvidenceId": "ev-8b3b1290fbe4f81e8cb678b3",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+      "source": "wp_opensearch_extlinks",
+      "citeOrDrop": true,
+      "candidateRelationship": "UNKNOWN",
+      "candidateIdentityClaim": false,
+      "candidateEpistemicState": "candidate",
+      "urlIsNotIdentity": true,
+      "sameEntityEmitted": 0,
+      "q1701775Occurrences": 0,
+      "providerStatus": "ok",
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/tbl.final.json"
+    },
+    {
+      "id": "smith",
+      "seed": "Smith",
+      "sessionId": "kv1.58b2e12bd94a261310c5dff75cfdf67e",
+      "status": "partial",
+      "createHttp": 201,
+      "getPoll": {"http": 200, "n": 0, "timeout": false},
+      "verdict": "PASS_HONESTY_WITH_ADAPTER_GAP",
+      "findings": 30,
+      "uniqueTitles": 25,
+      "generalWebFindings": 0,
+      "multiCandidateHonesty": true,
+      "distinctTypedRefs": 13,
+      "relationshipsObserved": ["UNKNOWN"],
+      "identityClaimTrue": 0,
+      "q1701775Occurrences": 0,
+      "sameEntityEmitted": 0,
+      "providerStatus": "opensearch_error",
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/smith.final.json"
+    },
+    {
+      "id": "cohen-he",
+      "seed": "כהן",
+      "sessionId": "kv1.51c9793573defad3e7aa4a0b1ff13f3a",
+      "status": "partial",
+      "createHttp": 201,
+      "getPoll": {"http": 200, "n": 0, "timeout": false},
+      "verdict": "PASS_HONESTY_WITH_ADAPTER_GAP",
+      "findings": 16,
+      "uniqueTitles": 16,
+      "generalWebFindings": 0,
+      "multiCandidateHonesty": true,
+      "distinctTypedRefs": 3,
+      "relationshipsObserved": ["UNKNOWN"],
+      "identityClaimTrue": 0,
+      "q1701775Occurrences": 0,
+      "sameEntityEmitted": 0,
+      "providerStatus": "extlinks_error",
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/cohen-he.final.json"
+    }
+  ],
+  "caps": {
+    "countableGeneralWebUrlCandidatesByProbe": {"w3c": 1, "tbl": 1, "smith": 0, "cohen-he": 0},
+    "maxCountableGeneralWebUrlCandidates": 1,
+    "limit": 5,
+    "pass": true,
+    "serpHtmlCrawlSmellObserved": false,
+    "observedSource": "wp_opensearch_extlinks"
+  },
+  "honesty": {
+    "w3cAndTbl": "UNKNOWN, identityClaim=false, urlIsNotIdentity=true, no SAME-ENTITY claim",
+    "smithAndCohen": "multi-candidate/homonym gap retained; all observed relationships UNKNOWN; no forced identity",
+    "sameEntityClaimCount": 0,
+    "q1701775TotalOccurrences": 0
+  },
+  "offCheck": {
+    "run": false,
+    "note": "ON-only Preview; OFF=B0 not measured here",
+    "references": [
+      "docs/GO-IMPL-500/MD-WAVE/L2-GENERAL-WEB-ADAPTER-שרת.md (generalWebSearch unit 47/0; flag OFF B0)",
+      "docs/GO-IMPL-500/MD-WAVE/ARCH-GLANCE-L2-FILL-1.1-ארכיטקט-2026-09-24.md (unit suite 66/0)"
+    ]
+  },
+  "deltaVsPriorPartial": {
+    "w3c": "PASS retained; candidate URL changed, cite/UNKNOWN/non-identity contract retained",
+    "tbl": "IMPROVED: prior all_dropped_ssrf_or_registry / 0 candidates → 1 url_candidate (info.cern.ch), provider ok",
+    "smith": "NO MATERIAL FIX: still 0 general-web candidates and opensearch_error; honesty remains PASS",
+    "cohen-he": "NO COVERAGE FIX: still 0 general-web candidates; status now extlinks_error rather than prior opensearch_error; honesty remains PASS",
+    "overall": "PARTIAL retained; positive TBL delta, Smith/כהן adapter coverage gap remains"
+  },
+  "polling": {
+    "allSeedsHadTerminalishSnapshot": true,
+    "timeoutOver45Seconds": false,
+    "rawRunSummary": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/run-summary.json"
+  },
+  "evidencePaths": [
+    "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/",
+    "test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/health.json",
+    "docs/GO-IMPL-500/MD-WAVE/QA-SMOKE-GENERAL-WEB-RERUN-בודק-2026-09-24.md",
+    "docs/GO-IMPL-500/MD-WAVE/QA-SMOKE-GENERAL-WEB-RERUN-בודק-2026-09-24.json"
+  ],
+  "finalNote": "GENERAL_WEB fill.1.1 rerun PARTIAL; Wave 1 product NOT DONE; אין promote; TREATMENT dpl_J92G9… not touched."
+}

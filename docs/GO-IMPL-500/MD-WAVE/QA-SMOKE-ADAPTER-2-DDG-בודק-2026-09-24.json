@@ -1,0 +1,113 @@
+{
+  "report": "QA-SMOKE-ADAPTER-2-DDG-בודק-2026-09-24",
+  "measuredAt": "2026-09-24 13:45-13:47 IDT",
+  "lane": "Adapter-2 DDG Instant Answer Preview, flag ON",
+  "target": {
+    "deployment": "dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k",
+    "url": "https://akvot-simple-demo-pnmmxdn7e-k-akvot.vercel.app",
+    "access": "vercel curl --scope k-akvot --deployment dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k",
+    "flag": "DISCOVERY_ENABLE_DDG_INSTANT=1 via deploy -e",
+    "treatmentMeasured": false,
+    "fill11Measured": false,
+    "promoted": false
+  },
+  "verdict": "PARTIAL",
+  "summary": {
+    "overall": "PARTIAL",
+    "honestyC1": "PASS",
+    "coverage": { "ddgUrlCandidateHits": 0, "probes": 4, "coverageStatement": "0 DDG hits / 4 probes" },
+    "failClosed": "PASS",
+    "wave1Product": "NOT DONE",
+    "promote": "NO",
+    "treatment": "untouched"
+  },
+  "knownRca": {
+    "providerStatus": "ia_error",
+    "detail": "Known RCA: TLS SSL UNEXPECTED_EOF to api.duckduckgo.com; fail-closed expected.",
+    "source": "docs/GO-IMPL-500/MD-WAVE/L2-ADAPTER-2-DDG-IA-שרת-2026-09-24.md"
+  },
+  "matrix": {
+    "providerPresentAllProbes": true,
+    "providerStatusAllProbes": "ia_error",
+    "ddgUrlCandidateCount": 0,
+    "identityClaimTrueCount": 0,
+    "sameEntityFromUrlCount": 0,
+    "allObservedFindingRelationships": ["unknown"],
+    "maxDdgUrlCandidateCount": 0,
+    "cap": 5,
+    "capPass": true,
+    "htmlSerpOrCrawlSmell": false,
+    "trackCVisibleInJson": false,
+    "trackCNote": "No DDG url_candidate facets appeared; paint is the ממשק lane.",
+    "positiveCitePath": "not exercised because no DDG candidate was emitted"
+  },
+  "probes": [
+    {
+      "id": "w3c",
+      "seed": "World Wide Web Consortium",
+      "sessionId": "kv1.f82c2772ec7c900362c3fd99559234c0",
+      "status": "complete",
+      "providerStatus": "ia_error",
+      "findings": 8,
+      "ddgUrlCandidates": 0,
+      "identityClaimTrue": 0,
+      "sameEntityEmitted": 0,
+      "rawPost": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/w3c.post.json",
+      "rawGet": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/w3c.get-0.json"
+    },
+    {
+      "id": "tbl",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.2eaa9e8dab8d5ea28c32e7b199b9fa10",
+      "status": "partial",
+      "providerStatus": "ia_error",
+      "findings": 4,
+      "ddgUrlCandidates": 0,
+      "identityClaimTrue": 0,
+      "sameEntityEmitted": 0,
+      "rawPost": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/tbl.post.json",
+      "rawGet": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/tbl.get-0.json"
+    },
+    {
+      "id": "smith",
+      "seed": "Smith",
+      "sessionId": "kv1.4a1e5e4ebff83db19d6c52febe6aa651",
+      "status": "partial",
+      "providerStatus": "ia_error",
+      "findings": 16,
+      "ddgUrlCandidates": 0,
+      "identityClaimTrue": 0,
+      "sameEntityEmitted": 0,
+      "rawPost": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/smith.post.json",
+      "rawGet": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/smith.get-0.json"
+    },
+    {
+      "id": "cohen-he",
+      "seed": "כהן",
+      "sessionId": "kv1.3f321457ad57f6f50852be053b8f0e5d",
+      "status": "partial",
+      "providerStatus": "ia_error",
+      "findings": 16,
+      "ddgUrlCandidates": 0,
+      "identityClaimTrue": 0,
+      "sameEntityEmitted": 0,
+      "rawPost": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/cohen-he.post.json",
+      "rawGet": "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/cohen-he.get-0.json"
+    }
+  ],
+  "polling": {
+    "method": "POST then GET",
+    "allGetPollsReturned": true,
+    "hangOver45s": false,
+    "salvageUsed": false
+  },
+  "notes": [
+    "W3C had one separate web_origin urlDomainCandidate; it was not a DDG url_candidate and is excluded from DDG coverage.",
+    "No TREATMENT dpl_J92G9… or fill.1.1 dpl_CJPdnz… request was made."
+  ],
+  "evidencePaths": [
+    "test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/",
+    "docs/GO-IMPL-500/MD-WAVE/L2-ADAPTER-2-DDG-IA-שרת-2026-09-24.md"
+  ],
+  "finalNote": "Overall PARTIAL; honesty/C1 and fail-closed PASS; DDG coverage 0/4 due ia_error; Wave 1 NOT DONE; אין promote."
+}

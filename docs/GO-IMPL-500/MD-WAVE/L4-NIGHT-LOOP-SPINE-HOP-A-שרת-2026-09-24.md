@@ -77,23 +77,26 @@ Track C UX remains on bundle (`discovery-ui.js?v=c1a1`).
 ---
 
 
-## Night Preview smoke (live)
+## Night Preview smoke (live · final)
 
 | Field | Value |
 |-------|-------|
-| Code SHA | `5d12e4e564aa78d34df070fca4f6d681ec6740e5` |
-| Night dpl | `dpl_5n74RnGjRxDCvbrZW5G6fYyTy8dB` |
-| Night URL | https://akvot-simple-demo-xzc8ih0yy-k-akvot.vercel.app |
-| Deploy env | `-e DISCOVERY_ENABLE_NIGHT=1 -e DISCOVERY_ENABLE_GENERAL_WEB=1` only (not project Preview env) |
-| Seed | `ABC Construction` |
-| Result | `providers.general_web_search=ok` · **1** `url_candidate` |
-| Candidate | `https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731` |
-| Gates | `relationship=unknown` · `identityClaim=false` · provider `general_web_search` |
+| Code SHA | `d3bb64ccf23942da8250441048a51ec515d69446` |
+| Night dpl | `dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7` |
+| Night URL | https://akvot-simple-demo-630wxvr9e-k-akvot.vercel.app |
+| Deploy env | `-e DISCOVERY_ENABLE_NIGHT=1 -e DISCOVERY_ENABLE_GENERAL_WEB=1` only |
+| Seed | `ABC Construction` (organization) |
+| Spine | `nightLoop.enabled=true` · phases discover→evaluate→expand→corroborate→stop · stopReason `ALL_HOPS_SETTLED` |
+| Hop A | `general_web` · wikiLocale=en · reason=ok · hop count 5 |
+| Emit | **1** `url_candidate` after Acc surface |
+| Candidate URL | `https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731` |
+| Gates | relationship=unknown · identityClaim=false · provider general_web_search |
 | Track C UX | `discovery-ui.js?v=c1a1` on bundle |
 | TREATMENT | untouched |
+| Adapter-2 measure dpl_8RbS15… | untouched |
 | Promote | **NO** |
 
-Local spine journal (same seed): discover→expand→evaluate→corroborate→stop · 5 evaluate-gated candidates before Acc rank/dedupe.
+
 
 ## Provisional note
 

@@ -709,3 +709,11 @@
 - **Who:** Backend / שרת
 - **What:** Separate Preview deploy `-e` only (NIGHT=1 · GENERAL_WEB=1). Smoke org/name seed → url_candidate UNKNOWN through evaluate gates. DDG not required. **NO PROMOTE**.
 
+
+
+### Action 167 — Night Preview redeploy (nightLoop emit) + final smoke
+- **Who:** Backend / שרת
+- **SHA:** `d3bb64c`
+- **Preview:** `dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7` · https://akvot-simple-demo-630wxvr9e-k-akvot.vercel.app
+- **Smoke:** ABC Construction → nightLoop spine ON · general_web ok · 1 url_candidate UNKNOWN · identityClaim=false
+- **Locks:** TREATMENT untouched · Adapter-2 measure untouched · **NO PROMOTE**
