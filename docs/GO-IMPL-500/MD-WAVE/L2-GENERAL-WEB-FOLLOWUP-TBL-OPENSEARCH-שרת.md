@@ -72,3 +72,37 @@ Seed **Tim Berners-Lee** on the new GENERAL_WEB Preview → expect ≥1 `url_can
 - [x] Flag default OFF  
 - [x] No SERP HTML / open crawl / F11 expand  
 - [x] UX WIP left unstaged
+
+
+---
+
+
+---
+
+## Deploy + TBL smoke (this turn)
+
+| Field | Value |
+|-------|-------|
+| SHA | `fcd8cb297e9e7684ad237e2459488efe355cbbe6` |
+| Preview dpl | `dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15` |
+| URL |  |
+| Enable | CLI deploy `-e DISCOVERY_ENABLE_GENERAL_WEB=1` only (project Preview env **not** set) |
+| Prior CLI dirty upload | superseded (protection blocked vercel curl) |
+| TREATMENT | `dpl_J92G9…` **untouched** |
+| Tests | `generalWebSearch.test.mjs` **66/0** |
+
+### TBL smoke (`vercel curl` on clean deploy)
+
+- POST seed `Tim Berners-Lee` → session `kv1.6317dc3573ceaeb7f2a8dca5818f413c` · status `partial`
+- `providers.general_web_search` = **ok**
+- ≥1 `url_candidate`: `https://info.cern.ch/Proposal.html` · `relationship=UNKNOWN` · `identityClaim=false` · `urlIsNotIdentity=true` · `sourceFamily=general_web`
+- Local live adapter (flag ON via ctx): **5** https candidates — confirms http→https upgrade
+
+### What changed for `opensearch_error`
+
+- Dedicated GWS budget via `adapterBudgetSignal` / `generalWebBudgetSignal` + `dispose()`
+- One retry on transient OpenSearch (network/5xx/abort-not-parent)
+- emptyResult includes `message` + `errorCode` + `openSearchAttempts`
+
+**NO PROMOTE · flag default OFF · Arch OpenSearch→extlinks only · UX WIP unstaged**
+

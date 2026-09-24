@@ -477,9 +477,9 @@
 - **Files:** `generalWebSearch.test.mjs`
 
 ### Action 158 — Evidence + push + separate Preview
-- **When:** 2026-09-24 08:38–08:40 IDT
+- **When:** 2026-09-24 08:38–08:42 IDT
 - **Who:** שרת
-- **What:** Wrote follow-up evidence. Commit+push `origin/main` (**≠ promote**). Separate Preview with `-e DISCOVERY_ENABLE_GENERAL_WEB=1` only. TREATMENT `dpl_J92G9…` untouched. UX WIP unstaged.
+- **What:** Wrote follow-up evidence. Commit+push `origin/main` (**≠ promote**). Separate Preview with `-e DISCOVERY_ENABLE_GENERAL_WEB=1` only → `dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15` (clean git-archive). TBL smoke: `general_web_search=ok` · ≥1 url_candidate `https://info.cern.ch/Proposal.html` (UNKNOWN, identityClaim=false). TREATMENT `dpl_J92G9…` untouched. UX WIP unstaged.
 - **Files:** evidence md · ACTION-LOG
 
 **Server L2 GENERAL_WEB follow-up action ids:** **154–158**  
