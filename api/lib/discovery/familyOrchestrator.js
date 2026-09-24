@@ -43,6 +43,7 @@ import {
 import { selectFetchablePlanUrlTargets } from './security.js';
 import { candidateSkipReason, CANDIDATE_FAMILY_IDS } from './candidateFamilies.js';
 import { normalizeRawHit } from './store.js';
+import { isBlankSeed, EMPTY_SEED_REASON } from './queryPlan.js';
 import {
   scrubAdapterRawFinding,
   scrubFamilyJournal,
@@ -240,6 +241,23 @@ export async function executeFamilyCall({
   ledger,
   plan,
 }) {
+  // Slice A · fail-closed: never call provider.search with a blank query (no budget spend).
+  if (isBlankSeed(query || session?.seed)) {
+    return {
+      familyId,
+      providerId,
+      intentId,
+      planId,
+      status: 'skipped',
+      outcomeClass: outcomeClassForStatus('skipped'),
+      findings: [],
+      evidence: [],
+      executionTimeMs: 0,
+      requestsUsed: 0,
+      reasons: [EMPTY_SEED_REASON],
+      skipReason: EMPTY_SEED_REASON,
+    };
+  }
   if (!ledger._seenProviders) ledger._seenProviders = new Set();
   const isNew = !ledger._seenProviders.has(providerId);
   const gate = ledger.reserve({
@@ -408,6 +426,8 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   const selectedLaunches = Array.isArray(selectOut?.launches) ? selectOut.launches : [];
   const selectSkipped = Array.isArray(selectOut?.skipped) ? selectOut.skipped : [];
   const memoryRepeatSkips = Number(selectOut?.memoryRepeatSkips) || 0;
+  // Select-layer ∩ orderedIntents cuts (already in selectSkipped) — obs only.
+  const selectPlanAllowSkips = Number(selectOut?.planAllowSkips) || 0;
 
   const planLaunchRows = launchesFromQueryPlan(plan);
   const planFamilyAllow = new Set(
@@ -857,7 +877,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     wave,
     selectLaunchCount: selectedInPlan.length,
     selectSkipCount: selectSkipped.length + planAllowSkips,
-    planAllowSkips,
+    planAllowSkips: planAllowSkips + selectPlanAllowSkips,
     memoryRepeatSkips,
     evaluateOk: evaluateOut?.ok !== false,
     frontierAdded,

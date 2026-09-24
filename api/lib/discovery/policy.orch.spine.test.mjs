@@ -196,8 +196,16 @@ const emptyMem = createMissionMemory({
 recordWave(emptyMem, { wave: 1, familyIds: ['encyclopedia', 'knowledge_graph'] });
 ok('familiesTriedAtWave', familiesTriedAtWave(emptyMem, 1).has('encyclopedia'));
 ok('no progress yet', missionHasProgress(emptyMem) === false);
+const spineIntents = [
+  {
+    intentId: 'DISCOVER_IDENTITY_REFERENCES',
+    priority: 1,
+    sourceFamilies: ['bibliographic', 'encyclopedia', 'knowledge_graph'],
+  },
+];
 const blocked = selectLaunches({
   plan: {
+    orderedIntents: spineIntents, // slice A: select ∩ orderedIntents
     launches: [
       { intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'encyclopedia', priority: 1 },
       { intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'bibliographic', priority: 2 },
@@ -219,6 +227,7 @@ recordEvidenceEdgeCount(emptyMem, 2);
 ok('missionHasProgress after edges', missionHasProgress(emptyMem) === true);
 const allowed = selectLaunches({
   plan: {
+    orderedIntents: spineIntents,
     launches: [{ intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'encyclopedia', priority: 1 }],
   },
   flags: {},

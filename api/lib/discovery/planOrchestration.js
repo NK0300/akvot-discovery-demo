@@ -9,6 +9,8 @@ import {
   buildQueryPlan,
   validateQueryPlan,
   scrubQueryPlanForEmit,
+  isBlankSeed,
+  EMPTY_SEED_REASON,
   FAMILY_TO_PROVIDER,
   PROVIDER_TO_FAMILY,
 } from './queryPlan.js';
@@ -34,6 +36,18 @@ import { candidateSkipReason, CANDIDATE_FAMILY_IDS } from './candidateFamilies.j
  * @param {{ flags?: object, budgetsRemaining?: object }} [opts]
  */
 export function planForSession(session, opts = {}) {
+  // Slice A · fail-closed: blank seed (''/whitespace/tab/NBSP/zero-width) ⇒ no plan,
+  // 0 launches, never an empty query to any family/provider. Additive fields only.
+  if (isBlankSeed(session?.seed)) {
+    return {
+      ok: false,
+      plan: null,
+      errors: [EMPTY_SEED_REASON],
+      fallbackReason: EMPTY_SEED_REASON,
+      reason: EMPTY_SEED_REASON,
+      launches: [],
+    };
+  }
   const flags = {
     viaf:
       opts.flags?.viaf === true ||

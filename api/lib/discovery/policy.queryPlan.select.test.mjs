@@ -38,7 +38,11 @@ const selected = selectLaunches({ plan, flags: {} });
 ok('selectLaunches from QueryPlan', selected.launches.length >= 3);
 ok('select no skips for B0', selected.skipped.length === 0);
 
+// Slice A: select ∩ orderedIntents — authority must be in intents to launch at all.
 const viafPlan = {
+  orderedIntents: [
+    { intentId: 'DISCOVER_IDENTITY_REFERENCES', priority: 1, sourceFamilies: ['authority'] },
+  ],
   launches: [{ intentId: 'DISCOVER_IDENTITY_REFERENCES', familyId: 'authority', priority: 1 }],
 };
 const viafOff = selectLaunches({ plan: viafPlan, flags: { viaf: false } });
@@ -49,7 +53,16 @@ ok(
 );
 
 const viafOn = selectLaunches({ plan: viafPlan, flags: { viaf: true } });
-ok('viaf flag ON → launch', viafOn.launches.some((l) => l.familyId === 'authority'));
+ok('viaf flag ON → launch (in-intent)', viafOn.launches.some((l) => l.familyId === 'authority'));
+const viafOnLaunchesOnly = selectLaunches({
+  plan: { launches: viafPlan.launches },
+  flags: { viaf: true },
+});
+ok(
+  'viaf flag ON + launches-only (no intents) → cut empty_plan',
+  viafOnLaunchesOnly.launches.length === 0 &&
+    viafOnLaunchesOnly.skipped.some((s) => s.familyId === 'authority' && s.skipReason === 'empty_plan'),
+);
 
 const unknown = selectLaunches({
   plan: { launches: [{ intentId: 'x', familyId: 'nope_family' }] },

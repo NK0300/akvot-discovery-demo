@@ -101,11 +101,35 @@ export function launchesFromQueryPlan(plan = {}) {
   return out;
 }
 
+/**
+ * Intent allow-set: every familyId listed in plan.orderedIntents[].sourceFamilies.
+ * Same semantics as launchesFromQueryPlan / validateQueryPlan `launch_not_in_intents`
+ * / familyOrchestrator plan allow-list. Empty/missing orderedIntents ⇒ empty set.
+ * @param {object} plan
+ * @returns {Set<string>}
+ */
+export function intentFamilyAllowSet(plan = {}) {
+  const allow = new Set();
+  const intents = Array.isArray(plan?.orderedIntents) ? plan.orderedIntents : [];
+  for (const intent of intents) {
+    const families = Array.isArray(intent?.sourceFamilies) ? intent.sourceFamilies : [];
+    for (const f of families) {
+      const id = String(f || '').trim();
+      if (id) allow.add(id);
+    }
+  }
+  return allow;
+}
+
 export function selectLaunches(ctx = {}) {
   const launchesIn =
     Array.isArray(ctx.plan?.launches) && ctx.plan.launches.length
       ? ctx.plan.launches
       : launchesFromQueryPlan(ctx.plan || {});
+  // Track B slice A · defense layer: Select ∩ orderedIntents families (fail-closed).
+  // Empty orderedIntents ⇒ zero launches. Validate + orchestrator allow-list stay in place.
+  const intentAllow = intentFamilyAllowSet(ctx.plan || {});
+  let planAllowSkips = 0;
   const flags = ctx.flags || {};
   const wave = Number(ctx.wave) || 1;
   const mem = ctx.missionMemory || null;
@@ -133,6 +157,15 @@ export function selectLaunches(ctx = {}) {
       skipped.push({ familyId, intentId: row.intentId, skipReason: skip });
       continue;
     }
+    if (!intentAllow.has(familyId)) {
+      planAllowSkips += 1;
+      skipped.push({
+        familyId,
+        intentId: row.intentId,
+        skipReason: intentAllow.size ? 'not_in_plan' : 'empty_plan',
+      });
+      continue;
+    }
     if (noProgress && triedAtWave.has(familyId)) {
       memoryRepeatSkips += 1;
       skipped.push({
@@ -153,7 +186,7 @@ export function selectLaunches(ctx = {}) {
   }
 
   launches.sort((a, b) => a.priority - b.priority || a.familyId.localeCompare(b.familyId));
-  return { launches, skipped, memoryRepeatSkips };
+  return { launches, skipped, memoryRepeatSkips, planAllowSkips };
 }
 
 /**
@@ -463,6 +496,7 @@ export default {
   POLICY_SCHEMA_VERSION,
   POLICY_STOP_REASONS,
   launchesFromQueryPlan,
+  intentFamilyAllowSet,
   selectLaunches,
   gateFamilyExecute,
   evaluateBatch,

@@ -47,6 +47,23 @@ export const INTENT_IDS = Object.freeze([
   'DISCOVER_RELATED_ENTITIES',
 ]);
 
+/** Closed reason for a blank seed (Track B slice A · fail-closed · never fan out). */
+export const EMPTY_SEED_REASON = 'empty_seed';
+
+/** Zero-width / BOM format chars that `String#trim` does not strip. */
+const ZERO_WIDTH_RE = /[\u200B-\u200D\u2060\uFEFF]/g;
+
+/**
+ * True when seed has no searchable text: null/undefined/'' or only whitespace
+ * (space, tab, newline, NBSP, other Unicode spaces) and/or zero-width chars.
+ * Pure predicate — no seed-classification semantics (seedKind is Slice B).
+ * @param {unknown} seed
+ */
+export function isBlankSeed(seed) {
+  if (seed == null) return true;
+  return String(seed).replace(ZERO_WIDTH_RE, '').trim() === '';
+}
+
 /** Deny-list tokens that MUST never appear as plan directives. */
 export const FORBIDDEN_PLAN_DIRECTIVES = Object.freeze([
   'SAME_ENTITY',
@@ -303,7 +320,9 @@ export function buildQueryPlan(input = {}, opts = {}) {
     registry
       ? registry[familyId]?.providerIds?.[0] || familyId
       : FAMILY_TO_PROVIDER[familyId] || familyId;
-  const seed = String(input.seed || '').trim();
+  // Slice A: blank seed ⇒ zero intents / zero queries (never an empty provider query).
+  const seedEmpty = isBlankSeed(input.seed);
+  const seed = seedEmpty ? '' : String(input.seed || '').trim();
   const hints = input.hints && typeof input.hints === 'object' ? input.hints : {};
   const locale = input.locale || 'en';
   const flags = {
@@ -324,7 +343,7 @@ export function buildQueryPlan(input = {}, opts = {}) {
   const urlTargets = classifyUrlTargets(urlHints);
 
   const caps = createBudgetCaps(input.budgetsRemaining || {});
-  const intentRows = intentsForSeedClass(seedClass, flags, registry);
+  const intentRows = seedEmpty ? [] : intentsForSeedClass(seedClass, flags, registry);
 
   const orderedIntents = intentRows
     .map((row, idx) => {
@@ -357,6 +376,7 @@ export function buildQueryPlan(input = {}, opts = {}) {
 
   const reasons = [
     { target: 'seedClass', reason: `detected:${seedClass}` },
+    ...(seedEmpty ? [{ target: 'seed', reason: EMPTY_SEED_REASON }] : []),
     ...orderedIntents.map((i) => ({ target: i.intentId, reason: i.reason })),
     ...sourceFamilies.map((f) => ({
       target: `family:${f}`,
@@ -451,6 +471,8 @@ export function buildQueryPlan(input = {}, opts = {}) {
     locale,
     identityConclusions: false,
     searchIntentOnly: true,
+    // Additive: present only on blank seed (non-blank plans stay byte-identical).
+    ...(seedEmpty ? { seedEmpty: true } : {}),
   };
 }
 
@@ -480,6 +502,8 @@ export function validateQueryPlan(plan, opts = {}) {
     return !!(row && row.familyId === familyId && !registryRowRejectReason(row) && row.providerIds?.[0]);
   };
   if (!plan.planId) errors.push('planId_missing');
+  // Slice A: blank seed plan is never executable (fail-closed; no empty provider query).
+  if (plan.seedEmpty === true) errors.push(EMPTY_SEED_REASON);
   if (!SEED_CLASSES.includes(plan.seedClass)) errors.push('seedClass_invalid');
   if (!Array.isArray(plan.orderedIntents) || !plan.orderedIntents.length) {
     errors.push('orderedIntents_empty');
@@ -491,6 +515,12 @@ export function validateQueryPlan(plan, opts = {}) {
     }
     if (!intent.reason || !String(intent.reason).trim()) {
       errors.push(`intent_reason_empty:${intent.intentId}`);
+    }
+    // Slice A defense: no intent query may carry a blank q (would hit provider.search empty).
+    for (const q of Array.isArray(intent.queries) ? intent.queries : []) {
+      if (q && Object.prototype.hasOwnProperty.call(q, 'q') && isBlankSeed(q.q)) {
+        errors.push(`query_empty:${intent.intentId}:${q.familyId || ''}`);
+      }
     }
     for (const f of intent.sourceFamilies || []) {
       if (!isRegistered(f)) {
@@ -714,6 +744,8 @@ export default {
   FAMILY_TO_PROVIDER,
   seedHashOf,
   detectSeedClass,
+  isBlankSeed,
+  EMPTY_SEED_REASON,
   buildQueryPlan,
   validateQueryPlan,
   familiesForIntent,

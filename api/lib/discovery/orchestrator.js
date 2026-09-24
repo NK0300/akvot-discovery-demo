@@ -620,7 +620,13 @@ export async function runPipeline(sessionId, opts = {}) {
         flags: opts.flags,
         budgetCaps: opts.budgetCaps || opts.discoveryBudget,
       });
-      if (!planned.ok) {
+      if (!planned.ok && planned.fallbackReason === 'empty_seed') {
+        // Slice A · fail-closed: blank seed ⇒ zero launches; never fall back to flat fanout
+        // (would send an empty query to every provider).
+        session.planFallbackReason = 'empty_seed';
+        session.planErrors = planned.errors;
+        batches = [];
+      } else if (!planned.ok) {
         // Kill-switch style: plan_invalid → fall back to B0 flat path once (not adaptive expand)
         session.planFallbackReason = planned.fallbackReason || 'plan_invalid';
         session.planErrors = planned.errors;
