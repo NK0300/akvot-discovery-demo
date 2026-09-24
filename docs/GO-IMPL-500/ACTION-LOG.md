@@ -212,3 +212,58 @@
 **Action count logged:** **49** (honest · not padded to 500)  
 **Checkpoints:** A **PASS** · B **PASS** · C **SOLID** · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL** · Acc-DEEPSKIP-JOURNAL **PASS (unit)** · G **FINAL report written** · MD-WAVE Acc EXPECTED **DOCS READY / live HOLD**  
 **NO PROMOTE** · flags default OFF · locks in force · Preview WAIT · AWAITING CHIEF GO
+
+
+---
+
+## Server · L1 TREATMENT Preview Done Gate (שרת) · 2026-09-24 ~08:00–08:04 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 143 | 08:00 | Backend: Preview env already had claim-pack + web_origin ON; confirmed QueryPlan/GENERAL_WEB absent |
+| 144 | 08:00 | Backend: `vercel deploy --yes --target=preview` → `dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j` READY (supersedes old pre-env dpl) |
+| 145 | 08:01 | Backend: `vercel inspect` → **target=preview** · NO promote / no `--prod` / no alias |
+| 146 | 08:01–08:03 | Backend: LIVE SSRF adversarial pack via `vercel curl` — 18/18 PASS (block/allow/poison/timeout) |
+| 147 | 08:02–08:03 | Backend: Hop smoke TREATMENT — W3C P856→p856Bridge.fetched=1 + web_origin; C1 SAME-ENTITY=0 |
+| 148 | 08:03 | Backend: Evidence `MD-WAVE/L1-TREATMENT-PREVIEW-SSRF-שרת.md` (+ mirror) · Done Gate **PASS** · NO promote |
+
+### Action 143 — Confirm Preview TREATMENT env
+- **When:** 2026-09-24 08:00 IDT
+- **Who:** Backend / שרת
+- **What:** Verified Preview secrets `DISCOVERY_WD_CLAIM_PACK` + `DISCOVERY_ENABLE_WEB_ORIGIN`; VIAF as-is ON; QueryPlan + GENERAL_WEB absent (OFF). Production untouched.
+- **Files:** (vercel env ls only)
+
+### Action 144 — Redeploy Preview
+- **When:** 2026-09-24 08:00 IDT
+- **Who:** Backend / שרת
+- **What:** Redeployed so TREATMENT picks up env (`dpl_8h2Tj8n…` was pre-env). New `dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j` · `https://akvot-simple-demo-9xuyl8jqs-k-akvot.vercel.app` · READY.
+- **Files:** (vercel deploy)
+
+### Action 145 — Inspect target=preview
+- **When:** 2026-09-24 08:01 IDT
+- **Who:** Backend / שרת
+- **What:** Confirmed `target preview` · status Ready. Explicitly did **not** promote / `--prod` / assign alias.
+- **Files:** (vercel inspect)
+
+### Action 146 — LIVE SSRF pack
+- **When:** 2026-09-24 08:01–08:03 IDT
+- **Who:** Backend / שרת
+- **What:** Live Preview probes (localhost/127/RFC1918/link-local/metadata/file/ftp/http/nip.io/sslip/userinfo + allow w3.org + poison hints.urlTargets + timeout fault). Private provenance **0**; SAME-ENTITY **0**. Access via `vercel curl` (plain curl 302 protection).
+- **Files:** probe artifacts under `/tmp/l1-treatment/ssrf/` (local)
+
+### Action 147 — Hop smoke TREATMENT
+- **When:** 2026-09-24 08:02–08:03 IDT
+- **Who:** Backend / שרת
+- **What:** Seed `World Wide Web Consortium` → `officialWebsiteUrls=['https://w3.org/']` · `p856Bridge.fetched=1` · web_origin finding W3C · udc safety=allowed · relationship UNKNOWN · QueryPlan OFF so no plan.urlTargets (B0 bridge). TBL person hop flaky (WD partial) — noted honest.
+- **Files:** `/tmp/l1-treatment/hop-w3org.json`
+
+### Action 148 — Evidence + Done Gate
+- **When:** 2026-09-24 08:03 IDT
+- **Who:** Backend / שרת
+- **What:** Wrote `docs/GO-IMPL-500/MD-WAVE/L1-TREATMENT-PREVIEW-SSRF-שרת.md` + test-results mirror. Done Gate (1)–(4) **PASS**. Wave 1 product-complete **NO**. **NO PROMOTE**.
+- **Files:** evidence md · ACTION-LOG
+
+**Server L1 TREATMENT action ids:** **143–148**  
+**Prior Server L1 unit band:** 135–142  
+**Checkpoints:** LIVE Preview SSRF **CLOSED (TREATMENT)** · Done Gate **PASS** · QueryPlan still OFF · F11 HOLD  
+**NO PROMOTE**
