@@ -1,0 +1,627 @@
+{
+  "id": "02-ACC-AE-TREATMENT",
+  "stamp": "2026-09-24T08:11:38+03:00",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "MD-WAVE",
+  "treatment": {
+    "url": "https://akvot-simple-demo-9xuyl8jqs-k-akvot.vercel.app",
+    "deployment": "dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j",
+    "flagsOn": [
+      "DISCOVERY_WD_CLAIM_PACK",
+      "DISCOVERY_ENABLE_WEB_ORIGIN"
+    ],
+    "flagsOff": [
+      "DISCOVERY_ENABLE_QUERYPLAN",
+      "DISCOVERY_ENABLE_GENERAL_WEB"
+    ],
+    "notMeasured": [
+      "dpl_8h2Tj8n…",
+      "B broad",
+      "D",
+      "F11"
+    ]
+  },
+  "scope": "Acc A/E only + C1 URL-alone / emit scrub smoke",
+  "promote": false,
+  "wave1ProductDone": false,
+  "wave1Note": "name→unknown domain still MISSING; QueryPlan OFF; Acc A/E measures TREATMENT bridge only",
+  "epistemicLocks": [
+    "INFORMATION≠IDENTITY",
+    "UNKNOWN≠FALSE",
+    "CANDIDATE≠FACT",
+    "URL≠IDENTITY",
+    "TITLE≠IDENTITY",
+    "CORRELATION≠PROOF"
+  ],
+  "totals": {
+    "prettyWrong": 0,
+    "leak": 0,
+    "sameEntityFromUrlOrWire": 0,
+    "casePass": 6,
+    "caseFail": 0
+  },
+  "cases": [
+    {
+      "id": "A1_person_TBL",
+      "scenario": "A_PERSON",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.01bb8f157ff29b783b8acb07e17b00ec",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "findingsCount": 12,
+      "woCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q80",
+        "Q120373140",
+        "Q120373262",
+        "Q22991023",
+        "Q22946133",
+        "Q22980417",
+        "Q19761597",
+        "Q55693401"
+      ],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:8"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "no_wo_identity_claim",
+          "pass": true,
+          "detail": "WO identityClaim false/absent"
+        },
+        {
+          "id": "wo_no_same_rel",
+          "pass": true,
+          "detail": "WO relationship not SAME-*"
+        },
+        {
+          "id": "udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "A_unknown_if_no_p856",
+          "pass": true,
+          "detail": "no WO this run; p856Bridge=None; UNKNOWN/gap honest"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "createHttp": null,
+      "access": "vercel curl --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j"
+    },
+    {
+      "id": "A2_person_Ada",
+      "scenario": "A_PERSON",
+      "seed": "Ada Lovelace",
+      "sessionId": "kv1.c5968db1492dd28c313a37bad2ad0610",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "findingsCount": 22,
+      "woCount": 1,
+      "officialWebsiteFindings": [
+        {
+          "id": "wd-Q114068528",
+          "urls": [
+            "https://www.nvidia.com/en-us/design-visualization/ada-lovelace-architecture/"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q30128828",
+          "urls": [
+            "https://awc-hq.org/ada-lovelace-awards.html"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q115052486",
+          "urls": [
+            "https://findingada.com/"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q140352119",
+          "urls": [
+            "https://www.scs.fraunhofer.de/focus-projects/ada-center.html"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        }
+      ],
+      "p856Bridge": {
+        "added": [
+          "https://www.nvidia.com/en-us/design-visualization/ada-lovelace-architecture/",
+          "https://awc-hq.org/ada-lovelace-awards.html",
+          "https://findingada.com/",
+          "https://www.scs.fraunhofer.de/focus-projects/ada-center.html"
+        ],
+        "dropped": 0,
+        "poison": false,
+        "fetched": 0,
+        "sourceFinding": "wikidata_p856:Q114068528",
+        "citedQid": "Q114068528"
+      },
+      "urlDomainCandidatesCount": 4,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q7259",
+        "Q114068528",
+        "Q87282992",
+        "Q30128828",
+        "Q3611580",
+        "Q115052486",
+        "Q140352119",
+        "Q66232516"
+      ],
+      "woFindings": [
+        {
+          "id": "wo-88cb4e631509ec3e",
+          "title": "Association for Women in Computing (AWC) - Ada Lovelace Awards",
+          "relationship": "unknown",
+          "relationshipState": "POSSIBLE-MATCH",
+          "identityClaim": false,
+          "hostname": "awc-hq.org",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:POSSIBLE-MATCH"
+          ],
+          "cite": "p856Bridge.added"
+        }
+      ],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:8"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "no_wo_identity_claim",
+          "pass": true,
+          "detail": "WO identityClaim false/absent"
+        },
+        {
+          "id": "wo_no_same_rel",
+          "pass": true,
+          "detail": "WO relationship not SAME-*"
+        },
+        {
+          "id": "udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "A_wo_cited_or_drop",
+          "pass": true,
+          "detail": "all WO cited via bridge/UDC; bridge={\"added\": [\"https://www.nvidia.com/en-us/design-visualization/ada-lovelace-architecture/\", \"https://awc-hq.org/ada-lovelace-awards.html\", \"https://findingada.com/\", \"https://www.sc"
+        },
+        {
+          "id": "A_namesake_note",
+          "pass": true,
+          "detail": "bridge.citedQid=Q114068528 topFinding=wd-Q7259 (correlation≠proof; no SAME)"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "createHttp": null,
+      "access": "vercel curl --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j"
+    },
+    {
+      "id": "A3_org_bridge_W3C",
+      "scenario": "A_ORG_BRIDGE",
+      "seed": "World Wide Web Consortium",
+      "sessionId": "kv1.33e812c9cae4a41c1fa3c3df567116b4",
+      "status": "complete",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "findingsCount": 8,
+      "woCount": 1,
+      "officialWebsiteFindings": [
+        {
+          "id": "wd-Q37033",
+          "urls": [
+            "https://w3.org/"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        }
+      ],
+      "p856Bridge": {
+        "added": [
+          "https://w3.org/"
+        ],
+        "dropped": 0,
+        "poison": false,
+        "fetched": 1,
+        "sourceFinding": "wikidata_p856:Q37033",
+        "citedQid": "Q37033"
+      },
+      "urlDomainCandidatesCount": 1,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q37033",
+        "Q2661442"
+      ],
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "hostname": "www.w3.org",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN",
+            "sourceClaim:P856",
+            "citedProvider:wikidata",
+            "citedQid:Q37033",
+            "bridge:2026-09-24.l1-p856-urltargets1"
+          ],
+          "cite": "p856Bridge.added"
+        }
+      ],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:2"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "no_wo_identity_claim",
+          "pass": true,
+          "detail": "WO identityClaim false/absent"
+        },
+        {
+          "id": "wo_no_same_rel",
+          "pass": true,
+          "detail": "WO relationship not SAME-*"
+        },
+        {
+          "id": "udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "A_wo_cited_or_drop",
+          "pass": true,
+          "detail": "all WO cited via bridge/UDC; bridge={\"added\": [\"https://w3.org/\"], \"dropped\": 0, \"poison\": false, \"fetched\": 1, \"sourceFinding\": \"wikidata_p856:Q37033\", \"citedQid\": \"Q37033\"}"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "createHttp": null,
+      "access": "vercel curl --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j"
+    },
+    {
+      "id": "C1_url_alone_w3",
+      "scenario": "C1",
+      "seed": "https://www.w3.org/",
+      "sessionId": "kv1.dfe866d4e5bef5c17040388e62f2f2f9",
+      "status": "complete",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "findingsCount": 1,
+      "woCount": 1,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 1,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [],
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "hostname": "www.w3.org",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN"
+          ],
+          "cite": null
+        }
+      ],
+      "gaps": [],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "no_wo_identity_claim",
+          "pass": true,
+          "detail": "WO identityClaim false/absent"
+        },
+        {
+          "id": "wo_no_same_rel",
+          "pass": true,
+          "detail": "WO relationship not SAME-*"
+        },
+        {
+          "id": "udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "C1_url_alone_unknown",
+          "pass": true,
+          "detail": "wo=[('unknown', 'UNKNOWN')]"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "createHttp": null,
+      "access": "vercel curl --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j"
+    },
+    {
+      "id": "E1_david_cohen",
+      "scenario": "E",
+      "seed": "David Cohen",
+      "sessionId": "kv1.42622a9e2ed2e7f9f7330caacec744ba",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "error",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "findingsCount": 16,
+      "woCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:2"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "E_pw_zero",
+          "pass": true,
+          "detail": "pretty-wrong Q1701775=0"
+        },
+        {
+          "id": "E_no_forced_merge",
+          "pass": true,
+          "detail": "findings=16 qids=0 multi=True"
+        },
+        {
+          "id": "E_multi_or_gap_honesty",
+          "pass": true,
+          "detail": "multi=True gaps=1"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "createHttp": null,
+      "access": "vercel curl --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j"
+    },
+    {
+      "id": "E2_john_smith_pw",
+      "scenario": "E",
+      "seed": "John Smith",
+      "sessionId": "kv1.433b3e1d706aa41b2381df5e91d7ad18",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "error",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "findingsCount": 16,
+      "woCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:2"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "E_pw_zero",
+          "pass": true,
+          "detail": "pretty-wrong Q1701775=0"
+        },
+        {
+          "id": "E_no_forced_merge",
+          "pass": true,
+          "detail": "findings=16 qids=0 multi=True"
+        },
+        {
+          "id": "E_multi_or_gap_honesty",
+          "pass": true,
+          "detail": "multi=True gaps=1"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "createHttp": null,
+      "access": "vercel curl --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j"
+    }
+  ],
+  "verdict": "PASS",
+  "keyCites": [
+    "docs/GO-IMPL-500/MD-WAVE/01-ACC-EXPECTED-A-E-דיוק-2026-09-24.md",
+    "docs/GO-IMPL-500/MD-WAVE/L1-TREATMENT-PREVIEW-SSRF-שרת.md",
+    "docs/GO-IMPL-500/ACC-ADVERSARIAL-MATRIX.md",
+    "api/lib/forbiddenIdentities.js"
+  ],
+  "residuals": [
+    "Person Tim Berners-Lee: no officialWebsiteUrls/p856Bridge this run (WD partial) — Acc treats as UNKNOWN-preserved, not bridge FAIL",
+    "Person Ada Lovelace: p856Bridge citedQid Q114068528 (namesake GPU/architecture) + award/org sites — correlation≠proof; WO identityClaim=false; residual namesake hop (not SAME-ENTITY FAIL)",
+    "David Cohen / John Smith: WD/WP error this run; multi VIAF/OL candidates kept; Q1701775 absent",
+    "QueryPlan OFF — plan.urlTargets N/A; B0 p856Bridge path measured"
+  ],
+  "sseSmoke": {
+    "path": "/api/discovery/sessions/kv1.33e812c9cae4a41c1fa3c3df567116b4/events",
+    "http": 200,
+    "bytes": 40989,
+    "prettyWrong": 0,
+    "sameEntity": 0,
+    "leak": 0,
+    "pass": true,
+    "stamp": "2026-09-24T08:12:21+03:00"
+  },
+  "sseStamp": "2026-09-24T08:12:21+03:00"
+}

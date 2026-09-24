@@ -1,0 +1,1057 @@
+{
+  "role": "QA-בודק",
+  "stamp": "2026-09-24T08:16:34+03:00",
+  "timezone": "Asia/Jerusalem (UTC+3)",
+  "dpl": "dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j",
+  "previewUrl": "https://akvot-simple-demo-9xuyl8jqs-k-akvot.vercel.app",
+  "access": "vercel curl --scope k-akvot --deployment dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j",
+  "promote": false,
+  "wave1_product_done": false,
+  "flags": {
+    "DISCOVERY_WD_CLAIM_PACK": "ON (Preview secret)",
+    "DISCOVERY_ENABLE_WEB_ORIGIN": "ON (Preview secret)",
+    "DISCOVERY_ENABLE_VIAF": "ON (as-is)",
+    "DISCOVERY_ENABLE_QUERYPLAN": "OFF",
+    "DISCOVERY_ENABLE_GENERAL_WEB": "OFF"
+  },
+  "ssrf_cite": "שרת L1 TREATMENT SSRF 18/18 PASS",
+  "verdicts": {
+    "A": "PARTIAL",
+    "E": "PASS",
+    "pretty_wrong": "PASS",
+    "overall": "PARTIAL"
+  },
+  "chief": {
+    "e2e_capability_observed": "Org seed with WD P856 → officialWebsiteUrls → p856Bridge fetch → web_origin Finding (cite-or-drop, relationship=unknown, identityClaim=false). Person-name → official site NOT observed this run (Assaf/TimBL/Jimmy: no WO from person P856). Ambiguous names keep multi-candidates without forced identity.",
+    "wired_vs_present": "P856 bridge + web_origin WIRED on org hop when WD returns website. QueryPlan urlTargets ABSENT (flag OFF). Name→domain without WD P856 MISSING. Person hop flaky when WD partial/error.",
+    "tests_security": "SSRF 18/18 cite שרת. QA A seeds measured: 4 (1 PASS hop + 3 person gap/flaky). E seeds: 2 PASS + 1 TIMEOUT(Alex not run). Pretty-wrong PASS (leak=0, sameEntityEmitted=0, no dossier/faces).",
+    "flag_state": "CLAIM_PACK+WEB_ORIGIN ON; QP+GENERAL_WEB OFF; VIAF ON as-is. No prod env change. No promote.",
+    "remaining_gaps_chief_go": "Name→domain still MISSING; person P856→fetch not re-proven; QueryPlan Preview measure separate (L2); F11/D HOLD; Alex Morgan seed TIMEOUT/not run; Wave 1 product NOT DONE. Needs Chief GO for L2/QP and any promote (promote still FORBIDDEN)."
+  },
+  "results": [
+    {
+      "cell": "A",
+      "label": "A-w3c-control",
+      "seed": "World Wide Web Consortium",
+      "note": "org P856 hop control (שרת-validated class)",
+      "sessionId": "kv1.fada0eb30e9fe9a9d936b5578fc050e5",
+      "status": "complete",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "nFindings": 8,
+      "nWebOrigin": 1,
+      "nOfficialWebsiteUrls": 1,
+      "officialWebsiteUrlsSamples": [
+        {
+          "id": "wd-Q37033",
+          "title": "World Wide Web Consortium",
+          "urls": [
+            "https://w3.org/"
+          ]
+        }
+      ],
+      "p856Bridge": {
+        "added": [
+          "https://w3.org/"
+        ],
+        "dropped": 0,
+        "poison": false,
+        "fetched": 1,
+        "sourceFinding": "wikidata_p856:Q37033",
+        "citedQid": "Q37033"
+      },
+      "urlDomainCandidates": [
+        {
+          "url": "https://w3.org/",
+          "relationship": "UNKNOWN",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "safety": "allowed",
+          "whyFound": [
+            "wd_p856_official_website",
+            "wd_p856_facet"
+          ]
+        }
+      ],
+      "urlTargetsPresent": false,
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "hostname": "www.w3.org",
+          "confirmationState": "candidate",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN",
+            "sourceClaim:P856",
+            "citedProvider:wikidata",
+            "citedQid:Q37033",
+            "bridge:2026-09-24.l1-p856-urltargets1"
+          ]
+        }
+      ],
+      "findingSummaries": [
+        {
+          "id": "wd-Q37033",
+          "title": "World Wide Web Consortium",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": [
+            "https://w3.org/"
+          ]
+        },
+        {
+          "id": "ol-OL2713230A",
+          "title": "World Wide Web Consortium",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-122285539",
+          "title": "World-Wide Web Consortium",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q2661442",
+          "title": "W3C Recommendation",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-154210745",
+          "title": "World Wide Web Consortium. Oficina Española",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-168297370",
+          "title": "World Wide Web Consortium., XML Working Group",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wp-en-World_Wide_Web_Consortium",
+          "title": "World Wide Web Consortium",
+          "providers": [
+            "wikipedia"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "providers": [
+            "web_origin"
+          ],
+          "identityClaim": false,
+          "relationship": "unknown",
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        }
+      ],
+      "distinctTitlesCount": 6,
+      "distinctTitlesSample": [
+        "World-Wide Web Consortium",
+        "World Wide Web Consortium., XML Working Group",
+        "W3C Recommendation",
+        "World Wide Web Consortium. Oficina Española",
+        "W3C",
+        "World Wide Web Consortium"
+      ],
+      "owFacetsSample": [
+        {
+          "id": "wd-Q37033",
+          "hint": "officialWebsite:https://w3.org/",
+          "identityClaim": false
+        },
+        {
+          "id": "ol-OL2713230A",
+          "hint": "officialWebsite:https://w3.org/",
+          "identityClaim": false
+        },
+        {
+          "id": "viaf-122285539",
+          "hint": "officialWebsite:https://w3.org/",
+          "identityClaim": false
+        },
+        {
+          "id": "wo-609ac32aa09a6777",
+          "hint": "sourceClaim:P856",
+          "identityClaim": false
+        },
+        {
+          "id": "wo-609ac32aa09a6777",
+          "hint": "bridge:2026-09-24.l1-p856-urltargets1",
+          "identityClaim": false
+        }
+      ],
+      "prettyWrong": {
+        "leakQ1701775": false,
+        "sameEntityEmitted": false,
+        "sameEntityEmittedMeta": null,
+        "sameReferenceOnWire": false,
+        "dossier": false,
+        "faces": false,
+        "edgeKinds": {},
+        "prettyWrongPass": true,
+        "informationAsIdentityOnOwFacets": false,
+        "urlUsedAsIdentity": false,
+        "titleUsedAsIdentity": false,
+        "identityClaimTrueCount": 0
+      },
+      "floors": {
+        "allIdentityClaimFalse": true,
+        "woRelationshipCeilingOk": true,
+        "candidateCeiling": true
+      },
+      "measuredAt": "2026-09-24T08:16:06+03:00"
+    },
+    {
+      "cell": "A",
+      "label": "A-assaf",
+      "seed": "Assaf Rappaport",
+      "note": "person-name Assaf-class",
+      "sessionId": "kv1.25f647092fdbb4ab7d82bea4ccd5ccaf",
+      "status": "complete",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "nFindings": 2,
+      "nWebOrigin": 0,
+      "nOfficialWebsiteUrls": 0,
+      "officialWebsiteUrlsSamples": [],
+      "p856Bridge": null,
+      "urlDomainCandidates": [],
+      "urlTargetsPresent": false,
+      "woFindings": [],
+      "findingSummaries": [
+        {
+          "id": "wd-Q47507930",
+          "title": "Asaf Rappaport",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wp-en-Assaf_Rappaport",
+          "title": "Assaf Rappaport",
+          "providers": [
+            "wikipedia"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        }
+      ],
+      "distinctTitlesCount": 2,
+      "distinctTitlesSample": [
+        "Assaf Rappaport",
+        "Asaf Rappaport"
+      ],
+      "owFacetsSample": [],
+      "prettyWrong": {
+        "leakQ1701775": false,
+        "sameEntityEmitted": false,
+        "sameEntityEmittedMeta": null,
+        "sameReferenceOnWire": false,
+        "dossier": false,
+        "faces": false,
+        "edgeKinds": {},
+        "prettyWrongPass": true,
+        "informationAsIdentityOnOwFacets": false,
+        "urlUsedAsIdentity": false,
+        "titleUsedAsIdentity": false,
+        "identityClaimTrueCount": 0
+      },
+      "floors": {
+        "allIdentityClaimFalse": true,
+        "woRelationshipCeilingOk": true,
+        "candidateCeiling": true
+      },
+      "measuredAt": "2026-09-24T08:16:06+03:00"
+    },
+    {
+      "cell": "A",
+      "label": "A-timbl",
+      "seed": "Tim Berners-Lee",
+      "note": "person seed; WD may carry P856",
+      "sessionId": "kv1.f0a0eec9a0a9d89050be6ff6640a0fcd",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "nFindings": 12,
+      "nWebOrigin": 0,
+      "nOfficialWebsiteUrls": 0,
+      "officialWebsiteUrlsSamples": [],
+      "p856Bridge": null,
+      "urlDomainCandidates": [],
+      "urlTargetsPresent": false,
+      "woFindings": [],
+      "findingSummaries": [
+        {
+          "id": "wd-Q80",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "ol-OL25245A",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-85312226",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata",
+            "openlibrary",
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q120373140",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q120373262",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q22991023",
+          "title": "Tim Berners-Lee: A Magna Carta for the web",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q22946133",
+          "title": "Tim Berners-Lee: The year open data went worldwide",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q22980417",
+          "title": "Tim Berners-Lee: The next web",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q19761597",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q55693401",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-36887201",
+          "title": "Tim Berners-Lees far Conway Berners-Lee",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wp-en-Tim_Berners_Lee",
+          "title": "Tim Berners-Lee",
+          "providers": [
+            "wikipedia"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        }
+      ],
+      "distinctTitlesCount": 5,
+      "distinctTitlesSample": [
+        "Tim Berners-Lee: The next web",
+        "Tim Berners-Lee",
+        "Tim Berners-Lees far Conway Berners-Lee",
+        "Tim Berners-Lee: A Magna Carta for the web",
+        "Tim Berners-Lee: The year open data went worldwide"
+      ],
+      "owFacetsSample": [],
+      "prettyWrong": {
+        "leakQ1701775": false,
+        "sameEntityEmitted": false,
+        "sameEntityEmittedMeta": null,
+        "sameReferenceOnWire": false,
+        "dossier": false,
+        "faces": false,
+        "edgeKinds": {},
+        "prettyWrongPass": true,
+        "informationAsIdentityOnOwFacets": false,
+        "urlUsedAsIdentity": false,
+        "titleUsedAsIdentity": false,
+        "identityClaimTrueCount": 0
+      },
+      "floors": {
+        "allIdentityClaimFalse": true,
+        "woRelationshipCeilingOk": true,
+        "candidateCeiling": true
+      },
+      "measuredAt": "2026-09-24T08:16:06+03:00"
+    },
+    {
+      "cell": "A",
+      "label": "A-jimmy-wales",
+      "seed": "Jimmy Wales",
+      "note": "person seed; upstream flaky",
+      "sessionId": "kv1.851555a4614bb0a84adaeae77b7e53d5",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok"
+      },
+      "nFindings": 2,
+      "nWebOrigin": 0,
+      "nOfficialWebsiteUrls": 0,
+      "officialWebsiteUrlsSamples": [],
+      "p856Bridge": null,
+      "urlDomainCandidates": [],
+      "urlTargetsPresent": false,
+      "woFindings": [],
+      "findingSummaries": [
+        {
+          "id": "viaf-96800423",
+          "title": "Jimmy Wales",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "ol-OL14674599A",
+          "title": "Jimmy Wales",
+          "providers": [
+            "openlibrary"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        }
+      ],
+      "distinctTitlesCount": 1,
+      "distinctTitlesSample": [
+        "Jimmy Wales"
+      ],
+      "owFacetsSample": [],
+      "prettyWrong": {
+        "leakQ1701775": false,
+        "sameEntityEmitted": false,
+        "sameEntityEmittedMeta": null,
+        "sameReferenceOnWire": false,
+        "dossier": false,
+        "faces": false,
+        "edgeKinds": {},
+        "prettyWrongPass": true,
+        "informationAsIdentityOnOwFacets": false,
+        "urlUsedAsIdentity": false,
+        "titleUsedAsIdentity": false,
+        "identityClaimTrueCount": 0
+      },
+      "floors": {
+        "allIdentityClaimFalse": true,
+        "woRelationshipCeilingOk": true,
+        "candidateCeiling": true
+      },
+      "measuredAt": "2026-09-24T08:16:06+03:00"
+    },
+    {
+      "cell": "E",
+      "label": "E-smith",
+      "seed": "Smith",
+      "note": "ambiguous surname",
+      "sessionId": "kv1.65562ca5766a52b80d52539c600a7ca4",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "nFindings": 30,
+      "nWebOrigin": 0,
+      "nOfficialWebsiteUrls": 2,
+      "officialWebsiteUrlsSamples": [
+        {
+          "id": "wd-Q131626",
+          "title": "Smithsonian Institution",
+          "urls": [
+            "https://www.si.edu/"
+          ]
+        },
+        {
+          "id": "wd-Q3037221",
+          "title": "Smith",
+          "urls": [
+            "https://smith.pictures/"
+          ]
+        }
+      ],
+      "p856Bridge": {
+        "added": [
+          "https://www.si.edu/",
+          "https://smith.pictures/"
+        ],
+        "dropped": 0,
+        "poison": false,
+        "fetched": 0,
+        "sourceFinding": "wikidata_p856:Q131626",
+        "citedQid": "Q131626"
+      },
+      "urlDomainCandidates": [
+        {
+          "url": "https://www.si.edu/",
+          "relationship": "UNKNOWN",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "safety": "allowed",
+          "whyFound": [
+            "wd_p856_official_website",
+            "wd_p856_facet"
+          ]
+        },
+        {
+          "url": "https://smith.pictures/",
+          "relationship": "UNKNOWN",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "safety": "allowed",
+          "whyFound": [
+            "wd_p856_official_website",
+            "wd_p856_facet"
+          ]
+        }
+      ],
+      "urlTargetsPresent": false,
+      "woFindings": [],
+      "findingSummaries": [
+        {
+          "id": "wd-Q1158446",
+          "title": "Smith",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q21079662",
+          "title": "Smith",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q1639825",
+          "title": "blacksmith",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q131626",
+          "title": "Smithsonian Institution",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": [
+            "https://www.si.edu/"
+          ]
+        },
+        {
+          "id": "wd-Q984158",
+          "title": "Smithsonian Astrophysical Observatory Star Catalog",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q3037221",
+          "title": "Smith",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": [
+            "https://smith.pictures/"
+          ]
+        },
+        {
+          "id": "wd-Q3047418",
+          "title": "Edgar Albert Smith",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q507606",
+          "title": "Andrew Smith",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-49231791",
+          "title": "Smith, Adam, 1723-1790",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-108187427",
+          "title": "Smith, Rosamond",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-7524803",
+          "title": "Smith, Kanonik",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-14776833",
+          "title": "Smith, Wilbur, 1933-2021",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        }
+      ],
+      "distinctTitlesCount": 25,
+      "distinctTitlesSample": [
+        "Smith, Adam, 1723-1790",
+        "Thorne Smith",
+        "Smithsonian Institution",
+        "Lisa Jane Smith",
+        "Smith, Kanonik",
+        "Smith, Martin Cruz, 1942-",
+        "Smith, Will, 1968-",
+        "Martin Cruz Smith",
+        "Edgar Albert Smith",
+        "Smith"
+      ],
+      "owFacetsSample": [
+        {
+          "id": "wd-Q131626",
+          "hint": "officialWebsite:https://www.si.edu/",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q3037221",
+          "hint": "officialWebsite:https://smith.pictures/",
+          "identityClaim": false
+        }
+      ],
+      "prettyWrong": {
+        "leakQ1701775": false,
+        "sameEntityEmitted": false,
+        "sameEntityEmittedMeta": null,
+        "sameReferenceOnWire": false,
+        "dossier": false,
+        "faces": false,
+        "edgeKinds": {},
+        "prettyWrongPass": true,
+        "informationAsIdentityOnOwFacets": false,
+        "urlUsedAsIdentity": false,
+        "titleUsedAsIdentity": false,
+        "identityClaimTrueCount": 0
+      },
+      "floors": {
+        "allIdentityClaimFalse": true,
+        "woRelationshipCeilingOk": true,
+        "candidateCeiling": true
+      },
+      "measuredAt": "2026-09-24T08:16:06+03:00"
+    },
+    {
+      "cell": "E",
+      "label": "E-cohen-he",
+      "seed": "כהן",
+      "note": "ambiguous Hebrew surname",
+      "sessionId": "kv1.c225956fe5230ce325b8e459556a1787",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok"
+      },
+      "nFindings": 30,
+      "nWebOrigin": 0,
+      "nOfficialWebsiteUrls": 0,
+      "officialWebsiteUrlsSamples": [],
+      "p856Bridge": null,
+      "urlDomainCandidates": [],
+      "urlTargetsPresent": false,
+      "woFindings": [],
+      "findingSummaries": [
+        {
+          "id": "wd-Q66723764",
+          "title": "Cohen",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q1158586",
+          "title": "Cohen",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q21065973",
+          "title": "Cohn",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q728973",
+          "title": "kohen",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q42603",
+          "title": "priest",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q37046104",
+          "title": "Kahan",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q3667800",
+          "title": "cleric",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "wd-Q118910793",
+          "title": "Shiri Kohen",
+          "providers": [
+            "wikidata"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-100921459",
+          "title": "כהן, ישראל מאיר, 1838-1933",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-56703476",
+          "title": "כהן, ליאונרד, 1934-2016",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-293149106170968491338",
+          "title": "כהן, אלבר, 1895-1981",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        },
+        {
+          "id": "viaf-82207833",
+          "title": "כהן, הנס, 1891-1971",
+          "providers": [
+            "viaf"
+          ],
+          "identityClaim": false,
+          "relationship": null,
+          "confirmationState": "candidate",
+          "officialWebsiteUrls": null
+        }
+      ],
+      "distinctTitlesCount": 29,
+      "distinctTitlesSample": [
+        "ש. כהן",
+        "כהן, הנס, 1891-1971",
+        "כהן@מושון",
+        "זמיר בן אליעזר כהן",
+        "כן",
+        "כהנא",
+        "priest",
+        "כהן, יואל",
+        "שירלי כהן",
+        "Kahan"
+      ],
+      "owFacetsSample": [],
+      "prettyWrong": {
+        "leakQ1701775": false,
+        "sameEntityEmitted": false,
+        "sameEntityEmittedMeta": null,
+        "sameReferenceOnWire": false,
+        "dossier": false,
+        "faces": false,
+        "edgeKinds": {},
+        "prettyWrongPass": true,
+        "informationAsIdentityOnOwFacets": false,
+        "urlUsedAsIdentity": false,
+        "titleUsedAsIdentity": false,
+        "identityClaimTrueCount": 0
+      },
+      "floors": {
+        "allIdentityClaimFalse": true,
+        "woRelationshipCeilingOk": true,
+        "candidateCeiling": true
+      },
+      "measuredAt": "2026-09-24T08:16:06+03:00",
+      "salvage": "killed_mid_poll_partial_terminal"
+    },
+    {
+      "cell": "E",
+      "label": "E-alex-morgan",
+      "seed": "Alex Morgan",
+      "status": "TIMEOUT",
+      "error": "NOT_RUN — measure process killed per parent steer (finish NOW); Acc already PASS 6/6 on same TREATMENT",
+      "nFindings": null,
+      "prettyWrong": {
+        "prettyWrongPass": null,
+        "note": "NOT_RUN"
+      },
+      "verdict_seed": "TIMEOUT",
+      "measuredAt": "2026-09-24T08:16:06+03:00"
+    }
+  ],
+  "reportPath": "docs/GO-IMPL-500/MD-WAVE/QA-MEASURE-A-E-TREATMENT-בודק-2026-09-24.md",
+  "rawDir": "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/raw/qa-ae-treatment-J92G"
+}

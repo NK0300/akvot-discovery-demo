@@ -267,3 +267,67 @@
 **Prior Server L1 unit band:** 135–142  
 **Checkpoints:** LIVE Preview SSRF **CLOSED (TREATMENT)** · Done Gate **PASS** · QueryPlan still OFF · F11 HOLD  
 **NO PROMOTE**
+
+
+---
+
+## Acc · MD-WAVE Acc A/E LIVE TREATMENT (דיוק) · 2026-09-24 ~08:07–08:12 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 50 | 08:07 | Acc: health TREATMENT `dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j` via `vercel curl` → HTTP 200 |
+| 51 | 08:07–08:11 | Acc: LIVE Acc A/E sessions (TBL, Ada, W3C, URL-alone, David Cohen, John Smith) |
+| 52 | 08:11–08:12 | Acc: SSE events scrub on W3C session · evidence md+json · NO promote |
+
+### Action 50 — TREATMENT health
+- **When:** 2026-09-24 08:07 IDT
+- **Who:** דיוק (Accuracy) · MD-WAVE
+- **What:** Confirmed Preview `https://akvot-simple-demo-9xuyl8jqs-k-akvot.vercel.app` / `dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j` reachable via `vercel curl` (plain curl protection). Health durable-kv OK.
+- **Files:** `/tmp/acc-ae-treatment/health.json`
+
+### Action 51 — LIVE Acc A/E measure
+- **When:** 2026-09-24 08:07–08:11 IDT
+- **Who:** דיוק
+- **What:** Acc A/E only (not B broad, not D/F11) on Chief-named TREATMENT. Cases: Tim Berners-Lee, Ada Lovelace, World Wide Web Consortium, URL-alone https://www.w3.org/, David Cohen, John Smith. Results: **pw=0 · leak=0 · SAME-ENTITY-from-URL=0 · 6/6 PASS**. W3C P856→web_origin cited, relationship UNKNOWN, identityClaim false. TBL no P856 this run (UNKNOWN preserved). Ada namesake P856 hop residual (no SAME). Cohen/Smith multi-candidate honesty (WD flaky). Wave 1 product **NOT DONE**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/02-ACC-AE-TREATMENT-דיוק-2026-09-24.md` (+ `.json`) · test-results mirror + raw
+
+### Action 52 — SSE scrub + evidence
+- **When:** 2026-09-24 08:11–08:12 IDT
+- **Who:** דיוק
+- **What:** `GET .../events` on W3C session → HTTP 200; Q1701775=0; SAME-ENTITY=0; leak=0. Wrote Acc evidence. **NO PROMOTE**.
+- **Files:** evidence md/json · ACTION-LOG · ACTION-LOG-ACC-NOTES
+
+**Acc A/E TREATMENT action ids:** **50–52** (shared log; continues Acc sequence after #49 docs-only)  
+**Verdict:** Acc A/E TREATMENT **PASS** · Wave 1 product **NOT DONE** · **NO PROMOTE**
+
+
+---
+
+## QA · MD-WAVE A/E LIVE TREATMENT (בודק) · 2026-09-24 ~08:08–08:16 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| Q1 | 08:08–08:15 | QA: LIVE A/E sessions on TREATMENT `dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j` via `vercel curl` (W3C, Assaf, TimBL, Jimmy Wales, Smith, כהן; Alex NOT_RUN) |
+| Q2 | 08:15 | QA: kill hung `partial` poll loop per Chief steer; salvage כהן body; mark Alex TIMEOUT |
+| Q3 | 2026-09-24 08:16 IDT | QA: evidence md+json · verdicts A=PARTIAL E=PASS pretty-wrong=PASS overall=PARTIAL · Wave1 NOT DONE · NO promote |
+
+### Action Q1 — LIVE QA A/E measure
+- **When:** 2026-09-24 08:08–08:15 IDT
+- **Who:** QA / בודק · MD-WAVE
+- **What:** Measured cells A + E (+ pretty-wrong) on Chief-named TREATMENT Preview only. W3C P856→web_origin hop confirmed (fetched=1, relationship unknown, identityClaim false). Person-name seeds did not yield WO from P856 this run. Smith/כהן multi-candidate honesty; leak=0; no SAME-ENTITY-from-URL. Acc peer already 6/6 PASS — QA does not stamp Wave 1 product DONE.
+- **Files:** raw `test-results/.../raw/qa-ae-treatment-J92G/`
+
+### Action Q2 — stop hung polls
+- **When:** 2026-09-24 08:15 IDT
+- **Who:** בודק
+- **What:** Parent steer: finish NOW. Killed measure process stuck treating `partial` as non-terminal. Salvaged E-cohen from poll body. E-alex-morgan marked TIMEOUT/NOT_RUN.
+- **Files:** salvaged session/analysis under raw dir
+
+### Action Q3 — evidence + Chief fields
+- **When:** 2026-09-24T08:16:34+03:00
+- **Who:** בודק
+- **What:** Wrote `docs/GO-IMPL-500/MD-WAVE/QA-MEASURE-A-E-TREATMENT-בודק-2026-09-24.md` (+ `.json`) and test-results mirror. SSRF cite שרת 18/18. **NO PROMOTE**.
+- **Files:** docs + test-results MD-WAVE QA-MEASURE-A-E-TREATMENT-* · ACTION-LOG
+
+**QA A/E TREATMENT action ids:** **Q1–Q3**  
+**Verdict:** A **PARTIAL** · E **PASS** · pretty-wrong **PASS** · overall **PARTIAL** · Wave 1 product **NOT DONE** · **NO PROMOTE**
