@@ -605,3 +605,76 @@
 **Server Adapter-2 action ids:** **161–163**  
 **Verdict:** code **DONE** · measure Preview separate · Wave1 product **NOT DONE** · **NO PROMOTE**
 
+
+---
+
+## QA · Adapter-2 DDG Instant Answer Preview smoke (בודק) · 2026-09-24 13:45–13:47 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 273 | 13:45–13:47 | QA live smoke locked to `dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k` only; POST + GET poll for W3C, Tim Berners-Lee, Smith, כהן; **PARTIAL**. |
+
+### Action 273 — Adapter-2 DDG QA result
+- **Who:** בודק / QA
+- **What:** Flag ON confirmed: `providers.ddg_instant_answer` present on all four sessions; all reported honest `ia_error`. DDG URL-candidate coverage was **0/4**. No DDG `url_candidate`, no invented URL, no SAME-ENTITY-from-URL, no `identityClaim=true`; observed relationships stayed `unknown`; max DDG candidate count 0 ≤ cap 5; no HTML SERP/crawl smell.
+- **Known RCA cited:** TLS `SSL UNEXPECTED_EOF` to `api.duckduckgo.com`; fail-closed expected. No fix invented.
+- **Verdict:** **PARTIAL** smoke: honesty/C1/fail-closed **PASS**, positive DDG/citation coverage not exercised because coverage is 0. W3C's separate `web_origin` `urlDomainCandidate` was not counted as DDG.
+- **Locks:** Wave 1 product **NOT DONE** · **NO PROMOTE** · TREATMENT `dpl_J92G9…` untouched · fill.1.1 `dpl_CJPdnz…` not measured.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/QA-SMOKE-ADAPTER-2-DDG-בודק-2026-09-24.md` + `.json`; raw `test-results/2026-09-24/MD-WAVE/raw/qa-ddg-8RbS15/`.
+
+---
+
+## Arch · LOOP-SPINE Must-Win #2 (ארכיטקט) · 2026-09-24 ~13:50 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 274 | ~13:50 | LOOP-SPINE LOCKED — discover→evaluate→expand→corroborate→stop; adapters = expand hops; Server GO wire; NO PROMOTE |
+
+### Action 274 — LOOP-SPINE lock
+- **Who:** ארכיטקט
+- **What:** Night Mission Must-Win #2 spine contract landed. Charter sequence is the only product loop; Must-Win #1 adapter contracts nest under expand+evaluate. Budgets/stop/evaluate gates specified for Server wire. No conflict with DDG fail-closed retry inside expand. Wave 1 product still NOT DONE. **NO PROMOTE**.
+- **File:** `docs/GO-IMPL-500/MD-WAVE/ARCH-LOOP-SPINE-ארכיטקט-2026-09-24.md`
+- **Verdict:** spine **LOCKED** · Server unblocked · **NO PROMOTE**
+
+---
+
+## Arch · Must-Win #1 name→web hop (ארכיטקט) · 2026-09-24 ~13:52 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 275 | ~13:52 | Name→web hop A LOCKED — GW locale expand en/he/de/fr/es · same caps · no new hosts · Server GO |
+
+### Action 275 — Name→web hop lock
+- **Who:** ארכיטקט
+- **What:** Must-Win #1 expand hop under LOOP-SPINE. Adapter-1.2 locale allowlist `en|he|de|fr|es`, single OpenSearch budget (no multiply), reuse `DISCOVERY_ENABLE_GENERAL_WEB` default OFF. OL links / new hosts HOLD until measured. DDG flaky = fail-closed, not night blocker. **NO PROMOTE**.
+- **File:** `docs/GO-IMPL-500/MD-WAVE/ARCH-NAME-TO-WEB-HOP-ארכיטקט-2026-09-24.md`
+- **Verdict:** hop **LOCKED** · Server unblocked · **NO PROMOTE**
+
+
+---
+
+## Acc · Adapter-2 DDG IA A/E (דיוק) · 2026-09-24 ~13:50–13:52 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 276 | 13:50 | Acc A/E LIVE start on Adapter-2 DDG Preview `dpl_8RbS15…` (NOT TREATMENT / NOT fill.1.1) |
+| 277 | 13:50–13:51 | Six Acc cases via `vercel curl --deployment dpl_8RbS15…`; emit scrub pw/leak/SAME=0; all `ddg_instant_answer=ia_error` fail-closed |
+| 278 | ~13:52 | Acc deliverable `05-ACC-AE-DDG-IA` · verdict **PASS** honesty · coverage 0 residual · **NO PROMOTE** |
+
+### Action 276 — Acc A/E scope lock
+- **Who:** דיוק
+- **What:** Live Acc A/E on Chief-named Adapter-2 DDG Instant Preview only. Methodology reused from MD-WAVE 03/04 Acc packs with DDG-aware gates (fail-closed `ia_error`=OK; AbstractURL/FirstURL≠identity; cite-or-drop when hits; Cap≤5; no invent URLs).
+- **Target:** `dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k` · `https://akvot-simple-demo-pnmmxdn7e-k-akvot.vercel.app` · flag `DISCOVERY_ENABLE_DDG_INSTANT=1`
+- **Locks:** NO promote · Wave 1 NOT DONE · Acc PASS ≠ coverage win
+
+### Action 277 — Live measure
+- **Who:** דיוק
+- **What:** Cases A1 TBL · A2 W3C · A3 Ada · C1 URL-alone w3.org · E1 David Cohen · E2 John Smith. Health 200. SSE scrub pass on TBL session.
+- **Result:** cases **6/0** · pw **0** · leak **0** · SAME **0** · DDG findings **0** · `ia_error` ×6 · flag ON observed · GENERAL_WEB absent (expected)
+- **Raw:** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/05-ACC-AE-DDG-IA-raw/`
+
+### Action 278 — Acc deliverable
+- **Who:** דיוק
+- **What:** Wrote `05-ACC-AE-DDG-IA-דיוק-2026-09-24.md` + `.json` (+ mirrors). Room report: Acc **PASS** honesty/fail-closed/C1; live DDG coverage **0/6** residual (TLS RCA); Wave 1 **NOT DONE**; **אין promote**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/05-ACC-AE-DDG-IA-דיוק-2026-09-24.md` + `.json`
+- **Verdict:** Acc A/E **PASS** · coverage residual open · **NO PROMOTE**

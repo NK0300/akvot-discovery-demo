@@ -37,3 +37,10 @@ Target: `dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15` · URL `akvot-simple-demo-htf848qo6-k
 **TBL residual CLOSED:** prior `all_dropped_ssrf_or_registry` → now `ok` + `https://info.cern.ch/Proposal.html` (UNKNOWN · identityClaim=false · cite WP).  
 Residuals remain: CERN/Cohen/C1 `opensearch_error`; Smith `extlinks_error`; Cohen/Smith honesty retained (no forced merge · Q1701775=0).  
 Wave 1 product **NOT DONE**. **NO PROMOTE**.
+
+## 2026-09-24 Acc MD-WAVE A/E LIVE Adapter-2 DDG Instant (דיוק)
+
+Shared log actions **#276–278**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/05-ACC-AE-DDG-IA-דיוק-2026-09-24.md` (+ `.json`, test-results mirror + raw).  
+Target: `dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k` · URL `akvot-simple-demo-pnmmxdn7e-k-akvot.vercel.app` · `DISCOVERY_ENABLE_DDG_INSTANT=1` (deploy -e) · NOT TREATMENT `dpl_J92G9…` · NOT fill.1.1 `dpl_CJPdnz…`.  
+**Verdict PASS** (honesty/fail-closed/C1) · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6 · DDG findings **0** · flag ON observed · `providers.ddg_instant_answer=ia_error` ×6.  
+Coverage residual open (TLS RCA to api.duckduckgo.com) — Acc PASS ≠ DDG coverage win ≠ Wave 1 DONE. Positive AbstractURL/FirstURL cite path not live-proven. **NO PROMOTE**.
