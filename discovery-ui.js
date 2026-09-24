@@ -140,6 +140,7 @@
   const LIFE_ORDER = LIFE_STAGES.map((s) => s.id);
   const SEED_PLACEHOLDERS = {
     name: 'שם ציבורי (HE או EN)…',
+    person: 'שם של אדם (HE או EN)…',
     domain: 'example.org',
     organization: 'שם ארגון / חברה…',
     url: 'https://…',
@@ -205,19 +206,120 @@
     );
   }
 
-  /** Soft family/provider label — passthrough unknown · never invents identity. */
-  function labelFamily(id) {
+  /* §25-client:begin — pure helpers (seedKind wire + family displayLabel) · smoke-extracted */
+  /**
+   * §25 v1.2 — single declared override `seedKind` ∈ {person, organization}.
+   * Search routing only · never identity · never identityClaim · never C1.
+   * Sent ONLY from an explicit user toggle; absent key otherwise (never null / '').
+   * Never send type / entityType / hints.seedClass (v1.2: not a classification source).
+   */
+  const SEED_KIND_WIRE = Object.freeze(['person', 'organization']);
+  /** Context hints allow-list — classification keys can never ride along. */
+  const HINT_KEYS_WIRE = Object.freeze(['org', 'city', 'site']);
+  function sanitizeSeedKind(v) {
+    if (typeof v !== 'string') return null;
+    const s = v.toLowerCase();
+    return SEED_KIND_WIRE.indexOf(s) >= 0 ? s : null;
+  }
+  /** Explicit = user pressed the toggle AND it is still the visibly pressed one. */
+  function resolveExplicitSeedKind(choice, pressedKind) {
+    if (choice == null || pressedKind == null) return null;
+    if (String(choice) !== String(pressedKind)) return null;
+    return sanitizeSeedKind(String(choice));
+  }
+  function buildDiscoveryRequestBody(q, hints, seedKind) {
+    const body = { seed: q, q, locale: 'he' };
+    if (hints && typeof hints === 'object') {
+      const h = {};
+      HINT_KEYS_WIRE.forEach((k) => {
+        if (typeof hints[k] === 'string' && hints[k]) h[k] = hints[k];
+      });
+      if (Object.keys(h).length) body.hints = h;
+    }
+    const sk = sanitizeSeedKind(seedKind);
+    if (sk) body.seedKind = sk;
+    return body;
+  }
+
+  /**
+   * Family label = source name only · never affects status / UNKNOWN / identityClaim.
+   * Order: payload displayLabel {he,en} → FAMILY_LABEL_* map → raw id.
+   * Identity-word guard is a client backup (Server Registry already fail-closes these).
+   */
+  const DISPLAY_LABEL_IDENTITY_RE = /(מאומת|מאומתת|זהה|זהות|אומת|verified|confirmed|same|identical|identity)/i;
+  const DISPLAY_LABEL_MAX = 48;
+  function safeDisplayLabel(dl, lang) {
+    if (!dl || typeof dl !== 'object' || Array.isArray(dl)) return '';
+    // Any identity word in any language → drop the whole label (fail-closed).
+    for (const k of ['he', 'en']) {
+      if (typeof dl[k] === 'string' && DISPLAY_LABEL_IDENTITY_RE.test(dl[k])) return '';
+    }
+    const v = dl[lang === 'en' ? 'en' : 'he'];
+    if (typeof v !== 'string') return '';
+    let s = v.replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!s) return '';
+    if (s.length > DISPLAY_LABEL_MAX) s = `${s.slice(0, DISPLAY_LABEL_MAX - 1).trimEnd()}…`;
+    return s;
+  }
+  function payloadDisplayLabel(raw, src, lang, labels) {
+    const cands = [];
+    if (src && typeof src === 'object') {
+      // Family-shaped sources only (plan family entry / journal row / registry row / sourceFamily object).
+      // A finding's own `displayLabel` may be the found entity's label — never used as a source name.
+      if (src.familyDisplayLabel) cands.push(src.familyDisplayLabel);
+      if (src.sourceFamilyDisplayLabel) cands.push(src.sourceFamilyDisplayLabel);
+      if (src.sourceFamily && typeof src.sourceFamily === 'object') cands.push(src.sourceFamily.displayLabel);
+      if (src.provenance && typeof src.provenance === 'object') {
+        if (src.provenance.familyDisplayLabel) cands.push(src.provenance.familyDisplayLabel);
+      }
+    }
+    if (labels && typeof labels === 'object' && Object.prototype.hasOwnProperty.call(labels, raw)) {
+      cands.push(labels[raw]);
+    }
+    for (const c of cands) {
+      const s = safeDisplayLabel(c, lang);
+      if (s) return s;
+    }
+    return '';
+  }
+  function sessionFamilyLabels() {
+    const out = {};
+    if (typeof discState === 'undefined' || !discState) return out;
+    const j = Array.isArray(discState.familyJournal) ? discState.familyJournal : [];
+    j.forEach((row) => {
+      if (row && typeof row === 'object' && row.familyId && row.displayLabel && !out[row.familyId]) {
+        out[String(row.familyId)] = row.displayLabel;
+      }
+    });
+    const pl = discState.queryPlan && discState.queryPlan.familyLabels;
+    if (pl && typeof pl === 'object') Object.keys(pl).forEach((k) => { out[k] = pl[k]; });
+    return out;
+  }
+  /** Soft family/provider label — displayLabel → map → passthrough raw · never invents identity. */
+  function labelFamily(id, src, labels) {
     const raw = String(id || '').trim();
     if (!raw) return '';
+    const dl = payloadDisplayLabel(raw, src, 'he', labels || sessionFamilyLabels());
+    if (dl) return dl;
     const key = raw.toLowerCase();
     return FAMILY_LABEL_HE[key] || FAMILY_LABEL_HE[raw] || raw;
   }
-  function labelFamilyEn(id) {
+  function labelFamilyEn(id, src, labels) {
     const raw = String(id || '').trim();
     if (!raw) return '';
+    const dl = payloadDisplayLabel(raw, src, 'en', labels || sessionFamilyLabels());
+    if (dl) return dl;
     const key = raw.toLowerCase();
     return FAMILY_LABEL_EN[key] || FAMILY_LABEL_EN[raw] || raw;
   }
+  /** Family chip HTML — always esc() · label is a source name only (not status, not identity). */
+  function familyChipHtml(famId, src, labels) {
+    if (!famId) return '';
+    const he = labelFamily(famId, src, labels);
+    const en = labelFamilyEn(famId, src, labels);
+    return `<span class="disc-family-chip" title="${esc(en || famId)} · משפחת מקור · לא זהות" data-family="${esc(famId)}">${esc(he)}</span>`;
+  }
+  /* §25-client:end */
   function labelProvider(id) {
     const raw = String(id || '').trim();
     if (!raw) return '';
@@ -226,6 +328,9 @@
   }
   function findingFamilyId(f) {
     if (!f || typeof f !== 'object') return '';
+    if (f.sourceFamily && typeof f.sourceFamily === 'object') {
+      return String(f.sourceFamily.familyId || f.sourceFamily.id || '');
+    }
     return (
       f.sourceFamily ||
       f.familyId ||
@@ -279,6 +384,19 @@
   /** @type {EventSource|null} */
   let discEventSource = null;
   let narrowInFlight = false;
+
+  /**
+   * Explicit seed-kind choice (user pressed a .disc-seed-type toggle or an example chip that
+   * visibly sets the toggle). Survives emptyState(); auto-inference never writes it.
+   * @type {string|null}
+   */
+  let userSeedKindChoice = null;
+  function explicitSeedKindForRequest() {
+    if (typeof document === 'undefined' || !document.querySelector) return null;
+    const pressed = document.querySelector('.disc-seed-type[aria-pressed="true"]');
+    const pressedKind = pressed ? pressed.getAttribute('data-seed-kind') : null;
+    return resolveExplicitSeedKind(userSeedKindChoice, pressedKind);
+  }
 
   function readSeedKindFromDom() {
     const pressed = document.querySelector('.disc-seed-type[aria-pressed="true"]');
@@ -796,11 +914,27 @@
         reason: i.reason != null ? String(i.reason).slice(0, 200) : null,
       }));
 
-    const families = Array.isArray(raw.families)
-      ? raw.families.map(String).slice(0, 24)
+    // Families may be ids or family objects { familyId|id, displayLabel{he,en} } (Registry-emitted).
+    const familiesIn = Array.isArray(raw.families)
+      ? raw.families
       : Array.isArray(raw.sourceFamilies)
-        ? raw.sourceFamilies.map(String).slice(0, 24)
+        ? raw.sourceFamilies
         : [];
+    const familyLabels = {};
+    const families = familiesIn
+      .map((f) => {
+        if (f && typeof f === 'object') {
+          const fid = f.familyId || f.id;
+          if (!fid) return '';
+          if (f.displayLabel && typeof f.displayLabel === 'object') {
+            familyLabels[String(fid)] = { he: f.displayLabel.he, en: f.displayLabel.en };
+          }
+          return String(fid);
+        }
+        return f == null ? '' : String(f);
+      })
+      .filter(Boolean)
+      .slice(0, 24);
 
     let budgets = null;
     if (raw.budgets && typeof raw.budgets === 'object') {
@@ -840,6 +974,7 @@
       seedHash: raw.seedHash != null ? String(raw.seedHash).slice(0, 32) : null,
       intents,
       families,
+      familyLabels: Object.keys(familyLabels).length ? familyLabels : null,
       budgets,
       reasons,
       stopConditions,
@@ -1968,7 +2103,7 @@
 
     const famChips = (families || [])
       .slice(0, 12)
-      .map((f) => `<span class="disc-fam-chip">${esc(f)}</span>`)
+      .map((f) => `<span class="disc-fam-chip" title="${esc(labelFamily(f))}">${esc(f)}</span>`)
       .join('');
 
     const budgetKeys = [
@@ -2244,11 +2379,7 @@
     const evN = evList.length;
         const tab = opts.rovingIndex === 0 ? '0' : '-1';
     const famId = findingFamilyId(f);
-    const famHe = labelFamily(famId);
-    const famEn = labelFamilyEn(famId);
-    const familyChip = famId
-      ? `<span class="disc-family-chip" title="${esc(famEn || famId)} · משפחת מקור · לא זהות" data-family="${esc(famId)}">${esc(famHe)}</span>`
-      : '';
+    const familyChip = familyChipHtml(famId, f);
     const whyRaw = whyFoundText(f);
     const whyFoundBlock = whyRaw
       ? `<details class="disc-why-found"><summary>למה נמצא? · why-found · לא זהות</summary><p>${esc(whyRaw)}</p></details>`
@@ -4373,8 +4504,8 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
   }
 
   async function runViaApi(q, hints, signal) {
-    const body = { seed: q, q, locale: 'he' };
-    if (hints && Object.keys(hints).length) body.hints = hints;
+    // §25 v1.2 client: `seedKind` only from explicit toggle · absent otherwise · no type/entityType/hints.seedClass
+    const body = buildDiscoveryRequestBody(q, hints, explicitSeedKindForRequest());
     const r = await fetch('/api/discovery/sessions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -4744,6 +4875,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
       btn.onclick = () => {
         const kind = btn.getAttribute('data-seed-kind') || 'name';
         discState.seedKind = kind;
+        userSeedKindChoice = kind; // explicit user choice (wire only if person|organization)
         document.querySelectorAll('.disc-seed-type').forEach((b) => {
           b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
         });
@@ -4762,6 +4894,8 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
         const input = document.getElementById('disc-q');
         if (input) input.value = ex;
         discState.seedKind = kind;
+        // Example chip visibly presses the matching toggle → counts as an explicit choice.
+        userSeedKindChoice = kind;
         document.querySelectorAll('.disc-seed-type').forEach((b) => {
           b.setAttribute('aria-pressed', b.getAttribute('data-seed-kind') === kind ? 'true' : 'false');
         });
