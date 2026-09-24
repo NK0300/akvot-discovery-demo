@@ -1,6 +1,6 @@
 # §26 — Input Normalization Boundary (חוזה) — ארכיטקט · 2026-09-24
 
-סטטוס: v1.0 · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
+סטטוס: **v1.1** (Chief אישר) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
 נעילות: **PROD HOLD** · NO PROMOTE · TREATMENT unchanged · C1 קשיח · Wave 1 NOT DONE.
 רקע: אירוע ZERO-WIDTH/UNICODE. תו סמוי עקף את שמירת Smith ואת שמירת שם המשפחה העברי (שחזור שרת על `edf3f96`). ה־sweep למטה מראה שזו **מחלקה**, לא תו בודד.
 
@@ -22,8 +22,9 @@
 לא נבדק live. האם כל עקיפה מגיעה בפועל ל־dossier תלוי בזה שהחיפוש בוויקי מנרמל בצד שלו. זה האימות של בודק (4א).
 
 ## 2. נקודת כניסה אחת
-`canonicalizeInput(value) → { raw, key, guard, inputRisk[] }` ב־`api/lib/seedText.js` (מודול עלה, בלי imports, Core ו־Discovery שניהם מייבאים). חל על `seed`, על ערכי `hints` (org/city/site) ועל `seedKind` (שם רק trim ו־lowercase לפי §25 §7.1).
-- `raw` — הקלט כפי שהתקבל, byte-identical. זה מה שנשלח ל־providers ומוצג למשתמש.
+`canonicalizeInput({seed, hints, seedKind}) → { raw, query, key, guard: {spaced, collapsed}, ceiling, inputRisk[], ctx }` (v1.1: **קריאה אחת** בכניסה ל־handler של lookup ושל discovery/sessions. ה־ctx עובר באותה קריאה, והאובייקט המוחזר frozen ומועבר הלאה) ב־`api/lib/seedText.js` (מודול עלה, בלי imports, Core ו־Discovery שניהם מייבאים). חל על `seed`, על ערכי `hints` (org/city/site) ועל `seedKind` (שם רק trim ו־lowercase לפי §25 §7.1).
+- `raw` — הקלט כפי שהתקבל, byte-identical. משמש **רק** לתצוגה, ל־journal (אחרי scrub) ולשער SSRF על URL מפוענח (v1.1).
+- `query` (v1.1) — מה שנשלח ל־providers: שלבים 0–3 ו־6 של §3 בלי casefold ובלי הסרת ניקוד, **אותיות גדולות וקטנות נשמרות**. תווים סמויים לפי §10.1.
 - `key` — צורה קנונית להשוואה ולהתאמת זהות (§3 שלבים 1–7).
 - `guard` — `skeleton(key)`: key שבו אותיות קיריליות ויווניות שמתחזות ללטיניות מומרות ללטינית (טבלה סגורה, UTS#39-lite). **משמש רק לשמירות ולזיהוי ריק**, לעולם לא ל־matching של זהות.
 - `inputRisk[]` — רשימה סגורה (§4).
@@ -54,7 +55,7 @@
 
 ## 6. גבולות שלא זזים
 - **URL:** פענוח לעולם לא על URL שממשיך ל־fetch. שער ה־SSRF של `urlTargets` נשאר על ה־raw אחרי `new URL()` (WHATWG, שממיר IDN ל־punycode). השוואת hosts נעשית על `hostname` אחרי parse. hostname עם `mixed_script` מקבל flag, ו־URL≠IDENTITY ממילא.
-- **raw ל־providers:** השאילתה לספקים היא raw. אם ב־raw יש רק רווחים או תווים סמויים, התוצאה `empty_seed` ו־0 search בשני המסלולים (flag OFF ו־QueryPlan ON, כולל זרע ששמור ב־store).
+- **`query` ל־providers (v1.1):** השאילתה לספקים היא `query`, לא raw. אם `key` ריק (רק רווחים או תווים סמויים), התוצאה `empty_seed` ו־0 search בשני המסלולים (flag OFF ו־QueryPlan ON, כולל זרע ששמור ב־store).
 - **deny-lists** (displayLabel, מילות זהות): הבדיקה נעשית על `guard` של הערך, כך ש־`vеrified` עם е קירילית או `מאו\u200Bמת` נדחים.
 
 ## 7. Sweep — כל נקודת השוואת מחרוזות
@@ -90,3 +91,27 @@
 4. לכל שורה ב־§7 יש טסט עם וריאנט אחד לפחות מכל דגל רלוונטי.
 5. `npm test` מלא ירוק.
 6. אחר כך חבילת deploy מבוקרת (diff, ראיות, rollback). prod נשאר HOLD עד החלטה מפורשת של נחמן.
+
+## 10. v1.1 — תיקונים מחייבים (אושרו ע״י Chief, 2026-09-24)
+**10.1 תווים סמויים (החלטה מפורשת, מחליפה את §3 שלב 3 לגבי ZWSP/WJ/bidi):**
+- תו סמוי או bidi **צמוד לרווח**, או בתחילת/סוף הזרע, נמחק בלי השפעה ובלי תקרה. לכן `John \u200BSmith` זהה לנקי לגמרי.
+- תו סמוי או bidi **בין שתי אותיות** נמחק, והזרע מקבל `inputRisk: invisible_intra` ו־`ceiling=capped` (I3). כך `John\u200BSmith` הופך ל־`JohnSmith` עם תקרה, ו־`Sm\u200Bith` ל־`Smith` עם תקרה.
+- החלק «מפריד הופך לרווח» ב־§3 שלב 3 בטל. המחיקה חלה על `query`, על `key` ועל `guard.spaced` באותה צורה.
+
+**10.2 guard בשתי צורות:** `guard.spaced` הוא skeleton(key), ו־`guard.collapsed` הוא אותו דבר בלי רווחים. כל guard (Smith, שם משפחה עברי, common surname, deny-lists) **יורה אם אחת מהצורות יורה**. שתי הצורות וה־skeleton משמשים **רק** guards, שיכולים רק להוריד סטטוס. הם לעולם לא נכנסים ל־matchers, ל־knownIdentities או למפתח המטמון.
+
+**10.3 `mixed_script_seed`:** אם בזרע יש אותיות מיותר מסקריפט אחד (Latin/Hebrew/Cyrillic/Greek/Arabic), בכל מיקום, התוצאה `ceiling=capped`. דוגמאות: `דני Netanyahu`, `דני Merkel`.
+
+**10.4 אין הפלה שקטה:** `latinFold`, softLabel או כל fold אחר שמפיל טוקן שלם מסמן זאת. זרע עם טוקן שנפל לא מגיע ל־knownIdentities.
+
+**10.5 `ceiling`:** הערכים הם `clear` או `capped`. הוא `capped` אם `inputRisk ∩ {confusable, mixed_script, mixed_script_seed, encoded_double, invisible_intra} ≠ ∅`. כש־capped: `identityCommit=false`, ואין dossier ואין QID, כולל קבלת כותרת fuzzy או exact מוויקי, known-identity ומטמון.
+
+**10.6 מפתח מטמון:** `cacheKey = key ⊕ ceiling ⊕ canonical(ctx)`. וריאנט capped לעולם לא קורא רשומה clear. ctx מוסווה (`IBM\u200B`) לא פותח רשומה נפרדת.
+
+**10.7 I2 מפוצל (מחליף את I2 ב־§5):**
+- **I2a:** אם `query(V) = query(C)` וגם `ceiling(V)=clear`, סט המועמדים וה־stage **זהים בדיוק** לנקי.
+- **I2b:** אחרת, רק I1 ו־I3 חלים: לא מעל הנקי, בלי commit, בלי dossier ובלי QID.
+
+**10.8 אכיפה מבנית (פירוט מלא יגיע עם הביקורת המלאה):** פונקציות guard, match, cacheKey, routing ו־seedClass מקבלות רק את האובייקט הקנוני (עם Symbol brand), וזורקות שגיאה על מחרוזת גולמית. `npm test` מריץ lint שנכשל על דפוסי השוואה גולמית חדשים שלא נמצאים ב־allowlist מוצדק.
+
+**10.9 תהליך:** `contract-identity-p0` יוצא מ־`npm test` ל־`test:live`, ורץ רק עם `AKVOT_LIVE=1`. `npm test` רץ עם 0 רשת. ה־patch של 16 המקרים חייב לצאת red על main ו־green על `input-boundary-26`.
