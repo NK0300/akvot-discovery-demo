@@ -99,3 +99,7 @@
 - **What:** Surface gaps + officialWebsite in QUICK READ; soft facet merge; why-found under URL candidates; L4 fixture; flags OFF.
 - **Evidence:** `UX-L4-GAPS-OFFICIALWEB-ממשק-2026-09-24.md`
 - **Promote:** false
+
+| 12 | 2026-09-24 08:00 | **L4-SOFT** | Preview soft-verify dpl_8h2Tj8n… · B0 gaps only · soft ingest urlDomainCandidates/urlTargets · cache l4p1 · Wave1 NOT DONE |
+
+| 13 | 2026-09-24 08:02 | **C** | Search URL candidates → UNKNOWN + why-found · fixture seed-c · QUICK READ strip · smoke-c · flag GENERAL_WEB OFF |

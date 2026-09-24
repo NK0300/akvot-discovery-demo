@@ -1,6 +1,6 @@
 {
   "version": "phase-b-ux-2026-09-20",
-  "note": "Fixtures only — Seed illustration values, not allowlist / not special-cased in UI logic. P0 WD/OL/WP seeds exercise L soft labels with flags OFF.",
+  "note": "Fixtures only — Seed illustration values, not allowlist / not special-cased in UI logic. P0 WD/OL/WP seeds exercise L soft labels with flags OFF. · Track C search URL UNKNOWN fixture",
   "fixtures": [
     {
       "id": "seed-person-he",
@@ -43,6 +43,12 @@
       "file": "seed-l4-gaps-officialweb.json",
       "seedKind": "organization",
       "labelHe": "L4 · פערים + אתר רשמי"
+    },
+    {
+      "id": "seed-c-search-url-candidates",
+      "file": "seed-c-search-url-candidates.json",
+      "seedKind": "organization",
+      "labelHe": "C · חיפוש URL מועמדים (UNKNOWN)"
     }
   ]
 }

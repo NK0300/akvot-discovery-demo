@@ -1,0 +1,355 @@
+{
+  "fixtureId": "seed-c-search-url-candidates",
+  "seedKind": "organization",
+  "q": "Fixture Catalog Bureau Track C",
+  "matchHints": [
+    "Fixture Catalog Bureau Track C",
+    "seed-c-search-url-candidates",
+    "track-c",
+    "c-search"
+  ],
+  "locale": "en",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "flagsDocumentedOff": [
+    "DISCOVERY_ENABLE_GENERAL_WEB",
+    "DISCOVERY_WD_CLAIM_PACK",
+    "DISCOVERY_ENABLE_WEB_ORIGIN",
+    "DISCOVERY_ENABLE_QUERYPLAN"
+  ],
+  "note": "Track C UI demo · search-sourced URL candidates as UNKNOWN + whyFound · flags OFF · INFORMATION≠IDENTITY · fixture-only · no live crawl",
+  "evidence": [
+    {
+      "id": "ev-c-1",
+      "provenanceUrl": "https://example.org/search?q=Fixture+Catalog+Bureau",
+      "providerId": "general_web_search",
+      "retrievedAt": "2026-09-24T05:00:00.000Z",
+      "quote": "Fixture Catalog Bureau — public directory listing (snippet illustration)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-c-2",
+      "provenanceUrl": "https://docs.example.net/fixture-catalog-bureau",
+      "providerId": "general_web_search",
+      "retrievedAt": "2026-09-24T05:00:01.000Z",
+      "quote": "About the Fixture Catalog Bureau documentation hub (snippet)",
+      "contentType": "text/html",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-c-3",
+      "provenanceUrl": "https://news.example.com/articles/fixture-catalog-bureau-overview",
+      "providerId": "general_web_search",
+      "retrievedAt": "2026-09-24T05:00:02.000Z",
+      "quote": "Overview article mentioning Fixture Catalog Bureau (unverified relation)",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-c-1",
+      "kind": "url_candidate",
+      "title": "example.org — Fixture Catalog Bureau (search hit)",
+      "summary": "Search-sourced URL candidate · title/domain lexical overlap ≠ SAME-ENTITY · C1 UNKNOWN",
+      "url": "https://example.org/fixture-catalog-bureau",
+      "normalizedUrl": "https://example.org/fixture-catalog-bureau",
+      "urlAlone": true,
+      "urlCandidate": true,
+      "identityClaim": false,
+      "epistemicState": "candidate",
+      "relationship": "unknown",
+      "snippet": "Fixture Catalog Bureau public directory listing — illustration only",
+      "whyFound": "מועמד מתוצאת חיפוש · snippet lexical · לא זהות · C1: כותרת/דומיין ≠ SAME-ENTITY",
+      "evidenceIds": [
+        "ev-c-1"
+      ],
+      "providers": [
+        "general_web_search"
+      ],
+      "sourceFamily": "general_web",
+      "familyId": "general_web_search",
+      "hostFamily": "web_search",
+      "providerId": "general_web_search",
+      "facetHints": [
+        "provider:general_web_search",
+        "kind:url_candidate",
+        "family:general_web",
+        "urlCandidate:https://example.org/fixture-catalog-bureau",
+        "relationship:unknown",
+        "confidence_band:low"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.41
+    },
+    {
+      "id": "f-c-2",
+      "kind": "url_candidate",
+      "title": "docs.example.net — documentation hub (search hit)",
+      "summary": "Second search URL candidate · UNKNOWN soft · no identity CTA",
+      "url": "https://docs.example.net/fixture-catalog-bureau",
+      "normalizedUrl": "https://docs.example.net/fixture-catalog-bureau",
+      "urlAlone": true,
+      "urlCandidate": true,
+      "identityClaim": false,
+      "epistemicState": "candidate",
+      "relationship": "unknown",
+      "snippet": "About the Fixture Catalog Bureau documentation hub",
+      "whyFound": "מועמד מחיפוש ווב · cite snippet · לא מאומת · לא זהות",
+      "evidenceIds": [
+        "ev-c-2"
+      ],
+      "providers": [
+        "general_web_search"
+      ],
+      "sourceFamily": "web_search",
+      "familyId": "general_web",
+      "hostFamily": "web_search",
+      "providerId": "general_web_search",
+      "facetHints": [
+        "provider:general_web_search",
+        "kind:url_candidate",
+        "family:web_search",
+        "urlCandidate:https://docs.example.net/fixture-catalog-bureau",
+        "relationship:unknown",
+        "confidence_band:low"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.36
+    },
+    {
+      "id": "f-c-3",
+      "kind": "web_search",
+      "title": "news.example.com — overview article (search hit)",
+      "summary": "Third search hit · mention-only · relationship UNKNOWN · never SAME-ENTITY from headline",
+      "url": "https://news.example.com/articles/fixture-catalog-bureau-overview",
+      "normalizedUrl": "https://news.example.com/articles/fixture-catalog-bureau-overview",
+      "urlAlone": true,
+      "urlCandidate": true,
+      "searchHit": true,
+      "identityClaim": false,
+      "epistemicState": "candidate",
+      "relationship": "unknown",
+      "snippet": "Overview article mentioning Fixture Catalog Bureau (unverified relation)",
+      "whyFound": "מועמד מ־SERP/snippet · mention lexical · לא זהות · headline ≠ entity",
+      "evidenceIds": [
+        "ev-c-3"
+      ],
+      "providers": [
+        "general_web_search"
+      ],
+      "sourceFamily": "general_web_search",
+      "familyId": "url_candidate",
+      "hostFamily": "web_search",
+      "providerId": "general_web_search",
+      "facetHints": [
+        "provider:general_web_search",
+        "kind:web_search",
+        "family:general_web_search",
+        "urlCandidate:https://news.example.com/articles/fixture-catalog-bureau-overview",
+        "relationship:unknown",
+        "confidence_band:low"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.28
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": {
+        "done": 0,
+        "totalHint": 3,
+        "findingsN": 0
+      },
+      "providers": {
+        "general_web_search": "pending"
+      },
+      "findingIds": [],
+      "facets": [],
+      "gaps": [],
+      "lifeStage": "START"
+    },
+    {
+      "afterMs": 450,
+      "status": "complete",
+      "progress": {
+        "done": 3,
+        "totalHint": 3,
+        "findingsN": 3
+      },
+      "providers": {
+        "general_web_search": "ok"
+      },
+      "findingIds": [
+        "f-c-1",
+        "f-c-2",
+        "f-c-3"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "general_web_search",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "key": "kind",
+          "label": "Kind",
+          "buckets": [
+            {
+              "value": "url_candidate",
+              "count": 2
+            },
+            {
+              "value": "web_search",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "urlCandidate",
+          "label": "URL candidate",
+          "buckets": [
+            {
+              "value": "https://example.org/fixture-catalog-bureau",
+              "count": 1
+            },
+            {
+              "value": "https://docs.example.net/fixture-catalog-bureau",
+              "count": 1
+            },
+            {
+              "value": "https://news.example.com/articles/fixture-catalog-bureau-overview",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "family",
+          "label": "Family",
+          "buckets": [
+            {
+              "value": "general_web",
+              "count": 1
+            },
+            {
+              "value": "web_search",
+              "count": 1
+            },
+            {
+              "value": "general_web_search",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "confidence_band",
+          "label": "Confidence band",
+          "buckets": [
+            {
+              "value": "low",
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "missing_independent_source",
+          "label": "חסר מקור עצמאי",
+          "action": "חיפוש בלבד בפיקסצ׳ר · לא אימות זהות"
+        },
+        {
+          "kind": "identity_ceiling",
+          "label": "URL מחיפוש = מועמד UNKNOWN · לא SAME-ENTITY",
+          "action": "C1 Bound · title/domain ≠ identity"
+        }
+      ],
+      "lifeStage": "COMPLETE"
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "missing_independent_source",
+      "label": "חסר מקור עצמאי",
+      "action": "חיפוש בלבד בפיקסצ׳ר · לא אימות זהות"
+    },
+    {
+      "kind": "identity_ceiling",
+      "label": "URL מחיפוש = מועמד UNKNOWN · לא SAME-ENTITY",
+      "action": "C1 Bound · title/domain ≠ identity"
+    }
+  ],
+  "urlDomainCandidates": [
+    {
+      "url": "https://example.org/fixture-catalog-bureau",
+      "registrableDomain": "example.org",
+      "relationship": "UNKNOWN",
+      "identityClaim": false,
+      "method": "general_web_search_snippet",
+      "whyFound": [
+        "serp_title_overlap",
+        "snippet_lexical"
+      ],
+      "source": "general_web_search"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed",
+        "kind": "seed",
+        "label": "Fixture Catalog Bureau Track C"
+      },
+      {
+        "id": "f-c-1",
+        "kind": "url_domain_candidate",
+        "label": "example.org candidate"
+      },
+      {
+        "id": "f-c-2",
+        "kind": "url_domain_candidate",
+        "label": "docs.example.net candidate"
+      },
+      {
+        "id": "f-c-3",
+        "kind": "url_domain_candidate",
+        "label": "news.example.com candidate"
+      }
+    ],
+    "edges": [
+      {
+        "id": "sup-c-0",
+        "kind": "derived_from",
+        "from": "f-c-1",
+        "to": "seed",
+        "relationship": "unknown"
+      },
+      {
+        "id": "sup-c-1",
+        "kind": "derived_from",
+        "from": "f-c-2",
+        "to": "seed",
+        "relationship": "unknown"
+      },
+      {
+        "id": "sup-c-2",
+        "kind": "derived_from",
+        "from": "f-c-3",
+        "to": "seed",
+        "relationship": "unknown"
+      }
+    ]
+  },
+  "softEr": {
+    "status": "candidate",
+    "note": "soft resolve only — not identity"
+  },
+  "contradictions": []
+}

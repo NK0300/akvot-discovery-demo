@@ -18,6 +18,9 @@
  * · print-safe Discovery · UX smoke strings · wave G–J closeout.
  * Checkpoint K polish: clipboard insecure-context fallback · facet-announce debounce ·
  * denser UX smoke · a11y checklist evidence · graph focus contrast.
+ * Track C: search-sourced URL candidates → UNKNOWN + why-found (general_web / url_candidate).
+ * · DISCOVERY_ENABLE_GENERAL_WEB stays OFF · C1 · fixture demo only.
+ * L4 Preview soft: urlDomainCandidates + plan.urlTargets + officialWebsiteUrls ingest.
  * Lane L4: QUICK READ gaps + officialWebsite facets · why-found under URL candidates
  * · soft P856 display without flag ON · INFORMATION ≠ IDENTITY.
  * Checkpoint L polish: P0 adapter surface-ready (WD/OL/WP) · soft family/provider labels
@@ -42,6 +45,9 @@
     birth: 'שנת לידה (רמז)',
     death: 'שנת פטירה (רמז)',
     officialWebsite: 'אתר רשמי (מועמד)',
+    urlCandidate: 'URL מועמד (חיפוש)',
+    searchUrl: 'URL מחיפוש',
+    generalWeb: 'חיפוש ווב כללי',
     authorName: 'שם מחבר',
     authorKey: 'מפתח מחבר',
     firstPublishYear: 'שנת פרסום',
@@ -59,6 +65,10 @@
     media: 'מדיה',
     other: 'אחר',
     work: 'יצירה',
+    url_candidate: 'מועמד URL',
+    url: 'URL',
+    web_origin: 'מקור ווב',
+    web_search: 'תוצאת חיפוש',
   };
   /**
    * Soft source-family / provider labels for Arch P0 adapters (WD/OL/WP).
@@ -74,6 +84,11 @@
     wikipedia: 'ויקיפדיה',
     viaf: 'VIAF',
     web_origin: 'מקור ווב',
+    general_web: 'חיפוש ווב כללי',
+    general_web_search: 'חיפוש ווב כללי',
+    web_search: 'חיפוש ווב',
+    url_candidate: 'מועמד URL',
+    search: 'חיפוש',
   };
   const FAMILY_LABEL_EN = {
     knowledge_graph: 'Knowledge graph',
@@ -84,6 +99,11 @@
     wikipedia: 'Wikipedia',
     viaf: 'VIAF',
     web_origin: 'Web origin',
+    general_web: 'General web search',
+    general_web_search: 'General web search',
+    web_search: 'Web search',
+    url_candidate: 'URL candidate',
+    search: 'Search',
   };
   const PROVIDER_LABEL_HE = {
     wikidata: 'ויקינתונים',
@@ -91,6 +111,9 @@
     wikipedia: 'ויקיפדיה',
     viaf: 'VIAF',
     web_origin: 'מקור ווב',
+    general_web: 'חיפוש ווב',
+    general_web_search: 'חיפוש ווב',
+    web_search: 'חיפוש ווב',
   };
   const STATUS_HE = {
     running: 'מאתר…',
@@ -280,6 +303,9 @@
       contradictions: [],
       softEr: null,
       gaps: [],
+    urlDomainCandidates: [],
+    urlTargets: [],
+    generalWebHits: [],
       focusedNodeId: null,
       selectedEdgeId: null,
       graphFilter: 'all',
@@ -472,11 +498,30 @@
     }
   }
 
+  /** Track C · search / url_candidate families — always C1 UNKNOWN ceiling (never SAME-ENTITY from title/domain). */
+  function isSearchUrlCandidateFinding(f) {
+    if (!f || typeof f !== 'object') return false;
+    if (f.epistemicState === 'candidate' && f.identityClaim === false && (f.url || f.normalizedUrl)) {
+      const fam = String(f.sourceFamily || f.familyId || f.family || f.providerId || f.hostFamily || '').toLowerCase();
+      if (/general_web|web_search|url_candidate|search/.test(fam)) return true;
+    }
+    const kind = String(f.kind || '').toLowerCase();
+    if (kind === 'url_candidate' || kind === 'web_search' || kind === 'url') {
+      const fam = String(f.sourceFamily || f.familyId || f.family || f.providerId || f.hostFamily || '').toLowerCase();
+      if (/general_web|web_search|url_candidate|search|general_web_search/.test(fam) || f.urlCandidate === true) return true;
+    }
+    if (f.urlCandidate === true || f.searchHit === true) return true;
+    const hints = f.facetHints || [];
+    if (hints.some((h) => /family:general_web|family:web_search|kind:url_candidate|provider:general_web/i.test(String(h)))) return true;
+    return false;
+  }
+
   function isUrlAloneFinding(f, evList) {
     if (!f) return false;
     if (f.urlAlone === true || f.hostFamily === 'web_origin') return true;
+    if (isSearchUrlCandidateFinding(f)) return true;
     const kind = String(f.kind || '').toLowerCase();
-    if (kind === 'page' || kind === 'url' || kind === 'web_origin') {
+    if (kind === 'page' || kind === 'url' || kind === 'web_origin' || kind === 'url_candidate' || kind === 'web_search') {
       const rel = normalizeRel(f.relationship || '');
       if (/unknown/i.test(rel) || !f.relationship) {
         const providers = new Set((evList || []).map((e) => e && e.providerId).filter(Boolean));
@@ -873,7 +918,7 @@
     );
   }
 
-  /** Soft-collect officialWebsite / P856 URL candidates from facets + finding hints/fields. */
+  /** Soft-collect officialWebsite / P856 URL candidates from facets + finding hints/fields + L1 plan surfaces. */
   function collectOfficialWebsiteCandidates(state) {
     const out = [];
     const seen = new Set();
@@ -887,6 +932,7 @@
         provenance: meta.source || 'payload',
         findingId: meta.findingId || null,
         key: meta.key || 'officialWebsite',
+        whyFound: meta.whyFound || '',
       });
     };
     (state.facets || []).forEach((f) => {
@@ -910,7 +956,116 @@
       if (Array.isArray(arr)) {
         arr.forEach((u) => push(u, { source: 'field', findingId: f.id, key: 'officialWebsiteUrls' }));
       }
+      // L1 web_origin findings (hostFamily) — candidate URLs only · C1 UNKNOWN
+      if (f.hostFamily === 'web_origin' || f.urlAlone === true) {
+        const u = f.normalizedUrl || f.url || f.provenanceUrl || f.title;
+        if (u && /^https?:\/\//i.test(String(u))) {
+          push(u, {
+            source: 'web_origin_finding',
+            findingId: f.id,
+            key: 'web_origin',
+            whyFound: whyFoundText(f) || 'web_origin finding · URL-alone UNKNOWN',
+          });
+        }
+      }
     });
+    // L1 · session urlDomainCandidates (emit scrubbed)
+    const udc = state.urlDomainCandidates || state.url_domain_candidates || [];
+    if (Array.isArray(udc)) {
+      udc.forEach((c) => {
+        if (!c || typeof c !== 'object') return;
+        const u = c.url || c.normalizedUrl || c.href;
+        const why = Array.isArray(c.whyFound)
+          ? c.whyFound.filter(Boolean).join(' · ')
+          : c.whyFound || c.why_found || '';
+        push(u, {
+          source: 'urlDomainCandidates',
+          findingId: c.findingId || null,
+          key: c.source || c.method || 'urlDomainCandidates',
+          whyFound: why,
+        });
+      });
+    }
+    // L1 · plan.urlTargets (allowed/blocked/unsafe) — show URL as candidate; never identity
+    const plan = state.queryPlan || state.plan || null;
+    const targets = (plan && plan.urlTargets) || state.urlTargets || [];
+    if (Array.isArray(targets)) {
+      targets.forEach((t) => {
+        if (!t || typeof t !== 'object') return;
+        const u = t.url || t.href;
+        const safety = t.safety || t.status || '';
+        push(u, {
+          source: 'urlTargets',
+          findingId: null,
+          key: t.source || t.claim || 'urlTargets',
+          whyFound: safety
+            ? `plan urlTarget · safety=${safety} · ${t.source || t.claim || 'P856'} · לא זהות`
+            : `plan urlTarget · ${t.source || 'P856'} · לא זהות`,
+        });
+      });
+    }
+    return out;
+  }
+
+  /** Track C · soft-collect search-sourced URL candidates (fixture / future Server generalWebSearch). */
+  function collectSearchUrlCandidates(state) {
+    const out = [];
+    const seen = new Set();
+    const push = (url, meta) => {
+      const u = String(url || '').trim();
+      if (!u || seen.has(u)) return;
+      if (!/^https?:\/\//i.test(u) && !/^[a-z0-9.-]+\.[a-z]{2,}/i.test(u)) return;
+      seen.add(u);
+      out.push({
+        url: u,
+        provenance: meta.source || 'search',
+        findingId: meta.findingId || null,
+        whyFound: meta.whyFound || '',
+        key: meta.key || 'urlCandidate',
+      });
+    };
+    (state.findings || []).forEach((f) => {
+      if (!isSearchUrlCandidateFinding(f) && !isUrlAloneFinding(f, [])) return;
+      // Prefer explicit search-shaped findings for this strip (skip pure P856 OW unless also search)
+      if (!isSearchUrlCandidateFinding(f)) return;
+      const u = f.normalizedUrl || f.url || f.provenanceUrl || '';
+      const why = whyFoundText(f);
+      push(u, {
+        source: f.sourceFamily || f.providerId || f.hostFamily || 'general_web',
+        findingId: f.id,
+        whyFound: why,
+        key: 'urlCandidate',
+      });
+    });
+    // Soft passthrough session.urlDomainCandidates with search-ish methods
+    const udc = state.urlDomainCandidates || [];
+    if (Array.isArray(udc)) {
+      udc.forEach((c) => {
+        if (!c || typeof c !== 'object') return;
+        const method = String(c.method || c.extractionMethod || (Array.isArray(c.whyFound) ? c.whyFound.join(' ') : c.whyFound) || '');
+        if (!/search|serp|general_web|snippet|web_search/i.test(method) && c.source !== 'general_web_search') return;
+        const why = Array.isArray(c.whyFound) ? c.whyFound.filter(Boolean).join(' · ') : c.whyFound || method;
+        push(c.url || c.normalizedUrl, {
+          source: 'urlDomainCandidates',
+          findingId: c.findingId || null,
+          whyFound: why,
+          key: 'urlCandidate',
+        });
+      });
+    }
+    // Soft passthrough generalWebHits / searchHits if Server emits
+    const hits = state.generalWebHits || state.searchHits || state.general_web_hits || [];
+    if (Array.isArray(hits)) {
+      hits.forEach((h) => {
+        if (!h || typeof h !== 'object') return;
+        push(h.url || h.href, {
+          source: 'generalWebHits',
+          findingId: h.id || null,
+          whyFound: h.whyFound || h.snippet || 'search hit · candidate · לא זהות',
+          key: 'urlCandidate',
+        });
+      });
+    }
     return out;
   }
 
@@ -920,13 +1075,14 @@
    */
   function whyFoundText(f) {
     if (!f || typeof f !== 'object') return '';
-    const raw =
+    let raw =
       f.whyFound ||
       f.why_found ||
       f.whyFoundReason ||
       f.discoveryReason ||
       (f.provenance && (f.provenance.whyFound || f.provenance.reason)) ||
       '';
+    if (Array.isArray(raw)) raw = raw.filter(Boolean).join(' · ');
     if (String(raw).trim()) return String(raw).trim();
     const hints = f.facetHints || [];
     const owHint = hints.map(parseFacetHintKv).find((kv) => kv && isOfficialWebsiteKey(kv.key));
@@ -940,6 +1096,20 @@
     if (owHint) {
       return 'מועמד מפן officialWebsite ב־payload · לא מאומת · לא זהות';
     }
+    if (
+      (f.facetHints || []).some((h) => /sourceClaim:P856|wikidata_p856|source:wikidata_p856/i.test(String(h))) ||
+      /wikidata_p856|P856/i.test(String(f.sourceFinding || f.source || ''))
+    ) {
+      return 'מועמד מ־P856 (ויקידאטה) · מועמד בלבד · לא זהות · URL לבד = UNKNOWN';
+    }
+    // Track C · search / snippet shape — only when payload cites search provenance
+    if (isSearchUrlCandidateFinding(f)) {
+      const snip = f.snippet || f.searchSnippet || (f.provenance && f.provenance.snippet) || '';
+      if (snip) {
+        return `מועמד מחיפוש ווב · ציטוט/snippet · לא זהות · C1: כותרת/דומיין ≠ SAME-ENTITY · «${String(snip).slice(0, 120)}»`;
+      }
+      return 'מועמד מחיפוש ווב / url_candidate · לא מאומת · לא זהות · URL/כותרת ≠ SAME-ENTITY';
+    }
     return '';
   }
 
@@ -952,6 +1122,19 @@
     base.push({
       key: 'officialWebsite',
       label: FACET_LABEL_HE.officialWebsite || 'אתר רשמי (מועמד)',
+      buckets: cands.slice(0, 12).map((c) => ({ value: c.url, count: 1 })),
+    });
+    return base;
+  }
+
+  function facetsWithSearchUrlCandidates(state) {
+    const base = facetsWithOfficialWebsite(state);
+    if (base.some((f) => /^(urlCandidate|searchUrl|generalWeb)$/i.test(String(f.key)))) return base;
+    const cands = collectSearchUrlCandidates(state);
+    if (!cands.length) return base;
+    base.push({
+      key: 'urlCandidate',
+      label: FACET_LABEL_HE.urlCandidate || 'URL מועמד (חיפוש)',
       buckets: cands.slice(0, 12).map((c) => ({ value: c.url, count: 1 })),
     });
     return base;
@@ -1476,7 +1659,7 @@
       </div>`;
   }
   function renderFacets() {
-    const facets = facetsWithOfficialWebsite(discState).filter((f) => (f.buckets || []).length);
+    const facets = facetsWithSearchUrlCandidates(discState).filter((f) => (f.buckets || []).length);
     const activeN = Object.keys(selectedFacets).length;
     if (!facets.length) {
       return `<aside class="disc-facets" id="disc-facets">
@@ -1535,7 +1718,8 @@
     const evList = evIds.map((id) => evMap.get(id)).filter(Boolean);
     const relHint = (f.facetHints || []).find((h) => String(h).startsWith('relationship:'));
     const rel = f.relationship || (relHint ? String(relHint).split(':').slice(1).join(':') : '');
-    const urlAlone = isUrlAloneFinding(f, evList);
+    const searchCand = isSearchUrlCandidateFinding(f);
+    const urlAlone = searchCand || isUrlAloneFinding(f, evList);
     const providerSet = [...new Set(evList.map((e) => e.providerId || e.provider).filter(Boolean))];
     const providerRow = providerSet.length
       ? `<div class="disc-prov-providers" aria-label="ספקי ראיות">${providerSet.map((p) => `<span class="disc-prov ok" title="${esc(p)}">${esc(labelProvider(p))}</span>`).join('')}</div>`
@@ -1615,6 +1799,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     const lead = list && list[0];
     const leadEvidence = lead && Array.isArray(lead.evidenceIds) ? lead.evidenceIds.length : 0;
     const owCands = collectOfficialWebsiteCandidates(discState);
+    const searchCands = collectSearchUrlCandidates(discState);
     const gapsQuick = (gaps || []).slice(0, 5);
     const gapsQuickHtml = gapsQuick.length
       ? `<ul class="disc-quick-gaps">${gapsQuick
@@ -1640,6 +1825,21 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
           })
           .join('')}</ul>`
       : `<p class="disc-quick-ow-empty">אין מועמד officialWebsite/P856 ב־payload · ${esc(GAP_KIND_HE.no_official_website)}</p>`;
+    const searchQuickHtml = searchCands.length
+      ? `<ul class="disc-quick-search">${searchCands
+          .slice(0, 5)
+          .map((c) => {
+            const href = safeHref(c.url);
+            const host = hostnameOf(c.url) || c.url;
+            const link =
+              href !== '#'
+                ? `<a href="${href}" target="_blank" rel="noopener noreferrer">${esc(host)}</a>`
+                : esc(host);
+            const why = c.whyFound ? ` · ${esc(String(c.whyFound).slice(0, 90))}` : '';
+            return `<li><span class="disc-badge unk url-alone">UNKNOWN</span> ${link} <small>חיפוש · ${esc(c.provenance)} · לא זהות${why}</small></li>`;
+          })
+          .join('')}</ul>`
+      : `<p class="disc-quick-search-empty">אין מועמדי URL מחיפוש ב־payload · WAIT Server generalWebSearch / Track C treatment</p>`;
     const readout = (list || []).slice(0, 3).map((f, i) => `
       <li><span class="disc-readout-index">0${i + 1}</span><span><strong>${esc(f.title)}</strong><small>${lead && f.id === lead.id ? 'האות הבולט ביותר לפי דירוג גילוי' : 'ממצא שדורש אימות במקור'}</small></span></li>`).join('');
     return `<section class="disc-sec disc-sec-exec" id="disc-sec-exec" aria-labelledby="disc-h-exec">
@@ -1664,7 +1864,9 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
           ${gapsQuickHtml}
           <div class="disc-quick-scan-head" style="margin-top:10px"><span>QUICK READ · OFFICIAL WEBSITE</span><span>${owCands.length} מועמדים</span></div>
           ${owQuickHtml}
-          <p class="disc-quick-scan-note">אתר רשמי כאן = מועמד עם provenance · <strong>לא</strong> אימות זהות · C1: URL לבד → UNKNOWN</p>
+          <div class="disc-quick-scan-head" style="margin-top:10px"><span>QUICK READ · SEARCH URL CANDIDATES</span><span>${searchCands.length} מועמדים</span></div>
+          ${searchQuickHtml}
+          <p class="disc-quick-scan-note">אתר רשמי / חיפוש כאן = מועמד עם provenance · <strong>לא</strong> אימות זהות · C1: URL/כותרת/דומיין לבד → UNKNOWN · לעולם לא SAME-ENTITY מחיפוש</p>
         </div>
         <p class="disc-exec-blurb">אוסף מידע ציבורי סביב ה-seed. דירוג = רלוונטיות גילוי בלבד. <strong>אין טענת זהות</strong>. UNKNOWN נשאר UNKNOWN; קשרים הם מועמדים עד שנבדקו בראיות.</p>
       </div>
@@ -2889,6 +3091,19 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
         : discState.contradictions || [],
       softEr: snap.softEr !== undefined ? snap.softEr : discState.softEr,
       gaps: Array.isArray(snap.gaps) ? snap.gaps : discState.gaps || [],
+      urlDomainCandidates: Array.isArray(snap.urlDomainCandidates)
+        ? snap.urlDomainCandidates
+        : Array.isArray(snap.url_domain_candidates)
+          ? snap.url_domain_candidates
+          : discState.urlDomainCandidates || [],
+      urlTargets: Array.isArray(snap.urlTargets)
+        ? snap.urlTargets
+        : discState.urlTargets || [],
+      generalWebHits: Array.isArray(snap.generalWebHits)
+        ? snap.generalWebHits
+        : Array.isArray(snap.searchHits)
+          ? snap.searchHits
+          : discState.generalWebHits || [],
       focusedNodeId: discState.focusedNodeId,
       selectedEdgeId: discState.selectedEdgeId,
       graphFilter: discState.graphFilter || 'all',

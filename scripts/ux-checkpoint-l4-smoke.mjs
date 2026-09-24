@@ -22,7 +22,6 @@ ok('disc-quick-scan markup', /disc-quick-scan/.test(js));
 ok('disc-why-found markup', /disc-why-found/.test(js));
 ok('GAP_KIND_HE no_official_website', /no_official_website/.test(js));
 ok('FACET officialWebsite HE', /officialWebsite:\s*'אתר רשמי/.test(js));
-ok('cache-bust l4a1', /discovery-ui\.js\?v=l4a1/.test(html));
 ok('L4 CSS', /disc-quick-scan/.test(html) || /Lane L4/.test(html));
 ok('index has seed-l4', (idx.fixtures||[]).some(f => f.id === 'seed-l4-gaps-officialweb'));
 ok('l4 finding whyFound', (l4.findings||[]).some(f => f.whyFound));
@@ -32,6 +31,10 @@ ok('l4 no זה האדם', !JSON.stringify(l4).includes('זה האדם'));
 ok('wd whyFound on OW finding', (wd.findings||[]).some(f => f.whyFound && (f.facetHints||[]).some(h => String(h).startsWith('officialWebsite:'))));
 ok('no WD flag ON', !/DISCOVERY_WD_CLAIM_PACK\s*=\s*['"]?1/.test(js));
 ok('no web_origin flag ON', !/DISCOVERY_ENABLE_WEB_ORIGIN\s*=\s*['"]?1/.test(js));
+ok('soft urlDomainCandidates ingest', /urlDomainCandidates/.test(js));
+ok('soft plan.urlTargets ingest', /plan\.urlTargets|urlTargets/.test(js) && /urlTargets/.test(js));
+ok('cache-bust l4|c', /discovery-ui\.js\?v=(l4|c)/.test(html));
+
 
 console.log(`\nux-checkpoint-l4-smoke passed=${passed} failed=${failed}`);
 if (failed) process.exit(1);

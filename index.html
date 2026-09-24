@@ -2317,6 +2317,16 @@ if(cancelBtn) cancelBtn.onclick=()=>cancelActiveSearch();
   if(el) el.addEventListener('keydown',e=>{ if(e.key==='Enter'){ startFreshSearch(); } });
 });
 </script>
-<script src="discovery-ui.js?v=l4a1" defer></script>
+<style id="disc-c-search">
+
+  /* Track C · search URL candidates QUICK READ */
+  .disc-quick-search{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .disc-quick-search li{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:start;font-size:12.5px;line-height:1.4}
+  .disc-quick-search li small{grid-column:2;color:var(--muted);font-size:11px}
+  .disc-quick-search-empty{margin:0;font-size:12px;color:var(--muted)}
+  .disc-facet-chip[data-fkey="urlCandidate"],.disc-facet-chip.disc-facet-search{border-style:dashed}
+
+</style>
+<script src="discovery-ui.js?v=c1a1" defer></script>
 </body>
 </html>

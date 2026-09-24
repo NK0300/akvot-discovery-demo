@@ -1,0 +1,126 @@
+{
+  "report": "QA-SMOKE-GENERAL-WEB-בודק-2026-09-24",
+  "when": "2026-09-24 08:28-08:30 IDT",
+  "lane": "separate GENERAL_WEB Preview ON-only",
+  "target": {
+    "deployment": "dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr",
+    "url": "https://akvot-simple-demo-f5lyhisqg-k-akvot.vercel.app",
+    "treatmentMeasured": false,
+    "promoted": false
+  },
+  "verdict": "PARTIAL",
+  "wave1Product": "NOT DONE",
+  "runtimeOnEvidence": {
+    "probe": "w3c",
+    "provider": "general_web_search",
+    "familyId": "general_web_search",
+    "sourceFamily": "general_web",
+    "hostFamily": "web_search",
+    "kind": "url_candidate"
+  },
+  "probes": [
+    {
+      "id": "w3c",
+      "seed": "World Wide Web Consortium",
+      "sessionId": "kv1.c044a0ce3d97ba5bf9532743be232859",
+      "status": "complete",
+      "verdict": "PASS",
+      "findings": 9,
+      "generalWebFindings": 1,
+      "generalWebEvidence": 1,
+      "generalWebUrlCandidateCount": 1,
+      "candidateUrl": "https://www.eff.org/deeplinks/2017/09/open-letter-w3c-director-ceo-team-and-membership",
+      "provenanceUrl": "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium",
+      "candidateRelationship": "UNKNOWN",
+      "candidateIdentityClaim": false,
+      "candidateUrlIsNotIdentity": true,
+      "missingCitations": 0,
+      "sameEntityEmitted": 0,
+      "q1701775Occurrences": 0,
+      "providerStatus": "ok",
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-HYUbw4/w3c.final.json"
+    },
+    {
+      "id": "tbl",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.f9c5f2ab8cc848a2815bba94b739f407",
+      "status": "partial",
+      "verdict": "PARTIAL_GAP",
+      "findings": 12,
+      "generalWebFindings": 0,
+      "generalWebUrlCandidateCount": 0,
+      "providerStatus": "all_dropped_ssrf_or_registry",
+      "sameEntityEmitted": 0,
+      "q1701775Occurrences": 0,
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-HYUbw4/tbl.final.json"
+    },
+    {
+      "id": "smith",
+      "seed": "Smith",
+      "sessionId": "kv1.a450b52a586ca5ec49e22b6d5e7fc27f",
+      "status": "partial",
+      "verdict": "PASS_HONESTY_WITH_ADAPTER_GAP",
+      "findings": 22,
+      "uniqueTitles": 21,
+      "generalWebFindings": 0,
+      "generalWebUrlCandidateCount": 0,
+      "providerStatus": "opensearch_error",
+      "relationshipsObserved": ["UNKNOWN"],
+      "identityClaimTrue": 0,
+      "q1701775Occurrences": 0,
+      "sameEntityEmitted": 0,
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-HYUbw4/smith.final.json"
+    },
+    {
+      "id": "cohen-he",
+      "seed": "כהן",
+      "sessionId": "kv1.c766440583cc74d05e832ecac334abdd",
+      "status": "partial",
+      "verdict": "PASS_HONESTY_WITH_ADAPTER_GAP",
+      "findings": 16,
+      "uniqueTitles": 16,
+      "generalWebFindings": 0,
+      "generalWebUrlCandidateCount": 0,
+      "providerStatus": "opensearch_error",
+      "relationshipsObserved": ["UNKNOWN"],
+      "identityClaimTrue": 0,
+      "q1701775Occurrences": 0,
+      "sameEntityEmitted": 0,
+      "raw": "test-results/2026-09-24/MD-WAVE/raw/qa-gw-HYUbw4/cohen-he.final.json"
+    }
+  ],
+  "caps": {
+    "maxCountableGeneralWebUrlCandidates": 1,
+    "limit": 5,
+    "pass": true,
+    "sourceObserved": "wp_opensearch_extlinks",
+    "serpHtmlCrawlSmellObserved": false
+  },
+  "offCheck": {
+    "run": false,
+    "note": "ON-only Preview; OFF=B0 not re-proven here",
+    "references": [
+      "docs/GO-IMPL-500/MD-WAVE/L2-GENERAL-WEB-ADAPTER-שרת.md",
+      "docs/GO-IMPL-500/MD-WAVE/ARCH-GLANCE-L2-GENERAL-WEB-FILL-ארכיטקט-2026-09-24.md",
+      "unit generalWebSearch 47/0"
+    ]
+  },
+  "polling": {
+    "method": "POST then GET",
+    "allTerminalPoll": 0,
+    "timeoutOverTwoMinutes": false
+  },
+  "chiefFiveFieldGapBrief": {
+    "gap": "TBL all dropped; Smith/כהן OpenSearch errors",
+    "evidence": "raw final JSON/provider status fields",
+    "impact": "live general-web coverage partial; W3C contract path evidenced",
+    "action": "server investigate runtime WP adapter drop/error path; no TREATMENT change; no promote",
+    "disposition": "QA PARTIAL; rerun separate GENERAL_WEB Preview after follow-up"
+  },
+  "evidencePaths": [
+    "test-results/2026-09-24/MD-WAVE/raw/qa-gw-HYUbw4/",
+    "docs/GO-IMPL-500/MD-WAVE/L2-GENERAL-WEB-ADAPTER-שרת.md",
+    "docs/GO-IMPL-500/MD-WAVE/ARCH-GLANCE-L2-GENERAL-WEB-FILL-ארכיטקט-2026-09-24.md"
+  ],
+  "finalNote": "Wave 1 NOT DONE; אין promote; TREATMENT deployment not touched."
+}
