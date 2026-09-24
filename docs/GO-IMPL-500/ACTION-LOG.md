@@ -678,3 +678,29 @@
 - **What:** Wrote `05-ACC-AE-DDG-IA-דיוק-2026-09-24.md` + `.json` (+ mirrors). Room report: Acc **PASS** honesty/fail-closed/C1; live DDG coverage **0/6** residual (TLS RCA); Wave 1 **NOT DONE**; **אין promote**.
 - **Files:** `docs/GO-IMPL-500/MD-WAVE/05-ACC-AE-DDG-IA-דיוק-2026-09-24.md` + `.json`
 - **Verdict:** Acc A/E **PASS** · coverage residual open · **NO PROMOTE**
+
+
+---
+
+## Server · Night LOOP-SPINE + Hop A locale 1.2 (שרת) · 24/09/2026, 13:55:10 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 164 | ~13:55–14:15 | Backend: `loopSpine.js` + `nightLoop.js` · Hop A locale 1.2 · orch wire · DDG backoff/TLS · flags OFF · tests green |
+| 165 | ~14:15 | Backend: evidence L4 + ACTION-LOG · commit+push origin/main (**≠ promote**) |
+| 166 | ~14:15+ | Backend: separate Night Preview `-e DISCOVERY_ENABLE_NIGHT=1 -e DISCOVERY_ENABLE_GENERAL_WEB=1` · TREATMENT untouched · smoke name→url_candidate |
+
+### Action 164 — LOOP-SPINE + Hop A wire
+- **Who:** Backend / שרת
+- **What:** Arch #274 spine + #275 Hop A. `DISCOVERY_ENABLE_NIGHT` default OFF. Locale allowlist en|he|de|fr|es · one OpenSearch · evaluate gates C1/cite/SSRF. DDG optional fail-closed + backoff. OL/ORCID HOLD. Tests: loopSpine 37/0 · GW 66/0 · DDG 78/0 · orch 113/0.
+- **Files:** `loopSpine.js` · `nightLoop.js` · `generalWebSearch.js` · `ddgInstantAnswer.js` · `flags.js` · `orchestrator.js` · tests · `.env.example`
+- **Verdict:** wire **DONE** · flag OFF · **NO PROMOTE** · Wave1 product **NOT DONE**
+
+### Action 165 — Evidence + push
+- **Who:** Backend / שרת
+- **What:** Wrote `MD-WAVE/L4-NIGHT-LOOP-SPINE-HOP-A-שרת-2026-09-24.md`. Push origin/main ≠ promote. TREATMENT untouched.
+
+### Action 166 — Night Preview deploy + smoke
+- **Who:** Backend / שרת
+- **What:** Separate Preview deploy `-e` only (NIGHT=1 · GENERAL_WEB=1). Smoke org/name seed → url_candidate UNKNOWN through evaluate gates. DDG not required. **NO PROMOTE**.
+

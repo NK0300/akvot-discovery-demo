@@ -254,3 +254,13 @@ export {
   DDG_INSTANT_PROVIDER_ID,
   DDG_INSTANT_VERSION,
 } from './ddgInstantAnswer.js';
+
+export { isNightEnabled, runNightLoop, NIGHT_LOOP_VERSION } from './nightLoop.js';
+export {
+  LOOP_PHASES,
+  createNightLedger,
+  discoverPhase,
+  evaluateUrlCandidate,
+  corroborateCandidates,
+  decideStop,
+} from './loopSpine.js';

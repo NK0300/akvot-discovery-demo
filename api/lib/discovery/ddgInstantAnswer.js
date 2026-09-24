@@ -246,6 +246,39 @@ export function ddgInstantBudgetSignal(timeoutMs, external) {
  * @param {AbortSignal} [parentSignal]
  * @param {string|null|undefined} [abortKind]
  */
+
+/** Backoff before the single transient IA retry (ms). Honors remaining budget. */
+export function ddgIaBackoffMs(attempt, remainingBudgetMs) {
+  if (attempt < 1) return 0;
+  const base = 175;
+  const jitter = 25;
+  const ms = base + Math.floor(Math.random() * jitter);
+  const rem = Math.max(0, Number(remainingBudgetMs) || 0);
+  if (rem > 0 && rem < ms) return Math.max(0, rem - 10);
+  return ms;
+}
+
+function sleepWithSignal(ms, signal) {
+  return new Promise((resolve, reject) => {
+    if (ms <= 0) return resolve();
+    if (signal?.aborted) {
+      const err = new Error('aborted');
+      err.name = 'AbortError';
+      return reject(err);
+    }
+    const t = setTimeout(resolve, ms);
+    const onAbort = () => {
+      clearTimeout(t);
+      const err = new Error('aborted');
+      err.name = 'AbortError';
+      reject(err);
+    };
+    if (signal) {
+      signal.addEventListener('abort', onAbort, { once: true });
+    }
+  });
+}
+
 export function isTransientDdgIaFailure(err, ownSignal, parentSignal, abortKind) {
   if (parentSignal?.aborted || abortKind === 'cancelled') return false;
   if (abortKind === 'timeout') return false;
@@ -269,6 +302,12 @@ export function isTransientDdgIaFailure(err, ownSignal, parentSignal, abortKind)
   );
   if (name === 'AbortError' || /\babort\b|timeout/i.test(msg)) return true;
   if (/network|fetch failed|ECONNRESET|ETIMEDOUT|ENOTFOUND|EAI_AGAIN/i.test(msg)) return true;
+  // TLS / EOF class (Arch: ≤1 fail-closed retry inside hop budget; never invent URLs)
+  if (/UNEXPECTED_EOF|SSL|TLS|ECONNREFUSED|EPIPE|socket hang up|CERT_|UNABLE_TO_VERIFY/i.test(msg)) return true;
+  if (err && typeof err === 'object' && 'code' in /** @type {object} */ (err)) {
+    const code = String(/** @type {{ code?: unknown }} */ (err).code || '');
+    if (/^(ECONNRESET|ETIMEDOUT|ENOTFOUND|EAI_AGAIN|ECONNREFUSED|EPIPE|ERR_SSL|ERR_TLS)/i.test(code)) return true;
+  }
   return false;
 }
 
@@ -369,6 +408,10 @@ export async function searchDdgInstantAnswer(req, ctx = {}) {
 
     let data;
     let iaAttempts = 0;
+    let iaBackoffMs = 0;
+    let iaRetried = false;
+    const _iaStartedAt = Date.now();
+    ctx._iaStartedAt = _iaStartedAt;
     try {
       let lastErr;
       // ≤1 logical IA call · one transient retry max (same URL)
@@ -379,6 +422,8 @@ export async function searchDdgInstantAnswer(req, ctx = {}) {
             partial: true,
             errorCode: 'cancelled',
             iaAttempts,
+            iaRetried,
+            iaBackoffMs,
             apiUrl,
           });
         }
@@ -387,6 +432,8 @@ export async function searchDdgInstantAnswer(req, ctx = {}) {
             partial: true,
             errorCode: 'timeout',
             iaAttempts,
+            iaRetried,
+            iaBackoffMs,
             apiUrl,
           });
         }
@@ -406,6 +453,16 @@ export async function searchDdgInstantAnswer(req, ctx = {}) {
             abortKind(),
           );
           if (!transient || attempt === 1) throw e;
+          const remainingBudgetMs = Math.max(
+            0,
+            budgetMs - (Date.now() - (ctx._iaStartedAt || Date.now())),
+          );
+          const backoffMs = ddgIaBackoffMs(attempt + 1, remainingBudgetMs);
+          iaBackoffMs = backoffMs;
+          iaRetried = true;
+          if (backoffMs > 0) {
+            await sleepWithSignal(backoffMs, signal);
+          }
         }
       }
       if (data === undefined && lastErr) throw lastErr;
@@ -479,6 +536,8 @@ export async function searchDdgInstantAnswer(req, ctx = {}) {
       apiUrl,
       meta: {
         iaAttempts,
+        iaRetried,
+        iaBackoffMs,
         iaCalls: 1,
         rowCount: rows.length,
       },
@@ -513,5 +572,6 @@ export default {
   buildDdgInstantHit,
   ddgInstantBudgetSignal,
   isTransientDdgIaFailure,
+  ddgIaBackoffMs,
   gateGeneralWebHitUrl,
 };

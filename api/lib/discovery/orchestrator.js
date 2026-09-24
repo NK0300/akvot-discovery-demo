@@ -17,7 +17,8 @@ import {
   mergeUrlDomainCandidatesIntoGraph,
   scrubUrlDomainCandidatesForEmit,
 } from './urlDomainCandidates.js';
-import { isWdClaimPackEnabled, isGeneralWebSearchEnabled, isDdgInstantEnabled } from './flags.js';
+import { isWdClaimPackEnabled, isGeneralWebSearchEnabled, isDdgInstantEnabled, isNightEnabled } from './flags.js';
+import { runNightLoop } from './nightLoop.js';
 import {
   searchGeneralWeb,
   GENERAL_WEB_SEARCH_PROVIDER_ID,
@@ -950,8 +951,67 @@ export async function runPipeline(sessionId, opts = {}) {
     }
     delete session._p856UrlCandidates;
 
+
+    // Night LOOP-SPINE (Arch LOCKED) · flag default OFF · Hop A GENERAL_WEB nested under expand→evaluate
+    // When Night ON: adapters run as expand hops inside runNightLoop (no per-adapter Done fork).
+    // When Night OFF: legacy L2 GW/DDG blocks below remain (still flag-gated).
+    if (isNightEnabled() && Date.now() < wallDeadline) {
+      try {
+        const night = await runNightLoop({
+          seed: session.seed,
+          locale: session.locale,
+          signal: sessionSignal,
+          wallDeadline,
+          enableNight: true,
+          enableGeneralWeb: isGeneralWebSearchEnabled(),
+          enableDdgInstant: isDdgInstantEnabled(),
+        });
+        session.nightLoop = {
+          enabled: !!night.enabled,
+          version: night.version,
+          stopReason: night.stopReason,
+          seedClass: night.seedClass,
+          eligibleHops: night.eligibleHops,
+          candidateCount: (night.candidates || []).length,
+          wave: night.wave,
+          fetches: night.fetches,
+          hopJournal: night.hopJournal,
+          phases: night.phases,
+        };
+        for (const [pid, st] of Object.entries(night.providerStatuses || {})) {
+          session.providers[pid] = st;
+        }
+        for (const b of night.batches || []) {
+          if (b?.findings?.length) batches.push(b);
+        }
+        // Night owns GW/DDG hops when those flags are ON — skip legacy duplicate blocks.
+        if (isGeneralWebSearchEnabled()) {
+          session.generalWebSearch = session.generalWebSearch || {
+            reason: night.hopJournal?.find((h) => h.hopId === 'general_web')?.reason || night.stopReason,
+            stub: false,
+            source: 'night_spine',
+            count: (night.candidates || []).filter((c) => c.providerId === 'general_web_search' || c.sourceFamily === 'general_web').length,
+          };
+        }
+        if (isDdgInstantEnabled()) {
+          session.ddgInstantAnswer = session.ddgInstantAnswer || {
+            reason: night.hopJournal?.find((h) => h.hopId === 'ddg_instant')?.reason || 'optional',
+            stub: false,
+            source: 'night_spine',
+            count: (night.candidates || []).filter((c) => c.providerId === 'ddg_instant_answer').length,
+          };
+        }
+      } catch (e) {
+        session.nightLoop = {
+          enabled: true,
+          error: String(e?.message || e).slice(0, 200),
+          stopReason: 'error',
+        };
+      }
+    }
+
     // L2 · GENERAL_WEB (Arch fill.1) · WP OpenSearch→extlinks · flag default OFF · outside TREATMENT
-    if (isGeneralWebSearchEnabled() && Date.now() < wallDeadline) {
+    if (!isNightEnabled() && isGeneralWebSearchEnabled() && Date.now() < wallDeadline) {
       try {
         const gw = await searchGeneralWeb(
           {
@@ -987,7 +1047,7 @@ export async function runPipeline(sessionId, opts = {}) {
     }
 
     // L2 · Adapter-2 DDG Instant Answer (Arch fill.1) · flag default OFF · outside TREATMENT
-    if (isDdgInstantEnabled() && Date.now() < wallDeadline) {
+    if (!isNightEnabled() && isDdgInstantEnabled() && Date.now() < wallDeadline) {
       try {
         const ddg = await searchDdgInstantAnswer(
           {

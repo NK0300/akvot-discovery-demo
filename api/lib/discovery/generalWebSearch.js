@@ -20,7 +20,7 @@ import {
 
 export const GENERAL_WEB_SEARCH_PROVIDER_ID = 'general_web_search';
 /** Fill version (stub.1 contract preserved when flag OFF / empty q). */
-export const GENERAL_WEB_SEARCH_VERSION = '2026-09-24.fill.1.1';
+export const GENERAL_WEB_SEARCH_VERSION = '2026-09-24.gw.locale.1.2';
 /** Locked stub contract id. */
 export const GENERAL_WEB_CONTRACT_VERSION = '2026-09-24.stub.1';
 export const GENERAL_WEB_SOURCE_ID = 'wp_opensearch_extlinks';
@@ -115,21 +115,36 @@ export function gateGeneralWebHitUrl(url) {
 
 
 /** @param {string} locale */
-export function wikiHostForLocale(locale) {
-  const lang = String(locale || 'en')
+/** Arch Hop A locale allowlist (NAME-TO-WEB-HOP 2026-09-24) — en|he|de|fr|es. */
+export const WIKI_LOCALE_ALLOWLIST = Object.freeze(['en', 'he', 'de', 'fr', 'es']);
+
+/**
+ * Pick exactly ONE wiki locale for OpenSearch (no per-locale multiply).
+ * HE script → he; explicit allowlisted hint wins; else en.
+ * @param {string} [seed]
+ * @param {string} [localeHint]
+ */
+export function pickWikiLocale(seed, localeHint) {
+  const s = String(seed || '');
+  // Seed script wins: Hebrew letters → he (single OS pick; no multiply)
+  if (/[\u0590-\u05FF]/.test(s)) return 'he';
+  const hint = String(localeHint || '')
     .trim()
     .toLowerCase()
     .slice(0, 2);
-  return lang === 'he' ? 'he.wikipedia.org' : 'en.wikipedia.org';
+  if (hint && WIKI_LOCALE_ALLOWLIST.includes(hint)) return hint;
+  return 'en';
+}
+
+/** @param {string} locale */
+export function wikiHostForLocale(locale) {
+  const lang = pickWikiLocale('', locale);
+  return `${lang}.wikipedia.org`;
 }
 
 /** @param {string} locale */
 export function wikiLangForLocale(locale) {
-  const lang = String(locale || 'en')
-    .trim()
-    .toLowerCase()
-    .slice(0, 2);
-  return lang === 'he' ? 'he' : 'en';
+  return pickWikiLocale('', locale);
 }
 
 /**
@@ -458,8 +473,8 @@ export async function searchGeneralWeb(req, ctx = {}) {
   }
 
   const fetchJson = typeof ctx.fetchJson === 'function' ? ctx.fetchJson : safeFetchJson;
-  const host = wikiHostForLocale(req?.locale);
-  const wikiLang = wikiLangForLocale(req?.locale);
+  const wikiLang = pickWikiLocale(req?.q, req?.locale);
+  const host = wikiHostForLocale(wikiLang);
 
   let open;
   let openSearchAttempts = 0;
@@ -646,6 +661,9 @@ export default {
   tryUpgradeHttpToHttps,
   buildGeneralWebHit,
   wikiHostForLocale,
+  wikiLangForLocale,
+  pickWikiLocale,
+  WIKI_LOCALE_ALLOWLIST,
   wikiLangForLocale,
   generalWebBudgetSignal,
   isTransientOpenSearchFailure,

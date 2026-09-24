@@ -72,6 +72,14 @@ export function isUrlDomainCandidatesEnabled(opts = {}) {
   return envOn('DISCOVERY_ENABLE_URL_DOMAIN_CANDIDATES');
 }
 
+
+/** Night LOOP-SPINE path (discover→evaluate→expand→corroborate→stop). Default OFF. */
+export function isNightEnabled(opts = {}) {
+  if (opts.enableNight === true) return true;
+  if (opts.enableNight === false) return false;
+  return envOn('DISCOVERY_ENABLE_NIGHT');
+}
+
 export function discoveryFlagSnapshot(opts = {}) {
   return {
     DISCOVERY_ENABLE_QUERYPLAN: isQueryPlanEnabled(opts),
@@ -84,6 +92,7 @@ export function discoveryFlagSnapshot(opts = {}) {
     DISCOVERY_ENABLE_URL_DOMAIN_CANDIDATES: isUrlDomainCandidatesEnabled(opts),
     DISCOVERY_ENABLE_GENERAL_WEB: isGeneralWebSearchEnabled(opts),
     DISCOVERY_ENABLE_DDG_INSTANT: isDdgInstantEnabled(opts),
+    DISCOVERY_ENABLE_NIGHT: isNightEnabled(opts),
   };
 }
 
@@ -96,5 +105,6 @@ export default {
   isUrlDomainCandidatesEnabled,
   isGeneralWebSearchEnabled,
   isDdgInstantEnabled,
+  isNightEnabled,
   discoveryFlagSnapshot,
 };

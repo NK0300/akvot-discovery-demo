@@ -73,7 +73,7 @@ function mockFetchFactory(extlinks) {
 }
 
 console.log('--- version / source lock ---');
-ok('fill.1.1 version', GENERAL_WEB_SEARCH_VERSION === '2026-09-24.fill.1.1');
+ok('gw.locale.1.2 version', GENERAL_WEB_SEARCH_VERSION === '2026-09-24.gw.locale.1.2');
 ok('stub.1 contract retained', GENERAL_WEB_CONTRACT_VERSION === '2026-09-24.stub.1');
 ok('source wp_opensearch_extlinks', GENERAL_WEB_SOURCE_ID === 'wp_opensearch_extlinks');
 
