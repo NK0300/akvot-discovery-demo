@@ -248,15 +248,39 @@
    */
   const DISPLAY_LABEL_IDENTITY_RE = /(מאומת|מאומתת|זהה|זהות|אומת|verified|confirmed|same|identical|identity)/i;
   const DISPLAY_LABEL_MAX = 48;
+  // §26 client mirror: deny-list runs on a guard copy (never on what is shown).
+  // NFKC · bidi/ZWSP/WJ → space · other Default_Ignorable removed · niqqud removed ·
+  // lowercase · Cyrillic/Greek skeleton. Checked both spaced and space-collapsed
+  // so `מאו\u200Bמת` / `vеrified` (Cyrillic е) are still dropped.
+  const DL_BIDI_SPACE_RE = /[\u200B\u2060\u200E\u200F\u061C\u202A-\u202E\u2066-\u2069]/g;
+  const DL_IGNORABLE_RE = /\p{Default_Ignorable_Code_Point}/gu;
+  const DL_SKELETON = {
+    'а': 'a', 'в': 'b', 'е': 'e', 'ё': 'e', 'к': 'k', 'м': 'm', 'н': 'h', 'о': 'o', 'р': 'p', 'с': 'c',
+    'т': 't', 'у': 'y', 'х': 'x', 'і': 'i', 'ї': 'i', 'ј': 'j', 'ѕ': 's', 'ԁ': 'd', 'ԛ': 'q', 'ԝ': 'w', 'ɡ': 'g',
+    'α': 'a', 'β': 'b', 'ε': 'e', 'η': 'n', 'ι': 'i', 'κ': 'k', 'μ': 'm', 'ν': 'v', 'ο': 'o', 'ρ': 'p',
+    'τ': 't', 'υ': 'u', 'χ': 'x', 'ς': 'c', 'ϲ': 'c',
+  };
+  function displayLabelGuardKey(v) {
+    let t = String(v == null ? '' : v);
+    try { t = t.normalize('NFKC'); } catch { /* keep raw */ }
+    t = t.replace(DL_BIDI_SPACE_RE, ' ').replace(DL_IGNORABLE_RE, '').replace(/[\u0591-\u05C7]/g, '').toLowerCase();
+    t = t.replace(/[\u0250-\u02AF\u0370-\u03FF\u0400-\u052F]/g, (c) => DL_SKELETON[c] || c);
+    return t.replace(/\s+/g, ' ').trim();
+  }
+  function displayLabelHasIdentityWord(v) {
+    const g = displayLabelGuardKey(v);
+    return DISPLAY_LABEL_IDENTITY_RE.test(g) || DISPLAY_LABEL_IDENTITY_RE.test(g.replace(/\s+/g, ''));
+  }
   function safeDisplayLabel(dl, lang) {
     if (!dl || typeof dl !== 'object' || Array.isArray(dl)) return '';
     // Any identity word in any language → drop the whole label (fail-closed).
     for (const k of ['he', 'en']) {
-      if (typeof dl[k] === 'string' && DISPLAY_LABEL_IDENTITY_RE.test(dl[k])) return '';
+      if (typeof dl[k] === 'string' && displayLabelHasIdentityWord(dl[k])) return '';
     }
     const v = dl[lang === 'en' ? 'en' : 'he'];
     if (typeof v !== 'string') return '';
-    let s = v.replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim();
+    // Shown text: no control, bidi-override or invisible chars (cannot flip surrounding text).
+    let s = v.replace(/[\u0000-\u001f\u007f]/g, ' ').replace(DL_BIDI_SPACE_RE, ' ').replace(DL_IGNORABLE_RE, '').replace(/\s+/g, ' ').trim();
     if (!s) return '';
     if (s.length > DISPLAY_LABEL_MAX) s = `${s.slice(0, DISPLAY_LABEL_MAX - 1).trimEnd()}…`;
     return s;
