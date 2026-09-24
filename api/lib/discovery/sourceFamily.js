@@ -1,17 +1,11 @@
 import { CANDIDATE_FAMILIES, candidateSkipReason, getCandidateFamily } from './candidateFamilies.js';
 
 /**
- * Source Family registry — B0 families + Preview viaf/web_origin wiring.
+ * Source Family registry — SoT for B0 + Preview families (incl. GW/DDG rows).
  * Family ↔ provider map · independence tags.
  * Cite: SoT 03-SOURCE-FAMILY · ARCHIVE family orch · PRE-GO UNKNOWN/BUDGET
  * NO private sources. NO open crawl. A2/C1 remain FROZEN experimental.
  */
-
-import {
-  B0_FAMILIES,
-  FAMILY_TO_PROVIDER,
-  PROVIDER_TO_FAMILY,
-} from './queryPlan.js';
 
 /** Closed independence class vocabulary. */
 export const INDEPENDENCE_CLASSES = Object.freeze([
@@ -46,6 +40,7 @@ export const SOURCE_FAMILIES = Object.freeze({
     b0: true,
     productionEligible: false,
     providerIds: Object.freeze(['wikidata']),
+    wired: true,
   }),
   encyclopedia: Object.freeze({
     familyId: 'encyclopedia',
@@ -66,6 +61,7 @@ export const SOURCE_FAMILIES = Object.freeze({
     b0: true,
     productionEligible: false,
     providerIds: Object.freeze(['wikipedia']),
+    wired: true,
   }),
   bibliographic: Object.freeze({
     familyId: 'bibliographic',
@@ -86,6 +82,7 @@ export const SOURCE_FAMILIES = Object.freeze({
     b0: true,
     productionEligible: false,
     providerIds: Object.freeze(['openlibrary']),
+    wired: true,
   }),
   authority: Object.freeze({
     familyId: 'authority',
@@ -107,6 +104,7 @@ export const SOURCE_FAMILIES = Object.freeze({
     productionEligible: false,
     frozenExperimental: true,
     providerIds: Object.freeze(['viaf']),
+    wired: true,
   }),
   web_origin: Object.freeze({
     familyId: 'web_origin',
@@ -138,8 +136,110 @@ export const SOURCE_FAMILIES = Object.freeze({
     /** C1 Bound: never mints typed soft-refs for coalesce attach */
     mintsTypedSoftRefs: false,
     providerIds: Object.freeze(['web_origin']),
+    wired: true,
+  }),
+  general_web: Object.freeze({
+    familyId: 'general_web',
+    displayName: 'General web (Wikipedia OpenSearch → extlinks)',
+    authorityClass: 'web_search',
+    independenceClass: 'untrusted_web',
+    hostFamily: 'general_web',
+    safetyClass: 'untrusted_web',
+    capabilities: Object.freeze(['search', 'url_candidate']),
+    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown']),
+    inputRequirements: Object.freeze(['raw_seed', 'locale']),
+    outputTypes: Object.freeze(['finding', 'url_candidate']),
+    costClass: 'medium',
+    latencyClass: 'medium',
+    rateLimitClass: 'wikimedia',
+    failureModes: Object.freeze([
+      'timeout',
+      'error',
+      'empty',
+      'opensearch_error',
+      'extlinks_error',
+      'unavailable',
+      'skipped',
+    ]),
+    previewFlag: 'DISCOVERY_ENABLE_GENERAL_WEB',
+    b0: false,
+    productionEligible: false,
+    wired: true,
+    frozenExperimental: true,
+    mintsTypedSoftRefs: false,
+    providerIds: Object.freeze(['general_web_search']),
+  }),
+  ddg_instant: Object.freeze({
+    familyId: 'ddg_instant',
+    displayName: 'DuckDuckGo Instant Answer (JSON)',
+    authorityClass: 'web_search',
+    independenceClass: 'untrusted_web',
+    hostFamily: 'ddg_instant',
+    safetyClass: 'untrusted_web',
+    capabilities: Object.freeze(['search', 'url_candidate']),
+    entityTypes: Object.freeze(['person', 'organization', 'company', 'ambiguous', 'unknown']),
+    inputRequirements: Object.freeze(['raw_seed']),
+    outputTypes: Object.freeze(['finding', 'url_candidate']),
+    costClass: 'low',
+    latencyClass: 'fast',
+    rateLimitClass: 'ddg',
+    failureModes: Object.freeze([
+      'timeout',
+      'error',
+      'empty',
+      'ia_error',
+      'unavailable',
+      'skipped',
+    ]),
+    previewFlag: 'DISCOVERY_ENABLE_DDG_INSTANT',
+    b0: false,
+    productionEligible: false,
+    wired: true,
+    frozenExperimental: true,
+    mintsTypedSoftRefs: false,
+    providerIds: Object.freeze(['ddg_instant_answer']),
   }),
 });
+
+
+/** Derive B0 + provider maps from SOURCE_FAMILIES — registry is SoT (Track B / §05 / §16). */
+function deriveFamilyMaps(families) {
+  const b0 = [];
+  /** @type {Record<string, string>} */
+  const familyToProvider = {};
+  /** @type {Record<string, string>} */
+  const providerToFamily = {};
+  for (const fam of Object.values(families)) {
+    if (!fam || !fam.familyId) continue;
+    if (fam.b0) b0.push(fam.familyId);
+    const pid = Array.isArray(fam.providerIds) && fam.providerIds[0] ? fam.providerIds[0] : null;
+    if (pid) {
+      familyToProvider[fam.familyId] = pid;
+      providerToFamily[pid] = fam.familyId;
+    }
+  }
+  return {
+    B0_FAMILIES: Object.freeze(b0),
+    FAMILY_TO_PROVIDER: Object.freeze(familyToProvider),
+    PROVIDER_TO_FAMILY: Object.freeze(providerToFamily),
+  };
+}
+
+const _maps = deriveFamilyMaps(SOURCE_FAMILIES);
+/** @type {readonly string[]} */
+export const B0_FAMILIES = _maps.B0_FAMILIES;
+/** @type {Readonly<Record<string, string>>} */
+export const FAMILY_TO_PROVIDER = _maps.FAMILY_TO_PROVIDER;
+/** @type {Readonly<Record<string, string>>} */
+export const PROVIDER_TO_FAMILY = _maps.PROVIDER_TO_FAMILY;
+
+/**
+ * Resolve primary provider id for a family (orch / plan).
+ * @param {string} familyId
+ */
+export function resolveFamilyProvider(familyId) {
+  return FAMILY_TO_PROVIDER[String(familyId || '')] || null;
+}
 
 /** Registered family ids (wired). */
 export const REGISTERED_FAMILY_IDS = Object.freeze(Object.keys(SOURCE_FAMILIES).sort());
@@ -204,6 +304,12 @@ export function eligibleFamilies(flags = {}) {
   if (flags.webOrigin === true || process.env.DISCOVERY_ENABLE_WEB_ORIGIN === '1') {
     out.push('web_origin');
   }
+  if (flags.generalWeb === true || process.env.DISCOVERY_ENABLE_GENERAL_WEB === '1') {
+    out.push('general_web');
+  }
+  if (flags.ddgInstant === true || process.env.DISCOVERY_ENABLE_DDG_INSTANT === '1') {
+    out.push('ddg_instant');
+  }
   return [...new Set(out)].sort();
 }
 
@@ -237,6 +343,18 @@ export function familySkipReason(familyId, flags = {}) {
     !(flags.webOrigin || process.env.DISCOVERY_ENABLE_WEB_ORIGIN === '1')
   ) {
     return 'preview_flag_off:DISCOVERY_ENABLE_WEB_ORIGIN';
+  }
+  if (
+    fam.familyId === 'general_web' &&
+    !(flags.generalWeb || process.env.DISCOVERY_ENABLE_GENERAL_WEB === '1')
+  ) {
+    return 'preview_flag_off:DISCOVERY_ENABLE_GENERAL_WEB';
+  }
+  if (
+    fam.familyId === 'ddg_instant' &&
+    !(flags.ddgInstant || process.env.DISCOVERY_ENABLE_DDG_INSTANT === '1')
+  ) {
+    return 'preview_flag_off:DISCOVERY_ENABLE_DDG_INSTANT';
   }
   // Candidate families (filings/news/…) — descriptors only, never launch
   const cand = candidateSkipReason(familyId);
@@ -277,18 +395,19 @@ export function listCapabilityRegistry(flags = {}) {
       status = 'LIVE';
       enabled = true;
       note = 'b0_live_preview_not_production';
-    } else if (fam.familyId === 'authority') {
+    } else if (fam.previewFlag) {
       status = 'EXPERIMENTAL';
-      enabled = viafOn;
-      note = enabled
-        ? 'preview_flag_on:DISCOVERY_ENABLE_VIAF'
-        : 'preview_flag_off:DISCOVERY_ENABLE_VIAF';
-    } else if (fam.familyId === 'web_origin') {
-      status = 'EXPERIMENTAL';
-      enabled = webOn;
-      note = enabled
-        ? 'preview_flag_on:DISCOVERY_ENABLE_WEB_ORIGIN'
-        : 'preview_flag_off:DISCOVERY_ENABLE_WEB_ORIGIN';
+      const flagName = String(fam.previewFlag);
+      const envOn = process.env[flagName] === '1';
+      const flagKeyOn =
+        (flagName === 'DISCOVERY_ENABLE_VIAF' && (flags.viaf === true || viafOn)) ||
+        (flagName === 'DISCOVERY_ENABLE_WEB_ORIGIN' && (flags.webOrigin === true || webOn)) ||
+        (flagName === 'DISCOVERY_ENABLE_GENERAL_WEB' &&
+          (flags.generalWeb === true || process.env.DISCOVERY_ENABLE_GENERAL_WEB === '1')) ||
+        (flagName === 'DISCOVERY_ENABLE_DDG_INSTANT' &&
+          (flags.ddgInstant === true || process.env.DISCOVERY_ENABLE_DDG_INSTANT === '1'));
+      enabled = envOn || flagKeyOn;
+      note = enabled ? `preview_flag_on:${flagName}` : `preview_flag_off:${flagName}`;
     } else if (fam.frozenExperimental) {
       status = 'EXPERIMENTAL';
       enabled = false;
@@ -299,7 +418,7 @@ export function listCapabilityRegistry(flags = {}) {
       displayName: fam.displayName,
       status,
       enabled,
-      wired: true,
+      wired: fam.wired !== false,
       b0: !!fam.b0,
       productionEligible: false,
       providerIds: [...(fam.providerIds || [])],
@@ -337,11 +456,6 @@ export function listCapabilityRegistry(flags = {}) {
   return rows;
 }
 
-export {
-  B0_FAMILIES,
-  FAMILY_TO_PROVIDER,
-  PROVIDER_TO_FAMILY,
-};
 export { CANDIDATE_FAMILIES, getCandidateFamily, candidateSkipReason } from './candidateFamilies.js';
 
 export default {
@@ -351,6 +465,7 @@ export default {
   getFamily,
   familyIdForProvider,
   providerIdForFamily,
+  resolveFamilyProvider,
   independenceTag,
   areFamiliesIndependent,
   eligibleFamilies,

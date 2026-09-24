@@ -10,7 +10,10 @@ import {
   outcomeClassForStatus,
   BUDGET_EXHAUSTED,
 } from './budget.js';
-import { FAMILY_TO_PROVIDER } from './queryPlan.js';
+import {
+  resolveFamilyProvider as primaryProviderIdForFamily,
+  FAMILY_TO_PROVIDER,
+} from './sourceFamily.js';
 import { selectFetchablePlanUrlTargets } from './security.js';
 import { candidateSkipReason, CANDIDATE_FAMILY_IDS } from './candidateFamilies.js';
 import { normalizeRawHit } from './store.js';
@@ -47,7 +50,7 @@ export function indexProvidersById(providers) {
  * @param {{ viaf?: boolean, webOrigin?: boolean }} flags
  */
 export function resolveFamilyProvider(familyId, byId, flags = {}) {
-  const providerId = FAMILY_TO_PROVIDER[familyId];
+  const providerId = primaryProviderIdForFamily(familyId) || FAMILY_TO_PROVIDER[familyId];
   if (!providerId) {
     return { ok: false, status: 'unsupported', reason: `family_unregistered:${familyId}` };
   }
@@ -56,6 +59,18 @@ export function resolveFamilyProvider(familyId, byId, flags = {}) {
   }
   if (familyId === 'web_origin' && !flags.webOrigin) {
     return { ok: false, status: 'skipped', reason: 'web_origin_flag_off' };
+  }
+  if (
+    familyId === 'general_web' &&
+    !(flags.generalWeb || process.env.DISCOVERY_ENABLE_GENERAL_WEB === '1')
+  ) {
+    return { ok: false, status: 'skipped', reason: 'general_web_flag_off' };
+  }
+  if (
+    familyId === 'ddg_instant' &&
+    !(flags.ddgInstant || process.env.DISCOVERY_ENABLE_DDG_INSTANT === '1')
+  ) {
+    return { ok: false, status: 'skipped', reason: 'ddg_instant_flag_off' };
   }
   const provider = byId.get(providerId);
   if (!provider || typeof provider.search !== 'function') {
@@ -356,7 +371,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
         session.seed;
       plannedCalls.push({
         familyId,
-        providerId: FAMILY_TO_PROVIDER[familyId] || familyId,
+        providerId: primaryProviderIdForFamily(familyId) || FAMILY_TO_PROVIDER[familyId] || familyId,
         intentId: intent.intentId || intent.intentId,
         query: q,
       });

@@ -15,6 +15,8 @@ import {
   providersForFamilies,
   familySkipReason,
   B0_FAMILIES,
+  FAMILY_TO_PROVIDER,
+  resolveFamilyProvider,
 } from './sourceFamily.js';
 
 let passed = 0;
@@ -61,4 +63,18 @@ ok('getFamily filings is candidate descriptor (unwired)', getFamily('filings')?.
 ok('filings never eligible', !eligibleFamilies({ seedClass: 'company', flags: {} }).includes('filings'));
 ok('filings skip reason unwired', String(familySkipReason('filings', { seedClass: 'company' }) || '').includes('unwired'));
 
+
+ok('general_web + ddg_instant registered', SOURCE_FAMILIES.general_web && SOURCE_FAMILIES.ddg_instant);
+ok('GW provider map', familyIdForProvider('general_web_search') === 'general_web');
+ok('DDG provider map', familyIdForProvider('ddg_instant_answer') === 'ddg_instant');
+ok('GW hostFamily untrusted path', SOURCE_FAMILIES.general_web.hostFamily === 'general_web');
+ok('GW/DDG productionEligible false', SOURCE_FAMILIES.general_web.productionEligible === false && SOURCE_FAMILIES.ddg_instant.productionEligible === false);
+ok('skip general_web when flag off', familySkipReason('general_web', { generalWeb: false })?.includes('GENERAL_WEB'));
+ok('skip ddg when flag off', familySkipReason('ddg_instant', { ddgInstant: false })?.includes('DDG_INSTANT'));
+ok('eligible + general_web when flagged', eligibleFamilies({ generalWeb: true }).includes('general_web'));
+ok('maps derived SoT — FAMILY_TO_PROVIDER from registry', providerIdForFamily('general_web') === 'general_web_search');
+
+
+ok('resolveFamilyProvider knowledge_graph', resolveFamilyProvider('knowledge_graph') === 'wikidata');
+ok('FAMILY_TO_PROVIDER matches registry', FAMILY_TO_PROVIDER.web_origin === 'web_origin');
 console.log(`sourceFamily.test.mjs: ${passed} passed`);

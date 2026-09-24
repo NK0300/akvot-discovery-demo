@@ -8,6 +8,13 @@ import { createBudgetCaps } from './budget.js';
 import { looksLikeUrlOrHostname } from './webOrigin.js';
 import { assertSafePublicHttpsUrl } from './urlSafety.js';
 import { isForbiddenQid } from '../forbiddenIdentities.js';
+import {
+  B0_FAMILIES,
+  PROVIDER_TO_FAMILY,
+  FAMILY_TO_PROVIDER,
+} from './sourceFamily.js';
+
+export { B0_FAMILIES, PROVIDER_TO_FAMILY, FAMILY_TO_PROVIDER };
 
 export const PLAN_SCHEMA_VERSION = '1.0.0-impl-ready';
 export const PLAN_CONFIG_VERSION = 'queryplan-2026-09-21.1';
@@ -46,31 +53,6 @@ export const FORBIDDEN_PLAN_DIRECTIVES = Object.freeze([
   'DOMAIN_OWNERSHIP',
   'SILENT_BUDGET_EXPAND',
 ]);
-
-/** B0 family ids always eligible. */
-export const B0_FAMILIES = Object.freeze([
-  'knowledge_graph',
-  'bibliographic',
-  'encyclopedia',
-]);
-
-/** providerId → familyId */
-export const PROVIDER_TO_FAMILY = Object.freeze({
-  wikidata: 'knowledge_graph',
-  openlibrary: 'bibliographic',
-  wikipedia: 'encyclopedia',
-  viaf: 'authority',
-  web_origin: 'web_origin',
-});
-
-/** familyId → providerId (primary adapter) */
-export const FAMILY_TO_PROVIDER = Object.freeze({
-  knowledge_graph: 'wikidata',
-  bibliographic: 'openlibrary',
-  encyclopedia: 'wikipedia',
-  authority: 'viaf',
-  web_origin: 'web_origin',
-});
 
 /**
  * Opaque seed hash — soft ER, not identity.
