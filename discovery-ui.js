@@ -1081,24 +1081,41 @@
       he: he[r] || (r + ' · סיבת עצירה מדווחת מהשרת'),
       en: en[r] || (r + ' · server-reported stop'),
       wave,
-      settledOk: r === 'NO_PROGRESS' && wave >= 2,
+      settledOk:
+        (r === 'NO_PROGRESS' && wave >= 2) ||
+        r === 'EMPTY_FRONTIER' ||
+        r === 'ALL_HOPS_SETTLED',
     };
   }
 
-  /** CONFLICT only when Server already emitted it — never invent from UNKNOWN. */
+  /**
+   * CONFLICT only when Server already emitted it on THIS finding / edge —
+   * never invent from UNKNOWN, and never paint every card from a loose
+   * mission-level contradiction list (must cite finding id when state-scoped).
+   */
   function serverEmitsConflict(f, state) {
     if (f && typeof f === 'object') {
       const rel = String(f.relationship || f.relationshipState || '').toUpperCase();
       if (rel === 'CONFLICT') return true;
       if (f.conflict === true || f.hasConflict === true) return true;
       if (Array.isArray(f.conflicts) && f.conflicts.length) return true;
-    }
-    if (state && Array.isArray(state.contradictions)) {
-      return state.contradictions.some((c) => {
-        if (!c) return false;
-        const k = String(c.kind || c.type || c.code || '').toUpperCase();
-        return k === 'CONFLICT' || k === 'CONTRADICTION' || c.conflict === true;
-      });
+      if (state && Array.isArray(state.contradictions) && f.id != null) {
+        const fid = String(f.id);
+        return state.contradictions.some((c) => {
+          if (!c) return false;
+          const k = String(c.kind || c.type || c.code || '').toUpperCase();
+          const isConflictKind = k === 'CONFLICT' || k === 'CONTRADICTION' || c.conflict === true;
+          if (!isConflictKind) return false;
+          const ids = []
+            .concat(c.findingId != null ? [c.findingId] : [])
+            .concat(Array.isArray(c.findingIds) ? c.findingIds : [])
+            .concat(Array.isArray(c.ids) ? c.ids : [])
+            .concat(Array.isArray(c.subjects) ? c.subjects : [])
+            .concat(c.subject != null ? [c.subject] : []);
+          if (!ids.length) return false; // unscoped → do not invent on every card
+          return ids.map(String).includes(fid);
+        });
+      }
     }
     return false;
   }
@@ -1272,18 +1289,76 @@
     </div>`;
   }
 
+  function resolveStopReasonRaw(state) {
+    const s = state || discState;
+    return (
+      s.stopReason ||
+      (s.nightLoop && s.nightLoop.stopReason) ||
+      (s.missionMemory &&
+        s.missionMemory.lastDecision &&
+        s.missionMemory.lastDecision.reason) ||
+      null
+    );
+  }
+
+  function isMissionComplete(state) {
+    const s = state || discState;
+    const life = s.lifeStage || deriveLifeStage(s);
+    const st = String(s.status || '').toLowerCase();
+    return life === 'COMPLETE' || st === 'complete' || st === 'failed_soft';
+  }
+
+  /**
+   * Mission COMPLETE strip — bilingual honest stopReason (§09 / §24).
+   * NO_PROGRESS wave≥2 / EMPTY_FRONTIER / ALL_HOPS_SETTLED = settled, not failure.
+   */
+  function renderMissionCompleteStrip() {
+    if (!isMissionComplete(discState)) return '';
+    const raw = resolveStopReasonRaw(discState);
+    const copy = stopReasonCopy(raw, discState);
+    if (!copy) {
+      return `<div class="disc-mission-complete" role="status" data-mission-complete="1" data-stop-reason="">
+      <span class="disc-mc-k">COMPLETE</span>
+      <span class="disc-mc-he">משימה הסתיימה · אין stopReason מדווח מהשרת</span>
+      <span class="disc-mc-en">Mission complete · no server stopReason</span>
+    </div>`;
+    }
+    const cls = copy.settledOk ? 'settled' : 'info';
+    return `<div class="disc-mission-complete ${cls}" role="status" data-mission-complete="1" data-stop-reason="${esc(copy.code)}" data-settled="${copy.settledOk ? '1' : '0'}">
+      <span class="disc-mc-k">COMPLETE</span>
+      <span class="disc-mc-he">${esc(copy.he)}</span>
+      <span class="disc-mc-en">${esc(copy.en)}</span>
+    </div>`;
+  }
+
   function renderStopReasonChip() {
-    const raw =
-      discState.stopReason ||
-      (discState.nightLoop && discState.nightLoop.stopReason) ||
-      (discState.missionMemory &&
-        discState.missionMemory.lastDecision &&
-        discState.missionMemory.lastDecision.reason) ||
-      null;
+    // Prefer Mission COMPLETE strip when terminal — avoid duplicate chrome
+    if (isMissionComplete(discState)) return '';
+    const raw = resolveStopReasonRaw(discState);
     const copy = stopReasonCopy(raw, discState);
     if (!copy) return '';
     const cls = copy.settledOk ? 'disc-stop-settled' : 'disc-stop-info';
     return `<span class="disc-source-tag disc-stop-tag ${cls}" title="${esc(copy.en)}" data-stop-reason="${esc(copy.code)}">${esc(copy.he)}</span>`;
+  }
+
+  /**
+   * Soft wrong-entity helper (§09) — near SEARCH URL strip only when
+   * identityClaim=false && urlAlone (never invent identity warning otherwise).
+   */
+  function shouldShowWrongEntityHelper(state) {
+    const s = state || discState;
+    return (s.findings || []).some((f) => {
+      if (!f || f.identityClaim !== false) return false;
+      return isSearchUrlCandidateFinding(f) || isUrlAloneFinding(f, []);
+    });
+  }
+
+  function renderWrongEntityHelper(state) {
+    if (!shouldShowWrongEntityHelper(state || discState)) return '';
+    return `<p class="disc-wrong-entity-helper" role="note" data-wrong-entity="1" title="Public link from search/extlinks — not the same entity.">
+      מצאנו קישור ציבורי שקשור לחיפוש — לא מזהים שזו אותה ישות.
+      <span class="disc-muted"> · Public link from search — not the same entity · Soft≠Acc · identityClaim=false · urlAlone</span>
+    </p>`;
   }
 
 
@@ -2068,6 +2143,7 @@
         <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${barPct}" aria-label="התקדמות מקורות"><i style="width:${barPct}%"></i></div>
         <div class="disc-prov-row" aria-label="מצב מקורות">${providerChips || '<span class="disc-muted">מאתר מקורות…</span>'}</div>
         ${renderStopReasonChip()}
+        ${renderMissionCompleteStrip()}
         ${renderEvidenceGraphReadout()}
         ${renderFrontierReadout()}
         ${renderPlanBudgetPanel()}
@@ -2287,6 +2363,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
           <div class="disc-quick-scan-head" style="margin-top:10px"><span>QUICK READ · OFFICIAL WEBSITE</span><span>${owCands.length} מועמדים</span></div>
           ${owQuickHtml}
           <div class="disc-quick-scan-head" style="margin-top:10px"><span>QUICK READ · SEARCH URL CANDIDATES</span><span>${searchCands.length} מועמדים</span></div>
+          ${renderWrongEntityHelper(discState)}
           ${searchQuickHtml}
           <p class="disc-quick-scan-note">אתר רשמי / חיפוש כאן = מועמד עם provenance · <strong>לא</strong> אימות זהות · C1: URL/כותרת/דומיין לבד → UNKNOWN · לעולם לא SAME-ENTITY מחיפוש</p>
         </div>
@@ -4746,6 +4823,9 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}${conflictCls}" data-
     LIFE_STAGES,
     MISSION_STAGES,
     stopReasonCopy,
+    renderMissionCompleteStrip,
+    renderWrongEntityHelper,
+    shouldShowWrongEntityHelper,
     hasFrontierData,
     hasEvidenceGraphData,
     clampPaintRelationship,

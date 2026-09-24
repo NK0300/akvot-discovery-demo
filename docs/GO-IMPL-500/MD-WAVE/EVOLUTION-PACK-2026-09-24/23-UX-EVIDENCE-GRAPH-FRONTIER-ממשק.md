@@ -63,3 +63,9 @@ Extends existing `renderProgressStrip` / graph panel / §22 Mission rail — **n
 | Live Preview | **HOLD** |
 
 **Tag:** IMPLEMENTED (soft UI slice) · ממשק · 2026-09-24 · promote:false · base Arch `ab17dd2`
+
+---
+
+## Follow-on
+
+Soft polish continued in **§24** (COMPLETE stopReason surface · CONFLICT never invent · SEARCH URL wrong-entity helper · `?v=c1m3`). Still Wave1 DONE=NO · promote:false.

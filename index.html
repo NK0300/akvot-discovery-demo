@@ -626,6 +626,25 @@
     border-color:rgba(196,92,92,.45)!important;
     box-shadow:inset 3px 0 0 rgba(196,92,92,.55);
   }
+  /* §24 · Mission COMPLETE strip + soft wrong-entity helper */
+  .disc-mission-complete{
+    display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-start;margin:8px 0 4px;
+    padding:10px 12px;border:1px solid rgba(155,191,122,.4);border-radius:6px;
+    background:rgba(155,191,122,.07);font-family:var(--mono);font-size:11px;line-height:1.45;
+  }
+  .disc-mission-complete.info{
+    border-color:rgba(201,162,39,.45);background:rgba(201,162,39,.07);
+  }
+  .disc-mission-complete.settled{
+    border-color:rgba(155,191,122,.5);background:rgba(155,191,122,.08);
+  }
+  .disc-mc-k{color:var(--accent);letter-spacing:.08em;font-weight:700;flex:0 0 auto}
+  .disc-mc-he{color:var(--disc-ink);flex:1 1 220px}
+  .disc-mc-en{color:var(--muted);flex:1 1 220px;opacity:.9}
+  .disc-wrong-entity-helper{
+    margin:6px 0 8px;padding:8px 10px;border:1px dashed rgba(201,162,39,.4);border-radius:6px;
+    background:rgba(201,162,39,.06);font-size:12px;line-height:1.45;color:var(--disc-ink);
+  }
 
   .disc-hier{display:grid;gap:12px}
   .disc-sec{
@@ -2358,6 +2377,6 @@ if(cancelBtn) cancelBtn.onclick=()=>cancelActiveSearch();
   .disc-facet-chip[data-fkey="urlCandidate"],.disc-facet-chip.disc-facet-search{border-style:dashed}
 
 </style>
-<script src="discovery-ui.js?v=c1m2" defer></script>
+<script src="discovery-ui.js?v=c1m3" defer></script>
 </body>
 </html>

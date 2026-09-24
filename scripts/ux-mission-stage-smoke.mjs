@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Mission progressive UX · Wave1 soft · §22 rail + §23 Evidence Graph/Frontier paint */
+/** Mission progressive UX · Wave1 soft · §22–§24 COMPLETE/stopReason + CONFLICT + wrong-entity */
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -31,7 +31,7 @@ ok('ingestMissionFields', /function ingestMissionFields\s*\(/.test(js));
 ok('serverEmitsConflict never invent', /function serverEmitsConflict\s*\(/.test(js));
 ok('conflict CSS class gated', /disc-finding-conflict/.test(js) && /disc-badge\.conflict/.test(html));
 ok('mission stages CSS 6-col', /repeat\(6,minmax\(0,1fr\)\)/.test(html));
-ok('cache-bust c1m2', /discovery-ui\.js\?v=c1m2/.test(html));
+ok('cache-bust c1m3', /discovery-ui\.js\?v=c1m3/.test(html));
 ok('Track C SEARCH strip kept', /QUICK READ · SEARCH URL CANDIDATES/.test(js));
 ok('client never enables GENERAL_WEB', !/DISCOVERY_ENABLE_GENERAL_WEB\s*=\s*['"]?1/.test(js));
 ok('no competing chrome id', !/id=["']mission-rail-alt["']/.test(js));
@@ -54,6 +54,19 @@ ok('typedRef≫url frontier order', /typedRef≫url/.test(js));
 ok('ingest evidenceGraph orch', /evidenceGraph/.test(js) && /orch-evidenceGraph/.test(js));
 ok('derive EVIDENCE via hasEvidenceGraphData', /hasEvidenceGraphData\(state\)/.test(js));
 ok('eg readout CSS', /disc-evidence-graph-readout/.test(html));
+
+// §24 soft polish — COMPLETE strip · CONFLICT scope · wrong-entity helper
+ok('renderMissionCompleteStrip', /function renderMissionCompleteStrip\s*\(/.test(js));
+ok('COMPLETE strip bilingual', /disc-mission-complete/.test(js) && /disc-mc-he/.test(js) && /disc-mc-en/.test(js));
+ok('EMPTY_FRONTIER settledOk', /EMPTY_FRONTIER/.test(js) && /settledOk/.test(js));
+ok('ALL_HOPS_SETTLED copy', /ALL_HOPS_SETTLED · כל הקפיצות/.test(js));
+ok('CONFLICT unscoped never invent', /unscoped → do not invent/.test(js));
+ok('wrong-entity helper fn', /function renderWrongEntityHelper\s*\(/.test(js) && /shouldShowWrongEntityHelper/.test(js));
+ok('wrong-entity §09 HE copy', /מצאנו קישור ציבורי שקשור לחיפוש/.test(js));
+ok('wrong-entity near SEARCH strip', /SEARCH URL CANDIDATES[\s\S]{0,280}renderWrongEntityHelper/.test(js));
+ok('COMPLETE strip CSS', /disc-mission-complete/.test(html) && /disc-wrong-entity-helper/.test(html));
+ok('identityClaim=false gate', /identityClaim !== false/.test(js));
+
 
 console.log(`\nux-mission-stage-smoke passed=${passed} failed=${failed}`);
 if (failed) process.exit(1);
