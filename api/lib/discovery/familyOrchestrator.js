@@ -410,10 +410,56 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   const memoryRepeatSkips = Number(selectOut?.memoryRepeatSkips) || 0;
 
   const planLaunchRows = launchesFromQueryPlan(plan);
+  const planFamilyAllow = new Set(
+    planLaunchRows.map((r) => String(r.familyId || '')).filter(Boolean),
+  );
   const queryByFamily = new Map(
     planLaunchRows.filter((r) => r.query != null).map((r) => [r.familyId, r.query]),
   );
-  const plannedCalls = selectedLaunches.map((row) => ({
+
+  // Fail-closed: Execute ⊆ plan families only (Registry+Policy gate still applies).
+  // Empty plan ⇒ zero work (no invent). Off-plan select familyId ⇒ skipped.
+  const selectedInPlan = [];
+  let planAllowSkips = 0;
+  for (const row of selectedLaunches) {
+    const familyId = String(row?.familyId || '');
+    if (!familyId || !planFamilyAllow.has(familyId)) {
+      planAllowSkips += 1;
+      const skipReason = !planFamilyAllow.size
+        ? 'empty_plan'
+        : !familyId
+          ? 'missing_familyId'
+          : 'not_in_plan';
+      const providerId =
+        primaryProviderIdForFamily(familyId) ||
+        FAMILY_TO_PROVIDER[familyId] ||
+        familyId ||
+        '_unknown';
+      const result = {
+        familyId: familyId || '_unknown',
+        providerId,
+        intentId: row?.intentId,
+        planId: plan.planId,
+        status: 'skipped',
+        outcomeClass: outcomeClassForStatus('skipped'),
+        findings: [],
+        evidence: [],
+        executionTimeMs: 0,
+        requestsUsed: 0,
+        reasons: [skipReason],
+        skipReason,
+        policyId: policy.id,
+        wave,
+      };
+      journal.push(result);
+      providerStates[providerId || familyId || '_unknown'] = 'skipped';
+      if (typeof opts.onFamilyResult === 'function') opts.onFamilyResult(result);
+      continue;
+    }
+    selectedInPlan.push(row);
+  }
+
+  const plannedCalls = selectedInPlan.map((row) => ({
     familyId: row.familyId,
     providerId:
       primaryProviderIdForFamily(row.familyId) ||
@@ -809,8 +855,9 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
   const policyObs = {
     policyId: policy.id,
     wave,
-    selectLaunchCount: selectedLaunches.length,
-    selectSkipCount: selectSkipped.length,
+    selectLaunchCount: selectedInPlan.length,
+    selectSkipCount: selectSkipped.length + planAllowSkips,
+    planAllowSkips,
     memoryRepeatSkips,
     evaluateOk: evaluateOut?.ok !== false,
     frontierAdded,

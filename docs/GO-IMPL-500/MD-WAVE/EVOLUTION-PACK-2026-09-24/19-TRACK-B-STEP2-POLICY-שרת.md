@@ -119,3 +119,30 @@ On top of Arch `ab17dd2` (Frontier priority + orch `evidenceGraph` Record bridge
 - Detail: `23-FRONTIER-EVIDENCE-GRAPH-WIRE-שרת.md`
 
 **HOLD:** nightLoop→`policy.night.caps` · multi-wave LOOP · NO PROMOTE
+
+---
+
+## Addendum · QueryPlan → Execute honesty (fail-closed) · Server · 2026-09-24 21:11 IDT
+
+**Status:** **IMPLEMENTED** (on tip after `eb9516d` Mission Memory + validateQueryPlan launches harden)
+
+### Gap closed
+Orch Execute previously trusted `policy.select` launches without re-checking the plan allow-set. A custom/buggy select could invent `familyId`s not present in `plan.launches` / `orderedIntents` (empty plan could still run invented work).
+
+### Harden
+In `familyOrchestrator.runFamilyOrchestration` after Policy.select:
+
+1. Build allow-set from `launchesFromQueryPlan(plan)` (same source select uses).
+2. Intersect selected launches with allow-set before Execute.
+3. Off-plan / missing familyId → journal `skipped` with `not_in_plan` / `missing_familyId` / `empty_plan` — **no provider.search**.
+4. Empty allow-set ⇒ zero Execute (fail-closed; no invent from Registry eligibility alone).
+5. `gateFamilyExecute` still required for in-plan families (Registry + flags).
+6. `policyObs.selectLaunchCount` counts post-allow launches; additive `planAllowSkips`.
+
+### Tests
+`api/lib/discovery/policy.orch.planExec.test.mjs` — empty invent · off-plan inject · B0 happy · narrow `plan.launches`.
+
+### Still HOLD (unchanged)
+nightLoop → `policy.night.caps` · multi-wave LOOP inside orch · Preview · NO PROMOTE · flags default OFF · no Core/session/SSE · no new adapters
+
+**Tag:** IMPLEMENTED · Server · 2026-09-24 · **NO PROMOTE**
