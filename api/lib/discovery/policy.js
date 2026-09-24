@@ -303,6 +303,58 @@ export function gateFamilyExecute(familyId, flags = {}, byId = null, registry = 
   return { ok: true, status: 'ok', providerId };
 }
 
+
+/**
+ * Opaque finding digest for Mission Memory (no raw PII / seed).
+ * @param {object} f
+ */
+export function digestFinding(f = {}) {
+  const url = String(f?.url || f?.canonicalUrl || '').trim().toLowerCase();
+  const refs = (f?.entityRefs || f?.softRefs || [])
+    .map((r) => String(r || '').toLowerCase())
+    .filter((r) => /^(viaf|qid|ol):/i.test(r))
+    .sort();
+  const fam = String(f?.familyId || '');
+  const id = String(f?.id || '');
+  const raw = [fam, id, url, refs.join(',')].join('|');
+  // FNV-1a 32-bit — no crypto dep; Acc-safe opaque token
+  let h = 0x811c9dc5;
+  for (let i = 0; i < raw.length; i++) {
+    h ^= raw.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return `fd:${(h >>> 0).toString(16).padStart(8, '0')}`;
+}
+
+/**
+ * Build PolicyContext for evaluate / expand / nextOrStop.
+ * @param {object} parts
+ */
+export function buildPolicyContext(parts = {}) {
+  const frontier = parts.frontier;
+  let frontierView = parts.frontierView;
+  if (!frontierView && frontier && typeof frontier.snapshot === 'function') {
+    const snap = frontier.snapshot();
+    frontierView = {
+      isEmpty: snap.size === 0,
+      size: snap.size,
+      items: snap.items,
+    };
+  } else if (!frontierView) {
+    frontierView = { isEmpty: true, size: 0, items: [] };
+  }
+  return {
+    plan: parts.plan,
+    flags: parts.flags || {},
+    budget: parts.budget || {},
+    frontier: frontierView,
+    wave: Number(parts.wave) || 1,
+    maxWaves: parts.maxWaves,
+    mission: parts.mission || {},
+    registryView: parts.registryView,
+  };
+}
+
 export function getPolicy(id) {
   return PRESETS[id] || null;
 }
@@ -331,6 +383,8 @@ export default {
   evaluateBatch,
   expandDecision,
   nextOrStop,
+  digestFinding,
+  buildPolicyContext,
   getPolicy,
   listPolicies,
   policyB0Default,

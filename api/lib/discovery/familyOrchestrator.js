@@ -20,7 +20,20 @@ import {
   gateFamilyExecute,
   policyB0Default,
   getPolicy,
+  evaluateBatch,
+  expandDecision,
+  nextOrStop,
+  digestFinding,
+  buildPolicyContext,
 } from './policy.js';
+import { createFrontier } from './frontier.js';
+import {
+  recordWave,
+  recordFrontierKeys,
+  recordFindingDigests,
+  recordDecision,
+  snapshotMissionMemory,
+} from './missionMemory.js';
 import { selectFetchablePlanUrlTargets } from './security.js';
 import { candidateSkipReason, CANDIDATE_FAMILY_IDS } from './candidateFamilies.js';
 import { normalizeRawHit } from './store.js';
@@ -605,15 +618,143 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
 
   // Acc scrub on every journal / emit path
   const scrubbedJournal = scrubFamilyJournal(journal);
+
+  // EVALUATE → RECORD → EXPAND → NEXT|STOP (Policy spine · no auto wave-2 loop)
+  const wave = Number(opts.wave) > 0 ? Number(opts.wave) : 1;
+  const frontier =
+    opts.frontier && typeof opts.frontier.add === 'function'
+      ? opts.frontier
+      : createFrontier();
+  const budgetExhausted =
+    anyExhausted || budgetSnap.availability === BUDGET_EXHAUSTED || ledger.isExhausted();
+  const evalFindings = truncatedFindings.map((f) => ({
+    id: f.id,
+    url: f.url || f.canonicalUrl,
+    canonicalUrl: f.canonicalUrl,
+    entityRefs: f.entityRefs || f.softRefs,
+    softRefs: f.softRefs,
+    familyId: f.familyId,
+    intentId: f.intentId,
+    wave,
+    evaluateOk: f.evaluateOk,
+  }));
+  const evalBatch = {
+    findings: evalFindings,
+    evaluateOk: opts.evaluateOk,
+    urlAlone: opts.urlAlone === true,
+    dropReason: opts.dropReason,
+  };
+  const policyCtxBase = buildPolicyContext({
+    plan,
+    flags,
+    budget: { exhausted: budgetExhausted },
+    frontier,
+    wave,
+    maxWaves: opts.maxWaves,
+    mission: {
+      lastProgress:
+        opts.mission?.lastProgress != null
+          ? opts.mission.lastProgress
+          : truncatedFindings.length > 0,
+    },
+  });
+  const evaluateOut =
+    typeof policy.evaluate === 'function'
+      ? policy.evaluate(policyCtxBase, evalBatch)
+      : evaluateBatch(policyCtxBase, evalBatch);
+
+  let frontierAdded = 0;
+  for (const item of evaluateOut?.frontierAdds || []) {
+    if (
+      frontier.add({
+        ...item,
+        wave: item.wave != null ? item.wave : wave,
+        evaluateOk: true,
+      })
+    ) {
+      frontierAdded += 1;
+    }
+  }
+
+  const missionMemory = opts.missionMemory || null;
+  if (missionMemory) {
+    const familyIds = [
+      ...new Set(
+        scrubbedJournal.map((j) => j.familyId).filter((id) => id && id !== '_unknown'),
+      ),
+    ];
+    recordWave(missionMemory, { wave, familyIds });
+    const snapKeys =
+      typeof frontier.snapshot === 'function' ? frontier.snapshot().keys || [] : [];
+    recordFrontierKeys(missionMemory, snapKeys);
+    recordFindingDigests(
+      missionMemory,
+      truncatedFindings.map((f) => digestFinding(f)),
+    );
+  }
+
+  const policyCtxAfter = buildPolicyContext({
+    plan,
+    flags,
+    budget: { exhausted: budgetExhausted },
+    frontier,
+    wave,
+    maxWaves: opts.maxWaves,
+    mission: {
+      lastProgress:
+        opts.mission?.lastProgress != null
+          ? opts.mission.lastProgress
+          : truncatedFindings.length > 0 || frontierAdded > 0,
+    },
+  });
+  const expandOut =
+    typeof policy.expand === 'function'
+      ? policy.expand(policyCtxAfter)
+      : expandDecision(policyCtxAfter);
+  const decision =
+    typeof policy.nextOrStop === 'function'
+      ? policy.nextOrStop(policyCtxAfter)
+      : nextOrStop(policyCtxAfter);
+
+  if (missionMemory) {
+    recordDecision(missionMemory, decision);
+  }
+
+  const frontierSnap =
+    typeof frontier.snapshot === 'function'
+      ? frontier.snapshot()
+      : { size: frontierAdded, items: [], keys: [] };
+
   return {
     journal: scrubbedJournal,
     findings: truncatedFindings,
     evidence: truncatedEvidence,
     providerStates,
     budgetSnapshot: budgetSnap,
-    budgetExhausted: anyExhausted || budgetSnap.availability === BUDGET_EXHAUSTED,
+    budgetExhausted,
     budgetExhaustedReason: budgetSnap.budgetExhaustedReason || null,
     planId: plan.planId,
+    policyId: policy.id,
+    wave,
+    evaluate: {
+      ok: evaluateOut?.ok !== false,
+      frontierAdds: Array.isArray(evaluateOut?.frontierAdds)
+        ? evaluateOut.frontierAdds.length
+        : 0,
+      frontierAdded,
+      dropReason: evaluateOut?.dropReason,
+    },
+    expand: {
+      expand: !!expandOut?.expand,
+      itemCount: Array.isArray(expandOut?.items) ? expandOut.items.length : 0,
+      reason: expandOut?.reason || 'unknown',
+    },
+    decision: {
+      action: decision?.action === 'next' ? 'next' : 'stop',
+      reason: decision?.reason || 'unknown',
+    },
+    frontier: frontierSnap,
+    missionMemory: missionMemory ? snapshotMissionMemory(missionMemory) : undefined,
   };
 }
 

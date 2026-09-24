@@ -1,6 +1,6 @@
 # 19 · Track B Step 2 · Policy orch wire · שרת · 2026-09-24
 
-**Status:** **IMPLEMENTED** (Select/Execute wire) · nightLoop unify / Expand spine = **DESIGNED**  
+**Status:** **IMPLEMENTED** (Select/Execute + Evaluate/Record/Expand/Next hooks) · nightLoop→policy.night.caps unify = **HOLD (DESIGNED)**  
 **Aligns:** Arch `19-POLICY-INTERFACE-ארכיטקט.md` + stub `api/lib/discovery/policy.js`  
 **Locks:** NO PROMOTE · TREATMENT untouched · flags default OFF · C1 hard · INFORMATION≠IDENTITY · UNKNOWN≠FALSE · EVIDENCE>ASSUMPTION · fail-closed · cite-or-drop · SSRF · no Core/session/SSE
 
@@ -15,8 +15,9 @@
 | `selectLaunches` accepts QueryPlan when `plan.launches` empty | **IMPLEMENTED** |
 | `gateFamilyExecute` — registry+flags gate (no HTTP) | **IMPLEMENTED** |
 | `familyOrchestrator.runFamilyOrchestration` Select via Policy · Execute gated | **IMPLEMENTED** |
-| Frontier module (`frontier.js`) contract | DESIGNED/stub (Arch) · **not** expanded this slice |
-| nightLoop → policy.night.caps unify | **DESIGNED** (not switched) |
+| Frontier module (`frontier.js`) contract | stub · **orch Record admits evaluate-ok** |
+| Evaluate / Record / Expand / Next|Stop orch hooks | **IMPLEMENTED** (no auto wave-2 loop) |
+| nightLoop → policy.night.caps unify | **HOLD (DESIGNED)** (not switched) |
 
 ---
 
@@ -49,14 +50,14 @@ executeFamilyCall → normalize → journal
 **gateFamilyExecute(familyId, flags, byId, registry)**  
 - out: `{ ok, status, reason?, providerId?, provider? }` · fail-closed
 
-**evaluateBatch / expandDecision / nextOrStop** — Arch stubs; orch not yet driven by them (DESIGNED spine).
+**evaluateBatch / expandDecision / nextOrStop** — Arch stubs · **orch driven after Execute** (additive return: `evaluate` / `expand` / `decision` / `frontier` / optional `missionMemory`).
 
 ---
 
-## 4. Explicit DESIGNED (not this slice)
+## 4. Explicit HOLD / DESIGNED (not this slice)
 
-- nightLoop hop switch → `policy.night.caps` on same orch  
-- Record / Expand / Next full loop using Frontier + Mission Memory  
+- nightLoop hop switch → `policy.night.caps` on same orch (**HOLD**)  
+- Multi-wave LOOP inside `runFamilyOrchestration` (decision only; no auto wave-2)  
 - Intent→family capability match (replace hardcoded plan maps)  
 - OpenSearch flake backoff (§13) — ownership Server, separate IMPROVE
 
@@ -66,11 +67,10 @@ executeFamilyCall → normalize → journal
 
 | Suite | Result |
 |-------|--------|
-| policy.wave1 | PASS (9) |
-| policy.queryPlan.select (new) | PASS |
-| sourceFamily | PASS (33) |
-| queryPlan.wiring | PASS (45) |
-| phase1 + night (re-run at commit) | see commit notes |
+| policy.wave1 | PASS |
+| policy.queryPlan.select | PASS |
+| policy.orch.spine (new) | PASS |
+| sourceFamily / queryPlan.wiring / phase1 | re-run at commit |
 
 ---
 
@@ -79,9 +79,29 @@ executeFamilyCall → normalize → journal
 Touches only:
 - `api/lib/discovery/policy.js`
 - `api/lib/discovery/familyOrchestrator.js`
-- `api/lib/discovery/policy.queryPlan.select.test.mjs` (new)
+- `api/lib/discovery/policy.queryPlan.select.test.mjs`
+- `api/lib/discovery/policy.orch.spine.test.mjs` (new)
 - `docs/.../19-TRACK-B-STEP2-POLICY-שרת.md`
 
-**No** Core / session / SSE / TREATMENT / promote / teammate dirty docs.
+**No** Core / session / SSE / TREATMENT / promote / teammate dirty docs · UX files · nightLoop unify.
 
-**Tag:** IMPLEMENTED (Select/Execute wire) · Server · 2026-09-24 · **NO PROMOTE**
+---
+
+## 7. Addendum · Evaluate → Record → Expand → Next/Stop
+
+```
+Select → Execute → Evaluate → Record(frontier ± missionMemory) → Expand → Next|Stop
+```
+
+| Hook | Behavior |
+|------|----------|
+| Evaluate | `policy.evaluate` on truncated findings · cite-or-drop · C1 · `urlAlone` ceiling optional |
+| Record | `frontier.add` only evaluate-ok · optional Mission Memory digests/wave/decision |
+| Expand | `policy.expand` (B0 maxWaves=1 ⇒ false) — **no auto launch** |
+| Next/Stop | `policy.nextOrStop` → `{ action, reason }` on return |
+
+Additive orch return: `policyId`, `wave`, `evaluate`, `expand`, `decision`, `frontier`, `missionMemory?`.
+
+**HOLD:** nightLoop→`policy.night.caps` full unify · multi-wave LOOP inside orch.
+
+**Tag:** IMPLEMENTED (Evaluate/Record/Expand/Next hooks) · Server · 2026-09-24 · **NO PROMOTE**
