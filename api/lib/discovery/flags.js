@@ -50,6 +50,13 @@ export function isWpPagepropsEnabled(opts = {}) {
   return envOn('DISCOVERY_WP_PAGEPROPS');
 }
 
+/** General web search adapter (stub/contract). Default OFF. No uncontrolled crawl. */
+export function isGeneralWebSearchEnabled(opts = {}) {
+  if (opts.enableGeneralWebSearch === true) return true;
+  if (opts.enableGeneralWebSearch === false) return false;
+  return envOn('DISCOVERY_ENABLE_GENERAL_WEB');
+}
+
 /** Emit URL/domain CANDIDATE surface (provenance + why-found). Default OFF. */
 export function isUrlDomainCandidatesEnabled(opts = {}) {
   if (opts.enableUrlDomainCandidates === true) return true;
@@ -67,6 +74,7 @@ export function discoveryFlagSnapshot(opts = {}) {
     DISCOVERY_OL_WORKS_SEARCH: isOlWorksSearchEnabled(opts),
     DISCOVERY_WP_PAGEPROPS: isWpPagepropsEnabled(opts),
     DISCOVERY_ENABLE_URL_DOMAIN_CANDIDATES: isUrlDomainCandidatesEnabled(opts),
+    DISCOVERY_ENABLE_GENERAL_WEB: isGeneralWebSearchEnabled(opts),
   };
 }
 
@@ -77,5 +85,6 @@ export default {
   isOlWorksSearchEnabled,
   isWpPagepropsEnabled,
   isUrlDomainCandidatesEnabled,
+  isGeneralWebSearchEnabled,
   discoveryFlagSnapshot,
 };

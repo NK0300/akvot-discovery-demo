@@ -92,3 +92,10 @@
 - **What:** Confirmed `focus` hoist in `renderGraphCanvas`; added `?v=tdz1` on script tag; no TDZ console.debug to remove.
 - **Evidence:** `UX-CONSOLE-CLEAN-ממשק-2026-09-23.md`
 - **Promote:** false
+
+| 11 | 2026-09-24 07:54 | **L4** | QUICK READ gaps + officialWebsite facets/candidates · why-found · fixture seed-l4 · cache `?v=l4a1` |
+### Detail — Lane L4
+- **When:** 2026-09-24 07:54 IDT
+- **What:** Surface gaps + officialWebsite in QUICK READ; soft facet merge; why-found under URL candidates; L4 fixture; flags OFF.
+- **Evidence:** `UX-L4-GAPS-OFFICIALWEB-ממשק-2026-09-24.md`
+- **Promote:** false

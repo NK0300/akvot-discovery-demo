@@ -1,0 +1,225 @@
+{
+  "fixtureId": "seed-l4-gaps-officialweb",
+  "seedKind": "organization",
+  "q": "Fixture Org L4 Gaps",
+  "matchHints": [
+    "Fixture Org L4 Gaps",
+    "seed-l4-gaps-officialweb",
+    "l4-gaps"
+  ],
+  "locale": "he",
+  "forbiddenIdentitiesVersion": "2026-09-19.1",
+  "flagsDocumentedOff": [
+    "DISCOVERY_WD_CLAIM_PACK",
+    "DISCOVERY_OL_WORKS_SEARCH",
+    "DISCOVERY_WP_PAGEPROPS",
+    "DISCOVERY_ENABLE_WEB_ORIGIN"
+  ],
+  "note": "L4 headed demo · gaps in QUICK READ + officialWebsite candidate with whyFound · flags OFF · INFORMATION ≠ IDENTITY",
+  "evidence": [
+    {
+      "id": "ev-l4-1",
+      "provenanceUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q0.json",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-24T00:00:00.000Z",
+      "quote": "P856 official website claim illustration — candidate only",
+      "contentType": "application/json",
+      "robotsOk": true
+    },
+    {
+      "id": "ev-l4-2",
+      "provenanceUrl": "https://example.org/fixture-org-l4",
+      "providerId": "wikidata",
+      "retrievedAt": "2026-09-24T00:00:01.000Z",
+      "quote": "URL-alone soft UNKNOWN · not identity",
+      "contentType": "text/html",
+      "robotsOk": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-l4-1",
+      "kind": "registry",
+      "title": "רשומת ויקינתונים (ארגון פיקסצ׳ר)",
+      "summary": "ממצא registry · לא זהות · flags OFF",
+      "evidenceIds": [
+        "ev-l4-1"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "sourceFamily": "wikidata",
+      "familyId": "knowledge_graph",
+      "facetHints": [
+        "provider:wikidata",
+        "kind:registry",
+        "family:wikidata",
+        "instance:Q43229",
+        "confidence_band:medium"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.8
+    },
+    {
+      "id": "f-l4-2",
+      "kind": "page",
+      "title": "מועמד אתר רשמי (URL לבד)",
+      "summary": "P856-shaped URL · C1 Bound · UNKNOWN soft · לא same-entity",
+      "evidenceIds": [
+        "ev-l4-2"
+      ],
+      "providers": [
+        "wikidata"
+      ],
+      "sourceFamily": "wikidata",
+      "familyId": "knowledge_graph",
+      "urlAlone": true,
+      "whyFound": "מועמד מאתר רשמי בויקידאטה (P856) · מועמד בלבד · לא זהות · URL לבד = UNKNOWN",
+      "facetHints": [
+        "provider:wikidata",
+        "kind:page",
+        "family:wikidata",
+        "officialWebsite:https://example.org/fixture-org-l4",
+        "confidence_band:low",
+        "relationship:unknown"
+      ],
+      "entityRefs": [],
+      "scoreFinding": 0.45
+    }
+  ],
+  "stages": [
+    {
+      "afterMs": 0,
+      "status": "running",
+      "progress": {
+        "done": 0,
+        "totalHint": 2,
+        "findingsN": 0
+      },
+      "providers": {
+        "wikidata": "pending"
+      },
+      "findingIds": [],
+      "facets": [],
+      "gaps": [],
+      "lifeStage": "START"
+    },
+    {
+      "afterMs": 500,
+      "status": "complete",
+      "progress": {
+        "done": 2,
+        "totalHint": 2,
+        "findingsN": 2
+      },
+      "providers": {
+        "wikidata": "ok"
+      },
+      "findingIds": [
+        "f-l4-1",
+        "f-l4-2"
+      ],
+      "facets": [
+        {
+          "key": "provider",
+          "label": "Provider",
+          "buckets": [
+            {
+              "value": "wikidata",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "key": "officialWebsite",
+          "label": "Official website",
+          "buckets": [
+            {
+              "value": "https://example.org/fixture-org-l4",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "key": "confidence_band",
+          "label": "Confidence band",
+          "buckets": [
+            {
+              "value": "medium",
+              "count": 1
+            },
+            {
+              "value": "low",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "kind": "missing_independent_source",
+          "label": "חסר מקור עצמאי",
+          "action": "רק wikidata בפיקסצ׳ר · דרוש מקור עצמאי"
+        },
+        {
+          "kind": "identity_ceiling",
+          "label": "אתר רשמי כאן = מועמד · לא אימות זהות",
+          "action": "C1: URL לבד → UNKNOWN"
+        }
+      ],
+      "lifeStage": "COMPLETE"
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "missing_independent_source",
+      "label": "חסר מקור עצמאי",
+      "action": "רק wikidata בפיקסצ׳ר · דרוש מקור עצמאי"
+    },
+    {
+      "kind": "identity_ceiling",
+      "label": "אתר רשמי כאן = מועמד · לא אימות זהות",
+      "action": "C1: URL לבד → UNKNOWN"
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "seed",
+        "kind": "seed",
+        "label": "Fixture Org L4 Gaps"
+      },
+      {
+        "id": "f-l4-1",
+        "kind": "finding",
+        "label": "רשומת ויקינתונים (ארגון פיקסצ׳ר)"
+      },
+      {
+        "id": "f-l4-2",
+        "kind": "finding",
+        "label": "מועמד אתר רשמי (URL לבד)"
+      }
+    ],
+    "edges": [
+      {
+        "id": "sup-l4-0",
+        "kind": "supports",
+        "from": "f-l4-1",
+        "to": "seed",
+        "relationship": "supports"
+      },
+      {
+        "id": "sup-l4-1",
+        "kind": "supports",
+        "from": "f-l4-2",
+        "to": "seed",
+        "relationship": "supports"
+      }
+    ]
+  },
+  "softEr": {
+    "status": "candidate",
+    "note": "soft resolve only — not identity"
+  },
+  "contradictions": []
+}

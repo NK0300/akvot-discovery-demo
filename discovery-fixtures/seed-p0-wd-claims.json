@@ -9,7 +9,7 @@
   ],
   "locale": "en",
   "forbiddenIdentitiesVersion": "2026-09-19.1",
-  "note": "UX surface fixture for Arch P0-1 WD claim-pack shape. Flags OFF — fixture paint only. INFORMATION ≠ IDENTITY.",
+  "note": "UX surface fixture for Arch P0-1 WD claim-pack shape. Flags OFF — fixture paint only. INFORMATION ≠ IDENTITY. · L4 UX: QUICK READ gaps + officialWebsite why-found (flags OFF).",
   "flagsDocumentedOff": [
     "DISCOVERY_WD_CLAIM_PACK",
     "DISCOVERY_OL_WORKS_SEARCH",
@@ -87,7 +87,9 @@
         "relationship:unknown"
       ],
       "entityRefs": [],
-      "scoreFinding": 0.42
+      "scoreFinding": 0.42,
+      "whyFound": "מועמד מאתר רשמי בויקידאטה (P856) · מועמד בלבד · לא זהות · URL לבד = UNKNOWN",
+      "urlAlone": true
     }
   ],
   "stages": [
@@ -295,6 +297,11 @@
     {
       "kind": "identity_ceiling",
       "label": "Claim facets ≠ identity truth · flags OFF"
+    },
+    {
+      "kind": "missing_independent_source",
+      "label": "חסר מקור עצמאי",
+      "action": "כיסוי Wikimedia בלבד בפיקסצ׳ר · דרוש מקור עצמאי לאימות"
     }
   ],
   "contradictions": []

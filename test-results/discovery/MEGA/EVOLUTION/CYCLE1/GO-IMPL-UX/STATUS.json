@@ -1,67 +1,47 @@
 {
-  "track": "GO-IMPL-UX",
+  "track": "MD-WAVE-L4",
   "agent": "ממשק",
-  "stamp": "2026-09-23T23:10:42+03:00",
+  "stamp": "2026-09-24T07:54:44+03:00",
   "zone": "Asia/Jerusalem",
-  "checkpoint": "FIX-TDZ-FOCUS",
-  "status": "PASS_PENDING_QA",
+  "lane": "L4",
+  "status": "PASS",
   "promote": false,
-  "deploy": false,
-  "qaRerunNeeded": true,
-  "qaRerunSeeds": [
-    "seed-p0-wd-claims",
-    "seed-p0-ol-works",
-    "seed-p0-wp-pageprops"
-  ],
+  "flagsEnabledInClient": false,
   "flagsNoted": [
     "DISCOVERY_WD_CLAIM_PACK=OFF",
     "DISCOVERY_OL_WORKS_SEARCH=OFF",
-    "DISCOVERY_WP_PAGEPROPS=OFF"
+    "DISCOVERY_WP_PAGEPROPS=OFF",
+    "DISCOVERY_ENABLE_WEB_ORIGIN=OFF"
   ],
-  "flagsEnabledInClient": false,
-  "rootCause": "TDZ: focus used in edgeLines map before const focus in renderGraphCanvas",
-  "fix": "Hoisted const focus above edgeLines map (~L1783)",
   "files": [
-    "discovery-ui.js"
+    "discovery-ui.js",
+    "index.html",
+    "discovery-fixtures/seed-l4-gaps-officialweb.json",
+    "discovery-fixtures/seed-p0-wd-claims.json",
+    "discovery-fixtures/index.json",
+    "scripts/ux-checkpoint-l4-smoke.mjs",
+    "package.json"
   ],
-  "evidence": "UX-FIX-TDZ-FOCUS-ממשק-2026-09-23.md",
-  "qaFailEvidence": "../GO-IMPL-500/CHECKPOINT-QA-P0-FIXTURES-בודק-2026-09-23.md",
+  "evidence": "UX-L4-GAPS-OFFICIALWEB-ממשק-2026-09-24.md",
+  "demoUrls": [
+    "?mode=discovery&discoverySource=fixture&seed=seed-l4-gaps-officialweb&autorun=1",
+    "?mode=discovery&discoverySource=fixture&seed=seed-p0-wd-claims&autorun=1"
+  ],
+  "waitOnL1": true,
   "checks": [
     {
       "name": "node --check discovery-ui.js",
       "passed": true
     },
     {
-      "name": "npm run test:ux-smoke",
-      "passed": true
-    },
-    {
-      "name": "npm run test:checkpoint-d",
-      "passed": 16,
+      "name": "npm run test:ux-smoke-l4",
+      "passed": 18,
       "failed": 0
     },
     {
-      "name": "static fixture final findings",
+      "name": "npm run test:ux-smoke",
       "passed": true,
-      "note": "2/2/2"
+      "note": "j+k+l+m green"
     }
-  ],
-  "locks": {
-    "coreLookupUntouched": true,
-    "fSecurityUntouched": true,
-    "f11Hold": true,
-    "flagsDefaultOff": true,
-    "noNewHttp": true,
-    "informationNeIdentity": true,
-    "entityAgnostic": true
-  },
-  "readyForBodekRerun": true,
-  "remainingGaps": [
-    "Headed @בודק re-run ×3 P0 fixtures pending",
-    "Live Server P0 still flag-gated OFF",
-    "Preview may 403",
-    "promote held false"
-  ],
-  "consoleClean": "PASS",
-  "cacheBust": "discovery-ui.js?v=tdz1"
+  ]
 }

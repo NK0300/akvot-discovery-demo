@@ -37,6 +37,12 @@
       "file": "seed-p0-wp-pageprops.json",
       "seedKind": "person_name",
       "labelHe": "P0 · ויקיפדיה (pageprops)"
+    },
+    {
+      "id": "seed-l4-gaps-officialweb",
+      "file": "seed-l4-gaps-officialweb.json",
+      "seedKind": "organization",
+      "labelHe": "L4 · פערים + אתר רשמי"
     }
   ]
 }
