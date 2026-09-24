@@ -1,0 +1,88 @@
+{
+  "id": "ACC-WAVE1-FRONTIER-EVIDENCE-LOCAL",
+  "stamp": "2026-09-24T21:01:14+03:00",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "BIG BUILD Wave1 Acc local honesty vs Frontier/Evidence @ab17dd2",
+  "mode": "LOCAL_HONESTY_ONLY",
+  "baseline": {
+    "frontierEvidence": "ab17dd2",
+    "honestyLocks": "15230c2",
+    "originMain": "68fcc40",
+    "ab17dd2OnOrigin": false
+  },
+  "inspected": [
+    "api/lib/discovery/frontier.js",
+    "api/lib/discovery/evidenceGraph.js",
+    "api/lib/discovery/familyOrchestrator.js",
+    "api/lib/discovery/frontier.evidence.wave1.test.mjs",
+    "api/lib/discovery/evidenceGraph.test.mjs",
+    "api/lib/discovery/policy.wave1.test.mjs",
+    "api/lib/discovery/relationship.test.mjs",
+    "api/lib/discovery/policy.js@ab17dd2",
+    "api/lib/discovery/flags.js"
+  ],
+  "notMeasured": [
+    "live Preview HTTP Acc",
+    "invented Preview URLs",
+    "dirty WT policy.js evaluateBatch strengthen",
+    "TREATMENT",
+    "promote",
+    "Wave1 product DONE",
+    "12-point Wave room report"
+  ],
+  "verdict": "PARTIAL",
+  "verdictMeaning": "local honesty alignment vs Acc locks — NOT live Acc PASS",
+  "softNeAcc": true,
+  "liveAcc": "WAIT",
+  "wave1ProductDone": false,
+  "promote": false,
+  "treatmentUntouched": true,
+  "flagsDefaultOff": true,
+  "locks": {
+    "typedRef_gt_url": "PASS",
+    "urlAlone_no_SAME_dossier_identityClaim": "PASS_WITH_RESIDUAL",
+    "SAME_from_URL_eq_0": "PASS",
+    "evidenceGraph_no_weak_web_to_identity": "PASS",
+    "UNKNOWN_preserved_ne_FALSE": "PASS",
+    "CONFLICT_honesty": "PARTIAL",
+    "C1_hard_NO_PROMOTE_flags_OFF": "PASS"
+  },
+  "tests": {
+    "frontier.evidence.wave1": "PASS",
+    "evidenceGraph": "PASS",
+    "policy.wave1": "PASS",
+    "relationship": "PASS",
+    "aggregate": "16 pass / 0 fail (+ relationship harness 43/0)"
+  },
+  "topRisks": [
+    {
+      "id": "R-FE1",
+      "sev": "MED",
+      "text": "CONFLICT vocab not Acc-gated on Policy/Frontier wire"
+    },
+    {
+      "id": "R-FE2",
+      "sev": "MED",
+      "text": "evaluateBatch per-finding C1 clamp incomplete at land; dirty WT stronger"
+    },
+    {
+      "id": "R-FE3",
+      "sev": "LOW-MED",
+      "text": "scrubGraphForEmit hasTypedSoftRef:true always — defense smell"
+    },
+    {
+      "id": "R-FE4",
+      "sev": "MED",
+      "text": "ab17dd2 local-only — code push needs 1:1 approve"
+    },
+    {
+      "id": "R-FE5",
+      "sev": "MED",
+      "text": "dual orch / nightLoop unify HOLD"
+    }
+  ],
+  "stopTriggered": false,
+  "hebrewOneLiner": "דיוק: Frontier/Evidence @ab17dd2 יישור מקומי PARTIAL (CONFLICT+C1-residual) · Soft≠Acc · live WAIT · Wave1 לא DONE · אין promote · ab17dd2 מקומי בלבד",
+  "nextAcc": "Re-inspect after Server lands evaluateBatch C1 clamp clean; live Acc only on Chief GO measure"
+}
