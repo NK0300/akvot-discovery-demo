@@ -246,7 +246,8 @@
    * Order: payload displayLabel {he,en} → FAMILY_LABEL_* map → raw id.
    * Identity-word guard is a client backup (Server Registry already fail-closes these).
    */
-  const DISPLAY_LABEL_IDENTITY_RE = /(מאומת|מאומתת|זהה|זהות|אומת|verified|confirmed|same|identical|identity)/i;
+  // Union with server DISPLAY_LABEL_DENY_RE (sourceFamily.js) — parity test in npm test (שרת).
+  const DISPLAY_LABEL_IDENTITY_RE = /(מאומת|מאומתת|זהה|זהות|אומת|ודאי|verified|confirmed|same|identical|identity)/i;
   const DISPLAY_LABEL_MAX = 48;
   // §26 client mirror: deny-list runs on a guard copy (never on what is shown).
   // NFKC · bidi/ZWSP/WJ → space · other Default_Ignorable removed · niqqud removed ·
@@ -268,8 +269,15 @@
     return t.replace(/\s+/g, ' ').trim();
   }
   function displayLabelHasIdentityWord(v) {
-    const g = displayLabelGuardKey(v);
-    return DISPLAY_LABEL_IDENTITY_RE.test(g) || DISPLAY_LABEL_IDENTITY_RE.test(g.replace(/\s+/g, ''));
+    const raw = String(v == null ? '' : v);
+    const g = displayLabelGuardKey(raw);
+    if (DISPLAY_LABEL_IDENTITY_RE.test(g)) return true;
+    // Space-collapsed check only when the raw carried invisible/bidi chars (a split word),
+    // so clean labels like "Rosa Mendes" are not dropped by "rosamendes" ⊃ "same".
+    DL_BIDI_SPACE_RE.lastIndex = 0; DL_IGNORABLE_RE.lastIndex = 0;
+    const hadHidden = DL_BIDI_SPACE_RE.test(raw) || DL_IGNORABLE_RE.test(raw);
+    DL_BIDI_SPACE_RE.lastIndex = 0; DL_IGNORABLE_RE.lastIndex = 0;
+    return hadHidden && DISPLAY_LABEL_IDENTITY_RE.test(g.replace(/\s+/g, ''));
   }
   function safeDisplayLabel(dl, lang) {
     if (!dl || typeof dl !== 'object' || Array.isArray(dl)) return '';
