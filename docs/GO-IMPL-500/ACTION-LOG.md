@@ -552,3 +552,56 @@
 - **Who:** דיוק / Acc
 - **What:** Wrote evidence + test-results mirror/raw; appended ACTION-LOG Acc notes. Commit+push docs only. Does not flip flags · does not promote · does not touch TREATMENT.
 - **When:** 2026-09-24 09:33 IDT
+
+---
+
+## QA · GENERAL_WEB fill.1.1 live smoke rerun (בודק) · 2026-09-24 09:30–09:31 IDT
+
+| # | Time (IDT) | Action |
+|---:|------------|---|
+| 271 | 09:30–09:31 | QA rerun locked to `dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15` with GENERAL_WEB ON; POST + GET poll for W3C, Tim Berners-Lee, Smith, כהן; **PARTIAL**. |
+
+### Action 271 — QA rerun result
+- **Who:** בודק / QA
+- **What:** Target-only separate Preview, accessed with `vercel curl --scope k-akvot --deployment dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15`. W3C emitted 1 cited `url_candidate`; TBL improved from prior `all_dropped_ssrf_or_registry` to 1 `url_candidate` (`https://info.cern.ch/Proposal.html`) after fill.1.1 path. Both are `UNKNOWN`, `identityClaim=false`, `urlIsNotIdentity=true`, with no SAME-ENTITY claim. Smith/כהן retained multi-candidate UNKNOWN honesty, Q1701775=0, no forced identity, but had `opensearch_error` / `extlinks_error` and 0 general-web candidates.
+- **Verdict:** **PARTIAL** smoke; candidate cap max 1 ≤ 5; no SERP/crawl smell. OFF=B0 not run on ON Preview; cite unit 47/0 and Arch 66/0. Wave 1 product **NOT DONE**. **NO PROMOTE**. TREATMENT `dpl_J92G9…` untouched; old `dpl_HYUbw4g…` not used.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/QA-SMOKE-GENERAL-WEB-RERUN-בודק-2026-09-24.md` + `.json`; raw `test-results/2026-09-24/MD-WAVE/raw/qa-gw-CJPdnz/`.
+
+### Action 272 — Arch LOCK Adapter-2 DDG IA FILL-SPEC
+- **When:** 2026-09-24 ~09:34 IDT
+- **Who:** ארכיטקט
+- **What:** Chief GO → locked FILL-SPEC Adapter-2 = DuckDuckGo Instant Answer JSON (RelatedTopics/AbstractURL FirstURL) · new flag `DISCOVERY_ENABLE_DDG_INSTANT` default OFF · allowlist `api.duckduckgo.com` · C1/cite/caps · no HTML SERP. Server GO implement. TREATMENT untouched. Wave 1 product NOT DONE. **NO PROMOTE**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/ARCH-ADAPTER-2-DDG-IA-FILL-ארכיטקט-2026-09-24.md` · ACTION-LOG
+
+---
+
+## Server · Adapter-2 DDG IA fill (שרת) · 2026-09-24 ~09:36–09:45 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 161 | 09:36–09:39 | Backend: implement `ddgInstantAnswer.js` + flag + allowlist + orch wire + `.env.example` · tests **78/0** |
+| 162 | 09:39–09:40 | Backend: evidence L2 + ACTION-LOG · commit+push Arch FILL-SPEC (was staged; room push blocked) + Adapter-2 code (**≠ promote**) |
+| 163 | 09:40–09:45 | Backend: separate Preview deploy `-e DISCOVERY_ENABLE_DDG_INSTANT=1` only · TREATMENT untouched · light smoke |
+
+### Action 161 — Adapter-2 code fill
+- **When:** 2026-09-24 09:36–09:39 IDT
+- **Who:** Backend / שרת
+- **What:** New module `api/lib/discovery/ddgInstantAnswer.js` (+ `.test.mjs`). Flag `DISCOVERY_ENABLE_DDG_INSTANT` via `isDdgInstantEnabled()` **default OFF**. Provider `ddg_instant_answer` · version `2026-09-24.adapter2.fill.1`. Endpoint `api.duckduckgo.com` IA JSON. Extract AbstractURL + RelatedTopics/Topics FirstURL. Track-C emit C1 UNKNOWN · cite-or-drop · reuse `gateGeneralWebHitUrl`. Allowlist `ddg_instant_answer: ['api.duckduckgo.com']` only. Budgets ≤1 IA · ≤5 emits · 4000ms · 64k · AbortSignal+dispose · one transient retry. Orchestrator one call when flag ON + wall remains (after Adapter-1). GENERAL_WEB unchanged. `.env.example` documents default OFF · not for Wave1 TREATMENT. Unit tests **78/0**.
+- **Files:** `ddgInstantAnswer.js` · `ddgInstantAnswer.test.mjs` · `flags.js` · `adapterContract.js` · `orchestrator.js` · `index.js` · `.env.example`
+- **Verdict:** Adapter-2 code **DONE** · flag OFF default · **NO PROMOTE** · Wave1 product **NOT DONE**
+
+### Action 162 — Evidence + push (incl. Arch FILL-SPEC)
+- **When:** 2026-09-24 09:39–09:40 IDT
+- **Who:** Backend / שרת
+- **What:** Wrote `MD-WAVE/L2-ADAPTER-2-DDG-IA-שרת-2026-09-24.md`. Commit+push to `origin/main` including already-staged Arch FILL-SPEC (room push was blocked) + ACTION-LOG. **≠ promote**. TREATMENT untouched.
+- **Files:** L2 evidence · ACTION-LOG · Arch FILL-SPEC md
+
+### Action 163 — Separate DDG Preview deploy
+- **When:** 2026-09-24 ~09:40–09:45 IDT
+- **Who:** Backend / שרת
+- **What:** Clean Preview deploy with `-e DISCOVERY_ENABLE_DDG_INSTANT=1` only (project Preview env **not** set). Bundle includes Track C UX `discovery-ui.js?v=c1a1`. Light smoke: flag ON health + one name→FirstURL gated UNKNOWN if feasible. **Do NOT** modify TREATMENT `dpl_J92G9…` or prior GENERAL_WEB Preview project env. **NO PROMOTE**.
+- **Preview:** _(filled after deploy)_
+
+**Server Adapter-2 action ids:** **161–163**  
+**Verdict:** code **DONE** · measure Preview separate · Wave1 product **NOT DONE** · **NO PROMOTE**
+

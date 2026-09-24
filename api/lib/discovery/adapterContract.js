@@ -35,6 +35,7 @@ export const ADAPTER_HOST_ALLOWLIST = Object.freeze({
     'www.wikipedia.org',
   ]),
   viaf: Object.freeze(['viaf.org', 'www.viaf.org']),
+  ddg_instant_answer: Object.freeze(['api.duckduckgo.com']),
 });
 
 export const WIRED_PUBLIC_PROVIDER_IDS = Object.freeze([

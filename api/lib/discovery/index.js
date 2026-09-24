@@ -248,3 +248,9 @@ export {
   fetchableUrlTargetsFromPlan,
 } from './urlTargetBridge.js';
 
+export {
+  searchDdgInstantAnswer,
+  isDdgInstantEnabled,
+  DDG_INSTANT_PROVIDER_ID,
+  DDG_INSTANT_VERSION,
+} from './ddgInstantAnswer.js';

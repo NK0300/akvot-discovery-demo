@@ -17,12 +17,17 @@ import {
   mergeUrlDomainCandidatesIntoGraph,
   scrubUrlDomainCandidatesForEmit,
 } from './urlDomainCandidates.js';
-import { isWdClaimPackEnabled, isGeneralWebSearchEnabled } from './flags.js';
+import { isWdClaimPackEnabled, isGeneralWebSearchEnabled, isDdgInstantEnabled } from './flags.js';
 import {
   searchGeneralWeb,
   GENERAL_WEB_SEARCH_PROVIDER_ID,
   GENERAL_WEB_TIMEOUT_MS,
 } from './generalWebSearch.js';
+import {
+  searchDdgInstantAnswer,
+  DDG_INSTANT_PROVIDER_ID,
+  DDG_INSTANT_TIMEOUT_MS,
+} from './ddgInstantAnswer.js';
 import {
   assertSafePublicHttpsUrl,
   selectFetchablePlanUrlTargets,
@@ -978,6 +983,41 @@ export async function runPipeline(sessionId, opts = {}) {
         }
       } catch {
         session.providers[GENERAL_WEB_SEARCH_PROVIDER_ID] = 'error';
+      }
+    }
+
+    // L2 · Adapter-2 DDG Instant Answer (Arch fill.1) · flag default OFF · outside TREATMENT
+    if (isDdgInstantEnabled() && Date.now() < wallDeadline) {
+      try {
+        const ddg = await searchDdgInstantAnswer(
+          {
+            q: session.seed,
+            budgetMs: Math.min(
+              DDG_INSTANT_TIMEOUT_MS,
+              Math.max(50, wallDeadline - Date.now()),
+            ),
+          },
+          { signal: sessionSignal },
+        );
+        session.ddgInstantAnswer = {
+          reason: ddg.reason,
+          stub: !!ddg.stub,
+          source: ddg.source || null,
+          count: (ddg.findings || []).length,
+          dropped: ddg.dropped || 0,
+        };
+        if (ddg.findings?.length) {
+          batches.push({
+            providerId: DDG_INSTANT_PROVIDER_ID,
+            findings: ddg.findings,
+            partial: !!ddg.partial,
+          });
+          session.providers[DDG_INSTANT_PROVIDER_ID] = 'ok';
+        } else if (!ddg.stub) {
+          session.providers[DDG_INSTANT_PROVIDER_ID] = ddg.reason || 'empty';
+        }
+      } catch {
+        session.providers[DDG_INSTANT_PROVIDER_ID] = 'error';
       }
     }
 

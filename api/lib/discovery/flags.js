@@ -57,6 +57,14 @@ export function isGeneralWebSearchEnabled(opts = {}) {
   return envOn('DISCOVERY_ENABLE_GENERAL_WEB');
 }
 
+
+/** DuckDuckGo Instant Answer adapter (Adapter-2). Default OFF. No HTML SERP. */
+export function isDdgInstantEnabled(opts = {}) {
+  if (opts.enableDdgInstant === true) return true;
+  if (opts.enableDdgInstant === false) return false;
+  return envOn('DISCOVERY_ENABLE_DDG_INSTANT');
+}
+
 /** Emit URL/domain CANDIDATE surface (provenance + why-found). Default OFF. */
 export function isUrlDomainCandidatesEnabled(opts = {}) {
   if (opts.enableUrlDomainCandidates === true) return true;
@@ -75,6 +83,7 @@ export function discoveryFlagSnapshot(opts = {}) {
     DISCOVERY_WP_PAGEPROPS: isWpPagepropsEnabled(opts),
     DISCOVERY_ENABLE_URL_DOMAIN_CANDIDATES: isUrlDomainCandidatesEnabled(opts),
     DISCOVERY_ENABLE_GENERAL_WEB: isGeneralWebSearchEnabled(opts),
+    DISCOVERY_ENABLE_DDG_INSTANT: isDdgInstantEnabled(opts),
   };
 }
 
@@ -86,5 +95,6 @@ export default {
   isWpPagepropsEnabled,
   isUrlDomainCandidatesEnabled,
   isGeneralWebSearchEnabled,
+  isDdgInstantEnabled,
   discoveryFlagSnapshot,
 };
