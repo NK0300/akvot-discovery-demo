@@ -145,17 +145,23 @@ export function buildDiscoveryGaps(session = {}) {
     });
   }
 
+  // empty counts as coverage (UNKNOWN≠FALSE); partial only when planned > covered
+  const coveredFamilies = new Set(
+    journal
+      .filter((j) => j.status === 'ok' || j.status === 'empty')
+      .map((j) => j.familyId),
+  );
   const okFamilies = new Set(
     journal.filter((j) => j.status === 'ok').map((j) => j.familyId),
   );
   const planned = new Set(
     (session.queryPlan?.sourceFamilies || journal.map((j) => j.familyId)).filter(Boolean),
   );
-  if (planned.size > 0 && okFamilies.size > 0 && okFamilies.size < planned.size) {
+  if (planned.size > 0 && coveredFamilies.size > 0 && coveredFamilies.size < planned.size) {
     gaps.push({
       code: 'partial_coverage',
       severity: 'info',
-      message: `families_ok:${okFamilies.size}_of_${planned.size}`,
+      message: `families_covered:${coveredFamilies.size}_of_${planned.size}_ok:${okFamilies.size}`,
     });
   }
 

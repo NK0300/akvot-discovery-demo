@@ -255,6 +255,88 @@ export function isUnwiredIntent(intentId) {
   );
 }
 
+
+/**
+ * Capability registry snapshot — LIVE / EXPERIMENTAL / DISABLED.
+ * Do NOT fake general-web families as live. Candidates stay DISABLED.
+ * @param {{ viaf?: boolean, webOrigin?: boolean }} [flags]
+ */
+export function listCapabilityRegistry(flags = {}) {
+  const viafOn = flags.viaf === true || process.env.DISCOVERY_ENABLE_VIAF === '1';
+  const webOn =
+    flags.webOrigin === true || process.env.DISCOVERY_ENABLE_WEB_ORIGIN === '1';
+  /** @type {object[]} */
+  const rows = [];
+  for (const id of REGISTERED_FAMILY_IDS) {
+    const fam = SOURCE_FAMILIES[id];
+    if (!fam) continue;
+    let status = 'LIVE';
+    let enabled = true;
+    let note = 'b0_wired_adapter';
+    if (fam.b0) {
+      status = 'LIVE';
+      enabled = true;
+      note = 'b0_live_preview_not_production';
+    } else if (fam.familyId === 'authority') {
+      status = 'EXPERIMENTAL';
+      enabled = viafOn;
+      note = enabled
+        ? 'preview_flag_on:DISCOVERY_ENABLE_VIAF'
+        : 'preview_flag_off:DISCOVERY_ENABLE_VIAF';
+    } else if (fam.familyId === 'web_origin') {
+      status = 'EXPERIMENTAL';
+      enabled = webOn;
+      note = enabled
+        ? 'preview_flag_on:DISCOVERY_ENABLE_WEB_ORIGIN'
+        : 'preview_flag_off:DISCOVERY_ENABLE_WEB_ORIGIN';
+    } else if (fam.frozenExperimental) {
+      status = 'EXPERIMENTAL';
+      enabled = false;
+      note = 'frozen_experimental';
+    }
+    rows.push({
+      familyId: fam.familyId,
+      displayName: fam.displayName,
+      status,
+      enabled,
+      wired: true,
+      b0: !!fam.b0,
+      productionEligible: false,
+      providerIds: [...(fam.providerIds || [])],
+      capabilities: [...(fam.capabilities || [])],
+      previewFlag: fam.previewFlag || null,
+      independenceClass: fam.independenceClass,
+      hostFamily: fam.hostFamily,
+      note,
+    });
+  }
+  // Candidate / general-web style families — DISABLED, never live
+  for (const id of Object.keys(CANDIDATE_FAMILIES || {}).sort()) {
+    const fam = CANDIDATE_FAMILIES[id];
+    rows.push({
+      familyId: fam.familyId,
+      displayName: fam.displayName,
+      status: 'DISABLED',
+      enabled: false,
+      wired: false,
+      b0: false,
+      productionEligible: false,
+      providerIds: [...(fam.providerIds || [])],
+      capabilities: [...(fam.capabilities || [])],
+      previewFlag: fam.previewFlag || null,
+      independenceClass: fam.independenceClass,
+      hostFamily: fam.hostFamily,
+      note: fam.skipReason || 'candidate_unwired_disabled',
+    });
+  }
+  rows.sort(
+    (a, b) =>
+      String(a.status).localeCompare(String(b.status)) ||
+      String(a.familyId).localeCompare(String(b.familyId)),
+  );
+  return rows;
+}
+
 export {
   B0_FAMILIES,
   FAMILY_TO_PROVIDER,
@@ -275,6 +357,7 @@ export default {
   providersForFamilies,
   familySkipReason,
   isUnwiredIntent,
+  listCapabilityRegistry,
   B0_FAMILIES,
   FAMILY_TO_PROVIDER,
   PROVIDER_TO_FAMILY,

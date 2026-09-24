@@ -23,6 +23,11 @@ import {
   adapterBudgetSignal,
 } from './adapterContract.js';
 import { structuredLog } from './obs.js';
+import {
+  isWdP856UrlBridgeEnabled,
+  harvestOfficialWebsiteUrlCandidates,
+  mergeOfficialWebsiteUrlTargets,
+} from './urlTargetBridge.js';
 
 /**
  * @param {object[]} providers
@@ -253,6 +258,24 @@ export async function executeFamilyCall({
       },
       { signal: callBudget.signal },
     );
+    // L1: WD P856 officialWebsiteUrls → plan.urlTargets (SSRF-classified; not soft-refs)
+    if (
+      plan &&
+      providerId === 'wikidata' &&
+      isWdP856UrlBridgeEnabled() &&
+      Array.isArray(batch?.findings)
+    ) {
+      const candidates = harvestOfficialWebsiteUrlCandidates(batch.findings);
+      if (candidates.length) {
+        mergeOfficialWebsiteUrlTargets(plan, candidates);
+        if (session && typeof session === 'object') {
+          session._p856UrlCandidates = [
+            ...(Array.isArray(session._p856UrlCandidates) ? session._p856UrlCandidates : []),
+            ...candidates,
+          ];
+        }
+      }
+    }
     const result = normalizeFamilyBatch({
       batch,
       familyId,

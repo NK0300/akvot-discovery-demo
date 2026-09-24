@@ -1298,3 +1298,109 @@
 **Concurrent bands:** Arch board 250–256 · Server 127–134 · בודק P0 fixtures · Acc 200–206  
 **Checkpoints:** L3 SPEC done · gap-map owned by Chief · F11 HOLD · flags default OFF  
 **NO PROMOTE** · NO HTTP · locks in force
+
+---
+
+## בודק · MD-WAVE · QA measure-prep A–E (docs only)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 270 | 07:52 | בודק: RO read `MD-WAVE/00-GAP-MAP.md` · exports summary **absent** · align Arch L3 A–E |
+| 271 | 07:52 | בודק: write `QA-MEASURE-MATRIX-A-E-בודק-2026-09-24.md` + `.json` twin under MD-WAVE |
+| 272 | 07:52 | בודק: STATUS=**HOLD** · scenarios A–E prepared · **0** live Preview · flags untouched · ACTION-LOG append |
+
+### Action 270 — RO gap-map
+- **When:** 2026-09-24T07:52:16+0300 IDT
+- **Who:** QA / בודק
+- **What:** Confirmed gap-map L1 hole (P856 unused) · QueryPlan/web_origin/claim-pack default OFF · F11 CONCEPTUAL · name→domain MISSING. `exports/MD-WAVE-GAP-MAP-SUMMARY.md` not present.
+- **Files:** (RO) `MD-WAVE/00-GAP-MAP.md`
+
+### Action 271 — Measure-prep pack
+- **When:** 2026-09-24T07:52:16+0300 IDT
+- **Who:** QA / בודק
+- **What:** Docs-only A–E matrix + adversarial pretty-wrong (Q1701775 leak=0 · title≠identity · URL≠identity · false merge) · Chief checkpoint fields · gate HOLD until L1+QueryPlan Preview URL named by שרת.
+- **Files:** `MD-WAVE/QA-MEASURE-MATRIX-A-E-בודק-2026-09-24.md` · `.json`
+
+### Action 272 — Log
+- **When:** 2026-09-24T07:52:16+0300 IDT
+- **Who:** QA / בודק
+- **What:** Appended **270–272**. Honest prep only · **no pad** · **no live measure** · **no flag enable** · **NO promote** · runtime edits **0**.
+- **Files:** ACTION-LOG.md
+
+---
+
+**בודק MD-WAVE action ids:** **270–272** (3 meaningful · honest · not padded)  
+**Concurrent bands:** Arch L3 260–266 · Server prior · this בודק 270–272  
+**Checkpoints:** measure matrix **HOLD** · L1+Preview URL pending שרת · flags default OFF  
+**NO PROMOTE** · NO live HTTP · locks in force
+
+
+---
+
+## Server Wave 5 · L1 WD P856 → urlTargets → web_origin (שרת)
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 135 | 07:53 | Backend: `urlTargetBridge.js` — harvest/classify/merge P856 → plan.urlTargets · SSRF · C1 |
+| 136 | 07:53 | Backend: `familyOrchestrator` mid-orch merge after WD search when bridge flags ON |
+| 137 | 07:53 | Backend: `orchestrator.bridgeWdP856ToWebOrigin` + B0 one-hop officialWebsiteUrls · re-scrub plan |
+| 138 | 07:53 | Backend: barrel exports · fix `gaps.js` orphan `}` (concurrent syntax break) |
+| 139 | 07:53 | Tests: `urlTargetBridge.test.mjs` **31/0** · `urlTargetBridge.orch.test.mjs` **14/0** · package.json wire |
+| 140 | 07:53 | Regression: p0 60 · phase1 · security 194 · webOrigin 96 · adapter 63 — green |
+| 141 | 07:53 | Docs: `MD-WAVE/L1-WD-P856-URLTARGETS-שרת.md` · flags OFF · NO promote |
+| 142 | 07:53 | Docs: ACTION-LOG **135–142** · git push meaningful delta · push≠promote |
+
+### Action 135 — Bridge module
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** New `urlTargetBridge.js` — `isWdP856UrlBridgeEnabled` (claim-pack ∧ web_origin), harvest from `officialWebsiteUrls`/facets, classify via `assertSafePublicHttpsUrl`, merge into plan.urlTargets, P856 provenance helpers, poison fail-closed via `selectFetchablePlanUrlTargets`.
+- **Files:** `api/lib/discovery/urlTargetBridge.js`
+
+### Action 136 — Mid-orch merge
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** After `wikidata` `provider.search` in `executeFamilyCall`, harvest + `mergeOfficialWebsiteUrlTargets(plan)` so later `web_origin` family sees P856 urlTargets. Session `_p856UrlCandidates` stash for post-bridge.
+- **Files:** `api/lib/discovery/familyOrchestrator.js`
+
+### Action 137 — Orch bridge + B0 one-hop
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** `bridgeWdP856ToWebOrigin` post-batches: merge plan, gate fetch, `resolveWebOriginCandidates` with `sourceFinding=wikidata_p856:Q…`, stamp facets, strip accidental viaf/qid/ol from URL path. B0 one-hop includes `officialWebsiteUrls` when bridge ON. Re-scrub `session.queryPlan` after live plan mutate.
+- **Files:** `api/lib/discovery/orchestrator.js`
+
+### Action 138 — Barrel + gaps fix
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** Exported bridge helpers from `index.js`. Removed orphan `}` in `gaps.js` that broke ESM parse (blocking orch import).
+- **Files:** `api/lib/discovery/index.js` · `api/lib/discovery/gaps.js`
+
+### Action 139 — Unit + orch tests
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** Requirements 1–4 covered: flags OFF B0 unchanged; safe P856→allowed urlTargets; unsafe/poison dropped; C1 UNKNOWN; no URL soft-ref; orch stub session plan asserts. Wired into `package.json` test script.
+- **Files:** `urlTargetBridge.test.mjs` · `urlTargetBridge.orch.test.mjs` · `package.json`
+
+### Action 140 — Regression
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** p0 adapter **60/0** · phase1 foundation green · security **194/0** · webOrigin **96/0** · adapterContract **63/0**.
+- **Files:** (tests run only)
+
+### Action 141 — Evidence
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** Wrote MD-WAVE L1 evidence — verdict PASS unit · remaining gaps listed · NO promote · Preview SSRF still OPEN.
+- **Files:** `MD-WAVE/L1-WD-P856-URLTARGETS-שרת.md`
+
+### Action 142 — ACTION-LOG + push
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** Backend / שרת
+- **What:** Appended **135–142** (band after Server 127–134; avoid Arch 260+ / בודק 270+). Commit+push to `NK0300/akvot-discovery-demo` when green. **push≠promote**.
+- **Files:** `ACTION-LOG.md`
+
+---
+
+**Server Wave 5 (L1) action ids:** **135–142** (8 meaningful · honest · not padded to 500)  
+**Concurrent bands:** Server 127–134 · Arch L3 260–266 · בודק 270–272 · **this 135–142**  
+**Checkpoints:** L1 P856→urlTargets **PASS (unit)** · flags default **OFF** · Live Preview SSRF **OPEN** · F11 **HOLD**  
+**NO PROMOTE** · locks in force

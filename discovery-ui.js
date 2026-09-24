@@ -18,6 +18,8 @@
  * · print-safe Discovery · UX smoke strings · wave G–J closeout.
  * Checkpoint K polish: clipboard insecure-context fallback · facet-announce debounce ·
  * denser UX smoke · a11y checklist evidence · graph focus contrast.
+ * Lane L4: QUICK READ gaps + officialWebsite facets · why-found under URL candidates
+ * · soft P856 display without flag ON · INFORMATION ≠ IDENTITY.
  * Checkpoint L polish: P0 adapter surface-ready (WD/OL/WP) · soft family/provider labels
  * · graceful unknown-family fallback · flags stay OFF · no new HTTP.
  * Wires to POST/GET /api/discovery/sessions · prefers SSE …/events · POST …/narrow
@@ -831,6 +833,130 @@
     return 'START';
   }
 
+
+  /* —— Lane L4 · gaps + officialWebsite QUICK READ · why-found (flags stay OFF) —— */
+  const GAP_KIND_HE = {
+    no_official_website: 'אין אתר רשמי מאומת',
+    missing_independent_source: 'חסר מקור עצמאי',
+    thin: 'כיסוי דל (thin)',
+    no_findings: 'לא נאספו ממצאים',
+    soft_er: 'softEntityResolve = candidate — לא עובדה',
+    identity_ceiling: 'תקרת זהות — facets ≠ אמת זהות',
+    provider_error: 'מקור נכשל',
+    provider_skipped: 'מקור דולג',
+    provider_partial: 'מקור חלקי',
+    provider_pending: 'מקור לא הסתיים',
+    unknown_rel: 'קשרים מסומנים UNKNOWN',
+    budget: 'תקציב גילוי מוצה',
+    contradiction: 'סתירה מדווחת',
+  };
+
+  function humanizeGap(g) {
+    if (!g) return '';
+    if (g.labelHe) return String(g.labelHe);
+    if (g.label) return String(g.label);
+    const k = String(g.kind || g.type || g.code || '').trim();
+    if (!k) return 'פער לא מסווג · לא זהות';
+    return GAP_KIND_HE[k] || GAP_KIND_HE[k.toLowerCase()] || k;
+  }
+
+  function parseFacetHintKv(h) {
+    const s = String(h || '');
+    const i = s.indexOf(':');
+    if (i <= 0) return null;
+    return { key: s.slice(0, i).trim(), value: s.slice(i + 1).trim() };
+  }
+
+  function isOfficialWebsiteKey(k) {
+    return /^(officialWebsite|official_website|officialWebsiteUrl|officialWebsiteUrls|P856|p856)$/i.test(
+      String(k || ''),
+    );
+  }
+
+  /** Soft-collect officialWebsite / P856 URL candidates from facets + finding hints/fields. */
+  function collectOfficialWebsiteCandidates(state) {
+    const out = [];
+    const seen = new Set();
+    const push = (url, meta) => {
+      const u = String(url || '').trim();
+      if (!u || seen.has(u)) return;
+      if (!/^https?:\/\//i.test(u) && !/^[a-z0-9.-]+\.[a-z]{2,}/i.test(u)) return;
+      seen.add(u);
+      out.push({
+        url: u,
+        provenance: meta.source || 'payload',
+        findingId: meta.findingId || null,
+        key: meta.key || 'officialWebsite',
+      });
+    };
+    (state.facets || []).forEach((f) => {
+      if (!isOfficialWebsiteKey(f.key)) return;
+      (f.buckets || f.values || []).forEach((b) => {
+        const v = typeof b === 'string' ? b : b && (b.value || b.label);
+        push(v, { source: 'facet', key: f.key });
+      });
+    });
+    (state.findings || []).forEach((f) => {
+      (f.facetHints || []).forEach((h) => {
+        const kv = parseFacetHintKv(h);
+        if (kv && isOfficialWebsiteKey(kv.key)) {
+          push(kv.value, { source: 'facetHint', findingId: f.id, key: kv.key });
+        }
+      });
+      ['officialWebsite', 'officialWebsiteUrl', 'official_website'].forEach((k) => {
+        if (f[k]) push(f[k], { source: 'field', findingId: f.id, key: k });
+      });
+      const arr = f.officialWebsiteUrls || f.official_website_urls;
+      if (Array.isArray(arr)) {
+        arr.forEach((u) => push(u, { source: 'field', findingId: f.id, key: 'officialWebsiteUrls' }));
+      }
+    });
+    return out;
+  }
+
+  /**
+   * why-found for URL / officialWebsite candidates.
+   * Prefer server whyFound / why_found; soft WD P856 fallback only when payload cites that shape.
+   */
+  function whyFoundText(f) {
+    if (!f || typeof f !== 'object') return '';
+    const raw =
+      f.whyFound ||
+      f.why_found ||
+      f.whyFoundReason ||
+      f.discoveryReason ||
+      (f.provenance && (f.provenance.whyFound || f.provenance.reason)) ||
+      '';
+    if (String(raw).trim()) return String(raw).trim();
+    const hints = f.facetHints || [];
+    const owHint = hints.map(parseFacetHintKv).find((kv) => kv && isOfficialWebsiteKey(kv.key));
+    const fromWd =
+      (f.providers || []).some((p) => /wikidata/i.test(String(p))) ||
+      hints.some((h) => /provider:wikidata|family:wikidata|wikidata/i.test(String(h))) ||
+      /wikidata/i.test(String(f.sourceFamily || f.familyId || f.family || ''));
+    if (owHint && fromWd) {
+      return 'מועמד מאתר רשמי בויקידאטה (P856) · מועמד בלבד · לא זהות · URL לבד = UNKNOWN';
+    }
+    if (owHint) {
+      return 'מועמד מפן officialWebsite ב־payload · לא מאומת · לא זהות';
+    }
+    return '';
+  }
+
+  /** Soft-merge officialWebsite facet group when only finding hints carry URLs. */
+  function facetsWithOfficialWebsite(state) {
+    const base = Array.isArray(state.facets) ? state.facets.slice() : [];
+    if (base.some((f) => isOfficialWebsiteKey(f.key))) return base;
+    const cands = collectOfficialWebsiteCandidates(state);
+    if (!cands.length) return base;
+    base.push({
+      key: 'officialWebsite',
+      label: FACET_LABEL_HE.officialWebsite || 'אתר רשמי (מועמד)',
+      buckets: cands.slice(0, 12).map((c) => ({ value: c.url, count: 1 })),
+    });
+    return base;
+  }
+
   function computeGaps(state) {
     const gaps = [];
     const providers = state.providers || {};
@@ -877,8 +1003,37 @@
       gaps.push({ kind: 'contradiction', label: c.summary || c.note || `סתירה #${i + 1}` });
     });
     (state.gaps || []).forEach((g) => {
-      if (g && g.label) gaps.push(g);
+      if (!g) return;
+      const label = humanizeGap(g);
+      if (label) gaps.push({ kind: g.kind || g.type || 'gap', label, action: g.action || g.hint || '' });
     });
+    // L4 · honest surface gaps from payload absence (not invented world-facts)
+    const terminal =
+      state.status === 'complete' || state.status === 'partial' || state.status === 'failed_soft';
+    if (terminal) {
+      const ow = collectOfficialWebsiteCandidates(state);
+      if (!ow.length && !gaps.some((g) => g.kind === 'no_official_website')) {
+        gaps.push({
+          kind: 'no_official_website',
+          label: GAP_KIND_HE.no_official_website,
+          action: 'אין P856/officialWebsite ב־payload הנוכחי · לא אומר שאין אתר בעולם',
+        });
+      }
+      const providers = new Set();
+      (state.findings || []).forEach((f) => (f.providers || []).forEach((p) => providers.add(String(p))));
+      Object.keys(state.providers || {}).forEach((p) => providers.add(p));
+      if (
+        providers.size <= 1 &&
+        (state.findings || []).length > 0 &&
+        !gaps.some((g) => g.kind === 'missing_independent_source')
+      ) {
+        gaps.push({
+          kind: 'missing_independent_source',
+          label: GAP_KIND_HE.missing_independent_source,
+          action: 'כיסוי ספק/משפחה יחיד במשטח · דרוש מקור עצמאי לאימות',
+        });
+      }
+    }
     // dedupe by label
     const seen = new Set();
     return gaps.filter((g) => {
@@ -1321,7 +1476,7 @@
       </div>`;
   }
   function renderFacets() {
-    const facets = (discState.facets || []).filter((f) => (f.buckets || []).length);
+    const facets = facetsWithOfficialWebsite(discState).filter((f) => (f.buckets || []).length);
     const activeN = Object.keys(selectedFacets).length;
     if (!facets.length) {
       return `<aside class="disc-facets" id="disc-facets">
@@ -1343,7 +1498,9 @@
         const chips = (f.buckets || [])
           .map((b) => {
             const on = selectedFacets[f.key] && selectedFacets[f.key].has(b.value);
-            return `<button type="button" class="disc-facet-chip${on ? ' on' : ''}" data-fkey="${esc(f.key)}" data-fval="${esc(b.value)}" aria-pressed="${on ? 'true' : 'false'}">${esc(b.value)} <span class="n">${esc(b.count)}</span></button>`;
+            const ow = isOfficialWebsiteKey(f.key);
+            const short = ow && String(b.value).length > 42 ? `${String(b.value).slice(0, 40)}…` : b.value;
+            return `<button type="button" class="disc-facet-chip${on ? ' on' : ''}${ow ? ' disc-facet-ow' : ''}" data-fkey="${esc(f.key)}" data-fval="${esc(b.value)}" title="${ow ? 'אתר רשמי (מועמד) · לא זהות · URL לבד = UNKNOWN' : esc(String(b.value))}" aria-pressed="${on ? 'true' : 'false'}">${esc(short)} <span class="n">${esc(b.count)}</span></button>`;
           })
           .join('');
         const bucketN = (f.buckets || []).length;
@@ -1416,6 +1573,10 @@
     const familyChip = famId
       ? `<span class="disc-family-chip" title="${esc(famEn || famId)} · משפחת מקור · לא זהות" data-family="${esc(famId)}">${esc(famHe)}</span>`
       : '';
+    const whyRaw = whyFoundText(f);
+    const whyFoundBlock = whyRaw
+      ? `<details class="disc-why-found"><summary>למה נמצא? · why-found · לא זהות</summary><p>${esc(whyRaw)}</p></details>`
+      : '';
 return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.id)}" id="finding-${esc(f.id)}" role="option" tabindex="${tab}" aria-selected="false">
       <div class="disc-finding-head">
         ${rank}
@@ -1427,6 +1588,7 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
       </div>
       <h3 class="disc-finding-title" id="finding-title-${esc(f.id)}">${esc(f.title)}</h3>
       ${f.summary ? `<p class="disc-finding-sum">${esc(f.summary)}</p>` : ''}
+      ${whyFoundBlock}
       <div class="disc-finding-actions">
         <button type="button" class="disc-prov-toggle" aria-expanded="${open ? 'false' : 'true'}">למה הממצא? · ראיות</button>
         ${firstUrl !== '#' ? `<a class="go" href="${firstUrl}" target="_blank" rel="noopener noreferrer">פתח מקור</a>` : ''}
@@ -1452,6 +1614,32 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
     const life = discState.lifeStage || deriveLifeStage(discState);
     const lead = list && list[0];
     const leadEvidence = lead && Array.isArray(lead.evidenceIds) ? lead.evidenceIds.length : 0;
+    const owCands = collectOfficialWebsiteCandidates(discState);
+    const gapsQuick = (gaps || []).slice(0, 5);
+    const gapsQuickHtml = gapsQuick.length
+      ? `<ul class="disc-quick-gaps">${gapsQuick
+          .map(
+            (g) =>
+              `<li><span class="disc-quick-gap-kind">${esc(g.kind || 'gap')}</span><span class="disc-quick-gap-label">${esc(g.label)}</span>${
+                g.action ? `<small>${esc(g.action)}</small>` : ''
+              }</li>`,
+          )
+          .join('')}</ul>`
+      : `<p class="disc-quick-gaps-empty">אין פערים מדווחים כרגע · היעדר פער ברשימה ≠ שלמות</p>`;
+    const owQuickHtml = owCands.length
+      ? `<ul class="disc-quick-ow">${owCands
+          .slice(0, 5)
+          .map((c) => {
+            const href = safeHref(c.url);
+            const host = hostnameOf(c.url) || c.url;
+            const link =
+              href !== '#'
+                ? `<a href="${href}" target="_blank" rel="noopener noreferrer">${esc(host)}</a>`
+                : esc(host);
+            return `<li><span class="disc-badge unk url-alone">UNKNOWN</span> ${link} <small>מועמד · ${esc(c.provenance)} · לא זהות</small></li>`;
+          })
+          .join('')}</ul>`
+      : `<p class="disc-quick-ow-empty">אין מועמד officialWebsite/P856 ב־payload · ${esc(GAP_KIND_HE.no_official_website)}</p>`;
     const readout = (list || []).slice(0, 3).map((f, i) => `
       <li><span class="disc-readout-index">0${i + 1}</span><span><strong>${esc(f.title)}</strong><small>${lead && f.id === lead.id ? 'האות הבולט ביותר לפי דירוג גילוי' : 'ממצא שדורש אימות במקור'}</small></span></li>`).join('');
     return `<section class="disc-sec disc-sec-exec" id="disc-sec-exec" aria-labelledby="disc-h-exec">
@@ -1470,6 +1658,13 @@ return `<article class="disc-finding${opts.hi ? ' hi' : ''}" data-fid="${esc(f.i
           <div class="disc-exec-readout-head"><span>QUICK READ</span><span>${lead ? `ראיה ראשית · ${leadEvidence}` : 'ממתין לראיות'}</span></div>
           ${lead ? `<p class="disc-exec-lead"><strong>${esc(lead.title)}</strong>${lead.summary ? ` <span>${esc(lead.summary)}</span>` : ''}</p>` : renderPremiumEmpty({ kind: 'summary', title: 'אין איתות ראשי עדיין', body: 'הממצאים יופיעו כאן כשהמערכת תקבל נתונים ציבוריים מצוטטים.', hint: 'אין איתות ≠ no-match' })}
           ${readout ? `<ol class="disc-readout-list">${readout}</ol>` : ''}
+        </div>
+        <div class="disc-quick-scan" aria-label="QUICK READ · פערים ואתר רשמי · לא זהות">
+          <div class="disc-quick-scan-head"><span>QUICK READ · GAPS</span><span>${gapsQuick.length} פערים</span></div>
+          ${gapsQuickHtml}
+          <div class="disc-quick-scan-head" style="margin-top:10px"><span>QUICK READ · OFFICIAL WEBSITE</span><span>${owCands.length} מועמדים</span></div>
+          ${owQuickHtml}
+          <p class="disc-quick-scan-note">אתר רשמי כאן = מועמד עם provenance · <strong>לא</strong> אימות זהות · C1: URL לבד → UNKNOWN</p>
         </div>
         <p class="disc-exec-blurb">אוסף מידע ציבורי סביב ה-seed. דירוג = רלוונטיות גילוי בלבד. <strong>אין טענת זהות</strong>. UNKNOWN נשאר UNKNOWN; קשרים הם מועמדים עד שנבדקו בראיות.</p>
       </div>

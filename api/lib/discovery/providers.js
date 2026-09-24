@@ -479,6 +479,15 @@ export const wikidataProvider = {
                   for (const h of claimFacets) merged.add(h);
                   f.facetHints = [...merged].slice(0, 24);
                 }
+                // L1 bridge: keep officialWebsiteUrls on the finding (not just facetHints).
+                // Callers (orchestrator web_origin bridge) use the array — facet string ≠ fetch.
+                // Already SSRF-gated inside claimPackFromWikidataEntity; C1: URL≠identity.
+                const official = Array.isArray(pack.officialWebsiteUrls)
+                  ? pack.officialWebsiteUrls.slice(0, 3)
+                  : [];
+                if (official.length) {
+                  f.officialWebsiteUrls = official;
+                }
                 const bits = (pack.summaryBits || []).filter(Boolean);
                 if (bits.length) {
                   const append = normalizeAdapterText(bits.join(' · '), 160);

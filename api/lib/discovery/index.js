@@ -234,3 +234,17 @@ export {
   runDualRunStub,
   dualRunMeasureSheetStub,
 } from './dualRunHarness.js';
+
+export {
+  URL_TARGET_BRIDGE_VERSION,
+  MAX_P856_URL_TARGETS,
+  P856_SOURCE,
+  isWdP856UrlBridgeEnabled,
+  harvestOfficialWebsiteUrlCandidates,
+  harvestOfficialWebsiteUrlsFromBatches,
+  mergeOfficialWebsiteUrlTargets,
+  classifyUrlsAsPlanTargets,
+  p856ProvenanceForUrl,
+  fetchableUrlTargetsFromPlan,
+} from './urlTargetBridge.js';
+

@@ -50,6 +50,13 @@ export function isWpPagepropsEnabled(opts = {}) {
   return envOn('DISCOVERY_WP_PAGEPROPS');
 }
 
+/** Emit URL/domain CANDIDATE surface (provenance + why-found). Default OFF. */
+export function isUrlDomainCandidatesEnabled(opts = {}) {
+  if (opts.enableUrlDomainCandidates === true) return true;
+  if (opts.enableUrlDomainCandidates === false) return false;
+  return envOn('DISCOVERY_ENABLE_URL_DOMAIN_CANDIDATES');
+}
+
 export function discoveryFlagSnapshot(opts = {}) {
   return {
     DISCOVERY_ENABLE_QUERYPLAN: isQueryPlanEnabled(opts),
@@ -59,6 +66,7 @@ export function discoveryFlagSnapshot(opts = {}) {
     DISCOVERY_WD_CLAIM_PACK: isWdClaimPackEnabled(opts),
     DISCOVERY_OL_WORKS_SEARCH: isOlWorksSearchEnabled(opts),
     DISCOVERY_WP_PAGEPROPS: isWpPagepropsEnabled(opts),
+    DISCOVERY_ENABLE_URL_DOMAIN_CANDIDATES: isUrlDomainCandidatesEnabled(opts),
   };
 }
 
@@ -68,5 +76,6 @@ export default {
   isWdClaimPackEnabled,
   isOlWorksSearchEnabled,
   isWpPagepropsEnabled,
+  isUrlDomainCandidatesEnabled,
   discoveryFlagSnapshot,
 };

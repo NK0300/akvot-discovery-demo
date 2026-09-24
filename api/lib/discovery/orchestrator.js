@@ -10,6 +10,15 @@ import {
   looksLikeUrlOrHostname,
 } from './webOrigin.js';
 import {
+  isWdOfficialWebsiteBridgeEnabled,
+  shouldEmitUrlDomainCandidates,
+  buildUrlDomainCandidates,
+  collectOfficialWebsiteBridgeTargets,
+  mergeUrlDomainCandidatesIntoGraph,
+  scrubUrlDomainCandidatesForEmit,
+} from './urlDomainCandidates.js';
+import { isWdClaimPackEnabled } from './flags.js';
+import {
   assertSafePublicHttpsUrl,
   selectFetchablePlanUrlTargets,
 } from './security.js';
@@ -59,6 +68,15 @@ import { enrichSessionEvidence } from './evidence.js';
 import { buildDiscoveryGaps, scrubGapsForEmit } from './gaps.js';
 import { sanitizeRelationshipGraph } from './relationship.js';
 import { scrubQueryPlanForEmit } from './queryPlan.js';
+import {
+  isWdP856UrlBridgeEnabled,
+  harvestOfficialWebsiteUrlsFromBatches,
+  mergeOfficialWebsiteUrlTargets,
+  p856ProvenanceForUrl,
+  fetchableUrlTargetsFromPlan,
+  MAX_P856_URL_TARGETS,
+} from './urlTargetBridge.js';
+import { buildPlanCoverage, scrubPlanCoverageForEmit } from './planCoverage.js';
 
 
 /** Public store telemetry — never expose fsDir / secrets. */
@@ -327,6 +345,8 @@ export function emitSnapshot(session) {
     familyJournal: session.familyJournal,
     budgetExhaustedReason: session.budgetExhaustedReason,
     gaps: session.gaps,
+    urlDomainCandidates: session.urlDomainCandidates,
+    p856Bridge: session.p856Bridge,
     evidenceEngineVersion: session.evidenceEngineVersion,
     evidenceGroups: session.evidenceGroups,
     evidenceDedup: session.evidenceDedup,
@@ -411,6 +431,151 @@ export async function loadSessionRaw(sessionId, opts = {}) {
  * @param {string} sessionId
  * @param {{ store?: Map, _resolved?: object, providers?: object[], budgets?: object, injectFindings?: object[] }} opts
  */
+
+/**
+ * L1 · After WD claim-pack findings: merge P856 URLs into plan.urlTargets and
+ * gated web_origin fetch (C1 UNKNOWN · never soft-ref from URL · SSRF fail-closed).
+ * No-op when flags OFF or budget exhausted.
+ */
+async function bridgeWdP856ToWebOrigin(session, batches, ctx = {}) {
+  if (!isWdP856UrlBridgeEnabled()) return batches;
+  if (session?.budgetExhaustedReason) return batches;
+  if (Date.now() >= (ctx.wallDeadline || 0)) return batches;
+
+  const fromBatches = harvestOfficialWebsiteUrlsFromBatches(batches);
+  const fromSession = Array.isArray(session._p856UrlCandidates)
+    ? session._p856UrlCandidates
+    : [];
+  const byUrl = new Map();
+  for (const c of [...fromSession, ...fromBatches]) {
+    if (c?.url && !byUrl.has(c.url)) byUrl.set(c.url, c);
+  }
+  const candidates = [...byUrl.values()].slice(0, MAX_P856_URL_TARGETS);
+  if (!candidates.length) return batches;
+
+  const livePlan = ctx.livePlan || null;
+  const planForMerge =
+    livePlan ||
+    (session.queryPlan && typeof session.queryPlan === 'object'
+      ? session.queryPlan
+      : { urlTargets: [] });
+  const merged = mergeOfficialWebsiteUrlTargets(planForMerge, candidates);
+  if (livePlan) {
+    session.queryPlan = scrubQueryPlanForEmit(livePlan);
+  } else if (session.queryPlan && typeof session.queryPlan === 'object') {
+    session.queryPlan.urlTargets = merged.urlTargets;
+  }
+
+  const { urls: fetchable, poison } = fetchableUrlTargetsFromPlan(planForMerge);
+  if (poison) {
+    session.providers = session.providers || {};
+    session.providers.web_origin = session.providers.web_origin || 'blocked_url';
+    session.p856Bridge = {
+      added: merged.added,
+      dropped: (merged.dropped || []).length,
+      poison: true,
+      fetched: 0,
+    };
+    return batches;
+  }
+  if (!fetchable.length) {
+    session.p856Bridge = {
+      added: merged.added,
+      dropped: (merged.dropped || []).length,
+      poison: false,
+      fetched: 0,
+    };
+    return batches;
+  }
+
+  const have = new Set();
+  for (const b of batches) {
+    if (b?.providerId !== 'web_origin') continue;
+    for (const f of b.findings || []) {
+      const u = String(f.provenanceUrl || f.normalizedUrl || '').trim();
+      if (u) have.add(u);
+      try {
+        if (u) have.add(new URL(u).origin + '/');
+      } catch { /* ignore */ }
+    }
+  }
+  const need = fetchable.filter((u) => {
+    if (have.has(u)) return false;
+    try {
+      if (have.has(new URL(u).origin + '/')) return false;
+    } catch { /* ignore */ }
+    return true;
+  });
+  if (!need.length) {
+    session.p856Bridge = {
+      added: merged.added,
+      dropped: (merged.dropped || []).length,
+      poison: false,
+      fetched: 0,
+      alreadyPresent: true,
+    };
+    return batches;
+  }
+
+  const hasProvider = (ctx.providerList || []).some((p) => p.id === 'web_origin');
+  if (!hasProvider && process.env.DISCOVERY_ENABLE_WEB_ORIGIN !== '1') {
+    return batches;
+  }
+
+  const first = candidates.find((c) => need.includes(c.url)) || candidates[0];
+  const prov = p856ProvenanceForUrl(candidates, need[0]);
+  try {
+    const resolved = await resolveWebOriginCandidates(need.slice(0, MAX_P856_URL_TARGETS), {
+      seed: session.seed,
+      sessionId: ctx.sessionId,
+      correlationId: ctx.correlationId,
+      budgetMs: Math.min(3500, Math.max(50, (ctx.wallDeadline || Date.now()) - Date.now())),
+      signal: ctx.sessionSignal,
+      sourceFinding: prov.sourceFinding,
+    });
+    for (const f of resolved.findings || []) {
+      const facets = new Set(f.facetHints || []);
+      for (const h of prov.facetHints) facets.add(h);
+      f.facetHints = [...facets].slice(0, 24);
+      f.sourceFinding = f.sourceFinding || prov.sourceFinding;
+      f.extractionMethod = prov.extractionMethod;
+      f.hostFamily = f.hostFamily || 'web_origin';
+      if (Array.isArray(f.entityRefs)) {
+        f.entityRefs = f.entityRefs.filter((r) => !/^(viaf|qid|ol):/i.test(String(r)));
+      }
+    }
+    if (resolved.findings?.length) {
+      batches.push({
+        providerId: 'web_origin',
+        findings: resolved.findings,
+        partial: false,
+        _webOriginTelemetry: resolved.telemetries,
+        _p856Bridge: true,
+      });
+      session.providers = session.providers || {};
+      session.providers.web_origin = session.providers.web_origin || 'ok';
+    } else if (resolved.errors?.length) {
+      session.providers = session.providers || {};
+      session.providers.web_origin = session.providers.web_origin || 'partial';
+    }
+    if (resolved.telemetries?.length) {
+      session.webOriginTelemetry = (session.webOriginTelemetry || []).concat(resolved.telemetries);
+    }
+    session.p856Bridge = {
+      added: merged.added,
+      dropped: (merged.dropped || []).length,
+      poison: false,
+      fetched: (resolved.findings || []).length,
+      sourceFinding: prov.sourceFinding,
+      citedQid: first?.qid,
+    };
+  } catch {
+    session.providers = session.providers || {};
+    session.providers.web_origin = session.providers.web_origin || 'error';
+  }
+  return batches;
+}
+
 export async function runPipeline(sessionId, opts = {}) {
   const store = opts._resolved || resolveStore(opts);
   const session = await store.get(sessionId);
@@ -493,14 +658,47 @@ export async function runPipeline(sessionId, opts = {}) {
         });
         session.stage = 'DISCOVER';
         // Canonical family orch (planned-only fanout · budget hard-stop · empty≠fanout)
+                session.familyProgress = [];
         const orchOut = await runFamilyOrchestration(planned.plan, session, {
           providers: providerList,
           ledger,
           wallDeadline,
           signal: sessionSignal,
           flags: opts.flags || {},
+          onFamilyResult: (result) => {
+            // Progressive family/provider status for SSE hooks (Acc-safe codes only)
+            const row = {
+              familyId: result.familyId,
+              providerId: result.providerId,
+              intentId: result.intentId,
+              status: result.status,
+              outcomeClass: result.outcomeClass,
+              at: Date.now(),
+            };
+            session.familyProgress.push(row);
+            if (result.providerId) {
+              session.providers = session.providers || {};
+              session.providers[result.providerId] = result.status;
+            }
+            if (typeof opts.onFamilyResult === 'function') {
+              try { opts.onFamilyResult(row); } catch { /* caller hook must not break orch */ }
+            }
+          },
         });
+        // L1: re-scrub plan after mid-orch P856→urlTargets merges
+        session.queryPlan = scrubQueryPlanForEmit(planned.plan);
+        session._liveQueryPlan = planned.plan;
         session.familyJournal = orchOut.journal;
+        session.planCoverage = buildPlanCoverage(planned.plan, orchOut.journal, {
+          budgetExhaustedReason: orchOut.budgetExhaustedReason,
+          stoppedReason: orchOut.budgetExhausted
+            ? 'budget_exhausted'
+            : sessionSignal?.aborted
+              ? 'cancelled'
+              : null,
+        });
+        // Emit-safe copy (no seed text)
+        session.planCoverageEmit = scrubPlanCoverageForEmit(session.planCoverage);
         structuredLog('info', 'family_orch.complete', {
           correlationId: opts.correlationId || session.correlationId,
           planId: planned.plan.planId,
@@ -660,12 +858,19 @@ export async function runPipeline(sessionId, opts = {}) {
           if (batch.providerId === 'web_origin') continue;
           for (const raw of batch.findings || []) {
             const u = String(raw.provenanceUrl || '').trim();
-            if (!/^https:\/\//i.test(u)) continue;
-            try {
-              const h = new URL(u).hostname;
-              if (skipHost.test(h)) continue;
-              hopUrls.push(u);
-            } catch { /* skip */ }
+            if (/^https:\/\//i.test(u)) {
+              try {
+                const h = new URL(u).hostname;
+                if (!skipHost.test(h)) hopUrls.push(u);
+              } catch { /* skip */ }
+            }
+            // L1 (B0 path): WD P856 officialWebsiteUrls — not registry hosts; eligible one-hop
+            if (isWdP856UrlBridgeEnabled() && Array.isArray(raw.officialWebsiteUrls)) {
+              for (const ow of raw.officialWebsiteUrls) {
+                const s = String(ow || '').trim();
+                if (s) hopUrls.push(s);
+              }
+            }
           }
         }
         // Also honor explicit hints
@@ -719,6 +924,21 @@ export async function runPipeline(sessionId, opts = {}) {
         session.providers.web_origin = session.providers.web_origin || 'error';
       }
     }
+
+    // L1 · WD P856 → plan urlTargets → gated web_origin (flag-gated · C1-safe)
+    batches = await bridgeWdP856ToWebOrigin(session, batches, {
+      sessionId,
+      wallDeadline,
+      sessionSignal,
+      correlationId: opts.correlationId,
+      livePlan: session._liveQueryPlan || null,
+      providerList,
+    });
+    if (session._liveQueryPlan) {
+      session.queryPlan = scrubQueryPlanForEmit(session._liveQueryPlan);
+      delete session._liveQueryPlan;
+    }
+    delete session._p856UrlCandidates;
 
     // Capture telemetry from web_origin provider batch if present
     for (const batch of batches) {
@@ -780,6 +1000,22 @@ export async function runPipeline(sessionId, opts = {}) {
     enrichSessionEvidence(session);
     // Unknown/Gaps — honest partial surface (UNKNOWN≠FALSE; never identity)
     session.gaps = scrubGapsForEmit(buildDiscoveryGaps(session));
+    // URL/domain CANDIDATES surface (flag or L1 bridge) — never identity
+    if (shouldEmitUrlDomainCandidates()) {
+      const udc = buildUrlDomainCandidates({
+        seed: session.seed,
+        findings: session.findings,
+        max: 8,
+      });
+      session.urlDomainCandidates = scrubUrlDomainCandidatesForEmit(udc);
+      if (session.graph && session.urlDomainCandidates.length) {
+        session.graph = mergeUrlDomainCandidatesIntoGraph(
+          session.graph,
+          session.urlDomainCandidates,
+          { planId: session.queryPlan?.planId || session.planId },
+        );
+      }
+    }
     // Payload trim by budget caps (vanity control; no refill fanout)
     const maxF = session.queryPlan?.budgets?.maxFindings || session.budgets?.maxFindings || 50;
     const maxE = session.queryPlan?.budgets?.maxEvidence || session.budgets?.maxEvidence || 100;

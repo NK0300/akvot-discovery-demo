@@ -149,6 +149,15 @@ export function normalizeRawHit(raw, providerId) {
   if (raw.planId) finding.planId = String(raw.planId).slice(0, 80);
   if (raw.familyId) finding.familyId = String(raw.familyId).slice(0, 64);
   if (raw.intentId) finding.intentId = String(raw.intentId).slice(0, 80);
+  // WD P856 official websites — candidate URLs only (C1: never identity). Cap 3.
+  if (Array.isArray(raw.officialWebsiteUrls) && raw.officialWebsiteUrls.length) {
+    const urls = [];
+    for (const u of raw.officialWebsiteUrls.slice(0, 3)) {
+      const s = String(u || '').trim().slice(0, 500);
+      if (s) urls.push(s);
+    }
+    if (urls.length) finding.officialWebsiteUrls = urls;
+  }
   if (providerId === 'web_origin' || raw.hostFamily === 'web_origin') {
     finding.hostFamily = 'web_origin';
     if (raw.relationship) {

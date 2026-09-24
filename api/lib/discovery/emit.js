@@ -20,6 +20,8 @@ import {
 import { sanitizeRelationshipGraph } from './relationship.js';
 import { scrubProvidersState } from './security.js';
 import { scrubGapsForEmit } from './gaps.js';
+import { scrubUrlDomainCandidatesForEmit } from './urlDomainCandidates.js';
+import { scrubPlanCoverageForEmit } from './planCoverage.js';
 import { assertSafePublicHttpsUrl } from './urlSafety.js';
 
 function valueHasForbidden(val) {
@@ -446,6 +448,10 @@ export function sanitizeDiscoveryPayload(snapshot) {
   if (Array.isArray(gaps)) {
     gaps = scrubGapsForEmit(gaps);
   }
+  let urlDomainCandidates = snapshot.urlDomainCandidates;
+  if (Array.isArray(urlDomainCandidates)) {
+    urlDomainCandidates = scrubUrlDomainCandidatesForEmit(urlDomainCandidates);
+  }
 
   let graph = snapshot.graph;
   if (graph && typeof graph === 'object') {
@@ -479,6 +485,23 @@ export function sanitizeDiscoveryPayload(snapshot) {
     forbiddenIdentitiesVersion: FORBIDDEN_IDENTITIES_VERSION,
   };
   if (Array.isArray(gaps)) out.gaps = gaps;
+  if (Array.isArray(urlDomainCandidates)) out.urlDomainCandidates = urlDomainCandidates;
+  if (snapshot.p856Bridge && typeof snapshot.p856Bridge === 'object') out.p856Bridge = snapshot.p856Bridge;
+  if (snapshot.planCoverageEmit || snapshot.planCoverage) {
+    out.planCoverage = scrubPlanCoverageForEmit(
+      snapshot.planCoverageEmit || snapshot.planCoverage,
+    );
+  }
+  if (Array.isArray(snapshot.familyJournal)) {
+    out.familyJournal = snapshot.familyJournal.map((j) => ({
+      familyId: j.familyId,
+      providerId: j.providerId,
+      intentId: j.intentId,
+      status: j.status,
+      outcomeClass: j.outcomeClass,
+      skipReason: j.skipReason ? String(j.skipReason).slice(0, 80) : undefined,
+    }));
+  }
   if (graph) out.graph = graph;
   if (out.providers != null) out.providers = scrubProvidersState(out.providers);
   if (out.softEr != null) out.softEr = scrubSoftErForEmit(out.softEr);

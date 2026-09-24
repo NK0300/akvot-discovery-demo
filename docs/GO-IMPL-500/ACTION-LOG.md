@@ -199,8 +199,16 @@
 - **What:** Documented Acc constraints for `DISCOVERY_WD_CLAIM_PACK` · `DISCOVERY_OL_WORKS_SEARCH` · `DISCOVERY_WP_PAGEPROPS` (all default OFF; Acc must not assume emit until ON; when ON: no identity collapse + scrub after merge). Wrote CHECKPOINT-ACC-DEEPSKIP-JOURNAL (+ json). Ran Acc/security/providers suites **793/0**. NO promote · NO F11 · Preview WAIT.
 - **Files:** `docs/GO-IMPL-500/CHECKPOINT-ACC-DEEPSKIP-JOURNAL-דיוק-2026-09-23.md`, `.json`, `ACTION-LOG.md`, `flags.js`, `providers.p0.adapter.test.mjs`
 
+| 49 | 07:53 | Acc(דיוק): MD-WAVE docs-only Acc EXPECTED A–E + L1 C1-safe URL risks; live measure HOLD |
+
+### Action 49 — Acc MD-WAVE EXPECTED A–E (docs-only)
+- **When:** 2026-09-24 07:53 IDT
+- **Who:** דיוק (Accuracy) · MD-WAVE / GO-IMPL-500
+- **What:** Wrote Acc EXPECTED for scenarios A–E (must_have/must_not/UNKNOWN/independence/ranking/common-name) + L1 Acc risks when P856→urlTargets/web_origin lands (URL provenance OK; no SAME-ENTITY from URL; cite-or-drop; scrub after merge; David Cohen no collapse; web_origin UNKNOWN-from-URL-alone). Live Acc measure HOLD until L1 + QueryPlan Preview. No HTTP Acc. No promote. No invent Preview URLs.
+- **Files:** `test-results/.../MD-WAVE/01-ACC-EXPECTED-A-E-דיוק-2026-09-24.md`, `.json`, `docs/GO-IMPL-500/ACTION-LOG-ACC-NOTES.md`, `ACTION-LOG.md`
+
 ---
 
-**Action count logged:** **48** (honest · not padded to 500)  
-**Checkpoints:** A **PASS** · B **PASS** · C **SOLID** · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL** · Acc-DEEPSKIP-JOURNAL **PASS (unit)** · G **FINAL report written**  
+**Action count logged:** **49** (honest · not padded to 500)  
+**Checkpoints:** A **PASS** · B **PASS** · C **SOLID** · D **PASS** · E **DEMONSTRABLE PASS (unit)** · F **PARTIAL** · Acc-DEEPSKIP-JOURNAL **PASS (unit)** · G **FINAL report written** · MD-WAVE Acc EXPECTED **DOCS READY / live HOLD**  
 **NO PROMOTE** · flags default OFF · locks in force · Preview WAIT · AWAITING CHIEF GO

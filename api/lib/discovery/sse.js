@@ -221,13 +221,54 @@ export function buildProgressiveEvents(session, opts = {}) {
     ...budgetUxFromSession(session),
   });
 
-  // 4. provider
-  if (scrubbed.providers && typeof scrubbed.providers === 'object') {
+  // 4. provider (+ family journal progressive status when QueryPlan path ran)
+  const journal = Array.isArray(session.familyJournal)
+    ? session.familyJournal
+    : Array.isArray(session.familyProgress)
+      ? session.familyProgress
+      : [];
+  if (journal.length) {
+    for (const row of journal) {
+      const providerId = row.providerId || row.providerId;
+      if (!providerId) continue;
+      push('provider', {
+        providerId,
+        state: row.status || row.state || 'unknown',
+        familyId: row.familyId || undefined,
+        intentId: row.intentId || row.intentId || undefined,
+        outcomeClass: row.outcomeClass || undefined,
+        skipReason: row.skipReason || undefined,
+      });
+    }
+  } else if (scrubbed.providers && typeof scrubbed.providers === 'object') {
     for (const [pid, state] of Object.entries(scrubbed.providers)) {
       push('provider', { providerId: pid, state });
     }
   }
 
+  // 4b. plan coverage honesty (additive on status-adjacent progress)
+  if (session.planCoverageEmit || session.planCoverage) {
+    const cov = session.planCoverageEmit || session.planCoverage;
+    push('progress', {
+      lifecyclePhase: 'DISCOVERY',
+      phase: 'COVERAGE',
+      planId: cov.planId,
+      plannedCount: cov.plannedCount,
+      attemptedCount: cov.attemptedCount,
+      coverageRatio: cov.coverageRatio,
+      emptyIsCoverage: true,
+      identityConclusions: false,
+      completion: cov.completion
+        ? {
+            complete: !!cov.completion.complete,
+            partial: !!cov.completion.partial,
+            allPlannedAttempted: !!cov.completion.allPlannedAttempted,
+            budgetRespected: !!cov.completion.budgetRespected,
+            stoppedReason: cov.completion.stoppedReason || null,
+          }
+        : undefined,
+    });
+  }
   // 5. FINDINGS + EVIDENCE phases
   push('progress', {
     lifecyclePhase: 'FINDINGS',
