@@ -1,6 +1,6 @@
 # §25 — Seed Classification Rules (slice B contract) — ארכיטקט · 2026-09-24
 
-סטטוס: v1.2 · **CONTRACT ONLY** · אין שינוי קוד בקומיט הזה · מימוש = slice B של שרת, אחרי switch + slice A.
+סטטוס: v1.3 · **CONTRACT ONLY** · אין שינוי קוד בקומיט הזה · מימוש = slice B של שרת, אחרי switch + slice A.
 נעילות: NO PROMOTE · Preview/Acc HOLD · C1 · INFORMATION≠IDENTITY.
 
 ## 0. עיקרון
@@ -32,7 +32,7 @@
 
 ## 2. סדר עדיפויות (precedence, first match wins)
 0. ~~hint (`hints.seedClass|entityType|type`)~~ — **v1.2: מבוטל כמקור סיווג.** מפתח payload שמשנה סיווג הוא חור (בודק: כופה organization גם על URL/`.pdf`). הערכים נשארים context בלבד.
-0b. **מקור override יחיד מוצהר: `seedKind`** ∈ {`person`, `organization`} (רשימה סגורה; כל ערך אחר מתעלמים ממנו). נבדק **אחרי** שלבים 2–4 (url/document/domain) ו**לפני** 5–9. לעולם לא גובר על אות מבני. בחירת סוג חיפוש בלבד: לא משנה `identityClaim`, לא C1. (החלטת Chief, v1.2.)
+0b. **מקור override יחיד מוצהר: `seedKind`** — הכללים המחייבים בסעיף §7 (v1.3). לעולם לא גובר על url/document/domain.
 1. ריק/רווחים — `empty_seed` (slice A; לא חלק מ־§25).
 2. `^https?://` → `url`. גם כשה־path מסתיים ב־`.pdf`. סוג המסמך הוא תכונה של url target (`classifyUrlTargets`), לא seedClass. **ללא שינוי.**
 3. **document** (הוקדם לפני domain):
@@ -72,7 +72,43 @@
 4. Acc (דיוק): בדיקה ש־reclass לא יוצר `identityClaim` ולא משנה relationship. seedClass לא מופיע ב־evidence edges.
 
 ## 6. v1.2 — override יחיד (החלטת Chief 22:03)
-- `detectSeedClass(seed, { seedKind })` הוא הממשק היחיד. `hints.seedClass|entityType|type` מפסיקים להשפיע על סיווג.
+- `detectSeedClass(seed, { seedKind })` הוא הממשק היחיד (מסלול מלא: §7.3). `hints.seedClass|entityType|type` מפסיקים להשפיע על סיווג.
 - נקודות מעבר (slice B, אותו commit): `universalSeed.js:47` (`obj.seedClass || hints.seedClass` → `seedKind` בלבד) · `dualRunHarness.js:268/283` (harness פנימי — עובר ל־`seedKind`) · `providers.js:569` קורא `hints.seedClass` אחרי הסיווג: לוודא שהוא מקבל את ה־`seedClass` המחושב של ה־plan ולא את ה־hint הגולמי.
 - UI: `discovery-ui.js` שולח היום `{seed, q, locale}` בלבד. חיבור `seedKind` לבקשה הוא slice UX נפרד (ממשק), אחרי שהשרת מקבל אותו.
 - golden: שורות שבהן `hints.seedClass` כפה סיווג היום צפויות להשתנות. זה diff מכוון ויש לרשום אותו מראש ברשימה של שרת.
+
+## 7. v1.3 — כללי `seedKind` מחייבים (החלטות Chief 22:12, בעקבות golden v2 של בודק)
+
+### 7.1 קבלה ונרמול
+- מתקבל **רק** `seedKind` ב־top-level של גוף הבקשה. `hints.seedKind` **לא** מתקבל (מתעלמים).
+- נרמול: `String(v).trim().toLowerCase()`. ערך תקף רק אם ∈ {`person`, `organization`}. כל ערך אחר (כולל `company`, `url`, ריק, לא־מחרוזת) מתעלמים ממנו כאילו לא נשלח. אין שגיאה ואין HOLD בגלל ערך לא תקף.
+
+### 7.2 טבלת הכרעה
+קודם מחשבים את הסיווג המבני וההסקה מהטקסט בלבד (סעיף §2 בלי `seedKind`). אחר כך:
+
+| סיווג מהטקסט | בלי `seedKind` | `seedKind=organization` | `seedKind=person` |
+|---|---|---|---|
+| url / document / domain | כמו הטקסט | כמו הטקסט | כמו הטקסט |
+| company (סיומת משפטית) | company | **company** (ספציפי מנצח) | **ambiguous** |
+| organization (סמן מוסדי) | organization | organization | **ambiguous** |
+| ambiguous עם סמן מוסדי/משפטי (למשל מילה מוסדית בודדת) | ambiguous | organization | **ambiguous** |
+| person / ambiguous בלי סמן / unknown | כמו הטקסט | organization | person |
+
+כלל אצבע: `person` מפורש לעולם לא דורס סמן משפטי או מוסדי. ההתנגשות יוצאת `ambiguous`, כי ארגון בלוח של אדם מסוכן יותר מאדם שמאבד כיסוי.
+הערות:
+- `קרן כהן` / `קרן רש"י` עם `seedKind=person` יוצאים person. `קרן`+טוקן אחד **אינו** סמן מוסדי לפי §2 (הוא ambiguous מתוך שמרנות), ולכן בחירה מפורשת מכריעה אותו.
+- אותם שמות עם `seedKind=organization` יוצאים organization.
+- `seedKind` הוא בחירת סוג חיפוש בלבד. הוא לא נכנס ל־evidence, לא משנה `identityClaim`, relationship או C1, ולא יכול להוסיף `IDENTITY_COMMIT` (שממילא נמצא ב־`FORBIDDEN_PLAN_DIRECTIVES`).
+
+### 7.3 מסלול הנתונים
+גוף הבקשה (`seedKind` ב־top-level), משם `createDiscoverySession` (נשמר על ה־session כשדה מנורמל), אחריו `planForSession`, ובסוף פרמטר מפורש ל־`buildQueryPlan`, שמעביר אותו ל־`detectSeedClass(seed, { seedKind })`.
+- ה־plan רושם ב־rationale את המקור: `detected:<class>` או `seedKind:<value>→<class>`, כדי שה־diff יהיה נקרא.
+- `providers.js:569` מקבל את `plan.seedClass` המחושב ולא קורא `hints.*`.
+
+### 7.4 שורות golden חובה (בנוסף ל־§5)
+- `Tel Aviv University` + person → ambiguous · `Acme Ltd` + person → ambiguous · `טבע תעשיות בע"מ` + person → ambiguous.
+- `Acme Ltd` + organization → company · `Tel Aviv University` + organization → organization.
+- `University` + person → ambiguous · `University` + organization → organization.
+- `John Smith` + organization → organization · `קרן כהן` + person → person.
+- `seedKind: 'Organization'` → כמו `organization` · `seedKind: 'company'` → מתעלמים · `hints.seedKind: 'organization'` על `John Smith` → person.
+- `seedKind` על url / `.pdf` / domain → ללא שינוי.
