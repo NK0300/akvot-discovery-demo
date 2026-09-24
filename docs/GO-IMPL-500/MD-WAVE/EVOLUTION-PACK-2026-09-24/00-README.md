@@ -1,7 +1,7 @@
 # Discovery Evolution Pack · 2026-09-24
 
 **Authority:** Chief Directive — DISCOVERY EVOLUTION (Nachman)  
-**Status:** Arch contracts §03–08/12–15 LANDED · §15 CHIEF RATIFIED · MW2 Acc/QA/UX measure IN FLIGHT · Track B code HOLD until A closes  
+**Status:** Arch contracts §03–08/12–15 LANDED · §15 CHIEF RATIFIED · §16 Server runtime boundary DESIGNED · MW2 Acc/QA/UX measure IN FLIGHT · Track B code HOLD until A closes  
 **Locks:** NO PROMOTE · TREATMENT UNTOUCHED · Core protected · Wave 1 DONE = NO · C1 UNKNOWN hard
 
 ## Status legend (per section)
@@ -24,7 +24,8 @@ IMPLEMENTED | DESIGNED | EXPERIMENTAL | PROPOSED | UNKNOWN
 | 12 | Visual Discovery Future Capability | Arch | **EXPERIMENTAL** capability-only |
 | 13 | Risks / Gaps | Chief + Arch | **DESIGNED** (Arch draft) |
 | 14 | Recommended Implementation Order | Chief + Arch | **PROPOSED** |
-| 15 | Explicit HOLD / GO boundaries | Chief | **PROPOSED** (Arch draft · Chief ratify) |
+| 15 | Explicit HOLD / GO boundaries | Chief | **CHIEF RATIFIED** |
+| 16 | Server Runtime Boundary | Server | **DESIGNED** (plan only · Track B HOLD) |
 
 ## Live MW2 Preview (for §02)
 - SHA: `1ed1a94472555afd736aa79a49bcb322eaba0517`
