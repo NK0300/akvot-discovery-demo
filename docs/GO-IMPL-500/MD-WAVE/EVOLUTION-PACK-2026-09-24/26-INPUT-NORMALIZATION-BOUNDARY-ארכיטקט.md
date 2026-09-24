@@ -1,6 +1,6 @@
 # §26 — Input Normalization Boundary (חוזה) — ארכיטקט · 2026-09-24
 
-סטטוס: **v1.1** (Chief אישר) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
+סטטוס: **v1.1.1** (Chief אישר; +§10.10–10.11) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
 נעילות: **PROD HOLD** · NO PROMOTE · TREATMENT unchanged · C1 קשיח · Wave 1 NOT DONE.
 רקע: אירוע ZERO-WIDTH/UNICODE. תו סמוי עקף את שמירת Smith ואת שמירת שם המשפחה העברי (שחזור שרת על `edf3f96`). ה־sweep למטה מראה שזו **מחלקה**, לא תו בודד.
 
@@ -115,3 +115,7 @@
 **10.8 אכיפה מבנית (פירוט מלא יגיע עם הביקורת המלאה):** פונקציות guard, match, cacheKey, routing ו־seedClass מקבלות רק את האובייקט הקנוני (עם Symbol brand), וזורקות שגיאה על מחרוזת גולמית. `npm test` מריץ lint שנכשל על דפוסי השוואה גולמית חדשים שלא נמצאים ב־allowlist מוצדק.
 
 **10.9 תהליך:** `contract-identity-p0` יוצא מ־`npm test` ל־`test:live`, ורץ רק עם `AKVOT_LIVE=1`. `npm test` רץ עם 0 רשת. ה־patch של 16 המקרים חייב לצאת red על main ו־green על `input-boundary-26`.
+
+**10.10 ctx ו־ceiling (הבהרת דיוק, מאושר):** ה־`ceiling` נגזר **מהזרע בלבד**. דגלי הסיכון של ה־ctx נרשמים ב־`ctxInputRisk` ולא משנים את ה־ceiling. מפתח המטמון כולל את `canonical(ctx)` בלבד, כך ש־`IBM`, `I\u200BBM` ו־`IBM\u200B` חולקים רשומה אחת. זה בטוח, כי לפי F ה־ctx לא יוצר commit ולא ראיה. בנוסף, השוואת «match» בין ctx לרשומה רצה על `key` מול `key`, ולעולם לא על skeleton. ctx קונפוזבל (`ІВМ` קירילי) לא יוצר match.
+
+**10.11 סוג התשובה ל־capped:** UNKNOWN ולא NOT_FOUND. זרע capped יוצא need_context או candidates, עם סיבה ניטרלית של קלט דו־משמעי. לעולם לא `not_found` ולא thin שלילי, גם כשיש כותרת exact מוויקי. בדיקות I2b בודקות גם את סוג התשובה.
