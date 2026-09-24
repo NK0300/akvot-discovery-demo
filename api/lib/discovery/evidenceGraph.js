@@ -378,6 +378,107 @@ export function scrubGraphForEmit(graph) {
   };
 }
 
+
+/**
+ * Build graph from familyOrchestrator Record output (Wave1 spine).
+ * Family-agnostic: +20 families ⇒ no new switches here — only familyId on nodes.
+ * Never emits same-entity. Cite: EVOLUTION-PACK §08 · Policy Record
+ *
+ * @param {{
+ *   findings?: object[],
+ *   evidence?: object[],
+ *   planId?: string,
+ *   policyId?: string,
+ *   wave?: number,
+ *   frontier?: { items?: object[], keys?: string[], size?: number },
+ *   journal?: object[],
+ * }} orch
+ * @param {{ strictProvenance?: boolean, sessionId?: string }} [opts]
+ */
+export function graphFromOrchestrationResult(orch = {}, opts = {}) {
+  const findings = Array.isArray(orch.findings) ? orch.findings : [];
+  const evidence = Array.isArray(orch.evidence) ? orch.evidence : [];
+  const session = {
+    sessionId: opts.sessionId || orch.sessionId || 'orch',
+    planId: orch.planId,
+    queryPlan: orch.planId ? { planId: orch.planId } : undefined,
+    findings,
+    evidence,
+    corroborationEdges: Array.isArray(orch.corroborationEdges) ? orch.corroborationEdges : [],
+    contradictions: Array.isArray(orch.contradictions) ? orch.contradictions : [],
+  };
+  const graph = buildEvidenceGraph(session, { strictProvenance: opts.strictProvenance === true });
+  // Frontier keys as derived-from hints (URL/ref only — not identity)
+  const frontierItems = Array.isArray(orch.frontier?.items) ? orch.frontier.items : [];
+  let derived = 0;
+  for (const item of frontierItems.slice(0, 32)) {
+    if (item.evaluateOk !== true) continue;
+    const toId = item.typedRef
+      ? `frontier:${String(item.typedRef).toLowerCase()}`
+      : item.url
+        ? `frontier:url:${String(item.url).toLowerCase().slice(0, 120)}`
+        : null;
+    if (!toId) continue;
+    if (!graph.nodes.some((n) => n.id === toId)) {
+      graph.nodes.push({
+        id: toId,
+        kind: 'frontier',
+        familyId: item.familyId || undefined,
+        planId: orch.planId || undefined,
+        relationship: 'unknown',
+      });
+    }
+    const fromFinding = findings.find(
+      (f) =>
+        (item.url && (f.url === item.url || f.canonicalUrl === item.url)) ||
+        (item.typedRef && (f.entityRefs || f.softRefs || []).includes(item.typedRef)),
+    );
+    if (fromFinding?.id) {
+      graph.edges.push({
+        id: `derived:${fromFinding.id}:${toId}`,
+        kind: 'derived-from',
+        from: fromFinding.id,
+        to: toId,
+        source: fromFinding.id,
+        target: toId,
+        relationship: 'derived-from',
+        planId: orch.planId || undefined,
+        familyId: item.familyId || fromFinding.familyId,
+        signalSummary: 'frontier_from_evaluate_ok',
+      });
+      derived += 1;
+    }
+  }
+  // Hard strip same-entity
+  graph.edges = (graph.edges || []).filter((e) => {
+    const r = String(e.relationship || '').toLowerCase().replace(/_/g, '-');
+    return r !== 'same-entity';
+  });
+  graph.meta = {
+    ...(graph.meta || {}),
+    policyId: orch.policyId || undefined,
+    wave: Number(orch.wave) || 1,
+    frontierSize: orch.frontier?.size ?? frontierItems.length,
+    frontierDerivedEdges: derived,
+    sameEntityEmitted: 0,
+    edgeCount: graph.edges.length,
+    nodeCount: graph.nodes.length,
+  };
+  return graph;
+}
+
+/**
+ * Acc/Arch gate: graph must never carry same-entity on wire.
+ * @param {object} graph
+ */
+export function assertNoSameEntity(graph) {
+  const bad = (graph?.edges || []).filter((e) => {
+    const r = String(e.relationship || '').toLowerCase().replace(/_/g, '-');
+    return r === 'same-entity';
+  });
+  return { ok: bad.length === 0, sameEntityCount: bad.length };
+}
+
 export default {
   GRAPH_RELATIONSHIPS,
   FORBIDDEN_GRAPH_RELATIONSHIPS,
@@ -386,4 +487,6 @@ export default {
   validateEdgeProvenance,
   buildEvidenceGraph,
   scrubGraphForEmit,
+  graphFromOrchestrationResult,
+  assertNoSameEntity,
 };

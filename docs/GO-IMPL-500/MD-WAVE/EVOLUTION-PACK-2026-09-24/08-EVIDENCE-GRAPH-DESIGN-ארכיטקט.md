@@ -34,3 +34,15 @@ Untrusted_web enrich (wave-2 origin) stays UNKNOWN.
 | Rich multi-hop corroboration scoring | EXPERIMENTAL |
 
 **Tag:** IMPLEMENTED / DESIGNED
+
+---
+
+## 4. Wave 1 · orch Record bridge (2026-09-24 BIG BUILD)
+**Code:** `graphFromOrchestrationResult(orch)` · `assertNoSameEntity` in `evidenceGraph.js`  
+**Wire:** `familyOrchestrator` return field `evidenceGraph` (additive)  
+- Family-agnostic node attach (+20 rule)  
+- Frontier evaluate-ok → `derived-from` edges (not identity)  
+- same-entity hard-stripped · C1 / urlAlone ceiling unchanged  
+- Server may extend Record; Arch owns ceiling vocabulary  
+
+**Tag:** DESIGNED → **IMPLEMENTED** (bridge) · Preview HOLD · **אין promote**

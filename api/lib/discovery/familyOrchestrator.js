@@ -28,6 +28,11 @@ import {
 } from './policy.js';
 import { createFrontier } from './frontier.js';
 import {
+  buildEvidenceGraph,
+  scrubGraphForEmit,
+} from './evidenceGraph.js';
+import { graphFromOrchestrationResult, assertNoSameEntity } from './evidenceGraph.js';
+import {
   recordWave,
   recordFrontierKeys,
   recordFindingDigests,
@@ -635,6 +640,13 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
     softRefs: f.softRefs,
     familyId: f.familyId,
     intentId: f.intentId,
+    hostFamily: f.hostFamily,
+    providerId: f.providerId || (f.providers || [])[0],
+    providers: f.providers,
+    relationship: f.relationship,
+    seedClass: f.seedClass,
+    coalesceKeys: f.coalesceKeys,
+    evidenceIds: f.evidenceIds,
     wave,
     evaluateOk: f.evaluateOk,
   }));
@@ -675,6 +687,31 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       frontierAdded += 1;
     }
   }
+
+  // RECORD · Evidence Graph (existing APIs · cite-or-drop / C1 / UNKNOWN≠FALSE / INFORMATION≠IDENTITY)
+  // No parallel store — buildEvidenceGraph + scrubGraphForEmit only. Soft≠Acc · no Core/SSE.
+  const rawGraph = buildEvidenceGraph(
+    {
+      sessionId: session?.sessionId,
+      seed: session?.seed,
+      softEr: session?.softEr,
+      findings: truncatedFindings,
+      evidence: truncatedEvidence,
+      corroborationEdges: opts.corroborationEdges || session?.corroborationEdges || [],
+      contradictions: opts.contradictions || session?.contradictions || [],
+      queryPlan: plan,
+      planId: plan?.planId,
+      familyJournal: scrubbedJournal,
+    },
+    { strictProvenance: false },
+  );
+  const graph = scrubGraphForEmit(rawGraph) || {
+    nodes: [],
+    edges: [],
+    meta: { sameEntityEmitted: 0, edgeCount: 0, nodeCount: 0 },
+  };
+  // Defense: never leave same-entity on Record surface
+  if (graph.meta) graph.meta.sameEntityEmitted = 0;
 
   const missionMemory = opts.missionMemory || null;
   if (missionMemory) {
@@ -725,6 +762,27 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       ? frontier.snapshot()
       : { size: frontierAdded, items: [], keys: [] };
 
+  // Evidence Graph from Record (Arch §08 · family-agnostic · no same-entity)
+  const evidenceGraph = graphFromOrchestrationResult(
+    {
+      findings: truncatedFindings,
+      evidence: truncatedEvidence,
+      planId: plan.planId,
+      policyId: policy.id,
+      wave,
+      frontier: frontierSnap,
+    },
+    { sessionId: session?.sessionId, strictProvenance: opts.strictProvenance === true },
+  );
+  const graphGate = assertNoSameEntity(evidenceGraph);
+  if (!graphGate.ok) {
+    evidenceGraph.edges = (evidenceGraph.edges || []).filter((e) => {
+      const r = String(e.relationship || '').toLowerCase().replace(/_/g, '-');
+      return r !== 'same-entity';
+    });
+    evidenceGraph.meta = { ...(evidenceGraph.meta || {}), sameEntityEmitted: 0, stripped: true };
+  }
+
   return {
     journal: scrubbedJournal,
     findings: truncatedFindings,
@@ -743,7 +801,10 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
         : 0,
       frontierAdded,
       dropReason: evaluateOut?.dropReason,
+      c1Ceilinged: evaluateOut?.c1Ceilinged || 0,
+      citeDropped: evaluateOut?.citeDropped || 0,
     },
+    graph,
     expand: {
       expand: !!expandOut?.expand,
       itemCount: Array.isArray(expandOut?.items) ? expandOut.items.length : 0,
@@ -754,6 +815,7 @@ export async function runFamilyOrchestration(plan, session, opts = {}) {
       reason: decision?.reason || 'unknown',
     },
     frontier: frontierSnap,
+    evidenceGraph,
     missionMemory: missionMemory ? snapshotMissionMemory(missionMemory) : undefined,
   };
 }

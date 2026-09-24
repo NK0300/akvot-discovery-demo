@@ -47,3 +47,12 @@
 - Parallel **contract only** until Policy Select lands — no Adapter theater  
 
 **Tag:** DESIGNED · stub LANDED · **אין promote**
+
+---
+
+## 5. Wave 1 · priority expand order
+**Code:** `frontierPriority` · `sortFrontierItems` · `reprioritize` / `takeNext`  
+- typed soft-ref ≫ bare URL · score · earlier wave — **SEARCH ORDER ≠ IDENTITY**  
+- Still evaluateOk-only admit  
+
+**Tag:** IMPLEMENTED (order) · scoring beyond this = EXPERIMENTAL · **אין promote**

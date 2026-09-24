@@ -3,7 +3,7 @@
  * Only evaluate-ok items enter. Cite: EVOLUTION-PACK §07 · SSRF at execute
  */
 
-export const FRONTIER_SCHEMA_VERSION = '1.0.0-wave1';
+export const FRONTIER_SCHEMA_VERSION = '1.1.0-wave1';
 
 function normKey(item = {}) {
   if (item.typedRef) return `ref:${String(item.typedRef).toLowerCase()}`;
@@ -19,12 +19,41 @@ function normKey(item = {}) {
 }
 
 /**
+ * Stable priority: typed soft-ref > url · higher score first · older wave first.
+ * Never claims identity — ranking for expand order only.
+ * @param {object} item
+ */
+export function frontierPriority(item = {}) {
+  let score = Number.isFinite(item.score) ? Number(item.score) : 0;
+  if (item.typedRef && /^(viaf|qid|ol):/i.test(String(item.typedRef))) score += 1000;
+  else if (item.url) score += 100;
+  const wave = Number(item.wave) > 0 ? Number(item.wave) : 1;
+  // Prefer earlier waves slightly for expand fairness
+  score += Math.max(0, 10 - wave);
+  return score;
+}
+
+/**
+ * @param {object[]} items
+ */
+export function sortFrontierItems(items = []) {
+  return [...items].sort((a, b) => {
+    const d = frontierPriority(b) - frontierPriority(a);
+    if (d !== 0) return d;
+    const ka = normKey(a) || '';
+    const kb = normKey(b) || '';
+    return ka.localeCompare(kb);
+  });
+}
+
+/**
  * @returns {{
  *   version: string,
  *   items: object[],
  *   seen: Set<string>,
  *   add: Function,
  *   takeNext: Function,
+ *   reprioritize: Function,
  *   isEmpty: Function,
  *   size: Function,
  *   snapshot: Function
@@ -59,10 +88,18 @@ export function createFrontier() {
       });
       return true;
     },
+    /** Re-sort in place by frontierPriority (expand order · not identity). */
+    reprioritize() {
+      const sorted = sortFrontierItems(items);
+      items.length = 0;
+      items.push(...sorted);
+      return items.length;
+    },
     /**
      * @param {number} n
      */
     takeNext(n = 1) {
+      this.reprioritize();
       const count = Math.max(0, Number(n) || 0);
       return items.splice(0, count);
     },
@@ -77,10 +114,15 @@ export function createFrontier() {
         version: FRONTIER_SCHEMA_VERSION,
         size: items.length,
         keys: [...seen].sort(),
-        items: items.map((i) => ({ ...i })),
+        items: items.map((i) => ({ ...i, priority: frontierPriority(i) })),
       };
     },
   };
 }
 
-export default { FRONTIER_SCHEMA_VERSION, createFrontier };
+export default {
+  FRONTIER_SCHEMA_VERSION,
+  createFrontier,
+  frontierPriority,
+  sortFrontierItems,
+};
