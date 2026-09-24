@@ -1,0 +1,1308 @@
+{
+  "id": "07-ACC-MW2-WAVE2",
+  "stamp": "2026-09-24T19:23:43+03:00",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "MD-WAVE Must-Win #2 Acc 5-gate closeout",
+  "deployment": "dpl_6F9mjR76d18vYtgbcofhWceF1LP2",
+  "previewUrl": "https://akvot-simple-demo-j1ds295z1-k-akvot.vercel.app",
+  "shaExpected": "1ed1a94472555afd736aa79a49bcb322eaba0517",
+  "shaObserved": "1ed1a94472555afd736aa79a49bcb322eaba0517",
+  "shaMatch": true,
+  "flagsExpected": {
+    "DISCOVERY_ENABLE_NIGHT": "ON (deploy -e)",
+    "DISCOVERY_ENABLE_GENERAL_WEB": "ON (deploy -e)",
+    "DISCOVERY_ENABLE_WEB_ORIGIN": "ON (deploy -e)",
+    "note": "MW2 Night wave≥2 + web_origin enrich ≤2; NOT TREATMENT"
+  },
+  "notMeasured": [
+    "TREATMENT",
+    "promote",
+    "Wave 1 product DONE claim",
+    "flag OFF path"
+  ],
+  "promote": false,
+  "wave1ProductDone": false,
+  "wave1Note": "Acc PASS ≠ Wave 1 DONE · NO PROMOTE",
+  "verdict": "PASS",
+  "keepImprove": "KEEP",
+  "gates": {
+    "g1_n_candidates": {
+      "result": "PASS",
+      "abc_n": 5,
+      "w3c_n": 5
+    },
+    "g2_unknown_whyFound": {
+      "result": "PASS"
+    },
+    "g3_pw_softwrong": {
+      "result": "PASS",
+      "pw": 0,
+      "gulfnewsSurfaced": true,
+      "gulfnewsIdentityClaim": false
+    },
+    "g4_same_c1": {
+      "result": "PASS",
+      "same": 0,
+      "c1_identityClaim": false
+    },
+    "g5_wave_latency": {
+      "result": "PASS",
+      "waveGe2Primary": true,
+      "abc_wave": 2,
+      "w3c_wave": 2,
+      "abc_latencyMs": 7260,
+      "w3c_latencyMs": 5511,
+      "c1_latencyMs": 5982
+    }
+  },
+  "waveGe2Primary": true,
+  "waveGe2Observed": true,
+  "abcFlakeNote": "ABC Construction: uc=1 n=5 gulfnews=true stayUnknown=true (this run emitted; prior Night Acc had extlinks_error flake risk)",
+  "gulfnewsWatch": {
+    "seeded": true,
+    "seed": "ABC Construction",
+    "surfaced": true,
+    "hits": [
+      {
+        "id": "night-general_web_search-https://gulfnews.com/business/property/al-shafar",
+        "kind": "url_candidate",
+        "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+        "relationship": "unknown",
+        "identityClaim": false,
+        "whyFound": "WP OpenSearch→extlinks candidate for “ABC Construction” via 「ASGC Construction」 · not identity · C1 UNKNOWN"
+      }
+    ],
+    "identityClaim": false,
+    "sameFromUrl": false,
+    "stayUnknownClass": true,
+    "ucCount": 1,
+    "gwStatus": "ok",
+    "nCandidates": 5
+  },
+  "totals": {
+    "prettyWrong": 0,
+    "leak": 0,
+    "sameEntityFromUrlOrWire": 0,
+    "identityClaimTrue": 0,
+    "primaryPass": 3,
+    "primaryFail": 0,
+    "optionalPass": 2
+  },
+  "cases": [
+    {
+      "id": "S1_ABC",
+      "seed": "ABC Construction",
+      "sessionId": "kv1.d328bc328e5e00ed2e085f835168cbce",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "error",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "empty_enrich",
+        "general_web_search": "ok"
+      },
+      "nCandidates": 5,
+      "urlCandidateCount": 1,
+      "urlCandidates": [
+        {
+          "id": "night-general_web_search-https://gulfnews.com/business/property/al-shafar",
+          "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "whyFound": "WP OpenSearch→extlinks candidate for “ABC Construction” via 「ASGC Construction」 · not identity · C1 UNKNOWN",
+          "providers": [
+            "general_web_search"
+          ]
+        }
+      ],
+      "woFindings": [],
+      "gulfnewsHits": [
+        {
+          "id": "night-general_web_search-https://gulfnews.com/business/property/al-shafar",
+          "kind": "url_candidate",
+          "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "whyFound": "WP OpenSearch→extlinks candidate for “ABC Construction” via 「ASGC Construction」 · not identity · C1 UNKNOWN"
+        }
+      ],
+      "prettyWrongCount": 0,
+      "sameEntityOnWire": 0,
+      "identityClaimTrueCount": 0,
+      "createLatencyMs": 7260,
+      "totalLatencyMs": 7260,
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.2",
+        "stopReason": "NO_PROGRESS",
+        "seedClass": "organization",
+        "candidateCount": 5,
+        "fetches": 3,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "wave": 2,
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "ok",
+            "count": 5,
+            "optional": false,
+            "enrichOnly": false,
+            "wave": 1,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "hopId": "web_origin",
+            "providerId": "web_origin",
+            "reason": "empty_enrich",
+            "count": 0,
+            "optional": false,
+            "enrichOnly": true,
+            "wave": 2,
+            "meta": {
+              "inputCount": 2,
+              "enriched": 0
+            }
+          }
+        ],
+        "spineJournal": [
+          {
+            "at": 1790266860277,
+            "phase": "discover",
+            "event": "begin",
+            "detail": {
+              "seed": "ABC Construction"
+            }
+          },
+          {
+            "at": 1790266860277,
+            "phase": "discover",
+            "event": "end",
+            "detail": {
+              "seedClass": "organization",
+              "eligibleHops": [
+                "general_web"
+              ],
+              "wantWebOrigin": true
+            }
+          },
+          {
+            "at": 1790266860277,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266860277,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "general_web_search",
+              "fetches": 1,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266860277,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266860729,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "general_web",
+              "reason": "ok",
+              "count": 5,
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266860729,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1,
+              "accepted": 5,
+              "added": 5,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 5,
+              "delta": 5
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 5,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "web_origin",
+              "providerId": "web_origin",
+              "inputCount": 2
+            }
+          },
+          {
+            "at": 1790266860730,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "web_origin",
+              "fetches": 2,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266861172,
+            "phase": "expand",
+            "event": "origin_fetch_fail",
+            "detail": {
+              "url": "https://gulfnews.com/business/markets/dubai-contractor-asgc-is-said-to-delay-ipo-plan-on-weak-market-1.1597597",
+              "reason": "body_too_large"
+            }
+          },
+          {
+            "at": 1790266861172,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "web_origin",
+              "fetches": 3,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "expand",
+            "event": "origin_fetch_fail",
+            "detail": {
+              "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+              "reason": "body_too_large"
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "web_origin",
+              "count": 0,
+              "inputCount": 2
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "web_origin",
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "web_origin",
+              "wave": 2,
+              "accepted": 0,
+              "added": 0,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 5,
+              "delta": 0
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 5,
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266861592,
+            "phase": "stop",
+            "event": "stop",
+            "detail": {
+              "reason": "NO_PROGRESS"
+            }
+          }
+        ],
+        "waveBeginCount": 2
+      },
+      "waveMax": 2,
+      "waveBeginCount": 2,
+      "generalWebSearchStatus": "ok",
+      "webOriginStatus": "empty_enrich",
+      "primary": true,
+      "optional": false,
+      "abcClass": true,
+      "pass": true,
+      "failIds": []
+    },
+    {
+      "id": "S2_W3C",
+      "seed": "World Wide Web Consortium",
+      "sessionId": "kv1.0a80a18dd497086b37d1224cb6c686f9",
+      "status": "complete",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "empty_enrich",
+        "general_web_search": "ok"
+      },
+      "nCandidates": 5,
+      "urlCandidateCount": 1,
+      "urlCandidates": [
+        {
+          "id": "night-general_web_search-https://www.w3.org/Consortium/join",
+          "url": "https://www.w3.org/Consortium/join",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "whyFound": "WP OpenSearch→extlinks candidate for “World Wide Web Consortium” via 「World Wide Web Consortium」 · not identity · C1 UNKNOWN",
+          "providers": [
+            "general_web_search"
+          ]
+        }
+      ],
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "hostname": "www.w3.org",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "whyFound": null
+        }
+      ],
+      "gulfnewsHits": [],
+      "prettyWrongCount": 0,
+      "sameEntityOnWire": 0,
+      "identityClaimTrueCount": 0,
+      "createLatencyMs": 5511,
+      "totalLatencyMs": 5511,
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.2",
+        "stopReason": "NO_PROGRESS",
+        "seedClass": "person",
+        "candidateCount": 5,
+        "fetches": 3,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "wave": 2,
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "ok",
+            "count": 5,
+            "optional": false,
+            "enrichOnly": false,
+            "wave": 1,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "hopId": "web_origin",
+            "providerId": "web_origin",
+            "reason": "empty_enrich",
+            "count": 0,
+            "optional": false,
+            "enrichOnly": true,
+            "wave": 2,
+            "meta": {
+              "inputCount": 2,
+              "enriched": 0
+            }
+          }
+        ],
+        "spineJournal": [
+          {
+            "at": 1790266869369,
+            "phase": "discover",
+            "event": "begin",
+            "detail": {
+              "seed": "World Wide Web Consortium"
+            }
+          },
+          {
+            "at": 1790266869369,
+            "phase": "discover",
+            "event": "end",
+            "detail": {
+              "seedClass": "person",
+              "eligibleHops": [
+                "general_web"
+              ],
+              "wantWebOrigin": true
+            }
+          },
+          {
+            "at": 1790266869369,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266869369,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "general_web_search",
+              "fetches": 1,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266869369,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "general_web",
+              "reason": "ok",
+              "count": 5,
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1,
+              "accepted": 5,
+              "added": 5,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 5,
+              "delta": 5
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 5,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "web_origin",
+              "providerId": "web_origin",
+              "inputCount": 2
+            }
+          },
+          {
+            "at": 1790266869572,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "web_origin",
+              "fetches": 2,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266869574,
+            "phase": "expand",
+            "event": "origin_fetch_fail",
+            "detail": {
+              "url": "https://blogs.computerworlduk.com/open-enterprise/2013/02/bbc-attacks-the-open-web-gnulinux-in-danger/index.htm",
+              "reason": "network_error"
+            }
+          },
+          {
+            "at": 1790266869574,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "web_origin",
+              "fetches": 3,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "expand",
+            "event": "origin_fetch_fail",
+            "detail": {
+              "url": "https://web.worldbank.org/WBSITE/EXTERNAL/DATASTATISTICS/0,,contentMDK:20420458~menuPK:64133156~pagePK:64133150~piPK:641",
+              "reason": "unsafe_url"
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "web_origin",
+              "count": 0,
+              "inputCount": 2
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "web_origin",
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "web_origin",
+              "wave": 2,
+              "accepted": 0,
+              "added": 0,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 5,
+              "delta": 0
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 5,
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 2
+            }
+          },
+          {
+            "at": 1790266869620,
+            "phase": "stop",
+            "event": "stop",
+            "detail": {
+              "reason": "NO_PROGRESS"
+            }
+          }
+        ],
+        "waveBeginCount": 2
+      },
+      "waveMax": 2,
+      "waveBeginCount": 2,
+      "generalWebSearchStatus": "ok",
+      "webOriginStatus": "empty_enrich",
+      "primary": true,
+      "optional": false,
+      "abcClass": false,
+      "pass": true,
+      "failIds": []
+    },
+    {
+      "id": "S3_C1_url_w3",
+      "seed": "https://www.w3.org/",
+      "sessionId": "kv1.5f5bf1a865a703b8cae23cc0f98d7ed2",
+      "status": "partial",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "nCandidates": 0,
+      "urlCandidateCount": 0,
+      "urlCandidates": [],
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "hostname": "www.w3.org",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "whyFound": null
+        }
+      ],
+      "gulfnewsHits": [],
+      "prettyWrongCount": 0,
+      "sameEntityOnWire": 0,
+      "identityClaimTrueCount": 0,
+      "createLatencyMs": 5982,
+      "totalLatencyMs": 5982,
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.2",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "url",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "wave": 1,
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "opensearch_error",
+            "count": 0,
+            "optional": false,
+            "enrichOnly": false,
+            "wave": 1,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ],
+        "spineJournal": [
+          {
+            "at": 1790266877877,
+            "phase": "discover",
+            "event": "begin",
+            "detail": {
+              "seed": "https://www.w3.org/"
+            }
+          },
+          {
+            "at": 1790266877877,
+            "phase": "discover",
+            "event": "end",
+            "detail": {
+              "seedClass": "url",
+              "eligibleHops": [
+                "general_web"
+              ],
+              "wantWebOrigin": true
+            }
+          },
+          {
+            "at": 1790266877877,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266877877,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "general_web_search",
+              "fetches": 1,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266877877,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "general_web",
+              "reason": "opensearch_error",
+              "count": 0,
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1,
+              "accepted": 0,
+              "added": 0,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 0,
+              "delta": 0
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266878106,
+            "phase": "stop",
+            "event": "stop",
+            "detail": {
+              "reason": "EMPTY_FRONTIER"
+            }
+          }
+        ],
+        "waveBeginCount": 1
+      },
+      "waveMax": 1,
+      "waveBeginCount": 1,
+      "generalWebSearchStatus": "opensearch_error",
+      "webOriginStatus": "ok",
+      "primary": true,
+      "optional": false,
+      "abcClass": false,
+      "pass": true,
+      "failIds": []
+    },
+    {
+      "id": "S4_TBL",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.436127386c3a3999087d388856588f81",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "nCandidates": 0,
+      "urlCandidateCount": 0,
+      "urlCandidates": [],
+      "woFindings": [],
+      "gulfnewsHits": [],
+      "prettyWrongCount": 0,
+      "sameEntityOnWire": 0,
+      "identityClaimTrueCount": 0,
+      "createLatencyMs": 4194,
+      "totalLatencyMs": 4194,
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.2",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "person",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "wave": 1,
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "opensearch_error",
+            "count": 0,
+            "optional": false,
+            "enrichOnly": false,
+            "wave": 1,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ],
+        "spineJournal": [
+          {
+            "at": 1790266884539,
+            "phase": "discover",
+            "event": "begin",
+            "detail": {
+              "seed": "Tim Berners-Lee"
+            }
+          },
+          {
+            "at": 1790266884539,
+            "phase": "discover",
+            "event": "end",
+            "detail": {
+              "seedClass": "person",
+              "eligibleHops": [
+                "general_web"
+              ],
+              "wantWebOrigin": true
+            }
+          },
+          {
+            "at": 1790266884539,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266884539,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "general_web_search",
+              "fetches": 1,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266884539,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266884768,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "general_web",
+              "reason": "opensearch_error",
+              "count": 0,
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266884769,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266884769,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1,
+              "accepted": 0,
+              "added": 0,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266884769,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 0,
+              "delta": 0
+            }
+          },
+          {
+            "at": 1790266884769,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266884769,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266884769,
+            "phase": "stop",
+            "event": "stop",
+            "detail": {
+              "reason": "EMPTY_FRONTIER"
+            }
+          }
+        ],
+        "waveBeginCount": 1
+      },
+      "waveMax": 1,
+      "waveBeginCount": 1,
+      "generalWebSearchStatus": "opensearch_error",
+      "webOriginStatus": "ok",
+      "primary": false,
+      "optional": true,
+      "abcClass": false,
+      "pass": true,
+      "failIds": []
+    },
+    {
+      "id": "S5_Cohen",
+      "seed": "David Cohen",
+      "sessionId": "kv1.c614b7ab82975a252162194007f8c1f7",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "partial",
+        "wikipedia": "error",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "nCandidates": 0,
+      "urlCandidateCount": 0,
+      "urlCandidates": [],
+      "woFindings": [],
+      "gulfnewsHits": [],
+      "prettyWrongCount": 0,
+      "sameEntityOnWire": 0,
+      "identityClaimTrueCount": 0,
+      "createLatencyMs": 6155,
+      "totalLatencyMs": 6155,
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.2",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "person",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "wave": 1,
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "opensearch_error",
+            "count": 0,
+            "optional": false,
+            "enrichOnly": false,
+            "wave": 1,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ],
+        "spineJournal": [
+          {
+            "at": 1790266893038,
+            "phase": "discover",
+            "event": "begin",
+            "detail": {
+              "seed": "David Cohen"
+            }
+          },
+          {
+            "at": 1790266893038,
+            "phase": "discover",
+            "event": "end",
+            "detail": {
+              "seedClass": "person",
+              "eligibleHops": [
+                "general_web"
+              ],
+              "wantWebOrigin": true
+            }
+          },
+          {
+            "at": 1790266893038,
+            "phase": "expand",
+            "event": "wave_begin",
+            "detail": {
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266893038,
+            "phase": "expand",
+            "event": "hop_fetch",
+            "detail": {
+              "providerId": "general_web_search",
+              "fetches": 1,
+              "ok": true
+            }
+          },
+          {
+            "at": 1790266893038,
+            "phase": "expand",
+            "event": "hop_start",
+            "detail": {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "expand",
+            "event": "hop_end",
+            "detail": {
+              "hopId": "general_web",
+              "reason": "opensearch_error",
+              "count": 0,
+              "wikiLocale": "en"
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "evaluate",
+            "event": "begin",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "evaluate",
+            "event": "end",
+            "detail": {
+              "hopId": "general_web",
+              "wave": 1,
+              "accepted": 0,
+              "added": 0,
+              "enriched": 0
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "evaluate",
+            "event": "progress",
+            "detail": {
+              "candidateCount": 0,
+              "delta": 0
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "corroborate",
+            "event": "begin",
+            "detail": {
+              "candidateCount": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "corroborate",
+            "event": "end",
+            "detail": {
+              "notes": 0,
+              "wave": 1
+            }
+          },
+          {
+            "at": 1790266893286,
+            "phase": "stop",
+            "event": "stop",
+            "detail": {
+              "reason": "EMPTY_FRONTIER"
+            }
+          }
+        ],
+        "waveBeginCount": 1
+      },
+      "waveMax": 1,
+      "waveBeginCount": 1,
+      "generalWebSearchStatus": "opensearch_error",
+      "webOriginStatus": "ok",
+      "primary": false,
+      "optional": true,
+      "abcClass": false,
+      "pass": true,
+      "failIds": []
+    }
+  ],
+  "evidence": {
+    "md": "docs/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-דיוק-2026-09-24.md",
+    "json": "docs/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-דיוק-2026-09-24.json",
+    "raw": "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-raw/",
+    "dateMirror": "test-results/2026-09-24/MD-WAVE/raw/acc-mw2-6F9mjR/"
+  }
+}

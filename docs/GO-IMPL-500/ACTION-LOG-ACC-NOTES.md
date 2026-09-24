@@ -51,3 +51,11 @@ Shared log actions **#279–281**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/06-ACC
 Target: `dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7` · URL `akvot-simple-demo-630wxvr9e-k-akvot.vercel.app` · `DISCOVERY_ENABLE_NIGHT=1` + `DISCOVERY_ENABLE_GENERAL_WEB=1` (deploy -e) · NOT TREATMENT `dpl_J92G9…` · NOT Adapter-2 DDG `dpl_8RbS15…` · NOT fill.1.1 `dpl_CJPdnz…`.  
 **Verdict PASS** (honesty/fail-closed/C1) · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6 · nightLoop ON · UC wire total **3** · gulfnews watch not surfaced (extlinks_error).  
 Coverage residual open (W3C/Ada opensearch_error; ABC extlinks_error) — Acc PASS ≠ Night coverage win ≠ Wave 1 DONE. **NO PROMOTE**.
+
+## 2026-09-24 Acc MD-WAVE Must-Win #2 wave≥2 5-gate (דיוק)
+
+Shared log actions **#282–284**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-דיוק-2026-09-24.md` (+ `.json`, raw mirror).  
+Target: `dpl_6F9mjR76d18vYtgbcofhWceF1LP2` · `https://akvot-simple-demo-j1ds295z1-k-akvot.vercel.app` · SHA `1ed1a94472555afd736aa79a49bcb322eaba0517` · flags NIGHT+GENERAL_WEB+WEB_ORIGIN (deploy `-e`). NOT TREATMENT.  
+**Verdict PASS** · **KEEP** · pw **0** · SAME-from-URL **0** · identityClaim **0** · primary 3/0 · wave≥2 **YES** (ABC+W3C) · gulfnews soft-wrong UNKNOWN.  
+Residuals: wo empty_enrich; optional/C1 opensearch_error fail-closed.  
+Wave 1 product **NOT DONE**. **NO PROMOTE**.

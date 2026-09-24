@@ -752,3 +752,114 @@
 - **Who:** דיוק
 - **What:** Wrote `06-ACC-AE-NIGHT-HOP-A-דיוק-2026-09-24.md` + `.json` (+ mirrors). Room: Acc **PASS** honesty/fail-closed/C1; Wave 1 **NOT DONE**; **אין promote**.
 - **Files:** `docs/GO-IMPL-500/MD-WAVE/06-ACC-AE-NIGHT-HOP-A-דיוק-2026-09-24.md` + `.json`
+
+---
+
+## Arch · Must-Win #2 wave≥2 FILL (ארכיטקט) · 2026-09-24 ~14:15 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 276 | ~14:15 | Must-Win #2 LOCKED — multi-wave nightLoop + wave-2 web_origin enrich (≤2 URLs) · no new host |
+
+### Action 276 — Must-Win #2 wave≥2 lock
+- **Who:** ארכיטקט
+- **What:** After Night PARTIAL (yield=1 / single beginWave). LOCK multi-wave driver up to maxWaves=3; wave-2 = web_origin enrich on ≤2 evaluate-ok candidates when flag ON; if WEB_ORIGIN OFF journal NO_PROGRESS after attempting wave-2. Preview `-e` NIGHT+GENERAL_WEB+WEB_ORIGIN. No crawl / no new host / NO PROMOTE.
+- **File:** `docs/GO-IMPL-500/MD-WAVE/ARCH-MUST-WIN-2-WAVE2-ארכיטקט-2026-09-24.md`
+- **Verdict:** FILL **LOCKED** · Server **GO** · **NO PROMOTE**
+
+---
+
+## Arch · Evolution Pack contracts (ארכיטקט) · 2026-09-24 ~19:20 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 277 | ~19:20 | Evolution Pack §03–08 + §12–15 landed · key test Core unchanged · coordinate Server next |
+
+### Action 277 — Architectural Evolution pack
+- **Who:** ארכיטקט
+- **What:** QueryPlan + Family Registry + Orchestrator + Frontier + Evidence Graph contracts; Arch Delta; Visual capability-only; Risks; impl order; HOLD/GO draft. Tags per artifact. No new adapters · no Core break · no C1 weaken. Parallel to MW2 measure.
+- **Path:** `docs/GO-IMPL-500/MD-WAVE/EVOLUTION-PACK-2026-09-24/`
+- **Verdict:** contracts **DESIGNED** · Server coordinate runtime · Chief ratify §15 · **NO PROMOTE**
+
+---
+
+## Arch · §15 Chief ratified (ארכיטקט) · 2026-09-24 ~19:22 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 278 | ~19:22 | §15 HOLD/GO CHIEF RATIFIED stamped · Arch standby Acc/QA · Track B HOLD |
+
+### Action 278 — §15 ratification stamp
+- **Who:** ארכיטקט (Chief ratified)
+- **What:** Stamped Evolution Pack §15 + README. Arch standby for Acc/QA closeout; FILL notes for GW/DDG registry rows only when Track B opens after A. NO PROMOTE.
+- **Verdict:** SoT design locked · Track B code migrate HOLD · **NO PROMOTE**
+
+---
+
+## Arch · Server runtime-boundary ACK (ארכיטקט) · 2026-09-24 ~19:23 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 279 | ~19:23 | Server §05/§06 PASS stamped · Track B still HOLD · Arch standby Acc/QA |
+
+### Action 279 — Server boundary ACK stamp
+- **Who:** ארכיטקט (Server PASS)
+- **File:** `EVOLUTION-PACK-2026-09-24/05b-SERVER-RUNTIME-BOUNDARY-ACK.md`
+- **Verdict:** design boundary aligned · no code · **NO PROMOTE**
+
+
+---
+
+## QA · MW2 live closeout (בודק) · 2026-09-24 ~19:22 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 282 | 19:22 | QA live MW2 closeout on target `dpl_6F9mjR…` — 6 bounded sessions; 3 reached wave 2; cite/honesty/caps/fail-closed PASS; overall PARTIAL |
+
+### Action 282 — QA-CLOSEOUT-MW2
+- **Who:** QA / בודק
+- **What:** Measured only `dpl_6F9mjR76d18vYtgbcofhWceF1LP2` at SHA `1ed1a94` with Night + GENERAL_WEB + WEB_ORIGIN deploy flags. POST + GET raw evidence saved under `test-results/2026-09-24/MD-WAVE/raw/qa-mw2-6F9mjR/`.
+- **Numbers:** n=3 candidate-bearing wave-2 runs / 6 sessions; 4 cited URL candidates; max origin input=2; identityClaim=true=0; Q1701775=0; SAME-from-URL=0. Positive stop=`NO_PROGRESS`; TBL/Smith/כהן honest wave-1 stop=`EMPTY_FRONTIER` after `opensearch_error`.
+- **Verdict:** **PARTIAL** · Wave 1 **NOT DONE** · TREATMENT **HOLD** · **NO PROMOTE**.
+- **Acc boundary:** At initial QA write the exact-target Acc pack had not yet been located; see Action 283 for the coordinated Acc numbers.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/QA-CLOSEOUT-MW2-בודק-2026-09-24.md` + `.json`
+
+---
+
+## QA · MW2 Acc coordination correction · 2026-09-24 ~19:24 IDT
+
+| # | Time (IDT) | Action |
+|---:|---|---|
+| 283 | 19:24 | Coordinated exact-target Acc pack found: Acc 5-gate PASS / KEEP; primary 3/0; ABC+W3C n=5; pw/Q1701775=0, leak=0, SAME=0, identityClaim=true=0; wave≥2 YES |
+
+### Action 283 — Acc number alignment
+- **Who:** QA / בודק, coordinated with Acc / דיוק
+- **What:** Updated MW2 QA closeout with the exact-target Acc evidence from `07-ACC-MW2-WAVE2-דיוק-2026-09-24.md` + `.json`. Acc records wave≥2 on ABC/W3C, `web_origin@wave2` `empty_enrich`, latency 7260 ms / 5511 ms.
+- **Boundary:** Acc PASS is not Wave 1 DONE; TREATMENT and promote remain untouched.
+
+---
+
+## Acc · Must-Win #2 wave≥2 5-gate closeout (דיוק) · 2026-09-24 ~19:24 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 285 | 19:24 | Acc 5-gate LIVE on Chief MW2 Preview `dpl_6F9mjR76d18vYtgbcofhWceF1LP2` (SHA `1ed1a94472555afd736aa79a49bcb322eaba0517`) · flags NIGHT+GENERAL_WEB+WEB_ORIGIN · NOT TREATMENT · **NO PROMOTE** |
+| 286 | 19:24 | Seeds ABC Construction · W3C · C1 URL-alone + opt TBL/Cohen · wave≥2 on ABC+W3C · gulfnews soft-wrong UNKNOWN · pw/SAME/ic=0 |
+| 287 | 19:24 | Deliverable `07-ACC-MW2-WAVE2` · verdict **PASS** · **KEEP** · Wave 1 **NOT DONE** · **אין promote** |
+
+### Action 285 — Acc MW2 5-gate LIVE start
+- **Who:** דיוק
+- **What:** Locked Acc closeout to Chief exact target only. Deployment `dpl_6F9mjR76d18vYtgbcofhWceF1LP2` · Preview `https://akvot-simple-demo-j1ds295z1-k-akvot.vercel.app` · SHA `1ed1a94472555afd736aa79a49bcb322eaba0517`. Flags deploy `-e` only: NIGHT + GENERAL_WEB + WEB_ORIGIN. Health 200 via `vercel curl --deployment` · build match.
+- **Access:** `vercel curl --deployment dpl_6F9mjR76d18vYtgbcofhWceF1LP2`
+
+### Action 286 — Live 5-gate measure
+- **Who:** דיוק
+- **What:** Primary: ABC Construction (n=5 · uc=1 gulfnews UNKNOWN ic=false · wave=2 · NO_PROGRESS · wo=empty_enrich · 7260ms); World Wide Web Consortium (n=5 · uc=1 UNKNOWN · wave=2 · 5511ms); C1 `https://www.w3.org/` (SAME=0 · ic=false · wave=1 EMPTY_FRONTIER honest). Optional TBL/Cohen honesty: gw=opensearch_error · fail-closed. pw=0 · leak=0 · SAME-from-URL=0 · identityClaim=true=0. Spine wave≥2 YES on name seeds (`2026-09-24.night.loop.2` · wave_begin×2 · general_web@w1 + web_origin@w2).
+- **Raw:** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-raw/`
+
+### Action 287 — Deliverable
+- **Who:** דיוק
+- **What:** Wrote `07-ACC-MW2-WAVE2-דיוק-2026-09-24.md` + `.json` (+ mirrors). Room: Acc **PASS** · **KEEP** · Wave 1 **NOT DONE** · **אין promote**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-דיוק-2026-09-24.md` + `.json`
+- **Verdict:** **PASS** · **KEEP** · Acc PASS ≠ Wave 1 DONE · **NO PROMOTE**
+
