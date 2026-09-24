@@ -20,3 +20,12 @@ Target: `dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j` · flags claim-pack + web_origin ON �
 **Verdict PASS** · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6.  
 Residuals: TBL person hop no P856 this run; Ada namesake P856 correlation≠proof; Cohen/Smith WD error but multi VIAF honesty.  
 Wave 1 product **NOT DONE**. **NO PROMOTE**.
+
+## 2026-09-24 Acc MD-WAVE A/E LIVE GENERAL_WEB (דיוק)
+
+Shared log actions **#53–55**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/03-ACC-AE-GENERAL-WEB-דיוק-2026-09-24.md` (+ `.json`, test-results mirror + raw).  
+Target: `dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr` · `DISCOVERY_ENABLE_GENERAL_WEB=1` (deploy -e) · NOT TREATMENT `dpl_J92G9…`.  
+**Verdict PASS** · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6 · GW wire total **2** (Ada + David Cohen) · flag ON observed via `providers.general_web_search`.  
+Residuals: TBL all_dropped_ssrf_or_registry; CERN opensearch_error; John Smith extlinks_error; Ada soft-coalesce 5 urlCandidate facetHints on 1 finding (Cap≤5, no SAME); C1 URL-alone UNKNOWN.  
+Wave 1 product **NOT DONE**. **NO PROMOTE**.
+

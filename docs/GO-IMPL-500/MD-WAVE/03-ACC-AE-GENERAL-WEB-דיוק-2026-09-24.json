@@ -1,0 +1,997 @@
+{
+  "id": "03-ACC-AE-GENERAL-WEB",
+  "stamp": "2026-09-24T05:30:30.851Z",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "MD-WAVE",
+  "deployment": "dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr",
+  "previewUrl": "https://akvot-simple-demo-f5lyhisqg-k-akvot.vercel.app",
+  "flagsExpected": {
+    "DISCOVERY_ENABLE_GENERAL_WEB": "ON (deploy -e)",
+    "note": "This Preview is GENERAL_WEB ON; TREATMENT dpl_J92G9… NOT measured"
+  },
+  "notMeasured": [
+    "dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j TREATMENT",
+    "B broad",
+    "D",
+    "F11",
+    "flag OFF path"
+  ],
+  "scope": "Acc A/E on GENERAL_WEB path + C1 URL-alone / emit scrub",
+  "promote": false,
+  "wave1ProductDone": false,
+  "wave1Note": "GENERAL_WEB Acc A/E only — name→URL via WP extlinks is partial; not Maximum Discovery; Wave 1 product NOT DONE",
+  "healthHttp": 200,
+  "generalWebFlagObservedOn": true,
+  "cases": [
+    {
+      "scenario": "A_PERSON",
+      "seed": "Tim Berners-Lee",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "all_dropped_ssrf_or_registry"
+      },
+      "generalWebSearch": null,
+      "findingsCount": 12,
+      "woCount": 0,
+      "gwCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 0,
+      "sameEntityOnWire": 0,
+      "sameEntityTextHits": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q80",
+        "Q120373140",
+        "Q120373262",
+        "Q22991023",
+        "Q22946133",
+        "Q22980417",
+        "Q19761597",
+        "Q55693401"
+      ],
+      "multiCandidate": true,
+      "gwFindings": [],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:8"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "gw_cap5",
+          "pass": true,
+          "detail": "gwCount=0 ≤ 5"
+        },
+        {
+          "id": "gw_unknown_rel",
+          "pass": true,
+          "detail": "GW relationship not SAME-*"
+        },
+        {
+          "id": "gw_no_identity_claim",
+          "pass": true,
+          "detail": "GW identityClaim false/absent"
+        },
+        {
+          "id": "gw_title_domain_not_identity",
+          "pass": true,
+          "detail": "title/domain not minted as identity"
+        },
+        {
+          "id": "gw_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no GW findings; meta=null"
+        },
+        {
+          "id": "gw_no_serp_crawl",
+          "pass": true,
+          "detail": "no SERP HTML / open-crawl markers"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "A_gw_absent_unknown_ok",
+          "pass": true,
+          "detail": "providers={\"wikidata\":\"partial\",\"openlibrary\":\"ok\",\"wikipedia\":\"ok\",\"viaf\":\"ok\",\"web_origin\":\"ok\",\"general_web_search\":\"all_dropped_ssrf_or_registry\"} gws=null"
+        },
+        {
+          "id": "A_title_not_same",
+          "pass": true,
+          "detail": "no title→SAME"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "A1_person_TBL",
+      "sessionId": "kv1.967bac21481eec5a096b44ec1e6d7fef",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr"
+    },
+    {
+      "scenario": "A_PERSON",
+      "seed": "Ada Lovelace",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "partial",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "ok"
+      },
+      "generalWebSearch": null,
+      "findingsCount": 23,
+      "woCount": 1,
+      "gwCount": 1,
+      "officialWebsiteFindings": [
+        {
+          "id": "wd-Q114068528",
+          "urls": [
+            "https://www.nvidia.com/en-us/design-visualization/ada-lovelace-architecture/"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q30128828",
+          "urls": [
+            "https://awc-hq.org/ada-lovelace-awards.html"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q115052486",
+          "urls": [
+            "https://findingada.com/"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q140352119",
+          "urls": [
+            "https://www.scs.fraunhofer.de/focus-projects/ada-center.html"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        }
+      ],
+      "p856Bridge": {
+        "added": [
+          "https://www.nvidia.com/en-us/design-visualization/ada-lovelace-architecture/",
+          "https://awc-hq.org/ada-lovelace-awards.html",
+          "https://findingada.com/",
+          "https://www.scs.fraunhofer.de/focus-projects/ada-center.html"
+        ],
+        "dropped": 0,
+        "poison": false,
+        "fetched": 0,
+        "sourceFinding": "wikidata_p856:Q114068528",
+        "citedQid": "Q114068528"
+      },
+      "urlDomainCandidatesCount": 4,
+      "sameEntityOnWire": 0,
+      "sameEntityTextHits": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q7259",
+        "Q114068528",
+        "Q87282992",
+        "Q30128828",
+        "Q3611580",
+        "Q115052486",
+        "Q140352119",
+        "Q66232516"
+      ],
+      "multiCandidate": true,
+      "gwFindings": [
+        {
+          "id": "gw-27244b7d3c44cb63",
+          "title": "www.nytimes.com — search/extlink candidate",
+          "url": "https://www.nytimes.com/interactive/2018/obituaries/overlooked-ada-lovelace.html",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "epistemicState": "candidate",
+          "kind": "url_candidate",
+          "whyFound": "WP OpenSearch→extlinks candidate for “Ada Lovelace” via 「Ada Lovelace」 · not identity · C1 UNKNOWN",
+          "hostFamily": "web_search",
+          "sourceFamily": "general_web",
+          "facetHints": [
+            "provider:general_web_search",
+            "kind:url_candidate",
+            "family:general_web",
+            "urlCandidate:https://www.nytimes.com/interactive/2018/obituaries/overlooked-ada-lovelace.html",
+            "relationship:UNKNOWN",
+            "confidence_band:low",
+            "source:wp_opensearch_extlinks",
+            "wikiLang:en",
+            "urlCandidate:https://www.siliconrepublic.com/video/adas-army-zoe-philpott",
+            "urlCandidate:https://doi.org/10.1145%2F2809523",
+            "urlCandidate:https://www.youtube.com/watch?v=jO2P27tI57k",
+            "urlCandidate:https://www.biography.com/people/ada-lovelace-20825323"
+          ]
+        }
+      ],
+      "woFindings": [
+        {
+          "id": "wo-88cb4e631509ec3e",
+          "title": "Association for Women in Computing (AWC) - Ada Lovelace Awards",
+          "relationship": "unknown",
+          "relationshipState": "POSSIBLE-MATCH",
+          "identityClaim": false,
+          "hostname": "awc-hq.org",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:POSSIBLE-MATCH"
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:8"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "gw_cap5",
+          "pass": true,
+          "detail": "gwCount=1 ≤ 5"
+        },
+        {
+          "id": "gw_unknown_rel",
+          "pass": true,
+          "detail": "GW relationship not SAME-*"
+        },
+        {
+          "id": "gw_no_identity_claim",
+          "pass": true,
+          "detail": "GW identityClaim false/absent"
+        },
+        {
+          "id": "gw_title_domain_not_identity",
+          "pass": true,
+          "detail": "title/domain not minted as identity"
+        },
+        {
+          "id": "gw_why_found_cite",
+          "pass": true,
+          "detail": "all 1 GW have whyFound/cite"
+        },
+        {
+          "id": "gw_epistemic_candidate",
+          "pass": true,
+          "detail": "epistemicState candidate/absent-ok"
+        },
+        {
+          "id": "gw_no_serp_crawl",
+          "pass": true,
+          "detail": "no SERP HTML / open-crawl markers"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "A_gw_unknown_candidates",
+          "pass": true,
+          "detail": "gw=1 all UNKNOWN/non-identity"
+        },
+        {
+          "id": "A_title_not_same",
+          "pass": true,
+          "detail": "no title→SAME"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "A2_person_Ada",
+      "sessionId": "kv1.1659fd3c117f3ce1b4f1290ac47e59a6",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr"
+    },
+    {
+      "scenario": "A_ORG",
+      "seed": "CERN",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "generalWebSearch": null,
+      "findingsCount": 30,
+      "woCount": 0,
+      "gwCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 0,
+      "sameEntityOnWire": 0,
+      "sameEntityTextHits": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q42944",
+        "Q157725",
+        "Q339112",
+        "Q21448970",
+        "Q244421",
+        "Q339102",
+        "Q339213",
+        "Q274589"
+      ],
+      "multiCandidate": true,
+      "gwFindings": [],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:8"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "gw_cap5",
+          "pass": true,
+          "detail": "gwCount=0 ≤ 5"
+        },
+        {
+          "id": "gw_unknown_rel",
+          "pass": true,
+          "detail": "GW relationship not SAME-*"
+        },
+        {
+          "id": "gw_no_identity_claim",
+          "pass": true,
+          "detail": "GW identityClaim false/absent"
+        },
+        {
+          "id": "gw_title_domain_not_identity",
+          "pass": true,
+          "detail": "title/domain not minted as identity"
+        },
+        {
+          "id": "gw_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no GW findings; meta=null"
+        },
+        {
+          "id": "gw_no_serp_crawl",
+          "pass": true,
+          "detail": "no SERP HTML / open-crawl markers"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_udc_no_same",
+          "pass": true,
+          "detail": "urlDomainCandidates no SAME"
+        },
+        {
+          "id": "A_gw_absent_unknown_ok",
+          "pass": true,
+          "detail": "providers={\"wikidata\":\"partial\",\"openlibrary\":\"partial\",\"wikipedia\":\"partial\",\"viaf\":\"partial\",\"web_origin\":\"ok\",\"general_web_search\":\"opensearch_error\"} gws=null"
+        },
+        {
+          "id": "A_title_not_same",
+          "pass": true,
+          "detail": "no title→SAME"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "A3_org_CERN",
+      "sessionId": "kv1.e35f1928f8d93cff5c63ade41fd4f8a6",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr"
+    },
+    {
+      "scenario": "C1_URL",
+      "seed": "https://www.w3.org/",
+      "status": "partial",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "empty_opensearch"
+      },
+      "generalWebSearch": null,
+      "findingsCount": 1,
+      "woCount": 1,
+      "gwCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 1,
+      "sameEntityOnWire": 0,
+      "sameEntityTextHits": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [],
+      "multiCandidate": false,
+      "gwFindings": [],
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "hostname": "www.w3.org",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:UNKNOWN"
+          ]
+        }
+      ],
+      "gaps": [],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "gw_cap5",
+          "pass": true,
+          "detail": "gwCount=0 ≤ 5"
+        },
+        {
+          "id": "gw_unknown_rel",
+          "pass": true,
+          "detail": "GW relationship not SAME-*"
+        },
+        {
+          "id": "gw_no_identity_claim",
+          "pass": true,
+          "detail": "GW identityClaim false/absent"
+        },
+        {
+          "id": "gw_title_domain_not_identity",
+          "pass": true,
+          "detail": "title/domain not minted as identity"
+        },
+        {
+          "id": "gw_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no GW findings; meta=null"
+        },
+        {
+          "id": "gw_no_serp_crawl",
+          "pass": true,
+          "detail": "no SERP HTML / open-crawl markers"
+        },
+        {
+          "id": "C1_url_alone_unknown",
+          "pass": true,
+          "detail": "woRels=[\"unknown\"] sameEntity=0"
+        },
+        {
+          "id": "C1_no_identity_claim",
+          "pass": true,
+          "detail": "no identityClaim on WO/GW"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "C1_url_alone_w3",
+      "sessionId": "kv1.71ce0205af1dfcf8e371ee787cd91844",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr"
+    },
+    {
+      "scenario": "E",
+      "seed": "David Cohen",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "ok"
+      },
+      "generalWebSearch": null,
+      "findingsCount": 32,
+      "woCount": 1,
+      "gwCount": 1,
+      "officialWebsiteFindings": [
+        {
+          "id": "wd-Q87994037",
+          "urls": [
+            "https://profiles.stanford.edu/david-cohen"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        },
+        {
+          "id": "wd-Q85408317",
+          "urls": [
+            "https://luskin.ucla.edu/person/david-cohen"
+          ],
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false
+        }
+      ],
+      "p856Bridge": {
+        "added": [
+          "https://luskin.ucla.edu/person/david-cohen",
+          "https://profiles.stanford.edu/david-cohen"
+        ],
+        "dropped": 0,
+        "poison": false,
+        "fetched": 0,
+        "sourceFinding": "wikidata_p856:Q85408317",
+        "citedQid": "Q85408317"
+      },
+      "urlDomainCandidatesCount": 2,
+      "sameEntityOnWire": 0,
+      "sameEntityTextHits": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q826524",
+        "Q87994037",
+        "Q89747540",
+        "Q2910274",
+        "Q85408317",
+        "Q115097854",
+        "Q12405712",
+        "Q110179523",
+        "Q112183109",
+        "Q133457924"
+      ],
+      "multiCandidate": true,
+      "gwFindings": [
+        {
+          "id": "gw-2ca6abc2ac19c9c8",
+          "title": "www.jstor.org — search/extlink candidate",
+          "url": "https://www.jstor.org/action/doBasicSearch?Query=%22David+Cohen%22+rabbi&acc=on&wc=on",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "epistemicState": "candidate",
+          "kind": "url_candidate",
+          "whyFound": "WP OpenSearch→extlinks candidate for “David Cohen” via 「David Cohen (rabbi)」 · not identity · C1 UNKNOWN",
+          "hostFamily": "web_search",
+          "sourceFamily": "general_web",
+          "facetHints": [
+            "provider:general_web_search",
+            "kind:url_candidate",
+            "family:general_web",
+            "urlCandidate:https://www.jstor.org/action/doBasicSearch?Query=%22David+Cohen%22+rabbi&acc=on&wc=on",
+            "relationship:UNKNOWN",
+            "confidence_band:low",
+            "source:wp_opensearch_extlinks",
+            "wikiLang:en",
+            "urlCandidate:https://isni.org/isni/0000000116121040",
+            "urlCandidate:https://snaccooperative.org/ark:/99166/w62f96b9",
+            "urlCandidate:https://www.idref.fr/238425134",
+            "urlCandidate:https://id.loc.gov/authorities/n82011835"
+          ]
+        }
+      ],
+      "woFindings": [
+        {
+          "id": "wo-edfe0af3ad3c0d6d",
+          "title": "David Cohen's Profile | Stanford Profiles",
+          "relationship": "unknown",
+          "relationshipState": "POSSIBLE-MATCH",
+          "identityClaim": false,
+          "hostname": "profiles.stanford.edu",
+          "facetHints": [
+            "provider:web_origin",
+            "kind:page",
+            "hostFamily:web_origin",
+            "relationship:POSSIBLE-MATCH"
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:10"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "gw_cap5",
+          "pass": true,
+          "detail": "gwCount=1 ≤ 5"
+        },
+        {
+          "id": "gw_unknown_rel",
+          "pass": true,
+          "detail": "GW relationship not SAME-*"
+        },
+        {
+          "id": "gw_no_identity_claim",
+          "pass": true,
+          "detail": "GW identityClaim false/absent"
+        },
+        {
+          "id": "gw_title_domain_not_identity",
+          "pass": true,
+          "detail": "title/domain not minted as identity"
+        },
+        {
+          "id": "gw_why_found_cite",
+          "pass": true,
+          "detail": "all 1 GW have whyFound/cite"
+        },
+        {
+          "id": "gw_epistemic_candidate",
+          "pass": true,
+          "detail": "epistemicState candidate/absent-ok"
+        },
+        {
+          "id": "gw_no_serp_crawl",
+          "pass": true,
+          "detail": "no SERP HTML / open-crawl markers"
+        },
+        {
+          "id": "E_pw_zero",
+          "pass": true,
+          "detail": "pretty-wrong Q1701775=0"
+        },
+        {
+          "id": "E_no_forced_merge",
+          "pass": true,
+          "detail": "findings=32 qids=10 multi=true"
+        },
+        {
+          "id": "E_multi_or_gap_honesty",
+          "pass": true,
+          "detail": "multi=true findings=32 gaps=1"
+        },
+        {
+          "id": "E_gw_no_host_collapse",
+          "pass": true,
+          "detail": "gw=1 stay UNKNOWN"
+        },
+        {
+          "id": "E_no_same_edges",
+          "pass": true,
+          "detail": "graph has no SAME-* edges"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "E1_david_cohen",
+      "sessionId": "kv1.ec8560c13872253817283ec9a404c283",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr"
+    },
+    {
+      "scenario": "E",
+      "seed": "John Smith",
+      "status": "partial",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "extlinks_error"
+      },
+      "generalWebSearch": null,
+      "findingsCount": 29,
+      "woCount": 0,
+      "gwCount": 0,
+      "officialWebsiteFindings": [],
+      "p856Bridge": null,
+      "urlDomainCandidatesCount": 0,
+      "sameEntityOnWire": 0,
+      "sameEntityTextHits": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q228024",
+        "Q18546636",
+        "Q3182477",
+        "Q332377",
+        "Q6258357",
+        "Q6258267",
+        "Q6258259",
+        "Q541460",
+        "Q991529"
+      ],
+      "multiCandidate": true,
+      "gwFindings": [],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:9"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "gw_cap5",
+          "pass": true,
+          "detail": "gwCount=0 ≤ 5"
+        },
+        {
+          "id": "gw_unknown_rel",
+          "pass": true,
+          "detail": "GW relationship not SAME-*"
+        },
+        {
+          "id": "gw_no_identity_claim",
+          "pass": true,
+          "detail": "GW identityClaim false/absent"
+        },
+        {
+          "id": "gw_title_domain_not_identity",
+          "pass": true,
+          "detail": "title/domain not minted as identity"
+        },
+        {
+          "id": "gw_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no GW findings; meta=null"
+        },
+        {
+          "id": "gw_no_serp_crawl",
+          "pass": true,
+          "detail": "no SERP HTML / open-crawl markers"
+        },
+        {
+          "id": "E_pw_zero",
+          "pass": true,
+          "detail": "pretty-wrong Q1701775=0"
+        },
+        {
+          "id": "E_no_forced_merge",
+          "pass": true,
+          "detail": "findings=29 qids=9 multi=true"
+        },
+        {
+          "id": "E_multi_or_gap_honesty",
+          "pass": true,
+          "detail": "multi=true findings=29 gaps=1"
+        },
+        {
+          "id": "E_gw_no_host_collapse",
+          "pass": true,
+          "detail": "gw=0 stay UNKNOWN"
+        },
+        {
+          "id": "E_no_same_edges",
+          "pass": true,
+          "detail": "graph has no SAME-* edges"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "E2_john_smith_pw",
+      "sessionId": "kv1.42b7879c92a2853e935280c8b9e7598a",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr"
+    }
+  ],
+  "sseSmoke": {
+    "http": 200,
+    "bytes": 103658,
+    "sessionId": "kv1.1659fd3c117f3ce1b4f1290ac47e59a6",
+    "leakCount": 0,
+    "sameEntityClaimCount": 0,
+    "forbiddenCount": 0,
+    "pass": true
+  },
+  "totals": {
+    "prettyWrong": 0,
+    "leak": 0,
+    "sameEntityFromUrlOrWire": 0,
+    "gwFindingsTotal": 2,
+    "casePass": 6,
+    "caseFail": 0,
+    "caseBlocked": 0
+  },
+  "verdict": "PASS",
+  "stampReport": "2026-09-24T08:33:53+03:00",
+  "epistemicLocks": [
+    "INFORMATION≠IDENTITY",
+    "UNKNOWN≠FALSE",
+    "CANDIDATE≠FACT",
+    "URL≠IDENTITY",
+    "TITLE≠IDENTITY",
+    "CORRELATION≠PROOF"
+  ],
+  "residuals": [
+    "A1 TBL: providers.general_web_search=all_dropped_ssrf_or_registry — honest drop, not Acc FAIL",
+    "A2 Ada: GW nytimes Overlooked/Ada Lovelace via WP OpenSearch→extlinks; whyFound present; evidence cites en.wikipedia.org/wiki/Ada_Lovelace; identityClaim=false; relationship UNKNOWN",
+    "A2 Ada: wire shows 1 gw finding with 5 urlCandidate facetHints (soft coalesce of ≤5 adapter emits) — Cap ≤5 honored; no SAME-ENTITY",
+    "A2 Ada: residual P856 namesake (Q114068528) + WO POSSIBLE-MATCH — correlation≠proof",
+    "A3 CERN: providers.general_web_search=opensearch_error — MW API residual; UNKNOWN/gap honesty",
+    "E1 David Cohen: GW jstor via 「David Cohen (rabbi)」; WO Stanford profile from P856 Q85408317; multi-homonym gaps; Q1701775=0; no forced merge",
+    "E2 John Smith: providers.general_web_search=extlinks_error — multi-candidate honesty retained; Q1701775=0",
+    "C1 URL-alone: WO UNKNOWN / identityClaim=false; GW empty_opensearch (expected for URL seed)",
+    "session.generalWebSearch meta null on emit; flag ON observed via providers.general_web_search statuses",
+    "Wave 1 product NOT DONE · WP OpenSearch→extlinks only · not Maximum Discovery / SERP"
+  ],
+  "nonClaims": [
+    "Does not stamp Wave 1 product DONE",
+    "Does not measure Acc B / D / F11",
+    "Does not measure flag-OFF path (this Preview is ON)",
+    "Does not unlock Core/B0/A2/C1 promote",
+    "Does not invent PASS on auth failure",
+    "Does not measure TREATMENT dpl_J92G9…"
+  ],
+  "paths": [
+    "docs/GO-IMPL-500/MD-WAVE/03-ACC-AE-GENERAL-WEB-דיוק-2026-09-24.md",
+    "docs/GO-IMPL-500/MD-WAVE/03-ACC-AE-GENERAL-WEB-דיוק-2026-09-24.json",
+    "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/03-ACC-AE-GENERAL-WEB-דיוק-2026-09-24.md",
+    "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/03-ACC-AE-GENERAL-WEB-raw/"
+  ]
+}

@@ -391,3 +391,51 @@
 **Server L2 GENERAL_WEB action ids:** **149–153**  
 **Verdict:** fill.1 **CODE COMPLETE** · flag **OFF** · TREATMENT **untouched** · Wave1 product **NOT DONE** · **NO PROMOTE**
 
+
+### Action 268 — Arch glance L2 fill.1
+- **When:** 2026-09-24 ~08:25 IDT
+- **Who:** ארכיטקט
+- **What:** Glanced `e86d95c` vs FILL-SPEC → **CONSISTENT/PASS**. Tests 47/0 re-confirmed. Acc/QA HOLD until separate Preview. Wave 1 product NOT DONE. **NO PROMOTE**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/ARCH-GLANCE-L2-GENERAL-WEB-FILL-ארכיטקט-2026-09-24.md` · ACTION-LOG
+
+---
+
+## QA · separate GENERAL_WEB Preview smoke (בודק) · 2026-09-24 ~08:28–08:30 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 269 | 08:28–08:30 | QA live smoke on `dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr` with GENERAL_WEB ON: W3C candidate/cite-or-drop/C1/caps PASS; TBL dropped path; Smith/כהן multi-candidate honesty PASS with adapter OpenSearch errors. Overall **PARTIAL**. |
+
+### Action 269 — QA smoke result
+- **Who:** בודק / QA
+- **What:** Separate GENERAL_WEB Preview only; POST + GET poll for W3C, Tim Berners-Lee, Smith, כהן. W3C emitted 1 `url_candidate` from `general_web_search` with `provenanceUrl`, `relationship=UNKNOWN`, `identityClaim=false`, `urlIsNotIdentity=true`, and `sameEntityEmitted=0`. TBL had `all_dropped_ssrf_or_registry`; Smith/כהן had `opensearch_error` but retained multi-title UNKNOWN honesty, Q1701775 leak 0, SAME-ENTITY 0.
+- **Verdict:** **PARTIAL** smoke; general-web max countable candidates 1 ≤ 5; no SERP HTML crawl smell observed. Wave 1 product **NOT DONE**. **NO PROMOTE**. TREATMENT `dpl_J92G9…` untouched.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/QA-SMOKE-GENERAL-WEB-בודק-2026-09-24.md` + `.json`; raw `test-results/2026-09-24/MD-WAVE/raw/qa-gw-HYUbw4/`; test-results report mirror.
+
+
+---
+
+## Acc · GENERAL_WEB Preview A/E live (דיוק) · 2026-09-24 ~08:29–08:35 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 53 | 08:29 | Acc harness against GENERAL_WEB Preview `dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr` (vercel curl); health 200; flag ON observed |
+| 54 | 08:29–08:31 | Live Acc A/E+C1 cases (TBL, Ada, CERN, W3C URL, David Cohen, John Smith) → **PASS** 6/6 · pw0 · leak0 · SAME0 · GW=2 |
+| 55 | 08:32–08:35 | Evidence md+json + raw mirror under MD-WAVE; ACTION-LOG Acc notes; commit+push docs only (**≠ promote**) |
+
+### Action 53 — Acc GENERAL_WEB target lock
+- **Who:** דיוק / Acc
+- **What:** Locked measure to Chief GENERAL_WEB Preview only. TREATMENT `dpl_J92G9…` not measured. Access via `vercel curl --deployment dpl_HYUbw4g7hYqR1F9ybA6z41APPDXr`.
+- **When:** 2026-09-24 08:34 IDT
+
+### Action 54 — Acc A/E live result
+- **Who:** דיוק / Acc
+- **What:** Cases A1 TBL / A2 Ada / A3 CERN / C1 W3C URL / E1 David Cohen / E2 John Smith. **Verdict PASS**. pretty-wrong Q1701775=0 · leak=0 · SAME-ENTITY-from-URL=0. GW path exercised on Ada (nytimes via WP extlinks) + David Cohen (jstor via rabbi WP page); C1 URL-alone stays UNKNOWN. Cap ≤5 · no SERP HTML.
+- **Verdict:** **PASS** Acc A/E GENERAL_WEB · Wave 1 product **NOT DONE** · **NO PROMOTE**
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/03-ACC-AE-GENERAL-WEB-דיוק-2026-09-24.md` + `.json`
+
+### Action 55 — Acc evidence + push
+- **Who:** דיוק / Acc
+- **What:** Wrote evidence + test-results mirror/raw; appended ACTION-LOG Acc notes. Commit+push docs only. Does not flip flags · does not promote.
+- **When:** 2026-09-24 08:34 IDT
+
