@@ -44,3 +44,10 @@ Shared log actions **#276–278**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/05-ACC
 Target: `dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k` · URL `akvot-simple-demo-pnmmxdn7e-k-akvot.vercel.app` · `DISCOVERY_ENABLE_DDG_INSTANT=1` (deploy -e) · NOT TREATMENT `dpl_J92G9…` · NOT fill.1.1 `dpl_CJPdnz…`.  
 **Verdict PASS** (honesty/fail-closed/C1) · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6 · DDG findings **0** · flag ON observed · `providers.ddg_instant_answer=ia_error` ×6.  
 Coverage residual open (TLS RCA to api.duckduckgo.com) — Acc PASS ≠ DDG coverage win ≠ Wave 1 DONE. Positive AbstractURL/FirstURL cite path not live-proven. **NO PROMOTE**.
+
+## 2026-09-24 Acc MD-WAVE A/E LIVE Night spine + Hop A (דיוק)
+
+Shared log actions **#279–281**. Deliverable: `docs/GO-IMPL-500/MD-WAVE/06-ACC-AE-NIGHT-HOP-A-דיוק-2026-09-24.md` (+ `.json`, test-results mirror + raw).  
+Target: `dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7` · URL `akvot-simple-demo-630wxvr9e-k-akvot.vercel.app` · `DISCOVERY_ENABLE_NIGHT=1` + `DISCOVERY_ENABLE_GENERAL_WEB=1` (deploy -e) · NOT TREATMENT `dpl_J92G9…` · NOT Adapter-2 DDG `dpl_8RbS15…` · NOT fill.1.1 `dpl_CJPdnz…`.  
+**Verdict PASS** (honesty/fail-closed/C1) · pw **0** · leak **0** · SAME-ENTITY-from-URL **0** · cases 6/6 · nightLoop ON · UC wire total **3** · gulfnews watch not surfaced (extlinks_error).  
+Coverage residual open (W3C/Ada opensearch_error; ABC extlinks_error) — Acc PASS ≠ Night coverage win ≠ Wave 1 DONE. **NO PROMOTE**.

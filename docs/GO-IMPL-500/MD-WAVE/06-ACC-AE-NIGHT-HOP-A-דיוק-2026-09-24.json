@@ -1,0 +1,1203 @@
+{
+  "id": "06-ACC-AE-NIGHT-HOP-A",
+  "stamp": "2026-09-24T11:09:35.813Z",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "MD-WAVE",
+  "deployment": "dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+  "previewUrl": "https://akvot-simple-demo-630wxvr9e-k-akvot.vercel.app",
+  "flagsExpected": {
+    "DISCOVERY_ENABLE_NIGHT": "ON (deploy -e)",
+    "DISCOVERY_ENABLE_GENERAL_WEB": "ON (deploy -e)",
+    "note": "Night spine + Hop A locale 1.2 Preview; TREATMENT / Adapter-2 DDG / fill.1.1 NOT measured"
+  },
+  "notMeasured": [
+    "dpl_J92G9XdqwmTmb7qkT5KdUsAXwy3j TREATMENT",
+    "dpl_8RbS15aXGi63MxLhqXaAEzDZSy5k Adapter-2 DDG",
+    "dpl_CJPdnzgMe9iUG8qFFMo13DVT9z15 fill.1.1",
+    "B broad",
+    "D",
+    "F11",
+    "flag OFF path",
+    "promote"
+  ],
+  "scope": "Acc A/E on Night LOOP-SPINE + Hop A (GENERAL_WEB locale) + C1 URL-alone / emit scrub / gulfnews soft-wrong watch",
+  "promote": false,
+  "wave1ProductDone": false,
+  "wave1Note": "Night Acc A/E only — Acc PASS ≠ Wave 1 DONE ≠ coverage win · NO PROMOTE",
+  "healthHttp": 200,
+  "nightSpineObservedOn": true,
+  "generalWebFlagObservedOn": true,
+  "gwStatuses": {
+    "A1_person_TBL": "ok",
+    "A2_org_W3C": "opensearch_error",
+    "A3_person_Ada": "opensearch_error",
+    "C1_url_alone_w3": "empty_opensearch",
+    "E1_david_cohen": "ok",
+    "E2_john_smith_pw": "ok"
+  },
+  "urlCandidateCoverageHits": 3,
+  "urlCandidateCoverageCases": 6,
+  "gulfnewsWatch": {
+    "seeded": true,
+    "seed": "ABC Construction",
+    "surfaced": false,
+    "hits": [],
+    "identityClaim": false,
+    "sameFromUrl": false,
+    "stayUnknownClass": true,
+    "notes": "gulfnews not surfaced this Acc run (gw=extlinks_error uc=0); prior Server smoke cited gulfnews — residual coverage/noise, not Acc invent",
+    "casePass": true,
+    "ucCount": 0,
+    "gwStatus": "extlinks_error"
+  },
+  "cases": [
+    {
+      "scenario": "A_PERSON",
+      "seed": "Tim Berners-Lee",
+      "status": "partial",
+      "uiState": "candidates_multi",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "ok"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "ALL_HOPS_SETTLED",
+        "seedClass": "person",
+        "candidateCount": 5,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "ok",
+            "count": 5,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "ok",
+      "findingsCount": 13,
+      "woCount": 0,
+      "urlCandidateCount": 1,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q80",
+        "Q120373140",
+        "Q120373262",
+        "Q22991023",
+        "Q22946133",
+        "Q22980417",
+        "Q19761597",
+        "Q55693401"
+      ],
+      "multiCandidate": true,
+      "gulfnewsHits": [],
+      "urlCandidates": [
+        {
+          "id": "night-general_web_search-https://info.cern.ch/Proposal.html",
+          "title": "info.cern.ch — search/extlink candidate",
+          "url": "https://info.cern.ch/Proposal.html",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "epistemicState": "candidate",
+          "kind": "url_candidate",
+          "whyFound": "WP OpenSearch→extlinks candidate for “Tim Berners-Lee” via 「Tim Berners-Lee」 · not identity · C1 UNKNOWN",
+          "providers": [
+            "general_web_search"
+          ],
+          "hostFamily": "web_search",
+          "sourceFamily": "general_web"
+        }
+      ],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:8"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=ALL_HOPS_SETTLED phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=ok"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=1 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_why_found_cite",
+          "pass": true,
+          "detail": "all 1 url_candidate have whyFound/cite"
+        },
+        {
+          "id": "gw_provider_path",
+          "pass": true,
+          "detail": "status=ok uc=1"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_uc_unknown_candidates",
+          "pass": true,
+          "detail": "uc=1 all UNKNOWN/non-identity"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "A1_person_TBL",
+      "sessionId": "kv1.9088172f229618f8fe122489098fd43b",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": false
+    },
+    {
+      "scenario": "A_ORG",
+      "seed": "World Wide Web Consortium",
+      "status": "partial",
+      "uiState": "candidates_multi",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "person",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "opensearch_error",
+            "count": 0,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "opensearch_error",
+      "findingsCount": 7,
+      "woCount": 0,
+      "urlCandidateCount": 0,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q37033",
+        "Q2661442"
+      ],
+      "multiCandidate": true,
+      "gulfnewsHits": [],
+      "urlCandidates": [],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:2"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=EMPTY_FRONTIER phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=opensearch_error"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=0 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no url_candidate; gwStatus=opensearch_error; hopJournal=[{\"hopId\":\"general_web\",\"providerId\":\"general_web_search\",\"reason\":\"opensearch_error\",\"count\":0,\"optional\":false,\"meta\":{\"wikiLocale\":\"en\"}}]"
+        },
+        {
+          "id": "gw_fail_closed_ok",
+          "pass": true,
+          "detail": "status=opensearch_error uc=0 (coverage residual ok if empty)"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_uc_absent_ok",
+          "pass": true,
+          "detail": "gw=opensearch_error empty UC (coverage≠Acc FAIL)"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "A2_org_W3C",
+      "sessionId": "kv1.cf20ae1342dff3c0eee36aa203546fca",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": false
+    },
+    {
+      "scenario": "A_PERSON",
+      "seed": "Ada Lovelace",
+      "status": "partial",
+      "uiState": "partial_candidates",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "person",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "opensearch_error",
+            "count": 0,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "opensearch_error",
+      "findingsCount": 7,
+      "woCount": 0,
+      "urlCandidateCount": 0,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q7259"
+      ],
+      "multiCandidate": false,
+      "gulfnewsHits": [],
+      "urlCandidates": [],
+      "woFindings": [],
+      "gaps": [],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=EMPTY_FRONTIER phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=opensearch_error"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=0 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no url_candidate; gwStatus=opensearch_error; hopJournal=[{\"hopId\":\"general_web\",\"providerId\":\"general_web_search\",\"reason\":\"opensearch_error\",\"count\":0,\"optional\":false,\"meta\":{\"wikiLocale\":\"en\"}}]"
+        },
+        {
+          "id": "gw_fail_closed_ok",
+          "pass": true,
+          "detail": "status=opensearch_error uc=0 (coverage residual ok if empty)"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_uc_absent_ok",
+          "pass": true,
+          "detail": "gw=opensearch_error empty UC (coverage≠Acc FAIL)"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "A3_person_Ada",
+      "sessionId": "kv1.6ce8a88707aa872bad2272f47d7cffb8",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": false
+    },
+    {
+      "scenario": "C1_URL",
+      "seed": "https://www.w3.org/",
+      "status": "complete",
+      "uiState": "complete_candidates",
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "empty_opensearch"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "url",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "empty_opensearch",
+            "count": 0,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "empty_opensearch",
+      "findingsCount": 1,
+      "woCount": 1,
+      "urlCandidateCount": 0,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [],
+      "multiCandidate": false,
+      "gulfnewsHits": [],
+      "urlCandidates": [],
+      "woFindings": [
+        {
+          "id": "wo-609ac32aa09a6777",
+          "title": "W3C",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "hostname": "www.w3.org"
+        }
+      ],
+      "gaps": [],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=EMPTY_FRONTIER phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=empty_opensearch"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=0 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no url_candidate; gwStatus=empty_opensearch; hopJournal=[{\"hopId\":\"general_web\",\"providerId\":\"general_web_search\",\"reason\":\"empty_opensearch\",\"count\":0,\"optional\":false,\"meta\":{\"wikiLocale\":\"en\"}}]"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "C1_url_alone_unknown",
+          "pass": true,
+          "detail": "sameEntity=0 uiState=complete_candidates"
+        },
+        {
+          "id": "C1_no_identity_claim",
+          "pass": true,
+          "detail": "no identityClaim on any finding"
+        },
+        {
+          "id": "C1_no_dossier",
+          "pass": true,
+          "detail": "uiState=complete_candidates (not dossier)"
+        },
+        {
+          "id": "C1_uc_no_same",
+          "pass": true,
+          "detail": "uc=0 non-identity"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "C1_url_alone_w3",
+      "sessionId": "kv1.6d3cf59e85a986c3ae066451f57078d7",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "complete",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": false
+    },
+    {
+      "scenario": "E",
+      "seed": "David Cohen",
+      "status": "partial",
+      "uiState": "candidates_multi",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "ok"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "ALL_HOPS_SETTLED",
+        "seedClass": "person",
+        "candidateCount": 5,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "ok",
+            "count": 5,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "ok",
+      "findingsCount": 32,
+      "woCount": 1,
+      "urlCandidateCount": 1,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q826524",
+        "Q87994037",
+        "Q89747540",
+        "Q2910274",
+        "Q85408317",
+        "Q115097854",
+        "Q12405712",
+        "Q110179523",
+        "Q112183109",
+        "Q133457924"
+      ],
+      "multiCandidate": true,
+      "gulfnewsHits": [],
+      "urlCandidates": [
+        {
+          "id": "night-general_web_search-https://allaboutjerusalem.com/gallery-image/tomb",
+          "title": "allaboutjerusalem.com — search/extlink candidate",
+          "url": "https://allaboutjerusalem.com/gallery-image/tomb-david-cohen-rav-ha-nazir/203",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "epistemicState": "candidate",
+          "kind": "url_candidate",
+          "whyFound": "WP OpenSearch→extlinks candidate for “David Cohen” via 「David Cohen (rabbi)」 · not identity · C1 UNKNOWN",
+          "providers": [
+            "general_web_search"
+          ],
+          "hostFamily": "web_search",
+          "sourceFamily": "general_web"
+        }
+      ],
+      "woFindings": [
+        {
+          "id": "wo-edfe0af3ad3c0d6d",
+          "title": "David Cohen's Profile | Stanford Profiles",
+          "relationship": "unknown",
+          "relationshipState": "POSSIBLE-MATCH",
+          "identityClaim": false,
+          "hostname": "profiles.stanford.edu"
+        }
+      ],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:10"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=ALL_HOPS_SETTLED phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=ok"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=1 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_why_found_cite",
+          "pass": true,
+          "detail": "all 1 url_candidate have whyFound/cite"
+        },
+        {
+          "id": "gw_provider_path",
+          "pass": true,
+          "detail": "status=ok uc=1"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "E_pw_zero",
+          "pass": true,
+          "detail": "pretty-wrong Q1701775=0"
+        },
+        {
+          "id": "E_no_forced_merge",
+          "pass": true,
+          "detail": "findings=32 qids=10 multi=true"
+        },
+        {
+          "id": "E_multi_or_gap_honesty",
+          "pass": true,
+          "detail": "multi=true findings=32 gaps=1"
+        },
+        {
+          "id": "E_uc_no_host_collapse",
+          "pass": true,
+          "detail": "uc=1 stay UNKNOWN / empty"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "E1_david_cohen",
+      "sessionId": "kv1.fc86abc2874c16dfd38e42ab44d07c67",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": false
+    },
+    {
+      "scenario": "E",
+      "seed": "John Smith",
+      "status": "partial",
+      "uiState": "candidates_multi",
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "ok"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "ALL_HOPS_SETTLED",
+        "seedClass": "person",
+        "candidateCount": 5,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "ok",
+            "count": 5,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "ok",
+      "findingsCount": 30,
+      "woCount": 0,
+      "urlCandidateCount": 1,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [
+        "Q228024",
+        "Q18546636",
+        "Q3182477",
+        "Q332377",
+        "Q6258357",
+        "Q6258267",
+        "Q6258259",
+        "Q541460",
+        "Q991529"
+      ],
+      "multiCandidate": true,
+      "gulfnewsHits": [],
+      "urlCandidates": [
+        {
+          "id": "night-general_web_search-https://members.aol.com/mayflo1620/pocahontas.ht",
+          "title": "members.aol.com — search/extlink candidate",
+          "url": "https://members.aol.com/mayflo1620/pocahontas.html",
+          "relationship": "unknown",
+          "relationshipState": "UNKNOWN",
+          "identityClaim": false,
+          "epistemicState": "candidate",
+          "kind": "url_candidate",
+          "whyFound": "WP OpenSearch→extlinks candidate for “John Smith” via 「John Smith (explorer)」 · not identity · C1 UNKNOWN",
+          "providers": [
+            "general_web_search"
+          ],
+          "hostFamily": "web_search",
+          "sourceFamily": "general_web"
+        }
+      ],
+      "woFindings": [],
+      "gaps": [
+        {
+          "code": "homonym_risk",
+          "severity": "info",
+          "message": "distinct_typed_refs:9"
+        }
+      ],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=ALL_HOPS_SETTLED phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=ok"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=1 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_why_found_cite",
+          "pass": true,
+          "detail": "all 1 url_candidate have whyFound/cite"
+        },
+        {
+          "id": "gw_provider_path",
+          "pass": true,
+          "detail": "status=ok uc=1"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "E_pw_zero",
+          "pass": true,
+          "detail": "pretty-wrong Q1701775=0"
+        },
+        {
+          "id": "E_no_forced_merge",
+          "pass": true,
+          "detail": "findings=30 qids=9 multi=true"
+        },
+        {
+          "id": "E_multi_or_gap_honesty",
+          "pass": true,
+          "detail": "multi=true findings=30 gaps=1"
+        },
+        {
+          "id": "E_uc_no_host_collapse",
+          "pass": true,
+          "detail": "uc=1 stay UNKNOWN / empty"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "E2_john_smith_pw",
+      "sessionId": "kv1.7ba062da3b454fd38d4538c4c9a02276",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": false
+    },
+    {
+      "scenario": "A_ORG",
+      "seed": "ABC Construction",
+      "status": "partial",
+      "uiState": "partial_candidates",
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "extlinks_error"
+      },
+      "nightLoop": {
+        "enabled": true,
+        "version": "2026-09-24.night.loop.1",
+        "stopReason": "EMPTY_FRONTIER",
+        "seedClass": "organization",
+        "candidateCount": 0,
+        "fetches": 1,
+        "phases": [
+          "discover",
+          "evaluate",
+          "expand",
+          "corroborate",
+          "stop"
+        ],
+        "hopJournal": [
+          {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "reason": "extlinks_error",
+            "count": 0,
+            "optional": false,
+            "meta": {
+              "wikiLocale": "en"
+            }
+          }
+        ]
+      },
+      "generalWebSearchStatus": "extlinks_error",
+      "findingsCount": 4,
+      "woCount": 0,
+      "urlCandidateCount": 0,
+      "facesCount": 0,
+      "photosCount": 0,
+      "identityClaimTrueCount": 0,
+      "sameEntityOnWire": 0,
+      "prettyWrongCount": 0,
+      "leakCount": 0,
+      "distinctWdQids": [],
+      "multiCandidate": false,
+      "gulfnewsHits": [],
+      "urlCandidates": [],
+      "woFindings": [],
+      "gaps": [],
+      "checks": [
+        {
+          "id": "pw_zero",
+          "pass": true,
+          "detail": "Q1701775 absent"
+        },
+        {
+          "id": "leak_zero",
+          "pass": true,
+          "detail": "no Sync.me/Truecaller/credential leak patterns"
+        },
+        {
+          "id": "same_entity_zero",
+          "pass": true,
+          "detail": "no SAME-ENTITY on findings/edges"
+        },
+        {
+          "id": "night_spine_on",
+          "pass": true,
+          "detail": "nightLoop.enabled=true stop=EMPTY_FRONTIER phases=discover→evaluate→expand→corroborate→stop"
+        },
+        {
+          "id": "gw_flag_on_observed",
+          "pass": true,
+          "detail": "providers.general_web_search=extlinks_error"
+        },
+        {
+          "id": "uc_cap5",
+          "pass": true,
+          "detail": "ucCount=0 ≤ 5"
+        },
+        {
+          "id": "uc_unknown_rel",
+          "pass": true,
+          "detail": "url_candidate relationship not SAME-*"
+        },
+        {
+          "id": "uc_no_identity_claim",
+          "pass": true,
+          "detail": "url_candidate identityClaim false/absent"
+        },
+        {
+          "id": "uc_cite_or_drop_empty_ok",
+          "pass": true,
+          "detail": "no url_candidate; gwStatus=extlinks_error; hopJournal=[{\"hopId\":\"general_web\",\"providerId\":\"general_web_search\",\"reason\":\"extlinks_error\",\"count\":0,\"optional\":false,\"meta\":{\"wikiLocale\":\"en\"}}]"
+        },
+        {
+          "id": "gw_fail_closed_ok",
+          "pass": true,
+          "detail": "status=extlinks_error uc=0 (coverage residual ok if empty)"
+        },
+        {
+          "id": "gulfnews_absent_or_ok",
+          "pass": true,
+          "detail": "gulfnews not surfaced this seed"
+        },
+        {
+          "id": "abc_spine_uc_le1",
+          "pass": true,
+          "detail": "uc=0 ≤1"
+        },
+        {
+          "id": "A_no_url_to_identity",
+          "pass": true,
+          "detail": "WO not claiming identity / SAME"
+        },
+        {
+          "id": "A_uc_absent_ok",
+          "pass": true,
+          "detail": "gw=extlinks_error empty UC (coverage≠Acc FAIL)"
+        }
+      ],
+      "pass": true,
+      "failIds": [],
+      "id": "WATCH_abc_gulfnews",
+      "sessionId": "kv1.2dd7eaa37024277018464281fe136e0c",
+      "createHttp": 201,
+      "polls": [
+        {
+          "via": "create",
+          "status": "partial",
+          "http": 201
+        }
+      ],
+      "access": "vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7",
+      "watch": true
+    }
+  ],
+  "sseSmoke": {
+    "http": 200,
+    "bytes": 59436,
+    "sessionId": "kv1.9088172f229618f8fe122489098fd43b",
+    "leakCount": 0,
+    "sameEntityClaimCount": 0,
+    "forbiddenCount": 0,
+    "pass": true
+  },
+  "totals": {
+    "prettyWrong": 0,
+    "leak": 0,
+    "sameEntityFromUrlOrWire": 0,
+    "urlCandidateFindingsTotal": 3,
+    "casePass": 6,
+    "caseFail": 0,
+    "caseBlocked": 0
+  },
+  "verdict": "PASS",
+  "coverageNote": "url_candidate findings total=3 across core cases",
+  "stampLocal": "2026-09-24T14:11:20+03:00",
+  "reportStamp": "2026-09-24T14:11:00+03:00",
+  "accPassNote": "Acc PASS ≠ Wave 1 DONE ≠ coverage win · NO PROMOTE"
+}

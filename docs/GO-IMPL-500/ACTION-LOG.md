@@ -717,3 +717,38 @@
 - **Preview:** `dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7` · https://akvot-simple-demo-630wxvr9e-k-akvot.vercel.app
 - **Smoke:** ABC Construction → nightLoop spine ON · general_web ok · 1 url_candidate UNKNOWN · identityClaim=false
 - **Locks:** TREATMENT untouched · Adapter-2 measure untouched · **NO PROMOTE**
+
+---
+
+## QA · Night LOOP-SPINE + Hop A locale 1.2 live smoke (בודק) · 2026-09-24 14:07–14:08 IDT
+
+### Action Q4 — target-only Night Preview QA smoke
+- **Who:** QA / בודק
+- **What:** POST + GET smoke on only `dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7` using Assaf Rappaport, ABC Construction, Tim Berners-Lee, כהן, Smith, and W3C; one bounded ABC retry was also run. Night spine enabled with `discover→evaluate→expand→corroborate→stop`; GENERAL_WEB Hop A observed with locale `en`/`he` and one bounded fetch.
+- **Result:** **PARTIAL** overall. Hop A emitted 3 cited `url_candidate` rows (Assaf, TBL, כהן), each `UNKNOWN`, `identityClaim=false`, `urlIsNotIdentity=true`, SAME-from-URL `0`. Smith/כהן honesty PASS; `Q1701775=0`; max emitted candidate count 1 ≤5; no SERP HTML crawl markers. ABC `extlinks_error` on both attempts, Smith/W3C `opensearch_error`; coverage remains partial. GulfNews did not appear, so no entity-accuracy PASS stamped.
+- **Locks:** Wave 1 **NOT DONE** · TREATMENT **HOLD** · **אין promote / NO PROMOTE**. TREATMENT `dpl_J92G9…` and DDG `dpl_8RbS15…` not measured.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/QA-SMOKE-NIGHT-HOP-A-בודק-2026-09-24.md` (+ `.json`); raw `test-results/2026-09-24/MD-WAVE/raw/qa-night-HETtu7/`.
+
+---
+
+## Acc · Night LOOP-SPINE + Hop A A/E (דיוק) · 2026-09-24 ~14:09–14:12 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 279 | 14:09 | Acc A/E LIVE start on Night Preview `dpl_HETtu7…` (NOT TREATMENT / NOT Adapter-2 DDG / NOT fill.1.1) |
+| 280 | 14:09–14:10 | Seven Acc cases via `vercel curl --deployment dpl_HETtu7…` (A1–A3, C1, E1–E2 + ABC gulfnews watch); emit scrub pw/leak/SAME=0; nightLoop ON · Hop A GENERAL_WEB |
+| 281 | ~14:11–14:12 | Acc deliverable `06-ACC-AE-NIGHT-HOP-A` · verdict **PASS** honesty · coverage residual open · **NO PROMOTE** |
+
+### Action 279 — Acc A/E LIVE start (Night)
+- **Who:** דיוק
+- **What:** Locked Acc A/E pack to Night Preview only. Flags: `DISCOVERY_ENABLE_NIGHT=1` + `DISCOVERY_ENABLE_GENERAL_WEB=1` (deploy `-e`). Health 200 via `vercel curl --deployment dpl_HETtu7sSeSzXSGr4LCbDUmTC3pY7`.
+
+### Action 280 — Live cases + emit scrub
+- **Who:** דיוק
+- **What:** Cases Tim Berners-Lee, W3C, Ada Lovelace, `https://www.w3.org/`, David Cohen, John Smith + watch ABC Construction. Night spine ON all; `url_candidate` UNKNOWN when present; C1 URL-alone WO UNKNOWN identityClaim=false; Q1701775=0; SAME=0; leak=0. Gulfnews not surfaced (extlinks_error).
+- **Raw:** `test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/06-ACC-AE-NIGHT-HOP-A-raw/`
+
+### Action 281 — Deliverable
+- **Who:** דיוק
+- **What:** Wrote `06-ACC-AE-NIGHT-HOP-A-דיוק-2026-09-24.md` + `.json` (+ mirrors). Room: Acc **PASS** honesty/fail-closed/C1; Wave 1 **NOT DONE**; **אין promote**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/06-ACC-AE-NIGHT-HOP-A-דיוק-2026-09-24.md` + `.json`
