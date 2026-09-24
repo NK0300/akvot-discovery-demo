@@ -1,0 +1,254 @@
+{
+  "artifact": "QA-MEASURE-MATRIX-A-E",
+  "role": "בודק",
+  "stamp": "2026-09-24T07:52:16+03:00",
+  "timezone": "Asia/Jerusalem",
+  "workspace": "/workspace/akvot-quick-demo",
+  "mode": "docs_only_measure_prep",
+  "status": "HOLD",
+  "statusReason": "HOLD until L1 (WD officialWebsiteUrls→urlTargets/web_origin) + QueryPlan Preview path exists and Preview URL is named by שרת; no invent URL; no live HTTP",
+  "locks": {
+    "noPromote": true,
+    "noCoreB0Break": true,
+    "c1UrlAloneUnknown": true,
+    "flagsDefaultOff": true,
+    "informationNotIdentity": true,
+    "noFabricate": true,
+    "noLivePreviewMeasure": true
+  },
+  "cites": [
+    "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/00-GAP-MAP.md",
+    "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/LOCAL-WAVE-ARCH-L3.md",
+    "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/GO-MEASURE-DUAL-RUN-DESIGN-ארכיטקט.md",
+    "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/ACC-ADVERSARIAL-MATRIX.md"
+  ],
+  "exportsGapMapSummaryPresent": false,
+  "previewUrl": null,
+  "previewUrlSource": "must_be_named_by_שרת",
+  "flagExpectations": {
+    "DISCOVERY_ENABLE_QUERYPLAN": { "default": "OFF", "measureRequiresExplicitOn": true },
+    "DISCOVERY_ENABLE_PLAN_SSE": { "default": "OFF", "autoOnIfQueryPlan": true, "measureRequiresExplicitOn": true },
+    "DISCOVERY_ENABLE_WEB_ORIGIN": { "default": "OFF", "measureRequiresExplicitOn": true },
+    "DISCOVERY_WD_CLAIM_PACK": { "default": "OFF", "measureRequiresExplicitOn": true },
+    "DISCOVERY_ENABLE_VIAF": { "default": "OFF", "optionalCell": true },
+    "F11_candidate_flags": { "default": "N/A_unwired", "runtimeEnable": false }
+  },
+  "chiefCheckpoint": {
+    "e2eCapability": "Person/org→unknown company site via P856→urlTargets→web_origin MISSING until L1; name→domain MISSING; domain→org metadata PARTIAL flag-path; F11 news/registries CONCEPTUAL; ambiguous multi-candidate+UNKNOWN WIRED on B0",
+    "wiredVsPresent": {
+      "wiredE2E": ["wikidata", "wikipedia", "openlibrary", "sse", "ui", "gaps", "urlHostDetect", "ssrfUnit"],
+      "partialFlagOffDefault": ["queryPlan", "web_origin", "wd_claim_pack", "viaf", "planSseGraph"],
+      "partialHole": ["officialWebsiteUrls_unused_not_fed_to_urlTargets"],
+      "conceptual": ["filings", "news", "registries", "scholarly", "government", "archives"],
+      "missing": ["name_to_domain_serp", "general_web_search_in_discovery"]
+    },
+    "tests": {
+      "thisPackNewTests": 0,
+      "unitHistorical": "checkpoint B/E/F + adversarial + forbidden Q1701775 historically green — not live Preview substitute",
+      "livePreviewAccSsrf": "OPEN"
+    },
+    "flagState": "all_discovery_experimental_default_OFF",
+    "gapsNeedingChiefGO": [
+      "L1 bridge ship + Preview URL from שרת",
+      "QueryPlan+web_origin+claim-pack dual-run measure GO",
+      "F11 first adapter GO (scenario D)",
+      "optional public search GO else keep MISSING",
+      "NO promote"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "A",
+      "name": "Person→unknown company site via P856/officialWebsite when L1 on",
+      "status": "HOLD",
+      "gapMapClass": "MISSING_name_to_url__PARTIAL_P856_hole",
+      "intent": "Person seed → WD P856 → L1 urlTargets/web_origin → origin Evidence as candidate/UNKNOWN-from-URL-alone, never SAME-ENTITY",
+      "fixtures": [
+        "discovery-fixtures/seed-person-latin.json",
+        "discovery-fixtures/seed-p0-wd-claims.json"
+      ],
+      "liveSeedsWhenUnlocked": ["Assaf Rappaport", "Smith-class", "כהן-class"],
+      "flagCellFuture": {
+        "control": { "QUERYPLAN": "OFF", "WEB_ORIGIN": "OFF", "WD_CLAIM_PACK": "OFF" },
+        "treatment": { "QUERYPLAN": "ON", "WEB_ORIGIN": "ON", "WD_CLAIM_PACK": "ON", "requiresNamedPreview": true, "requiresL1": true }
+      },
+      "expected": {
+        "passSignals": [
+          "confirmationState=candidate",
+          "identityClaim=false",
+          "URL-alone graph edge ≤ unknown",
+          "accLeakForbiddenQ=0",
+          "SAME-ENTITY on wire = 0",
+          "officialWebsite facet INFORMATION≠IDENTITY",
+          "URL finding = candidate/UNKNOWN-from-URL-alone NOT SAME-ENTITY"
+        ],
+        "failSignals": [
+          "SAME-ENTITY or same-reference from URL-alone",
+          "invented company domain without cite",
+          "Q1701775 leak",
+          "dossier/faces",
+          "claim-pack alone counted as web_origin Evidence without L1",
+          "measure PASS without Preview URL"
+        ]
+      },
+      "result": null
+    },
+    {
+      "id": "B",
+      "name": "Company→unknown domain",
+      "status": "HOLD",
+      "gapMapClass": "MISSING_name_to_domain",
+      "intent": "Org/company bare name → official domain Evidence without inventing identity",
+      "fixtures": [],
+      "fixtureNotes": "seed-domain-org.json is domain-first (use for C); do not treat as B PASS. No dedicated company→domain fixture.",
+      "liveSeedsWhenUnlocked": ["org-shaped public seeds only — document in run sheet"],
+      "flagCellFuture": {
+        "treatment": { "QUERYPLAN": "ON", "WEB_ORIGIN": "ON", "WD_CLAIM_PACK": "ON", "F11": "OFF_unless_Chief_GO", "requiresNamedPreview": true }
+      },
+      "expected": {
+        "passSignals": [
+          "candidate org findings OK",
+          "if P856/L1 present: origin Evidence candidate/UNKNOWN-from-URL",
+          "honest gaps when domain unknown",
+          "empty≠fanout"
+        ],
+        "failSignals": [
+          "fabricated domain",
+          "SERP invent counted as Discovery",
+          "SAME-ENTITY title-bridge on company name",
+          "F11 fake ok"
+        ]
+      },
+      "result": null
+    },
+    {
+      "id": "C",
+      "name": "Domain→org evidence (fetch cite-or-drop)",
+      "status": "HOLD",
+      "gapMapClass": "PARTIAL_web_origin_flag",
+      "intent": "Hostname/URL seed → safe origin metadata → org-shaped Evidence cite-or-drop; C1 URL-alone→UNKNOWN",
+      "fixtures": ["discovery-fixtures/seed-domain-org.json"],
+      "adversarialSeeds": ["urlTargets poison: 127.0.0.1", "link-local", "file:"],
+      "flagCellFuture": {
+        "control": { "WEB_ORIGIN": "OFF" },
+        "treatment": { "WEB_ORIGIN": "ON", "QUERYPLAN": "optional", "requiresNamedPreview": true }
+      },
+      "expected": {
+        "passSignals": [
+          "metadata Evidence with provenanceUrl",
+          "robotsOk honesty",
+          "relationship ≤ unknown without typed soft-ref",
+          "SSRF poison fetchableCount=0",
+          "uncitable claims dropped"
+        ],
+        "failSignals": [
+          "URL-alone SAME-REFERENCE/SAME-ENTITY",
+          "title/og treated as identity",
+          "SSRF private IP fetch",
+          "fetch without cite"
+        ]
+      },
+      "result": null,
+      "notes": "unit SSRF ≠ live Preview PASS; live Preview SSRF OPEN residual"
+    },
+    {
+      "id": "D",
+      "name": "Org→news/registry/docs",
+      "status": "HOLD",
+      "gapMapClass": "CONCEPTUAL_F11",
+      "intent": "Org seed → filings/registries/news/docs Evidence",
+      "fixtures": ["discovery-fixtures/seed-p0-ol-works.json"],
+      "fixtureNotes": "OL bibliographic only; do not invent news/registry fixtures as wired",
+      "flagCellFuture": { "F11": "N/A_until_Chief_GO_and_adapter" },
+      "expected": {
+        "passSignals": [
+          "forced F11 intent → unsupported / candidate_unwired_f11",
+          "requestsUsed=0",
+          "no fake findings",
+          "OL document path may PASS separately under B0"
+        ],
+        "failSignals": [
+          "fake news/registry HTTP ok",
+          "SERP",
+          "promote",
+          "budget reserve while unwired"
+        ]
+      },
+      "result": null,
+      "holdReason": "F11 CONCEPTUAL — Arch L3 SPEC only; aligns gap-map §C/O"
+    },
+    {
+      "id": "E",
+      "name": "Ambiguous name→multi candidates + honest UNKNOWN",
+      "status": "HOLD",
+      "gapMapClass": "WIRED_E2E_B0_multi_candidate_gaps",
+      "intent": "Homonym/common-name → multiple candidates · no forced identity · honest UNKNOWN/gaps",
+      "fixtures": [
+        "discovery-fixtures/seed-person-latin.json",
+        "discovery-fixtures/seed-person-he.json"
+      ],
+      "liveSeedsWhenUnlocked": ["John Smith", "כהן", "דוד כהן", "John Rappaport (T-C6 near-miss)"],
+      "flagCellFuture": {
+        "control": { "allExperimental": "OFF" },
+        "treatment": { "QUERYPLAN": "optional", "mustNotWorsenPrettyWrong": true }
+      },
+      "expected": {
+        "passSignals": [
+          "≥2 distinct candidates when APIs multi-hit",
+          "SAME-ENTITY on wire = 0",
+          "identityClaim=false",
+          "denylist leak=0",
+          "UNKNOWN/gaps when under-determined",
+          "no faces/dossier"
+        ],
+        "failSignals": [
+          "forced single identity",
+          "Q1701775",
+          "Assaf bleed on T-C6",
+          "title≠identity collapse",
+          "false merge coalesce"
+        ]
+      },
+      "result": null
+    }
+  ],
+  "adversarialPrettyWrong": [
+    {
+      "id": "PW-Q1701775",
+      "probe": "Q1701775 leak=0",
+      "failIf": "any Q1701775 in snapshot/plan/graph/facets/SSE"
+    },
+    {
+      "id": "PW-TITLE",
+      "probe": "title≠identity",
+      "failIf": "page title or og:title used as SAME-ENTITY / identity commit"
+    },
+    {
+      "id": "PW-URL",
+      "probe": "URL≠identity",
+      "failIf": "URL-alone or web_origin → same-reference/SAME-ENTITY"
+    },
+    {
+      "id": "PW-FALSE-MERGE",
+      "probe": "false merge",
+      "failIf": "homonym title-bridge merge · Assaf bleed on T-C6 · Smith→forbidden Q"
+    },
+    {
+      "id": "PW-INFO-NE-ID",
+      "probe": "INFORMATION≠IDENTITY",
+      "failIf": "officialWebsite facet or origin Evidence treated as identity fact"
+    }
+  ],
+  "sharedFloors": [
+    "confirmationState=candidate",
+    "identityScore=null",
+    "identityClaim=false",
+    "empty≠fanout",
+    "F11 never fake ok",
+    "promoteForbidden=true",
+    "pretty-wrong=0"
+  ],
+  "scenarioCount": 5,
+  "liveMeasureRuns": 0,
+  "runtimeEdits": 0
+}

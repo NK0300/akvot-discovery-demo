@@ -1,0 +1,97 @@
+{
+  "id": "01-ACC-EXPECTED-A-E",
+  "stamp": "2026-09-24T07:53:00+03:00",
+  "zone": "Asia/Jerusalem",
+  "owner": "דיוק",
+  "mission": "MD-WAVE",
+  "mode": "docs_only",
+  "liveAccMeasure": "HOLD_UNTIL_L1_AND_QUERYPLAN_PREVIEW",
+  "promote": false,
+  "inventPreviewUrls": false,
+  "epistemicLocks": [
+    "INFORMATION≠IDENTITY",
+    "UNKNOWN≠FALSE",
+    "CANDIDATE≠FACT",
+    "URL≠IDENTITY",
+    "TITLE≠IDENTITY",
+    "CORRELATION≠PROOF"
+  ],
+  "forbiddenPrettyWrong": ["Q1701775", "wd-Q1701775"],
+  "publicSourcesOnly": true,
+  "flagsDefaultOff": true,
+  "gapMapAlignment": {
+    "b0": "WIRED_E2E",
+    "queryPlan": "PARTIAL",
+    "nameToUrlDomain": "MISSING",
+    "webOrigin": "PARTIAL",
+    "p856Bridge": "PARTIAL_HOLE_L1_TARGET",
+    "cite": "test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/00-GAP-MAP.md"
+  },
+  "c1FreezeCites": [
+    "PHASE-EXP-C1-WEB-ORIGIN-EVIDENCE-PACK/02-RELATIONSHIP-BOUNDS-ארכיטקט.md",
+    "PHASE-EXP-C1-WEB-ORIGIN-EVIDENCE-PACK/03-NO-IDENTITY-COLLAPSE-CHECKLIST-ארכיטקט.md",
+    "PHASE-EXP-C1-WEB-ORIGIN-EVIDENCE-PACK/06-ACC/ACC-GATES-AND-CONSTRAINTS-דיוק-2026-09-20.md",
+    "docs/GO-IMPL-500/ACC-ADVERSARIAL-MATRIX.md"
+  ],
+  "scenarios": {
+    "A": {
+      "name": "Person→unknown company site",
+      "must_not": ["fabricate_domain_from_name", "url_to_person_identity", "hidden_SAME-ENTITY", "Sync.me", "Truecaller", "Q1701775_emit"],
+      "unknownPreservation": true,
+      "commonNameFalseMergeRisk": "David Cohen / shared official-site patterns must not collapse people",
+      "todayReality": "name→URL MISSING; B0 registry-honest only"
+    },
+    "B": {
+      "name": "Company→unknown domain",
+      "must_not": ["lexical_domain_guess", "domain_equality_SAME-ENTITY", "title_bridge"],
+      "unknownPreservation": true,
+      "rankingTrap": "brand lookalike apple.com class (ACC-M-004)"
+    },
+    "C": {
+      "name": "Domain→org evidence",
+      "must_have_flagOn": ["SSRF_safe_fetch", "cite_or_drop", "URL_alone_UNKNOWN"],
+      "must_not": ["SAME-ENTITY_from_URL", "SAME-REFERENCE_from_URL_alone", "web_origin_coalesce_keys", "crawl_frontier"],
+      "c1Freeze": "web_origin stays UNKNOWN-from-URL-alone"
+    },
+    "D": {
+      "name": "Org→news/registry/docs",
+      "todayReality": "families CONCEPTUAL/F11 HOLD — Acc EXPECTS honest gaps not invented HTTP",
+      "must_not": ["invent_registry_rows", "news_headline_SAME-ENTITY"]
+    },
+    "E": {
+      "name": "Ambiguous name→multi candidates + honest UNKNOWN",
+      "must_have": ["multi_findings_kept", "UNKNOWN_over_forced_merge"],
+      "must_not": ["forced_single_winner", "title_only_coalesce", "cross_person_collapse_via_shared_site"],
+      "matrixRefs": ["ACC-M-001", "ACC-M-002"]
+    }
+  },
+  "l1AccRisks": [
+    {
+      "id": "L1-R1",
+      "risk": "URL/domain finding with provenance",
+      "rule": "OK when SSRF-safe + cite-or-drop + scrubbed — Evidence not identity"
+    },
+    {
+      "id": "L1-R2",
+      "risk": "Promote domain/URL to SAME-ENTITY or person identity",
+      "rule": "MUST NOT"
+    },
+    {
+      "id": "L1-R3",
+      "risk": "Facet/claim merge hygiene",
+      "rule": "cite-or-drop; scrub after merge"
+    },
+    {
+      "id": "L1-R4",
+      "risk": "David Cohen / common surname shared official-site patterns",
+      "rule": "No cross-person collapse"
+    },
+    {
+      "id": "L1-R5",
+      "risk": "web_origin from bridged P856 URL",
+      "rule": "UNKNOWN-from-URL-alone (C1 freeze); bridge≠identity upgrade"
+    }
+  ],
+  "passClaim": false,
+  "markdown": "01-ACC-EXPECTED-A-E-דיוק-2026-09-24.md"
+}

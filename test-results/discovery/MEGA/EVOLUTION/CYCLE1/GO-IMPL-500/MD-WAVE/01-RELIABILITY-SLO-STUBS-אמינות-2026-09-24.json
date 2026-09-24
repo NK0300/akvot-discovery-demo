@@ -1,0 +1,60 @@
+{
+  "doc": "01-RELIABILITY-SLO-STUBS-אמינות-2026-09-24",
+  "stamp": "2026-09-24T07:54:00+03:00",
+  "role": "אמינות",
+  "gate": {
+    "live_preview_measure": "HOLD",
+    "promote": "FORBIDDEN",
+    "flags_default": "OFF",
+    "core_b0": "LOCKED"
+  },
+  "regression_slos": [
+    {
+      "id": "R1",
+      "name": "pretty-wrong",
+      "target": "pw=0"
+    },
+    {
+      "id": "R2",
+      "name": "URL≠IDENTITY",
+      "target": "100% url-alone ≤ UNKNOWN/candidate"
+    },
+    {
+      "id": "R3",
+      "name": "UNKNOWN preserved",
+      "target": "empty≠fanout; no UNKNOWN→identity rewrite"
+    },
+    {
+      "id": "R4",
+      "name": "no hidden SAME-ENTITY",
+      "target": "SAME-ENTITY absent on emit"
+    },
+    {
+      "id": "R5",
+      "name": "Core B0 non-regression",
+      "target": "Assaf Q47507930; Cohen soft; Smith≠Q1701775; build match"
+    }
+  ],
+  "latency_budget_stubs": {
+    "source": "DEFAULT_DISCOVERY_BUDGET",
+    "maxWallMs": 12000,
+    "maxProviderMs": 3500,
+    "maxUrls": 10,
+    "maxRedirects": 3,
+    "maxResponseBytes": 512000,
+    "maxRequests": 24,
+    "silentExpansionForbidden": true,
+    "probes": [
+      "L1a",
+      "L1b",
+      "L1c",
+      "L1d"
+    ]
+  },
+  "measure_preconditions": [
+    "שרת L1 landed",
+    "Preview URL named",
+    "QUERYPLAN+WEB_ORIGIN+WD_CLAIM_PACK ON on Preview only"
+  ],
+  "artifact_md": "/workspace/akvot-quick-demo/test-results/discovery/MEGA/EVOLUTION/CYCLE1/GO-IMPL-500/MD-WAVE/01-RELIABILITY-SLO-STUBS-אמינות-2026-09-24.md"
+}
