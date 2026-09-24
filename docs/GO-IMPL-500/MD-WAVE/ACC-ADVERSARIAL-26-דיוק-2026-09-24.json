@@ -1,0 +1,7081 @@
+{
+ "doc": "ACC-ZW-INPUT-BOUNDARY-PROPERTY-דיוק-2026-09-24.md#adversarial-26",
+ "generated": "2026-09-24 (Asia/Jerusalem)",
+ "harness": "test-results/2026-09-24/acc-adversarial-26.mjs (+ acc-norm-property.mjs for I1–I7/V12/Q4)",
+ "mode": "offline: every node process under `unshare -rn` (no network namespace route) + globalThis.fetch stub (throw+count); 0 prod/preview calls; no deploy/promote; product code untouched; contract-identity-p0 excluded",
+ "shas": {
+  "846422a": "main (origin/main tip; product code == 27db582) — RED BASELINE",
+  "c77a909": "input-boundary-26 tip @ run start — WIP / NOT BINDING",
+  "33d5ad0": "input-boundary-26 tip after one move (23:29:45 +0300; diff vs c77a909 = scripts/lint-raw-compare.allow.json only) — WIP / NOT BINDING, final pre-check SHA"
+ },
+ "perSha": {
+  "846422a": {
+   "boundaryPresent": false,
+   "commitGateModule": false,
+   "network": {
+    "stubCalls": 1668,
+    "note": "run under unshare -rn: no network namespace route; every attempt also hit the throwing stub"
+   },
+   "ctxFieldsEnumerated": [
+    "city",
+    "org",
+    "role",
+    "country",
+    "context",
+    "phone",
+    "email",
+    "focus"
+   ],
+   "families": {
+    "F1.greek:flag": {
+     "checked": 16,
+     "pass": 0,
+     "fail": 16,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 16
+    },
+    "F1.greek:no_commit": {
+     "checked": 16,
+     "pass": 6,
+     "fail": 10,
+     "commits": 10,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.greek:no_outrank": {
+     "checked": 16,
+     "pass": 14,
+     "fail": 2,
+     "commits": 0,
+     "stageBumps": 2,
+     "other": 0
+    },
+    "F1.armenian:flag": {
+     "checked": 12,
+     "pass": 0,
+     "fail": 12,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 12
+    },
+    "F1.armenian:no_commit": {
+     "checked": 12,
+     "pass": 4,
+     "fail": 8,
+     "commits": 8,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.armenian:no_outrank": {
+     "checked": 12,
+     "pass": 12,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.other_script:flag": {
+     "checked": 4,
+     "pass": 0,
+     "fail": 4,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 4
+    },
+    "F1.other_script:no_commit": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.other_script:no_outrank": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.fullwidth:converge": {
+     "checked": 16,
+     "pass": 0,
+     "fail": 16,
+     "commits": 7,
+     "stageBumps": 0,
+     "other": 9
+    },
+    "F1.combining_latin:I1": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.combining_latin:key_matcher": {
+     "checked": 16,
+     "pass": 12,
+     "fail": 4,
+     "commits": 4,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.niqqud:converge": {
+     "checked": 8,
+     "pass": 0,
+     "fail": 8,
+     "commits": 1,
+     "stageBumps": 0,
+     "other": 7
+    },
+    "F1.mixed_token:flag": {
+     "checked": 20,
+     "pass": 0,
+     "fail": 20,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 20
+    },
+    "F1.mixed_token:no_commit": {
+     "checked": 20,
+     "pass": 0,
+     "fail": 20,
+     "commits": 20,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:no_outrank": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:flag": {
+     "checked": 20,
+     "pass": 0,
+     "fail": 20,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 20
+    },
+    "F2.encoded_double:no_commit": {
+     "checked": 20,
+     "pass": 0,
+     "fail": 20,
+     "commits": 20,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:no_outrank": {
+     "checked": 20,
+     "pass": 7,
+     "fail": 13,
+     "commits": 0,
+     "stageBumps": 13,
+     "other": 0
+    },
+    "F2.decode_once": {
+     "checked": 17,
+     "pass": 0,
+     "fail": 17,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 17
+    },
+    "F2.idempotent_object": {
+     "checked": 17,
+     "pass": 0,
+     "fail": 17,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 17
+    },
+    "F2.idempotent_query_nodecode": {
+     "checked": 17,
+     "pass": 0,
+     "fail": 17,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 17
+    },
+    "F2.encoded_single:converge": {
+     "checked": 14,
+     "pass": 0,
+     "fail": 14,
+     "commits": 11,
+     "stageBumps": 0,
+     "other": 3
+    },
+    "F3.empty_field:text": {
+     "checked": 120,
+     "pass": 6,
+     "fail": 114,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 114
+    },
+    "F3.empty_field:identifier": {
+     "checked": 40,
+     "pass": 2,
+     "fail": 38,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 38
+    },
+    "F3.empty_field_slow:text": {
+     "checked": 6,
+     "pass": 0,
+     "fail": 6,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 6
+    },
+    "F3.empty_field_slow:identifier": {
+     "checked": 2,
+     "pass": 0,
+     "fail": 2,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 2
+    },
+    "F3.intra_word": {
+     "checked": 14,
+     "pass": 0,
+     "fail": 14,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 14
+    },
+    "F4.joined_title:matcher": {
+     "checked": 6,
+     "pass": 0,
+     "fail": 6,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 6
+    },
+    "F4.joined_title:commit": {
+     "checked": 6,
+     "pass": 0,
+     "fail": 6,
+     "commits": 6,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.edit_distance_1:matcher": {
+     "checked": 4,
+     "pass": 0,
+     "fail": 4,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 4
+    },
+    "F4.edit_distance_1:commit": {
+     "checked": 4,
+     "pass": 1,
+     "fail": 3,
+     "commits": 3,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.surname_only:matcher": {
+     "checked": 3,
+     "pass": 3,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.surname_only:commit": {
+     "checked": 3,
+     "pass": 0,
+     "fail": 3,
+     "commits": 3,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.fold_foreign:matcher": {
+     "checked": 2,
+     "pass": 0,
+     "fail": 2,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 2
+    },
+    "F4.fold_foreign:commit": {
+     "checked": 2,
+     "pass": 0,
+     "fail": 2,
+     "commits": 2,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.url_only": {
+     "checked": 2,
+     "pass": 1,
+     "fail": 1,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 1
+    },
+    "F4.url_only_no_cand": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.title_only": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.label_equals_q_no_sources": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_url_only_same_url": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_title_only_same_title": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_joined_title": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B1_capped_no_outrank_W2": {
+     "checked": 7,
+     "pass": 2,
+     "fail": 5,
+     "commits": 0,
+     "stageBumps": 5,
+     "other": 0
+    },
+    "F5.B2_single_token_smith": {
+     "checked": 2,
+     "pass": 0,
+     "fail": 2,
+     "commits": 2,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B4_stageB_pure_same_candidates": {
+     "checked": 4,
+     "pass": 3,
+     "fail": 1,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 1
+    },
+    "F5.B4_stageB_zw_org_direct_call": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    }
+   },
+   "failingExamples": {
+    "F1.greek:flag": [
+     {
+      "kind": "other",
+      "v": "\\u{391}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 0,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{391}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 1,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "Barack \\u{39F}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     }
+    ],
+    "F1.greek:no_commit": [
+     {
+      "kind": "commit",
+      "v": "Barack \\u{39F}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q76(wiki_exact)",
+       "W1v:dossier/Q76(wiki_exact)",
+       "WS:dossier/Q76(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Barack \\u{39F}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q76(wiki_exact)",
+       "W1v:dossier/Q76(wiki_exact)",
+       "WS:dossier/Q76(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "John Smi\\u{3C4}h",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1:dossier/Q990099(wiki_exact)",
+       "W1v:dossier/Q990099(wiki_exact)",
+       "WS:dossier/Q990099(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     }
+    ],
+    "F1.greek:no_outrank": [
+     {
+      "kind": "stage",
+      "v": "John Smi\\u{3C4}h",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John Smi\\u{3C4}h",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "W2": "candidates",
+      "cleanW2": "candidates"
+     }
+    ],
+    "F1.armenian:flag": [
+     {
+      "kind": "other",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "Jo\\u{570}n Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "why": "no canonicalizeInput boundary"
+     }
+    ],
+    "F1.armenian:no_commit": [
+     {
+      "kind": "commit",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q76(wiki_exact)",
+       "W1v:dossier/Q76(wiki_exact)",
+       "WS:dossier/Q76(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q76(wiki_exact)",
+       "W1v:dossier/Q76(wiki_exact)",
+       "WS:dossier/Q76(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Assaf\\u{585} Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q47507930(wiki_exact)",
+       "W1v:dossier/Q47507930(wiki_exact)",
+       "WS:dossier/Q47507930(wiki_seeded)",
+       "W3:dossier/Q990099(wiki_exact)",
+       "W4:dossier/Q47507930(wiki_seeded)"
+      ],
+      "planIC": false
+     }
+    ],
+    "F1.other_script:flag": [
+     {
+      "kind": "other",
+      "v": "\\u{A4EE}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 0,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{A4EE}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 1,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{13AB}ohn Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "why": "no canonicalizeInput boundary"
+     }
+    ],
+    "F1.fullwidth:converge": [
+     {
+      "kind": "commit",
+      "v": "\\u{FF2A}\\u{FF4F}\\u{FF48}\\u{FF4E} \\u{FF33}\\u{FF4D}\\u{FF49}\\u{FF54}\\u{FF48}",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "Ｊｏｈｎ Ｓｍｉｔｈ"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "WS": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W3": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W2": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ]
+        },
+        "k": null,
+        "fw": "John Smith"
+       }
+      }
+     },
+     {
+      "kind": "commit",
+      "v": "\\u{FF2A}\\u{FF4F}\\u{FF48}\\u{FF4E} \\u{FF33}\\u{FF4D}\\u{FF49}\\u{FF54}\\u{FF48}",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "Ｊｏｈｎ Ｓｍｉｔｈ"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "WS": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W3": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W4": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ]
+        },
+        "k": null,
+        "fw": "John Smith"
+       }
+      }
+     },
+     {
+      "kind": "other",
+      "v": "\\u{FF33}\\u{FF4D}\\u{FF49}\\u{FF54}\\u{FF48}",
+      "clean": "Smith",
+      "ctx": "none",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 2,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "Ｓｍｉｔｈ"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_bare"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "latin_bare"
+         ]
+        },
+        "k": null,
+        "fw": "Smith"
+       }
+      }
+     }
+    ],
+    "F1.combining_latin:key_matcher": [
+     {
+      "kind": "commit",
+      "v": "Assaf Rappapo\\u{308}rt",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     },
+     {
+      "kind": "commit",
+      "v": "Assaf Rappapo\\u{308}rt",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     },
+     {
+      "kind": "commit",
+      "v": "Me\\u{301}rkel",
+      "clean": "Merkel",
+      "ctx": "none",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q567",
+      "knownClean": "Q567",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     }
+    ],
+    "F1.niqqud:converge": [
+     {
+      "kind": "commit",
+      "v": "ד\\u{5B8}\\u{5BC}נ\\u{5B4}י כ\\u{5B9}\\u{5BC}ה\\u{5B5}ן",
+      "clean": "דני כהן",
+      "ctx": "none",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "דָּנִי כֹּהֵן"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "דני כהן"
+       }
+      }
+     },
+     {
+      "kind": "other",
+      "v": "ד\\u{5B8}\\u{5BC}נ\\u{5B4}י כ\\u{5B9}\\u{5BC}ה\\u{5B5}ן",
+      "clean": "דני כהן",
+      "ctx": "IBM",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 2,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "דָּנִי כֹּהֵן"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "דני כהן"
+       }
+      }
+     },
+     {
+      "kind": "other",
+      "v": "ד\\u{5BC}\\u{5BC}\\u{5BC}\\u{5B8}נ\\u{5B4}י כהן",
+      "clean": "דני כהן",
+      "ctx": "none",
+      "expect": "pure",
+      "note": "stacked",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "דָּּּנִי כהן"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "need_context",
+          "need_context",
+          false,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ],
+         "W2": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "no_commit"
+         ]
+        },
+        "k": null,
+        "fw": "דני כהן"
+       }
+      }
+     }
+    ],
+    "F1.mixed_token:flag": [
+     {
+      "kind": "other",
+      "v": "\\u{421}\\u{430}\\u{440}\\u{430} Netanyahu",
+      "clean": "Sara Netanyahu",
+      "ctx": "none",
+      "expect": "capped",
+      "note": "P3b PROD",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q43723",
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{421}\\u{430}\\u{440}\\u{430} Netanyahu",
+      "clean": "Sara Netanyahu",
+      "ctx": "IBM",
+      "expect": "capped",
+      "note": "P3b PROD",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q43723",
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "Assaf\\u{430} Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "no canonicalizeInput boundary"
+     }
+    ],
+    "F1.mixed_token:no_commit": [
+     {
+      "kind": "commit",
+      "v": "\\u{421}\\u{430}\\u{440}\\u{430} Netanyahu",
+      "clean": "Sara Netanyahu",
+      "ctx": "none",
+      "expect": "capped",
+      "note": "P3b PROD",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q43723",
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q43723(wiki_exact)",
+       "W1v:dossier/Q43723(wiki_exact)",
+       "WS:dossier/Q43723(wiki_seeded)",
+       "W3:dossier/Q990099(wiki_exact)",
+       "W4:dossier/Q43723(wiki_seeded)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "\\u{421}\\u{430}\\u{440}\\u{430} Netanyahu",
+      "clean": "Sara Netanyahu",
+      "ctx": "IBM",
+      "expect": "capped",
+      "note": "P3b PROD",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q43723",
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q43723(wiki_exact)",
+       "W1v:dossier/Q43723(wiki_exact)",
+       "WS:dossier/Q43723(wiki_seeded)",
+       "W3:dossier/Q990099(wiki_exact)",
+       "W4:dossier/Q43723(wiki_seeded)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Assaf\\u{430} Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1:dossier/Q47507930(wiki_exact)",
+       "W1v:dossier/Q47507930(wiki_exact)",
+       "WS:dossier/Q47507930(wiki_seeded)",
+       "W3:dossier/Q990099(wiki_exact)",
+       "W4:dossier/Q47507930(wiki_seeded)"
+      ],
+      "planIC": false
+     }
+    ],
+    "F2.encoded_double:flag": [
+     {
+      "kind": "other",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;#32;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "why": "no canonicalizeInput boundary"
+     }
+    ],
+    "F2.encoded_double:no_commit": [
+     {
+      "kind": "commit",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1:dossier/Q990099(wiki_exact)",
+       "W1v:dossier/Q990099(wiki_exact)",
+       "WS:dossier/Q990099(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "commitScn": [
+       "W1:dossier/Q990099(wiki_exact)",
+       "W1v:dossier/Q990099(wiki_exact)",
+       "WS:dossier/Q990099(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "John&amp;#32;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1:dossier/Q990099(wiki_exact)",
+       "W1v:dossier/Q990099(wiki_exact)",
+       "WS:dossier/Q990099(wiki_exact)",
+       "W3:dossier/Q990099(wiki_exact)"
+      ],
+      "planIC": false
+     }
+    ],
+    "F2.encoded_double:no_outrank": [
+     {
+      "kind": "stage",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "W2": "candidates",
+      "cleanW2": "candidates"
+     },
+     {
+      "kind": "stage",
+      "v": "John&amp;#32;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     }
+    ],
+    "F2.decode_once": [
+     {
+      "kind": "other",
+      "v": "John%2520Smith",
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;#32;Smith",
+      "why": "no canonicalizeInput boundary"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;nbsp;Smith",
+      "why": "no canonicalizeInput boundary"
+     }
+    ],
+    "F2.idempotent_object": [
+     {
+      "kind": "other",
+      "v": "John%2520Smith",
+      "why": "no boundary"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;#32;Smith",
+      "why": "no boundary"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;nbsp;Smith",
+      "why": "no boundary"
+     }
+    ],
+    "F2.idempotent_query_nodecode": [
+     {
+      "kind": "other",
+      "v": "John%2520Smith"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;#32;Smith"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;nbsp;Smith"
+     }
+    ],
+    "F2.encoded_single:converge": [
+     {
+      "kind": "commit",
+      "v": "John%20Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_bare"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "latin_bare"
+         ]
+        },
+        "k": null,
+        "fw": "John%20Smith"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "WS": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W3": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W2": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ]
+        },
+        "k": null,
+        "fw": "John Smith"
+       }
+      }
+     },
+     {
+      "kind": "commit",
+      "v": "John%20Smith",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_weak"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "latin_weak"
+         ]
+        },
+        "k": null,
+        "fw": "John%20Smith"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "WS": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W3": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W4": [
+          "thin",
+          "thin",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ]
+        },
+        "k": null,
+        "fw": "John Smith"
+       }
+      }
+     },
+     {
+      "kind": "commit",
+      "v": "John&#32;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "pure",
+      "treeCeiling": null,
+      "treeRisk": null,
+      "treeQuery": null,
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "cleanQuery": null,
+      "diff": {
+       "v": {
+        "s": {
+         "W1": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "WS": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W3": [
+          "dossier",
+          "dossier",
+          true,
+          true,
+          "wiki_exact"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_bare"
+         ],
+         "W2": [
+          "candidates",
+          "candidates",
+          false,
+          false,
+          "latin_bare"
+         ]
+        },
+        "k": null,
+        "fw": "John&#32;Smith"
+       },
+       "c": {
+        "s": {
+         "W1": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "WS": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W3": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W4": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ],
+         "W2": [
+          "need_context",
+          "need_context",
+          false,
+          false,
+          "latin_common_ambiguous"
+         ]
+        },
+        "k": null,
+        "fw": "John Smith"
+       }
+      }
+     }
+    ],
+    "F3.empty_field:text": [
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "city",
+      "ign": "ZWSP",
+      "value": "\\u{200B}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "contextUsed",
+       "searchQ",
+       "upstreamUrls",
+       "cacheKey"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "דני כהן \\u{200B}",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\\u{200B}\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": null
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "city",
+      "ign": "ZWNJ",
+      "value": "\\u{200C}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "contextUsed",
+       "searchQ",
+       "upstreamUrls",
+       "cacheKey"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "דני כהן \\u{200C}",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\\u{200C}\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": null
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "city",
+      "ign": "ZWJ",
+      "value": "\\u{200D}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "contextUsed",
+       "searchQ",
+       "upstreamUrls",
+       "cacheKey"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "דני כהן \\u{200D}",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\\u{200D}\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": null
+     }
+    ],
+    "F3.empty_field:identifier": [
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWSP",
+      "value": "\\u{200B}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": null
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWNJ",
+      "value": "\\u{200C}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": null
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWJ",
+      "value": "\\u{200D}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": null
+     }
+    ],
+    "F3.empty_field_slow:text": [
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "city",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls",
+       "searchQ"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": "Ada Lovelace \\u{200B}"
+     },
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "org",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noDIinUrls",
+       "noExtraUrls",
+       "searchQ"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\" AND affiliation-org-name:\"\\u{200B}\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": "Ada Lovelace \\u{200B}"
+     },
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "role",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls",
+       "searchQ"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": "Ada Lovelace \\u{200B}"
+     }
+    ],
+    "F3.empty_field_slow:identifier": [
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "phone",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": ""
+     },
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "email",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": "Ada Lovelace [email]"
+     }
+    ],
+    "F3.intra_word": [
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "org",
+      "masked": "I\\u{200B}BM",
+      "ok": false,
+      "failed": [
+       "canonicalValue",
+       "searchQ",
+       "urlsNoDI",
+       "cacheKey",
+       "ctxInputRisk",
+       "seedCeilingUnaffected"
+      ],
+      "value": "I\\u{200B}BM",
+      "cleanValue": "IBM",
+      "ctxInputRisk": null,
+      "ui": "thin",
+      "cleanUi": "thin"
+     },
+     {
+      "kind": "other",
+      "q": "John Smith",
+      "field": "org",
+      "masked": "I\\u{200B}BM",
+      "ok": false,
+      "failed": [
+       "canonicalValue",
+       "searchQ",
+       "urlsNoDI",
+       "cacheKey",
+       "ctxInputRisk",
+       "seedCeilingUnaffected"
+      ],
+      "value": "I\\u{200B}BM",
+      "cleanValue": "IBM",
+      "ctxInputRisk": null,
+      "ui": "thin",
+      "cleanUi": "thin"
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "org",
+      "masked": "IB\\u{2060}M",
+      "ok": false,
+      "failed": [
+       "canonicalValue",
+       "searchQ",
+       "urlsNoDI",
+       "cacheKey",
+       "ctxInputRisk",
+       "seedCeilingUnaffected"
+      ],
+      "value": "IB\\u{2060}M",
+      "cleanValue": "IBM",
+      "ctxInputRisk": null,
+      "ui": "thin",
+      "cleanUi": "thin"
+     }
+    ],
+    "F4.joined_title:matcher": [
+     {
+      "kind": "joined_title",
+      "q": "Vandam",
+      "title": "Van Dam",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "joined_title",
+      "q": "rosamendes",
+      "title": "Rosa Mendes",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "joined_title",
+      "q": "Annarbor",
+      "title": "Ann Arbor",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     }
+    ],
+    "F4.joined_title:commit": [
+     {
+      "kind": "joined_title",
+      "q": "Vandam",
+      "title": "Van Dam",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "joined_title",
+      "q": "rosamendes",
+      "title": "Rosa Mendes",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "joined_title",
+      "q": "Annarbor",
+      "title": "Ann Arbor",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     }
+    ],
+    "F4.edit_distance_1:matcher": [
+     {
+      "kind": "edit_distance_1",
+      "q": "Jon Smith",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "latin_common_ambiguous",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "John Smyth",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "Ada Lovelac",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     }
+    ],
+    "F4.edit_distance_1:commit": [
+     {
+      "kind": "edit_distance_1",
+      "q": "John Smyth",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "Ada Lovelac",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "Assaf Rapaport",
+      "title": "Assaf Rappaport",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     }
+    ],
+    "F4.surname_only:commit": [
+     {
+      "kind": "surname_only",
+      "q": "Rappaport",
+      "title": "Assaf Rappaport",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": false,
+       "softLatinClose": false,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": false,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "surname_only",
+      "q": "Lovelace",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": false,
+       "softLatinClose": false,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": false,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "surname_only",
+      "q": "Obama",
+      "title": "Barack Obama",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": false,
+       "softLatinClose": false,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": false,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": false
+     }
+    ],
+    "F4.fold_foreign:matcher": [
+     {
+      "kind": "fold_foreign",
+      "q": "דני Netanyahu",
+      "title": "Netanyahu",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "fold_foreign",
+      "q": "Ada Lovelace\\u{436}",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     }
+    ],
+    "F4.fold_foreign:commit": [
+     {
+      "kind": "fold_foreign",
+      "q": "דני Netanyahu",
+      "title": "Netanyahu",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     },
+     {
+      "kind": "fold_foreign",
+      "q": "Ada Lovelace\\u{436}",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": null
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": true,
+      "gateReason": "wiki_exact",
+      "finalUi": "dossier",
+      "pipelineCommit": true
+     }
+    ],
+    "F4.url_only": [
+     {
+      "kind": "url_only",
+      "ctx": "{\"org\":\"Acme\",\"any\":true}",
+      "finalUi": "thin",
+      "reason": "latin_evidence",
+      "ok": true
+     }
+    ],
+    "F5.B1_capped_no_outrank_W2": [
+     {
+      "kind": "stage",
+      "v": "John\\u{200B}Smith",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "latin_bare"
+     },
+     {
+      "kind": "stage",
+      "v": "דני\\u{200B}כהן",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "no_commit"
+     },
+     {
+      "kind": "stage",
+      "v": "John Sm\\u{456}th",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "latin_bare"
+     }
+    ],
+    "F5.B2_single_token_smith": [
+     {
+      "kind": "commit",
+      "ctx": "{}",
+      "finalUi": "dossier",
+      "qid": null,
+      "reason": "wiki_exact"
+     },
+     {
+      "kind": "commit",
+      "ctx": "{\"org\":\"IBM\",\"any\":true}",
+      "finalUi": "dossier",
+      "qid": null,
+      "reason": "wiki_exact"
+     }
+    ],
+    "F5.B4_stageB_pure_same_candidates": [
+     {
+      "kind": "other",
+      "v": "\\u{FF2A}\\u{FF4F}\\u{FF48}\\u{FF4E} \\u{FF33}\\u{FF4D}\\u{FF49}\\u{FF54}\\u{FF48}",
+      "lab": "fullwidth (pure)",
+      "clean": [
+       "John Smith, 1580-1631",
+       "john smith"
+      ],
+      "got": []
+     }
+    ]
+   },
+   "F2idem": [],
+   "F4rows": [
+    {
+     "kind": "joined_title",
+     "q": "Vandam",
+     "title": "Van Dam",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "joined_title",
+     "q": "rosamendes",
+     "title": "Rosa Mendes",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "joined_title",
+     "q": "Annarbor",
+     "title": "Ann Arbor",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "joined_title",
+     "q": "Deluca",
+     "title": "De Luca",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "joined_title",
+     "q": "BenjaminNetanyahu",
+     "title": "Benjamin Netanyahu",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "joined_title",
+     "q": "Johnsmith",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Jon Smith",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "latin_common_ambiguous",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "John Smyth",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Ada Lovelac",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Assaf Rapaport",
+     "title": "Assaf Rappaport",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "surname_only",
+     "q": "Rappaport",
+     "title": "Assaf Rappaport",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Lovelace",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Obama",
+     "title": "Barack Obama",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "fold_foreign",
+     "q": "דני Netanyahu",
+     "title": "Netanyahu",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "fold_foreign",
+     "q": "Ada Lovelace\\u{436}",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": null
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": true,
+     "gateReason": "wiki_exact",
+     "finalUi": "dossier",
+     "pipelineCommit": true
+    },
+    {
+     "kind": "url_only",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_evidence",
+     "ok": true
+    },
+    {
+     "kind": "url_only",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "url_only_no_cand",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "url_only_no_cand",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "title_only",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "title_only",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "label_equals_q_no_sources",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "label_equals_q_no_sources",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    }
+   ],
+   "F5": {
+    "B1": {
+     "n": 7,
+     "bad": 5,
+     "ex": [
+      {
+       "v": "John\\u{200B}Smith",
+       "got": "candidates",
+       "clean": "need_context"
+      },
+      {
+       "v": "דני\\u{200B}כהן",
+       "got": "candidates",
+       "clean": "need_context"
+      },
+      {
+       "v": "John Sm\\u{456}th",
+       "got": "candidates",
+       "clean": "need_context"
+      }
+     ]
+    },
+    "stageB_lines": {
+     "norm": "api/lib/stageB.js:58",
+     "nameTokens": "api/lib/stageB.js:67",
+     "registryDiscoverName": "api/lib/stageB.js:319",
+     "orgRaw": "api/lib/stageB.js:118"
+    }
+   },
+   "trace": {
+    "scriptSet": null,
+    "skeletonTable": null,
+    "ceilingSet": null,
+    "latinFold": "api/lib/knownIdentities.js:8",
+    "resolveKnown": "api/lib/knownIdentities.js:194",
+    "isTrustedWikiSeed": "api/lib/orchestrator.js:28",
+    "isCommonLatin": "api/lib/orchestrator.js:98",
+    "wikiExactGate": "api/lib/orchestrator.js:252",
+    "cappedStage": null,
+    "titleExactishOrLatin": "api/lookup.js:969",
+    "softLatinClose": "api/lookup.js:944",
+    "pickContextFrom": "api/lookup.js:2463",
+    "handlerCtxAny": null,
+    "buildSearchQ": "api/lookup.js:2532",
+    "nameKeyEqual": null
+   }
+  },
+  "c77a909": {
+   "boundaryPresent": true,
+   "commitGateModule": true,
+   "network": {
+    "stubCalls": 805,
+    "note": "run under unshare -rn: no network namespace route; every attempt also hit the throwing stub"
+   },
+   "ctxFieldsEnumerated": [
+    "city",
+    "org",
+    "role",
+    "country",
+    "context",
+    "phone",
+    "email",
+    "focus"
+   ],
+   "families": {
+    "F1.greek:flag": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.greek:no_commit": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.greek:no_outrank": {
+     "checked": 16,
+     "pass": 13,
+     "fail": 3,
+     "commits": 0,
+     "stageBumps": 3,
+     "other": 0
+    },
+    "F1.armenian:flag": {
+     "checked": 12,
+     "pass": 0,
+     "fail": 12,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 12
+    },
+    "F1.armenian:no_commit": {
+     "checked": 12,
+     "pass": 8,
+     "fail": 4,
+     "commits": 4,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.armenian:no_outrank": {
+     "checked": 12,
+     "pass": 12,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.other_script:flag": {
+     "checked": 4,
+     "pass": 0,
+     "fail": 4,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 4
+    },
+    "F1.other_script:no_commit": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.other_script:no_outrank": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.fullwidth:converge": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.combining_latin:I1": {
+     "checked": 16,
+     "pass": 10,
+     "fail": 6,
+     "commits": 6,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.combining_latin:key_matcher": {
+     "checked": 16,
+     "pass": 12,
+     "fail": 4,
+     "commits": 4,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.niqqud:converge": {
+     "checked": 8,
+     "pass": 8,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:flag": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:no_commit": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:no_outrank": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:flag": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:no_commit": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:no_outrank": {
+     "checked": 20,
+     "pass": 13,
+     "fail": 7,
+     "commits": 0,
+     "stageBumps": 7,
+     "other": 0
+    },
+    "F2.decode_once": {
+     "checked": 17,
+     "pass": 17,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.idempotent_object": {
+     "checked": 17,
+     "pass": 17,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.idempotent_query_nodecode": {
+     "checked": 17,
+     "pass": 17,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.idempotent_string_redecode": {
+     "checked": 17,
+     "pass": 9,
+     "fail": 8,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 8
+    },
+    "F2.encoded_single:converge": {
+     "checked": 14,
+     "pass": 14,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F3.empty_field:text": {
+     "checked": 120,
+     "pass": 120,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F3.empty_field:identifier": {
+     "checked": 40,
+     "pass": 2,
+     "fail": 38,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 38
+    },
+    "F3.empty_field_slow:text": {
+     "checked": 6,
+     "pass": 6,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F3.empty_field_slow:identifier": {
+     "checked": 2,
+     "pass": 0,
+     "fail": 2,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 2
+    },
+    "F3.intra_word": {
+     "checked": 14,
+     "pass": 14,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.joined_title:matcher": {
+     "checked": 6,
+     "pass": 0,
+     "fail": 6,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 6
+    },
+    "F4.joined_title:commit": {
+     "checked": 6,
+     "pass": 6,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.edit_distance_1:matcher": {
+     "checked": 4,
+     "pass": 0,
+     "fail": 4,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 4
+    },
+    "F4.edit_distance_1:commit": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.surname_only:matcher": {
+     "checked": 3,
+     "pass": 3,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.surname_only:commit": {
+     "checked": 3,
+     "pass": 3,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.fold_foreign:matcher": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.fold_foreign:commit": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.url_only": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.url_only_no_cand": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.title_only": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.label_equals_q_no_sources": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_url_only_same_url": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_title_only_same_title": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_joined_title": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B1_capped_no_outrank_W2": {
+     "checked": 7,
+     "pass": 0,
+     "fail": 7,
+     "commits": 0,
+     "stageBumps": 7,
+     "other": 0
+    },
+    "F5.B2_single_token_smith": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B4_stageB_pure_same_candidates": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B4_stageB_zw_org_direct_call": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    }
+   },
+   "failingExamples": {
+    "F1.greek:no_outrank": [
+     {
+      "kind": "stage",
+      "v": "J\\u{3BF}hn Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "mixed_script",
+       "confusable",
+       "mixed_script_seed"
+      ],
+      "treeQuery": "J\\u{3BF}hn Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John Smi\\u{3C4}h",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "mixed_script",
+       "confusable",
+       "mixed_script_seed"
+      ],
+      "treeQuery": "John Smi\\u{3C4}h",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "\\u{39A}amala Harris",
+      "clean": "Kamala Harris",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "mixed_script",
+       "confusable",
+       "mixed_script_seed"
+      ],
+      "treeQuery": "\\u{39A}amala Harris",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     }
+    ],
+    "F1.armenian:flag": [
+     {
+      "kind": "other",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "Jo\\u{570}n Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Jo\\u{570}n Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "why": "ceiling not capped at canonicalizeInput"
+     }
+    ],
+    "F1.armenian:no_commit": [
+     {
+      "kind": "commit",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1v:dossier/Q76(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1v:dossier/Q76(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Netanyah\\u{57D}",
+      "clean": "Netanyahu",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Netanyah\\u{57D}",
+      "known": null,
+      "knownClean": "Q43723",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1v:dossier/Q43723(wiki_exact)"
+      ],
+      "planIC": false
+     }
+    ],
+    "F1.other_script:flag": [
+     {
+      "kind": "other",
+      "v": "\\u{A4EE}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "\\u{A4EE}ssaf Rappaport",
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 0,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{A4EE}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "\\u{A4EE}ssaf Rappaport",
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 1,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{13AB}ohn Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "\\u{13AB}ohn Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "why": "ceiling not capped at canonicalizeInput"
+     }
+    ],
+    "F1.combining_latin:I1": [
+     {
+      "kind": "commit",
+      "v": "John Smi\\u{301}th",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "distinct",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "John Sm\\u{ED}th",
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1v:dossier/Q990099(wiki_exact)"
+      ]
+     },
+     {
+      "kind": "commit",
+      "v": "John Smi\\u{301}th",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "distinct",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "John Sm\\u{ED}th",
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "commitScn": [
+       "W1v:dossier/Q990099(wiki_exact)"
+      ]
+     },
+     {
+      "kind": "commit",
+      "v": "Smi\\u{301}th",
+      "clean": "Smith",
+      "ctx": "none",
+      "expect": "distinct",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "Sm\\u{ED}th",
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1v:dossier/Q990099(wiki_exact)"
+      ]
+     }
+    ],
+    "F1.combining_latin:key_matcher": [
+     {
+      "kind": "commit",
+      "v": "Assaf Rappapo\\u{308}rt",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "Assaf Rappap\\u{F6}rt",
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     },
+     {
+      "kind": "commit",
+      "v": "Assaf Rappapo\\u{308}rt",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "Assaf Rappap\\u{F6}rt",
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     },
+     {
+      "kind": "commit",
+      "v": "Me\\u{301}rkel",
+      "clean": "Merkel",
+      "ctx": "none",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "M\\u{E9}rkel",
+      "known": "Q567",
+      "knownClean": "Q567",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     }
+    ],
+    "F2.encoded_double:no_outrank": [
+     {
+      "kind": "stage",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "encoded",
+       "encoded_double"
+      ],
+      "treeQuery": "John%20Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John&amp;#32;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "encoded",
+       "encoded_double"
+      ],
+      "treeQuery": "John&#32;Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John&amp;nbsp;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "encoded",
+       "encoded_double"
+      ],
+      "treeQuery": "John&nbsp;Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     }
+    ],
+    "F2.idempotent_string_redecode": [
+     {
+      "kind": "other",
+      "v": "John%2520Smith",
+      "key": "john%20smith",
+      "reKey": "john smith",
+      "note": "string re-entry WITH decode (rehydration from query/key text) — decode-once conflict"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;#32;Smith",
+      "key": "john&#32;smith",
+      "reKey": "john smith",
+      "note": "string re-entry WITH decode (rehydration from query/key text) — decode-once conflict"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;nbsp;Smith",
+      "key": "john&nbsp;smith",
+      "reKey": "john smith",
+      "note": "string re-entry WITH decode (rehydration from query/key text) — decode-once conflict"
+     }
+    ],
+    "F3.empty_field:identifier": [
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWSP",
+      "value": "\\u{200B}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": "[]"
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWNJ",
+      "value": "\\u{200C}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": "[]"
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWJ",
+      "value": "\\u{200D}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": "[]"
+     }
+    ],
+    "F3.empty_field_slow:identifier": [
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "phone",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": ""
+     },
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "email",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": "Ada Lovelace [email]"
+     }
+    ],
+    "F4.joined_title:matcher": [
+     {
+      "kind": "joined_title",
+      "q": "Vandam",
+      "title": "Van Dam",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "joined_title",
+      "q": "rosamendes",
+      "title": "Rosa Mendes",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "joined_title",
+      "q": "Annarbor",
+      "title": "Ann Arbor",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     }
+    ],
+    "F4.edit_distance_1:matcher": [
+     {
+      "kind": "edit_distance_1",
+      "q": "Jon Smith",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "latin_common_ambiguous",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "John Smyth",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "Ada Lovelac",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     }
+    ],
+    "F5.B1_capped_no_outrank_W2": [
+     {
+      "kind": "stage",
+      "v": "John\\u{200B}Smith",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "input_risk_ceiling"
+     },
+     {
+      "kind": "stage",
+      "v": "John Sm\\u{200B}ith",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "input_risk_ceiling"
+     },
+     {
+      "kind": "stage",
+      "v": "דני\\u{200B}כהן",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "input_risk_ceiling"
+     }
+    ]
+   },
+   "F2idem": [
+    {
+     "v": "John%2520Smith",
+     "query": "John%20Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&amp;#32;Smith",
+     "query": "John&#32;Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&amp;nbsp;Smith",
+     "query": "John&nbsp;Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John%25E2%2580%258BSmith",
+     "query": "John%E2%80%8BSmith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "johnsmith"
+    },
+    {
+     "v": "John&amp;#x200B;Smith",
+     "query": "John&#x200B;Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "johnsmith"
+    },
+    {
+     "v": "Assaf%2520Rappaport",
+     "query": "Assaf%20Rappaport",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "assaf rappaport"
+    },
+    {
+     "v": "דני%2520כהן",
+     "query": "דני%20כהן",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "דני כהן"
+    },
+    {
+     "v": "Barack%2520Obama",
+     "query": "Barack%20Obama",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "barack obama"
+    },
+    {
+     "v": "John%E2%80%8BSmith",
+     "query": "JohnSmith",
+     "risk": [
+      "invisible",
+      "encoded",
+      "invisible_intra"
+     ],
+     "ceiling": "capped",
+     "reKey": "johnsmith"
+    },
+    {
+     "v": "Mer%E2%80%8Bkel",
+     "query": "Merkel",
+     "risk": [
+      "invisible",
+      "encoded",
+      "invisible_intra"
+     ],
+     "ceiling": "capped",
+     "reKey": "merkel"
+    },
+    {
+     "v": "John%20Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&#32;Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&nbsp;Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded",
+      "compat"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John+Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "Assaf%20Rappaport",
+     "query": "Assaf Rappaport",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "assaf rappaport"
+    },
+    {
+     "v": "John %E2%80%8BSmith",
+     "query": "John Smith",
+     "risk": [
+      "invisible",
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "%D7%93%D7%A0%D7%99 %D7%9B%D7%94%D7%9F",
+     "query": "דני כהן",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "דני כהן"
+    }
+   ],
+   "F4rows": [
+    {
+     "kind": "joined_title",
+     "q": "Vandam",
+     "title": "Van Dam",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "rosamendes",
+     "title": "Rosa Mendes",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "Annarbor",
+     "title": "Ann Arbor",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "Deluca",
+     "title": "De Luca",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "BenjaminNetanyahu",
+     "title": "Benjamin Netanyahu",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "Johnsmith",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Jon Smith",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "latin_common_ambiguous",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "John Smyth",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Ada Lovelac",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Assaf Rapaport",
+     "title": "Assaf Rappaport",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Rappaport",
+     "title": "Assaf Rappaport",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Lovelace",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Obama",
+     "title": "Barack Obama",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "fold_foreign",
+     "q": "דני Netanyahu",
+     "title": "Netanyahu",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "input_risk_ceiling",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "fold_foreign",
+     "q": "Ada Lovelace\\u{436}",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "input_risk_ceiling",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "url_only",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "ctx_release_without_record",
+     "ok": false
+    },
+    {
+     "kind": "url_only",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "url_only_no_cand",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "url_only_no_cand",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "title_only",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "title_only",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "label_equals_q_no_sources",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "label_equals_q_no_sources",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    }
+   ],
+   "F5": {
+    "B1": {
+     "n": 7,
+     "bad": 7,
+     "ex": [
+      {
+       "v": "John\\u{200B}Smith",
+       "got": "candidates",
+       "clean": "need_context"
+      },
+      {
+       "v": "John Sm\\u{200B}ith",
+       "got": "candidates",
+       "clean": "need_context"
+      },
+      {
+       "v": "דני\\u{200B}כהן",
+       "got": "candidates",
+       "clean": "need_context"
+      }
+     ]
+    },
+    "stageB_lines": {
+     "norm": "api/lib/stageB.js:59",
+     "nameTokens": "api/lib/stageB.js:68",
+     "registryDiscoverName": "api/lib/stageB.js:323",
+     "orgRaw": "api/lib/stageB.js:119"
+    }
+   },
+   "trace": {
+    "scriptSet": "api/lib/seedText.js:114",
+    "skeletonTable": "api/lib/seedText.js:101",
+    "ceilingSet": "api/lib/seedText.js:64",
+    "latinFold": "api/lib/knownIdentities.js:14",
+    "resolveKnown": "api/lib/knownIdentities.js:224",
+    "isTrustedWikiSeed": "api/lib/commitGate.js:18",
+    "isCommonLatin": "api/lib/commitGate.js:115",
+    "wikiExactGate": "api/lib/commitGate.js:437",
+    "cappedStage": "api/lib/orchestrator.js:350",
+    "titleExactishOrLatin": "api/lookup.js:986",
+    "softLatinClose": "api/lookup.js:960",
+    "pickContextFrom": "api/lookup.js:2492",
+    "handlerCtxAny": "api/lookup.js:3154",
+    "buildSearchQ": "api/lookup.js:2561",
+    "nameKeyEqual": "api/lib/commitGate.js:409"
+   }
+  },
+  "33d5ad0": {
+   "boundaryPresent": true,
+   "commitGateModule": true,
+   "network": {
+    "stubCalls": 805,
+    "note": "run under unshare -rn: no network namespace route; every attempt also hit the throwing stub"
+   },
+   "ctxFieldsEnumerated": [
+    "city",
+    "org",
+    "role",
+    "country",
+    "context",
+    "phone",
+    "email",
+    "focus"
+   ],
+   "families": {
+    "F1.greek:flag": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.greek:no_commit": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.greek:no_outrank": {
+     "checked": 16,
+     "pass": 13,
+     "fail": 3,
+     "commits": 0,
+     "stageBumps": 3,
+     "other": 0
+    },
+    "F1.armenian:flag": {
+     "checked": 12,
+     "pass": 0,
+     "fail": 12,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 12
+    },
+    "F1.armenian:no_commit": {
+     "checked": 12,
+     "pass": 8,
+     "fail": 4,
+     "commits": 4,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.armenian:no_outrank": {
+     "checked": 12,
+     "pass": 12,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.other_script:flag": {
+     "checked": 4,
+     "pass": 0,
+     "fail": 4,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 4
+    },
+    "F1.other_script:no_commit": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.other_script:no_outrank": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.fullwidth:converge": {
+     "checked": 16,
+     "pass": 16,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.combining_latin:I1": {
+     "checked": 16,
+     "pass": 10,
+     "fail": 6,
+     "commits": 6,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.combining_latin:key_matcher": {
+     "checked": 16,
+     "pass": 12,
+     "fail": 4,
+     "commits": 4,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.niqqud:converge": {
+     "checked": 8,
+     "pass": 8,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:flag": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:no_commit": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F1.mixed_token:no_outrank": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:flag": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:no_commit": {
+     "checked": 20,
+     "pass": 20,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.encoded_double:no_outrank": {
+     "checked": 20,
+     "pass": 13,
+     "fail": 7,
+     "commits": 0,
+     "stageBumps": 7,
+     "other": 0
+    },
+    "F2.decode_once": {
+     "checked": 17,
+     "pass": 17,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.idempotent_object": {
+     "checked": 17,
+     "pass": 17,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.idempotent_query_nodecode": {
+     "checked": 17,
+     "pass": 17,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F2.idempotent_string_redecode": {
+     "checked": 17,
+     "pass": 9,
+     "fail": 8,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 8
+    },
+    "F2.encoded_single:converge": {
+     "checked": 14,
+     "pass": 14,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F3.empty_field:text": {
+     "checked": 120,
+     "pass": 120,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F3.empty_field:identifier": {
+     "checked": 40,
+     "pass": 2,
+     "fail": 38,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 38
+    },
+    "F3.empty_field_slow:text": {
+     "checked": 6,
+     "pass": 6,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F3.empty_field_slow:identifier": {
+     "checked": 2,
+     "pass": 0,
+     "fail": 2,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 2
+    },
+    "F3.intra_word": {
+     "checked": 14,
+     "pass": 14,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.joined_title:matcher": {
+     "checked": 6,
+     "pass": 0,
+     "fail": 6,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 6
+    },
+    "F4.joined_title:commit": {
+     "checked": 6,
+     "pass": 6,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.edit_distance_1:matcher": {
+     "checked": 4,
+     "pass": 0,
+     "fail": 4,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 4
+    },
+    "F4.edit_distance_1:commit": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.surname_only:matcher": {
+     "checked": 3,
+     "pass": 3,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.surname_only:commit": {
+     "checked": 3,
+     "pass": 3,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.fold_foreign:matcher": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.fold_foreign:commit": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.url_only": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.url_only_no_cand": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.title_only": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.label_equals_q_no_sources": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_url_only_same_url": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_title_only_same_title": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F4.disc_joined_title": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B1_capped_no_outrank_W2": {
+     "checked": 7,
+     "pass": 0,
+     "fail": 7,
+     "commits": 0,
+     "stageBumps": 7,
+     "other": 0
+    },
+    "F5.B2_single_token_smith": {
+     "checked": 2,
+     "pass": 2,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B4_stageB_pure_same_candidates": {
+     "checked": 4,
+     "pass": 4,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    },
+    "F5.B4_stageB_zw_org_direct_call": {
+     "checked": 1,
+     "pass": 1,
+     "fail": 0,
+     "commits": 0,
+     "stageBumps": 0,
+     "other": 0
+    }
+   },
+   "failingExamples": {
+    "F1.greek:no_outrank": [
+     {
+      "kind": "stage",
+      "v": "J\\u{3BF}hn Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "mixed_script",
+       "confusable",
+       "mixed_script_seed"
+      ],
+      "treeQuery": "J\\u{3BF}hn Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John Smi\\u{3C4}h",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "mixed_script",
+       "confusable",
+       "mixed_script_seed"
+      ],
+      "treeQuery": "John Smi\\u{3C4}h",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "\\u{39A}amala Harris",
+      "clean": "Kamala Harris",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "mixed_script",
+       "confusable",
+       "mixed_script_seed"
+      ],
+      "treeQuery": "\\u{39A}amala Harris",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     }
+    ],
+    "F1.armenian:flag": [
+     {
+      "kind": "other",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "Jo\\u{570}n Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Jo\\u{570}n Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "why": "ceiling not capped at canonicalizeInput"
+     }
+    ],
+    "F1.armenian:no_commit": [
+     {
+      "kind": "commit",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1v:dossier/Q76(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Barack \\u{555}bama",
+      "clean": "Barack Obama",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Barack \\u{555}bama",
+      "known": null,
+      "knownClean": "Q76",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1v:dossier/Q76(wiki_exact)"
+      ],
+      "planIC": false
+     },
+     {
+      "kind": "commit",
+      "v": "Netanyah\\u{57D}",
+      "clean": "Netanyahu",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "Netanyah\\u{57D}",
+      "known": null,
+      "knownClean": "Q43723",
+      "rank": 2,
+      "cleanRank": 2,
+      "commitScn": [
+       "W1v:dossier/Q43723(wiki_exact)"
+      ],
+      "planIC": false
+     }
+    ],
+    "F1.other_script:flag": [
+     {
+      "kind": "other",
+      "v": "\\u{A4EE}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "\\u{A4EE}ssaf Rappaport",
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 0,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{A4EE}ssaf Rappaport",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "\\u{A4EE}ssaf Rappaport",
+      "known": null,
+      "knownClean": "Q47507930",
+      "rank": 1,
+      "cleanRank": 2,
+      "why": "ceiling not capped at canonicalizeInput"
+     },
+     {
+      "kind": "other",
+      "v": "\\u{13AB}ohn Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "clear",
+      "treeRisk": [],
+      "treeQuery": "\\u{13AB}ohn Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 0,
+      "cleanRank": 0,
+      "why": "ceiling not capped at canonicalizeInput"
+     }
+    ],
+    "F1.combining_latin:I1": [
+     {
+      "kind": "commit",
+      "v": "John Smi\\u{301}th",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "distinct",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "John Sm\\u{ED}th",
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1v:dossier/Q990099(wiki_exact)"
+      ]
+     },
+     {
+      "kind": "commit",
+      "v": "John Smi\\u{301}th",
+      "clean": "John Smith",
+      "ctx": "IBM",
+      "expect": "distinct",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "John Sm\\u{ED}th",
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 1,
+      "commitScn": [
+       "W1v:dossier/Q990099(wiki_exact)"
+      ]
+     },
+     {
+      "kind": "commit",
+      "v": "Smi\\u{301}th",
+      "clean": "Smith",
+      "ctx": "none",
+      "expect": "distinct",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "Sm\\u{ED}th",
+      "known": null,
+      "knownClean": null,
+      "rank": 2,
+      "cleanRank": 0,
+      "commitScn": [
+       "W1v:dossier/Q990099(wiki_exact)"
+      ]
+     }
+    ],
+    "F1.combining_latin:key_matcher": [
+     {
+      "kind": "commit",
+      "v": "Assaf Rappapo\\u{308}rt",
+      "clean": "Assaf Rappaport",
+      "ctx": "none",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "Assaf Rappap\\u{F6}rt",
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     },
+     {
+      "kind": "commit",
+      "v": "Assaf Rappapo\\u{308}rt",
+      "clean": "Assaf Rappaport",
+      "ctx": "IBM",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "Assaf Rappap\\u{F6}rt",
+      "known": "Q47507930",
+      "knownClean": "Q47507930",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     },
+     {
+      "kind": "commit",
+      "v": "Me\\u{301}rkel",
+      "clean": "Merkel",
+      "ctx": "none",
+      "expect": "distinct",
+      "note": "diacritic on a known name",
+      "treeCeiling": "clear",
+      "treeRisk": [
+       "non_nfc"
+      ],
+      "treeQuery": "M\\u{E9}rkel",
+      "known": "Q567",
+      "knownClean": "Q567",
+      "rank": 2,
+      "cleanRank": 2,
+      "why": "known identity resolved for a different key (fold)"
+     }
+    ],
+    "F2.encoded_double:no_outrank": [
+     {
+      "kind": "stage",
+      "v": "John%2520Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "encoded",
+       "encoded_double"
+      ],
+      "treeQuery": "John%20Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John&amp;#32;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "encoded",
+       "encoded_double"
+      ],
+      "treeQuery": "John&#32;Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     },
+     {
+      "kind": "stage",
+      "v": "John&amp;nbsp;Smith",
+      "clean": "John Smith",
+      "ctx": "none",
+      "expect": "capped",
+      "treeCeiling": "capped",
+      "treeRisk": [
+       "encoded",
+       "encoded_double"
+      ],
+      "treeQuery": "John&nbsp;Smith",
+      "known": null,
+      "knownClean": null,
+      "rank": 1,
+      "cleanRank": 0,
+      "W2": "candidates",
+      "cleanW2": "need_context"
+     }
+    ],
+    "F2.idempotent_string_redecode": [
+     {
+      "kind": "other",
+      "v": "John%2520Smith",
+      "key": "john%20smith",
+      "reKey": "john smith",
+      "note": "string re-entry WITH decode (rehydration from query/key text) — decode-once conflict"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;#32;Smith",
+      "key": "john&#32;smith",
+      "reKey": "john smith",
+      "note": "string re-entry WITH decode (rehydration from query/key text) — decode-once conflict"
+     },
+     {
+      "kind": "other",
+      "v": "John&amp;nbsp;Smith",
+      "key": "john&nbsp;smith",
+      "reKey": "john smith",
+      "note": "string re-entry WITH decode (rehydration from query/key text) — decode-once conflict"
+     }
+    ],
+    "F3.empty_field:identifier": [
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWSP",
+      "value": "\\u{200B}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": "[]"
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWNJ",
+      "value": "\\u{200C}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": "[]"
+     },
+     {
+      "kind": "other",
+      "q": "דני כהן",
+      "field": "phone",
+      "ign": "ZWJ",
+      "value": "\\u{200D}",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "upstreamUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "searchQ": "",
+      "urls": 6,
+      "urlSample": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"דני כהן\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=דני כהן&limit=5"
+      ],
+      "contextUsed": "{\"city\":\"\",\"org\":\"\",\"role\":\"\",\"country\":\"\",\"context\":\"\",\"phone\":\"\",\"email\":\"\",\"focus\":\"\"}",
+      "providedContext": "[]"
+     }
+    ],
+    "F3.empty_field_slow:identifier": [
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "phone",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": ""
+     },
+     {
+      "kind": "other",
+      "q": "Ada Lovelace",
+      "field": "email",
+      "ign": "ZWSP",
+      "ok": false,
+      "failed": [
+       "uiState",
+       "noExtraUrls"
+      ],
+      "uiState": "thin",
+      "baseUi": "need_context",
+      "extraUrls": [
+       "https://pub.orcid.org/v3.0/expanded-search/?q=given-and-family-names:\"Ada Lovelace\"&rows=5",
+       "https://openlibrary.org/search/authors.json?q=Ada Lovelace&limit=5"
+      ],
+      "searchQ": "Ada Lovelace [email]"
+     }
+    ],
+    "F4.joined_title:matcher": [
+     {
+      "kind": "joined_title",
+      "q": "Vandam",
+      "title": "Van Dam",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "joined_title",
+      "q": "rosamendes",
+      "title": "Rosa Mendes",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "joined_title",
+      "q": "Annarbor",
+      "title": "Ann Arbor",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     }
+    ],
+    "F4.edit_distance_1:matcher": [
+     {
+      "kind": "edit_distance_1",
+      "q": "Jon Smith",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "latin_common_ambiguous",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "John Smyth",
+      "title": "John Smith",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     },
+     {
+      "kind": "edit_distance_1",
+      "q": "Ada Lovelac",
+      "title": "Ada Lovelace",
+      "matchers": {
+       "titleExactish": false,
+       "titleExactishOrLatin": true,
+       "softLatinClose": true,
+       "nameKeyEqual": false
+      },
+      "wikiExactAccepts": true,
+      "gateCommitsGivenFoundWiki": false,
+      "gateReason": "name_not_key_equal",
+      "finalUi": "need_context",
+      "pipelineCommit": false
+     }
+    ],
+    "F5.B1_capped_no_outrank_W2": [
+     {
+      "kind": "stage",
+      "v": "John\\u{200B}Smith",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "input_risk_ceiling"
+     },
+     {
+      "kind": "stage",
+      "v": "John Sm\\u{200B}ith",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "input_risk_ceiling"
+     },
+     {
+      "kind": "stage",
+      "v": "דני\\u{200B}כהן",
+      "got": "candidates",
+      "clean": "need_context",
+      "reason": "input_risk_ceiling"
+     }
+    ]
+   },
+   "F2idem": [
+    {
+     "v": "John%2520Smith",
+     "query": "John%20Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&amp;#32;Smith",
+     "query": "John&#32;Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&amp;nbsp;Smith",
+     "query": "John&nbsp;Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John%25E2%2580%258BSmith",
+     "query": "John%E2%80%8BSmith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "johnsmith"
+    },
+    {
+     "v": "John&amp;#x200B;Smith",
+     "query": "John&#x200B;Smith",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "johnsmith"
+    },
+    {
+     "v": "Assaf%2520Rappaport",
+     "query": "Assaf%20Rappaport",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "assaf rappaport"
+    },
+    {
+     "v": "דני%2520כהן",
+     "query": "דני%20כהן",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "דני כהן"
+    },
+    {
+     "v": "Barack%2520Obama",
+     "query": "Barack%20Obama",
+     "risk": [
+      "encoded",
+      "encoded_double"
+     ],
+     "ceiling": "capped",
+     "reKey": "barack obama"
+    },
+    {
+     "v": "John%E2%80%8BSmith",
+     "query": "JohnSmith",
+     "risk": [
+      "invisible",
+      "encoded",
+      "invisible_intra"
+     ],
+     "ceiling": "capped",
+     "reKey": "johnsmith"
+    },
+    {
+     "v": "Mer%E2%80%8Bkel",
+     "query": "Merkel",
+     "risk": [
+      "invisible",
+      "encoded",
+      "invisible_intra"
+     ],
+     "ceiling": "capped",
+     "reKey": "merkel"
+    },
+    {
+     "v": "John%20Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&#32;Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John&nbsp;Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded",
+      "compat"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "John+Smith",
+     "query": "John Smith",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "Assaf%20Rappaport",
+     "query": "Assaf Rappaport",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "assaf rappaport"
+    },
+    {
+     "v": "John %E2%80%8BSmith",
+     "query": "John Smith",
+     "risk": [
+      "invisible",
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "john smith"
+    },
+    {
+     "v": "%D7%93%D7%A0%D7%99 %D7%9B%D7%94%D7%9F",
+     "query": "דני כהן",
+     "risk": [
+      "encoded"
+     ],
+     "ceiling": "clear",
+     "reKey": "דני כהן"
+    }
+   ],
+   "F4rows": [
+    {
+     "kind": "joined_title",
+     "q": "Vandam",
+     "title": "Van Dam",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "rosamendes",
+     "title": "Rosa Mendes",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "Annarbor",
+     "title": "Ann Arbor",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "Deluca",
+     "title": "De Luca",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "BenjaminNetanyahu",
+     "title": "Benjamin Netanyahu",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "joined_title",
+     "q": "Johnsmith",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Jon Smith",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "latin_common_ambiguous",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "John Smyth",
+     "title": "John Smith",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Ada Lovelac",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "edit_distance_1",
+     "q": "Assaf Rapaport",
+     "title": "Assaf Rappaport",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": true,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": true,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Rappaport",
+     "title": "Assaf Rappaport",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Lovelace",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "surname_only",
+     "q": "Obama",
+     "title": "Barack Obama",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": false,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "name_not_key_equal",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "fold_foreign",
+     "q": "דני Netanyahu",
+     "title": "Netanyahu",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "input_risk_ceiling",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "fold_foreign",
+     "q": "Ada Lovelace\\u{436}",
+     "title": "Ada Lovelace",
+     "matchers": {
+      "titleExactish": false,
+      "titleExactishOrLatin": false,
+      "softLatinClose": true,
+      "nameKeyEqual": false
+     },
+     "wikiExactAccepts": false,
+     "gateCommitsGivenFoundWiki": false,
+     "gateReason": "input_risk_ceiling",
+     "finalUi": "need_context",
+     "pipelineCommit": false
+    },
+    {
+     "kind": "url_only",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "ctx_release_without_record",
+     "ok": false
+    },
+    {
+     "kind": "url_only",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "url_only_no_cand",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "url_only_no_cand",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "title_only",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "title_only",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "label_equals_q_no_sources",
+     "ctx": "{\"org\":\"Acme\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    },
+    {
+     "kind": "label_equals_q_no_sources",
+     "ctx": "{\"org\":\"Acme\",\"city\":\"London\",\"any\":true}",
+     "finalUi": "thin",
+     "reason": "latin_weak",
+     "ok": false
+    }
+   ],
+   "F5": {
+    "B1": {
+     "n": 7,
+     "bad": 7,
+     "ex": [
+      {
+       "v": "John\\u{200B}Smith",
+       "got": "candidates",
+       "clean": "need_context"
+      },
+      {
+       "v": "John Sm\\u{200B}ith",
+       "got": "candidates",
+       "clean": "need_context"
+      },
+      {
+       "v": "דני\\u{200B}כהן",
+       "got": "candidates",
+       "clean": "need_context"
+      }
+     ]
+    },
+    "stageB_lines": {
+     "norm": "api/lib/stageB.js:59",
+     "nameTokens": "api/lib/stageB.js:68",
+     "registryDiscoverName": "api/lib/stageB.js:323",
+     "orgRaw": "api/lib/stageB.js:119"
+    }
+   },
+   "trace": {
+    "scriptSet": "api/lib/seedText.js:114",
+    "skeletonTable": "api/lib/seedText.js:101",
+    "ceilingSet": "api/lib/seedText.js:64",
+    "latinFold": "api/lib/knownIdentities.js:14",
+    "resolveKnown": "api/lib/knownIdentities.js:224",
+    "isTrustedWikiSeed": "api/lib/commitGate.js:18",
+    "isCommonLatin": "api/lib/commitGate.js:115",
+    "wikiExactGate": "api/lib/commitGate.js:437",
+    "cappedStage": "api/lib/orchestrator.js:350",
+    "titleExactishOrLatin": "api/lookup.js:986",
+    "softLatinClose": "api/lookup.js:960",
+    "pickContextFrom": "api/lookup.js:2492",
+    "handlerCtxAny": "api/lookup.js:3154",
+    "buildSearchQ": "api/lookup.js:2561",
+    "nameKeyEqual": "api/lib/commitGate.js:409"
+   }
+  }
+ },
+ "mainHarness": {
+  "846422a": {
+   "properties": {
+    "I1": {
+     "status": "FAIL",
+     "checked": 1429,
+     "violations": 205
+    },
+    "I2": {
+     "status": "PENDING-§26",
+     "checked": 807,
+     "violations": 468
+    },
+    "I2a": {
+     "status": "FAIL",
+     "checked": 375,
+     "violations": 375
+    },
+    "I2b": {
+     "status": "FAIL",
+     "checked": 1041,
+     "violations": 871
+    },
+    "I2g": {
+     "status": "N/A (no guardKey)",
+     "checked": 0,
+     "violations": 0
+    },
+    "I3": {
+     "status": "FAIL",
+     "checked": 957,
+     "violations": 863
+    },
+    "I3x": {
+     "status": "FAIL",
+     "checked": 144,
+     "violations": 117
+    },
+    "CTX": {
+     "status": "FAIL",
+     "checked": 40,
+     "violations": 20
+    },
+    "P7": {
+     "status": "FAIL",
+     "checked": 957,
+     "violations": 923
+    },
+    "I4": {
+     "status": "FAIL",
+     "checked": 910,
+     "violations": 281
+    },
+    "I5": {
+     "status": "PENDING-§26 (0 violations observed)",
+     "checked": 400,
+     "violations": 0
+    },
+    "I6": {
+     "status": "FAIL",
+     "checked": 348,
+     "violations": 275
+    },
+    "I7": {
+     "status": "PASS (0 cache-key collisions)",
+     "checked": 654,
+     "violations": 0
+    },
+    "P5": {
+     "status": "FAIL",
+     "checked": 30,
+     "violations": 30
+    },
+    "P6": {
+     "status": "PASS",
+     "checked": 636,
+     "violations": 0
+    },
+    "V12": {
+     "status": "FAIL",
+     "checked": 23,
+     "violations": 14
+    }
+   },
+   "I1_qidCommitEscalations": 194,
+   "I1_byBaseFamily": {
+    "john_smith|invisible": 12,
+    "john_smith|invisible_join": 15,
+    "john_smith|bidi": 9,
+    "john_smith|compat": 9,
+    "john_smith|encoded": 12,
+    "john_smith|encoded_double": 12,
+    "john_smith|confusable": 12,
+    "john_smith|invisible_intra": 3,
+    "jose_smith|invisible": 6,
+    "jose_smith|invisible_join": 15,
+    "jose_smith|bidi": 9,
+    "jose_smith|compat": 9,
+    "jose_smith|encoded": 12,
+    "jose_smith|encoded_double": 12,
+    "jose_smith|confusable": 12,
+    "dani_cohen|invisible": 4,
+    "dani_cohen|invisible_join": 5,
+    "dani_cohen|bidi": 6,
+    "dani_cohen|compat": 2,
+    "dani_cohen|compat_fb0b": 1,
+    "dani_cohen|niqqud": 6,
+    "dani_cohen|encoded": 4,
+    "dani_cohen|encoded_double": 4,
+    "dani_cohen|mixed_script": 3
+   },
+   "I6_badRows": 134,
+   "I6_wikiExactLatentCount": 141,
+   "v12": [
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "FAIL",
+     "q": "יאיר Netanyahu",
+     "ctx": "none",
+     "knownQid": "Q43723",
+     "isTrustedWikiSeed": true,
+     "mayCommit": "true:wiki_seeded",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": "Q43723",
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "FAIL",
+     "q": "יאיר Netanyahu",
+     "ctx": "IBM",
+     "knownQid": "Q43723",
+     "isTrustedWikiSeed": true,
+     "mayCommit": "true:wiki_seeded",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": "Q43723",
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "FAIL",
+     "q": "מישל Obama",
+     "ctx": "none",
+     "knownQid": "Q76",
+     "isTrustedWikiSeed": true,
+     "mayCommit": "true:wiki_seeded",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": "Q76",
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "FAIL",
+     "q": "מישל Obama",
+     "ctx": "IBM",
+     "knownQid": "Q76",
+     "isTrustedWikiSeed": true,
+     "mayCommit": "true:wiki_seeded",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": "Q76",
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P5_zw_ctx",
+     "verdict": "FAIL",
+     "q": "דני כהן",
+     "org": "\\u{200B}",
+     "ctxAny": true,
+     "sameAsEmpty": false,
+     "W1": "dossier",
+     "W2": "candidates",
+     "dossier": true,
+     "emptyW1": "need_context",
+     "sameCacheKey": false
+    },
+    {
+     "kind": "P5_zw_ctx",
+     "verdict": "FAIL",
+     "q": "דני כהן",
+     "org": "\\u{200F}",
+     "ctxAny": true,
+     "sameAsEmpty": false,
+     "W1": "dossier",
+     "W2": "candidates",
+     "dossier": true,
+     "emptyW1": "need_context",
+     "sameCacheKey": false
+    },
+    {
+     "kind": "P5_zw_ctx",
+     "verdict": "FAIL",
+     "q": "דני כהן",
+     "org": "\\u{2060}\\u{200B}",
+     "ctxAny": true,
+     "sameAsEmpty": false,
+     "W1": "dossier",
+     "W2": "candidates",
+     "dossier": true,
+     "emptyW1": "need_context",
+     "sameCacheKey": false
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "FAIL",
+     "q": "Smith",
+     "ctx": "IBM",
+     "scn": "wiki_Q1701775_pw0",
+     "mayCommit": "true:wiki_exact",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": null,
+     "shapeOk": false,
+     "shapeNote": "expected candidates/UNKNOWN, got dossier"
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "Smith",
+     "ctx": "IBM",
+     "scn": "record_affil_IBM",
+     "mayCommit": "true:latin_evidence",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null,
+     "shapeOk": true,
+     "shapeNote": null
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "John Smith",
+     "ctx": "IBM",
+     "scn": "wiki_Q1701775_pw0",
+     "mayCommit": "false:latin_common_ambiguous",
+     "uiState": "thin",
+     "finalUi": "thin",
+     "qid": null,
+     "shapeOk": false,
+     "shapeNote": "expected candidates/UNKNOWN, got thin"
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "John Smith",
+     "ctx": "IBM",
+     "scn": "record_affil_IBM",
+     "mayCommit": "false:latin_common_ambiguous",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null,
+     "shapeOk": true,
+     "shapeNote": null
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "FAIL",
+     "q": "דני כהן",
+     "ctx": "Acme",
+     "scn": "wiki_exact_record_IBM",
+     "mayCommit": "true:wiki_exact",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": "Q990001"
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "ctx": "Acme",
+     "scn": "candidates_record_IBM",
+     "mayCommit": "false:no_commit",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "FAIL",
+     "q": "דני כהן",
+     "ctx": "Intel",
+     "scn": "wiki_exact_record_IBM",
+     "mayCommit": "true:wiki_exact",
+     "uiState": "dossier",
+     "finalUi": "dossier",
+     "qid": "Q990001"
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "ctx": "Intel",
+     "scn": "candidates_record_IBM",
+     "mayCommit": "false:no_commit",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "FAIL",
+     "pair": "q↔city",
+     "A": "{\"q\":\"John|Acme\",\"ctx\":{\"city\":\"X\"}}",
+     "B": "{\"q\":\"John\",\"ctx\":{\"city\":\"Acme|X\"}}",
+     "keyA": "john|acme|x|||||||",
+     "collide": true,
+     "exposure": {
+      "AthenB": {
+       "writer": "dossier",
+       "readerOwn": "dossier",
+       "readerServed": "dossier",
+       "readerServedQid": "Q990001",
+       "escalates": false
+      },
+      "BthenA": {
+       "writer": "dossier",
+       "readerOwn": "dossier",
+       "readerServed": "dossier",
+       "readerServedQid": "Q990001",
+       "escalates": false
+      }
+     }
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "FAIL",
+     "pair": "q↔city HE",
+     "A": "{\"q\":\"דני כהן\",\"ctx\":{\"city\":\"IBM|X\"}}",
+     "B": "{\"q\":\"דני כהן|IBM\",\"ctx\":{\"city\":\"X\"}}",
+     "keyA": "דני כהן|ibm|x|||||||",
+     "collide": true,
+     "exposure": {
+      "AthenB": {
+       "writer": "dossier",
+       "readerOwn": "dossier",
+       "readerServed": "dossier",
+       "readerServedQid": "Q990001",
+       "escalates": false
+      },
+      "BthenA": {
+       "writer": "dossier",
+       "readerOwn": "dossier",
+       "readerServed": "dossier",
+       "readerServedQid": "Q990001",
+       "escalates": false
+      }
+     }
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "FAIL",
+     "pair": "q↔city HE no-ctx victim",
+     "A": "{\"q\":\"דני כהן\",\"ctx\":{\"city\":\"|\"}}",
+     "B": "{\"q\":\"דני כהן|\",\"ctx\":{}}",
+     "keyA": "דני כהן|||||||||",
+     "collide": true,
+     "exposure": {
+      "AthenB": {
+       "writer": "dossier",
+       "readerOwn": "dossier",
+       "readerServed": "dossier",
+       "readerServedQid": "Q990001",
+       "escalates": false
+      },
+      "BthenA": {
+       "writer": "dossier",
+       "readerOwn": "dossier",
+       "readerServed": "dossier",
+       "readerServedQid": "Q990001",
+       "escalates": false
+      }
+     }
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "FAIL",
+     "pair": "Smith-guard escalation (old layout q|city|org…)",
+     "A": "{\"q\":\"John Smith|X\",\"ctx\":{}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"city\":\"X|\"}}",
+     "keyA": "john smith|x||||||||",
+     "collide": true,
+     "exposure": {
+      "AthenB": {
+       "writer": "dossier",
+       "readerOwn": "thin",
+       "readerServed": "thin",
+       "readerServedQid": null,
+       "escalates": false
+      },
+      "BthenA": {
+       "writer": "thin",
+       "readerOwn": "dossier",
+       "readerServed": "thin",
+       "readerServedQid": null,
+       "escalates": false
+      }
+     }
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "Smith-guard escalation (v1.1 layout key|ceiling|org…)",
+     "A": "{\"q\":\"John Smith|clear\",\"ctx\":{}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"org\":\"clear|\"}}",
+     "keyA": "john smith|clear||||||||",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "org↔city",
+     "A": "{\"q\":\"John Smith\",\"ctx\":{\"org\":\"IBM|Haifa\",\"city\":\"X\"}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"org\":\"IBM\",\"city\":\"Haifa|X\"}}",
+     "keyA": "john smith|x|ibm|haifa||||||",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "phone↔email (synthetic; handler drops invalid phone)",
+     "A": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"1\",\"email\":\"2|3\"}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"1|2\",\"email\":\"3\"}}",
+     "keyA": "john smith|||||||2|3|",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "phone↔email (valid IL phone)",
+     "A": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"0501234567\",\"email\":\"a|b@x.com\"}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"0501234567|a\",\"email\":\"b@x.com\"}}",
+     "keyA": "john smith||||||0501234567|a|b@x.com|",
+     "collide": false,
+     "exposure": null
+    }
+   ],
+   "chiefQ4": {
+    "perProvider": {
+     "orcid": {
+      "clean": [
+       "john smith",
+       "Abutu Simon John Smith"
+      ],
+      "zwsp": [
+       "john smith",
+       "Abutu Simon John Smith"
+      ],
+      "onlyClean": [],
+      "onlyZwsp": []
+     },
+     "ol": {
+      "clean": [
+       "John Smith"
+      ],
+      "zwsp": [],
+      "onlyClean": [
+       "John Smith"
+      ],
+      "onlyZwsp": []
+     },
+     "viaf": {
+      "clean": [
+       "John Smith, 1580-1631",
+       "John Smith, 1749-1831",
+       "John Smith, 1750-1836",
+       "John Smith, 1908-1994",
+       "John Smith, Baron Kirkhill British politician",
+       "Johnsmith, 1951-"
+      ],
+      "zwsp": [
+       "John Smith, 1580-1631",
+       "John Smith, 1749-1831",
+       "John Smith, 1750-1836",
+       "John Smith, 1908-1994",
+       "John Smith, Baron Kirkhill British politician",
+       "Johnsmith, 1951-"
+      ],
+      "onlyClean": [],
+      "onlyZwsp": []
+     }
+    },
+    "coreSideFilterDrift": true,
+    "note": "direct sb.registryDiscover call with RAW q (not via handler)"
+   },
+   "hardFailures": [
+    "I1",
+    "I4",
+    "P5",
+    "I3-dossier",
+    "I2a",
+    "I2b",
+    "CTX",
+    "P7",
+    "V12",
+    "I6"
+   ]
+  },
+  "33d5ad0": {
+   "properties": {
+    "I1": {
+     "status": "FAIL",
+     "checked": 1429,
+     "violations": 126
+    },
+    "I2": {
+     "status": "FAIL",
+     "checked": 807,
+     "violations": 369
+    },
+    "I2a": {
+     "status": "FAIL",
+     "checked": 375,
+     "violations": 12
+    },
+    "I2b": {
+     "status": "FAIL",
+     "checked": 1041,
+     "violations": 117
+    },
+    "I2g": {
+     "status": "N/A (no guardKey)",
+     "checked": 0,
+     "violations": 0
+    },
+    "I3": {
+     "status": "PASS",
+     "checked": 957,
+     "violations": 0
+    },
+    "I3x": {
+     "status": "PASS",
+     "checked": 144,
+     "violations": 0
+    },
+    "CTX": {
+     "status": "PASS",
+     "checked": 40,
+     "violations": 0
+    },
+    "P7": {
+     "status": "PASS",
+     "checked": 957,
+     "violations": 0
+    },
+    "I4": {
+     "status": "FAIL",
+     "checked": 1063,
+     "violations": 57
+    },
+    "I5": {
+     "status": "PASS",
+     "checked": 400,
+     "violations": 0
+    },
+    "I6": {
+     "status": "FAIL",
+     "checked": 348,
+     "violations": 47
+    },
+    "I7": {
+     "status": "PASS (collisions demoted on hit)",
+     "checked": 474,
+     "violations": 0
+    },
+    "P5": {
+     "status": "PASS",
+     "checked": 34,
+     "violations": 0
+    },
+    "P6": {
+     "status": "FAIL",
+     "checked": 1112,
+     "violations": 28
+    },
+    "V12": {
+     "status": "PASS",
+     "checked": 23,
+     "violations": 0
+    }
+   },
+   "I1_qidCommitEscalations": 0,
+   "I1_byBaseFamily": {
+    "smith_bare|invisible": 5,
+    "smith_bare|confusable": 4,
+    "smith_bare|mixed_script": 3,
+    "smith_bare|invisible_intra": 5,
+    "john_smith|invisible": 7,
+    "john_smith|invisible_join": 6,
+    "john_smith|bidi": 3,
+    "john_smith|encoded_double": 4,
+    "john_smith|confusable": 6,
+    "john_smith|mixed_script": 4,
+    "john_smith|invisible_intra": 5,
+    "jose_smith|invisible": 5,
+    "jose_smith|invisible_join": 6,
+    "jose_smith|bidi": 3,
+    "jose_smith|encoded_double": 4,
+    "jose_smith|confusable": 6,
+    "jose_smith|mixed_script": 4,
+    "jose_smith|invisible_intra": 4,
+    "dani_cohen|invisible": 6,
+    "dani_cohen|invisible_join": 6,
+    "dani_cohen|bidi": 3,
+    "dani_cohen|compat_fb0b": 1,
+    "dani_cohen|encoded_double": 4,
+    "dani_cohen|mixed_script": 4,
+    "cohen_bare|invisible": 5,
+    "cohen_bare|compat_fb0b": 1,
+    "cohen_bare|mixed_script": 3
+   },
+   "I6_badRows": 0,
+   "I6_wikiExactLatentCount": 47,
+   "v12": [
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "PASS",
+     "q": "יאיר Netanyahu",
+     "ctx": "none",
+     "knownQid": null,
+     "isTrustedWikiSeed": false,
+     "mayCommit": "false:input_risk_ceiling",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null,
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "PASS",
+     "q": "יאיר Netanyahu",
+     "ctx": "IBM",
+     "knownQid": null,
+     "isTrustedWikiSeed": false,
+     "mayCommit": "false:input_risk_ceiling",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null,
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "PASS",
+     "q": "מישל Obama",
+     "ctx": "none",
+     "knownQid": null,
+     "isTrustedWikiSeed": false,
+     "mayCommit": "false:input_risk_ceiling",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null,
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P4_mixed_script_seed",
+     "verdict": "PASS",
+     "q": "מישל Obama",
+     "ctx": "IBM",
+     "knownQid": null,
+     "isTrustedWikiSeed": false,
+     "mayCommit": "false:input_risk_ceiling",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null,
+     "refCeiling": "capped"
+    },
+    {
+     "kind": "P5_zw_ctx",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "org": "\\u{200B}",
+     "ctxAny": false,
+     "sameAsEmpty": true,
+     "W1": "need_context",
+     "W2": "need_context",
+     "dossier": false,
+     "emptyW1": "need_context",
+     "sameCacheKey": true
+    },
+    {
+     "kind": "P5_zw_ctx",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "org": "\\u{200F}",
+     "ctxAny": false,
+     "sameAsEmpty": true,
+     "W1": "need_context",
+     "W2": "need_context",
+     "dossier": false,
+     "emptyW1": "need_context",
+     "sameCacheKey": true
+    },
+    {
+     "kind": "P5_zw_ctx",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "org": "\\u{2060}\\u{200B}",
+     "ctxAny": false,
+     "sameAsEmpty": true,
+     "W1": "need_context",
+     "W2": "need_context",
+     "dossier": false,
+     "emptyW1": "need_context",
+     "sameCacheKey": true
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "Smith",
+     "ctx": "IBM",
+     "scn": "wiki_Q1701775_pw0",
+     "mayCommit": "false:latin_common_ambiguous",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null,
+     "shapeOk": true,
+     "shapeNote": null
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "Smith",
+     "ctx": "IBM",
+     "scn": "record_affil_IBM",
+     "mayCommit": "false:latin_common_ambiguous",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null,
+     "shapeOk": true,
+     "shapeNote": null
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "John Smith",
+     "ctx": "IBM",
+     "scn": "wiki_Q1701775_pw0",
+     "mayCommit": "false:latin_common_ambiguous",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null,
+     "shapeOk": true,
+     "shapeNote": null
+    },
+    {
+     "kind": "S11_3_smith_ctx_in_record",
+     "verdict": "PASS",
+     "q": "John Smith",
+     "ctx": "IBM",
+     "scn": "record_affil_IBM",
+     "mayCommit": "false:latin_common_ambiguous",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null,
+     "shapeOk": true,
+     "shapeNote": null
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "ctx": "Acme",
+     "scn": "wiki_exact_record_IBM",
+     "mayCommit": "false:common_he_no_seed",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "ctx": "Acme",
+     "scn": "candidates_record_IBM",
+     "mayCommit": "false:common_he_no_seed",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "ctx": "Intel",
+     "scn": "wiki_exact_record_IBM",
+     "mayCommit": "false:common_he_no_seed",
+     "uiState": "need_context",
+     "finalUi": "need_context",
+     "qid": null
+    },
+    {
+     "kind": "S11_3_he_org_not_in_record",
+     "verdict": "PASS",
+     "q": "דני כהן",
+     "ctx": "Intel",
+     "scn": "candidates_record_IBM",
+     "mayCommit": "false:common_he_no_seed",
+     "uiState": "candidates",
+     "finalUi": "candidates",
+     "qid": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "q↔city",
+     "A": "{\"q\":\"John|Acme\",\"ctx\":{\"city\":\"X\"}}",
+     "B": "{\"q\":\"John\",\"ctx\":{\"city\":\"Acme|X\"}}",
+     "keyA": "[\"[\\\"john|acme\\\",\\\"clear\\\",[\\\"\\\",\\\"x\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "q↔city HE",
+     "A": "{\"q\":\"דני כהן\",\"ctx\":{\"city\":\"IBM|X\"}}",
+     "B": "{\"q\":\"דני כהן|IBM\",\"ctx\":{\"city\":\"X\"}}",
+     "keyA": "[\"[\\\"דני כהן\\\",\\\"clear\\\",[\\\"\\\",\\\"ibm|x\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "q↔city HE no-ctx victim",
+     "A": "{\"q\":\"דני כהן\",\"ctx\":{\"city\":\"|\"}}",
+     "B": "{\"q\":\"דני כהן|\",\"ctx\":{}}",
+     "keyA": "[\"[\\\"דני כהן\\\",\\\"clear\\\",[\\\"\\\",\\\"|\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "Smith-guard escalation (old layout q|city|org…)",
+     "A": "{\"q\":\"John Smith|X\",\"ctx\":{}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"city\":\"X|\"}}",
+     "keyA": "[\"[\\\"john smith|x\\\",\\\"clear\\\",[\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "Smith-guard escalation (v1.1 layout key|ceiling|org…)",
+     "A": "{\"q\":\"John Smith|clear\",\"ctx\":{}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"org\":\"clear|\"}}",
+     "keyA": "[\"[\\\"john smith|clear\\\",\\\"clear\\\",[\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "org↔city",
+     "A": "{\"q\":\"John Smith\",\"ctx\":{\"org\":\"IBM|Haifa\",\"city\":\"X\"}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"org\":\"IBM\",\"city\":\"Haifa|X\"}}",
+     "keyA": "[\"[\\\"john smith\\\",\\\"clear\\\",[\\\"ibm|haifa\\\",\\\"x\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "phone↔email (synthetic; handler drops invalid phone)",
+     "A": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"1\",\"email\":\"2|3\"}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"1|2\",\"email\":\"3\"}}",
+     "keyA": "[\"[\\\"john smith\\\",\\\"clear\\\",[\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"\",\"2|3\"]",
+     "collide": false,
+     "exposure": null
+    },
+    {
+     "kind": "S37_cache_delimiter",
+     "verdict": "PASS",
+     "pair": "phone↔email (valid IL phone)",
+     "A": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"0501234567\",\"email\":\"a|b@x.com\"}}",
+     "B": "{\"q\":\"John Smith\",\"ctx\":{\"phone\":\"0501234567|a\",\"email\":\"b@x.com\"}}",
+     "keyA": "[\"[\\\"john smith\\\",\\\"clear\\\",[\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]]\",\"0501234567\",\"a|b@x.com\"]",
+     "collide": false,
+     "exposure": null
+    }
+   ],
+   "chiefQ4": {
+    "perProvider": {
+     "orcid": {
+      "clean": [
+       "john smith",
+       "Abutu Simon John Smith"
+      ],
+      "zwsp": [
+       "john smith",
+       "Abutu Simon John Smith"
+      ],
+      "onlyClean": [],
+      "onlyZwsp": []
+     },
+     "ol": {
+      "clean": [
+       "John Smith"
+      ],
+      "zwsp": [],
+      "onlyClean": [
+       "John Smith"
+      ],
+      "onlyZwsp": []
+     },
+     "viaf": {
+      "clean": [
+       "John Smith, 1580-1631",
+       "John Smith, 1749-1831",
+       "John Smith, 1750-1836",
+       "John Smith, 1908-1994",
+       "John Smith, Baron Kirkhill British politician",
+       "Johnsmith, 1951-"
+      ],
+      "zwsp": [
+       "Johnsmith, 1951-",
+       "John Smith, 1580-1631",
+       "John Smith, 1749-1831",
+       "John Smith, 1750-1836",
+       "John Smith, 1908-1994",
+       "John Smith, Baron Kirkhill British politician"
+      ],
+      "onlyClean": [],
+      "onlyZwsp": []
+     }
+    },
+    "coreSideFilterDrift": true,
+    "note": "direct sb.registryDiscover call with RAW q (not via handler)"
+   },
+   "hardFailures": [
+    "I1",
+    "I4",
+    "P6",
+    "I2a",
+    "I2b",
+    "I6"
+   ]
+  }
+ }
+}
