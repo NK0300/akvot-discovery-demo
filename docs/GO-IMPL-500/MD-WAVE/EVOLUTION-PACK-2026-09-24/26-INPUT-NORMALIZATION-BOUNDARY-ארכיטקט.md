@@ -1,6 +1,6 @@
 # §26 — Input Normalization Boundary (חוזה) — ארכיטקט · 2026-09-24
 
-סטטוס: **v1.1.1** (Chief אישר; +§10.10–10.11) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
+סטטוס: **v1.2** (v1.1.1 אושר; §11 = ביקורת מלאה + אכיפה) · **CONTRACT ONLY** (אין קוד בקומיט הזה) · מימוש: שרת, על branch מעל `48d09a6`.
 נעילות: **PROD HOLD** · NO PROMOTE · TREATMENT unchanged · C1 קשיח · Wave 1 NOT DONE.
 רקע: אירוע ZERO-WIDTH/UNICODE. תו סמוי עקף את שמירת Smith ואת שמירת שם המשפחה העברי (שחזור שרת על `edf3f96`). ה־sweep למטה מראה שזו **מחלקה**, לא תו בודד.
 
@@ -119,3 +119,29 @@
 **10.10 ctx ו־ceiling (הבהרת דיוק, מאושר):** ה־`ceiling` נגזר **מהזרע בלבד**. דגלי הסיכון של ה־ctx נרשמים ב־`ctxInputRisk` ולא משנים את ה־ceiling. מפתח המטמון כולל את `canonical(ctx)` בלבד, כך ש־`IBM`, `I\u200BBM` ו־`IBM\u200B` חולקים רשומה אחת. זה בטוח, כי לפי F ה־ctx לא יוצר commit ולא ראיה. בנוסף, השוואת «match» בין ctx לרשומה רצה על `key` מול `key`, ולעולם לא על skeleton. ctx קונפוזבל (`ІВМ` קירילי) לא יוצר match.
 
 **10.11 סוג התשובה ל־capped:** UNKNOWN ולא NOT_FOUND. זרע capped יוצא need_context או candidates, עם סיבה ניטרלית של קלט דו־משמעי. לעולם לא `not_found` ולא thin שלילי, גם כשיש כותרת exact מוויקי. בדיקות I2b בודקות גם את סוג התשובה.
+
+## 11. v1.2 — ביקורת מלאה של השוואות גולמיות (נספח `26A-RAW-COMPARE-AUDIT-ארכיטקט.md`, `26A-audit.json`)
+78 נקודות שמשוות או ממפות מחרוזות שמגיעות מהמשתמש (בקוד של `5ff2845`). **41 חשופות**, 28 שבהן וריאנט רק מאבד recall, ו־9 שנוגעות רק במיון או בתצוגה. מספרי השורות אומתו. ה־probes נמצאים ב־`/workspace/arch-audit-26/probes.mjs`, מקומי ובלי רשת.
+
+**11.1 חמורים (commit לזהות, ללא תלות ב־ZW):**
+- **S04 + §7 #4 מסווג מחדש כחשוף.** `resolveKnownIdentityQid` מחזיר hit על mixed-script (`יאיר Netanyahu` נותן Q43723, `מישל Obama` נותן Q76). משם `isTrustedWikiSeed` (`orchestrator.js:30`) עוקף את כל ה־guards, ו־`mayCommitDossier` מחזיר `{ok:true, reason:'wiki_seeded'}`, כלומר dossier (P4). נסגר ב־§10.3–10.4, ובנוסף: **הזרע נחשב trusted רק כש־`ceiling=clear`**.
+- **S08/S09/S17: `ctx.any` מחושב על raw.** hint שכולו תווים סמויים (`org:'\u200B'`) נחשב הקשר. הוא מכבה את ה־hard-safety העברי, ו־`דני כהן` יוצא dossier (P5). הכלל: `ctxAny` נגזר רק מ־`canonical(ctx)` לא ריק.
+- **S37: התנגשות במפתח המטמון.** `cacheKeyFor` מחבר עם `|` בלי escape, ולכן `{q:'John|Acme',city:'X'}` ו־`{q:'John',city:'Acme|X'}` מקבלים אותו מפתח. זו תשובה של בקשה אחרת, כלומר ה־lesson של Q1701775. הכלל: `JSON.stringify([key, ceiling, ctxKeys])`.
+
+**11.2 נקודות כניסה נוספות** (הגבול חייב לרוץ גם בהן):
+- **S72, `ds1.` session ids.** מזהה בלי חתימה (base64 JSON) משחזר session עם seed ו־hints שרירותיים ב־GET, ב־SSE וב־narrow. הוא עוקף את `validateDiscoveryCreateBody` ואת ה־rate limit. `canonicalizeInput`, ה־validation וה־rate limit חלים גם על השחזור. אחר כך (שרת, security) חתימת HMAC על ה־id.
+- **`orchestrator.js:217`:** focus שכולו תווים סמויים נחשב לא ריק ועוקף guards.
+- **`lookup.js:3076`:** בדיקת q ריק ב־Core לא תופסת תווים סמויים. §7 #11 כיסה רק את Discovery.
+- **`lookup.js:903` `normalizePersonQuery`:** מוחלף ב־`canonicalizeInput`. זה מספר נקודות נרמול 1.
+
+**11.3 הסתירה עם §10.10 (הכרעה):** בקוד היום ה־ctx כן משפיע על commit. הוא דרישת `latin_evidence` (`orchestrator.js:262–276`), והנוכחות שלו משחררת need_context. הכלל המחייב: ctx יכול להשפיע על commit **רק דרך `recordHas(key, key)` מול הרשומה שנשלפה**. נוכחות בלבד נמדדת על `canonical(ctx)` לא ריק, ולא על truthiness גולמי. **שאלת מוצר פתוחה (Chief/דיוק, לא בסבב הזה, TREATMENT נעול):** האם נוכחות ctx תקין, בלי התאמה ברשומה, צריכה לשחרר את ה־hard-safety של שם עברי נפוץ.
+
+**11.4 שאר החשופים:** `knownIdentities.js:264` near-miss. `lookup.js:996` `isLatinScriptQuery` (full-width נכנס לנתיב העברי). `lookup.js:2758` `scrubIdentifiers` (האימייל `A@B.COM` דולף). `lookup.js:2765` `scrubUrlField` (`%2540` וקידוד פגום). `stageB.js:321` (שני תווים סמויים עוברים את `length<2`). `lookup.js:2507–2514`, `:2991` (precedence לפי `trim()!==''`). `orchestrator.js:566` (revalidate על raw). `webOrigin.js:59` (regex לא מעוגן).
+**כפילויות לאיחוד:** שני גלאי Latin (`orchestrator.js:57`, `lookup.js:996`), שני מסווגי seed (`detectSeedClass`, `loopSpine.js:187` `classifySeed`), ו־`normalizeUniversalSeed` שאינו בשימוש. השרת לא קורא את `seedKind` (slice B).
+**מחוץ להיקף, נרשם:** השאילתה נכנסת raw לפרומפטים של Gemini (`lookup.js:2163`, `2406`), כלומר prompt injection. אחרי §26 זה יהיה `query`.
+
+**11.5 אכיפה (מפרט §10.8):**
+- **lint:** `scripts/lint-raw-compare.mjs` (טיוטה עובדת ב־`26A-lint-draft/`, בלי תלויות). 8 דפוסים נאכפים תמיד, ו־8 רק ליד שמות שמגיעים מהמשתמש. על הקוד הנוכחי יש 323 hits. ה־allowlist כולל 17 מוצדקים ו־283 חוב ישן, והוא **ratchet**: רשומה שכבר לא נחוצה מכשילה את הריצה, ו־hit חדש מכשיל. זה נכנס ל־`npm test`. המגבלה: truthiness (`!seed`, `ctx.any`) לא נתפס, ולכן:
+- **brand בזמן ריצה:** `canonicalizeInput` מחזיר אובייקט frozen שנרשם ב־**WeakSet** פרטי (ולא Symbol, כי spread מעתיק Symbol). `assertCanonical` נקרא ב־guards, ב־matchers, ב־cacheKey, ב־routing וב־seedClass. JSON rehydration (מטמון, store, `ds1.`) מאבד את ה־brand, ולכן **מחייב קנוניזציה מחדש בטעינה**. זה בדיוק מה שנתיב `ds1` צריך. רשימת הפונקציות נמצאת בנספח D.2.
+
+**11.6 תוספת לשער GO (ארכיטקט):** כל 41 הנקודות החשופות סגורות, או מופיעות כפער מוצהר עם בעלים. P3, P4, P5 ו־S37 נכנסים לרגרסיה, וצריכים לצאת red על main ו־green על הענף. ה־lint וה־brand פעילים ב־`npm test`.

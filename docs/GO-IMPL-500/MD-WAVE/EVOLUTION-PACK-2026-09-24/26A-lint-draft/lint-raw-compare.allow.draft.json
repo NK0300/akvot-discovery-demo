@@ -1,0 +1,3325 @@
+[
+ {
+  "file": "api/discovery/health.js",
+  "id": "T2-eq",
+  "lineContains": "(typeof req.query?.correlationId === 'string' && req.query.correlationId.slice(0, 64)) ||",
+  "max": 1,
+  "baselineLines": [
+   25
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/discovery/sessions/[id]/index.js",
+  "id": "T2-eq",
+  "lineContains": "(typeof req.query === 'object' && Object.values(req.query || {})[0]) ||",
+  "max": 1,
+  "baselineLines": [
+   20
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/discovery/sessions/[id]/narrow.js",
+  "id": "T2-eq",
+  "lineContains": "if (typeof body === 'string') {",
+  "max": 1,
+  "baselineLines": [
+   27
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/discovery/sessions/[id]/narrow.js",
+  "id": "T2-eq",
+  "lineContains": "body = body && typeof body === 'object' ? body : {};",
+  "max": 1,
+  "baselineLines": [
+   34
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/discovery/sessions/index.js",
+  "id": "T2-eq",
+  "lineContains": "if (typeof body === 'string') {",
+  "max": 1,
+  "baselineLines": [
+   51
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/discovery/sessions/index.js",
+  "id": "T2-eq",
+  "lineContains": "body = body && typeof body === 'object' ? body : {};",
+  "max": 1,
+  "baselineLines": [
+   58
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-eq",
+  "lineContains": "err && typeof err === 'object' && 'name' in /** @type {object} */ (err)",
+  "max": 1,
+  "baselineLines": [
+   169
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-eq",
+  "lineContains": "if (r === 'timeout' || name === 'TimeoutError') return 'timeout';",
+  "max": 1,
+  "baselineLines": [
+   174
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-eq",
+  "lineContains": "if (name === 'AbortError' || /abort|timeout/i.test(msg)) {",
+  "max": 1,
+  "baselineLines": [
+   175
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (name === 'AbortError' || /abort|timeout/i.test(msg)) {",
+  "max": 1,
+  "baselineLines": [
+   175
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-includes",
+  "lineContains": "if (list.includes(n) && list.filter((c) => c === n).length !== 1) return false;",
+  "max": 1,
+  "baselineLines": [
+   220
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-eq",
+  "lineContains": "if (list.includes(n) && list.filter((c) => c === n).length !== 1) return false;",
+  "max": 1,
+  "baselineLines": [
+   220
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-includes",
+  "lineContains": "if (q && isForbiddenQid(q) && !strippedIds.includes(q)) strippedIds.push(q);",
+  "max": 2,
+  "baselineLines": [
+   418,
+   676
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/adapterContract.js",
+  "id": "T2-includes",
+  "lineContains": "if (q && !strippedIds.includes(q)) strippedIds.push(q);",
+  "max": 2,
+  "baselineLines": [
+   511,
+   641
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/apiErrors.js",
+  "id": "T2-eq",
+  "lineContains": "if (typeof v === 'string') body[k] = redactSensitiveText(v, { maxLen: 160 });",
+  "max": 1,
+  "baselineLines": [
+   63
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/apiErrors.js",
+  "id": "T2-eq",
+  "lineContains": "else if (v != null && typeof v !== 'function') body[k] = v;",
+  "max": 1,
+  "baselineLines": [
+   64
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/apiErrors.js",
+  "id": "T2-eq",
+  "lineContains": "if (body[k] === undefined) delete body[k];",
+  "max": 1,
+  "baselineLines": [
+   68
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/budget.js",
+  "id": "T2-lower",
+  "lineContains": "const s = String(status || '').toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   266
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/budget.js",
+  "id": "T2-includes",
+  "lineContains": "if (FAMILY_STATUS.includes(s)) return s;",
+  "max": 1,
+  "baselineLines": [
+   267
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/budget.js",
+  "id": "T2-eq",
+  "lineContains": "if (s === 'partial') return 'ok';",
+  "max": 1,
+  "baselineLines": [
+   268
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/budget.js",
+  "id": "T2-eq",
+  "lineContains": "if (s === 'failed' || s === 'fail') return 'error';",
+  "max": 1,
+  "baselineLines": [
+   269
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/ddgInstantAnswer.js",
+  "id": "T2-eq",
+  "lineContains": "err && typeof err === 'object' && 'name' in /** @type {object} */ (err)",
+  "max": 2,
+  "baselineLines": [
+   295,
+   331
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/ddgInstantAnswer.js",
+  "id": "T2-eq",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) return true;",
+  "max": 1,
+  "baselineLines": [
+   303
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/ddgInstantAnswer.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) return true;",
+  "max": 1,
+  "baselineLines": [
+   303
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/ddgInstantAnswer.js",
+  "id": "T2-eq",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) {",
+  "max": 1,
+  "baselineLines": [
+   339
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/ddgInstantAnswer.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) {",
+  "max": 1,
+  "baselineLines": [
+   339
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/dualRunHarness.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/budget_exhausted/i.test(s)) codes.add('budget_exhausted');",
+  "max": 1,
+  "baselineLines": [
+   65
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/dualRunHarness.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/timeout/i.test(s)) codes.add('timeout');",
+  "max": 1,
+  "baselineLines": [
+   66
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/dualRunHarness.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\bcancel/i.test(s)) codes.add('cancelled');",
+  "max": 1,
+  "baselineLines": [
+   67
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/dualRunHarness.js",
+  "id": "T2-regex-test",
+  "lineContains": "noCredentialLeak: !/(api[_-]?key\\s*[=:]|password\\s*[=:]|token\\s*[=:]|Bearer\\s+[A-Za-z0-9._-]+)/i.test(",
+  "max": 1,
+  "baselineLines": [
+   315
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/emit.js",
+  "id": "T2-includes",
+  "lineContains": "if (q && isForbiddenQid(q) && !strippedIds.includes(q)) strippedIds.push(q);",
+  "max": 1,
+  "baselineLines": [
+   36
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/emit.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/(api[_-]?key|secret|password|token|bearer\\s+[a-z0-9._-]+)/i.test(s)) return '[REDACTED]';",
+  "max": 1,
+  "baselineLines": [
+   350
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/emit.js",
+  "id": "T2-eq",
+  "lineContains": "const hintsIn = softEr.hints && typeof softEr.hints === 'object' ? softEr.hints : {};",
+  "max": 1,
+  "baselineLines": [
+   364
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/emit.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/(api[_-]?key|secret|password|token|bearer\\s+[a-z0-9._-]+)/i.test(s)) {",
+  "max": 2,
+  "baselineLines": [
+   613,
+   804
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/emit.js",
+  "id": "T2-includes",
+  "lineContains": "if (s.includes(tok)) s = s.split(tok).join('[BLOCKED]');",
+  "max": 2,
+  "baselineLines": [
+   617,
+   808
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/emit.js",
+  "id": "T2-eq",
+  "lineContains": "if (s !== before) {",
+  "max": 1,
+  "baselineLines": [
+   621
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidence.js",
+  "id": "T2-eq",
+  "lineContains": "(query.findingId && findings.find((f) => f.id === query.findingId)) ||",
+  "max": 1,
+  "baselineLines": [
+   403
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidence.js",
+  "id": "T2-includes",
+  "lineContains": "findings.find((f) => (f.evidenceIds || []).includes(query.evidenceId))) ||",
+  "max": 1,
+  "baselineLines": [
+   405
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidence.js",
+  "id": "T2-set-map",
+  "lineContains": "(query.evidenceId && evidenceById.get(query.evidenceId)) ||",
+  "max": 1,
+  "baselineLines": [
+   408
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidence.js",
+  "id": "T2-includes",
+  "lineContains": ": strengths.includes('metadata_only') && strengths.every((s) => s === 'metadata_only')",
+  "max": 1,
+  "baselineLines": [
+   502
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidence.js",
+  "id": "T2-eq",
+  "lineContains": ": strengths.includes('metadata_only') && strengths.every((s) => s === 'metadata_only')",
+  "max": 1,
+  "baselineLines": [
+   502
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidenceGraph.js",
+  "id": "T2-set-map",
+  "lineContains": "if (!n?.id || nodeIds.has(n.id)) return;",
+  "max": 1,
+  "baselineLines": [
+   140
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/evidenceGraph.js",
+  "id": "T2-eq",
+  "lineContains": "if (!graph.nodes.some((n) => n.id === toId)) {",
+  "max": 1,
+  "baselineLines": [
+   422
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/failureInject.js",
+  "id": "T2-includes",
+  "lineContains": "if (!mapped.includes(n)) return false;",
+  "max": 1,
+  "baselineLines": [
+   82
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/familyOrchestrator.js",
+  "id": "T2-eq",
+  "lineContains": "let hints = session.hints && typeof session.hints === 'object' ? { ...session.hints } : {};",
+  "max": 1,
+  "baselineLines": [
+   292
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/familyOrchestrator.js",
+  "id": "T2-set-map",
+  "lineContains": "query: row.query != null ? row.query : queryByFamily.get(row.familyId) || session.seed,",
+  "max": 1,
+  "baselineLines": [
+   489
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/faultInject.js",
+  "id": "T2-lower",
+  "lineContains": "const name = String(raw).trim().toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   38
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/faultInject.js",
+  "id": "T2-set-map",
+  "lineContains": "return FAULTS.has(name) ? name : null;",
+  "max": 1,
+  "baselineLines": [
+   39
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/[\\u0590-\\u05FF]/.test(s)) return 'he';",
+  "max": 1,
+  "baselineLines": [
+   130
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S70 (routing/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-eq",
+  "lineContains": "err && typeof err === 'object' && 'name' in /** @type {object} */ (err)",
+  "max": 2,
+  "baselineLines": [
+   312,
+   370
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-eq",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) return true;",
+  "max": 1,
+  "baselineLines": [
+   320
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) return true;",
+  "max": 1,
+  "baselineLines": [
+   320
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-eq",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) {",
+  "max": 1,
+  "baselineLines": [
+   378
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (name === 'AbortError' || /\\babort\\b|timeout/i.test(msg)) {",
+  "max": 1,
+  "baselineLines": [
+   378
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/generalWebSearch.js",
+  "id": "T2-eq",
+  "lineContains": "const pageMap = data?.query?.pages && typeof data.query.pages === 'object' ? data.query.pages : {};",
+  "max": 1,
+  "baselineLines": [
+   449
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/loopSpine.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^https?:\\/\\//i.test(s)) return 'url';",
+  "max": 1,
+  "baselineLines": [
+   190
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/loopSpine.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^(?:[a-z0-9-]+\\.)+[a-z]{2,}(?:\\/.*)?$/i.test(s) && !/\\s/.test(s)) return 'domain';",
+  "max": 1,
+  "baselineLines": [
+   191
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/loopSpine.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\b(ltd|corp|inc|gmbh)\\.?$/i.test(s)) return 'organization';",
+  "max": 1,
+  "baselineLines": [
+   199
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/loopSpine.js",
+  "id": "T2-token-split",
+  "lineContains": "const tokens = s.split(/\\s+/).filter(Boolean);",
+  "max": 1,
+  "baselineLines": [
+   200
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/loopSpine.js",
+  "id": "T1-script-ratio",
+  "lineContains": "/^[\\p{L}\\p{M}\\s.'’-]+$/u.test(s)",
+  "max": 1,
+  "baselineLines": [
+   204
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/loopSpine.js",
+  "id": "T2-regex-test",
+  "lineContains": "/^[\\p{L}\\p{M}\\s.'’-]+$/u.test(s)",
+  "max": 1,
+  "baselineLines": [
+   204
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/missionMemory.js",
+  "id": "T2-lower",
+  "lineContains": "const s = String(k || '').trim().toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   58
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/narrow.js",
+  "id": "T2-eq",
+  "lineContains": "if (body.facets && typeof body.facets === 'object') {",
+  "max": 1,
+  "baselineLines": [
+   32
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/narrow.js",
+  "id": "T2-eq",
+  "lineContains": "if (body.filters && typeof body.filters === 'object') {",
+  "max": 1,
+  "baselineLines": [
+   40
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/narrow.js",
+  "id": "T2-set-map",
+  "lineContains": "if (want.has(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   67
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/narrow.js",
+  "id": "T2-includes",
+  "lineContains": "if (s === w || s.endsWith(`:${w}`) || s.includes(w)) return true;",
+  "max": 1,
+  "baselineLines": [
+   70
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S71 (other/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/narrow.js",
+  "id": "T2-starts-ends",
+  "lineContains": "if (s === w || s.endsWith(`:${w}`) || s.includes(w)) return true;",
+  "max": 1,
+  "baselineLines": [
+   70
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S71 (other/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/narrow.js",
+  "id": "T2-eq",
+  "lineContains": "if (s === w || s.endsWith(`:${w}`) || s.includes(w)) return true;",
+  "max": 1,
+  "baselineLines": [
+   70
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S71 (other/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/nightLoop.js",
+  "id": "T2-eq",
+  "lineContains": "if (n === 1) {",
+  "max": 1,
+  "baselineLines": [
+   87
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/nightLoop.js",
+  "id": "T2-eq",
+  "lineContains": "if (n === 2) {",
+  "max": 1,
+  "baselineLines": [
+   92
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/obs.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/seed|secret|password|token|authorization|cookie|api[_-]?key/i.test(key)) continue;",
+  "max": 1,
+  "baselineLines": [
+   64
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/obs.js",
+  "id": "T2-includes",
+  "lineContains": "if (s.includes(tok)) s = s.split(tok).join('[BLOCKED]');",
+  "max": 1,
+  "baselineLines": [
+   252
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/orchestrator.js",
+  "id": "T2-eq",
+  "lineContains": "const hints = body.hints && typeof body.hints === 'object' ? body.hints : {};",
+  "max": 1,
+  "baselineLines": [
+   176
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/orchestrator.js",
+  "id": "T2-eq",
+  "lineContains": "const anyError = providerStates.some((s) => s === 'error');",
+  "max": 1,
+  "baselineLines": [
+   1206
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/orchestrator.js",
+  "id": "T2-eq",
+  "lineContains": "const anyPartial = providerStates.some((s) => s === 'partial' || s === 'skipped' || s === 'budget_exhausted');",
+  "max": 1,
+  "baselineLines": [
+   1207
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/orchestrator.js",
+  "id": "T2-eq",
+  "lineContains": "const allTerminal = providerStates.every((s) => s !== 'pending');",
+  "max": 1,
+  "baselineLines": [
+   1208
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/policy.js",
+  "id": "T2-eq",
+  "lineContains": "const q = queries.find((x) => x && x.familyId === familyId);",
+  "max": 1,
+  "baselineLines": [
+   76
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T1-normalize",
+  "lineContains": ".normalize('NFKC')",
+  "max": 1,
+  "baselineLines": [
+   72
+  ],
+  "category": "legit",
+  "justification": "normalizeAdapterText on provider text (req.q use must be reconciled with §6)"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-lower",
+  "lineContains": "const q = qMatch[1].toUpperCase();",
+  "max": 1,
+  "baselineLines": [
+   217
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^\\d+$/.test(s)) out.push(s);",
+  "max": 1,
+  "baselineLines": [
+   279
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-eq",
+  "lineContains": "const hints = req.hints && typeof req.hints === 'object' ? req.hints : {};",
+  "max": 2,
+  "baselineLines": [
+   568,
+   1004
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-lower",
+  "lineContains": "const seedClass = String(hints.seedClass || '').toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   569
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S66 (routing/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-eq",
+  "lineContains": "const preferWorks = hints.preferWorks === true;",
+  "max": 1,
+  "baselineLines": [
+   570
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-eq",
+  "lineContains": "const pages = qData?.query?.pages && typeof qData.query.pages === 'object'",
+  "max": 1,
+  "baselineLines": [
+   821
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-eq",
+  "lineContains": "hints.queryPlan && typeof hints.queryPlan === 'object'",
+  "max": 1,
+  "baselineLines": [
+   1019
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-lower",
+  "lineContains": "const hash = createHash('sha256').update(s.toLowerCase()).digest('hex').slice(0, 12);",
+  "max": 1,
+  "baselineLines": [
+   1117
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S64 (cache-key/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/providers.js",
+  "id": "T2-eq",
+  "lineContains": "hints: hints && typeof hints === 'object' ? hints : {},",
+  "max": 1,
+  "baselineLines": [
+   1122
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T1-invisible-class",
+  "lineContains": "const ZERO_WIDTH_RE = /[\\u200B-\\u200D\\u2060\\uFEFF]/g;",
+  "max": 1,
+  "baselineLines": [
+   54
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T1-trim-blank",
+  "lineContains": "return String(seed).replace(ZERO_WIDTH_RE, '').trim() === '';",
+  "max": 1,
+  "baselineLines": [
+   64
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S59 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-eq",
+  "lineContains": "return String(seed).replace(ZERO_WIDTH_RE, '').trim() === '';",
+  "max": 1,
+  "baselineLines": [
+   64
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S59 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-lower",
+  "lineContains": ".update(String(seed || '').toLowerCase().trim())",
+  "max": 1,
+  "baselineLines": [
+   84
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S63 (cache-key/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^https?:\\/\\//i.test(s)) return 'url';",
+  "max": 1,
+  "baselineLines": [
+   103
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (looksLikeUrlOrHostname(s) && !/\\s/.test(s)) return 'domain';",
+  "max": 1,
+  "baselineLines": [
+   104
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\.(pdf|docx?|txt|html?)$/i.test(s) || /\\b(isbn|doi:)/i.test(s)) return 'document';",
+  "max": 1,
+  "baselineLines": [
+   105
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\b(inc|llc|ltd|corp|gmbh|oy|ab|foundation|university|ministry)\\b/i.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   106
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\b(ltd|corp|inc|gmbh|oy)\\.?$/i.test(s)) return 'company';",
+  "max": 1,
+  "baselineLines": [
+   109
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-token-split",
+  "lineContains": "const tokens = s.split(/\\s+/).filter(Boolean);",
+  "max": 1,
+  "baselineLines": [
+   111
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^Q\\d+$/i.test(s)) return 'unknown';",
+  "max": 1,
+  "baselineLines": [
+   114
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T1-script-ratio",
+  "lineContains": "/^[\\p{L}\\p{M}\\s.'’-]+$/u.test(s) &&",
+  "max": 1,
+  "baselineLines": [
+   119
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S62 (classification/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "/^[\\p{L}\\p{M}\\s.'’-]+$/u.test(s) &&",
+  "max": 1,
+  "baselineLines": [
+   119
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S62 (classification/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T1-script-ratio",
+  "lineContains": "tokens.every((tok) => /^[\\p{L}\\p{M}.'’-]+$/u.test(tok) && tok.length >= 2)",
+  "max": 1,
+  "baselineLines": [
+   120
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T1-script-ratio",
+  "lineContains": "if (tokens.length >= 2 && tokens.length <= 4 && /^[\\p{L}\\p{M}\\s.'’-]+$/u.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   124
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (tokens.length >= 2 && tokens.length <= 4 && /^[\\p{L}\\p{M}\\s.'’-]+$/u.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   124
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (!/^(qid|viaf|ol):/i.test(s)) continue;",
+  "max": 1,
+  "baselineLines": [
+   259
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^qid:/i.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   260
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-eq",
+  "lineContains": "const hints = input.hints && typeof input.hints === 'object' ? input.hints : {};",
+  "max": 1,
+  "baselineLines": [
+   326
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-eq",
+  "lineContains": "if (seedClass === 'url' || seedClass === 'domain') urlHints.unshift(seed);",
+  "max": 1,
+  "baselineLines": [
+   342
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/(api[_-]?key|secret|password|token|bearer\\s+[a-z0-9._-]+|sk-[a-z0-9_-]+|sk_live_[a-z0-9]+)/i.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   603
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T1-new-regexp",
+  "lineContains": "s = s.replace(new RegExp(`\\\\b${tok}\\\\b`, 'gi'), '[REDACTED_QID]');",
+  "max": 1,
+  "baselineLines": [
+   611
+  ],
+  "category": "legit",
+  "justification": "QID redaction: ASCII QID token"
+ },
+ {
+  "file": "api/lib/discovery/queryPlan.js",
+  "id": "T2-includes",
+  "lineContains": "if (s.includes(tok)) {",
+  "max": 1,
+  "baselineLines": [
+   621
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/relationship.js",
+  "id": "T2-regex-test",
+  "lineContains": "hasTypedSoftRef: (n.entityRefs || []).some((r) => /^(viaf|qid|ol):/i.test(String(r))),",
+  "max": 1,
+  "baselineLines": [
+   263
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/relationship.js",
+  "id": "T2-eq",
+  "lineContains": "urlAlone: n.hostFamily === 'web_origin',",
+  "max": 1,
+  "baselineLines": [
+   266
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/requestGuards.js",
+  "id": "T2-eq",
+  "lineContains": "const hints = raw.hints && typeof raw.hints === 'object' ? raw.hints : {};",
+  "max": 1,
+  "baselineLines": [
+   65
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T1-new-regexp",
+  "lineContains": "s = s.replace(new RegExp(`\\\\b${tok}\\\\b`, 'gi'), '[REDACTED_QID]');",
+  "max": 1,
+  "baselineLines": [
+   35
+  ],
+  "category": "legit",
+  "justification": "QID redaction: ASCII QID token"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T2-includes",
+  "lineContains": "if (s.includes(tok)) s = s.split(tok).join('[BLOCKED_DIRECTIVE]');",
+  "max": 1,
+  "baselineLines": [
+   40
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S76 (scrub/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T1-trim-blank",
+  "lineContains": "const emptied = !text.trim() || /^(\\[REDACTED_QID\\]|\\s)*$/.test(text);",
+  "max": 1,
+  "baselineLines": [
+   61
+  ],
+  "category": "legit",
+  "justification": "emptiness check on redacted provider text"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T2-regex-test",
+  "lineContains": "const emptied = !text.trim() || /^(\\[REDACTED_QID\\]|\\s)*$/.test(text);",
+  "max": 1,
+  "baselineLines": [
+   61
+  ],
+  "category": "legit",
+  "justification": "emptiness check on redacted provider text"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T2-eq",
+  "lineContains": "(e?.name === 'AbortError' ? (parent?.aborted ? 'cancelled' : 'provider_timeout') : 'provider_error');",
+  "max": 1,
+  "baselineLines": [
+   124
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T2-eq",
+  "lineContains": "const s = typeof value === 'string' ? value : JSON.stringify(value ?? {});",
+  "max": 1,
+  "baselineLines": [
+   158
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/security.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\b(SAME-ENTITY|IDENTITY_COMMIT)\\b/.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   168
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-eq",
+  "lineContains": "if (name === 'AbortError' || name === 'TimeoutError' || /timeout|aborted|abort/.test(msg)) return 'timeout';",
+  "max": 2,
+  "baselineLines": [
+   85,
+   145
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (name === 'AbortError' || name === 'TimeoutError' || /timeout|aborted|abort/.test(msg)) return 'timeout';",
+  "max": 2,
+  "baselineLines": [
+   85,
+   145
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/http\\s*401|http\\s*403|unauthorized|forbidden|auth/.test(msg)) return 'auth';",
+  "max": 1,
+  "baselineLines": [
+   86
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/http\\s*[45]\\d\\d|status\\s*[45]\\d\\d/.test(msg)) return 'http_failure';",
+  "max": 1,
+  "baselineLines": [
+   147
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-eq",
+  "lineContains": "const pad = s.length % 4 === 0 ? '' : '='.repeat(4 - (s.length % 4));",
+  "max": 1,
+  "baselineLines": [
+   178
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/Bearer\\s|eyJ[A-Za-z0-9_-]{20,}|UPSTASH_REDIS_REST_TOKEN|KV_REST_API_TOKEN/i.test(serialized)) {",
+  "max": 1,
+  "baselineLines": [
+   321
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-eq",
+  "lineContains": "h: meta.hints && typeof meta.hints === 'object' ? meta.hints : {},",
+  "max": 1,
+  "baselineLines": [
+   345
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-eq",
+  "lineContains": "hints: p.h && typeof p.h === 'object' ? p.h : {},",
+  "max": 1,
+  "baselineLines": [
+   371
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/sessionStore.js",
+  "id": "T2-eq",
+  "lineContains": "if (err?.name === 'AbortError' || err?.name === 'TimeoutError') parts.push('timeout');",
+  "max": 1,
+  "baselineLines": [
+   410
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/store.js",
+  "id": "T2-lower",
+  "lineContains": "const raw = `${url}|${q}|${String(providerId || '').toLowerCase()}`;",
+  "max": 1,
+  "baselineLines": [
+   20
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/store.js",
+  "id": "T2-regex-test",
+  "lineContains": "/^relationship:(SAME-ENTITY|SAME-REFERENCE|same-entity|same-reference)$/i.test(s)",
+  "max": 1,
+  "baselineLines": [
+   132
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/store.js",
+  "id": "T1-normalize",
+  "lineContains": ".normalize('NFKD')",
+  "max": 1,
+  "baselineLines": [
+   349
+  ],
+  "category": "legit",
+  "justification": "softLabel: provider-vs-provider corroboration key (§26 §7 #8)"
+ },
+ {
+  "file": "api/lib/discovery/store.js",
+  "id": "T2-token-split",
+  "lineContains": "const secondTokens = second.split(/\\s+/).filter(Boolean);",
+  "max": 1,
+  "baselineLines": [
+   382
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/store.js",
+  "id": "T1-script-ratio",
+  "lineContains": "/^[\\p{L}]/u.test(secondTokens[0]) &&",
+  "max": 1,
+  "baselineLines": [
+   391
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/store.js",
+  "id": "T2-token-split",
+  "lineContains": "const tokens = String(key).split(/\\s+/).filter(Boolean);",
+  "max": 1,
+  "baselineLines": [
+   739
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/universalSeed.js",
+  "id": "T2-eq",
+  "lineContains": "const hints = obj.hints && typeof obj.hints === 'object' ? { ...obj.hints } : {};",
+  "max": 1,
+  "baselineLines": [
+   39
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/universalSeed.js",
+  "id": "T2-eq",
+  "lineContains": "if (!seed || typeof seed !== 'object') return null;",
+  "max": 1,
+  "baselineLines": [
+   74
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/urlDomainCandidates.js",
+  "id": "T2-includes",
+  "lineContains": "if (looksLikeUrlOrHostname(seed) && !seedUrls.includes(seed)) {",
+  "max": 1,
+  "baselineLines": [
+   208
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/urlSafety.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (!host || /[\\s\\x00-\\x1f]/.test(host)) return { ok: false, reason: 'invalid_host' };",
+  "max": 1,
+  "baselineLines": [
+   97
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/urlTargetBridge.js",
+  "id": "T2-set-map",
+  "lineContains": "if (!s || seen.has(s)) continue;",
+  "max": 1,
+  "baselineLines": [
+   91
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/urlTargetBridge.js",
+  "id": "T2-set-map",
+  "lineContains": "const meta = metaByUrl.get(s) || metaByUrl.get(check.canonical) || {};",
+  "max": 1,
+  "baselineLines": [
+   94
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^https?:\\/\\//i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   57
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^\\s*[a-z0-9]([a-z0-9-]*[a-z0-9])?(\\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+\\.?\\/?/i.test(s) && !/\\s/.test(s)) {",
+  "max": 1,
+  "baselineLines": [
+   59
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S68 (classification/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-eq",
+  "lineContains": "while ((m = urlRe.exec(s)) !== null) {",
+  "max": 1,
+  "baselineLines": [
+   75
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (looksLikeUrlOrHostname(s) && !/^https?:\\/\\//i.test(s.trim())) {",
+  "max": 1,
+  "baselineLines": [
+   79
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T1-new-regexp",
+  "lineContains": "const re = new RegExp(",
+  "max": 1,
+  "baselineLines": [
+   187
+  ],
+  "category": "legit",
+  "justification": "metaPick: constant prop, provider HTML"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T1-new-regexp",
+  "lineContains": "const re2 = new RegExp(",
+  "max": 1,
+  "baselineLines": [
+   191
+  ],
+  "category": "legit",
+  "justification": "metaPick: constant prop, provider HTML"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-lower",
+  "lineContains": "const seed = String(ctx.seed || '').trim().toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   231
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-regex-test",
+  "lineContains": "const seedIsUrl = looksLikeUrlOrHostname(seed) || /^https?:\\/\\//i.test(seed);",
+  "max": 1,
+  "baselineLines": [
+   240
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-token-split",
+  "lineContains": ".split(/\\s+/)",
+  "max": 1,
+  "baselineLines": [
+   251
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-eq",
+  "lineContains": "const isTimeout = e?.name === 'AbortError' || /abort|timeout/i.test(String(e?.message || e));",
+  "max": 1,
+  "baselineLines": [
+   338
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/discovery/webOrigin.js",
+  "id": "T2-regex-test",
+  "lineContains": "const isTimeout = e?.name === 'AbortError' || /abort|timeout/i.test(String(e?.message || e));",
+  "max": 1,
+  "baselineLines": [
+   338
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-set-map",
+  "lineContains": "return !!(n && FORBIDDEN_SET.has(n));",
+  "max": 1,
+  "baselineLines": [
+   56
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-set-map",
+  "lineContains": "if (n && FORBIDDEN_SET.has(n)) {",
+  "max": 1,
+  "baselineLines": [
+   80
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T1-new-regexp",
+  "lineContains": "s = s.replace(new RegExp(`\\\\b${tok}\\\\b`, 'gi'), replacement);",
+  "max": 1,
+  "baselineLines": [
+   81
+  ],
+  "category": "legit",
+  "justification": "QID redaction: tok is ASCII Q\\d+ from normalizeQid"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-includes",
+  "lineContains": "if (q && !out.includes(q)) out.push(q);",
+  "max": 1,
+  "baselineLines": [
+   96
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-set-map",
+  "lineContains": "return qids.some((q) => FORBIDDEN_SET.has(q));",
+  "max": 1,
+  "baselineLines": [
+   127
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-eq",
+  "lineContains": "if (!s || typeof s !== 'object') return null;",
+  "max": 1,
+  "baselineLines": [
+   136
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-includes",
+  "lineContains": "if (q && FORBIDDEN_SET.has(q) && !strippedIds.includes(q)) strippedIds.push(q);",
+  "max": 1,
+  "baselineLines": [
+   144
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-set-map",
+  "lineContains": "if (q && FORBIDDEN_SET.has(q) && !strippedIds.includes(q)) strippedIds.push(q);",
+  "max": 1,
+  "baselineLines": [
+   144
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/forbiddenIdentities.js",
+  "id": "T2-includes",
+  "lineContains": "if (q && !strippedIds.includes(q)) strippedIds.push(q);",
+  "max": 3,
+  "baselineLines": [
+   165,
+   176,
+   223
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-latinFold",
+  "lineContains": "export function latinFold(s) {",
+  "max": 1,
+  "baselineLines": [
+   8
+  ],
+  "category": "legit",
+  "justification": "latinFold definition — move into seedText.js"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-normalize",
+  "lineContains": ".normalize('NFKD')",
+  "max": 1,
+  "baselineLines": [
+   11
+  ],
+  "category": "legit",
+  "justification": "latinFold body — move into seedText.js"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-latinFold",
+  "lineContains": "const fold = latinFold(label);",
+  "max": 1,
+  "baselineLines": [
+   171
+  ],
+  "category": "legit",
+  "justification": "alias index build (constant table) — must use the same key fn as queries"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T2-set-map",
+  "lineContains": "if (ALIAS_INDEX.exact.has(n)) return ALIAS_INDEX.exact.get(n);",
+  "max": 1,
+  "baselineLines": [
+   199
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S12 (identity-match/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T2-lower",
+  "lineContains": "const lower = n.toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   200
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-latinFold",
+  "lineContains": "const fold = latinFold(n);",
+  "max": 1,
+  "baselineLines": [
+   204
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S11 (identity-match/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T2-token-split",
+  "lineContains": "const parts = n.split(/\\s+/).filter(Boolean);",
+  "max": 2,
+  "baselineLines": [
+   208,
+   257
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-latinFold",
+  "lineContains": "const tokFold = latinFold(tok) || tok;",
+  "max": 1,
+  "baselineLines": [
+   211
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T2-token-split",
+  "lineContains": "const parts = label.split(/\\s+/).filter(Boolean);",
+  "max": 1,
+  "baselineLines": [
+   231
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-latinFold",
+  "lineContains": "const fold = latinFold(last);",
+  "max": 1,
+  "baselineLines": [
+   234
+  ],
+  "category": "legit",
+  "justification": "seed-adjacent index build (constant table)"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-script-ratio",
+  "lineContains": "const latin = (letters.match(/[A-Za-z]/g) || []).length;",
+  "max": 1,
+  "baselineLines": [
+   262
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/knownIdentities.js",
+  "id": "T1-latinFold",
+  "lineContains": "const lastFold = latinFold(parts[parts.length - 1]);",
+  "max": 1,
+  "baselineLines": [
+   264
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S14 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/obsTrust.js",
+  "id": "T2-eq",
+  "lineContains": "if (!body || typeof body !== 'object' || Array.isArray(body)) return body;",
+  "max": 1,
+  "baselineLines": [
+   60
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T1-trim-blank",
+  "lineContains": "if (!s.trim()) return false;",
+  "max": 1,
+  "baselineLines": [
+   59
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T1-script-ratio",
+  "lineContains": "const letters = s.replace(/[^A-Za-z\\u0590-\\u05FF]/g, '');",
+  "max": 1,
+  "baselineLines": [
+   60
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S03 (routing/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T1-script-ratio",
+  "lineContains": "const latin = (letters.match(/[A-Za-z]/g) || []).length;",
+  "max": 1,
+  "baselineLines": [
+   62
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-token-split",
+  "lineContains": "const parts = String(q || '').trim().split(/\\s+/).filter(Boolean);",
+  "max": 2,
+  "baselineLines": [
+   74,
+   100
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-regex-test",
+  "lineContains": "const hasUrl = previews.some((s) => s?.url && /^https:\\/\\//i.test(String(s.url)));",
+  "max": 1,
+  "baselineLines": [
+   114
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-lower",
+  "lineContains": "const n = String(needle || '').trim().toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   135
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T1-new-regexp",
+  "lineContains": "return new RegExp(`(?:^|[^a-z0-9\\u0590-\\u05ff])${esc}(?:[^a-z0-9\\u0590-\\u05ff]|$)`, 'i').test(h);",
+  "max": 1,
+  "baselineLines": [
+   140
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S06 (identity-match/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-includes",
+  "lineContains": "return h.includes(n);",
+  "max": 1,
+  "baselineLines": [
+   142
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-regex-test",
+  "lineContains": "const https = (sources || []).filter((s) => s?.url && /^https:\\/\\//i.test(String(s.url)));",
+  "max": 2,
+  "baselineLines": [
+   147,
+   188
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-lower",
+  "lineContains": "const preferred = https.map((s) => `${s.title || ''} ${s.note || ''}`).join(' ').toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   148
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-lower",
+  "lineContains": "const urls = https.map((s) => String(s.url || '')).join(' ').toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   149
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-regex-test",
+  "lineContains": "const https = src.filter((s) => s?.url && /^https:\\/\\//i.test(String(s.url)));",
+  "max": 1,
+  "baselineLines": [
+   156
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-lower",
+  "lineContains": "const org = String(ctx?.org || '').trim().toLowerCase();",
+  "max": 3,
+  "baselineLines": [
+   164,
+   185,
+   261
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-lower",
+  "lineContains": "const city = String(ctx?.city || '').trim().toLowerCase();",
+  "max": 3,
+  "baselineLines": [
+   165,
+   186,
+   262
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-lower",
+  "lineContains": "const country = String(ctx?.country || '').trim().toLowerCase();",
+  "max": 2,
+  "baselineLines": [
+   166,
+   257
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-regex-test",
+  "lineContains": "return (sources || []).filter((s) => s?.url && /^https:\\/\\//i.test(String(s.url))).length;",
+  "max": 1,
+  "baselineLines": [
+   200
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/orchestrator.js",
+  "id": "T2-regex-test",
+  "lineContains": "(sources || []).filter((s) => s?.url && /^https:\\/\\//i.test(String(s.url))),",
+  "max": 1,
+  "baselineLines": [
+   259
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-token-split",
+  "lineContains": "const parts = String(q || '').trim().split(/\\s+/).filter(Boolean);",
+  "max": 1,
+  "baselineLines": [
+   81
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (tokens.length >= 2 && /\\b(college|university|institute|library|hospital|museum|corporation|inc\\.?|ltd\\.?)\\b/i.test(n)) {",
+  "max": 1,
+  "baselineLines": [
+   189
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-eq",
+  "lineContains": "if (norm(n) !== norm(q)) continue;",
+  "max": 1,
+  "baselineLines": [
+   190
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S53 (identity-match/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-eq",
+  "lineContains": "why: whyFor('VIAF', ctx, r.nametype === 'personal' ? 'personal name authority' : null),",
+  "max": 1,
+  "baselineLines": [
+   234
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-regex-test",
+  "lineContains": "const lang = /[\\u0590-\\u05FF]/.test(q) ? 'he' : 'en';",
+  "max": 1,
+  "baselineLines": [
+   246
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S54 (routing/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-regex-test",
+  "lineContains": "sourcesPreview: (c.sourcesPreview || []).filter((s) => s?.url && /^https:\\/\\//i.test(s.url)).slice(0, 3),",
+  "max": 1,
+  "baselineLines": [
+   305
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lib/stageB.js",
+  "id": "T2-set-map",
+  "lineContains": "if (!s?.url || seenUrl.has(s.url)) continue;",
+  "max": 1,
+  "baselineLines": [
+   361
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "|| (/^\\*\\d{3,4}$/.test(original.replace(/\\s/g, '')))",
+  "max": 1,
+  "baselineLines": [
+   146
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (i < retries - 1 && /429|503|TimeoutError|aborted/i.test(String(e.message || e.name || e))) {",
+  "max": 1,
+  "baselineLines": [
+   343
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "else if (s.group === 'identity' || s.group === 'social' || s.group === 'web') group = s.group;",
+  "max": 1,
+  "baselineLines": [
+   447
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const url = String(s.url || '').toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   452
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (s.group === 'identity') score += 3;",
+  "max": 1,
+  "baselineLines": [
+   455
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "else if (s.group === 'social') score += 1.5;",
+  "max": 1,
+  "baselineLines": [
+   456
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/דיוקן|portrait|photo of|photograph|headshot|פרופיל/.test(note)) s += 2;",
+  "max": 1,
+  "baselineLines": [
+   513
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/ויקיפדיה|wikipedia|wikimedia commons|p18/.test(src)) s += 1.5;",
+  "max": 1,
+  "baselineLines": [
+   514
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/json-ld/.test(note)) s += 1.5;",
+  "max": 1,
+  "baselineLines": [
+   515
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-starts-ends",
+  "lineContains": "if (/\\.il$/.test(host) || host.endsWith('.co.il') || host.endsWith('.org.il')) s += 1.15;",
+  "max": 1,
+  "baselineLines": [
+   517
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\.il$/.test(host) || host.endsWith('.co.il') || host.endsWith('.org.il')) s += 1.15;",
+  "max": 1,
+  "baselineLines": [
+   517
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/gov\\.il$|knesset\\.gov|mfa\\.gov|pmo\\.gov|justice\\.gov/.test(host)) s += 1.4;",
+  "max": 1,
+  "baselineLines": [
+   518
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/official|רשמי|אתר החברה|company|about/.test(note + ' ' + src)) s += 0.7;",
+  "max": 1,
+  "baselineLines": [
+   519
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/linkedin\\.com|crunchbase\\.com/.test(host)) s += 0.55;",
+  "max": 1,
+  "baselineLines": [
+   520
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/map of|diagram|logo|coat of arms|flag of|svg|chart|graph|signature|stamp|מפת |סמל|דגל|לוגו/.test(note)) s -= 3;",
+  "max": 1,
+  "baselineLines": [
+   521
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/map|diagram|logo|flag|coa|seal|chart/.test(url)) s -= 1.5;",
+  "max": 1,
+  "baselineLines": [
+   522
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\.svg(\\?|$)/.test(url)) s -= 1;",
+  "max": 1,
+  "baselineLines": [
+   523
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const hit = cache.get(q.toLowerCase());",
+  "max": 1,
+  "baselineLines": [
+   535
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S38 (cache-key/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-set-map",
+  "lineContains": "const hit = cache.get(q.toLowerCase());",
+  "max": 1,
+  "baselineLines": [
+   535
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S38 (cache-key/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "cache.delete(q.toLowerCase());",
+  "max": 1,
+  "baselineLines": [
+   539
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "cache.set(q.toLowerCase(), { at: Date.now(), data, ttlMs });",
+  "max": 1,
+  "baselineLines": [
+   545
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (resolved === s.url) return s;",
+  "max": 1,
+  "baselineLines": [
+   628
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-set-map",
+  "lineContains": "return all.map((s) => (s?.url && GROUNDING_HOST.test(s.url) && byOld.has(s) ? byOld.get(s) : s));",
+  "max": 1,
+  "baselineLines": [
+   638
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const nameNorm = name.replace(/\\s+/g, ' ').trim().toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   824
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const nNorm = n.toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   829
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-token-split",
+  "lineContains": ".split(/\\s+/)",
+  "max": 1,
+  "baselineLines": [
+   897
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-latinFold",
+  "lineContains": "const fa = latinFold(a);",
+  "max": 1,
+  "baselineLines": [
+   945
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S26 (identity-match/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-latinFold",
+  "lineContains": "const fb = latinFold(b);",
+  "max": 1,
+  "baselineLines": [
+   946
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (m * n === 0) return Math.max(m, n) <= 2;",
+  "max": 1,
+  "baselineLines": [
+   952
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "return /\\(disambiguation\\)\\s*$/i.test(String(t || '')) || /פירושונים/.test(String(t || ''));",
+  "max": 1,
+  "baselineLines": [
+   976
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-script-ratio",
+  "lineContains": "const letters = String(q || '').replace(/[^\\p{L}]/gu, '');",
+  "max": 1,
+  "baselineLines": [
+   997
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-script-ratio",
+  "lineContains": "const latin = (letters.match(/[A-Za-z]/g) || []).length;",
+  "max": 1,
+  "baselineLines": [
+   999
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "else if (p.s?.type === 'disambiguation') {",
+  "max": 1,
+  "baselineLines": [
+   1219
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "fetchError = /429|503|Timeout|aborted/i.test(String(e.message || e.name || e))",
+  "max": 1,
+  "baselineLines": [
+   1295
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (enBare && enBare.type !== 'disambiguation' && (titleExactishOrLatin(enBare.title, q) || titleExactish(enBare.title, q))) {",
+  "max": 1,
+  "baselineLines": [
+   1332
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S34 (identity-match/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "const disHit = ranked.find((h) => /פירושונים/.test(h.title) && titleCoversQueryTokens(h.title.replace(/\\s*\\([^)]*\\)\\s*/g, ' '), q));",
+  "max": 1,
+  "baselineLines": [
+   1557
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "const disInRank = ranked.find((h) => /פירושונים/.test(h.title) && titleCoversQueryTokens(h.title.replace(/\\s*\\([^)]*\\)\\s*/g, ' '), q));",
+  "max": 1,
+  "baselineLines": [
+   1575
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "|| alts.some((t) => /פירושונים/.test(t) && titleCoversQueryTokens(t.replace(/\\s*\\([^)]*\\)\\s*/g, ' '), q))",
+  "max": 1,
+  "baselineLines": [
+   1591
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "const bad = /^(לא ידוע|אין מידע|לא נמצא|unknown|n\\/a)/i.test(gs);",
+  "max": 1,
+  "baselineLines": [
+   1773
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (!v || v === '—' || v === '-' || /^לא ידוע|unknown|n\\/a$/i.test(v)) return false;",
+  "max": 1,
+  "baselineLines": [
+   1800
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (!v || v === '—' || v === '-' || /^לא ידוע|unknown|n\\/a$/i.test(v)) return false;",
+  "max": 1,
+  "baselineLines": [
+   1800
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (!labelOut || /\\.(com|co\\.il|org|net|gov)/i.test(labelOut) || labelOut === q) {",
+  "max": 1,
+  "baselineLines": [
+   2232
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S47 (display/SORT/DISPLAY) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (!labelOut || /\\.(com|co\\.il|org|net|gov)/i.test(labelOut) || labelOut === q) {",
+  "max": 1,
+  "baselineLines": [
+   2232
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S47 (display/SORT/DISPLAY) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-new-regexp",
+  "lineContains": "const re = new RegExp(`<meta[^>]+(?:property|name)=[\"']${prop}[\"'][^>]+content=[\"']([^\"']+)[\"']`, 'i');",
+  "max": 1,
+  "baselineLines": [
+   2281
+  ],
+  "category": "legit",
+  "justification": "metaPick: constant meta property name, provider HTML"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-new-regexp",
+  "lineContains": "const re2 = new RegExp(`<meta[^>]+content=[\"']([^\"']+)[\"'][^>]+(?:property|name)=[\"']${prop}[\"']`, 'i');",
+  "max": 1,
+  "baselineLines": [
+   2282
+  ],
+  "category": "legit",
+  "justification": "metaPick: constant meta property name, provider HTML"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/wikipedia\\.org|wikidata\\.org/.test(h)) s += 5;",
+  "max": 1,
+  "baselineLines": [
+   2290
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/gov\\.il$|\\.gov\\./.test(h)) s += 4.5;",
+  "max": 1,
+  "baselineLines": [
+   2291
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\.il$/.test(h)) s += 2;",
+  "max": 1,
+  "baselineLines": [
+   2292
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/knesset\\.gov|mfa\\.gov|pmo\\.gov|knesset/.test(h)) s += 1.5;",
+  "max": 1,
+  "baselineLines": [
+   2293
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/haaretz|ynet|mako|walla|kan\\.org|timesofisrael|bbc|reuters|jpost/.test(h)) s += 1.2;",
+  "max": 1,
+  "baselineLines": [
+   2294
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/facebook|instagram|twitter|x\\.com|tiktok/.test(h)) s -= 2;",
+  "max": 1,
+  "baselineLines": [
+   2295
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "image: typeof n.image === 'string' ? n.image : n.image?.url,",
+  "max": 1,
+  "baselineLines": [
+   2336
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": ".filter((s) => s?.url && !isBannedPhoneHost(s.url) && !/^tel:/i.test(s.url))",
+  "max": 1,
+  "baselineLines": [
+   2435
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "return (s.url || '').split('#')[0].toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   2442
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (req.method === 'POST' && body && typeof body === 'object') {",
+  "max": 1,
+  "baselineLines": [
+   2501
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "const nested = (body.ctx && typeof body.ctx === 'object' && !Array.isArray(body.ctx))",
+  "max": 1,
+  "baselineLines": [
+   2503
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-trim-blank",
+  "lineContains": "if (body[key] != null && String(body[key]).trim() !== '') return body[key];",
+  "max": 2,
+  "baselineLines": [
+   2507,
+   2513
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S18 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (body[key] != null && String(body[key]).trim() !== '') return body[key];",
+  "max": 2,
+  "baselineLines": [
+   2507,
+   2513
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S18 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-trim-blank",
+  "lineContains": "if (nested && nested[key] != null && String(nested[key]).trim() !== '') return nested[key];",
+  "max": 2,
+  "baselineLines": [
+   2508,
+   2514
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (name && name !== ctx.phone && name !== ctx.phoneRaw && name !== ctx.email) {",
+  "max": 1,
+  "baselineLines": [
+   2536
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S48 (other/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (local && local !== ctx.phone && ctx.phoneOnly) {",
+  "max": 1,
+  "baselineLines": [
+   2547
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const key = label.toLowerCase().replace(/\\s+/g, ' ');",
+  "max": 1,
+  "baselineLines": [
+   2587
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S42 (dedup/coalesce/MISS-SAFE) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\[phone\\]|\\[email\\]/i.test(s)) return true;",
+  "max": 2,
+  "baselineLines": [
+   2602,
+   2860
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^(youtube|facebook|instagram|twitter|github|google|bing|linkedin)\\.com$/i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2604
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\.(com|co\\.il|org|net|gov|io)$/i.test(s) && !/\\s/.test(s) && s.length < 40) return true;",
+  "max": 1,
+  "baselineLines": [
+   2605
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^https?:/i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2606
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^(Google Trends|YouTube|Facebook|Instagram|LinkedIn)$/i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2608
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/Trends|הריקוד האחרון|השבעתו|המרכז הנשיאותי|ארכיון |מכללת |בית החולים|כיכר /i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2609
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^רשימת |^קטגוריה:|^פורטל:|^תבנית:/i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2610
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "...(sources || []).filter((s) => withGroup(s).group === 'web' || withGroup(s).group === 'identity'),",
+  "max": 1,
+  "baselineLines": [
+   2645
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "clusterKey = title.split(/\\s[-–—|]\\s/)[0].trim().toLowerCase() || host;",
+  "max": 1,
+  "baselineLines": [
+   2661
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (google?.label && String(google.label).trim() && String(google.label).trim() !== String(q).trim()) {",
+  "max": 1,
+  "baselineLines": [
+   2709
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S44 (display/SORT/DISPLAY) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-includes",
+  "lineContains": "if (s.includes(v)) s = s.split(v).join('[phone]');",
+  "max": 1,
+  "baselineLines": [
+   2742
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-new-regexp",
+  "lineContains": "s = s.replace(new RegExp('(?<![\\\\d])' + dig + '(?![\\\\d])', 'g'), '[phone]');",
+  "max": 1,
+  "baselineLines": [
+   2750
+  ],
+  "category": "legit",
+  "justification": "scrub pattern built from digits-only phone (escaped by construction); matching side stays debt"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-new-regexp",
+  "lineContains": "s = s.replace(new RegExp(dig.split('').join('[\\\\s./-]?'), 'g'), '[phone]');",
+  "max": 1,
+  "baselineLines": [
+   2752
+  ],
+  "category": "legit",
+  "justification": "scrub pattern built from digits-only phone"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const lower = ctx.email.toLowerCase();",
+  "max": 1,
+  "baselineLines": [
+   2759
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (lower !== ctx.email) s = s.split(lower).join('[email]');",
+  "max": 1,
+  "baselineLines": [
+   2760
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-uri-decode",
+  "lineContains": "u.pathname = scrubIdentifiers(decodeURIComponent(u.pathname || ''), ctx);",
+  "max": 1,
+  "baselineLines": [
+   2773
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S40 (scrub/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-uri-decode",
+  "lineContains": "u.search = scrubIdentifiers(decodeURIComponent(u.search || ''), ctx);",
+  "max": 1,
+  "baselineLines": [
+   2774
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-uri-decode",
+  "lineContains": "u.hash = scrubIdentifiers(decodeURIComponent(u.hash || ''), ctx);",
+  "max": 1,
+  "baselineLines": [
+   2775
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/[?&#][^\\s]*\\[phone\\]/i.test(scrubbed) || /[?&#][^\\s]*\\[email\\]/i.test(scrubbed)) {",
+  "max": 1,
+  "baselineLines": [
+   2783
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/\\.(com|co\\.il|org|net)$/i.test(s) && !/\\s/.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2861
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-regex-test",
+  "lineContains": "if (/^(youtube|facebook|instagram|github|google)\\.com$/i.test(s)) return true;",
+  "max": 1,
+  "baselineLines": [
+   2862
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (typeof req.body === 'object' && !Buffer.isBuffer(req.body)) return req.body;",
+  "max": 1,
+  "baselineLines": [
+   2960
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (typeof req.body === 'string') {",
+  "max": 1,
+  "baselineLines": [
+   2961
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T1-trim-blank",
+  "lineContains": "if (body && body[key] != null && String(body[key]).trim() !== '') return body[key];",
+  "max": 1,
+  "baselineLines": [
+   2991
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S19 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (body && body[key] != null && String(body[key]).trim() !== '') return body[key];",
+  "max": 1,
+  "baselineLines": [
+   2991
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S19 (guard/EXPOSED) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (!body || typeof body !== 'object' || Array.isArray(body)) body = {};",
+  "max": 1,
+  "baselineLines": [
+   3063
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (e?.code === 'BODY_TOO_LARGE') return res.status(413).json({ error: 'body too large' });",
+  "max": 1,
+  "baselineLines": [
+   3065
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "req.method === 'POST' ? paramFrom(body, req.query, 'q') : (req.query?.q || '')",
+  "max": 1,
+  "baselineLines": [
+   3071
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "req.method === 'POST' ? paramFrom(body, req.query, 'stream') : (req.query?.stream || '')",
+  "max": 1,
+  "baselineLines": [
+   3104
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "req.method === 'POST' ? paramFrom(body, req.query, 'nocache') : (req.query?.nocache || '')",
+  "max": 1,
+  "baselineLines": [
+   3107
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "const out = (body && typeof body === 'object' && !Array.isArray(body))",
+  "max": 1,
+  "baselineLines": [
+   3177
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-token-split",
+  "lineContains": "|| String(wikiName).trim().split(/\\s+/).filter(Boolean).length >= 4",
+  "max": 1,
+  "baselineLines": [
+   3317
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-token-split",
+  "lineContains": "const nameTokenCountEarly = String(wikiName || q || '').trim().split(/\\s+/).filter(Boolean).length;",
+  "max": 1,
+  "baselineLines": [
+   3400
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "needLinksBoost = !richNow && sources.filter((s) => withGroup(s).group === 'web').length < 2;",
+  "max": 1,
+  "baselineLines": [
+   3878
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (og && (!s.note || s.note.length < 40 || s.note === 'מתוצאות חיפוש גוגל' || s.note === 'מסיכום החיפוש')) {",
+  "max": 1,
+  "baselineLines": [
+   4076
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const seenLab = new Set(candidates.map((c) => String(c.label || '').toLowerCase().replace(/\\s+/g, ' ').trim()));",
+  "max": 1,
+  "baselineLines": [
+   4200
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-lower",
+  "lineContains": "const k = String(c.label || '').toLowerCase().replace(/\\s+/g, ' ').trim();",
+  "max": 1,
+  "baselineLines": [
+   4202
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "candidates = candidates.filter((c) => c.label !== ctx.focus).slice(0, 4);",
+  "max": 1,
+  "baselineLines": [
+   4272
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S45 (display/SORT/DISPLAY) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (!ctx.phone && !ctx.email && searchQ === (q || wikiName)) return undefined;",
+  "max": 1,
+  "baselineLines": [
+   4309
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; audit S46 (display/SORT/DISPLAY) — migrate to canonical key/guard"
+ },
+ {
+  "file": "api/lookup.js",
+  "id": "T2-eq",
+  "lineContains": "if (safeJson(err === 'aborted' ? 200 : 200, body)) return;",
+  "max": 1,
+  "baselineLines": [
+   4511
+  ],
+  "category": "legacy-debt-§26",
+  "justification": "baseline @5ff2845; unreviewed T2 hit (tainted identifier heuristic) — triage during §26 migration"
+ }
+]
