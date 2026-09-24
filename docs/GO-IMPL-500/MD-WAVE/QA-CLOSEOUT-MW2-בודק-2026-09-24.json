@@ -1,0 +1,1664 @@
+{
+  "report": "QA-CLOSEOUT-MW2-בודק-2026-09-24",
+  "checkedAt": "2026-09-24T19:22:25+03:00",
+  "timezone": "Asia/Jerusalem (UTC+3)",
+  "role": "QA / בודק",
+  "verdict": "PARTIAL",
+  "overall": "PARTIAL",
+  "wave1": "NOT_DONE",
+  "treatment": "HOLD",
+  "promote": false,
+  "scope": {
+    "deployment": "dpl_6F9mjR76d18vYtgbcofhWceF1LP2",
+    "url": "https://akvot-simple-demo-j1ds295z1-k-akvot.vercel.app",
+    "sha": "1ed1a94",
+    "access": "vercel curl --scope k-akvot --deployment dpl_6F9mjR76d18vYtgbcofhWceF1LP2",
+    "flags": [
+      "DISCOVERY_ENABLE_NIGHT=1",
+      "DISCOVERY_ENABLE_GENERAL_WEB=1",
+      "DISCOVERY_ENABLE_WEB_ORIGIN=1"
+    ],
+    "excluded": [
+      "TREATMENT and older night deployments; not measured"
+    ]
+  },
+  "rawDir": "test-results/2026-09-24/MD-WAVE/raw/qa-mw2-6F9mjR/",
+  "method": {
+    "requests": "POST /api/discovery/sessions then GET /api/discovery/sessions/:id",
+    "seeds": [
+      "Assaf Rappaport",
+      "Tim Berners-Lee",
+      "Smith",
+      "כהן",
+      "World Wide Web Consortium",
+      "ABC Construction"
+    ],
+    "sessions": 6,
+    "postAttempts": 6,
+    "getFiles": [
+      "assaf.get0.json",
+      "tbl.get0.json",
+      "smith.get0.json",
+      "cohen.get0.json",
+      "w3c.get0.json",
+      "abc.get0.json"
+    ],
+    "postFiles": [
+      "assaf.post.json",
+      "tbl.post.json",
+      "smith.post.json",
+      "cohen.post.json",
+      "w3c.post.json",
+      "abc.post.json"
+    ]
+  },
+  "health": {
+    "result": "PASS",
+    "ok": true,
+    "build": "1ed1a94472555afd736aa79a49bcb322eaba0517",
+    "durableStore": true,
+    "kvReachable": true
+  },
+  "fiveNumberPack": {
+    "nWave2CandidateRuns": 3,
+    "nWave2CandidateRunSeeds": [
+      "Assaf Rappaport",
+      "World Wide Web Consortium",
+      "ABC Construction"
+    ],
+    "emittedUrlCandidateCount": 4,
+    "maxOriginInputCount": 2,
+    "identityClaimTrue": 0,
+    "q1701775": 0,
+    "sameEntityFromUrl": 0,
+    "wave2StopReasons": [
+      "NO_PROGRESS"
+    ],
+    "wave1StoppedAfterProviderError": [
+      {
+        "seed": "Tim Berners-Lee",
+        "stopReason": "EMPTY_FRONTIER",
+        "provider": "opensearch_error"
+      },
+      {
+        "seed": "Smith",
+        "stopReason": "EMPTY_FRONTIER",
+        "provider": "opensearch_error"
+      },
+      {
+        "seed": "כהן",
+        "stopReason": "EMPTY_FRONTIER",
+        "provider": "opensearch_error"
+      }
+    ]
+  },
+  "checks": {
+    "citeOrDrop": {
+      "result": "PASS",
+      "emittedUrlCandidates": 4,
+      "allHaveEvidenceId": true,
+      "rows": [
+        {
+          "url": "https://www.indexventures.com/perspectives/cloud-captains-how-assaf-rappaport-and-his-extraordinary-co-founders-built-the-worlds-fastest-growing-company/",
+          "normalizedUrl": "https://www.indexventures.com/perspectives/cloud-captains-how-assaf-rappaport-and-his-extraordinary-co-founders-built-the-worlds-fastest-growing-company/",
+          "providers": [
+            "general_web_search"
+          ],
+          "evidenceIds": [
+            "ev-59e7c9af9f657d40ccf9dc44"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "whyFound": "WP OpenSearch→extlinks candidate for “Assaf Rappaport” via 「Assaf Rappaport」 · not identity · C1 UNKNOWN"
+        },
+        {
+          "url": null,
+          "normalizedUrl": null,
+          "providers": [
+            "web_origin"
+          ],
+          "evidenceIds": [
+            "ev-b11544b70a15aa875c7d0162"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": false,
+          "whyFound": null
+        },
+        {
+          "url": "https://www.w3.org/Consortium/join",
+          "normalizedUrl": "https://www.w3.org/Consortium/join",
+          "providers": [
+            "general_web_search"
+          ],
+          "evidenceIds": [
+            "ev-d7055c7d44563fae38b35c3a"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "whyFound": "WP OpenSearch→extlinks candidate for “World Wide Web Consortium” via 「World Wide Web Consortium」 · not identity · C1 UNKNOWN"
+        },
+        {
+          "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+          "normalizedUrl": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+          "providers": [
+            "general_web_search"
+          ],
+          "evidenceIds": [
+            "ev-aa8b41476d5ead5ee4b8abb1"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/ASGC_Construction",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "whyFound": "WP OpenSearch→extlinks candidate for “ABC Construction” via 「ASGC Construction」 · not identity · C1 UNKNOWN"
+        }
+      ]
+    },
+    "honesty": {
+      "result": "PASS",
+      "relationships": "UNKNOWN ceiling observed; no identity merge",
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0
+    },
+    "caps": {
+      "result": "PASS",
+      "maxOriginInputCount": 2,
+      "cap": 2,
+      "positiveRuns": [
+        {
+          "seed": "Assaf Rappaport",
+          "originInputCount": 2,
+          "enriched": 2,
+          "fetches": 3
+        },
+        {
+          "seed": "World Wide Web Consortium",
+          "originInputCount": 2,
+          "enriched": 0,
+          "fetches": 3
+        },
+        {
+          "seed": "ABC Construction",
+          "originInputCount": 2,
+          "enriched": 0,
+          "fetches": 3
+        }
+      ]
+    },
+    "waveJournal": {
+      "result": "PASS",
+      "wave2CandidateRuns": 3,
+      "totalSessions": 6,
+      "positiveSeeds": [
+        "Assaf Rappaport",
+        "World Wide Web Consortium",
+        "ABC Construction"
+      ],
+      "details": [
+        {
+          "seed": "Assaf Rappaport",
+          "wave": 2,
+          "stopReason": "NO_PROGRESS",
+          "hopJournal": [
+            {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "reason": "ok",
+              "count": 5,
+              "optional": false,
+              "enrichOnly": false,
+              "wave": 1,
+              "meta": {
+                "wikiLocale": "en"
+              }
+            },
+            {
+              "hopId": "web_origin",
+              "providerId": "web_origin",
+              "reason": "ok",
+              "count": 2,
+              "optional": false,
+              "enrichOnly": true,
+              "wave": 2,
+              "meta": {
+                "inputCount": 2,
+                "enriched": 2
+              }
+            }
+          ]
+        },
+        {
+          "seed": "World Wide Web Consortium",
+          "wave": 2,
+          "stopReason": "NO_PROGRESS",
+          "hopJournal": [
+            {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "reason": "ok",
+              "count": 5,
+              "optional": false,
+              "enrichOnly": false,
+              "wave": 1,
+              "meta": {
+                "wikiLocale": "en"
+              }
+            },
+            {
+              "hopId": "web_origin",
+              "providerId": "web_origin",
+              "reason": "empty_enrich",
+              "count": 0,
+              "optional": false,
+              "enrichOnly": true,
+              "wave": 2,
+              "meta": {
+                "inputCount": 2,
+                "enriched": 0
+              }
+            }
+          ]
+        },
+        {
+          "seed": "ABC Construction",
+          "wave": 2,
+          "stopReason": "NO_PROGRESS",
+          "hopJournal": [
+            {
+              "hopId": "general_web",
+              "providerId": "general_web_search",
+              "reason": "ok",
+              "count": 5,
+              "optional": false,
+              "enrichOnly": false,
+              "wave": 1,
+              "meta": {
+                "wikiLocale": "en"
+              }
+            },
+            {
+              "hopId": "web_origin",
+              "providerId": "web_origin",
+              "reason": "empty_enrich",
+              "count": 0,
+              "optional": false,
+              "enrichOnly": true,
+              "wave": 2,
+              "meta": {
+                "inputCount": 2,
+                "enriched": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "stopReason": {
+      "result": "PASS",
+      "observed": [
+        "NO_PROGRESS",
+        "EMPTY_FRONTIER"
+      ]
+    },
+    "failClosed": {
+      "result": "PASS",
+      "noInventedCandidates": true,
+      "providerErrorSeeds": [
+        {
+          "seed": "Tim Berners-Lee",
+          "provider": "opensearch_error",
+          "stopReason": "EMPTY_FRONTIER",
+          "urlCandidates": 0
+        },
+        {
+          "seed": "Smith",
+          "provider": "opensearch_error",
+          "stopReason": "EMPTY_FRONTIER",
+          "urlCandidates": 0
+        },
+        {
+          "seed": "כהן",
+          "provider": "opensearch_error",
+          "stopReason": "EMPTY_FRONTIER",
+          "urlCandidates": 0
+        }
+      ],
+      "abcUnknown": true,
+      "abcSameEntityFromUrl": 0
+    }
+  },
+  "cases": [
+    {
+      "file": "assaf",
+      "seed": "Assaf Rappaport",
+      "sessionId": "kv1.2fcb8024990d45e85b1224a17c0a7f49",
+      "status": "complete",
+      "findings": 4,
+      "candidateCount": 5,
+      "urlCandidates": 2,
+      "emittedUrls": [
+        {
+          "url": "https://www.indexventures.com/perspectives/cloud-captains-how-assaf-rappaport-and-his-extraordinary-co-founders-built-the-worlds-fastest-growing-company/",
+          "normalizedUrl": "https://www.indexventures.com/perspectives/cloud-captains-how-assaf-rappaport-and-his-extraordinary-co-founders-built-the-worlds-fastest-growing-company/",
+          "providers": [
+            "general_web_search"
+          ],
+          "evidenceIds": [
+            "ev-59e7c9af9f657d40ccf9dc44"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "whyFound": "WP OpenSearch→extlinks candidate for “Assaf Rappaport” via 「Assaf Rappaport」 · not identity · C1 UNKNOWN"
+        },
+        {
+          "url": null,
+          "normalizedUrl": null,
+          "providers": [
+            "web_origin"
+          ],
+          "evidenceIds": [
+            "ev-b11544b70a15aa875c7d0162"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/Assaf_Rappaport",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": false,
+          "whyFound": null
+        }
+      ],
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0,
+      "version": "2026-09-24.night.loop.2",
+      "wave": 2,
+      "fetches": 3,
+      "stopReason": "NO_PROGRESS",
+      "origin": {
+        "inputCount": 2,
+        "enriched": 2,
+        "reason": "ok"
+      },
+      "hopJournal": [
+        {
+          "hopId": "general_web",
+          "providerId": "general_web_search",
+          "reason": "ok",
+          "count": 5,
+          "optional": false,
+          "enrichOnly": false,
+          "wave": 1,
+          "meta": {
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "hopId": "web_origin",
+          "providerId": "web_origin",
+          "reason": "ok",
+          "count": 2,
+          "optional": false,
+          "enrichOnly": true,
+          "wave": 2,
+          "meta": {
+            "inputCount": 2,
+            "enriched": 2
+          }
+        }
+      ],
+      "providers": {
+        "wikidata": "ok",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "enriched",
+        "general_web_search": "ok"
+      },
+      "spineJournal": [
+        {
+          "phase": "discover",
+          "event": "begin",
+          "detail": {
+            "seed": "Assaf Rappaport"
+          }
+        },
+        {
+          "phase": "discover",
+          "event": "end",
+          "detail": {
+            "seedClass": "person",
+            "eligibleHops": [
+              "general_web"
+            ],
+            "wantWebOrigin": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "general_web_search",
+            "fetches": 1,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "general_web",
+            "reason": "ok",
+            "count": 5,
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1,
+            "accepted": 5,
+            "added": 5,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 5,
+            "delta": 5
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 5,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 2
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "web_origin",
+            "providerId": "web_origin",
+            "inputCount": 2
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "web_origin",
+            "fetches": 2,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "web_origin",
+            "fetches": 3,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "web_origin",
+            "count": 2,
+            "inputCount": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "web_origin",
+            "wave": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "web_origin",
+            "wave": 2,
+            "accepted": 2,
+            "added": 0,
+            "enriched": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 5,
+            "delta": 0
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 5,
+            "wave": 2
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 2
+          }
+        },
+        {
+          "phase": "stop",
+          "event": "stop",
+          "detail": {
+            "reason": "NO_PROGRESS"
+          }
+        }
+      ]
+    },
+    {
+      "file": "tbl",
+      "seed": "Tim Berners-Lee",
+      "sessionId": "kv1.a4a6328e96644592a5cf8bbe43db5053",
+      "status": "partial",
+      "findings": 12,
+      "candidateCount": 0,
+      "urlCandidates": 0,
+      "emittedUrls": [],
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0,
+      "version": "2026-09-24.night.loop.2",
+      "wave": 1,
+      "fetches": 1,
+      "stopReason": "EMPTY_FRONTIER",
+      "origin": {
+        "inputCount": 0,
+        "enriched": 0,
+        "reason": null
+      },
+      "hopJournal": [
+        {
+          "hopId": "general_web",
+          "providerId": "general_web_search",
+          "reason": "opensearch_error",
+          "count": 0,
+          "optional": false,
+          "enrichOnly": false,
+          "wave": 1,
+          "meta": {
+            "wikiLocale": "en"
+          }
+        }
+      ],
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "ok",
+        "wikipedia": "ok",
+        "viaf": "ok",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "spineJournal": [
+        {
+          "phase": "discover",
+          "event": "begin",
+          "detail": {
+            "seed": "Tim Berners-Lee"
+          }
+        },
+        {
+          "phase": "discover",
+          "event": "end",
+          "detail": {
+            "seedClass": "person",
+            "eligibleHops": [
+              "general_web"
+            ],
+            "wantWebOrigin": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "general_web_search",
+            "fetches": 1,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "general_web",
+            "reason": "opensearch_error",
+            "count": 0,
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1,
+            "accepted": 0,
+            "added": 0,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 0,
+            "delta": 0
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "stop",
+          "event": "stop",
+          "detail": {
+            "reason": "EMPTY_FRONTIER"
+          }
+        }
+      ]
+    },
+    {
+      "file": "smith",
+      "seed": "Smith",
+      "sessionId": "kv1.cab66ceafadb3ffbd333551062e507a1",
+      "status": "partial",
+      "findings": 16,
+      "candidateCount": 0,
+      "urlCandidates": 0,
+      "emittedUrls": [],
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0,
+      "version": "2026-09-24.night.loop.2",
+      "wave": 1,
+      "fetches": 1,
+      "stopReason": "EMPTY_FRONTIER",
+      "origin": {
+        "inputCount": 0,
+        "enriched": 0,
+        "reason": null
+      },
+      "hopJournal": [
+        {
+          "hopId": "general_web",
+          "providerId": "general_web_search",
+          "reason": "opensearch_error",
+          "count": 0,
+          "optional": false,
+          "enrichOnly": false,
+          "wave": 1,
+          "meta": {
+            "wikiLocale": "en"
+          }
+        }
+      ],
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "error",
+        "wikipedia": "error",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "spineJournal": [
+        {
+          "phase": "discover",
+          "event": "begin",
+          "detail": {
+            "seed": "Smith"
+          }
+        },
+        {
+          "phase": "discover",
+          "event": "end",
+          "detail": {
+            "seedClass": "name",
+            "eligibleHops": [
+              "general_web"
+            ],
+            "wantWebOrigin": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "general_web_search",
+            "fetches": 1,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "general_web",
+            "reason": "opensearch_error",
+            "count": 0,
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1,
+            "accepted": 0,
+            "added": 0,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 0,
+            "delta": 0
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "stop",
+          "event": "stop",
+          "detail": {
+            "reason": "EMPTY_FRONTIER"
+          }
+        }
+      ]
+    },
+    {
+      "file": "cohen",
+      "seed": "כהן",
+      "sessionId": "kv1.f842f540c00d1c7a4d3ddbc362cd8bc0",
+      "status": "partial",
+      "findings": 30,
+      "candidateCount": 0,
+      "urlCandidates": 0,
+      "emittedUrls": [],
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0,
+      "version": "2026-09-24.night.loop.2",
+      "wave": 1,
+      "fetches": 1,
+      "stopReason": "EMPTY_FRONTIER",
+      "origin": {
+        "inputCount": 0,
+        "enriched": 0,
+        "reason": null
+      },
+      "hopJournal": [
+        {
+          "hopId": "general_web",
+          "providerId": "general_web_search",
+          "reason": "opensearch_error",
+          "count": 0,
+          "optional": false,
+          "enrichOnly": false,
+          "wave": 1,
+          "meta": {
+            "wikiLocale": "he"
+          }
+        }
+      ],
+      "providers": {
+        "wikidata": "partial",
+        "openlibrary": "partial",
+        "wikipedia": "partial",
+        "viaf": "partial",
+        "web_origin": "ok",
+        "general_web_search": "opensearch_error"
+      },
+      "spineJournal": [
+        {
+          "phase": "discover",
+          "event": "begin",
+          "detail": {
+            "seed": "כהן"
+          }
+        },
+        {
+          "phase": "discover",
+          "event": "end",
+          "detail": {
+            "seedClass": "name",
+            "eligibleHops": [
+              "general_web"
+            ],
+            "wantWebOrigin": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "general_web_search",
+            "fetches": 1,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "wikiLocale": "he"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "general_web",
+            "reason": "opensearch_error",
+            "count": 0,
+            "wikiLocale": "he"
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1,
+            "accepted": 0,
+            "added": 0,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 0,
+            "delta": 0
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "stop",
+          "event": "stop",
+          "detail": {
+            "reason": "EMPTY_FRONTIER"
+          }
+        }
+      ]
+    },
+    {
+      "file": "w3c",
+      "seed": "World Wide Web Consortium",
+      "sessionId": "kv1.279a97c00117347177098e04365b1a62",
+      "status": "partial",
+      "findings": 4,
+      "candidateCount": 5,
+      "urlCandidates": 1,
+      "emittedUrls": [
+        {
+          "url": "https://www.w3.org/Consortium/join",
+          "normalizedUrl": "https://www.w3.org/Consortium/join",
+          "providers": [
+            "general_web_search"
+          ],
+          "evidenceIds": [
+            "ev-d7055c7d44563fae38b35c3a"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "whyFound": "WP OpenSearch→extlinks candidate for “World Wide Web Consortium” via 「World Wide Web Consortium」 · not identity · C1 UNKNOWN"
+        }
+      ],
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0,
+      "version": "2026-09-24.night.loop.2",
+      "wave": 2,
+      "fetches": 3,
+      "stopReason": "NO_PROGRESS",
+      "origin": {
+        "inputCount": 2,
+        "enriched": 0,
+        "reason": "empty_enrich"
+      },
+      "hopJournal": [
+        {
+          "hopId": "general_web",
+          "providerId": "general_web_search",
+          "reason": "ok",
+          "count": 5,
+          "optional": false,
+          "enrichOnly": false,
+          "wave": 1,
+          "meta": {
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "hopId": "web_origin",
+          "providerId": "web_origin",
+          "reason": "empty_enrich",
+          "count": 0,
+          "optional": false,
+          "enrichOnly": true,
+          "wave": 2,
+          "meta": {
+            "inputCount": 2,
+            "enriched": 0
+          }
+        }
+      ],
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "error",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "empty_enrich",
+        "general_web_search": "ok"
+      },
+      "spineJournal": [
+        {
+          "phase": "discover",
+          "event": "begin",
+          "detail": {
+            "seed": "World Wide Web Consortium"
+          }
+        },
+        {
+          "phase": "discover",
+          "event": "end",
+          "detail": {
+            "seedClass": "person",
+            "eligibleHops": [
+              "general_web"
+            ],
+            "wantWebOrigin": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "general_web_search",
+            "fetches": 1,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "general_web",
+            "reason": "ok",
+            "count": 5,
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1,
+            "accepted": 5,
+            "added": 5,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 5,
+            "delta": 5
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 5,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 2
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "web_origin",
+            "providerId": "web_origin",
+            "inputCount": 2
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "web_origin",
+            "fetches": 2,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "origin_fetch_fail",
+          "detail": {
+            "url": "https://blogs.computerworlduk.com/open-enterprise/2013/02/bbc-attacks-the-open-web-gnulinux-in-danger/index.htm",
+            "reason": "network_error"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "web_origin",
+            "fetches": 3,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "origin_fetch_fail",
+          "detail": {
+            "url": "https://web.worldbank.org/WBSITE/EXTERNAL/DATASTATISTICS/0,,contentMDK:20420458~menuPK:64133156~pagePK:64133150~piPK:641",
+            "reason": "unsafe_url"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "web_origin",
+            "count": 0,
+            "inputCount": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "web_origin",
+            "wave": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "web_origin",
+            "wave": 2,
+            "accepted": 0,
+            "added": 0,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 5,
+            "delta": 0
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 5,
+            "wave": 2
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 2
+          }
+        },
+        {
+          "phase": "stop",
+          "event": "stop",
+          "detail": {
+            "reason": "NO_PROGRESS"
+          }
+        }
+      ]
+    },
+    {
+      "file": "abc",
+      "seed": "ABC Construction",
+      "sessionId": "kv1.263d92de9e9318f4414c0f6300c06815",
+      "status": "partial",
+      "findings": 1,
+      "candidateCount": 5,
+      "urlCandidates": 1,
+      "emittedUrls": [
+        {
+          "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+          "normalizedUrl": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+          "providers": [
+            "general_web_search"
+          ],
+          "evidenceIds": [
+            "ev-aa8b41476d5ead5ee4b8abb1"
+          ],
+          "provenanceUrl": "https://en.wikipedia.org/wiki/ASGC_Construction",
+          "relationship": "unknown",
+          "identityClaim": false,
+          "urlIsNotIdentity": true,
+          "whyFound": "WP OpenSearch→extlinks candidate for “ABC Construction” via 「ASGC Construction」 · not identity · C1 UNKNOWN"
+        }
+      ],
+      "identityClaimTrue": 0,
+      "q1701775": 0,
+      "sameEntityFromUrl": 0,
+      "version": "2026-09-24.night.loop.2",
+      "wave": 2,
+      "fetches": 3,
+      "stopReason": "NO_PROGRESS",
+      "origin": {
+        "inputCount": 2,
+        "enriched": 0,
+        "reason": "empty_enrich"
+      },
+      "hopJournal": [
+        {
+          "hopId": "general_web",
+          "providerId": "general_web_search",
+          "reason": "ok",
+          "count": 5,
+          "optional": false,
+          "enrichOnly": false,
+          "wave": 1,
+          "meta": {
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "hopId": "web_origin",
+          "providerId": "web_origin",
+          "reason": "empty_enrich",
+          "count": 0,
+          "optional": false,
+          "enrichOnly": true,
+          "wave": 2,
+          "meta": {
+            "inputCount": 2,
+            "enriched": 0
+          }
+        }
+      ],
+      "providers": {
+        "wikidata": "error",
+        "openlibrary": "ok",
+        "wikipedia": "error",
+        "viaf": "ok",
+        "web_origin": "empty_enrich",
+        "general_web_search": "ok"
+      },
+      "spineJournal": [
+        {
+          "phase": "discover",
+          "event": "begin",
+          "detail": {
+            "seed": "ABC Construction"
+          }
+        },
+        {
+          "phase": "discover",
+          "event": "end",
+          "detail": {
+            "seedClass": "organization",
+            "eligibleHops": [
+              "general_web"
+            ],
+            "wantWebOrigin": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "general_web_search",
+            "fetches": 1,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "general_web",
+            "providerId": "general_web_search",
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "general_web",
+            "reason": "ok",
+            "count": 5,
+            "wikiLocale": "en"
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "general_web",
+            "wave": 1,
+            "accepted": 5,
+            "added": 5,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 5,
+            "delta": 5
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 5,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 1
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "wave_begin",
+          "detail": {
+            "wave": 2
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_start",
+          "detail": {
+            "hopId": "web_origin",
+            "providerId": "web_origin",
+            "inputCount": 2
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "web_origin",
+            "fetches": 2,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "origin_fetch_fail",
+          "detail": {
+            "url": "https://gulfnews.com/business/markets/dubai-contractor-asgc-is-said-to-delay-ipo-plan-on-weak-market-1.1597597",
+            "reason": "body_too_large"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_fetch",
+          "detail": {
+            "providerId": "web_origin",
+            "fetches": 3,
+            "ok": true
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "origin_fetch_fail",
+          "detail": {
+            "url": "https://gulfnews.com/business/property/al-shafar-upbeat-on-construction-boom-in-dubai-1.283731",
+            "reason": "body_too_large"
+          }
+        },
+        {
+          "phase": "expand",
+          "event": "hop_end",
+          "detail": {
+            "hopId": "web_origin",
+            "count": 0,
+            "inputCount": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "begin",
+          "detail": {
+            "hopId": "web_origin",
+            "wave": 2
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "end",
+          "detail": {
+            "hopId": "web_origin",
+            "wave": 2,
+            "accepted": 0,
+            "added": 0,
+            "enriched": 0
+          }
+        },
+        {
+          "phase": "evaluate",
+          "event": "progress",
+          "detail": {
+            "candidateCount": 5,
+            "delta": 0
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "begin",
+          "detail": {
+            "candidateCount": 5,
+            "wave": 2
+          }
+        },
+        {
+          "phase": "corroborate",
+          "event": "end",
+          "detail": {
+            "notes": 0,
+            "wave": 2
+          }
+        },
+        {
+          "phase": "stop",
+          "event": "stop",
+          "detail": {
+            "reason": "NO_PROGRESS"
+          }
+        }
+      ]
+    }
+  ],
+  "keep": [
+    "Multi-wave spine is live on SHA/deployment: three independent candidate-bearing runs reached wave 2.",
+    "Cite-or-drop held for all four emitted url_candidate findings.",
+    "UNKNOWN / identityClaim=false / Q1701775=0 / SAME-from-URL=0 held.",
+    "web_origin remained bounded to two inputs per positive run and unsafe/failed origins were dropped.",
+    "Provider failures stopped honestly without invented candidates."
+  ],
+  "improve": [
+    "GENERAL_WEB opensearch_error caused honest wave-1 EMPTY_FRONTIER on Tim Berners-Lee, Smith, and כהן; coverage is not stable.",
+    "ABC gulfnews is retained UNKNOWN; entity correctness is not a QA PASS.",
+    "Wave 1 product remains NOT DONE; no promote and TREATMENT remains HOLD.",
+    "Acc corroboration is available for this exact target: 5-gate PASS, primary 3/0, pw/Q1701775=0, leak=0, SAME=0, identityClaim=true=0, wave≥2 on ABC/W3C. Keep Acc PASS separate from QA coverage and Wave 1 DONE."
+  ],
+  "accCoordination": {
+    "status": "COORDINATED",
+    "source": "docs/GO-IMPL-500/MD-WAVE/07-ACC-MW2-WAVE2-דיוק-2026-09-24.md/.json",
+    "verdict": "PASS",
+    "primaryPassFail": "3/0",
+    "primarySeeds": [
+      "ABC Construction",
+      "World Wide Web Consortium"
+    ],
+    "primaryNCandidates": {
+      "ABC Construction": 5,
+      "World Wide Web Consortium": 5
+    },
+    "prettyWrongQ1701775": 0,
+    "leak": 0,
+    "sameFromUrlOrWire": 0,
+    "identityClaimTrue": 0,
+    "waveGe2": true,
+    "webOrigin": "observed at wave 2; empty_enrich on ABC/W3C; loop bar met",
+    "latencyMs": {
+      "abc": 7260,
+      "w3c": 5511
+    },
+    "optionalHonestyPass": 2,
+    "note": "Acc PASS is not Wave 1 DONE; no promote."
+  }
+}
