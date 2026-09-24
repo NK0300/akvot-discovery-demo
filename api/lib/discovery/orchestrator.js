@@ -17,7 +17,12 @@ import {
   mergeUrlDomainCandidatesIntoGraph,
   scrubUrlDomainCandidatesForEmit,
 } from './urlDomainCandidates.js';
-import { isWdClaimPackEnabled } from './flags.js';
+import { isWdClaimPackEnabled, isGeneralWebSearchEnabled } from './flags.js';
+import {
+  searchGeneralWeb,
+  GENERAL_WEB_SEARCH_PROVIDER_ID,
+  GENERAL_WEB_TIMEOUT_MS,
+} from './generalWebSearch.js';
 import {
   assertSafePublicHttpsUrl,
   selectFetchablePlanUrlTargets,
@@ -939,6 +944,42 @@ export async function runPipeline(sessionId, opts = {}) {
       delete session._liveQueryPlan;
     }
     delete session._p856UrlCandidates;
+
+    // L2 · GENERAL_WEB (Arch fill.1) · WP OpenSearch→extlinks · flag default OFF · outside TREATMENT
+    if (isGeneralWebSearchEnabled() && Date.now() < wallDeadline) {
+      try {
+        const gw = await searchGeneralWeb(
+          {
+            q: session.seed,
+            budgetMs: Math.min(
+              GENERAL_WEB_TIMEOUT_MS,
+              Math.max(50, wallDeadline - Date.now()),
+            ),
+            locale: session.locale,
+          },
+          { signal: sessionSignal },
+        );
+        session.generalWebSearch = {
+          reason: gw.reason,
+          stub: !!gw.stub,
+          source: gw.source || null,
+          count: (gw.findings || []).length,
+          dropped: gw.dropped || 0,
+        };
+        if (gw.findings?.length) {
+          batches.push({
+            providerId: GENERAL_WEB_SEARCH_PROVIDER_ID,
+            findings: gw.findings,
+            partial: !!gw.partial,
+          });
+          session.providers[GENERAL_WEB_SEARCH_PROVIDER_ID] = 'ok';
+        } else if (!gw.stub) {
+          session.providers[GENERAL_WEB_SEARCH_PROVIDER_ID] = gw.reason || 'empty';
+        }
+      } catch {
+        session.providers[GENERAL_WEB_SEARCH_PROVIDER_ID] = 'error';
+      }
+    }
 
     // Capture telemetry from web_origin provider batch if present
     for (const batch of batches) {

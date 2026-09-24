@@ -331,3 +331,63 @@
 
 **QA A/E TREATMENT action ids:** **Q1–Q3**  
 **Verdict:** A **PARTIAL** · E **PASS** · pretty-wrong **PASS** · overall **PARTIAL** · Wave 1 product **NOT DONE** · **NO PROMOTE**
+
+---
+
+## Arch · Second-flag GENERAL_WEB fill-SPEC · 2026-09-24 ~08:17 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 267 | 08:17 | Arch: LOCK Adapter-1 fill = WP OpenSearch→extlinks · outside Wave 1 TREATMENT · GENERAL_WEB OFF default · C1/cite-or-drop/caps |
+
+### Action 267 — Second-flag fill contract
+- **When:** 2026-09-24 ~08:17 IDT
+- **Who:** ארכיטקט
+- **What:** Locked Server fill contract for `generalWebSearch` stub.1 → fill.1. One bounded adapter only (Wikipedia OpenSearch + extlinks). No commercial SERP, no crawl, no F11. Outside Wave 1 TREATMENT. **NO PROMOTE**.
+- **Files:** `docs/GO-IMPL-500/MD-WAVE/ARCH-SECOND-FLAG-GENERAL-WEB-FILL-ארכיטקט-2026-09-24.md` (+ test-results mirror) · ACTION-LOG
+
+---
+
+## Server · L2 GENERAL_WEB adapter fill (שרת) · 2026-09-24 ~08:22–08:30 IDT
+
+| # | Time (IDT) | Action |
+|---|------------|--------|
+| 149 | 08:22 | Backend: Arch FILL-SPEC lock read (WP OpenSearch→extlinks · ACTION-LOG 267) |
+| 150 | 08:23–08:26 | Backend: fill `generalWebSearch.js` → `2026-09-24.fill.1` · fixture path abandoned |
+| 151 | 08:26 | Backend: orch hook behind flag · store `url_candidate` allow · cite-or-drop/C1/SSRF |
+| 152 | 08:27 | Backend: unit tests `generalWebSearch.test.mjs` **47/0** |
+| 153 | 08:28–08:30 | Backend: evidence `L2-GENERAL-WEB-ADAPTER-שרת.md` · commit+push ≠ promote · TREATMENT env untouched |
+
+### Action 149 — Arch align
+- **When:** 2026-09-24 08:22 IDT
+- **Who:** Backend / שרת
+- **What:** Abandoned fixture_deterministic draft; locked to Arch Adapter-1 = Wikipedia OpenSearch → extlinks (en/he). Outside Wave 1 TREATMENT. NO SERP/crawl/F11.
+- **Files:** Arch lock md
+
+### Action 150 — Adapter fill.1
+- **When:** 2026-09-24 08:23–08:26 IDT
+- **Who:** שרת
+- **What:** Implemented `searchGeneralWeb` fill: ≤1 OpenSearch, ≤2 page titles / 1 extlinks query, ≤5 candidates, SSRF+registry drop, C1 UNKNOWN, AbortSignal budgets. Version `fill.1` / contract `stub.1`.
+- **Files:** `api/lib/discovery/generalWebSearch.js`
+
+### Action 151 — Orch + store
+- **When:** 2026-09-24 08:26 IDT
+- **Who:** שרת
+- **What:** Flag-gated orch call after P856 bridge; B0 path unchanged when OFF. Store allows `url_candidate`/`web_search` + web_search UNKNOWN passthrough.
+- **Files:** `orchestrator.js` · `store.js` · `.env.example`
+
+### Action 152 — Unit tests
+- **When:** 2026-09-24 08:27 IDT
+- **Who:** שרת
+- **What:** flag OFF noop · ON mock WP candidates UNKNOWN · SSRF/registry drop · empty q · Abort/timeout · he host · Track-C shape. **47/0**.
+- **Files:** `generalWebSearch.test.mjs` · `package.json`
+
+### Action 153 — Evidence + push
+- **When:** 2026-09-24 08:28–08:30 IDT
+- **Who:** שרת
+- **What:** Wrote L2 evidence. Commit+push to `origin/main` (**≠ promote**). Preview/Production `DISCOVERY_ENABLE_GENERAL_WEB` **not** set. UX WIP left unstaged.
+- **Files:** evidence md · ACTION-LOG
+
+**Server L2 GENERAL_WEB action ids:** **149–153**  
+**Verdict:** fill.1 **CODE COMPLETE** · flag **OFF** · TREATMENT **untouched** · Wave1 product **NOT DONE** · **NO PROMOTE**
+

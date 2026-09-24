@@ -113,7 +113,7 @@ export function normalizeRawHit(raw, providerId) {
     if (raw.webOriginMeta) evidence.webOriginMeta = raw.webOriginMeta;
   }
 
-  const kind = ['page', 'registry', 'document', 'contact_public', 'media', 'other'].includes(raw.kind)
+  const kind = ['page', 'registry', 'document', 'contact_public', 'media', 'other', 'url_candidate', 'web_search'].includes(raw.kind)
     ? raw.kind
     : 'registry';
 
@@ -166,10 +166,26 @@ export function normalizeRawHit(raw, providerId) {
     }
     if (raw.registrableDomain) finding.registrableDomain = String(raw.registrableDomain).slice(0, 253);
     if (raw.hostname) finding.hostname = String(raw.hostname).slice(0, 253);
+  } else if (providerId === 'general_web_search' || raw.hostFamily === 'web_search') {
+    finding.hostFamily = 'web_search';
+    finding.sourceFamily = raw.sourceFamily || 'general_web';
+    if (raw.url) finding.url = String(raw.url).slice(0, 500);
+    if (raw.normalizedUrl) finding.normalizedUrl = String(raw.normalizedUrl).slice(0, 500);
+    finding.urlAlone = true;
+    finding.urlCandidate = true;
+    finding.urlIsNotIdentity = true;
+    if (raw.whyFound) finding.whyFound = String(raw.whyFound).slice(0, 300);
+    if (raw.snippet) finding.snippet = String(raw.snippet).slice(0, 500);
+    finding.relationship = 'UNKNOWN';
+    finding.relationshipState = 'UNKNOWN';
+    finding.identityClaim = false;
+    finding.epistemicState = 'candidate';
   } else if (raw.relationship || raw.relationshipState) {
     const r = String(raw.relationship || raw.relationshipState);
     const up = r.toUpperCase().replace(/_/g, '-');
     finding.relationshipState =
+      up === 'SAME-ENTITY' || up === 'SAME-REFERENCE' || up === 'SAME-SOURCE' ? 'UNKNOWN' : r;
+    finding.relationship =
       up === 'SAME-ENTITY' || up === 'SAME-REFERENCE' || up === 'SAME-SOURCE' ? 'UNKNOWN' : r;
   }
 
