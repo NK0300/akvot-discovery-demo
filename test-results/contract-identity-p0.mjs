@@ -2,9 +2,10 @@
 /**
  * P0-3 · חוזה HTTP חוסם — זהות / פנים (בודק)
  * Run: node test-results/contract-identity-p0.mjs
- * Env: AKVOT_BASE (default https://akvot-simple-demo.vercel.app)
+ * LIVE ONLY: requires AKVOT_LIVE_OK=1 AND explicit AKVOT_BASE (or BASE). No default base.
+ * Without both it exits 2 before any network call. Not part of `npm test`.
  *
- * Exit 0 רק אם כל החוזים עוברים. דוח JSON נכתב תמיד.
+ * Exit 0 רק אם כל החוזים עוברים. דוח JSON נכתב בכל ריצה מאושרת (לא במסלול שנדחה, exit 2).
  * אין תיקון שרת כאן — רק מדידה.
  */
 import fs from 'fs';
@@ -12,7 +13,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE = (process.env.AKVOT_BASE || process.env.BASE || 'https://akvot-simple-demo.vercel.app').replace(/\/$/, '');
+const RAW_BASE = String(process.env.AKVOT_BASE || process.env.BASE || '').trim();
+if (process.env.AKVOT_LIVE_OK !== '1' || !RAW_BASE) {
+  console.error('contract-identity-p0: LIVE script refused. Requires AKVOT_LIVE_OK=1 and explicit AKVOT_BASE (no default base).');
+  process.exit(2);
+}
+const BASE = RAW_BASE.replace(/\/$/, '');
 const REPORT_JSON = path.join(__dirname, 'CONTRACT-identity-p0-בודק-2026-09-09.json');
 const FAKE_EMAIL = 'qa.rethink.test@example.com';
 const TIMEOUT_MS = 95000;

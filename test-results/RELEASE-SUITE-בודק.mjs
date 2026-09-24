@@ -2,7 +2,8 @@
 /**
  * Full Release Suite · בודק
  * Run: node test-results/RELEASE-SUITE-בודק.mjs
- * Env: AKVOT_BASE (default https://akvot-simple-demo.vercel.app)
+ * LIVE ONLY: requires AKVOT_LIVE_OK=1 AND explicit AKVOT_BASE (or BASE). No default base.
+ * Without both it exits 2 before units, child spawns, network calls or report writes.
  *
  * Exit 0 only if units + contract + SAFETY (core identity) all pass.
  * Alias recall failures are reported in ALIAS_RECALL but do NOT fail exit
@@ -17,7 +18,12 @@ import { spawn } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
-const BASE = (process.env.AKVOT_BASE || process.env.BASE || 'https://akvot-simple-demo.vercel.app').replace(/\/$/, '');
+const RAW_BASE = String(process.env.AKVOT_BASE || process.env.BASE || '').trim();
+if (process.env.AKVOT_LIVE_OK !== '1' || !RAW_BASE) {
+  console.error('RELEASE-SUITE: LIVE script refused. Requires AKVOT_LIVE_OK=1 and explicit AKVOT_BASE (no default base).');
+  process.exit(2);
+}
+const BASE = RAW_BASE.replace(/\/$/, '');
 const FAKE_EMAIL = 'qa.rethink.test@example.com';
 const TIMEOUT_MS = 95000;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

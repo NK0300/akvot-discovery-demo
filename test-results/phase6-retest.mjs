@@ -1,4 +1,10 @@
-const BASE = 'https://akvot-simple-demo.vercel.app';
+// LIVE ONLY: requires AKVOT_LIVE_OK=1 AND explicit AKVOT_BASE (or BASE). No default base; exits 2 otherwise.
+const RAW_BASE = String(process.env.AKVOT_BASE || process.env.BASE || '').trim();
+if (process.env.AKVOT_LIVE_OK !== '1' || !RAW_BASE) {
+  console.error('phase6-retest: LIVE script refused. Requires AKVOT_LIVE_OK=1 and explicit AKVOT_BASE (no default base).');
+  process.exit(2);
+}
+const BASE = RAW_BASE.replace(/\/$/, '');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const FAKE_PHONE = '050-9998877';
 
